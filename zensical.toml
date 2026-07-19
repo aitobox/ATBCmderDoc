@@ -1,0 +1,27 @@
+[project]
+site_name    = "ATBCmder"
+site_url     = "https://brainzhang.github.io/ATBCmderDoc/"
+site_description = "The Dual-Panel File Manager for macOS"
+repo_url     = "https://github.com/brainzhang/ATBCmderDoc"
+repo_name    = "ATBCmderDoc"
+
+[theme]
+name        = "material"
+custom_dir  = "overrides"
+palette     = [
+  { scheme = "default", primary = "indigo", accent = "deep-purple", media = "(prefers-color-scheme: light)" },
+  { scheme = "slate",   primary = "indigo", accent = "deep-purple", media = "(prefers-color-scheme: dark)" }
+]
+font        = { text = "Roboto", code = "Roboto Mono" }
+features    = [
+  "navigation.tabs",
+  "navigation.top",
+  "search.highlight",
+  "content.code.copy"
+]
+
+[extra]
+app_store_url = "https://apps.apple.com/app/atbcmder/idXXXXXXXX"
+
+[extra_css]
+files = ["stylesheets/extra.css"]
