@@ -32,9 +32,9 @@
 ```toml
 [project]
 site_name    = "ATBCmder"
-site_url     = "https://brainzhang.github.io/ATBCmderDoc/"
+site_url     = "https://aitobox.github.io/ATBCmderDoc/"
 site_description = "The Dual-Panel File Manager for macOS"
-repo_url     = "https://github.com/brainzhang/ATBCmderDoc"
+repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
 
 [theme]
