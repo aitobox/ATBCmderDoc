@@ -1,0 +1,1577 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Dual-Panel File Manager for macOS">
+      
+      
+      
+        <link rel="canonical" href="https://aitobox.github.io/ATBCmderDoc/superpowers/specs/2026-07-19-atbcmder-site-design/">
+      
+      
+        <link rel="prev" href="../../plans/2026-07-19-atbcmder-site-plan/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.51">
+    
+    
+      
+        <title>ATBCmder Official Website — Design Spec - ATBCmder</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../files">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#atbcmder-official-website-design-spec" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ATBCmder" class="md-header__button md-logo" aria-label="ATBCmder" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ATBCmder
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ATBCmder Official Website — Design Spec
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/aitobox/ATBCmderDoc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ATBCmderDoc
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../01_getting_started/" class="md-tabs__link">
+        
+  
+  Getting Started with ATBCmder
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../02_navigation/" class="md-tabs__link">
+        
+  
+  Navigation Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../03_file_management/" class="md-tabs__link">
+        
+  
+  File Management Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../04_advanced_features/" class="md-tabs__link">
+        
+  
+  04. Advanced Features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../05_faq_howtos/" class="md-tabs__link">
+        
+  
+  05. FAQ and How-Tos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../intro/" class="md-tabs__link">
+        
+  
+  Welcome to ATBCmder
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+    
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../plans/2026-07-19-atbcmder-site-plan/" class="md-tabs__link">
+          
+  
+  Superpowers
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ATBCmder" class="md-nav__button md-logo" aria-label="ATBCmder" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    ATBCmder
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aitobox/ATBCmderDoc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ATBCmderDoc
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Index
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started with ATBCmder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Navigation Guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03_file_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File Management Guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_advanced_features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  04. Advanced Features
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_faq_howtos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  05. FAQ and How-Tos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Welcome to ATBCmder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Superpowers
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Superpowers
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plans
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Plans
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/2026-07-19-atbcmder-site-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ATBCmder Website Implementation Plan
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Specs
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Specs
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ATBCmder Official Website — Design Spec
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ATBCmder Official Website — Design Spec
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Goals
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tool-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Tool Stack
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Repository Structure
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-zensical-configuration-zensicaltoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Zensical Configuration (<code>zensical.toml</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-navigation-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Navigation Structure
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Navigation Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-navigation-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Top Navigation Tabs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left-sidebar-documentation-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Left Sidebar (documentation pages)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-landing-page-design-overrideshomehtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Landing Page Design (<code>overrides/home.html</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Landing Page Design (overrides&#x2f;home.html)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-1-hero" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 1 — Hero
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-2-features-grid-2-rows-3-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 2 — Features Grid (2 rows × 3 columns)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-3-screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 3 — Screenshots
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-4-get-started-cta" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 4 — Get Started CTA
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-styling-overridesstylesheetsextracss" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Styling (<code>overrides/stylesheets/extra.css</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-deployment-deployyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. Deployment (<code>deploy.yml</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Out of Scope
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Success Criteria
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Goals
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tool-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Tool Stack
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Repository Structure
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-zensical-configuration-zensicaltoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Zensical Configuration (<code>zensical.toml</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-navigation-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Navigation Structure
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Navigation Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-navigation-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Top Navigation Tabs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left-sidebar-documentation-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Left Sidebar (documentation pages)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-landing-page-design-overrideshomehtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Landing Page Design (<code>overrides/home.html</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Landing Page Design (overrides&#x2f;home.html)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-1-hero" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 1 — Hero
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-2-features-grid-2-rows-3-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 2 — Features Grid (2 rows × 3 columns)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-3-screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 3 — Screenshots
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-4-get-started-cta" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Section 4 — Get Started CTA
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-styling-overridesstylesheetsextracss" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Styling (<code>overrides/stylesheets/extra.css</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-deployment-deployyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. Deployment (<code>deploy.yml</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Out of Scope
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Success Criteria
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="atbcmder-official-website-design-spec">ATBCmder Official Website — Design Spec<a class="headerlink" href="#atbcmder-official-website-design-spec" title="Permanent link">&para;</a></h1>
+<p><strong>Date:</strong> 2026-07-19<br />
+<strong>Status:</strong> Approved<br />
+<strong>Scope:</strong> Zensical-based product website + documentation, deployed to GitHub Pages from the <code>ATBCmderDoc</code> repository.</p>
+<hr />
+<h2 id="1-goals">1. Goals<a class="headerlink" href="#1-goals" title="Permanent link">&para;</a></h2>
+<p>Build an official website for ATBCmder (a dual-panel macOS file manager) that:</p>
+<ul>
+<li>Presents the product with a polished Landing Page that highlights core features</li>
+<li>Hosts the existing help documentation (5 Markdown files + screenshots)</li>
+<li>Deploys automatically to GitHub Pages via GitHub Actions on every push to <code>main</code></li>
+<li>Uses English as the primary language (additional languages to be added later)</li>
+<li>Links to the Mac App Store (placeholder URL until the app is published)</li>
+</ul>
+<hr />
+<h2 id="2-tool-stack">2. Tool Stack<a class="headerlink" href="#2-tool-stack" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Site generator</td>
+<td><strong>Zensical</strong></td>
+<td>MkDocs successor by Material for MkDocs team; <code>zensical.toml</code> config; <code>zensical build</code> / <code>zensical serve</code></td>
+</tr>
+<tr>
+<td>Theme</td>
+<td><strong>Material</strong></td>
+<td>Ships with Zensical; supports dark/light mode, search, responsive layout</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td><strong>GitHub Actions → <code>gh-pages</code> branch</strong></td>
+<td>Standard, zero-cost, automatic on push</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-repository-structure">3. Repository Structure<a class="headerlink" href="#3-repository-structure" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ATBCmderDoc/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── zensical.toml              # Main site configuration
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── docs/
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── index.md               # Home page trigger (content rendered by home.html)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── 01_getting_started.md  # Existing docs — unchanged
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── 02_navigation.md
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── 03_file_management.md
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── 04_advanced_features.md
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── 05_faq_howtos.md
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── images/                # Existing screenshots — unchanged
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── overrides/
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   ├── home.html              # Custom Landing Page Jinja2 template
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   └── stylesheets/
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       └── extra.css          # Landing page custom styles
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>└── .github/
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    └── workflows/
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        └── deploy.yml         # GitHub Actions CI/CD
+</span></code></pre></div>
+<p>No existing files are moved or renamed. All new files are additive.</p>
+<hr />
+<h2 id="4-zensical-configuration-zensicaltoml">4. Zensical Configuration (<code>zensical.toml</code>)<a class="headerlink" href="#4-zensical-configuration-zensicaltoml" title="Permanent link">&para;</a></h2>
+<p>Key settings:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[project]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">site_name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ATBCmder&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">site_url</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://&lt;github-username&gt;.github.io/ATBCmderDoc/&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">site_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;The Dual-Panel File Manager for macOS&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">repo_url</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/&lt;github-username&gt;/ATBCmderDoc&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">repo_name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ATBCmderDoc&quot;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">[theme]</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;material&quot;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">custom_dir</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;overrides&quot;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">palette</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">scheme</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">primary</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">accent</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;deep-purple&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: light)&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">scheme</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;slate&quot;</span><span class="p">,</span><span class="w">   </span><span class="n">primary</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;indigo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">accent</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;deep-purple&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;(prefers-color-scheme: dark)&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">]</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">font</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Roboto&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Roboto Mono&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">features</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="s2">&quot;navigation.tabs&quot;</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="s2">&quot;navigation.top&quot;</span><span class="p">,</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="s2">&quot;search.highlight&quot;</span><span class="p">,</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="s2">&quot;content.code.copy&quot;</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">]</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="k">[extra]</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="n">app_store_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://apps.apple.com/app/atbcmder/idXXXXXXXX&quot;</span><span class="w">  </span><span class="c1"># placeholder</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="k">[extra_css]</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="n">files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;overrides/stylesheets/extra.css&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="5-navigation-structure">5. Navigation Structure<a class="headerlink" href="#5-navigation-structure" title="Permanent link">&para;</a></h2>
+<h3 id="top-navigation-tabs">Top Navigation Tabs<a class="headerlink" href="#top-navigation-tabs" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ATBCmder    [Home]    [Documentation ▾]    [GitHub ↗]
+</span></code></pre></div>
+<p><code>Documentation</code> tab reveals the sidebar with the 5 doc pages.</p>
+<h3 id="left-sidebar-documentation-pages">Left Sidebar (documentation pages)<a class="headerlink" href="#left-sidebar-documentation-pages" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Display Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_getting_started.md</code></td>
+<td>Getting Started</td>
+</tr>
+<tr>
+<td><code>02_navigation.md</code></td>
+<td>Navigating Like a Pro</td>
+</tr>
+<tr>
+<td><code>03_file_management.md</code></td>
+<td>Working With Files</td>
+</tr>
+<tr>
+<td><code>04_advanced_features.md</code></td>
+<td>Advanced Features</td>
+</tr>
+<tr>
+<td><code>05_faq_howtos.md</code></td>
+<td>FAQ &amp; How-Tos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-landing-page-design-overrideshomehtml">6. Landing Page Design (<code>overrides/home.html</code>)<a class="headerlink" href="#6-landing-page-design-overrideshomehtml" title="Permanent link">&para;</a></h2>
+<p>The template extends Material's <code>base.html</code> and replaces the <code>content</code> block entirely for <code>index.md</code> only.</p>
+<h3 id="section-1-hero">Section 1 — Hero<a class="headerlink" href="#section-1-hero" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Full-width dark gradient background (indigo → deep-purple)</li>
+<li>Large product name: <strong>ATBCmder</strong></li>
+<li>Tagline: <em>"The Dual-Panel File Manager for macOS"</em></li>
+<li>Subtitle: <em>"Navigate, manage, and transform your files with the speed and power of a professional tool."</em></li>
+<li>Mac App Store badge (official SVG) — links to <code>extra.app_store_url</code>; annotated "Coming soon · Stay tuned" until published</li>
+</ul>
+<h3 id="section-2-features-grid-2-rows-3-columns">Section 2 — Features Grid (2 rows × 3 columns)<a class="headerlink" href="#section-2-features-grid-2-rows-3-columns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Title</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🗂</td>
+<td>Dual Panel</td>
+<td>View and manage two directories side-by-side simultaneously</td>
+</tr>
+<tr>
+<td>🌐</td>
+<td>Network VFS</td>
+<td>FTP, SFTP, WebDAV &amp; Samba — remote files feel local</td>
+</tr>
+<tr>
+<td>📦</td>
+<td>Archive VFS</td>
+<td>Browse and edit ZIP, TAR, 7z without extracting</td>
+</tr>
+<tr>
+<td>✨</td>
+<td>Semantic Command</td>
+<td>Natural language file search powered by macOS Spotlight</td>
+</tr>
+<tr>
+<td>🌿</td>
+<td>Branch View</td>
+<td>See all nested files in a single flat list instantly</td>
+</tr>
+<tr>
+<td>🌍</td>
+<td>30+ Languages</td>
+<td>Automatically follows your system language</td>
+</tr>
+</tbody>
+</table>
+<p>Cards use a subtle glassmorphism border, hover lift animation, icon + bold title + short description.</p>
+<h3 id="section-3-screenshots">Section 3 — Screenshots<a class="headerlink" href="#section-3-screenshots" title="Permanent link">&para;</a></h3>
+<p>Three screenshots displayed in sequence (horizontal on desktop, stacked on mobile):</p>
+<ol>
+<li><code>images/semantic_command.png</code> — highest visual impact</li>
+<li><code>images/branch_view.png</code> — showcases core browsing capability</li>
+<li><code>images/middle_toolbar.png</code> — showcases UI layout</li>
+</ol>
+<p>Each screenshot has a short caption below it.</p>
+<h3 id="section-4-get-started-cta">Section 4 — Get Started CTA<a class="headerlink" href="#section-4-get-started-cta" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Centered section with a brief line: <em>"Ready to explore ATBCmder?"</em></li>
+<li>Primary button: <strong>Read the Documentation →</strong> (links to <code>getting-started/</code>)</li>
+</ul>
+<hr />
+<h2 id="7-styling-overridesstylesheetsextracss">7. Styling (<code>overrides/stylesheets/extra.css</code>)<a class="headerlink" href="#7-styling-overridesstylesheetsextracss" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Hero gradient and typography overrides</li>
+<li>Feature card grid layout (CSS Grid, responsive)</li>
+<li>Screenshot section layout (flexbox, responsive)</li>
+<li>CTA section centering and button styles</li>
+<li>All landing page styles scoped under <code>.atb-*</code> class prefix to avoid conflicts with Material's doc styles</li>
+</ul>
+<hr />
+<h2 id="8-deployment-deployyml">8. Deployment (<code>deploy.yml</code>)<a class="headerlink" href="#8-deployment-deployyml" title="Permanent link">&para;</a></h2>
+<p>GitHub Actions workflow triggered on push to <code>main</code>:</p>
+<ol>
+<li>Checkout repository</li>
+<li>Set up Python</li>
+<li>Install Zensical: <code>pip install zensical</code></li>
+<li>Build: <code>zensical build</code></li>
+<li>Deploy <code>site/</code> directory to <code>gh-pages</code> branch using <code>peaceiris/actions-gh-pages</code></li>
+</ol>
+<p>GitHub Pages source must be set to the <code>gh-pages</code> branch in repository Settings → Pages.</p>
+<hr />
+<h2 id="9-out-of-scope">9. Out of Scope<a class="headerlink" href="#9-out-of-scope" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Multilingual support (deferred to a future phase)</li>
+<li>Blog or changelog section</li>
+<li>Custom domain (can be added later via <code>CNAME</code> file)</li>
+<li>Analytics (can be added later via <code>extra.analytics</code> in config)</li>
+</ul>
+<hr />
+<h2 id="10-success-criteria">10. Success Criteria<a class="headerlink" href="#10-success-criteria" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>zensical serve</code> runs locally without errors</li>
+<li>Landing page renders correctly in light and dark mode</li>
+<li>All 5 documentation pages are accessible via the sidebar</li>
+<li>Screenshots load correctly from <code>docs/images/</code></li>
+<li>GitHub Actions workflow deploys successfully on push to <code>main</code></li>
+<li>Mac App Store link is present (placeholder until app is live)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.tabs","navigation.top","search.highlight","content.code.copy"],"search":"../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
+      
+    
+  </body>
+</html>
