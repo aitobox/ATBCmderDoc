@@ -5,7 +5,7 @@ site_description = "The Dual-Panel File Manager for macOS"
 repo_url     = "https://github.com/brainzhang/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
 
-[theme]
+[project.theme]
 name        = "material"
 custom_dir  = "overrides"
 palette     = [
@@ -20,8 +20,8 @@ features    = [
   "content.code.copy"
 ]
 
-[extra]
+[project.extra]
 app_store_url = "https://apps.apple.com/app/atbcmder/idXXXXXXXX"
 
-[extra_css]
+[project.extra_css]
 files = ["stylesheets/extra.css"]

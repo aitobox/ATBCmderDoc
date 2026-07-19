@@ -57,4 +57,4 @@ For users migrating from traditional dual-pane managers like Double Commander, A
 
 ---
 
-**Next Steps**: Now that you've mastered the advanced features, check out our [Troubleshooting Guide](05_troubleshooting.md) if you encounter any unexpected behavior.
+**Next Steps**: Now that you've mastered the advanced features, check out our [Troubleshooting Guide](05_faq_howtos.md) if you encounter any unexpected behavior.
