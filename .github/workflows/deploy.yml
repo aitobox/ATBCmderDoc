@@ -40,8 +40,10 @@ jobs:
       - name: Build Chinese Documentation
         run: zensical build -f zensical.zh.toml
 
-      - name: Copy Root Redirect
-        run: cp root_index.html site/index.html
+      - name: Copy Root Redirect and CNAME
+        run: |
+          cp root_index.html site/index.html
+          cp CNAME site/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
