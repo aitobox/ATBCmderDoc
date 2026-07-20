@@ -5,6 +5,15 @@ site_description = "The Dual-Panel File Manager for macOS"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
 
+nav = [
+  { "Welcome to ATBCmder" = "index.md" },
+  { "Getting Started with ATBCmder" = "getting_started.md" },
+  { "Navigation Guide" = "navigation.md" },
+  { "File Management Guide" = "file_management.md" },
+  { "Advanced Features (For Power Users)" = "advanced_features.md" },
+  { "How-To Guides & FAQ" = "faq_howtos.md" }
+]
+
 [project.theme]
 name        = "material"
 custom_dir  = "overrides"
@@ -19,14 +28,7 @@ features    = [
   "content.code.copy"
 ]
 
-nav = [
-  { "Welcome to ATBCmder" = "index.md" },
-  { "Getting Started with ATBCmder" = "getting_started.md" },
-  { "Navigation Guide" = "navigation.md" },
-  { "File Management Guide" = "file_management.md" },
-  { "Advanced Features (For Power Users)" = "advanced_features.md" },
-  { "How-To Guides & FAQ" = "faq_howtos.md" }
-]
+
 
 [project.extra]
 app_store_url = "https://apps.apple.com/app/atbcmder/idXXXXXXXX"
