@@ -5,6 +5,7 @@ site_description = "The Dual-Panel File Manager for macOS"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
 docs_dir     = "docs/en"
+site_dir     = "site/en"
 
 nav = [
   { "Welcome to ATBCmder" = "index.md" },

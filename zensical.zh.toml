@@ -5,6 +5,7 @@ site_description = "macOS 双面板文件管理器使用指南"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
 docs_dir     = "docs/zh"
+site_dir     = "site/zh"
 
 nav = [
   { "欢迎使用 ATBCmder" = "index.md" },

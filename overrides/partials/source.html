@@ -1,5 +1,17 @@
 <div style="display: flex; align-items: center;">
   <div style="display: flex; align-items: center; margin-right: 1rem;">
+    {% if config.theme.language == 'zh' or (page and page.url and 'zh' in page.url) %}
+      <a href="/en/" title="Switch to English" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+        <span style="font-size: 0.9rem; font-weight: 500;">English</span>
+      </a>
+    {% else %}
+      <a href="/zh/" title="切换为中文" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+        <span style="font-size: 0.9rem; font-weight: 500;">中文</span>
+      </a>
+    {% endif %}
+
     <a href="mailto:aitoboxinc@gmail.com" title="Email Us" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit;">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
       <span style="font-size: 0.9rem; font-weight: 500;">Contact</span>
