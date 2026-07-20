@@ -1,19 +1,21 @@
-<div style="display: flex; align-items: center; margin-right: 1rem;">
-  <a href="mailto:aitoboxinc@gmail.com" title="Email Us" class="md-header__button" style="margin-right: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
-    <span style="font-size: 0.9rem; font-weight: 500;">Contact</span>
-  </a>
-  <a href="https://github.com/aitobox/ATBCmderDoc/discussions" title="Community Forum" class="md-header__button" style="margin-right: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.53 1.45 4.77 3.65 6.13A8.475 8.475 0 0 1 4 19.5c-.32.74.52 1.44 1.18 1.03 2.1-.87 4.1-2.12 5.76-3.48.35.03.7.05 1.06.05 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-    <span style="font-size: 0.9rem; font-weight: 500;">Forum</span>
+<div style="display: flex; align-items: center;">
+  <div style="display: flex; align-items: center; margin-right: 1rem;">
+    <a href="mailto:aitoboxinc@gmail.com" title="Email Us" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+      <span style="font-size: 0.9rem; font-weight: 500;">Contact</span>
+    </a>
+    <a href="https://github.com/aitobox/ATBCmderDoc/discussions" title="Community Forum" class="md-header__button" style="display: flex; align-items: center; gap: 0.25rem; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.53 1.45 4.77 3.65 6.13A8.475 8.475 0 0 1 4 19.5c-.32.74.52 1.44 1.18 1.03 2.1-.87 4.1-2.12 5.76-3.48.35.03.7.05 1.06.05 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+      <span style="font-size: 0.9rem; font-weight: 500;">Forum</span>
+    </a>
+  </div>
+  <a href="{{ config.repo_url }}" title="{{ lang.t('source') }}" class="md-source" data-md-component="source">
+    <div class="md-source__icon md-icon">
+      {% set icon = config.theme.icon.repo or "fontawesome/brands/git-alt" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </div>
+    <div class="md-source__repository">
+      {{ config.repo_name }}
+    </div>
   </a>
 </div>
-<a href="{{ config.repo_url }}" title="{{ lang.t('source') }}" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    {% set icon = config.theme.icon.repo or "fontawesome/brands/git-alt" %}
-    {% include ".icons/" ~ icon ~ ".svg" %}
-  </div>
-  <div class="md-source__repository">
-    {{ config.repo_name }}
-  </div>
-</a>
