@@ -1,9 +1,10 @@
 [project]
 site_name    = "ATBCmder"
-site_url     = "https://cmder.aitobox.com/"
+site_url     = "https://cmder.aitobox.com/en/"
 site_description = "The Dual-Panel File Manager for macOS"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
+docs_dir     = "docs/en"
 
 nav = [
   { "Welcome to ATBCmder" = "index.md" },
@@ -28,8 +29,6 @@ features    = [
   "search.highlight",
   "content.code.copy"
 ]
-
-
 
 [project.extra]
 app_store_url = "https://apps.apple.com/app/atbcmder/idXXXXXXXX"

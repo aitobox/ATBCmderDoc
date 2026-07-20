@@ -1,0 +1,38 @@
+[project]
+site_name    = "ATBCmder 文档"
+site_url     = "https://cmder.aitobox.com/zh/"
+site_description = "macOS 双面板文件管理器使用指南"
+repo_url     = "https://github.com/aitobox/ATBCmderDoc"
+repo_name    = "ATBCmderDoc"
+docs_dir     = "docs/zh"
+
+nav = [
+  { "欢迎使用 ATBCmder" = "index.md" },
+  { "快速入门" = "getting_started.md" },
+  { "导航指南" = "navigation.md" },
+  { "文件管理指南" = "file_management.md" },
+  { "高级功能（进阶用户）" = "advanced_features.md" },
+  { "操作指南与常见问题" = "faq_howtos.md" },
+  { "隐私政策" = "privacy_policy.md" }
+]
+
+[project.theme]
+name        = "material"
+custom_dir  = "overrides"
+language    = "zh"
+palette     = [
+  { scheme = "default", primary = "indigo", accent = "deep-purple", media = "(prefers-color-scheme: light)" },
+  { scheme = "slate",   primary = "indigo", accent = "deep-purple", media = "(prefers-color-scheme: dark)" }
+]
+font        = { text = "Roboto", code = "Roboto Mono" }
+features    = [
+  "navigation.top",
+  "search.highlight",
+  "content.code.copy"
+]
+
+[project.extra]
+app_store_url = "https://apps.apple.com/app/atbcmder/idXXXXXXXX"
+
+[project.extra_css]
+files = ["stylesheets/extra.css"]
