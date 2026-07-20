@@ -1,6 +1,6 @@
 [project]
 site_name    = "ATBCmder"
-site_url     = "https://aitobox.github.io/ATBCmderDoc/"
+site_url     = "https://cmder.aitobox.com/"
 site_description = "The Dual-Panel File Manager for macOS"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
