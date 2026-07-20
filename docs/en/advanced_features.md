@@ -6,7 +6,7 @@ ATBCmder offers a powerful set of advanced features for power users, ranging fro
 
 ATBCmder allows you to interact with remote file systems as if they were local directories. Supported protocols include **FTP**, **SFTP**, **WebDAV**, and **Samba**. 
 
-![Network VFS](../images/network_vfs.png)
+![Network VFS](images/network_vfs.png)
 
 - **Seamless Integration**: Once connected, remote files appear in the standard file panels. You can copy, move, delete, and rename files just like local operations.
 - **Asynchronous Transfers**: Network operations are executed in a background thread, ensuring the UI remains responsive during large transfers.
@@ -16,7 +16,7 @@ ATBCmder allows you to interact with remote file systems as if they were local d
 
 Archives are treated as Virtual File Systems (`vfs://`), meaning you can browse inside `.zip`, `.tar`, and `.7z` files natively without extracting them first.
 
-![Archive VFS](../images/archive_vfs.png)
+![Archive VFS](images/archive_vfs.png)
 
 - **Native Browsing**: Navigate into archives directly from the file panel.
 - **Modifying Archives**: Need to edit a file inside a `.zip`? Open it, edit it, and ATBCmder's RepackWorker will safely extract, wait for modifications, and repack the file for you.
@@ -26,7 +26,7 @@ Archives are treated as Virtual File Systems (`vfs://`), meaning you can browse 
 
 Sometimes you need to see all files inside a directory and all of its subdirectories in a single, flat list. 
 
-![Branch View](../images/branch_view.png)
+![Branch View](images/branch_view.png)
 
 - **Toggle**: Press `Cmd+B` to activate or deactivate Branch View for the active panel.
 - **Exit Quickly**: You can press `Esc` or `Backspace` to quickly exit the flat view and return to standard directory browsing.
@@ -38,7 +38,7 @@ Sometimes you need to see all files inside a directory and all of its subdirecto
 
 Semantic Command is a natural language interface that brings unparalleled power to file filtering, selection, and searching. It leverages macOS's Spotlight (`mdfind`) for rapid indexing.
 
-![Semantic Command](../images/semantic_command.png)
+![Semantic Command](images/semantic_command.png)
 
 - **Activation**: Press `/` or `Cmd+F` to open the Semantic Command input at the bottom of the active panel.
 - **Natural Language**: Type commands like *"Select all files larger than 1MB"* or *"Find PDF files modified today"*.

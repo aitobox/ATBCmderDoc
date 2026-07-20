@@ -43,7 +43,7 @@ jobs:
       - name: Copy Root Redirect and CNAME
         run: |
           cp root_index.html site/index.html
-          cp CNAME site/CNAME
+          [ -f CNAME ] && cp CNAME site/CNAME || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

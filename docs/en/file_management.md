@@ -8,7 +8,7 @@ When you select files in the panel and press `F3`, ATBCmder launches specialized
 
 ### Audio Player
 
-![Audio Player](../images/audio_player.png)
+![Audio Player](images/audio_player.png)
 
 The dedicated Audio Player handles `.mp3`, `.wav`, `.flac`, `.ogg`, `.m4a`, and `.aac` files.
 - **Playlist:** Automatically builds a playlist. If you select multiple files, they are queued up. If you select a single file, siblings in the same directory are automatically queued.
@@ -17,7 +17,7 @@ The dedicated Audio Player handles `.mp3`, `.wav`, `.flac`, `.ogg`, `.m4a`, and 
 
 ### PDF Viewer
 
-![PDF Viewer](../images/pdf_viewer.png)
+![PDF Viewer](images/pdf_viewer.png)
 
 The PDF viewer provides a unified top toolbar to maximize your vertical reading space.
 - **View Controls:** Toggle the left-hand Bookmarks panel and switch between Single Page and Multi-Page continuous scrolling modes.
@@ -31,7 +31,7 @@ When browsing images, ATBCmder automatically generates clear, high-quality thumb
 
 ## Helpful Tooltips
 
-![Helpful Tooltips](../images/helpful_tooltips.png)
+![Helpful Tooltips](images/helpful_tooltips.png)
 
 ATBCmder features highly informative tooltips designed to help you quickly understand the interface. Whenever you are unsure about a button, menu, or input field, simply hover over it to reveal a comprehensive explanation.
 - **Feature Description:** Explains what the element does.
