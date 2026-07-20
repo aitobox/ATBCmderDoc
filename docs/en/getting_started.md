@@ -23,7 +23,7 @@ The Middle Toolbar is a vertical strip located directly between the left and rig
 * **Adjustable Splitter:** You can drag the middle toolbar left or right to change the width ratio of the two panels.
 * **Customization:** By default, the middle toolbar is hidden. You can enable it by going to the Settings (Options) dialog and checking "Show Middle Toolbar" under the "Middle Toolbar" section. You can also customize icon sizes and whether to show text captions.
 
-![Middle Toolbar](images/middle_toolbar.png)
+![Middle Toolbar](../images/middle_toolbar.png)
 
 ## Internationalization (Language Settings)
 
@@ -33,4 +33,4 @@ ATBCmder supports over 30 languages and is designed to integrate smoothly with y
 * **Manual Configuration:** If you prefer a different language or if your system language is not fully supported, you can manually select a language. Go to the Settings (Options) dialog, navigate to the "Language" page, and choose your preferred language from the dropdown menu.
 * **Live Reload:** Language changes are applied immediately across the entire application without requiring a restart.
 
-![Language Settings](images/language_settings.png)
+![Language Settings](../images/language_settings.png)
