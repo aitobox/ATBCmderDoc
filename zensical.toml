@@ -14,10 +14,18 @@ palette     = [
 ]
 font        = { text = "Roboto", code = "Roboto Mono" }
 features    = [
-  "navigation.tabs",
   "navigation.top",
   "search.highlight",
   "content.code.copy"
+]
+
+nav = [
+  { "Welcome" = "index.md" },
+  { "Getting Started" = "getting_started.md" },
+  { "Navigating Like a Pro" = "navigation.md" },
+  { "Working With Files" = "file_management.md" },
+  { "Advanced Features" = "advanced_features.md" },
+  { "How-To Guides & FAQ" = "faq_howtos.md" }
 ]
 
 [project.extra]
