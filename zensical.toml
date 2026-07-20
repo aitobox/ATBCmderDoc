@@ -20,11 +20,11 @@ features    = [
 ]
 
 nav = [
-  { "Welcome" = "index.md" },
-  { "Getting Started" = "getting_started.md" },
-  { "Navigating Like a Pro" = "navigation.md" },
-  { "Working With Files" = "file_management.md" },
-  { "Advanced Features" = "advanced_features.md" },
+  { "Welcome to ATBCmder" = "index.md" },
+  { "Getting Started with ATBCmder" = "getting_started.md" },
+  { "Navigation Guide" = "navigation.md" },
+  { "File Management Guide" = "file_management.md" },
+  { "Advanced Features (For Power Users)" = "advanced_features.md" },
   { "How-To Guides & FAQ" = "faq_howtos.md" }
 ]
 
