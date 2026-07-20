@@ -1,4 +1,4 @@
-# 05. FAQ and How-Tos
+# FAQ and How-Tos
 
 This guide provides task-based quick references and answers to frequently asked questions about using ATBCmder.
 

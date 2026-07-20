@@ -1,4 +1,4 @@
-# 04. Advanced Features
+# Advanced Features
 
 ATBCmder offers a powerful set of advanced features for power users, ranging from Virtual File Systems to AI-assisted Semantic Commands. This guide explains how to leverage these tools to maximize your productivity.
 
