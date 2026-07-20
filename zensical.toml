@@ -11,7 +11,8 @@ nav = [
   { "Navigation Guide" = "navigation.md" },
   { "File Management Guide" = "file_management.md" },
   { "Advanced Features (For Power Users)" = "advanced_features.md" },
-  { "How-To Guides & FAQ" = "faq_howtos.md" }
+  { "How-To Guides & FAQ" = "faq_howtos.md" },
+  { "Privacy Policy" = "privacy_policy.md" }
 ]
 
 [project.theme]
