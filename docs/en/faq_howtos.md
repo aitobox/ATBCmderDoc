@@ -17,9 +17,13 @@ Hover your mouse over the button, menu item, or input field. ATBCmder features h
 
 ### How do I copy, move, or delete files?
 ATBCmder uses classic Double Commander shortcuts for primary file operations:
+
 - **Copy:** Select files and press **`F5`**.
+
 - **Move/Rename:** Select files and press **`F6`**.
+
 - **Make Directory:** Press **`F7`**.
+
 - **Delete:** Select files and press **`F8`**.
 
 ### How do I preview files without opening an external application?
@@ -31,10 +35,14 @@ Select multiple audio files (like `.mp3`, `.flac`) and press `F3`. The built-in 
 ## Advanced Search & Commands
 
 ### How do I use natural language to find files?
-ATBCmder features a **Semantic Command** input. 
+ATBCmder features a **Semantic Command** input:
+
 1. Press **`/`** or **`Cmd+F`** to open the input at the bottom of the active panel.
+
 2. Type a command in natural language, such as *"Select all files larger than 1MB"* or *"Find PDF files modified today"*.
+
 3. By default, it searches the current directory. To perform a global Spotlight search, prefix your command with `//` (e.g., `//today modified pdf`).
+
 4. Type `/help` for examples or `/history` to replay recent commands.
 
 ## Archives and Network File Systems
@@ -52,8 +60,11 @@ Use the **Network Virtual File System (VFS)** feature. Once connected, the remot
 
 ### Why aren't the file panels updating when a file changes on disk?
 ATBCmder has an **Auto-refresh** feature that might be configured differently. Check your settings under the Options dialog:
+
 - Ensure Auto-refresh is enabled.
+
 - Check if it's set to disable when ATBCmder is in the background.
+
 - Verify that the directory you are in hasn't been added to the excluded paths list.
 
 ### How can I test new configurations without breaking my setup?

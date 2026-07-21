@@ -8,10 +8,15 @@
 ## Highlights & Key Features
 
 * **🗂 Dual Panel Management** — View and manage two directories side-by-side simultaneously.
+
 * **🌐 Network VFS** — Connect via FTP, SFTP, WebDAV & Samba so remote files feel like local ones.
+
 * **📦 Archive VFS** — Browse and edit ZIP, TAR, 7z archives without extracting them.
+
 * **✨ Semantic Command** — Natural language file search powered by macOS Spotlight integration.
+
 * **🌿 Branch View** — Instantly display all nested sub-files in a single flat list view.
+
 * **🌍 30+ Languages** — Automatically matches your macOS system language.
 
 ---
