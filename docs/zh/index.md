@@ -53,4 +53,4 @@
 
 ---
 
-[前往 App Store 下载](https://apps.apple.com/app/atbcmder/idXXXXXXXX) *(即将推出)* &nbsp;|&nbsp; [开始阅读快速入门 &rarr;](getting_started.md)
+[开始阅读快速入门 &rarr;](getting_started.md)

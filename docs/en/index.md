@@ -53,4 +53,4 @@ Our commitment to complete user data privacy and zero data collection.
 
 ---
 
-[Download on the App Store](https://apps.apple.com/app/atbcmder/idXXXXXXXX) *(Coming soon)* &nbsp;|&nbsp; [Read Getting Started Guide &rarr;](getting_started.md)
+[Read Getting Started Guide &rarr;](getting_started.md)
