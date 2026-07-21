@@ -43,16 +43,91 @@
 - **匹配规则**：您可以配置为匹配文件名开头或匹配名称中任意位置。在输入结尾添加一个点号（`.`）可专门用于精确匹配不含扩展名的文件名末尾。
 
 ## 常用快捷键
-ATBCmder 高度依赖键盘操作。快捷键按使用场景（如主窗口 Main、文件面板 FilePanel、编辑器 Editor、查找文件 FindFiles）进行了分类管理。
-核心快捷键包括：
 
-- `Tab` / `Shift+Tab`：在左右面板或树状视图之间切换焦点。
+ATBCmder 高度依赖键盘操作。以下是整理自项目默认配置文件（`default_config.xml`）的最常用快捷键组合及其对应的命令 ID 与作用说明，按功能模块分类如下：
 
-- `Ctrl+PgDn`：打开压缩包。
+### 📁 文件与目录操作 (File Operations)
 
-- `Ctrl+PgUp`：返回上一级目录。
+| 快捷键 | 命令 ID | 作用 |
+| :--- | :--- | :--- |
+| **`F5`** | `cm_Copy` | 复制选中的文件/文件夹到另一侧面板 |
+| **`F6`** | `cm_Move` | 移动选中的文件/文件夹到另一侧面板 |
+| **`F7`** | `cm_MkDir` | 新建文件夹 |
+| **`F8`** / **`Delete`** | `cm_Delete` | 删除选中的文件/文件夹 |
+| **`Shift+Delete`** | `cm_Wipe` | 彻底删除（擦除）文件/文件夹 |
+| **`F2`** / **`Shift+F6`** | `cm_Rename` | 重命名光标所在的文件/文件夹 |
+| **`Ctrl+C`** | `cm_CopyToClipboard` | 复制到剪贴板 |
+| **`Ctrl+X`** | `cm_CutToClipboard` | 剪切到剪贴板 |
+| **`Ctrl+V`** | `cm_PasteFromClipboard` | 从剪贴板粘贴 |
 
-- `Ctrl+Left` / `Ctrl+Right`：将焦点或内容传输至对侧面板。
+---
+
+### ✅ 选择与标记 (Selection & Marking)
+
+| 快捷键 | 命令 ID | 作用 |
+| :--- | :--- | :--- |
+| **`Space`** / **`Insert`** | `cm_SelectOrDeselectFile` | 选中/取消选中当前文件，光标下移 |
+| **`Ctrl+A`** | `cm_MarkAll` | 全选 |
+| **`Ctrl+I`** / **`Num*`** | `cm_MarkInvert` | 反选当前列表中的文件/文件夹 |
+| **`Num+`** (小键盘+) | `cm_MarkPlus` | 按扩展名/通配符批量选中 |
+| **`Num-`** (小键盘-) | `cm_MarkMinus` | 按扩展名/通配符批量取消选中 |
+
+---
+
+### 🧭 导航与面板 (Navigation & Panels)
+
+| 快捷键 | 命令 ID | 作用 |
+| :--- | :--- | :--- |
+| **`Enter`** | `cm_Open` | 打开选中的文件或进入目录 |
+| **`Backspace`** / **`Ctrl+Up`** | `cm_ChangeDirToParent` | 返回上一级目录 |
+| **`Ctrl+\`** | `cm_ChangeDirToRoot` | 返回当前驱动器的根目录 |
+| **`Tab`** | `cm_SwitchPanel` | 在左右面板之间切换焦点 |
+| **`Alt+Left`** | `cm_ViewHistoryPrev` | 后退（历史记录） |
+| **`Alt+Right`** | `cm_ViewHistoryNext` | 前进（历史记录） |
+| **`Ctrl+Left/Right`** | `cm_TargetEqualSource` | 使目标面板（另一侧）目录与当前面板一致 |
+| **`Ctrl+D`** | `cm_DirHotList` | 打开常用目录（书签）菜单 |
+
+---
+
+### 📑 标签页控制 (Tabs)
+
+| 快捷键 | 命令 ID | 作用 |
+| :--- | :--- | :--- |
+| **`Ctrl+T`** | `cm_NewTab` | 在当前面板新建标签页 |
+| **`Ctrl+W`** | `cm_CloseTab` | 关闭当前标签页 |
+| **`Ctrl+Tab`** | `cm_NextTabCtrl` | 切换到下一个标签页 |
+| **`Ctrl+Shift+Tab`** | `cm_PrevTabCtrl` | 切换到上一个标签页 |
+
+---
+
+### 👁️ 视图与显示 (Views & Display)
+
+| 快捷键 | 命令 ID | 作用 |
+| :--- | :--- | :--- |
+| **`Ctrl+F1`** | `cm_BriefView` | 简略视图（列表模式） |
+| **`Ctrl+F2`** | `cm_ColumnsView` | 详细信息视图（分列显示模式） |
+| **`Ctrl+Shift+F1`** | `cm_ThumbnailsView` | 缩略图视图 |
+| **`Ctrl+B`** | `cm_FlatView` | 平铺视图（显示包含的所有子目录文件） |
+| **`Ctrl+H`** | `cm_ShowHiddenFiles` | 显示/隐藏隐藏文件 |
+| **`Ctrl+R`** | `cm_Refresh` | 刷新当前面板 |
+
+---
+
+### 🛠️ 高级工具 (Tools & Utilities)
+
+| 快捷键 | 命令 ID | 作用 |
+| :--- | :--- | :--- |
+| **`Alt+F7`** | `cm_FileSearch` | 文件搜索 |
+| **`Ctrl+M`** | `cm_MultiRename` | 批量重命名工具 |
+| **`Alt+F5`** | `cm_PackFiles` | 压缩文件 (打包) |
+| **`Alt+F9`** | `cm_ExtractFiles` | 解压文件 |
+| **`F3`** | `cm_View` | 打开内置查看器 (Viewer) |
+| **`F4`** | `cm_Edit` | 打开内置编辑器 (Editor) |
+| **`Ctrl+Q`** | `cm_QuickView` | 快速查看（在另一侧面板预览文件） |
+| **`Alt+Enter`** | `cm_Properties` | 查看文件/文件夹属性 |
+| **`F9`** / **`Ctrl+J`** | `cm_RunTerm` | 在当前目录下打开终端界面 |
+
+---
 
 您可以为任何命令绑定最多两个快捷键（主快捷键与副快捷键）。如需自定义快捷键或查看各场景的完整快捷键列表，请访问**偏好设置 → 快捷键**。如果您尝试使用已被占用的快捷键，编辑器会自动发出警告。
 
