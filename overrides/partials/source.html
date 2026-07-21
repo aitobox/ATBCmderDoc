@@ -1,32 +1,21 @@
 <div style="display: flex; align-items: center; white-space: nowrap;">
-  <div style="display: flex; align-items: center; margin-right: 1rem; white-space: nowrap;">
-    <a href="mailto:aitoboxinc@gmail.com" title="Email Us" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
-      <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">Contact</span>
-    </a>
-    <a href="https://github.com/aitobox/ATBCmderDoc/discussions" title="Community Forum" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.53 1.45 4.77 3.65 6.13A8.475 8.475 0 0 1 4 19.5c-.32.74.52 1.44 1.18 1.03 2.1-.87 4.1-2.12 5.76-3.48.35.03.7.05 1.06.05 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-      <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">Forum</span>
-    </a>
-    {% if config.theme.language == 'zh' or (page and page.url and 'zh' in page.url) %}
-      <a href="/en/{{ page.url if page and page.url else '' }}" title="Switch to English" class="md-header__button" style="display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
-        <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">English</span>
-      </a>
-    {% else %}
-      <a href="/zh/{{ page.url if page and page.url else '' }}" title="切换为中文" class="md-header__button" style="display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
-        <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">中文</span>
-      </a>
-    {% endif %}
-  </div>
-  <a href="{{ config.repo_url }}" title="{{ lang.t('source') }}" class="md-source" data-md-component="source">
-    <div class="md-source__icon md-icon">
-      {% set icon = config.theme.icon.repo or "fontawesome/brands/git-alt" %}
-      {% include ".icons/" ~ icon ~ ".svg" %}
-    </div>
-    <div class="md-source__repository">
-      {{ config.repo_name }}
-    </div>
+  <a href="mailto:aitoboxinc@gmail.com" title="Email Us" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+    <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">Contact</span>
   </a>
+  <a href="https://github.com/aitobox/ATBCmderDoc/discussions" title="Community Forum" class="md-header__button" style="margin-right: 1rem; display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.53 1.45 4.77 3.65 6.13A8.475 8.475 0 0 1 4 19.5c-.32.74.52 1.44 1.18 1.03 2.1-.87 4.1-2.12 5.76-3.48.35.03.7.05 1.06.05 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+    <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">Forum</span>
+  </a>
+  {% if config.theme.language == 'zh' or (page and page.url and 'zh' in page.url) %}
+    <a href="/en/{{ page.url if page and page.url else '' }}" title="Switch to English" class="md-header__button" style="display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+      <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">English</span>
+    </a>
+  {% else %}
+    <a href="/zh/{{ page.url if page and page.url else '' }}" title="切换为中文" class="md-header__button" style="display: flex; align-items: center; gap: 0.25rem; color: inherit; white-space: nowrap; flex-shrink: 0; width: auto;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+      <span style="font-size: 0.9rem; font-weight: 500; white-space: nowrap;">中文</span>
+    </a>
+  {% endif %}
 </div>
