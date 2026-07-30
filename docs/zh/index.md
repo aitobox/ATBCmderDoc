@@ -50,6 +50,9 @@
 ### ⚡ [高级功能（面向进阶用户）](advanced_features.md)
 连接远程服务器 (Network VFS)、直接管理压缩包 (Archive VFS)、展开多层目录 (Branch View) 及使用语义化搜索。
 
+### ⌨️ [快捷键参考](keyboard_shortcuts.md)
+完整的系统默认快捷键参考手册，助力提升文件操作效率。
+
 ### ❓ [操作指南与常见问题](faq_howtos.md)
 针对连接 FTP、解压 ZIP、播放音频等常见场景的步骤指引与 FAQ。
 

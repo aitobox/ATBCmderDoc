@@ -50,6 +50,9 @@ Utilize built-in audio & PDF media previewers, inspect rich file tooltips and th
 ### ⚡ [Advanced Features](advanced_features.md)
 Configure remote server connections (Network VFS), manage archives directly (Archive VFS), use Branch View, and leverage natural language semantic commands.
 
+### ⌨️ [Keyboard Shortcuts](keyboard_shortcuts.md)
+Complete default keyboard shortcuts reference for maximum file management efficiency.
+
 ### ❓ [How-To Guides & FAQ](faq_howtos.md)
 Step-by-step solutions for common tasks (FTP setup, archive editing, audio playback) and frequently asked questions.
 
