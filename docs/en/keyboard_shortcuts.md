@@ -1,6 +1,6 @@
 # Default Keyboard Shortcuts Reference
 
-Here is a comprehensive reference list of **ATBCmder Default Keyboard Shortcuts**. The table is categorized by functionality:
+ATBCmder is heavily keyboard-driven. Here is a comprehensive reference list of **ATBCmder Default Keyboard Shortcuts** based on the default configuration. You can assign up to two shortcuts (Primary and Secondary) for any command. To customize shortcuts and view the full list for each context, visit **Preferences → Hotkeys**. The editor will automatically warn you if you try to use a shortcut that is already assigned. The table is categorized by functionality:
 
 ## 1. File Operations
 
