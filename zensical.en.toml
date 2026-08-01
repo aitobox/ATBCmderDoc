@@ -9,6 +9,7 @@ site_dir     = "site/en"
 
 nav = [
   { "Welcome to ATBCmder" = "index.md" },
+  { "Download" = "download.md" },
   { "Getting Started with ATBCmder" = "getting_started.md" },
   { "Navigation Guide" = "navigation.md" },
   { "File Management Guide" = "file_management.md" },
