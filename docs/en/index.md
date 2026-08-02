@@ -32,6 +32,42 @@
 ![Middle Toolbar & Quick Commands](images/middle_toolbar.png)  
 *Quick access to essential commands via the middle toolbar.*
 
+![SMB, SFTP, FTP Remote Access](images/smb_sftp_ftp远程访问.png)  
+*SMB, SFTP, FTP Remote Access*
+
+![Compress and Extract Files](images/压缩_解压文件.png)  
+*Compress and Extract Files*
+
+![Image Viewer](images/图像查看器.png)  
+*Image Viewer*
+
+![Multi-function Search](images/多功能搜索.png)  
+*Multi-function Search*
+
+![Quick Access Path](images/快捷访问路径.png)  
+*Quick Access Path*
+
+![Multi-Rename](images/批量重命名.png)  
+*Multi-Rename*
+
+![Folder Synchronization](images/文件夹同步.png)  
+*Folder Synchronization*
+
+![Horizontal Panel Display](images/水平面板显示.png)  
+*Horizontal Panel Display*
+
+![Thumbnail Display](images/缩略图显示.png)  
+*Thumbnail Display*
+
+![Video Player](images/视频播放器.png)  
+*Video Player*
+
+![Semantic Search](images/语意化搜索.png)  
+*Semantic Search*
+
+![Music Player](images/音乐播放器.png)  
+*Music Player*
+
 ---
 
 ## Documentation Overview & Table of Contents
