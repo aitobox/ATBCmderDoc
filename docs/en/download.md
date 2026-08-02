@@ -6,6 +6,9 @@ Thank you for your interest in ATBCmder! We provide two different download and i
 
 This is the recommended way to install ATBCmder. Downloading through the official Mac App Store ensures you get automatic updates and the best system integration.
 
+> **🚧 Under Review**  
+> Our application is currently undergoing the review process for the Mac App Store. Stay tuned! In the meantime, please use the DMG installation method below.
+
 [Mac App Store Download Page](https://apps.apple.com/app/atbcmder/6792398333)
 
 ## 2. DMG Installer Download
