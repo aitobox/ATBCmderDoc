@@ -22,3 +22,8 @@ Built-In Geek PDF Reader: Read documentation without breaking your flow. Feature
 Asynchronous I/O Queue: Transfer massive directories without freezing your UI. Queue up heavy copy or move tasks and let them run silently in the background.
 
 Stop managing files. Start commanding them.
+
+
+## Download
+
+[DMG & AppStore](https://cmder.aitobox.com/en/download/)
