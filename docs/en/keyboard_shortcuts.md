@@ -118,3 +118,20 @@ ATBCmder is heavily keyboard-driven. Here is a comprehensive reference list of *
 | `cm_Options` | Open Preferences/Settings | `Cmd+,` | — |
 | `cm_HelpContents` / `cm_HelpIndex` | Open Help Documentation | `F1` | — |
 | `cm_Exit` | Exit Application | `F10` | `Alt+F4`, `Alt+X` |
+
+## 8. File Panel Navigation
+
+Both detailed list view and thumbnail view support the following quick navigation shortcuts:
+
+1. **Home Key (Jump to the first row at the top)**:
+   - Native **Home** / **Fn + Left Arrow (`Fn + ←`)**
+   - macOS **Cmd + Up Arrow (`⌘ + ↑`)** / **Cmd + Home (`⌘ + Home`)** / **Ctrl + Home**
+   - Supports combining with the **Shift** key for range selection from the current row to the top.
+2. **End Key (Jump to the last row at the bottom)**:
+   - Native **End** / **Fn + Right Arrow (`Fn + →`)**
+   - macOS **Cmd + Down Arrow (`⌘ + ↓`)** / **Cmd + End (`⌘ + End`)** / **Ctrl + End**
+   - Supports combining with the **Shift** key for range selection from the current row to the bottom.
+3. **PageUp / PageDown (Scroll page up / down)**:
+   - Native **PageUp** / **Fn + Up Arrow (`Fn + ↑`)**
+   - Native **PageDown** / **Fn + Down Arrow (`Fn + ↓`)**
+   - Supports combining with the **Shift** key to batch select files page by page.

@@ -118,3 +118,20 @@ ATBCmder 高度依赖键盘操作。这里是一份整理自项目默认配置�
 | `cm_Options` | 打开首选项 / 设置对话框 | `Cmd+,` | — |
 | `cm_HelpContents` / `cm_HelpIndex` | 打开帮助文档 | `F1` | — |
 | `cm_Exit` | 退出应用程序 | `F10` | `Alt+F4`, `Alt+X` |
+
+## 8. 文件列表导航 (File Panel Navigation)
+
+详细列表视图与缩略图视图支持以下快捷导航操作：
+
+1. **Home 键（跳转到顶部第一行）**：
+   - 原生 **Home** / **Fn + Left Arrow (`Fn + ←`)**
+   - macOS **Cmd + Up Arrow (`⌘ + ↑`)** / **Cmd + Home (`⌘ + Home`)** / **Ctrl + Home**
+   - 支持结合 **Shift** 键触发从当前行到首行的范围选择。
+2. **End 键（跳转到底部最后一行）**：
+   - 原生 **End** / **Fn + Right Arrow (`Fn + →`)**
+   - macOS **Cmd + Down Arrow (`⌘ + ↓`)** / **Cmd + End (`⌘ + End`)** / **Ctrl + End**
+   - 支持结合 **Shift** 键触发从当前行到末行的范围选择。
+3. **PageUp / PageDown（向上 / 向下翻页）**：
+   - 原生 **PageUp** / **Fn + Up Arrow (`Fn + ↑`)**
+   - 原生 **PageDown** / **Fn + Down Arrow (`Fn + ↓`)**
+   - 支持结合 **Shift** 键按页批量选择文件。
