@@ -43,6 +43,10 @@ Quick Search allows you to jump directly to a file by typing its name.
 - **Matching Rules**: You can configure it to match the beginning of the filename, or anywhere in the name. Type a trailing dot (`.`) to specifically match the end of a filename (excluding the extension).
 
 ## Quick View Panel
+
+![Quick View Panel](images/快速查看Panel.png)  
+*Quick View Panel: Browse on one side, preview in real-time on the other*
+
 The Quick View feature allows you to use the opposite panel as a real-time preview window for your files.
 
 - **Hotkeys and Commands (`cm_QuickView`)**:
