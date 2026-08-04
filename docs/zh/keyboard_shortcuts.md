@@ -121,17 +121,11 @@ ATBCmder 高度依赖键盘操作。这里是一份整理自项目默认配置�
 
 ## 8. 文件列表导航 (File Panel Navigation)
 
-详细列表视图与缩略图视图支持以下快捷导航操作：
+详细列表视图与缩略图视图支持以下快捷导航操作（均支持配合 `Shift` 键进行连续范围选择）：
 
-1. **Home 键（跳转到顶部第一行）**：
-   - 原生 **Home** / **Fn + Left Arrow (`Fn + ←`)**
-   - macOS **Cmd + Up Arrow (`⌘ + ↑`)** / **Cmd + Home (`⌘ + Home`)** / **Ctrl + Home**
-   - 支持结合 **Shift** 键触发从当前行到首行的范围选择。
-2. **End 键（跳转到底部最后一行）**：
-   - 原生 **End** / **Fn + Right Arrow (`Fn + →`)**
-   - macOS **Cmd + Down Arrow (`⌘ + ↓`)** / **Cmd + End (`⌘ + End`)** / **Ctrl + End**
-   - 支持结合 **Shift** 键触发从当前行到末行的范围选择。
-3. **PageUp / PageDown（向上 / 向下翻页）**：
-   - 原生 **PageUp** / **Fn + Up Arrow (`Fn + ↑`)**
-   - 原生 **PageDown** / **Fn + Down Arrow (`Fn + ↓`)**
-   - 支持结合 **Shift** 键按页批量选择文件。
+| 命令 / 动作 | 功能描述 | 主快捷键 | 副快捷键 / macOS 热键 |
+| :--- | :--- | :---: | :---: |
+| `Home` / `cm_GoToFirst` | 跳转到顶部第一行（支持 `Shift` 向上连续选择） | `Home`, `Fn+Left` (`Fn+←`) | `Cmd+Up`, `Cmd+Home`, `Ctrl+Home` |
+| `End` / `cm_GoToLast` | 跳转到底部最后一行（支持 `Shift` 向下连续选择） | `End`, `Fn+Right` (`Fn+→`) | `Cmd+Down`, `Cmd+End`, `Ctrl+End` |
+| `PageUp` | 向上翻页（支持 `Shift` 按页批量选择） | `PageUp` | `Fn+Up` (`Fn+↑`) |
+| `PageDown` | 向下翻页（支持 `Shift` 按页批量选择） | `PageDown` | `Fn+Down` (`Fn+↓`) |
