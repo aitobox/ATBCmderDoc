@@ -14,6 +14,23 @@ It supports three layout modes, accessible from the **Show** menu:
 
 Right-click the tree view to toggle the **Show Files** option if you want to see files alongside directories in the tree.
 
+## Quick View Panel
+
+![Quick View Panel](images/快速查看Panel.png)  
+*Quick View Panel: Browse on one side, preview in real-time on the other*
+
+The Quick View feature allows you to use the opposite panel as a real-time preview window for your files.
+
+- **Hotkeys and Commands (`cm_QuickView`)**:
+  Trigger the Quick View mode on and off using the default `Ctrl+Q` or `Cmd+Q` shortcuts.
+- **Multi-format Inline Preview & Property Fallback**:
+  - **Previewable formats**: Seamlessly integrates text/source code, images, PDFs, audio/video, CSV/JSON, etc., embedding the preview directly in the opposite panel.
+  - **Non-previewable formats or Directories**: Automatically displays a metadata panel listing file properties, UNIX octal permissions and read/write/execute matrices, background-calculated MD5/SHA256 hashes, and directory statistics (number of files and subfolders).
+- **Smooth Navigation & Debouncing**:
+  When navigating the file list using arrow keys, the opposite Quick View panel updates with a 100ms debouncing timer. This ensures the UI remains smooth and stutter-free even when scrolling rapidly.
+- **Symmetric Flip**:
+  If Quick View is active and you press `Tab` or click to switch focus to the opposite panel, the Quick View automatically flips to the new opposite side, seamlessly following your currently selected file.
+
 ## Folder Tabs & Favorites (Directory Hotlist)
 ### Folder Tabs
 You can open multiple folders in tabs within both the left and right panels.
@@ -41,23 +58,6 @@ Quick Search allows you to jump directly to a file by typing its name.
 - **Navigation**: Use the `Up` and `Down` arrows to jump between matching files. Press `Enter` to open the file or folder.
 
 - **Matching Rules**: You can configure it to match the beginning of the filename, or anywhere in the name. Type a trailing dot (`.`) to specifically match the end of a filename (excluding the extension).
-
-## Quick View Panel
-
-![Quick View Panel](images/快速查看Panel.png)  
-*Quick View Panel: Browse on one side, preview in real-time on the other*
-
-The Quick View feature allows you to use the opposite panel as a real-time preview window for your files.
-
-- **Hotkeys and Commands (`cm_QuickView`)**:
-  Trigger the Quick View mode on and off using the default `Ctrl+Q` or `Cmd+Q` shortcuts.
-- **Multi-format Inline Preview & Property Fallback**:
-  - **Previewable formats**: Seamlessly integrates text/source code, images, PDFs, audio/video, CSV/JSON, etc., embedding the preview directly in the opposite panel.
-  - **Non-previewable formats or Directories**: Automatically displays a metadata panel listing file properties, UNIX octal permissions and read/write/execute matrices, background-calculated MD5/SHA256 hashes, and directory statistics (number of files and subfolders).
-- **Smooth Navigation & Debouncing**:
-  When navigating the file list using arrow keys, the opposite Quick View panel updates with a 100ms debouncing timer. This ensures the UI remains smooth and stutter-free even when scrolling rapidly.
-- **Symmetric Flip**:
-  If Quick View is active and you press `Tab` or click to switch focus to the opposite panel, the Quick View automatically flips to the new opposite side, seamlessly following your currently selected file.
 
 ## Essential Keyboard Shortcuts (Hotkeys)
 
