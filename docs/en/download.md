@@ -28,3 +28,73 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 3. Scroll down and select **Full Disk Access**.
 4. Find the application (**ATBCmder**) in the list and toggle the switch to turn it on. If the application is not in the list, click the **+** button at the bottom to add it manually.
 5. The system will ask you to enter your Mac login password or use Touch ID to confirm the changes.
+
+## Release Notes
+
+### 1.3.6 (2026-08-04)
+
+- Network VFS Enhancements: add UTF-8/GBK auto-detection, dynamic makefile encoding update, fallback handling, and socket reset for FTP; resolve timeout & reply desync
+- WebDAV & SMB Fixes: fix WebDAV/SMB root path stripping, last_error propagation, connection reliability, VFS icons & tab title displays
+- Thumbnail Navigation: implement smooth 2D grid arrow navigation for Thumbnail View
+- i18n & Code Quality: fix corrupted Close Tab translations in zh_CN/zh_TW catalogs and complete codebase optimization audit
+
+### 1.3.5 (2026-08-03)
+
+- Quick View Panel: implement Quick View feature (`cm_QuickView`, `Cmd+Q`/`Ctrl+Q`) supporting multi-format previews, fallback file properties, symmetric flip, Show menu integration, and full i18n
+- Quick View Widgets: add `QuickViewContainer` and `QuickViewPropertiesWidget` integrated into FilePanel
+- UI Polish: fix tab header alignment and options dialog page squishing issues in light theme
+
+### 1.3.4 (2026-08-02)
+
+- File Panel UI: add Shift+PageUp / Shift+PageDown batch selection in file panel views
+- File Operations: fix F5 copy and F6 move file/directory defects
+- Build Scripts: set exact certificate identity names, add timestamping to codesign, and handle notarization invalid status gracefully
+
+### 1.3.3 (2026-08-01)
+
+- Transfer Engine: calculate accurate real-time transfer speed and ETA in ProcessTransferWorker
+- Permissions & Sandbox: separate macOS sandbox checks from Full Disk Access detection flow
+- Build Scripts: update build script configuration for 1.3.3 DMG signed builds
+
+### 1.3.2 (2026-08-01)
+
+- Subprocess Transfer Worker: fix freeze/startup failure under Nuitka standalone App Store bundle mode
+- Agent Skills: add i18n completeness audit check to code-review-optimization-audit skill
+
+### 1.3.1 (2026-08-01)
+
+- macOS Sandbox: fix false 'Full Disk Access Granted' state caused by `os.access` check
+- Concurrent Tasks: resolve state cross-talk for concurrent background operations
+- i18n: add Chinese translation for batch checkbox in permanent delete dialog
+- Agent Skills: add and update code review optimization audit skill
+
+### 1.3.0 (2026-08-01)
+
+- Process-isolated transfer engine: implement ProcessTransferWorker & ProcessIOEngine to offload file copy/move I/O from UI thread
+- Transfer performance & responsiveness: 10Hz IPC rate limiting, adaptive buffering, and macOS `F_NOCACHE` optimization to prevent GUI stutter
+- Code audit & hardening: 4-phase refactoring including concurrency mutex locks, security hardening, and architecture cleanups
+- UI fixes: fix Shiboken C++ deletion error, horizontal panel mode layout, and background task progress indicator signals
+
+### 1.2.0 (2026-07-30)
+
+- Implement global I/O process pool (IoWorkerPool) to isolate blocking file I/O operations and prevent GUI freezes
+- Config versioning: read/write app_version on XML root node and add automated migration runner registry
+- Drag & Drop / Clipboard: integrate native macOS Finder bridge, spring-loaded folders, and clipboard state machine
+- Path expansion: add shared `expand_path` utility supporting `~`, `$VAR`, `%VAR%`, and `%COMMANDER_PATH%`
+- Hotlist: implement standalone HotlistConfig singleton and default hotlist configuration
+
+### 1.1.0 (2026-07-29)
+
+- Fix release note entry order to ensure reverse chronological sorting below Release Note header
+- Fix version manager script to support System/LastVersion XML node in default_config.xml
+- Hotkeys: add Meta+Tab and Meta+Shift+Tab default shortcuts for tab navigation
+- Favorite Tabs: add auto-migration and cleanup for legacy favorite tabs from main config
+- File Viewer: optimize large file loading performance and memory usage
+
+### 1.0.1 (2026-07-22)
+
+> Fix F3 text preview failure in App Store sandbox environments
+
+### 1.0.0 (2026-07-18)
+
+> Initial implementation of the Python port of TotalCommander.
