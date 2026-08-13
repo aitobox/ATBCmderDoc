@@ -31,6 +31,45 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.4.2 (2026-08-13)
+
+- Enhanced AI Semantic Filter: supported parsing more common extensions, plural forms, and fully integrated with i18n
+- Semantic Search UX: replaced wait cursor with QProgressBar, and improved Enter key behavior for completions
+- Core Semantic Parsing: improved target type detection and keyword stripping for more accurate natural language search
+
+### 1.4.1 (2026-08-13)
+
+- Comprehensive codebase review and refactoring (Batches A-D)
+- Security enhancements: Fixed potential path traversal and access vulnerabilities
+- Concurrency & Performance: Improved background thread safety and execution efficiency
+- Architecture: Enhanced stability and resource management in core components
+
+### 1.4.0 (2026-08-12)
+
+- Deep VFS network fixes: multi-encoding support, protocol drivers, chained archive mounting, and conflict resolution
+- Enhanced app upgrade module: SSL verification fixes, DMG download validation, and UI integration
+- Release note UI: display full version history during automatic updates
+
+### 1.3.9 (2026-08-12)
+
+- Added built-in EPUB reader (F3 quick view)
+- Implemented app upgrade detection mechanism
+- Fixed VFS worker freeze during file conflict resolution
+
+### 1.3.8 (2026-08-08)
+
+- Tree View UI refinement
+- Refactored fsspec network integration
+- Improved handling of invalid file characters
+
+### 1.3.7 (2026-08-06)
+
+- Network VFS Architecture: overhaul network file systems (FTP/WebDAV/SMB) using `fsspec`, implementing async `VfsTableModel`, streaming `StreamCopyWorker`, remote file operations (mkdir/rename/delete/overwrites), and F3/F4 remote viewing/editing
+- System Tray & Hotkeys: support minimize to system tray, global shortcut (`Option+Cmd+H`), macOS Dock icon toggle, and native template icon integration
+- LLM Configuration: introduce `default_llm.xml` resource and singleton for AI semantic filtering and options UI
+- Navigation Enhancements: support PageUp / PageDown / Home / End / Fn navigation shortcuts across file panels and hotlist popups
+- Internationalization: wrap all VFS error messages, Quick View panel labels, and tray menu strings with i18n translation catalogs
+
 ### 1.3.6 (2026-08-04)
 
 - Network VFS Enhancements: add UTF-8/GBK auto-detection, dynamic makefile encoding update, fallback handling, and socket reset for FTP; resolve timeout & reply desync
