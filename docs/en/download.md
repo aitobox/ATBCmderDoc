@@ -31,6 +31,12 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.4.3 (2026-08-14)
+
+- New macOS Native UI (Aqua Blue Theme): introduced as the new default theme, featuring interactive breadcrumb navigation (with cascading subfolder drilldown), Mac-style storage meter (fixed TB overflow), and rounded capsule selection
+- Deep UI Polish: refined tab close button layout, fixed command prompt overlapping, and unified toolbar backgrounds, dividers, and panel borders across all themes
+- i18n & App Upgrade: completed full project i18n coverage audit; added AList/OpenList share API support in the automatic update module
+
 ### 1.4.2 (2026-08-13)
 
 - Enhanced AI Semantic Filter: supported parsing more common extensions, plural forms, and fully integrated with i18n
