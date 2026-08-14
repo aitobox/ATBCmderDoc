@@ -59,6 +59,9 @@
 ![Thumbnail Display](images/缩略图显示.png)  
 *Thumbnail Display*
 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*Tree View and Thumbnail Display*
+
 ![Video Player](images/视频播放器.png)  
 *Video Player*
 

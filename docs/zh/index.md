@@ -59,6 +59,9 @@
 ![缩略图显示](images/缩略图显示.png)  
 *缩略图显示*
 
+![树状视图与缩略图模式](images/treeview+thumbview.png)  
+*树状视图与缩略图模式*
+
 ![视频播放器](images/视频播放器.png)  
 *视频播放器*
 
