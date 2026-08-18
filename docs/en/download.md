@@ -31,6 +31,46 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.5.0 (2026-08-17)
+
+- Global Session Manager: Implemented application-level session persistence that seamlessly restores all left/right panel tabs, paths, view modes (Flat/Tree), panel ratios, and multi-monitor window bounds upon restart
+- Settings Import/Export: Added 1-click ZIP export and import for all application configurations and data, streamlining cross-device migration
+- Image Editor Enhancements: Added custom image resizing with aspect ratio locking and quick preset resolutions
+
+### 1.4.9 (2026-08-17)
+
+- Advanced Image Editor: Added image cropping, fine rotation, filter adjustments, and an OpenCV-powered AI watermark removal & inpainting module
+- Enhanced Image Viewer: Full support for animated GIFs, zooming, panning, rotation, EXIF metadata extraction, and slideshow mode
+- Spotlight Search Integration: Deeply integrated macOS native Spotlight for instant file searching and improved search result focus navigation
+
+### 1.4.8 (2026-08-16)
+
+- Comprehensive Localization (i18n): Full audit and translation completion across the UI, F3 Viewer, and F4 Editor, significantly improving the localization of media players and preview components
+- F3 Viewer Optimizations: Improved external link handling and search wrap-around logic in the fallback EPUB reader (SimpleEpubPanel); streamlined the PDF viewer toolbar by removing redundant rotation buttons
+
+### 1.4.7 (2026-08-16)
+
+- Media Player Enhancements: significantly improved UI, UX, and stability of the built-in audio and video players
+- Build System Refactoring: renamed `BUILD_EPUB` env flag to `BUILD_WEBENGINE` to accurately reflect packaging behavior
+- Packaging Dependencies Fix: ensured `ebooklib` is always bundled in lightweight DMG builds for the fallback EPUB reader
+
+### 1.4.6 (2026-08-16)
+
+- Lightweight EPUB Reader (SimpleEpubPanel): Added a WebEngine-free fallback EPUB reader with chapter navigation and search, plus a `--epub-reader` CLI argument to override the default engine
+- Cascading Breadcrumb Menus: Refactored the breadcrumb dropdown into a single-column scrollable layout with infinite cascading submenus, fixing overlap and mouse-grab lockup issues
+
+### 1.4.5 (2026-08-15)
+
+- Advanced Code Viewer (F3): Added syntax highlighting (Pygments), live file tailing, regex search, and line numbers
+- Advanced Code Editor (F4): Added dynamic encoding/EOL conversion, atomic safe saving, smart indentation, and find/replace
+- Global External Drag & Drop: Seamlessly drag files, including deeply nested archive contents, directly to macOS desktop or third-party editors (e.g. VSCode)
+
+### 1.4.4 (2026-08-15)
+
+- Typography Enhancements: increased font sizes across menus, buttons, tooltips, and settings dialog for better readability
+- Resize Cursor Fixes: restored missing mouse resize cursors on window edges, splitters, and table column headers
+- macOS UI Fixes: resolved black selection backgrounds on dropdown menus and fixed title overflows in group boxes
+
 ### 1.4.3 (2026-08-14)
 
 - New macOS Native UI (Aqua Blue Theme): introduced as the new default theme, featuring interactive breadcrumb navigation (with cascading subfolder drilldown), Mac-style storage meter (fixed TB overflow), and rounded capsule selection
