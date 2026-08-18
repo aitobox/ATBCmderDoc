@@ -141,9 +141,9 @@ To build static assets locally:
 
 When working on this repository, ensure compliance with the following rules:
 
-1. **Content Parity & Documentation Skill:**
+1. **Content Parity & Documentation Skills:**
    Always maintain 1:1 page and structural parity between `docs/en/` and `docs/zh/`. If adding, editing, or reordering sections in English docs, apply equivalent changes to Chinese docs.
-   **CRITICAL**: You MUST invoke the `writing-bilingual-docs` skill (located in `.gemini/skills/writing-bilingual-docs/SKILL.md`) before making ANY documentation changes. This ensures compliance with the project's strict bilingual requirements and user-friendly language guidelines.
+   **CRITICAL**: You MUST invoke the `writing-bilingual-docs` skill (located in `.gemini/skills/writing-bilingual-docs/SKILL.md`) before making ANY documentation changes, and the `updating-release-notes` skill (located in `.gemini/skills/updating-release-notes/SKILL.md`) when adding or updating release notes.
 
 2. **Preserve Overrides & Header UI:**
    Do not overwrite or remove custom partials in `overrides/partials/header.html` or `overrides/partials/source.html` unless explicitly updating top navigation header elements.
