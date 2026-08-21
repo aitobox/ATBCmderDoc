@@ -31,6 +31,23 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.5.4 (2026-08-21)
+
+- Panel Focus & Selection Polish: Fixed lingering focus outlines on inactive split panels when switching panes; improved selection reset logic after moving files across panels to prevent accidental operations
+
+### 1.5.3 (2026-08-19)
+
+- Breadcrumb Cascading Submenu Polish: Precisely aligned the vertical position of cascading subfolder menus with the highlighted row, eliminating layout jumping and smoothing out deep folder traversal
+
+### 1.5.2 (2026-08-19)
+
+- Startup & Release Notes Fix: Fixed an issue where the Release Notes dialog repeatedly appeared on every app startup; enhanced `Config.get` default fallback handling to ensure release notes only prompt on initial launch or version upgrades
+
+### 1.5.1 (2026-08-19)
+
+- Multilingual Release Notes: Added 7 new mainstream language release notes (zh_TW, ja, ko, de, fr, ru, es) with dynamic discovery and 5-tier hierarchical fallback
+- macOS Code Signing & Build Polish: Refactored packaging scripts with Mach-O binary targeting and timestamp retry wrappers, eliminating signing failures and throttling
+
 ### 1.5.0 (2026-08-17)
 
 - Global Session Manager: Implemented application-level session persistence that seamlessly restores all left/right panel tabs, paths, view modes (Flat/Tree), panel ratios, and multi-monitor window bounds upon restart
