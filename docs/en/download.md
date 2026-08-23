@@ -31,6 +31,15 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.5.6 (2026-08-22)
+
+- Per-Tab Independent View Modes: Each tab now retains its own independent view layout (Flat View / Tree Mode), automatically synchronizing menu state and seamlessly persisting across session restores
+- Smart File Open & System Fallback: Added a multi-layer file type detector (magic bytes / MIME / extension) to open supported media and documents in the built-in Viewer/Editor while cleanly falling back to OS default apps for unsupported files
+
+### 1.5.5 (2026-08-21)
+
+- Update Check Policy Optimization: Disabled automatic update checks on application startup by default; updates can now be checked manually via `Help` -> `Check for Updates...`, improving launch speed and offline privacy
+
 ### 1.5.4 (2026-08-21)
 
 - Panel Focus & Selection Polish: Fixed lingering focus outlines on inactive split panels when switching panes; improved selection reset logic after moving files across panels to prevent accidental operations
