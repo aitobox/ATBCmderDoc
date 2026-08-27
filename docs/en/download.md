@@ -31,6 +31,18 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.6.1 (2026-08-27)
+
+- Comprehensive macOS UI/UX Overhaul: Grounded in Apple HIG with refined Light/Dark palettes, Finder-style pane highlight contrast, native card tooltips, and smooth segmented control animations
+- Vector Icon Engine & Modern Widgets: Added an SF Symbols-inspired resolution-independent vector icon generator and modernized drive bars, breadcrumbs, and combo boxes
+- Interaction & Layout Polish: Multi-rename redesigned with a 2-column layout and real-time name collision detection; Thumbnail View supports `Cmd + Wheel` dynamic zooming; unified empty state views added
+
+### 1.6.0 (2026-08-27)
+
+- Dual-Distribution Pipeline: Established separate automated build workflows tailored for Standalone DMG distribution and Mac App Store (MAS) release
+- App Store Policy Compliance: Dynamically adjusts UI menus in MAS builds by removing external update check items to strictly meet Apple Review Guidelines, while preserving manual update checks in DMG builds
+- `itms-services` Binary Patcher: Added an automated binary scanner and safe patcher to eliminate private protocol strings in compiled PySide6/Qt artifacts, ensuring flawless App Store Connect automated validation
+
 ### 1.5.6 (2026-08-22)
 
 - Per-Tab Independent View Modes: Each tab now retains its own independent view layout (Flat View / Tree Mode), automatically synchronizing menu state and seamlessly persisting across session restores
