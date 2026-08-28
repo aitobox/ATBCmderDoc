@@ -95,7 +95,7 @@ ATBCmderDoc/
 - Header includes a dynamic language switcher button:
   - On `/en/` pages, displays a `中文` button linking to the corresponding `/zh/` page.
   - On `/zh/` pages, displays an `English` button linking to the corresponding `/en/` page.
-- Also includes header links for **Contact** (`mailto:aitoboxinc@gmail.com`) and **Forum** (GitHub Discussions).
+- Also includes header links for **Contact** (`mailto:cmder@aitobox.com`) and **Forum** (GitHub Discussions).
 
 ### 2. Mac App Store Button (`overrides/partials/header.html`)
 - Displays a dedicated Mac App Store button in the top navigation bar linking to the ATBCmder app listing.

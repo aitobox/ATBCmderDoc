@@ -19,4 +19,4 @@ Any network connections made by ATBCmder (such as FTP, SFTP, WebDAV, or Samba co
 This policy is provided to clarify our data practices in accordance with the Apple App Store guidelines. Because we collect absolutely zero data from our users, there is no data to share, sell, or delete.
 
 ## Contact Us
-If you have any questions or concerns about this Privacy Policy or how your data is handled, please contact us at: [aitoboxinc@gmail.com](mailto:aitoboxinc@gmail.com) or reach out on our [Community Forum](https://github.com/aitobox/ATBCmderDoc/discussions).
+If you have any questions or concerns about this Privacy Policy or how your data is handled, please contact us at: [cmder@aitobox.com](mailto:cmder@aitobox.com) or reach out on our [Community Forum](https://github.com/aitobox/ATBCmderDoc/discussions).

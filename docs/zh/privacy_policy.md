@@ -19,4 +19,4 @@ ATBCmder 建立的所有网络连接（例如 FTP、SFTP、WebDAV 或 Samba 连�
 本政策旨在根据 Apple App Store 指南说明我们的数据处理方式。由于我们绝对不收集任何用户数据，因此不存在任何需要共享、出售或删除的数据。
 
 ## 联系我们
-如果您对本隐私政策或数据处理有任何疑问或建议，请通过以下方式联系我们：[aitoboxinc@gmail.com](mailto:aitoboxinc@gmail.com) 或在我们的 [社区讨论区](https://github.com/aitobox/ATBCmderDoc/discussions) 中进行反馈。
+如果您对本隐私政策或数据处理有任何疑问或建议，请通过以下方式联系我们：[cmder@aitobox.com](mailto:cmder@aitobox.com) 或在我们的 [社区讨论区](https://github.com/aitobox/ATBCmderDoc/discussions) 中进行反馈。
