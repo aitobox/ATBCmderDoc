@@ -98,6 +98,9 @@ Step-by-step solutions for common tasks (FTP setup, archive editing, audio playb
 ### 🔒 [Privacy Policy](privacy_policy.md)
 Our commitment to complete user data privacy and zero data collection.
 
+### 📥 [Download & Installation](download.md)
+ATBCmder is now officially available on the Mac App Store! Download via the App Store or get the standalone DMG installer.
+
 ---
 
 [Read Getting Started Guide &rarr;](getting_started.md)

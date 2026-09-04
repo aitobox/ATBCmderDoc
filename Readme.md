@@ -26,4 +26,5 @@ Stop managing files. Start commanding them.
 
 ## Download
 
-[DMG & AppStore](https://cmder.aitobox.com/en/download/)
+- **Mac App Store**: [Download on Mac App Store](https://apps.apple.com/app/atbcmder/id6792398333)
+- **Documentation & DMG**: [Download Page](https://cmder.aitobox.com/en/download/)

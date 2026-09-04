@@ -4,12 +4,9 @@
 
 ## 1. Mac App Store (推荐)
 
-这是最推荐的安装方式。通过苹果官方应用商店下载，您可以获得自动更新和最完整的系统集成。
+这是最推荐的安装方式。**ATBCmder 现已正式上架苹果官方 Mac App Store！** 通过 App Store 下载安装，您可以享受无缝自动更新、原生沙盒安全保护以及最完整的 macOS 系统集成。
 
-> **🚧 正在申请上架中**  
-> 我们的应用目前正在 Mac App Store 的审核上架过程中，敬请期待！在此期间，请使用下方的 DMG 方式进行安装。
-
-[Mac App Store 下载页面](https://apps.apple.com/app/atbcmder/6792398333)
+- **Mac App Store 官方下载**: [前往 Mac App Store 下载 ATBCmder](https://apps.apple.com/app/atbcmder/id6792398333)
 
 ## 2. DMG 安装包下载
 

@@ -9,7 +9,7 @@ Welcome to **ATBCmderDoc**, the official repository for the ATBCmder documentati
 - **Product Name:** ATBCmder — The Ultimate Keyboard-Driven File Manager for macOS
 - **Repository:** [`aitobox/ATBCmderDoc`](https://github.com/aitobox/ATBCmderDoc)
 - **Live Documentation Domain:** [https://cmder.aitobox.com](https://cmder.aitobox.com)
-- **Mac App Store URL:** [https://apps.apple.com/app/atbcmder/6792398333](https://apps.apple.com/app/atbcmder/6792398333)
+- **Mac App Store URL:** [https://apps.apple.com/app/atbcmder/id6792398333](https://apps.apple.com/app/atbcmder/id6792398333)
 
 ### About ATBCmder
 ATBCmder resurrects the classic dual-panel file management paradigm and supercharges it for macOS. Designed for software engineers, system administrators, and Vim enthusiasts, it enables a mouse-free, keyboard-native workflow with high efficiency and performance.

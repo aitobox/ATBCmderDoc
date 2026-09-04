@@ -34,7 +34,7 @@ features    = [
 ]
 
 [project.extra]
-app_store_url = "https://apps.apple.com/app/atbcmder/6792398333"
+app_store_url = "https://apps.apple.com/app/atbcmder/id6792398333"
 
 [project.extra_css]
 files = ["stylesheets/extra.css"]

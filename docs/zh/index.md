@@ -98,6 +98,9 @@
 ### 🔒 [隐私政策](privacy_policy.md)
 了解我们关于零数据收集与全本地运行的隐私安全承诺。
 
+### 📥 [下载与安装](download.md)
+ATBCmder 现已正式上架 Mac App Store！提供 App Store 官方下载及独立 DMG 安装包。
+
 ---
 
 [开始阅读快速入门 &rarr;](getting_started.md)
