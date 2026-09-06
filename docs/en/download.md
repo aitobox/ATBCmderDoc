@@ -28,6 +28,20 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.7.0 (2026-09-06)
+
+- Universal File Viewer & Office Preview Suite: Added native preview engines for Excel spreadsheets (with lazy virtual loading), Word documents (with pagination and embedded image rendering), and PowerPoint presentations (slide card view); added previews for SQLite databases, Markdown (with TOC), Jupyter Notebooks, fonts, archives, audio, and EML; implemented instant streaming infinite scroll for large text files
+- Side-by-Side File Diff Viewer: Built-in vimdiff-style two-way comparison tool with character-level diff highlighting, hunk copying, live editing, undo/redo, and encoding preservation
+- Advanced File Search Engine: Rewritten search subsystem with default fuzzy substring matching, regex support, and a "Feed to Listbox" tab mode; batched UI throttling eliminates UI freezes on massive search results
+- File Operations & UI Hardening: Fixed duplicate overwrite prompts during cross-device moves and transfer queue deadlocks; added file creation timestamps in properties dialog; enabled vertical middle toolbar by default and refined active pane visual indicators
+
+### 1.6.2 (2026-09-03)
+
+- Rubberband Drag Selection & Interaction: Added mouse rubberband drag selection in both File Table View and Thumbnail View, along with clicking empty space to deselect all
+- Global Window Hotkey & Shortcut Input: Added a configurable global hotkey to show/hide the application window; fixed 4-key modifier combinations input in hotkey settings
+- macOS Dock & Tray Restore Fix: Resolved an issue where clicking the Dock icon while minimized to the tray could fail to restore the main window or show a blank frame
+- Core Hardening & Stability Improvements: Fixed potential lifecycle segfaults, strengthened VFS backends, and stabilized thread teardown and test suites
+
 ### 1.6.1 (2026-08-27)
 
 - Comprehensive macOS UI/UX Overhaul: Grounded in Apple HIG with refined Light/Dark palettes, Finder-style pane highlight contrast, native card tooltips, and smooth segmented control animations
