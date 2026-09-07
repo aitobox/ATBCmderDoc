@@ -190,8 +190,8 @@ Detecting differences between configuration revisions, source code files, or dat
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │  Side-by-side Diff: config.py (Left)  vs.  config.py.new (Right)                       │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│ [💾 Save Left] [💾 Save Right] | [Copy to Right →] [← Copy to Left] | [Prev] [Next]      │
-│ [🔄 Re-compare] | [✔] Ignore whitespace  [ ] Ignore case  [ ] Ignore blank lines        │
+│ [💾 Save Left] [💾 Save Right] | [Copy to Right →] [← Copy to Left] | [Prev] [Next]    │
+│ [🔄 Re-compare] | [✔] Ignore whitespace  [ ] Ignore case  [ ] Ignore blank lines       │
 ├─────────────────────────────────────────────┬──────────────────────────────────────────┤
 │ config.py (Left)                            │ config.py.new (Right)                    │
 ├─────────────────────────────────────────────┼──────────────────────────────────────────┤
@@ -589,7 +589,7 @@ Verifying that downloaded files, disk images, or archive backups have not been c
 │ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  empty_manifest.txt   │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │  [Progress: 100%] Hashing completed.                                                   │
-│  [Calculate]    [Stop]    [💾 Save to File]                                 [Close]     │
+│  [Calculate]    [Stop]    [💾 Save to File]                                 [Close]    │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

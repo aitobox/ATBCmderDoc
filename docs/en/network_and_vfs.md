@@ -343,15 +343,15 @@ For servers you access regularly, the **Connection Manager** provides a complete
 ├──────────────────────────────┬─────────────────────────────────────────────────────────┤
 │  Saved Connections           │  Connection Details                                     │
 │  ┌────────────────────────┐  │  Label:        [ Staging Web Server (AWS)             ] │
-│  │ 🔐 AWS Staging Server  │  │  Protocol:     [ SFTP (port 22)                     ▼ ]  │
-│  │ 🖧 Synology Office NAS  │  │  Host:         [ ec2-54-210-10-2.compute.amazonaws.com] │
-│  │ 🌐 Nextcloud Personal  │  │  Port:         [ 22                                   ]  │
-│  │ 📂 Legacy Archive FTP  │  │  Username:     [ ubuntu                               ]  │
+│  │ 🔐 AWS Staging Server  │  │  Protocol:     [ SFTP (port 22)                     ▼ ] │
+│  │ 🖧 Synology Office NAS │  │  Host:         [ ec2-54-210-10-2.compute.amazonaws.com] │
+│  │ 🌐 Nextcloud Personal  │  │  Port:         [ 22                                   ] │
+│  │ 📂 Legacy Archive FTP  │  │  Username:     [ ubuntu                               ] │
 │  │                        │  │  Password:     [ ••••••••••••••••••                   ] │
 │  │                        │  │  Remote Path:  [ /var/www/production                  ] │
 │  │                        │  │  [✓] Remember password in macOS Keychain                │
 │  └────────────────────────┘  │                                                         │
-│  [➕ New] [⧉ Dup] [🗑 Del]    │  [🔍 Test Connection]          [💾 Save]  [🔗 Connect]      │
+│  [➕ New] [⧉ Dup] [🗑 Del]    │  [🔍 Test Connection]          [💾 Save]  [🔗 Connect] │
 └──────────────────────────────┴─────────────────────────────────────────────────────────┘
 ```
 

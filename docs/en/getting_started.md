@@ -71,7 +71,7 @@ ATBCmder provides a clean, native macOS interface built with Qt6 and PySide6, de
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │ [1] NATIVE MACOS MENU BAR                                                       │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...      │
+│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...   │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
 │ [3] BREADCRUMB BAR (Left Panel)     │   │ [3] BREADCRUMB BAR (Right Panel)      │
 │  / ▸ Users ▸ username ▸ Projects    │   │  /Volumes ▸ Backup ▸ Assets           │

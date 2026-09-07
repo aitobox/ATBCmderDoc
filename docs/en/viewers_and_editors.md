@@ -106,7 +106,7 @@ When you highlight a directory or a file format that cannot be rendered as text 
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│  📁 release_builds                                      │
+│  📁 release_builds                                     │
 │  /Volumes/ExternalSSD/Projects/release_builds          │
 ├────────────────────────────────────────────────────────┤
 │  Metadata                                              │
