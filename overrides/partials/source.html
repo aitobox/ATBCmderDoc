@@ -7,15 +7,25 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.53 1.45 4.77 3.65 6.13A8.475 8.475 0 0 1 4 19.5c-.32.74.52 1.44 1.18 1.03 2.1-.87 4.1-2.12 5.76-3.48.35.03.7.05 1.06.05 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
     <span>Forum</span>
   </a>
-  {% if config.theme.language == 'zh' or (page and page.url and 'zh' in page.url) %}
-    <a href="/en/{{ page.url if page and page.url else '' }}" title="Switch to English" class="md-header__button atb-header-lang" onclick="try{localStorage.setItem('preferred_language','en');}catch(e){}">
+
+  <details class="atb-lang-dropdown" id="atb-lang-switcher">
+    <summary class="md-header__button atb-lang-summary" aria-label="Select Language" title="Select Language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
-      <span>English</span>
-    </a>
-  {% else %}
-    <a href="/zh/{{ page.url if page and page.url else '' }}" title="切换为中文" class="md-header__button atb-header-lang" onclick="try{localStorage.setItem('preferred_language','zh');}catch(e){}">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
-      <span>中文</span>
-    </a>
-  {% endif %}
+      <span class="atb-lang-current" id="atb-lang-current-label">Language</span>
+      <svg class="atb-lang-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+    </summary>
+    <div class="atb-lang-menu" role="menu">
+      <a href="/en/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="en" role="menuitem">English</a>
+      <a href="/zh/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="zh" role="menuitem">简体中文</a>
+      <a href="/zh-hant/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="zh-hant" role="menuitem">繁體中文</a>
+      <a href="/ja/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="ja" role="menuitem">日本語</a>
+      <a href="/de/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="de" role="menuitem">Deutsch</a>
+      <a href="/fr/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="fr" role="menuitem">Français</a>
+      <a href="/es/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="es" role="menuitem">Español</a>
+      <a href="/pt/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="pt" role="menuitem">Português</a>
+      <a href="/ko/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="ko" role="menuitem">한국어</a>
+      <a href="/ru/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="ru" role="menuitem">Русский</a>
+      <a href="/it/{{ page.url if page and page.url else '' }}" class="atb-lang-item" data-lang="it" role="menuitem">Italiano</a>
+    </div>
+  </details>
 </div>

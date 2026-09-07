@@ -275,6 +275,151 @@ body::before {
   transform: translateY(-1px);
 }
 
+/* --------------------------------------------------------------------------
+   Header Language Dropdown Switcher
+   -------------------------------------------------------------------------- */
+.atb-lang-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.atb-lang-dropdown > summary::-webkit-details-marker,
+.atb-lang-dropdown > summary::marker {
+  display: none;
+}
+
+.atb-lang-dropdown > summary {
+  list-style: none;
+}
+
+.atb-lang-summary {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 9999px;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: var(--md-primary-fg-color) !important;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: auto !important;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.atb-lang-summary:hover,
+.atb-lang-dropdown[open] > .atb-lang-summary {
+  background: rgba(14, 165, 233, 0.16);
+  border-color: var(--md-primary-fg-color);
+  transform: translateY(-1px);
+}
+
+.atb-lang-summary svg {
+  flex-shrink: 0;
+}
+
+.atb-lang-caret {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 0.1rem;
+}
+
+.atb-lang-dropdown[open] .atb-lang-caret {
+  transform: rotate(180deg);
+}
+
+.atb-lang-current {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.atb-lang-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 160px;
+  max-height: 420px;
+  overflow-y: auto;
+  z-index: 100;
+  border-radius: 8px;
+  padding: 6px 0;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  list-style: none;
+  margin: 0;
+}
+
+[data-md-color-scheme="slate"] .atb-lang-menu {
+  background: #1f232a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.atb-lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  line-height: 1.4;
+}
+
+.atb-lang-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .atb-lang-item {
+  color: inherit;
+}
+
+[data-md-color-scheme="slate"] .atb-lang-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--md-primary-fg-color);
+}
+
+.atb-lang-item.is-active {
+  font-weight: bold;
+  color: var(--md-typeset-a-color) !important;
+  background-color: rgba(2, 132, 199, 0.08);
+}
+
+[data-md-color-scheme="slate"] .atb-lang-item.is-active {
+  background-color: rgba(56, 189, 248, 0.12);
+}
+
+.atb-lang-item.is-active::after {
+  content: "✓";
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--md-typeset-a-color);
+  margin-left: 12px;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .atb-lang-current {
+    max-width: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 960px) {
   .atb-header-ph {
     display: none;
@@ -283,12 +428,16 @@ body::before {
 
 @media (max-width: 600px) {
   .atb-header-appstore span,
-  .atb-header-action span {
+  .atb-header-action span,
+  .atb-lang-current {
     display: none;
   }
   .atb-header-appstore,
   .atb-header-action {
     padding: 0.35rem 0.45rem !important;
+  }
+  .atb-lang-summary {
+    padding: 0.35rem 0.5rem !important;
   }
 }
 
@@ -577,6 +726,18 @@ kbd {
 
 [data-md-color-scheme="slate"] .md-nav__source .atb-header-actions {
   background: rgba(56, 189, 248, 0.06);
+}
+
+.md-nav__source .atb-lang-dropdown {
+  width: 100%;
+}
+
+.md-nav__source .atb-lang-menu {
+  position: static;
+  box-shadow: none;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 4px;
 }
 
 /* --------------------------------------------------------------------------
