@@ -43,6 +43,8 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
+.translation_cache.json
+scripts/.translation_cache.json
 nosetests.xml
 coverage.xml
 *.cover
