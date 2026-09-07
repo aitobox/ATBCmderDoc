@@ -205,7 +205,7 @@ body::before {
   gap: 0.35rem;
   padding: 0.35rem 0.85rem !important;
   border-radius: 9999px;
-  font-size: 0.825rem !important;
+  font-size: 0.75rem !important;
   font-weight: 600 !important;
   white-space: nowrap;
   flex-shrink: 0;
@@ -238,7 +238,7 @@ body::before {
   gap: 0.3rem;
   padding: 0.35rem 0.65rem !important;
   border-radius: 8px;
-  font-size: 0.825rem !important;
+  font-size: 0.75rem !important;
   font-weight: 500 !important;
   color: var(--md-default-fg-color--light) !important;
   white-space: nowrap;
@@ -258,7 +258,7 @@ body::before {
   gap: 0.3rem;
   padding: 0.35rem 0.75rem !important;
   border-radius: 9999px;
-  font-size: 0.825rem !important;
+  font-size: 0.75rem !important;
   font-weight: 600 !important;
   color: var(--md-primary-fg-color) !important;
   background: rgba(14, 165, 233, 0.08);
@@ -297,8 +297,8 @@ body::before {
    -------------------------------------------------------------------------- */
 .md-nav__link {
   border-radius: 6px;
-  padding: 0.35rem 0.6rem !important;
-  font-size: 0.825rem;
+  padding: 0.3rem 0.55rem !important;
+  font-size: 0.7rem;
   transition: all 0.15s ease;
 }
 
@@ -325,13 +325,13 @@ body::before {
    7. Typography, Headings & Content Flow
    -------------------------------------------------------------------------- */
 .md-typeset {
-  font-size: 0.8rem;
-  line-height: 1.65;
+  font-size: 0.72rem;
+  line-height: 1.6;
   color: var(--md-typeset-color);
 }
 
 .md-typeset h1 {
-  font-size: 1.95em;
+  font-size: 1.85em;
   font-weight: 800;
   letter-spacing: -0.025em;
   color: var(--md-default-fg-color);
@@ -339,13 +339,13 @@ body::before {
 }
 
 .md-typeset h2 {
-  font-size: 1.45em;
+  font-size: 1.38em;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--md-default-fg-color);
-  margin-top: 2rem;
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.45rem;
+  margin-top: 1.85rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
   position: relative;
 }
@@ -362,11 +362,11 @@ body::before {
 }
 
 .md-typeset h3 {
-  font-size: 1.2em;
+  font-size: 1.15em;
   font-weight: 600;
   letter-spacing: -0.015em;
   color: var(--md-default-fg-color);
-  margin-top: 1.6rem;
+  margin-top: 1.45rem;
 }
 
 /* Links */
@@ -446,7 +446,7 @@ kbd {
   color: var(--atb-sky-700);
   font-weight: 600;
   border-bottom: 2px solid var(--atb-sky-200);
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 0.85rem;
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
@@ -456,7 +456,7 @@ kbd {
 }
 
 .md-typeset table:not([class]) td {
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 0.85rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
 }
 

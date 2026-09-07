@@ -2,10 +2,10 @@
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md)
 [![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md)
-[![Release](https://img.shields.io/badge/version-v1.7.0-green.svg)](download.md)
+[![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md)
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md)
 
-Welcome to the official documentation portal for **ATBCmder v1.7.0** — the fast, keyboard-first, dual-panel file manager designed specifically for macOS. ATBCmder unites the speed and command heritage of orthodox file managers (Total Commander, Double Commander, Norton Commander) with modern macOS design, native system integration, and advanced power tools.
+Welcome to the official documentation portal for **ATBCmder** — the fast, keyboard-first, dual-panel file manager designed specifically for macOS. ATBCmder unites the speed and command heritage of orthodox file managers (Total Commander, Double Commander, Norton Commander) with modern macOS design, native system integration, and advanced power tools.
 
 ---
 

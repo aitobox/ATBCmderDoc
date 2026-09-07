@@ -2,10 +2,10 @@
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md)
 [![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md)
-[![Release](https://img.shields.io/badge/version-v1.7.0-green.svg)](download.md)
+[![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md)
 [![Privacy](https://img.shields.io/badge/telemetry-零数据收集-brightgreen.svg)](privacy_policy.md)
 
-欢迎查阅 **ATBCmder v1.7.0** 官方中文用户指南！ATBCmder 是一款专为 macOS 打造的高效、全键盘驱动的双面板文件管理器。它将经典正统文件管理器（Total Commander、Double Commander、Norton Commander）的高速操控精髓，与现代 macOS 视觉设计、原生系统集成和强大的生产力工具深度融合。
+欢迎查阅 **ATBCmder** 官方中文用户指南！ATBCmder 是一款专为 macOS 打造的高效、全键盘驱动的双面板文件管理器。它将经典正统文件管理器（Total Commander、Double Commander、Norton Commander）的高速操控精髓，与现代 macOS 视觉设计、原生系统集成和强大的生产力工具深度融合。
 
 ---
 

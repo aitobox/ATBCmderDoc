@@ -122,7 +122,7 @@ When you press a key chord, the **`HotkeyManager`** engine:
 
 ## 4. Master Categorized Dual-Matrix Tables
 
-The following reference tables document all commands supported by ATBCmder v1.7.0, categorized by functional workflow.
+The following reference tables document all commands supported by ATBCmder, categorized by functional workflow.
 
 ### 4.1 File Operations
 
