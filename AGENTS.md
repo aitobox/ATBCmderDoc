@@ -111,6 +111,18 @@ ATBCmderDoc/
 - Python 3.12+
 - Zensical installed (`pip install zensical`)
 
+### One-Click Local Build & Preview (`test.sh`)
+Build both English and Chinese documentation and preview the static site locally with one command:
+```bash
+./test.sh
+```
+Options:
+- `./test.sh` — Compile bilingual site, launch preview server, and open browser.
+- `./test.sh -b` (or `--build-only`) — Compile static site to `site/` without starting server.
+- `./test.sh -p 8080` (or `--port 8080`) — Run preview server on a custom port.
+- `./test.sh --no-open` — Start server without automatically launching browser.
+- `./test.sh -s en` / `./test.sh -s zh` — Launch Zensical live dev server for single-language hot-reloading.
+
 ### Local Server & Live Preview
 Run local development server for testing documentation changes:
 
