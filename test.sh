@@ -44,11 +44,15 @@ ${BOLD}Options:${NC}
   -p, --port <PORT>     Specify preview server port (default: 8000)
       --no-open         Do not automatically open default web browser
   -s, --serve <en|zh>   Run zensical live dev server for single language (hot reload)
+  -l, --lint            Check Markdown lists blank spacing across docs/
+      --fix-lists       Auto-format Markdown lists blank spacing in place
   -h, --help            Show this help message and exit
 
 ${BOLD}Examples:${NC}
   ./test.sh             # Compile both EN & ZH sites and start local preview
   ./test.sh -b          # Only compile static files to site/
+  ./test.sh -l          # Check Markdown lists formatting
+  ./test.sh --fix-lists # Auto-fix Markdown lists formatting
   ./test.sh -p 8080     # Preview on port 8080
   ./test.sh -s en       # Live edit English documentation
   ./test.sh -s zh       # Live edit Chinese documentation
@@ -61,6 +65,14 @@ while [[ $# -gt 0 ]]; do
         -b|--build-only)
             BUILD_ONLY=true
             shift
+            ;;
+        -l|--lint)
+            python3 scripts/format_markdown_lists.py --check
+            exit $?
+            ;;
+        --fix-lists)
+            python3 scripts/format_markdown_lists.py --fix
+            exit $?
             ;;
         -p|--port)
             if [ -n "$2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
@@ -139,6 +151,14 @@ fi
 
 # Step 1: Compile Static Site
 echo -e "${GREEN}==>${NC} ${BOLD}Compiling ATBCmder Documentation (Bilingual)...${NC}"
+
+# Check markdown list spacing before build
+if [ -f "scripts/format_markdown_lists.py" ] && [ -n "$PYTHON_CMD" ]; then
+    if ! $PYTHON_CMD scripts/format_markdown_lists.py --check > /dev/null 2>&1; then
+        echo -e "${YELLOW}!${NC} ${BOLD}Notice:${NC} Some Markdown files have lists without blank line spacing."
+        echo -e "  Run ${CYAN}./test.sh --fix-lists${NC} to automatically format them."
+    fi
+fi
 
 # Build English Documentation
 echo -e "${CYAN}-->${NC} Building English documentation (zensical.en.toml)..."

@@ -28,6 +28,7 @@ The ATBCmder Way (Orthodox Dual-Panel):
 ```
 
 ATBCmder solves this through the **Source-Target Dual-Panel Paradigm**:
+
 - **Constant Orientation**: Two independent directory views are visible side-by-side at all times.
 - **Predictable Directional Operations**: When you trigger Copy (`F5`) or Move (`F6`), ATBCmder automatically transfers items from the **Active Panel** (where your cursor is) to the **Inactive Panel** (the opposite view). No dragging, no guessing, no searching for hidden destination windows.
 - **Keyboard Velocity**: Keep your hands on the keyboard. Jump through directories, select files with wildcards, inspect archives, and execute batch transforms in milliseconds.

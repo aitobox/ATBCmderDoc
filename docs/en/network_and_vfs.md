@@ -66,6 +66,7 @@ Depending on the operational domain, `vfs://` URIs take one of two standard form
    ```
    vfs:///Users/brain/Documents/release_v1.7.zip/src/main.py
    ```
+
    - **Outer Prefix**: `vfs://` instructs `FileSystemModel` to intercept path traversal.
    - **Container Path**: `/Users/brain/Documents/release_v1.7.zip` identifies the physical container archive on local storage.
    - **Internal Member**: `src/main.py` pinpoints the virtual resource nested inside the archive.
@@ -76,6 +77,7 @@ Depending on the operational domain, `vfs://` URIs take one of two standard form
    vfs://smb://admin@192.168.1.50/StoragePool/Backups/2026/
    vfs://webdavs://user@cloud.mycompany.com:443/remote.php/dav/files/user/
    ```
+
    - **Scheme Specifier**: Identifies the transport driver (`sftp`, `ftp`, `ftps`, `smb`, `webdav`, `webdavs`, `gdrive`).
    - **Authentication**: Encodes user credentials and target port.
    - **Remote Target**: Resolves absolute directory and file paths on the remote host.
@@ -102,6 +104,7 @@ Depending on the operational domain, `vfs://` URIs take one of two standard form
 ### 2.2 Seamless Dual-Panel Integration
 
 Because virtual paths conform to standard directory structures inside ATBCmder, you enjoy full dual-panel parity:
+
 - **Tabbed Virtual Workspaces**: Open a remote SFTP folder in Tab 1, an encrypted local ZIP archive in Tab 2, and your local `~/Downloads` folder in Tab 3.
 - **Directional Copying (`F5`)**: Select files in your local active panel and press `F5` to upload them directly into the remote server or compressed archive displayed in the inactive panel.
 - **Drag-and-Drop Interoperability**: Drag items across panels between local disks, network shares, and archive hierarchies without intermediate staging.
@@ -132,6 +135,7 @@ ATBCmder features built-in drivers for all industry-standard archive and compres
 ### 3.2 In-Place Navigation Workflows
 
 When browsing inside an archive:
+
 1. **Enter Subdirectories**: Press `Enter` on any folder inside the archive to explore nested trees.
 2. **Ascend to Parent (`..`)**: Press `Backspace` (`⌫`) or double-click the `.. [Parent Directory]` entry to ascend. Once you reach the root of the archive, pressing `Backspace` returns you cleanly to the physical directory containing the archive file.
 3. **Instant Preview (`F3` / `Fn+F3`)**: Highlight any document, image, or source file inside the archive and press `F3`. ATBCmder automatically extracts the target file to a secure temporary sandbox and renders it inside the Universal Lister.
@@ -202,6 +206,7 @@ ATBCmder provides dedicated background workers for creating and extracting archi
 ### 5.1 Compressing Files (`Alt+F5` / `⌥F5` / `cm_PackFiles`)
 
 To create a new archive:
+
 1. In the active panel, select the files or directories you wish to bundle.
 2. Press **`Alt+F5`** (`⌥F5`) or choose **Files ➔ Pack...** from the menu bar.
 3. The **Pack Files** dialog appears:
@@ -220,6 +225,7 @@ Standard ZIP encryption (legacy ZipCrypto) is cryptographically broken and vulne
 
 #### Splitting Huge Archives across Multi-Volume Sets
 If you need to distribute an archive across email attachments, FAT32 drives, or cloud upload boundaries with file size caps:
+
 1. Bundle your files using `Alt+F5` (`cm_PackFiles`).
 2. Highlight the resulting `.zip` or `.tar` archive and trigger the File Splitter via **`Alt+F6`** (`cm_FileSpliter`).
 3. Select a preset split size (e.g., `100 MB`, `4.7 GB DVD`, `CD 700 MB`, or custom byte size).
@@ -230,6 +236,7 @@ If you need to distribute an archive across email attachments, FAT32 drives, or 
 ### 5.2 Extracting Archives (`Alt+F9` / `⌥F9` / `cm_ExtractFiles`)
 
 To extract archives to disk:
+
 1. Highlight one or more archives in the active panel.
 2. Press **`Alt+F9`** (`⌥F9`) or choose **Files ➔ Extract...** from the menu bar.
 3. The **Extract Files** dialog displays:
@@ -274,28 +281,33 @@ ATBCmder includes a multi-protocol network client engine capable of mounting, br
 
 #### SFTP (SSH File Transfer Protocol)
 Backed by the industry-standard `paramiko` SSH engine, ATBCmder's SFTP driver establishes encrypted tunnels over port 22:
+
 - **Host Key Safety (`WarningPolicy`)**: In compliance with strict security requirements, ATBCmder automatically consults your local `~/.ssh/known_hosts` file. When connecting to a known host, host keys are cryptographically verified. If an unknown server is encountered, ATBCmder emits a safety warning rather than silently trusting unexpected public keys.
 - **SSH Key Authentication**: In addition to standard password authentication, ATBCmder supports SSH private key files (`~/.ssh/id_rsa`, `~/.ssh/id_ed25519`).
 - **UNIX Attribute Mapping**: Preserves remote octal file modes (`chmod`), user/group ownership strings, and exact POSIX modification timestamps.
 
 #### FTP & FTPS (Explicit / Implicit SSL)
 Driven by Python's `ftplib`, the FTP driver supports:
+
 - **Passive Mode (PASV)**: Enabled by default to ensure reliable connections through restrictive NAT routers and consumer firewalls.
 - **Configurable Encodings**: Resolves non-ASCII filename display issues by allowing you to switch between `UTF-8`, `ISO-8859-1`, `GB18030`, and `Windows-1252` character sets.
 
 #### SMB / Samba (Windows Shares & NAS Appliances)
 Unlike naive userspace Python SMB libraries that suffer from slow transfer speeds, ATBCmder employs a hybrid architecture:
+
 - **macOS Native Kernel Acceleration (`mount_smbfs`)**: On macOS, ATBCmder's `SambaMounter` leverages Apple's native `/sbin/mount_smbfs` subsystem. It mounts the remote share directly into the macOS VFS tree (`/Volumes/` or an isolated mount directory), unlocking full hardware-accelerated SMB3 read/write throughput.
 - **Existing Mount Detection**: If macOS Finder or a system script has already mounted the target SMB share, ATBCmder automatically detects the active mountpoint from the OS `mount` table and navigates to it instantly, avoiding redundant network connections.
 
 > [!IMPORTANT]
 > **SMB Share Name Requirement**  
 > An SMB server cannot be browsed at the bare hostname level. An SMB URI **must** include the target share or export name in the path:  
+>
 > - ❌ Invalid: `vfs://smb://nas.local/`  
 > - ✅ Valid: `vfs://smb://nas.local/StoragePool` or `vfs://smb://192.168.1.100/Media`
 
 #### WebDAV & WebDAVS (Nextcloud / Cloud Storage)
 Built on `webdavclient3`, this driver provides bidirectional file synchronization with modern cloud storage solutions:
+
 - **SSL Certificate Verification**: Supports strict SSL certificate validation for public WebDAVS hosts, with an override toggle for self-signed certificates in private homelab setups.
 - **Recursive Directory Creation (`makedirs`)**: Automatically creates missing nested remote directory paths during bulk upload operations.
 
@@ -308,6 +320,7 @@ ATBCmder provides two flexible mechanisms for connecting to remote hosts: **Quic
 ### 7.1 Quick Connect (`cm_NetworkConnect`)
 
 When you need to quickly access a server without cluttering your permanent configuration:
+
 1. Choose **Network ➔ Quick Connect...** (or execute command `cm_NetworkConnect`).
 2. The lightweight connection prompt appears:
    - **Protocol**: Select `sftp`, `ftp`, `ftps`, `smb`, `webdav`, `webdavs`, or `gdrive`.
@@ -351,6 +364,7 @@ For servers you access regularly, the **Connection Manager** provides a complete
 
 #### Dynamic Saved Connections Menu
 Saved connections are automatically integrated into the top menu bar under **Network ➔ Saved Connections**. You can mount any bookmarked server with a single click:
+
 - `Network ➔ Saved Connections ➔ 🔐 AWS Staging Server`
 - `Network ➔ Saved Connections ➔ 🖧 Synology Office NAS`
 
@@ -397,22 +411,26 @@ File manager configuration files are a prime target for credential harvesting ma
 
 ### Tip 1: Non-Blocking Background Transfer Queue (`cm_OperationsPanel`)
 When copying large directories across remote servers or downloading multi-gigabyte ISOs over SFTP, never freeze your workspace. All network file operations in ATBCmder automatically integrate with the **Background Operations Queue**:
+
 - Press **`F5`** to initiate a transfer, then click **Background** (or let it queue automatically).
 - Open the operations panel via **Show ➔ Operations Panel** (`cm_OperationsPanel`) to monitor live bandwidth charts, per-file byte counts, and remaining transfer estimates.
 - You can pause, resume, or reorder queued network transfers while continuing to browse local files in both panels.
 
 ### Tip 2: Stream Copying Across Heterogeneous Protocols
 ATBCmder's `stream_copy_file` engine enables direct **server-to-server streaming**. If you drag a folder from an SFTP server in the Left Panel to an SMB network share in the Right Panel:
+
 - ATBCmder does **not** download the entire directory to your local Mac hard drive before re-uploading.
 - Data is chunked through an in-memory buffer ring, streaming bytes from the source socket directly into the target socket. This eliminates local disk wear and accommodates transfers larger than your available local SSD capacity.
 
 ### Tip 3: Network Keep-Alive & Preventing Connection Drops
 Stateful network firewalls and NAT gateways frequently sever idle TCP connections after 60 to 300 seconds of inactivity. To prevent disconnected sessions when browsing large remote trees:
+
 - ATBCmder's `BaseNetworkVFS` layer automatically maintains session heartbeats across idle connections.
 - If a momentary network drop occurs, the internal `_retry()` mechanism executes up to **3 retry attempts** using exponential backoff (`2^attempt` second intervals) before reporting a connection failure.
 
 ### Tip 4: Editing Remote Files with Auto-Upload Lifecycle
 Need to edit an `nginx.conf` or a Python script directly on a remote server?
+
 1. Highlight the remote file in your SFTP or WebDAV panel view.
 2. Press **`F4`** (`Fn+F4`).
 3. ATBCmder downloads the file to an isolated temporary sandbox (`/tmp/`) and opens it in the built-in Editor.

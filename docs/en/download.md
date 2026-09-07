@@ -4,6 +4,7 @@ Thank you for your interest in ATBCmder! We provide two different download and i
 
 > [!IMPORTANT]
 > **System & Architecture Requirements**  
+>
 > - **Operating System**: macOS 12.0 (Monterey) or later (including macOS 13 Ventura, macOS 14 Sonoma, and macOS 15 Sequoia).  
 > - **Supported Hardware Architecture**: **Apple Silicon (M1 / M2 / M3 / M4, ARM64)**.  
 > - **Intel (x86_64) Compatibility**: Intel-based Macs are **not supported** at this time.

@@ -84,6 +84,7 @@ ATBCmder uses intuitive bracketed tokens to reference parts of the original file
 
 #### Character Range Slicing (`[Na-b]` / `[Ea-b]`)
 You can extract specific character ranges from the original name or extension using 1-based index slicing:
+
 - **`[N1-4]`**: Extracts the first 4 characters of the name. For `Document_Final.txt`, this yields `Docu`.
 - **`[N5-]`**: Extracts from the 5th character to the end of the name. For `DSC_0982.jpg`, this yields `0982`.
 - **`[N-5]`**: Extracts up to the 5th character.
@@ -94,6 +95,7 @@ You can extract specific character ranges from the original name or extension us
 ### 2.3 Counter Controls & Numeric Sequences
 
 The **Counter Settings** group allows granular control over numeric indexing:
+
 - **Start At**: The starting integer for the counter sequence (default: `1`).
 - **Step**: The increment value added for each subsequent file (default: `1`). Setting Step to `2` generates `1, 3, 5, 7...`.
 - **Digits**: The zero-padding width (range: `1` to `10`). Setting Digits to `3` formats numbers as `001`, `002`, `003`. Setting Digits to `1` disables leading zeros (`1`, `2`, `3`).
@@ -103,6 +105,7 @@ The **Counter Settings** group allows granular control over numeric indexing:
 ### 2.4 Find & Replace and Regular Expressions
 
 The **Find & Replace** group enables text replacements across all selected items:
+
 - **Find**: Target substring or regular expression pattern.
 - **Replace with**: Replacement string. When RegEx is enabled, backreferences (`$1`, `$2` or `\1`, `\2`) refer to capture groups.
 - **Use Regular Expressions (Regex)**: Toggles Python standard library regular expression parsing.
@@ -135,6 +138,7 @@ Output File:     my-new-blog-post-draft.md
 ### 2.5 Case Conversion Modes
 
 ATBCmder provides instant casing normalization without requiring complex patterns:
+
 - **No change**: Preserves original capitalization.
 - **lowercase**: Converts the entire filename and extension to lowercase (`PHOTO_001.JPG` ➔ `photo_001.jpg`).
 - **UPPERCASE**: Converts all characters to uppercase (`readme.txt` ➔ `README.TXT`).
@@ -159,6 +163,7 @@ Renaming hundreds of files without previewing can result in disastrous data over
 
 #### Recipe A: Renaming Digital Camera Photos with Timestamps
 Transform cryptic camera names (`IMG_4092.JPG`, `IMG_4093.JPG`) into chronologically organized assets:
+
 1. Select the photo files and press **`Ctrl+M`**.
 2. Set **File Name Template** to: `Photo_[Y][M][D]_[C]`.
 3. Set **Extension Template** to: `[E]`.
@@ -169,6 +174,7 @@ Transform cryptic camera names (`IMG_4092.JPG`, `IMG_4093.JPG`) into chronologic
 
 #### Recipe B: Adding a Prefix While Preserving Name and Extension
 Prefix a batch of documents with a project code:
+
 1. Select documents and press **`Ctrl+M`**.
 2. In **File Name Template**, enter: `PRJ-ALPHA_[N]`.
 3. Leave **Extension Template** as `[E]`.
@@ -226,6 +232,7 @@ Each pane features a dedicated left gutter (`LineNumberArea`) displaying 1-based
 ### 3.3 Synchronized Scrolling & Reentrancy Safety
 
 When comparing long source files containing thousands of lines, navigating through code requires lockstep coordination:
+
 - Scrolling the vertical or horizontal scrollbar of either editor instantly adjusts the opposing editor by the identical pixel offset.
 - ATBCmder implements an internal **reentrancy lock** (`_syncing_vscroll`, `_syncing_hscroll`) preventing event feedback loops, stuttering, or cursor drift.
 
@@ -234,12 +241,14 @@ When comparing long source files containing thousands of lines, navigating throu
 ### 3.4 Hunk Navigation & Bidirectional Merging
 
 You can navigate through differences without using the mouse:
+
 - **Next Difference**: Press **`Alt+Down`** / `⌥↓` (or `Ctrl+Down`).
 - **Previous Difference**: Press **`Alt+Up`** / `⌥↑` (or `Ctrl+Up`).
 - **Jump to Hunk**: Clicking directly on any highlighted line in either pane automatically sets that hunk as active.
 
 #### Bidirectional Merging (Vimdiff `dp` / `do` Compatibility)
 Merge differences between files with single keystrokes:
+
 - **Copy Left to Right (`→`)**: Press **`Alt+Right`** / `⌥→` (or `Ctrl+Alt+Right` or Vimdiff `dp` via **`Alt+P`**). The active hunk in the Left editor replaces the corresponding section in the Right editor.
 - **Copy Right to Left (`←`)**: Press **`Alt+Left`** / `⌥←` (or `Ctrl+Alt+Left` or Vimdiff `do` via **`Alt+O`**). The active hunk in the Right editor replaces the corresponding section in the Left editor.
 
@@ -248,6 +257,7 @@ Merge differences between files with single keystrokes:
 ### 3.5 In-Place Editing & Atomic Saving
 
 Unlike diff viewers that treat text as read-only, both panes in ATBCmder are fully functional code editors:
+
 - Type, paste, or delete text directly within either editor.
 - Whenever manual edits alter lines, press **`F5`** (or `Ctrl+R`) to re-run the difference calculation on the updated buffers.
 - Save Left File: Click **💾 Save Left** (or press `Cmd+S` / `Ctrl+S` while the Left editor has focus).
@@ -258,6 +268,7 @@ Unlike diff viewers that treat text as read-only, both panes in ATBCmder are ful
 ### 3.6 Comparison Filtering Options
 
 The diff viewer toolbar allows you to isolate genuine logic changes from formatting noise:
+
 - **Ignore Whitespace (`_cb_ws`)**: Ignores changes in tabs, trailing spaces, and spaces-vs-tabs indentation.
 - **Ignore Case (`_cb_case`)**: Performs case-insensitive character comparisons.
 - **Ignore Blank Lines (`_cb_blank`)**: Collapses empty line additions and deletions, focusing strictly on substantive code changes.
@@ -267,6 +278,7 @@ The diff viewer toolbar allows you to isolate genuine logic changes from formatt
 ### 3.7 Binary File Diff Detection
 
 If either file selected for comparison contains null bytes or binary MIME signatures (e.g. images, executables, compiled archives), ATBCmder automatically invokes `BinaryDiffer`:
+
 - Displays file sizes and cryptographic SHA-256 hashes side by side.
 - Clearly states whether the binary files are byte-identical or divergent.
 
@@ -412,6 +424,7 @@ Fine-tune search queries using granular parameters across the **General** and **
 ### 5.4 Quick Inspection in Search Results
 
 While browsing search results in the results list:
+
 - **View File (`F3`)**: Instantly opens the highlighted search result in the Universal Lister.
 - **Edit File (`F4`)**: Opens the file directly in the built-in Text Editor.
 - **Go to File (`Enter` / `Go to File`)**: Closes the search dialog, navigates the main panel to the file's parent directory, and places the cursor directly on the file.
@@ -473,6 +486,7 @@ ATBCmder differentiates between folder-level filtering and system-wide discovery
 
 #### 1. Local Directory Scope (`/<query>`)
 Queries starting with a single slash operate exclusively on the directory open in the active panel (and its subfolders if recursive options are specified):
+
 - `/larger than 10MB`: Shows only files larger than 10 Megabytes in the current folder.
 - `/> 50MB`: Numeric shorthand for size filtering.
 - `/today modified pdf`: Filters for PDF documents modified within the last 24 hours.
@@ -483,6 +497,7 @@ Queries starting with a single slash operate exclusively on the directory open i
 
 #### 2. Global System Scope (`//<query>`)
 Queries starting with a double slash query the entire macOS system volume via Spotlight:
+
 - `//today modified pdf`: Finds all PDF documents modified today across your entire Mac.
 - `//larger than 1GB dmg`: Locates all disk image installers exceeding 1 GB.
 - `//code contains "OAuth2Handler"`: Finds all source files system-wide containing "OAuth2Handler".
@@ -492,6 +507,7 @@ Queries starting with a double slash query the entire macOS system volume via Sp
 ### 6.3 AI-Assisted Semantic Queries (`?` or `/?`)
 
 When configured with an AI provider (Google Gemini, OpenAI, Anthropic Claude, or local Ollama) in *Preferences ➔ Semantic Filter*:
+
 - Prefixing a query with `?` or `/?` routes the natural language instruction through an LLM parser.
 - Example: `/? find all final invoices sent to client Acme last quarter over $5000`
 - The AI translates complex human phrasing into precise Spotlight metadata attributes (`kMDItemFSSize`, `kMDItemContentModificationDate`, `kMDItemTextContent`), displaying matching files instantly in the panel.
@@ -501,6 +517,7 @@ When configured with an AI provider (Google Gemini, OpenAI, Anthropic Claude, or
 ### 6.4 Auto-Completion, Catalog (`/help`), and History (`/history`)
 
 As you type into the semantic command edit box:
+
 - **Interactive Completion Popup**: A dropdown menu (`SemanticCompletionPopup`) displays contextual template suggestions based on the built-in catalog (`semantic-command-templates.xml`). Use `Down` and `Up` arrows to highlight suggestions and press `Tab` or `Enter` to accept.
 - **Help Catalog (`/help`)**: Typing `/help` opens the **Semantic Command Help Dialog**, listing dozens of searchable examples across categories (Size, Date, File Type, Content, Tagging). Double-clicking any entry inserts it into the command line.
 - **Command History (`/history`)**: Typing `/history` displays a chronological log of all previously executed semantic commands with execution timestamps, allowing instant recall.
@@ -613,6 +630,7 @@ Standard file deletion merely unlinks directory entries, leaving raw data blocks
 ### 7.5 Embedded System Terminal (`Ctrl+J` / `⌃J` / `cm_RunTerm`)
 
 While ATBCmder excels at graphical dual-panel workflows, shell access is often required for compilation, git branches, or server management:
+
 - Press **`Ctrl+J`** (`⌃J`) or choose **Commands ➔ Run Terminal**.
 - ATBCmder immediately opens macOS **Terminal.app** (or your configured default terminal emulator) with its working directory initialized to the exact path open in the active panel.
 - No typing `cd /Users/...` or dragging folders into terminal windows required.
@@ -623,6 +641,7 @@ While ATBCmder excels at graphical dual-panel workflows, shell access is often r
 
 ### 8.1 Recipe: Recursive Search ➔ Feed to Listbox ➔ Multi-Rename
 **Objective**: Strip version numbers from hundreds of asset files scattered across 50 nested subfolders.
+
 1. Open the project root in the Left Panel.
 2. Press **`Alt+F7`** to open Search.
 3. In File names pattern, enter: `*_v[0-9]*.png`.
@@ -638,6 +657,7 @@ While ATBCmder excels at graphical dual-panel workflows, shell access is often r
 
 ### 8.2 Recipe: Safe Cloud & NAS Backup Mirroring with Asymmetric Sync
 **Objective**: Maintain an identical offsite mirror of your documents on an external SSD or SMB NAS drive without duplicate files accumulating.
+
 1. Open local `~/Documents` in the Left Panel.
 2. Open `/Volumes/BackupSSD/Documents` in the Right Panel.
 3. Press **`Shift+F12`** (`cm_SyncDirs`).
@@ -653,6 +673,7 @@ While ATBCmder excels at graphical dual-panel workflows, shell access is often r
 
 ### 8.3 Recipe: Forensic Hash Manifests Before Long-Term Archive Storage
 **Objective**: Calculate and store cryptographic checksums for a multi-terabyte project before moving it to cold tape or cloud glacier storage.
+
 1. Navigate to the directory containing your project deliverables.
 2. Select all items (`Cmd+A`) and press **`Ctrl+X`** (`cm_CheckSumCalc`).
 3. Set Algorithm to **SHA256**.
@@ -664,6 +685,7 @@ While ATBCmder excels at graphical dual-panel workflows, shell access is often r
 
 ### 8.4 Recipe: Combining Natural Language Semantic Filtering with Flat Branch View (`Cmd+B`)
 **Objective**: Find and organize all media files across a complex deep directory structure without opening search dialogs.
+
 1. Highlight your top-level project folder and press **`Cmd+B`** (`cm_FlatView`) to flatten all subfolder contents into a single list.
 2. Press **`/`** to focus the Semantic Command Bar.
 3. Type: `/images larger than 5MB`.

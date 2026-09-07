@@ -84,11 +84,13 @@ To copy files or directories:
 
 #### In-Panel Duplication (`Shift+F5` / `cm_CopySamePanel`)
 To quickly clone a file within the current directory (for example, creating a backup before editing `nginx.conf`):
+
 - Highlight the item and press `Shift+F5` (or `⇧F5`).
 - ATBCmder prompts with a destination path in the *same* directory, allowing you to enter a new name (e.g., `nginx.conf.bak`).
 
 #### Standard macOS Clipboard (`Cmd+C` ➔ `Cmd+V`)
 ATBCmder fully integrates with macOS system clipboard shortcuts:
+
 - **`Cmd+C` (`⌘C`)**: Copies selected file paths to the clipboard (`cm_CopyToClipboard`).
 - **`Cmd+V` (`⌘V`)**: Pastes files from clipboard into the active panel (`cm_PasteFromClipboard`).
 - **`Cmd+Option+V` (`⌥⌘V`)**: Moves clipboard files into the active panel (`cm_PasteAsMove`).
@@ -181,6 +183,7 @@ You can choose to **Delete Permanently**, **Skip**, or check **Apply to all rema
 
 #### Secure Multi-Pass Shredding (`Alt+Delete` / `cm_Wipe`)
 For sensitive documents, credentials, or private keys that must not remain recoverable via raw flash recovery tools:
+
 - Highlight the item and select **Menu File** → **Wipe** (`Alt+Delete` / `cm_Wipe`).
 - ATBCmder performs a multi-pass overwrite with random bit patterns and zeros before unlinking the inode.
 
@@ -209,6 +212,7 @@ Renaming a single file shouldn't require complex menus or dialog popups. ATBCmde
 ### Intelligent Extension Preservation
 
 When renaming a file such as `invoice_september.pdf`:
+
 - ATBCmder automatically pre-selects only the base filename (`invoice_september`).
 - The file extension (`.pdf`) remains unselected and intact, preventing accidental extension stripping that would break macOS file associations.
 - If you wish to modify the extension, simply use the arrow keys or press `Cmd+A` inside the edit box.
@@ -326,6 +330,7 @@ ATBCmder treats drag-and-drop as a first-class citizen while maintaining complet
 
 ### Spring-Loaded Folders
 When dragging files over a nested directory in ATBCmder:
+
 - Hover your mouse cursor over the target folder for **750 milliseconds**.
 - The folder automatically flashes and springs open, navigating inside.
 - You can navigate multiple levels deep into nested subdirectories without releasing the mouse button, then drop your payload exactly where desired.

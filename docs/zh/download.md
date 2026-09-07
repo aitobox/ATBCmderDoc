@@ -4,6 +4,7 @@
 
 > [!IMPORTANT]
 > **系统与硬件芯片要求**  
+>
 > - **支持系统**：macOS 12.0 (Monterey) 及更高版本（全面兼容 macOS 13 Ventura、macOS 14 Sonoma 与 macOS 15 Sequoia）。  
 > - **硬件架构支持**：仅支持 **Apple Silicon (M1 / M2 / M3 / M4，ARM64 架构)** 芯片。  
 > - **Intel (x86_64) 架构说明**：目前应用**暂不支持** Intel (x86_64) 架构的 Mac 电脑。

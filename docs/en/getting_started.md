@@ -93,6 +93,7 @@ ATBCmder provides a clean, native macOS interface built with Qt6 and PySide6, de
 
 ### [1] Native macOS Menu Bar
 Fully integrated into the macOS top menu bar. All operations, view toggles, power tools, and preferences are categorized logically:
+
 - **File**: New Tab, Close Tab, File Properties, Sandbox Permissions, Exit.
 - **Mark**: Select Group (`Num+`), Unselect Group (`Num-`), Invert Selection (`Num*`), Select All (`Cmd+A`).
 - **Commands**: Directory Hotlist (`Ctrl+D`), Left/Right Drives (`Alt+F1/F2`), Search (`Alt+F7`), Sync Directories (`Shift+F12`), Swap Panels (`Ctrl+U`), Terminal (`Ctrl+J`).
@@ -101,11 +102,13 @@ Fully integrated into the macOS top menu bar. All operations, view toggles, powe
 
 ### [2] Top Main Toolbar
 Located directly beneath the window title bar. Provides instant one-click access to global commands:
+
 - **Default Actions**: Refresh (`Ctrl+R`), Quick View (`Ctrl+Q`), Copy (`F5`), Move (`F6`), New Folder (`F7`), Delete (`F8`), Search (`Alt+F7`), and Options (`Cmd+,`).
 - **Customizable**: Customize icon sizes (16px to 48px), toggle button text labels, or hide the toolbar entirely via menu **Show** → **Show Toolbar** to maximize screen real estate.
 
 ### [3] Finder-Style Interactive Breadcrumb Bar
 Positioned above each file panel, the breadcrumb path bar allows lightning-fast hierarchy jumps:
+
 - **Segment Navigation**: Click any ancestor folder in the breadcrumb chain (e.g., clicking `username` in `/Users/username/Projects/ATBCmder`) to navigate directly to that directory.
 - **Sibling Drop-Downs**: Hover or click the chevron arrow between segments to reveal a drop-down menu listing all sibling folders at that level.
 - **Segment Context Menu**: Right-click any breadcrumb segment to access quick contextual utilities:
@@ -117,12 +120,14 @@ Positioned above each file panel, the breadcrumb path bar allows lightning-fast 
 
 ### [4] Folder Tab Bar
 Each panel maintains an independent set of tabs:
+
 - Open new tabs with `Cmd+T` (`cm_NewTab`), close tabs with `Cmd+W` (`cm_CloseTab`).
 - Drag-and-drop to reorder tabs within a panel.
 - Right-click tabs to lock paths, rename titles, close duplicates, or duplicate tabs to the opposite panel.
 
 ### [5] Dual File Panels
 High-performance virtualized file lists capable of rendering folders with hundreds of thousands of entries smoothly without UI stutter:
+
 - Column sorting: Click any header (Name, Ext, Size, Date, Attributes) to sort ascending or descending.
 - Multiple view modes: Full details view, Brief grid view, Thumbnail gallery view, Tree view, and recursive Flat Branch view (`Cmd+B`).
 
@@ -148,6 +153,7 @@ Positioned directly between the left and right file panels, the Middle Toolbar i
 
 ### [7] Status Bar & Drive Storage Meter
 Anchored at the very bottom of the window:
+
 - **Selection Statistics**: Shows real-time metrics for the active panel:
   - Total items count and total folder size.
   - Number of selected items and combined selected byte size.
@@ -167,6 +173,7 @@ ATBCmder streamlines this onboarding process with **Security-Scoped Bookmarks**,
 ### Understanding Security-Scoped Bookmarks
 
 When you authorize a folder path using macOS `NSOpenPanel`:
+
 1. macOS issues a cryptographic **Security-Scoped Bookmark** (`NSURLBookmarkCreationWithSecurityScope`).
 2. ATBCmder serializes and saves this bookmark into its configuration directory:
    `~/Library/Application Support/ATBCmder/sandbox_bookmarks.plist`
@@ -216,6 +223,7 @@ From the native menu bar, select **File** (or **Help**) → **Grant Filesystem A
 
 #### Step 4: Selective Folder-by-Folder Access (Alternative)
 If you prefer not to grant broad root access to ATBCmder, you do not have to click root access:
+
 - When you navigate into any unauthorized folder (such as an external folder or project repository), ATBCmder detects the permission boundary and displays an on-demand prompt:
   `ATBCmder requires your permission to access: /Users/username/SecretProject`
 - Click **"Grant Access to Folder"**, approve the native dialog, and that specific directory will be permanently bookmarked.
@@ -224,10 +232,12 @@ If you prefer not to grant broad root access to ATBCmder, you do not have to cli
 
 > [!IMPORTANT]
 > **Sandbox Bookmarks vs. Full Disk Access (FDA)**:
+>
 > - **Sandbox Bookmarks** grant general filesystem access to standard user folders, files, and external drives.
 > - **Full Disk Access (FDA)** is an additional macOS Transparency, Consent, and Control (TCC) privacy permission required to inspect sensitive macOS personal data (such as Safari history, Mail attachments, Messages, Time Machine backups, and system caches).
 > 
 > If you need to manage these protected folders:
+>
 > 1. Click **"Open Full Disk Access Settings…"** in the onboarding dialog.
 > 2. macOS opens **System Settings** → **Privacy & Security** → **Full Disk Access**.
 > 3. Click the lock or authenticate with Touch ID / password.
@@ -236,6 +246,7 @@ If you prefer not to grant broad root access to ATBCmder, you do not have to cli
 ### Revoking and Resetting Permissions
 
 If you ever need to reset or revoke your sandbox bookmarks:
+
 1. Open ATBCmder's configuration directory via menu **Configuration** → **Open Config Directory** (`cm_OpenConfigDirectory`).
 2. Delete the file `sandbox_bookmarks.plist`.
 3. Restart ATBCmder.
@@ -289,21 +300,25 @@ When you arrange your workspace—customizing window dimensions, maximizing acro
    ```
    cm_ConfigSavePos
    ```
+
 3. Your window size, screen coordinates, maximized state, and panel ratios are written directly to `atbcmder.xml`.
 4. In **Preferences** → **Layout**, ensure **"Save window position on exit"** is checked for automatic continuous updates.
 
 ### Tip 2: Toggling Horizontal Dual-Panel Layout (`cm_HorizontalFilePanels`)
 
 While side-by-side vertical panels are standard for file operations, stacked horizontal panels (Top Panel & Bottom Panel) are exceptionally useful when:
+
 - Working with ultra-long filenames that require full screen width.
 - Comparing wide file metadata columns (permissions, owners, checksums, dimensions).
 - Working on rotated vertical monitors or tablets.
 
 To switch layouts:
+
 1. Select menu **Show** → **Horizontal Panels**, or trigger internal command:
    ```
    cm_HorizontalFilePanels
    ```
+
 2. When horizontal mode is active:
    - The panels stack vertically (Top Panel and Bottom Panel).
    - The Middle Toolbar automatically rotates into a horizontal strip between the upper and lower panels.
@@ -342,6 +357,7 @@ However, Apple keyboards handle the function row differently out of the box.
 
 ### Option A: Hold the `Fn` (Globe 🌐) Key (Default macOS Setup)
 If you prefer to keep Apple's default media keys intact:
+
 - Hold down the **`Fn`** (or Globe 🌐) key while pressing any function key:
   - `Fn+F3`: Universal Lister
   - `Fn+F4`: Internal Editor
@@ -375,6 +391,7 @@ If you want authentic, high-speed single-key Commander reflexes without holding 
 ```
 
 Once enabled:
+
 - Pressing `F1`–`F12` directly triggers ATBCmder commands immediately.
 - To use brightness or volume controls, simply hold `Fn` while pressing the key.
 

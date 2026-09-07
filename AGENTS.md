@@ -127,6 +127,8 @@ Build both English and Chinese documentation and preview the static site locally
 Options:
 - `./test.sh` — Compile bilingual site, launch preview server, and open browser.
 - `./test.sh -b` (or `--build-only`) — Compile static site to `site/` without starting server.
+- `./test.sh -l` (or `--lint`) — Check Markdown list blank spacing across `docs/`.
+- `./test.sh --fix-lists` — Automatically format Markdown list blank spacing in place.
 - `./test.sh -p 8080` (or `--port 8080`) — Run preview server on a custom port.
 - `./test.sh --no-open` — Start server without automatically launching browser.
 - `./test.sh -s en` / `./test.sh -s zh` — Launch Zensical live dev server for single-language hot-reloading.
@@ -165,11 +167,14 @@ When working on this repository, ensure compliance with the following rules:
    Always maintain 1:1 page and structural parity between `docs/en/` and `docs/zh/`. If adding, editing, or reordering sections in English docs, apply equivalent changes to Chinese docs.
    **CRITICAL**: You MUST invoke the `writing-bilingual-docs` skill (located in `.gemini/skills/writing-bilingual-docs/SKILL.md`) before making ANY documentation changes, and the `updating-release-notes` skill (located in `.gemini/skills/updating-release-notes/SKILL.md`) when adding or updating release notes.
 
-2. **Preserve Overrides & Header UI:**
+2. **Markdown List Blank Spacing (MD032):**
+   In Python-Markdown (used by Zensical), every list (`-`, `*`, `1.`) must have a preceding blank line separating it from preceding paragraphs or block elements; otherwise, list items are collapsed into a single inline paragraph. Run `./test.sh -l` to verify formatting or `./test.sh --fix-lists` to format automatically.
+
+3. **Preserve Overrides & Header UI:**
    Do not overwrite or remove custom partials in `overrides/partials/header.html` or `overrides/partials/source.html` unless explicitly updating top navigation header elements.
 
-3. **Verify Build Output:**
-   Always run `zensical build` on both configuration files (`zensical.en.toml` and `zensical.zh.toml`) to ensure no broken links or template syntax errors before submitting PRs or finalizing tasks.
+4. **Verify Build Output:**
+   Always run `zensical build` on both configuration files (`zensical.en.toml` and `zensical.zh.toml`) or run `./test.sh -b` to ensure no broken links or template syntax errors before submitting PRs or finalizing tasks.
 
 4. **Target Branch:**
    Follow repository workflow conventions (commit to feature branches or target branch as configured).

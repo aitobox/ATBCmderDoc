@@ -57,6 +57,7 @@ Throughout this guide and within ATBCmder's preferences dialogs, key combination
 >
 > #### Method A: Hold the `Fn` Key Chord (Default Out-of-the-Box)
 > Hold the physical **`Fn`** key (or Globe 🌐 key) located in the lower-left corner of your Mac keyboard while pressing any function key:
+>
 > * **`Fn + F3`**: View file in Lister
 > * **`Fn + F4`**: Edit file
 > * **`Fn + F5`**: Copy files to target panel
@@ -82,10 +83,12 @@ Throughout this guide and within ATBCmder's preferences dialogs, key combination
 >    - In the **Keyboard** tab, check the box labeled **"Use F1, F2, etc. keys as standard function keys"**.
 >
 > #### MacBook Pro Models with Touch Bar
+>
 > * Hold the physical **`Fn`** key at the bottom left to instantly display the virtual `F1`–`F12` row on the Touch Bar.
 > * Alternatively, configure **System Settings ➔ Keyboard ➔ Touch Bar Settings...** and set **"Touch Bar shows"** to **"F1, F2, etc. Keys"** when ATBCmder is the active frontmost application.
 >
 > #### Compact Keyboards Without a Dedicated Function Row
+>
 > * If you are using a 60% or 65% mechanical keyboard without dedicated `F` keys, you do not need to contort your fingers. Use ATBCmder's native macOS modifier chords (`⌘C`, `⌥⌘V`, `⇧⌘N`, `⌘⌫`, `⌥⏎`) which provide 100% operational parity.
 
 ---
@@ -109,6 +112,7 @@ To prevent hotkey collisions between different application areas (for example, s
 ```
 
 When you press a key chord, the **`HotkeyManager`** engine:
+
 1. Evaluates the active focused context (e.g., `Viewer` or `FilePanel`).
 2. If an exact binding matches, the associated `cm_*` command executes immediately.
 3. If no binding exists in the local context, the keystroke falls back gracefully to the `Main` context.

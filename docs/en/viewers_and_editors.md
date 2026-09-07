@@ -9,6 +9,7 @@ ATBCmder solves this by providing a unified, multi-engine viewing and editing su
 ## 1. Visual Quickstart: Immediate File Inspection & Editing
 
 ATBCmder divides file inspection and modification into two distinct paradigms:
+
 1. **Opposing Panel Quick View (`Cmd+Q` / `Ctrl+Q`)**: Embeds a live, debounced preview directly inside the inactive panel without spawning any separate windows.
 2. **Dedicated Universal Lister (`F3`) & Internal Editor (`F4`)**: Opens independent, non-modal windows supporting specialized format engines, full-text search, media playback, and syntax highlighting.
 
@@ -59,6 +60,7 @@ The **Quick View Panel** is one of the most powerful workflows in orthodox file 
 ### 2.1 The Dual-Panel Preview Advantage
 
 To activate Quick View:
+
 1. Navigate to any file or directory in the active panel.
 2. Press **`Cmd+Q`** (`⌘Q`) on macOS or **`Ctrl+Q`** (`cm_QuickView`).
 3. The opposing panel instantly switches from its normal directory listing to the **Quick View Container** (`QuickViewContainer`), rendering the contents of the item under your cursor.
@@ -69,6 +71,7 @@ To activate Quick View:
 When holding down the `Up` or `Down` arrow keys to rapidly scroll through a folder of thousands of files, standard file previewers often freeze the user interface or trigger intense disk thrashing.
 
 ATBCmder solves this through an internal **100-millisecond single-shot debounce timer** (`_quick_view_timer`):
+
 - As you navigate rapidly across rows, the active file path is staged in memory.
 - The heavy file loading, syntax parsing, and thumbnail rendering only trigger once your cursor pauses on an item for at least 100ms.
 - Scrolling remains perfectly smooth at 60+ frames per second, even when browsing multi-gigabyte media directories or raw disk dumps.
@@ -76,6 +79,7 @@ ATBCmder solves this through an internal **100-millisecond single-shot debounce 
 ### 2.3 Symmetric Focus Flip on `Tab`
 
 A common issue in dual-panel managers is losing your preview when switching panels. In ATBCmder, Quick View features **Symmetric Focus Flipping**:
+
 - If Quick View is active on the Right Panel and you press **`Tab`** to switch active focus to the Right Panel:
   1. The Right Panel immediately restores its normal file table so you can interact with files.
   2. Quick View automatically and seamlessly flips to the Left Panel, displaying a live preview of whatever file is highlighted in the Right Panel.
@@ -161,6 +165,7 @@ ATBCmder embeds specialized layout engines for structured documents, slide decks
 
 #### 3.1.1 Word & Rich Text Documents (`DocumentPanel`)
 When pressing `F3` on Microsoft Word (`.docx`, `.doc`), Rich Text (`.rtf`), or OpenDocument (`.odt`) files, ATBCmder engages `DocumentPanel`:
+
 - **Document Page Cards**: Renders structured pages on centered paper cards (`.doc-page`) with crisp typography and margins matching modern word processor layouts.
 - **Formatting Preservation**: Preserves paragraph hierarchies, bold/italic/underline styles, font color variations, unordered and numbered lists, and inline hyperlinks.
 - **Complex Table & Embedded Image Rendering**: Parses complex multi-column table grids with bordered cell spacing and renders embedded inline raster illustrations.
@@ -168,6 +173,7 @@ When pressing `F3` on Microsoft Word (`.docx`, `.doc`), Rich Text (`.rtf`), or O
 
 #### 3.1.2 Presentation Slide Decks (`PresentationPanel`)
 For Microsoft PowerPoint presentations (`.pptx`, `.ppt`), ATBCmder launches `PresentationPanel`:
+
 - **Slide Card Reader**: Each slide is extracted and formatted as a distinct, shadowed presentation card (`.slide-card`), letting you review content sequentially.
 - **Slide Selector Strip**: A visual navigation drawer lists all slides with thumbnail indices, allowing you to jump instantly to any slide in a 100-slide deck.
 - **Slide Search**: Press `Cmd+F` to search slide titles, bullet points, speaker notes, and callout text blocks across the entire deck.
@@ -191,6 +197,7 @@ Powered natively by `PySide6.QtPdf` and `QPdfView`, ATBCmder embeds an enterpris
 
 #### 3.1.4 EPUB eBooks (`EpubPanel`)
 Managing technical documentation, manuals, or digital books in EPUB format (`.epub`) is native to ATBCmder:
+
 - **Dual-Engine Architecture**: Employs a high-fidelity WebEngine renderer (`QWebEngineView` with `EpubUrlSchemeHandler` for rich CSS styling and SVG vector illustrations) with an automatic fallback to `QTextBrowser` on minimal environments.
 - **Table of Contents Sidebar**: Displays nested chapter trees (`QTreeView`), allowing one-click jumping between book chapters and appendices.
 - **Typography & Font Scaling**: Dynamically scale reading text size via the bottom toolbar font slider.
@@ -198,6 +205,7 @@ Managing technical documentation, manuals, or digital books in EPUB format (`.ep
 
 #### 3.1.5 Markdown Documents (`MarkdownPanel`)
 For README files, technical notes, and developer documentation (`.md`, `.markdown`):
+
 - **GitHub-Flavored Markdown (GFM)**: Renders headers, blockquotes, horizontal rules, task lists (`- [x]`), and multi-column tables.
 - **Code Block Syntax Styling**: Automatically formats fenced code blocks (```python, ```bash, ```json) with distinct background shading, monospaced typography, and syntax coloring.
 
@@ -222,6 +230,7 @@ Opening large CSV files or multi-sheet Excel workbooks in heavy office suites ca
 
 #### 3.2.2 SQLite Database Browser (`SqlitePanel`)
 Inspect SQLite databases (`.sqlite`, `.sqlite3`, `.db`) directly without external GUI clients:
+
 - **Tables & Views Directory**: Left sidebar lists all database tables and views alongside their active row counts. Clicking any table loads its contents immediately.
 - **Virtualized Data View**: Uses the high-performance `VirtualSpreadsheetModel` for seamless scrolling through massive tables.
 - **Interactive SQL Query Console**: Type custom SQL queries in the top query editor and press **`Ctrl+Return`** (or `Cmd+Return`) to execute. Results populate into the table view instantly.
@@ -230,6 +239,7 @@ Inspect SQLite databases (`.sqlite`, `.sqlite3`, `.db`) directly without externa
 
 #### 3.2.3 Jupyter Notebooks (`NotebookPanel`)
 Review data science experiments, machine learning runs, and Python analysis notebooks (`.ipynb`):
+
 - **Zero-Server Native Rendering**: Parses JSON notebook structures completely offline without requiring an active Jupyter or JupyterLab server daemon.
 - **Card-Based Cell Layout**:
   - *Markdown Cells*: Rendered into clean typography with headings, bold text, and lists.
@@ -238,6 +248,7 @@ Review data science experiments, machine learning runs, and Python analysis note
 
 #### 3.2.4 Code & Plain Text Viewing (`TextPanel`)
 The primary text inspection engine is optimized for high-speed browsing and huge data dumps:
+
 - **Chunked 64 KB Loader (`FileLoaderWorker`)**: Reads large files in 64 KB blocks with automatic newline boundary snapping, preventing thread freezing and UTF-8 multibyte character corruption.
 - **Pygments Syntax Highlighting**: Over 150 programming and configuration languages supported with dynamic Light/Dark mode adaptation.
 - **Dynamic Encoding Switcher**: Statistical charset detection (`chardet`) with status bar manual switching between UTF-8, GB18030, Big5, Shift-JIS, Windows-1252, and ISO-8859-1.
@@ -245,6 +256,7 @@ The primary text inspection engine is optimized for high-speed browsing and huge
 
 #### 3.2.5 Raw Hex Byte Inspection (`2` / Hex Mode)
 When inspecting binaries, firmware dumps, compiled libraries, or corrupted files:
+
 - **16-Byte Hex Grid**: Displays 8-digit hex offset addresses, 16 hexadecimal bytes split into two 8-byte visual columns, and printable ASCII text on the right (`.` for control bytes).
 - **Auto-Hex Detection**: If null bytes (`\x00`) are detected within the first 1 KB of a file, ATBCmder automatically switches to Hex mode to prevent terminal garble.
 
@@ -293,6 +305,7 @@ For video files (`.mp4`, `.mkv`, `.mov`, `.avi`, `.webm`):
 
 #### 3.3.4 Font Typography Inspector (`FontPanel`)
 Preview system and design fonts (`.ttf`, `.otf`, `.woff`, `.woff2`, `.ttc`):
+
 - **Waterfall Size Previews**: Renders preview text across standard design point sizes: 12, 16, 20, 24, 32, 48, and 64 pt.
 - **Custom Test String**: Enter custom strings to test specific character kerning and punctuation.
 - **Bilingual Pangrams**: Default preview displays complete bilingual pangrams: *"The quick brown fox jumps over the lazy dog 1234567890 敏捷的棕狐跃过懒狗"*.
@@ -303,10 +316,12 @@ Preview system and design fonts (`.ttf`, `.otf`, `.woff`, `.woff2`, `.ttc`):
 
 #### 3.4.1 In-Lister Archive Inspector (`ArchivePanel`)
 While pressing `Enter` opens archives directly in the file panel via Archive VFS, pressing **`F3`** on an archive (`.zip`, `.tar`, `.7z`, `.tar.gz`, `.tar.bz2`, `.tar.xz`) opens the **Archive Inspector**:
+
 - Inspect internal directory hierarchies, member counts, uncompressed byte sizes, compressed byte sizes, and compression ratios in a fast, read-only tree view.
 
 #### 3.4.2 Email Archive Viewer (`EmailPanel`)
 For saved email communications and message archives (`.eml`, `.msg`):
+
 - **RFC 2047 MIME Header Decoding**: Accurately decodes international sender names, dates, CC recipients, and email subjects.
 - **Visual Header Card**: Formats email headers into a clean metadata card.
 - **Rich Body Toggle**: Switch between formatted HTML email bodies and raw plain text.
@@ -317,6 +332,7 @@ For saved email communications and message archives (`.eml`, `.msg`):
 ## 4. Internal Editors: Dual-Mode Architecture (`F4` / `Fn+F4` / `cm_Edit`)
 
 ATBCmder features an intelligent **Dual-Mode Editor Dispatch Engine**:
+
 - **When cursor is on text, code, or configuration files**: Pressing `F4` opens the **Internal Code Editor** (`EditorWindow`).
 - **When cursor is on image files (`.png`, `.jpg`, `.webp`, `.bmp`, `.svg`)**: Pressing `F4` automatically launches the **Dedicated Image Editor** (`ImageEditorDialog`)!
 
@@ -357,6 +373,7 @@ To create and edit a brand-new file from scratch in the active folder, press **`
 
 #### Interactive Find & Replace Bar (`EditorReplaceBar`)
 Pressing **`Cmd+F`** (`⌘F`) or **`Cmd+Option+F`** (`⌥⌘F`) docks the Find & Replace bar at the bottom:
+
 - Real-time incremental search with occurrence indexing (`Match 4 of 19`).
 - Search flags: Case Sensitive (`[Aa]`), Whole Word (`[\b]`), and Python Regular Expressions (`[.*]`).
 - Batch actions: **Replace** (current occurrence) and **Replace All** (entire document).
@@ -389,12 +406,14 @@ When you press **`F4`** on any graphic or screenshot, ATBCmder opens the compreh
 
 #### Privacy Redaction (Mosaic / Blur)
 Need to share a screenshot containing confidential tokens, customer names, or phone numbers?
+
 - Select the **Mosaic / Blur** tool.
 - Drag a selection box over the sensitive information.
 - ATBCmder applies variable-radius pixelation or Gaussian blur, securely redacting sensitive data before export.
 
 #### Watermark Module
 Apply professional ownership branding using 4 preset placements:
+
 - **Tiled (`tiled`)**: Angled, repeating watermark pattern covering the entire canvas (ideal for confidential drafts).
 - **Stamp (`stamp`)**: Distinct authentication stamp placed in the lower-right corner.
 - **Banner (`banner`)**: Horizontal semi-transparent branding banner running across the canvas.
@@ -405,6 +424,7 @@ Apply professional ownership branding using 4 preset placements:
 ### 4.3 Seamless Round-Trip VFS Editing (Remote & Archives)
 
 The most powerful aspect of ATBCmder's editor subsystem is its **Universal VFS Integration**:
+
 - Whether you press `F4` on a shell script stored on a remote SFTP server, a configuration file inside an AWS Nextcloud WebDAV mount, or a screenshot inside a nested `.zip` archive (`vfs://`):
   1. ATBCmder downloads the file asynchronously to a secure temporary sandbox.
   2. The file opens in either `EditorWindow` or `ImageEditorDialog`.
@@ -420,6 +440,7 @@ Master these advanced features to maximize your inspection and editing efficienc
 ### Pro Tip 1: Dynamic Audio Queue Ingest with `F3`
 
 When you have the Audio Player running in **Background Playback Mode** while browsing your music collection, you do not need to reopen the dialog to queue more music:
+
 1. Highlight one or more audio files in either file panel.
 2. Press **`F3`** (or `Fn+F3`).
 3. ATBCmder detects that an audio player instance is already active and automatically **appends the selected tracks** to the running playlist (`append_tracks`) without interrupting the currently playing track.
@@ -429,6 +450,7 @@ When you have the Audio Player running in **Background Playback Mode** while bro
 By default, pressing `F3` opens the Universal Lister and `F4` opens the internal Code Editor. However, you can map specific file extensions to external desktop applications or custom shell commands using the **File Associations Manager** (`cm_FileAssoc`):
 
 Navigate to **Configuration ➔ Configuration of File Associations**:
+
 - You can map extensions (e.g. `*.rs`, `*.py`, `*.psd`) to custom actions.
 - **Internal Commands**: Bind to internal commander actions (e.g. `cm_View`, `cm_Edit`).
 - **External Shell Commands with Token Substitution**:
@@ -445,6 +467,7 @@ code --goto %f
 ### Pro Tip 3: Live Tail Mode (`F5`) for DevOps Logs
 
 When debugging local server daemons, Docker containers, or build scripts, open the log file in Universal Lister (`F3`) and press **`F5`**:
+
 - Engages the `FileTailWatcher` daemon.
 - Lister automatically scrolls to the bottom and streams newly appended lines to the screen in real time, matching the behavior of UNIX `tail -f`.
 - You can keep search filters active while tailing to highlight errors as they occur.
@@ -452,6 +475,7 @@ When debugging local server daemons, Docker containers, or build scripts, open t
 ### Pro Tip 4: Arbitrary Offset Streaming for Multi-Gigabyte Files
 
 If you need to inspect a 20 GB database dump or disk image, do not attempt to open it in a standard editor. In ATBCmder’s Universal Lister:
+
 - Use **Go to Line (`Ctrl+G`)** or jump slider controls.
 - The underlying `FileLoaderWorker` uses direct binary file pointer seeks (`fh.seek(offset)`), reading only the exact 64 KB block required to render the view.
 - You can inspect arbitrary sectors of a multi-terabyte volume instantaneously with zero memory overhead.

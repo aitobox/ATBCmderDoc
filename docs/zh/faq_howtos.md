@@ -3,6 +3,7 @@
 虽然正统双面板文件管理器以极速和高效纯键盘操作闻名，但在实际日常工作中，我们往往需要将多个子系统协同配合——例如双向文件夹同步、正则批量重命名、远程虚拟文件系统、免解压编辑压缩包以及递归检索等。此外，在现代 macOS 系统中运行，你也会遇到沙盒安全权限边界、功能键调度以及跨驱动器数据迁移等特有场景。
 
 本章分为两大核心部分：
+
 1. **高频实战场景指南（5 套经典方案）**：提供从头到尾的完整步骤演练、界面效果图、快捷键指引与高手进阶技巧。
 2. **疑难排错指南与常见问题 (FAQ)**：深入解析权限报错、自动刷新机制、配置安全重置、Mac 键盘 Fn 功能键映射以及跨卷文件转移机制。
 
@@ -119,6 +120,7 @@
      ```
      [Y]-[M]-[D]_度假_[C]
      ```
+
    - **占位符解析**：
      * `[Y]`：文件最后修改日期的 4 位年份（如 `2026`）。
      * `[M]`：2 位月份（如 `09`）。
@@ -191,6 +193,7 @@
      vfs://smb://admin@192.168.1.100/volume1/Media/
      vfs://sftp://ubuntu@aws.prod.internal:22/var/www/html/
      ```
+
    - 此时你可以按 `F5` 复制、`F6` 移动、`F8` 删除，与操作本地硬盘完全无异。
 7. **下次极速重连**：
    - 所有保存过的远程连接均会自动列入菜单栏 **网络 ➔ 已保存连接** 中，随时点击即可瞬间挂载。
@@ -217,6 +220,7 @@
      ```
      vfs:///Users/brain/Downloads/production_backup.zip/
      ```
+
 2. **找到你要修改的目标文件**：
    - 压缩包内的多层子目录结构完全保留，直接导航找到要改的文件（如 `conf/app_settings.json`）。
 3. **在内置文本编辑器中打开**：
@@ -298,6 +302,7 @@
 在现代 macOS（macOS 12 Monterey 至 macOS 15 Sequoia）中，Apple 推行了极其严格的 **App 沙盒机制 (App Sandbox)** 与 **TCC 隐私授权体系**。运行在沙盒内的应用程序若未获得用户明确授权，是无法自由读写外部驱动器、系统关键路径乃至用户个人目录（如 `~/Documents`、`~/Downloads`、`~/Desktop`）的。
 
 若未完成授权，你可能会遇到：
+
 - 进行复制/移动/删除时弹出错误：`"Error: Operation not permitted"`；
 - 在 ATBCmder 中看到的文件夹空空如也，但在访达 (Finder) 中却能看到内容；
 - 无法访问 `/Volumes` 下挂载的移动硬盘或外接 U 盘。
@@ -369,6 +374,7 @@ tccutil reset SystemPolicyDesktopFolder com.aitobox.atbcmder
 
 #### 根本原因
 ATBCmder 采用了分层式的目录变更监听引擎：
+
 1. **Apple 内核级 `FSEvents` 监听**：在 Mac 原生 APFS 与 HFS+ 硬盘格式下，任何第三方软件新增、修改或删除文件，macOS 内核均会毫秒级向 ATBCmder 发送变更事件，面板实时无感更新。
 2. **非原生文件系统的天然限制**：对于外接的 **FAT32** 或 **exFAT** 移动硬盘，以及通过局域网挂载的 **SMB**、**SFTP**、**WebDAV** 共享，**macOS 底层无法提供 `FSEvents` 事件通知**。其他机器或程序在这些盘中写入文件时，系统不会触发广播。
 
@@ -405,12 +411,14 @@ ATBCmder 采用了分层式的目录变更监听引擎：
 ```
 
 **运行原理**：
+
 1. 该脚本会自动在本地创建独立的临时目录：`tests/.test_config/`。
 2. 自动载入官方出厂标准测试配置模板 (`src/atbcmder/resources/test_config.xml`)。
 3. 注入专用环境变量：
    ```bash
    export ATBCMDER_CONFIG_PATH="$(pwd)/tests/.test_config"
    ```
+
 4. 在此会话中所做的任何标签修改、快捷键更改或历史记录，都将 100% 被局限在 `tests/.test_config/` 中，对你原本的日常配置毫无侵扰。
 
 #### 彻底恢复出厂初始设置
@@ -427,6 +435,7 @@ ATBCmder 采用了分层式的目录变更监听引擎：
    mv ~/Library/Preferences/atbcmder/atbcmder.xml ~/Library/Preferences/atbcmder/atbcmder.xml.bak
    mv ~/Library/Preferences/atbcmder/atbcmder_hotkeys.xml ~/Library/Preferences/atbcmder/atbcmder_hotkeys.xml.bak
    ```
+
 4. 重新启动 ATBCmder。
 5. 软件检测到配置文件缺失后，会自动生成一份全新、干净且符合官方出厂标准的 XML 配置文件。
 
@@ -441,6 +450,7 @@ ATBCmder 采用了分层式的目录变更监听引擎：
 
 #### 根本原因
 Apple 键盘（MacBook 笔记本内置键盘与 Magic Keyboard）出厂默认将顶排按键分配给了硬件多媒体控制：
+
 - `F1` / `F2`：调低 / 调高屏幕亮度
 - `F3`：调度中心 (Mission Control)
 - `F4`：聚焦搜索 / 启动台
@@ -451,6 +461,7 @@ Apple 键盘（MacBook 笔记本内置键盘与 Magic Keyboard）出厂默认将
 
 #### 解决方案 1：配合 `Fn` 键同按
 按住键盘左下角的 **`Fn`** 键（或地球仪图标 🌐 键），再按对应的功能键：
+
 - **`Fn+F3`**：查看器快速预览 (`cm_View`)
 - **`Fn+F4`**：内置编辑器 (`cm_Edit`)
 - **`Fn+F5`**：复制文件到对侧 (`cm_Copy`)
@@ -485,6 +496,7 @@ Apple 键盘（MacBook 笔记本内置键盘与 Magic Keyboard）出厂默认将
 
 #### 解决方案 3：使用原生的 macOS `Cmd` 系列快捷键
 如果你不想更改全局系统设置，可以直接使用 ATBCmder 深度内置的 Mac 原生快捷键：
+
 - **复制**：`Cmd+C` ➔ `Cmd+V`（或在面板中按 `F5`）
 - **移动**：`Cmd+C` ➔ `Cmd+Option+V`（`⌥⌘V` 粘贴移动）
 - **删除**：`Cmd+Delete`（`⌘⌫`）

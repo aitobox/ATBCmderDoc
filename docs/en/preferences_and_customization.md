@@ -401,6 +401,7 @@ High-churn directories—such as `node_modules`, Git metadata repositories (`.gi
    /Users/username/Developer/linux/.git
    /Volumes/ProductionNAS/RenderingQueue
    ```
+
 3. Click **Apply**. ATBCmder ignores filesystem events occurring inside these path trees, eliminating unwanted UI refreshes and CPU spikes.
 
 ---
@@ -488,6 +489,7 @@ Toolbar items are organized in a hierarchical tree supporting three element type
 
 #### The Built-in Icon Picker (`IconPickerDialog`)
 When configuring custom buttons, click the icon preview button to open the integrated **Icon Picker**:
+
 - Features an instant search filter across hundreds of bundled SVG and PNG icons.
 - Displays icons in a uniform grid with high-resolution preview and asset stem names.
 
@@ -611,6 +613,7 @@ chezmoi add ~/Library/Preferences/atbcmder/atbcmder_hotkeys.xml
 
 ### Pro Tip 2: High-Performance Network Watcher Tuning
 When working across enterprise SMB/NFS file servers containing millions of files, active recursive event monitoring can cause network congestion.
+
 1. Open **Preferences ➔ Auto Refresh**.
 2. Uncheck **When size, date or attributes change**.
 3. Set **Polling interval** to `15` or `30` seconds.

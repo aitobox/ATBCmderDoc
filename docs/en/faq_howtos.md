@@ -3,6 +3,7 @@
 While orthodox dual-panel file managers are renowned for their raw speed and keyboard efficiency, mastering real-world tasks often requires understanding how distinct subsystems—such as directory synchronization, batch pattern renaming, remote virtual filesystems, archive repacking, and recursive search—work together in everyday scenarios. Furthermore, operating within modern macOS introduces security boundaries, sandbox constraints, and system shortcut intersections that every user eventually encounters.
 
 This chapter is divided into two comprehensive sections:
+
 1. **Practical Real-World Recipes**: Five complete, end-to-end walkthroughs covering high-value file management workflows with step-by-step procedures, UI visual representations, keyboard shortcuts, and power-user tips.
 2. **Troubleshooting Guide & FAQs**: In-depth explanations and diagnostic resolutions for common operational questions, permission errors, auto-refresh behaviors, configuration resets, Apple keyboard function keys, and cross-volume file transfer mechanics.
 
@@ -119,6 +120,7 @@ The following decision matrix maps common file management objectives and technic
      ```
      [Y]-[M]-[D]_Vacation_[C]
      ```
+
    - **Token Explanation**:
      * `[Y]`: 4-digit Year of file modification (e.g., `2026`).
      * `[M]`: 2-digit Month (e.g., `09`).
@@ -192,6 +194,7 @@ The following decision matrix maps common file management objectives and technic
      vfs://smb://admin@192.168.1.100/volume1/Media/
      vfs://sftp://ubuntu@aws.prod.internal:22/var/www/html/
      ```
+
    - You can now browse, search, copy (`F5`), move (`F6`), and delete (`F8`) files across local disks and remote servers with identical dual-panel agility.
 7. **Quick Reconnection from Menu Bar**:
    - All saved profiles automatically appear under **Network ➔ Saved Connections**. Simply click any saved server to mount it instantly.
@@ -218,6 +221,7 @@ The following decision matrix maps common file management objectives and technic
      ```
      vfs:///Users/brain/Downloads/production_backup.zip/
      ```
+
 2. **Navigate to the Target File**:
    - Browse nested virtual directories (`etc`, `nginx`, `conf.d`) just as you would on a physical volume.
    - Locate the file you need to update (e.g., `nginx.conf` or `app_settings.json`).
@@ -301,6 +305,7 @@ The following decision matrix maps common file management objectives and technic
 Under modern macOS (macOS 12 Monterey through macOS 15 Sequoia), Apple enforces strict **App Sandbox** and **TCC (Transparency, Consent, and Control)** privacy boundaries. Sandboxed applications cannot access external drives, system folders, or even standard user directories (`~/Documents`, `~/Downloads`, `~/Desktop`) without an explicit user-granted cryptographic permission token known as a **Security-Scoped Bookmark**.
 
 If ATBCmder has not been granted filesystem access, you may experience:
+
 - File operation dialogs displaying: `"Error: Operation not permitted"`.
 - Directories appearing empty even though files exist in Finder.
 - External USB or Thunderbolt drives under `/Volumes` showing access denied errors.
@@ -374,6 +379,7 @@ After running these commands, restart ATBCmder and re-run **`cm_GrantFilesystemA
 
 #### Root Cause
 ATBCmder uses a multi-tiered file monitoring engine:
+
 1. **Kernel `FSEvents`**: On native Apple APFS and HFS+ volumes, the macOS kernel emits instantaneous directory mutation events when files are added, modified, or deleted by external tools.
 2. **Filesystem Limitations**: Non-Apple filesystems (e.g., external USB sticks formatted as **FAT32** or **exFAT**) and remote network mounts (**SMB**, **NFS**, **SFTP**, **WebDAV**) **do not support kernel `FSEvents` notifications**. When a third-party app creates or deletes a file on an SMB share, the macOS kernel receives zero notification events.
 
@@ -413,12 +419,14 @@ ATBCmder provides a sandboxed test launcher script:
 ```
 
 **How It Works**:
+
 1. The script creates a dedicated temporary directory: `tests/.test_config/`.
 2. It copies the clean baseline test configuration (`src/atbcmder/resources/test_config.xml`) to `tests/.test_config/atbcmder.xml`.
 3. It exports the environment variable:
    ```bash
    export ATBCMDER_CONFIG_PATH="$(pwd)/tests/.test_config"
    ```
+
 4. When launched, ATBCmder reads all settings exclusively from this test folder. Any changes, tab modifications, or hotkey experiments are contained entirely within `tests/.test_config/`, leaving your personal preferences completely untouched.
 
 #### Restoring Factory Default Configuration
@@ -435,12 +443,14 @@ If your production configuration becomes corrupted or you want to start complete
    mv ~/Library/Preferences/atbcmder/atbcmder.xml ~/Library/Preferences/atbcmder/atbcmder.xml.bak
    mv ~/Library/Preferences/atbcmder/atbcmder_hotkeys.xml ~/Library/Preferences/atbcmder/atbcmder_hotkeys.xml.bak
    ```
+
 4. Restart ATBCmder.
 5. On startup, ATBCmder detects the missing configuration files and automatically regenerates clean, validated XML configurations populated with official factory defaults.
 
 #### Exporting & Importing Portable Configurations
 
 To migrate your configuration across multiple Macs or create an external backup:
+
 - **Export**: Choose **Configuration ➔ Export Configuration...** (command **`cm_ExportConfiguration`**) to save a consolidated `.zip` or `.xml` snapshot containing your hotkeys, columns, favorite tabs, and color palettes.
 - **Import**: Choose **Configuration ➔ Import Configuration...** (command **`cm_ImportConfiguration`**) on your target machine to restore settings instantly.
 
@@ -450,6 +460,7 @@ To migrate your configuration across multiple Macs or create an external backup:
 
 #### Root Cause
 By default, Apple keyboards (MacBook built-in keyboards, Magic Keyboards) assign special hardware functions to the top row of keys:
+
 - `F1` / `F2`: Display brightness down / up
 - `F3`: Mission Control
 - `F4`: Spotlight / Launchpad
@@ -461,6 +472,7 @@ When you press `F5` hoping to copy a file, macOS intercepts the keystroke and do
 #### Solution 1: Use the `Fn` Modifier Chord
 
 Hold down the **`Fn`** (Function) or **Globe (`🌐`)** key in the bottom-left corner of your keyboard while pressing the function key:
+
 - **`Fn+F3`**: Universal Lister (`cm_View`)
 - **`Fn+F4`**: Text Editor (`cm_Edit`)
 - **`Fn+F5`**: Copy Files (`cm_Copy`)
@@ -501,6 +513,7 @@ If you use ATBCmder regularly, configuring macOS to treat function keys as stand
 #### Solution 3: Use Native macOS `Cmd` Key Equivalents
 
 If you prefer not to change system keyboard settings, ATBCmder provides native macOS keyboard shortcuts for every core operation:
+
 - **Copy**: `Cmd+C` / `Cmd+V` (or standard `F5`)
 - **Move**: `Cmd+C` ➔ `Cmd+Option+V` (`⌥⌘V` move paste)
 - **Delete**: `Cmd+Delete` (`⌘⌫`)

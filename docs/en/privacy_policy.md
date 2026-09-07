@@ -8,6 +8,7 @@ ATBCmder is built with your privacy as our top priority. We believe that your fi
 **We do not collect, store, share, or transmit any personal information or user data.** 
 
 ATBCmder operates entirely locally on your macOS device. 
+
 - It does not "phone home" to our servers.
 - It does not include any third-party analytics trackers, telemetry, or crash reporters.
 - It does not harvest, scan, or analyze your file metadata, browsing habits, or personal information.

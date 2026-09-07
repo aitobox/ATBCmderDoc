@@ -99,6 +99,7 @@ Working on complex software projects, photo libraries, or server backups often r
 ### Native macOS Tab Bar Design
 
 Built with `MacNativeTabBar`, the tab bar matches modern macOS aesthetics:
+
 - **Visual Design**: Rounded tab corners, smooth hover states, and clear active tab accent indicators.
 - **Hover Close Buttons**: Every tab features an integrated `✕` close button that appears upon hover or selection.
 - **Middle-Click to Close**: Click any tab with your mouse middle button / trackpad three-finger click to close it immediately.
@@ -153,6 +154,7 @@ While individual tabs provide local flexibility, **Favorite Tabs** allow you to 
 ```
 
 A Favorite Tab set encapsulates:
+
 - All open tabs in the Left Panel (including paths and lock states).
 - All open tabs in the Right Panel (including paths and lock states).
 - The active tab selection for both panels.
@@ -202,6 +204,7 @@ Pressing `Ctrl+D` summons a lightweight, floating search dialog centered right u
 ### Hotlist Configuration (`Ctrl+Shift+D` / `⌃⇧D` / `cm_ConfigDirHotList`)
 
 Open **Preferences** → **Directory Hotlist** (or trigger `cm_ConfigDirHotList`) to organize your bookmarks:
+
 - **Hierarchical Sub-Menus**: Group related bookmarks into categories (e.g. `Work`, `Personal`, `Cloud Storage`, `Network Shares`).
 - **Custom Display Labels**: Assign friendly names like `Work Documents` instead of long paths like `/Users/username/Library/Mobile Documents/com~apple~CloudDocs/Work`.
 - **Drag-and-Drop Reordering**: Rearrange bookmark ordering to keep top-priority directories at the very top of your list.
@@ -260,6 +263,7 @@ The standard, most comprehensive view mode. It displays files in a rich tabular 
 ### 2. Brief View (`Ctrl+F1` / `⌃F1` / `cm_BriefView`)
 
 Brief View strips away metadata columns, organizing files into multiple compact vertical columns that fill the entire panel width.
+
 - **High-Density Browsing**: Displays 3x to 5x more items on screen simultaneously.
 - **Best For**: Rapidly scanning large directory listings (such as fonts, photo dumps, or log archives) where you only need to identify filenames.
 
@@ -282,6 +286,7 @@ The Tree View displays an expandable hierarchical directory tree, making it easy
 *Tree View integrated alongside file listings and thumbnails*
 
 ATBCmder supports three distinct Tree View layouts via the **Show** menu:
+
 - **Tree View (Replace) (`cm_TreeView`)**: The active panel's file table is replaced entirely with an expandable directory tree.
 - **Tree View (Split) (`cm_TreeViewSplit`)**: The active panel is divided vertically into two sub-panes: a directory tree on the left, and the standard file listing for the selected tree folder on the right.
 - **Tree View (Both Panels) (`cm_TreeViewBoth`)**: Enables the split directory tree in both the Left and Right panels simultaneously.
@@ -363,6 +368,7 @@ By default, ATBCmder places the two file panels side-by-side (vertical split). O
 In most file managers, changing the sort column or switching from detailed columns to thumbnails forces the entire window to change globally.
 
 ATBCmder isolates and remembers view preferences at the individual **Tab level** (`TabState`), automatically persisted across restarts via `SessionManager` (`atbcmder_session.xml`):
+
 - **Independent View Modes**: You can keep Tab 1 in **Full Columns View** for code reviews, Tab 2 in **Thumbnails Grid View** for graphics assets, and Tab 3 in **Brief View** for rapid skimming.
 - **Independent Sorting**: Each tab remembers its own sort column (Name, Extension, Size, Date, or Permissions) and sort direction (ascending vs. descending). Switching between tabs never resets your sort priorities.
 - **Independent Flat & Tree States**: A tab set to **Flat Branch View** (`Cmd+B` / `cm_FlatView`) or **Tree View Mode** maintains its recursive directory flattening without altering the view state of any other tab in either panel.
