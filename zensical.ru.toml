@@ -1,0 +1,60 @@
+[project]
+site_name    = "ATBCmder"
+site_url     = "https://cmder.aitobox.com/ru/"
+site_description = "Двухпанельный файловый менеджер для macOS"
+repo_url     = "https://github.com/aitobox/ATBCmderDoc"
+repo_name    = "ATBCmderDoc"
+docs_dir     = "docs/ru"
+site_dir     = "site/ru"
+
+extra_javascript = [
+  "javascripts/language-detector.js",
+  "javascripts/ascii-diagram.js"
+]
+extra_css        = ["stylesheets/extra.css"]
+
+nav = [
+  { "Добро пожаловать в ATBCmder" = "index.md" },
+  { "Глава 1: Основные концепции и настройка macOS" = "getting_started.md" },
+  { "Глава 2: Навигация и вкладки папок" = "navigation_and_tabs.md" },
+  { "Глава 3: Операции с файлами и фоновая очередь" = "file_operations.md" },
+  { "Глава 4: Универсальный просмотрщик и редакторы" = "viewers_and_editors.md" },
+  { "Глава 5: Инструменты продуктивности и автоматизация" = "power_tools.md" },
+  { "Глава 6: Виртуальные файловые системы и сеть" = "network_and_vfs.md" },
+  { "Глава 7: Настройки и персонализация" = "preferences_and_customization.md" },
+  { "Глава 8: Справочник горячих клавиш" = "keyboard_shortcuts.md" },
+  { "Глава 9: Практические рецепты и устранение неполадок" = "faq_howtos.md" },
+  { "Глава 10: Скачивание и установка" = "download.md" },
+  { "Политика конфиденциальности" = "privacy_policy.md" }
+]
+
+[project.theme]
+name        = "material"
+custom_dir  = "overrides"
+language    = "ru"
+palette     = [
+  { scheme = "default", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: light)" },
+  { scheme = "slate", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: dark)" }
+]
+font        = { text = "Inter", code = "JetBrains Mono" }
+features    = [
+  "navigation.top",
+  "search.highlight",
+  "content.code.copy"
+]
+
+[project.extra]
+app_store_url = "https://apps.apple.com/app/atbcmder/id6792398333"
+alternate = [
+  { name = "English", link = "/en/", lang = "en" },
+  { name = "简体中文", link = "/zh/", lang = "zh" },
+  { name = "繁體中文", link = "/zh-hant/", lang = "zh-hant" },
+  { name = "日本語", link = "/ja/", lang = "ja" },
+  { name = "Deutsch", link = "/de/", lang = "de" },
+  { name = "Français", link = "/fr/", lang = "fr" },
+  { name = "Español", link = "/es/", lang = "es" },
+  { name = "Português", link = "/pt/", lang = "pt" },
+  { name = "한국어", link = "/ko/", lang = "ko" },
+  { name = "Русский", link = "/ru/", lang = "ru" },
+  { name = "Italiano", link = "/it/", lang = "it" }
+]

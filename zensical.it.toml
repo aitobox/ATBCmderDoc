@@ -1,11 +1,11 @@
 [project]
 site_name    = "ATBCmder"
-site_url     = "https://cmder.aitobox.com/zh/"
-site_description = "macOS 双栏文件管理器与键盘流效率工具"
+site_url     = "https://cmder.aitobox.com/it/"
+site_description = "Il file manager a doppio pannello per macOS"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
-docs_dir     = "docs/zh"
-site_dir     = "site/zh"
+docs_dir     = "docs/it"
+site_dir     = "site/it"
 
 extra_javascript = [
   "javascripts/language-detector.js",
@@ -14,24 +14,24 @@ extra_javascript = [
 extra_css        = ["stylesheets/extra.css"]
 
 nav = [
-  { "欢迎使用 ATBCmder" = "index.md" },
-  { "第 1 章：基础概念与 macOS 系统配置" = "getting_started.md" },
-  { "第 2 章：极速导航与多标签工作区" = "navigation_and_tabs.md" },
-  { "第 3 章：日常文件操作与后台异步队列" = "file_operations.md" },
-  { "第 4 章：全能万用查看器与内置编辑器" = "viewers_and_editors.md" },
-  { "第 5 章：高阶生产力工具与自动化" = "power_tools.md" },
-  { "第 6 章：虚拟文件系统与网络互联" = "network_and_vfs.md" },
-  { "第 7 章：偏好设置与深度个性化定制" = "preferences_and_customization.md" },
-  { "第 8 章：终极快捷键全书" = "keyboard_shortcuts.md" },
-  { "第 9 章：实战场景解决方案与故障排查" = "faq_howtos.md" },
-  { "第 10 章：软件下载与安装指南" = "download.md" },
-  { "隐私政策" = "privacy_policy.md" }
+  { "Benvenuto in ATBCmder" = "index.md" },
+  { "Capitolo 1: Concetti fondamentali e configurazione di macOS" = "getting_started.md" },
+  { "Capitolo 2: Navigazione e schede delle cartelle" = "navigation_and_tabs.md" },
+  { "Capitolo 3: Operazioni quotidiane sui file e coda in background" = "file_operations.md" },
+  { "Capitolo 4: Visualizzatore universale ed editor integrati" = "viewers_and_editors.md" },
+  { "Capitolo 5: Strumenti avanzati e automazione" = "power_tools.md" },
+  { "Capitolo 6: File system virtuali e rete" = "network_and_vfs.md" },
+  { "Capitolo 7: Preferenze e personalizzazione" = "preferences_and_customization.md" },
+  { "Capitolo 8: Guida rapida alle scorciatoie da tastiera" = "keyboard_shortcuts.md" },
+  { "Capitolo 9: Ricette pratiche e risoluzione dei problemi" = "faq_howtos.md" },
+  { "Capitolo 10: Download e installazione" = "download.md" },
+  { "Informativa sulla privacy" = "privacy_policy.md" }
 ]
 
 [project.theme]
 name        = "material"
 custom_dir  = "overrides"
-language    = "zh"
+language    = "it"
 palette     = [
   { scheme = "default", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: light)" },
   { scheme = "slate", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: dark)" }

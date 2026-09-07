@@ -1,11 +1,11 @@
 [project]
 site_name    = "ATBCmder"
-site_url     = "https://cmder.aitobox.com/zh/"
-site_description = "macOS 双栏文件管理器与键盘流效率工具"
+site_url     = "https://cmder.aitobox.com/ja/"
+site_description = "macOS向けデュアルパネル・ファイルマネージャー"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
-docs_dir     = "docs/zh"
-site_dir     = "site/zh"
+docs_dir     = "docs/ja"
+site_dir     = "site/ja"
 
 extra_javascript = [
   "javascripts/language-detector.js",
@@ -14,24 +14,24 @@ extra_javascript = [
 extra_css        = ["stylesheets/extra.css"]
 
 nav = [
-  { "欢迎使用 ATBCmder" = "index.md" },
-  { "第 1 章：基础概念与 macOS 系统配置" = "getting_started.md" },
-  { "第 2 章：极速导航与多标签工作区" = "navigation_and_tabs.md" },
-  { "第 3 章：日常文件操作与后台异步队列" = "file_operations.md" },
-  { "第 4 章：全能万用查看器与内置编辑器" = "viewers_and_editors.md" },
-  { "第 5 章：高阶生产力工具与自动化" = "power_tools.md" },
-  { "第 6 章：虚拟文件系统与网络互联" = "network_and_vfs.md" },
-  { "第 7 章：偏好设置与深度个性化定制" = "preferences_and_customization.md" },
-  { "第 8 章：终极快捷键全书" = "keyboard_shortcuts.md" },
-  { "第 9 章：实战场景解决方案与故障排查" = "faq_howtos.md" },
-  { "第 10 章：软件下载与安装指南" = "download.md" },
-  { "隐私政策" = "privacy_policy.md" }
+  { "ATBCmder へようこそ" = "index.md" },
+  { "第1章：基本概念と macOS の初期設定" = "getting_started.md" },
+  { "第2章：高速ナビゲーションとフォルダータブ" = "navigation_and_tabs.md" },
+  { "第3章：日常のファイル操作と非同期バックグラウンドキュー" = "file_operations.md" },
+  { "第4章：万能ビューアーと内蔵エディター" = "viewers_and_editors.md" },
+  { "第5章：高度なツールと自動化" = "power_tools.md" },
+  { "第6章：仮想ファイルシステムとネットワーク" = "network_and_vfs.md" },
+  { "第7章：環境設定とカスタマイズ" = "preferences_and_customization.md" },
+  { "第8章：マスターキーボードショートカット一覧" = "keyboard_shortcuts.md" },
+  { "第9章：実践レシピとトラブルシューティング" = "faq_howtos.md" },
+  { "第10章：ダウンロードとインストール" = "download.md" },
+  { "プライバシーポリシー" = "privacy_policy.md" }
 ]
 
 [project.theme]
 name        = "material"
 custom_dir  = "overrides"
-language    = "zh"
+language    = "ja"
 palette     = [
   { scheme = "default", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: light)" },
   { scheme = "slate", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: dark)" }

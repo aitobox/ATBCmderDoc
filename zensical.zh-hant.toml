@@ -1,11 +1,11 @@
 [project]
 site_name    = "ATBCmder"
-site_url     = "https://cmder.aitobox.com/zh/"
-site_description = "macOS 双栏文件管理器与键盘流效率工具"
+site_url     = "https://cmder.aitobox.com/zh-hant/"
+site_description = "macOS 雙欄檔案管理器與鍵盤流效率工具"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
-docs_dir     = "docs/zh"
-site_dir     = "site/zh"
+docs_dir     = "docs/zh-hant"
+site_dir     = "site/zh-hant"
 
 extra_javascript = [
   "javascripts/language-detector.js",
@@ -14,24 +14,24 @@ extra_javascript = [
 extra_css        = ["stylesheets/extra.css"]
 
 nav = [
-  { "欢迎使用 ATBCmder" = "index.md" },
-  { "第 1 章：基础概念与 macOS 系统配置" = "getting_started.md" },
-  { "第 2 章：极速导航与多标签工作区" = "navigation_and_tabs.md" },
-  { "第 3 章：日常文件操作与后台异步队列" = "file_operations.md" },
-  { "第 4 章：全能万用查看器与内置编辑器" = "viewers_and_editors.md" },
-  { "第 5 章：高阶生产力工具与自动化" = "power_tools.md" },
-  { "第 6 章：虚拟文件系统与网络互联" = "network_and_vfs.md" },
-  { "第 7 章：偏好设置与深度个性化定制" = "preferences_and_customization.md" },
-  { "第 8 章：终极快捷键全书" = "keyboard_shortcuts.md" },
-  { "第 9 章：实战场景解决方案与故障排查" = "faq_howtos.md" },
-  { "第 10 章：软件下载与安装指南" = "download.md" },
-  { "隐私政策" = "privacy_policy.md" }
+  { "歡迎使用 ATBCmder" = "index.md" },
+  { "第 1 章：基礎概念與 macOS 系統配置" = "getting_started.md" },
+  { "第 2 章：極速導覽與多分頁工作區" = "navigation_and_tabs.md" },
+  { "第 3 章：日常檔案操作與後台異步隊列" = "file_operations.md" },
+  { "第 4 章：全能萬用檢視器與內建編輯器" = "viewers_and_editors.md" },
+  { "第 5 章：進階生產力工具與自動化" = "power_tools.md" },
+  { "第 6 章：虛擬檔案系統與網路互連" = "network_and_vfs.md" },
+  { "第 7 章：偏好設定與深度個性化自訂" = "preferences_and_customization.md" },
+  { "第 8 章：終極快速鍵全書" = "keyboard_shortcuts.md" },
+  { "第 9 章：實戰場景解決方案與疑難排解" = "faq_howtos.md" },
+  { "第 10 章：軟體下載與安裝指南" = "download.md" },
+  { "隱私政策" = "privacy_policy.md" }
 ]
 
 [project.theme]
 name        = "material"
 custom_dir  = "overrides"
-language    = "zh"
+language    = "zh-TW"
 palette     = [
   { scheme = "default", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: light)" },
   { scheme = "slate", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: dark)" }
