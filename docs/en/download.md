@@ -2,6 +2,12 @@
 
 Thank you for your interest in ATBCmder! We provide two different download and installation methods to suit your needs.
 
+> [!IMPORTANT]
+> **System & Architecture Requirements**  
+> - **Operating System**: macOS 12.0 (Monterey) or later (including macOS 13 Ventura, macOS 14 Sonoma, and macOS 15 Sequoia).  
+> - **Supported Hardware Architecture**: **Apple Silicon (M1 / M2 / M3 / M4, ARM64)**.  
+> - **Intel (x86_64) Compatibility**: Intel-based Macs are **not supported** at this time.
+
 ## 1. Mac App Store (Recommended)
 
 This is the recommended way to install ATBCmder. **ATBCmder is now officially available on the Mac App Store!** Downloading through the official Mac App Store ensures you get seamless automatic updates, native macOS sandbox protection, and the best system integration.
@@ -10,11 +16,11 @@ This is the recommended way to install ATBCmder. **ATBCmder is now officially av
 
 ## 2. DMG Installer Download
 
-If you cannot access the Mac App Store or prefer direct downloads, we provide a DMG installer package.
+If you cannot access the Mac App Store or prefer direct downloads, we provide a standalone DMG installer package built natively for Apple Silicon (ARM64).
 
-- **DMG Download Link**: [Click here to download ATBCmder DMG](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder)
+- **DMG Download Link**: [Click here to download ATBCmder DMG](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder) *(Apple Silicon / ARM64 only)*
 
-*Note: When installing via DMG, macOS security features might require you to explicitly allow the application in "System Settings > Privacy & Security" the first time you open it.*
+*Note: When installing via DMG, macOS security features might require you to explicitly allow the application in "System Settings > Privacy & Security" the first time you open it. Intel (x86_64) Macs are not supported.*
 
 ### ⚠️ Grant Full Disk Access
 

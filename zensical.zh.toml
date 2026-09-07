@@ -9,13 +9,16 @@ site_dir     = "site/zh"
 
 nav = [
   { "欢迎使用 ATBCmder" = "index.md" },
-  { "下载" = "download.md" },
-  { "快速入门" = "getting_started.md" },
-  { "导航指南" = "navigation.md" },
-  { "文件管理指南" = "file_management.md" },
-  { "高级功能（面向进阶用户）" = "advanced_features.md" },
-  { "快捷键参考" = "keyboard_shortcuts.md" },
-  { "操作指南与常见问题" = "faq_howtos.md" },
+  { "第 1 章：新手起步与 macOS 系统设置" = "getting_started.md" },
+  { "第 2 章：导航、标签页与视图模式" = "navigation_and_tabs.md" },
+  { "第 3 章：日常文件操作与后台队列" = "file_operations.md" },
+  { "第 4 章：全能查看器与内置编辑器" = "viewers_and_editors.md" },
+  { "第 5 章：高阶工具与自动化" = "power_tools.md" },
+  { "第 6 章：虚拟文件系统与网络" = "network_and_vfs.md" },
+  { "第 7 章：偏好设置与个性化定制" = "preferences_and_customization.md" },
+  { "第 8 章：快捷键速查掌中宝" = "keyboard_shortcuts.md" },
+  { "第 9 章：实战场景指南与疑难解答" = "faq_howtos.md" },
+  { "第 10 章：下载与安装指引" = "download.md" },
   { "隐私政策" = "privacy_policy.md" }
 ]
 

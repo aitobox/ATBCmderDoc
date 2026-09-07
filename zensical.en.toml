@@ -9,13 +9,16 @@ site_dir     = "site/en"
 
 nav = [
   { "Welcome to ATBCmder" = "index.md" },
-  { "Download" = "download.md" },
-  { "Getting Started with ATBCmder" = "getting_started.md" },
-  { "Navigation Guide" = "navigation.md" },
-  { "File Management Guide" = "file_management.md" },
-  { "Advanced Features (For Power Users)" = "advanced_features.md" },
-  { "Keyboard Shortcuts" = "keyboard_shortcuts.md" },
-  { "How-To Guides & FAQ" = "faq_howtos.md" },
+  { "Chapter 1: Fundamentals & macOS Setup" = "getting_started.md" },
+  { "Chapter 2: Navigation & Folder Tabs" = "navigation_and_tabs.md" },
+  { "Chapter 3: Daily File Operations & Background Queue" = "file_operations.md" },
+  { "Chapter 4: Universal Lister & Built-in Editors" = "viewers_and_editors.md" },
+  { "Chapter 5: Power Tools & Automation" = "power_tools.md" },
+  { "Chapter 6: Virtual File Systems & Network" = "network_and_vfs.md" },
+  { "Chapter 7: Preferences & Customization" = "preferences_and_customization.md" },
+  { "Chapter 8: Master Keyboard Shortcut Reference" = "keyboard_shortcuts.md" },
+  { "Chapter 9: Real-World Recipes & Troubleshooting" = "faq_howtos.md" },
+  { "Chapter 10: Download & Installation" = "download.md" },
   { "Privacy Policy" = "privacy_policy.md" }
 ]
 
