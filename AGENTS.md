@@ -96,12 +96,20 @@ ATBCmderDoc/
   - On `/en/` pages, displays a `中文` button linking to the corresponding `/zh/` page.
   - On `/zh/` pages, displays an `English` button linking to the corresponding `/en/` page.
 - Also includes header links for **Contact** (`mailto:cmder@aitobox.com`) and **Forum** (GitHub Discussions).
+- Remembers manual user preference in `localStorage.preferred_language`.
 
-### 2. Mac App Store Button (`overrides/partials/header.html`)
+### 2. Automatic Browser Language Routing (`javascripts/language-detector.js` & `root_index.html`)
+- Automatically detects user's browser language (`navigator.languages` / `navigator.language`):
+  - Chinese browsers (`zh*`) are routed to `/zh/`.
+  - Non-Chinese browsers are routed to `/en/`.
+- Respects manual user choice (`localStorage.preferred_language`) and internal navigation without disruptive loops.
+- Supports URL parameter override (e.g. `?lang=zh` or `?lang=en`).
+
+### 3. Mac App Store Button (`overrides/partials/header.html`)
 - Displays a dedicated Mac App Store button in the top navigation bar linking to the ATBCmder app listing.
 
-### 3. Root Redirection (`root_index.html`)
-- Built into `site/index.html` during CI/CD to handle root traffic redirecting to `/en/`.
+### 4. Root Redirection (`root_index.html`)
+- Built into `site/index.html` during CI/CD to handle root traffic redirecting based on browser language.
 
 ---
 

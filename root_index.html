@@ -3,10 +3,41 @@
 <head>
   <meta charset="utf-8">
   <title>Redirecting to ATBCmder Documentation...</title>
-  <meta http-equiv="refresh" content="0; url=/en/">
+  <script>
+    (function () {
+      var STORAGE_KEY = 'preferred_language';
+      var savedPreference = null;
+      try {
+        savedPreference = localStorage.getItem(STORAGE_KEY);
+      } catch (e) {}
+
+      if (savedPreference === 'zh') {
+        window.location.replace('/zh/');
+        return;
+      } else if (savedPreference === 'en') {
+        window.location.replace('/en/');
+        return;
+      }
+
+      var browserLangs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
+      var isChinese = false;
+      for (var i = 0; i < browserLangs.length; i++) {
+        var lang = (browserLangs[i] || '').toLowerCase();
+        if (lang.indexOf('zh') === 0) {
+          isChinese = true;
+          break;
+        }
+      }
+
+      window.location.replace(isChinese ? '/zh/' : '/en/');
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/en/">
+  </noscript>
   <link rel="canonical" href="https://cmder.aitobox.com/en/">
 </head>
 <body>
-  <p>Redirecting to <a href="/en/">English Documentation</a>...</p>
+  <p>Redirecting to <a href="/en/">English Documentation</a> / <a href="/zh/">中文文档</a>...</p>
 </body>
 </html>

@@ -7,6 +7,9 @@ repo_name    = "ATBCmderDoc"
 docs_dir     = "docs/zh"
 site_dir     = "site/zh"
 
+extra_javascript = ["javascripts/language-detector.js"]
+extra_css        = ["stylesheets/extra.css"]
+
 nav = [
   { "欢迎使用 ATBCmder" = "index.md" },
   { "第 1 章：新手起步与 macOS 系统设置" = "getting_started.md" },
@@ -39,6 +42,7 @@ features    = [
 
 [project.extra]
 app_store_url = "https://apps.apple.com/app/atbcmder/id6792398333"
-
-[project.extra_css]
-files = ["stylesheets/extra.css"]
+alternate = [
+  { name = "English", link = "/en/", lang = "en" },
+  { name = "中文", link = "/zh/", lang = "zh" }
+]
