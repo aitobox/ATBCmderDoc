@@ -12,7 +12,7 @@ ATBCmder centralizes all user settings into a unified preferences architecture c
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                          ATBCMDER PREFERENCES CENTER (Cmd+,)                          │
+│                          ATBCMDER PREFERENCES CENTER (Cmd+,)                           │
 ├──────────────────────┬─────────────────────────────────────────────────────────────────┤
 │  CATEGORY NAVIGATION │  ACTIVE CONFIGURATION PAGE                                      │
 ├──────────────────────┼─────────────────────────────────────────────────────────────────┤
@@ -32,9 +32,9 @@ ATBCmder centralizes all user settings into a unified preferences architecture c
 │  • Middle Toolbar    │  Date/Time Format:                                              │
 │  • Log               │  Long Format: [ %Y-%m-%d %H:%M:%S                             ] │
 │  • Quick Search      │                                                                 │
-│  • Semantic Filter   │  [ Revert Changes ]                     [ Apply ] [ OK ] [Cancel]│
+│  • Semantic Filter   │  [ Revert Changes ]                   [ Apply ] [ OK ] [Cancel] │
 ├──────────────────────┴─────────────────────────────────────────────────────────────────┤
-│  CONFIG BACKEND:  atbcmder.xml  |  atbcmder_hotkeys.xml  |  favtabs.xml  |  hotlist.xml │
+│  CONFIG BACKEND:  atbcmder.xml  |  atbcmder_hotkeys.xml  |  favtabs.xml  |  hotlist.xml│
 │  PORTABILITY:     cm_ExportConfiguration (ZIP)  ➔  cm_ImportConfiguration (ZIP)        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -85,7 +85,7 @@ The Preferences dialog utilizes a master-detail split layout designed for clarit
 │  [ Auto Refresh ]    File monitoring events, polling, background sleep     │
 │  [ Operations ]      Collision defaults (overwrite/rename), permissions    │
 │  [ Packer ]          Archive formats (ZIP, 7Z, TAR), external binaries     │
-│  [ Directory Hotlist]Bookmarks management, target panels, drag-and-drop   │
+│  [ Directory Hotlist]Bookmarks management, target panels, drag-and-drop    │
 │  [ Favorite Tabs ]   Dual-panel workspace sets, layout persistence         │
 │  [ Editor ]          Internal code editor typography, external editor CLI  │
 │  [ Viewer ]          Universal Lister fonts, image rendering, external CLI │
@@ -153,8 +153,8 @@ Keyboard efficiency is the core philosophy of dual-panel file management. ATBCmd
 ├──────────────────────┼────────────────────────┼───────────────────┼────────────────────┤
 │ cm_Copy              │ Copy Files or Folders  │ F5                │ Cmd+C              │
 │ cm_CopySamePanel     │ Duplicate File in Pane │ Shift+F5          │ Cmd+D              │
-│ cm_CopyRightPanel     │ Copy to Right Panel    │ Alt+F5            │                    │
-│ cm_CopyFullNamesToClip│ Copy Full Path Names   │ Ctrl+Shift+C      │ Cmd+Opt+C          │
+│ cm_CopyRightPanel     │ Copy to Right Panel    │ Alt+F5            │                   │
+│ cm_CopyFullNamesToClip│ Copy Full Path Names   │ Ctrl+Shift+C      │ Cmd+Opt+C         │
 ├──────────────────────┴────────────────────────┴───────────────────┴────────────────────┤
 │  [ Edit Shortcut... ]           [ Clear Shortcuts ]            [ Reset to Defaults ]   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
@@ -498,11 +498,11 @@ When configuring custom buttons, click the icon preview button to open the integ
 │ Search: [ terminal                                                   ] │
 ├──────────────────────────────────────────────────────┬─────────────────┤
 │  ┌────┐   ┌────┐   ┌────┐   ┌────┐   ┌────┐   ┌────┐ │ PREVIEW:        │
-│  │ 💻 │   │ 🖥️ │   │ ⌨️ │   │ ⚙️ │   │ 📁 │   │ 🔍 │ │                 │
-│  └────┘   └────┘   └────┘   └────┘   └────┘   └────┘ │      💻         │
+│  │ 💻 │   │ 🖥️ │   │ ⌨️ │   │ ⚙️ │   │ 📁 │   │ 🔍 │ │                    │
+│  └────┘   └────┘   └────┘   └────┘   └────┘   └────┘ │      💻          │
 │  cm_RunTerm  console  terminal  bash   sh      zsh   │                 │
 │  ┌────┐   ┌────┐   ┌────┐   ┌────┐   ┌────┐   ┌────┐ │ Name: cm_RunTerm│
-│  │ 📄 │   │ ✏️ │   │ ✂️ │   │ 📋 │   │ 🗑️ │   │ 🔒 │ │ Size: 48x48     │
+│  │ 📄 │   │ ✏️ │   │ ✂️ │   │ 📋 │   │ 🗑️ │   │ 🔒 │ │ Size: 48x48        │
 │  └────┘   └────┘   └────┘   └────┘   └────┘   └────┘ │ Format: SVG/PNG │
 ├──────────────────────────────────────────────────────┴─────────────────┤
 │                                                [ Cancel ]  [ Select ]  │

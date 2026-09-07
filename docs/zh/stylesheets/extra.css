@@ -2,6 +2,26 @@
 :root {
   --atb-primary: var(--md-primary-fg-color);
   --atb-accent: var(--md-accent-fg-color);
+  --md-code-font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Ensure code blocks render with native monospace font, zero letter-spacing, and preformatted text */
+.highlight pre,
+pre code,
+code,
+kbd {
+  font-family: var(--md-code-font) !important;
+  letter-spacing: 0;
+  white-space: pre;
+}
+
+/* CJK Monospace Character Normalizer for ASCII Diagrams */
+.cjk-char {
+  display: inline-block;
+  width: 2ch;
+  text-align: center;
+  vertical-align: baseline;
+  font-style: normal;
 }
 
 .atb-container {

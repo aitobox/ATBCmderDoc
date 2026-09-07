@@ -23,7 +23,7 @@ The ATBCmder Way (Orthodox Dual-Panel):
 ┌───────────────────────────────┬───────────────────────────────┐
 │     ACTIVE PANEL (Source)     │    INACTIVE PANEL (Target)    │
 │  Files waiting for action     │  Predictable destination      │
-│  [ Copy / Move / Diff / Sync  ═════════════════════════════► ] │
+│  [ Copy / Move / Diff / Sync  ═════════════════════════════► ]│
 └───────────────────────────────┴───────────────────────────────┘
 ```
 
@@ -43,22 +43,22 @@ ATBCmder organizes power into a clean, intuitive layout designed to give you ins
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
 │ [1] Menu Bar: File   Mark   Commands   Show   Configuration   Help                       │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
-│ [2] Main Toolbar:  [🔍 Search]  [⚡ Queue]  [⚙️ Preferences]  [📁 Drive Bar]              │
+│ [2] Main Toolbar:  [🔍 Search]  [⚡ Queue]  [⚙️ Preferences]  [📁 Drive Bar]                │
 ├─────────────────────────────────────────────┬────────────────────────────────────────────┤
-│ [3] Breadcrumbs: 🏠 > Users > brain > work │ [3] Breadcrumbs: 💾 > Volumes > Backup     │
+│ [3] Breadcrumbs: 🏠 > Users > brain > work │ [3] Breadcrumbs: 💾 > Volumes > Backup        │
 ├─────────────────────────────────────────────┼────────────────────────────────────────────┤
 │ [4] Tab Bar: [Project Alpha ✕] [Docs] [+]   │ [4] Tab Bar: [2026 Archive ✕] [+]          │
 ├──────────────────────────────────────┬──────┼────────────────────────────────────────────┤
 │ [5] Left Panel (Active / Source)     │ [6]  │ [5] Right Panel (Inactive / Target)        │
-│ 📁 .. [Parent Directory]             │  M   │ 📁 .. [Parent Directory]                   │
-│ 📁 assets                            │  I   │ 📁 archive_2025                            │
-│ 📁 src                               │  D   │ 📁 release_builds                          │
-│ 📄 Cargo.toml             1.2 KB     │  D   │ 📄 CHANGELOG.md                 14.8 KB    │
-│ 📄 main.rs                8.4 KB     │  L   │ 📄 README.md                     4.1 KB    │
-│ 📄 config.json            2.1 KB     │  E   │ 📦 backup_bundle.zip           128.4 MB    │
+│ 📁 .. [Parent Directory]             │  M   │ 📁 .. [Parent Directory]                     │
+│ 📁 assets                            │  I   │ 📁 archive_2025                              │
+│ 📁 src                               │  D   │ 📁 release_builds                            │
+│ 📄 Cargo.toml             1.2 KB     │  D   │ 📄 CHANGELOG.md                 14.8 KB      │
+│ 📄 main.rs                8.4 KB     │  L   │ 📄 README.md                     4.1 KB      │
+│ 📄 config.json            2.1 KB     │  E   │ 📦 backup_bundle.zip           128.4 MB      │
 │                                      │      │                                            │
 ├──────────────────────────────────────┴──────┴────────────────────────────────────────────┤
-│ [7] Status Bar: 6 items | 2 selected (10.5 KB)    │ Drive: 142.6 GB free / 494.3 GB total│
+│ [7] Status Bar: 6 items | 2 selected (10.5 KB)   │ Drive: 142.6 GB free / 494.3 GB total │
 └──────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

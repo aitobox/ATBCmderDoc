@@ -12,7 +12,7 @@ In ATBCmder, each panel operates as an autonomous browsing engine equipped with 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src                │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │ [TAB STRIP]   [★ Source (Locked)] [Assets] [Build Output] [+]                   │
 ├─────────────────────────────────────────────────────────────────────────────────┤
@@ -24,7 +24,7 @@ In ATBCmder, each panel operates as an autonomous browsing engine equipped with 
 │  ● config.xml                 xml       12.1 KB   Yesterday, 19:40   -rw-r--r-- │
 │                                                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [QUICK SEARCH]  🔍 Find: mai_   (Matches: main.py)                              │
+│ [QUICK SEARCH]  🔍 Find: mai_   (Matches: main.py)                               │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -315,7 +315,7 @@ Quick Search allows you to leap directly to any file by typing its name without 
 │  main.py            py      8.4 KB    Today, 15:10   -rw-r--r-- │
 │  main_window.py     py     72.1 KB    Today, 15:18   -rw-r--r-- │
 ├─────────────────────────────────────────────────────────────────┤
-│ 🔍 Quick Search: main_                 [ Next: ↓ ] [ Prev: ↑ ]  │
+│ 🔍 Quick Search: main_                 [ Next: ↓ ] [ Prev: ↑ ]   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 

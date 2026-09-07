@@ -14,8 +14,8 @@ ATBCmder replaces this friction with the time-tested **Orthodox File Manager (OF
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE (SOURCE) PANEL                     INACTIVE (TARGET) PANEL             │
-│  /Users/username/Downloads                 /Volumes/BackupDrive/Projects       │
+│  ACTIVE (SOURCE) PANEL                     INACTIVE (TARGET) PANEL              │
+│  /Users/username/Downloads                 /Volumes/BackupDrive/Projects        │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
 │  Name               Size    Date    │   │  Name                Size     Date    │
 │  ▸ [..]                     --:--   │ C │  ▸ [..]                       --:--   │
@@ -71,12 +71,12 @@ ATBCmder provides a clean, native macOS interface built with Qt6 and PySide6, de
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │ [1] NATIVE MACOS MENU BAR                                                       │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...   │
+│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...      │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
 │ [3] BREADCRUMB BAR (Left Panel)     │   │ [3] BREADCRUMB BAR (Right Panel)      │
 │  / ▸ Users ▸ username ▸ Projects    │   │  /Volumes ▸ Backup ▸ Assets           │
 ├─────────────────────────────────────┤   ├───────────────────────────────────────┤
-│ [4] FOLDER TABS: [Dev] [Docs] [+]   │[6]│ [4] FOLDER TABS: [Photos] [Backup] [+] │
+│ [4] FOLDER TABS: [Dev] [Docs] [+]   │[6]│ [4] FOLDER TABS: [Photos] [Backup] [+]│
 ├─────────────────────────────────────┤MID│───────────────────────────────────────┤
 │                                     │DLE│                                       │
 │ [5] DUAL FILE PANEL (Left)          │   │ [5] DUAL FILE PANEL (Right)           │

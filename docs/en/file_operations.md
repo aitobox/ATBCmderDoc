@@ -19,9 +19,9 @@ Orthodox file managers use a **Source ➔ Target** directional model. When you i
 │  ▸ [..]                              --:--   │   │  ▸ [..]                             │
 │  ✔ database_dump.sql        1.8 GB   14:10   │ C │  ▸ client_portal            <DIR>   │
 │  ✔ schema_migration.sql      42 KB   14:12   │ O │  ▸ microservices            <DIR>   │
-│  ● notes.txt                  4 KB   09:30   │ P │  ● .env.production          2.1 KB │
+│  ● notes.txt                  4 KB   09:30   │ P │  ● .env.production          2.1 KB  │
 │                                              │ Y │                                     │
-│  [2 files selected: 1.8 GB]                  │ ➔ │  [Destination ready for ingest]    │
+│  [2 files selected: 1.8 GB]                  │ ➔ │  [Destination ready for ingest]     │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
 │                         ▼ Press F5 (Copy) or F6 (Move) ▼                               │
 │  ┌──────────────────────────────────────────────────────────────────────────────────┐  │
@@ -196,7 +196,7 @@ Renaming a single file shouldn't require complex menus or dialog popups. ATBCmde
 │  ▸ [..]                                         --:--     drwxr-xr-x            │
 │  ● Annual_Financial_Report_2025        .pdf     4.2 MB    Today, 11:20          │
 │    ▲                                                                            │
-│    └── [Editable Text Box: Stem highlighted, .pdf extension preserved]         │
+│    └── [Editable Text Box: Stem highlighted, .pdf extension preserved]          │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -382,14 +382,14 @@ For large automated batch jobs or unattended backups, you can pre-configure conf
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Copy Options Panel                                                           │
-│ ┌─ Conflict Resolution ─────────────────┐ ┌─ Attributes & Behaviors ──────┐ │
+│ ┌─ Conflict Resolution ─────────────────┐ ┌─ Attributes & Behaviors ──────┐  │
 │ │ When file exists:      [Ask          ▾]│ │ [✔] Check free space          │ │
 │ │ When directory exists: [Merge        ▾]│ │ [✔] Copy date/time            │ │
 │ │ When cannot set attr:  [Skip         ▾]│ │ [✔] Copy attributes           │ │
-│ └───────────────────────────────────────┘ │ [ ] Drop readonly flag        │ │
+│ └───────────────────────────────────────┘ │ [ ] Drop readonly flag        │  │
 │ ┌─ Filters ─────────────────────────────┐ │ [✔] Copy ownership (POSIX)     │ │
 │ │ [ ] Exclude empty directories         │ │ [✔] Verify after copy: [SHA256]│ │
-│ └───────────────────────────────────────┘ └───────────────────────────────┘ │
+│ └───────────────────────────────────────┘ └───────────────────────────────┘  │
 │ [Save these options as default]                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```

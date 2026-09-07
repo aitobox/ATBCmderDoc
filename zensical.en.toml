@@ -7,7 +7,10 @@ repo_name    = "ATBCmderDoc"
 docs_dir     = "docs/en"
 site_dir     = "site/en"
 
-extra_javascript = ["javascripts/language-detector.js"]
+extra_javascript = [
+  "javascripts/language-detector.js",
+  "javascripts/ascii-diagram.js"
+]
 extra_css        = ["stylesheets/extra.css"]
 
 nav = [

@@ -20,7 +20,7 @@ ATBCmder divides power tools and automation into six specialized functional doma
 │      Tokens, RegEx, Counters, Preview    │      Line highlights, Hunk sync, In-place   │
 │                                          │                                             │
 │  [3] Directory Sync (Shift+F12)          │  [4] Advanced Search (Alt+F7)               │
-│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox │
+│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox│
 │                                          │                                             │
 │  [5] Semantic Command Bar (/)            │  [6] File Utilities & Security              │
 │      Spotlight queries, AI intent, NLP   │      Split/Link, Checksum, Wipe (Alt+Del)   │
@@ -184,8 +184,8 @@ Detecting differences between configuration revisions, source code files, or dat
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │  Side-by-side Diff: config.py (Left)  vs.  config.py.new (Right)                       │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│ [💾 Save Left] [💾 Save Right] | [Copy to Right →] [← Copy to Left] | [Prev] [Next]   │
-│ [🔄 Re-compare] | [✔] Ignore whitespace  [ ] Ignore case  [ ] Ignore blank lines       │
+│ [💾 Save Left] [💾 Save Right] | [Copy to Right →] [← Copy to Left] | [Prev] [Next]      │
+│ [🔄 Re-compare] | [✔] Ignore whitespace  [ ] Ignore case  [ ] Ignore blank lines        │
 ├─────────────────────────────────────────────┬──────────────────────────────────────────┤
 │ config.py (Left)                            │ config.py.new (Right)                    │
 ├─────────────────────────────────────────────┼──────────────────────────────────────────┤
@@ -567,12 +567,12 @@ Verifying that downloaded files, disk images, or archive backups have not been c
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │ Hash Algorithm: [ SHA256           ▾]                                                  │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 3a491d90bc1f42013149db82a890471b67823f40d12e8424e6a00a120894fe83  arch_linux.iso      │
-│ 8f14e45fceea167a5a36dedd4bea25431846b9a898492efd727402c3ef30b65a  rootfs.tar.gz       │
-│ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  empty_manifest.txt  │
+│ 3a491d90bc1f42013149db82a890471b67823f40d12e8424e6a00a120894fe83  arch_linux.iso       │
+│ 8f14e45fceea167a5a36dedd4bea25431846b9a898492efd727402c3ef30b65a  rootfs.tar.gz        │
+│ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  empty_manifest.txt   │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │  [Progress: 100%] Hashing completed.                                                   │
-│  [Calculate]    [Stop]    [💾 Save to File]                                 [Close]    │
+│  [Calculate]    [Stop]    [💾 Save to File]                                 [Close]     │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

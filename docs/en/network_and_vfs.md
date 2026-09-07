@@ -23,12 +23,12 @@ ATBCmder routes all filesystem access through a unified abstraction layer. Wheth
 │      Direct POSIX / APFS access          │      In-place browse, F3 view, F4 live edit │
 │                                          │                                             │
 │  [3] Remote Network VFS (SFTP/SSH)       │  [4] Remote Storage VFS (SMB / WebDAV)      │
-│      vfs://sftp://deploy@aws.prod/app/   │      vfs://smb://admin@truenas/Pool/Media/   │
+│      vfs://sftp://deploy@aws.prod/app/   │      vfs://smb://admin@truenas/Pool/Media/  │
 │      Paramiko / SSH Keys / Keychain      │      Kernel mount_smbfs / WebDAVClient3     │
 │                                          │                                             │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                          UNIFIED VFS DISPATCH ENGINE (vfs://)                          │
-│     FileSystemModel ➔ VFSManager ➔ SessionCache ➔ StreamCopyWorker / RepackWorker     │
+│     FileSystemModel ➔ VFSManager ➔ SessionCache ➔ StreamCopyWorker / RepackWorker      │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -86,7 +86,7 @@ Depending on the operational domain, `vfs://` URIs take one of two standard form
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
 │   Input URI: vfs://sftp://deploy@aws.infra:22/var/log/nginx/access.log                 │
-│                 │      │        │        │   └────────────────────► Remote Path       │
+│                 │      │        │        │   └────────────────────► Remote Path        │
 │                 │      │        │        └────────────────────────► Port (Default 22)  │
 │                 │      │        └─────────────────────────────────► Host / Server      │
 │                 │      └──────────────────────────────────────────► Username           │
@@ -330,15 +330,15 @@ For servers you access regularly, the **Connection Manager** provides a complete
 ├──────────────────────────────┬─────────────────────────────────────────────────────────┤
 │  Saved Connections           │  Connection Details                                     │
 │  ┌────────────────────────┐  │  Label:        [ Staging Web Server (AWS)             ] │
-│  │ 🔐 AWS Staging Server  │  │  Protocol:     [ SFTP (port 22)                     ▼ ] │
+│  │ 🔐 AWS Staging Server  │  │  Protocol:     [ SFTP (port 22)                     ▼ ]  │
 │  │ 🖧 Synology Office NAS  │  │  Host:         [ ec2-54-210-10-2.compute.amazonaws.com] │
-│  │ 🌐 Nextcloud Personal  │  │  Port:         [ 22                                   ] │
-│  │ 📂 Legacy Archive FTP  │  │  Username:     [ ubuntu                               ] │
+│  │ 🌐 Nextcloud Personal  │  │  Port:         [ 22                                   ]  │
+│  │ 📂 Legacy Archive FTP  │  │  Username:     [ ubuntu                               ]  │
 │  │                        │  │  Password:     [ ••••••••••••••••••                   ] │
 │  │                        │  │  Remote Path:  [ /var/www/production                  ] │
 │  │                        │  │  [✓] Remember password in macOS Keychain                │
 │  └────────────────────────┘  │                                                         │
-│  [➕ New] [⧉ Dup] [🗑 Del]    │  [🔍 Test Connection]          [💾 Save]  [🔗 Connect]   │
+│  [➕ New] [⧉ Dup] [🗑 Del]    │  [🔍 Test Connection]          [💾 Save]  [🔗 Connect]      │
 └──────────────────────────────┴─────────────────────────────────────────────────────────┘
 ```
 

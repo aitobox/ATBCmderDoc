@@ -102,7 +102,7 @@ When you highlight a directory or a file format that cannot be rendered as text 
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│  📁 release_builds                                     │
+│  📁 release_builds                                      │
 │  /Volumes/ExternalSSD/Projects/release_builds          │
 ├────────────────────────────────────────────────────────┤
 │  Metadata                                              │
@@ -119,8 +119,8 @@ When you highlight a directory or a file format that cannot be rendered as text 
 ├────────────────────────────────────────────────────────┤
 │  Checksums / Stats                                     │
 │    Contents: 42 files, 8 folders                       │
-│    MD5:      Calculating... ➔ 8f14e45fceea167a...     │
-│    SHA256:   Calculating... ➔ 3a491d90bc1f4201...     │
+│    MD5:      Calculating... ➔ 8f14e45fceea167a...      │
+│    SHA256:   Calculating... ➔ 3a491d90bc1f4201...      │
 └────────────────────────────────────────────────────────┘
 ```
 
@@ -330,7 +330,7 @@ To create and edit a brand-new file from scratch in the active folder, press **`
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │  Edit: /Users/brain/Projects/atbcmder/scripts/deploy.sh [*]                            │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [💾 Save] [Save As] | [↶ Undo] [↷ Redo] | [🔍 Find] [Replace] | [Wrap] [Lines] [Zoom] │
+│  [💾 Save] [Save As] | [↶ Undo] [↷ Redo] | [🔍 Find] [Replace] | [Wrap] [Lines] [Zoom]   │
 ├──────┬─────────────────────────────────────────────────────────────────────────────────┤
 │ 0001 │ #!/usr/bin/env bash                                                             │
 │ 0002 │ set -euo pipefail                                                               │
@@ -341,7 +341,7 @@ To create and edit a brand-new file from scratch in the active folder, press **`
 │ 0007 │     mkdir -p "$TARGET_DIR"                                                      │
 │ 0008 │ fi                                                                              │
 ├──────┴─────────────────────────────────────────────────────────────────────────────────┤
-│  Find: [deploy                   ]  Replace: [release                  ] [Match 1 of 3]│
+│  Find: [deploy                  ]  Replace: [release                  ] [Match 1 of 3] │
 │  [Aa] Match Case   [\b] Whole Word   [.*] RegEx   [Find Next] [Replace] [Replace All]  │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │  Line 5, Col 12 | 8 lines | UTF-8 | LF (UNIX) | Bash Shell | [Modified *]              │

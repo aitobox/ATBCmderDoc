@@ -21,13 +21,13 @@ The following decision matrix maps common file management objectives and technic
 │  ──────────────────────────────────────    ───────────────────────  ─────────────────  │
 │  [1] Mirror local projects to backup       Directory Synchronizer   Shift+F12 (⇧F12)   │
 │  [2] Reorganize photo libraries by date    Batch Multi-Rename Tool  Ctrl+M (⌃M)        │
-│  [3] Mount home/office NAS or server       Network VFS Manager      cm_ManageConnections│
-│  [4] Update config file in .zip archive    Archive VFS + Lister     Enter ➔ F4 ➔ Save  │
-│  [5] Reclaim disk space from nested clutter Flat Branch View         Cmd+B (⌘B) / Alt+F7│
+│  [3] Mount home/office NAS or server       Network VFS Manager     cm_ManageConnections│
+│  [4] Update config file in .zip archive    Archive VFS + Lister    Enter ➔ F4 ➔ Save   │
+│  [5] Reclaim disk space from nested clutter Flat Branch View        Cmd+B (⌘B) / Alt+F7│
 │                                                                                        │
-│  ISSUE / SYMPTOM                           ROOT CAUSE               RESOLUTION         │
-│  ──────────────────────────────────────    ───────────────────────  ─────────────────  │
-│  "Operation not permitted" error           macOS Sandbox / TCC      cm_GrantFilesystemAccess│
+│  ISSUE / SYMPTOM                           ROOT CAUSE              RESOLUTION          │
+│  ──────────────────────────────────────    ──────────────────────  ──────────────────  │
+│  "Operation not permitted" error           macOS Sandbox / TCC     cm_GrantAccess      │
 │  Panels don't update external drives       FSEvents missing on FAT  attr_poll_interval │
 │  Want to experiment without risk           Production XML safety    ATBCmder_test.sh   │
 │  F-keys change brightness or volume        macOS hardware F-keys    Fn key or Settings │
