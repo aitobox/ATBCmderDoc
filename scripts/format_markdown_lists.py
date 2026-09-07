@@ -135,15 +135,21 @@ def main():
     parser.add_argument(
         "files",
         nargs="*",
-        help="Specific files to check/format (defaults to docs/zh/*.md and docs/en/*.md)",
+        help="Specific files to check/format (defaults to docs/*/*.md excluding docs/superpowers/**)",
     )
 
     args = parser.parse_args()
 
     target_files = args.files
     if not target_files:
+        all_md = glob.glob("docs/*/*.md")
         target_files = sorted(
-            glob.glob("docs/zh/*.md") + glob.glob("docs/en/*.md")
+            [
+                f
+                for f in all_md
+                if not f.startswith("docs/superpowers/")
+                and "/superpowers/" not in f
+            ]
         )
 
     if not target_files:

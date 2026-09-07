@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # test.sh - Local build and preview script for ATBCmder Documentation
-# Compiles both English and Chinese documentation and runs a local preview server.
+# Compiles multilingual documentation and runs a local preview server.
 
 set -e
 
@@ -29,6 +29,15 @@ if [ -n "$NO_COLOR" ] || [ ! -t 1 ]; then
     NC=''
 fi
 
+# Detect supported languages dynamically from scripts/languages.py
+LANGS=()
+if [ -f "scripts/languages.py" ] && command -v python3 &> /dev/null; then
+    LANGS=($(python3 scripts/languages.py --codes 2>/dev/null))
+fi
+if [ ${#LANGS[@]} -eq 0 ]; then
+    LANGS=("en" "zh" "zh-hant" "ja" "de" "fr" "es" "pt" "ko" "ru" "it")
+fi
+
 # Default options
 PORT=8000
 BUILD_ONLY=false
@@ -40,22 +49,26 @@ print_usage() {
 ${BOLD}Usage:${NC} ./test.sh [OPTIONS]
 
 ${BOLD}Options:${NC}
-  -b, --build-only      Only compile the static site to site/, do not start preview server
-  -p, --port <PORT>     Specify preview server port (default: 8000)
-      --no-open         Do not automatically open default web browser
-  -s, --serve <en|zh>   Run zensical live dev server for single language (hot reload)
-  -l, --lint            Check Markdown lists blank spacing across docs/
-      --fix-lists       Auto-format Markdown lists blank spacing in place
-  -h, --help            Show this help message and exit
+  -b, --build-only        Only compile the static site to site/, do not start preview server
+  -p, --port <PORT>       Specify preview server port (default: 8000)
+      --no-open           Do not automatically open default web browser
+  -s, --serve <LANG>      Run zensical live dev server for single language (hot reload)
+                          Supported: ${LANGS[*]}
+  -l, --lint              Check Markdown lists blank spacing across docs/
+      --fix-lists         Auto-format Markdown lists blank spacing in place
+      --check-parity      Check 1:1 documentation parity against en benchmark
+  -h, --help              Show this help message and exit
 
 ${BOLD}Examples:${NC}
-  ./test.sh             # Compile both EN & ZH sites and start local preview
-  ./test.sh -b          # Only compile static files to site/
-  ./test.sh -l          # Check Markdown lists formatting
-  ./test.sh --fix-lists # Auto-fix Markdown lists formatting
-  ./test.sh -p 8080     # Preview on port 8080
-  ./test.sh -s en       # Live edit English documentation
-  ./test.sh -s zh       # Live edit Chinese documentation
+  ./test.sh               # Compile multilingual documentation and start local preview
+  ./test.sh -b            # Only compile static files to site/
+  ./test.sh -l            # Check Markdown lists formatting
+  ./test.sh --fix-lists   # Auto-fix Markdown lists formatting
+  ./test.sh --check-parity # Check 1:1 translation parity
+  ./test.sh -p 8080       # Preview on port 8080
+  ./test.sh -s en         # Live edit English documentation
+  ./test.sh -s zh         # Live edit Chinese documentation
+  ./test.sh -s ja         # Live edit Japanese documentation
 EOF
 }
 
@@ -74,6 +87,10 @@ while [[ $# -gt 0 ]]; do
             python3 scripts/format_markdown_lists.py --fix
             exit $?
             ;;
+        --check-parity)
+            python3 scripts/check_parity.py
+            exit $?
+            ;;
         -p|--port)
             if [ -n "$2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
                 PORT="$2"
@@ -88,11 +105,22 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         -s|--serve)
-            if [ "$2" = "en" ] || [ "$2" = "zh" ]; then
+            if [ -z "$2" ]; then
+                echo -e "${RED}Error:${NC} --serve requires a valid language code (${LANGS[*]})."
+                exit 1
+            fi
+            VALID_LANG=false
+            for l in "${LANGS[@]}"; do
+                if [ "$2" = "$l" ]; then
+                    VALID_LANG=true
+                    break
+                fi
+            done
+            if [ "$VALID_LANG" = true ]; then
                 SERVE_MODE="$2"
                 shift 2
             else
-                echo -e "${RED}Error:${NC} --serve requires 'en' or 'zh'."
+                echo -e "${RED}Error:${NC} Invalid language '$2'. Supported: ${LANGS[*]}"
                 exit 1
             fi
             ;;
@@ -150,7 +178,7 @@ if [ -n "$SERVE_MODE" ]; then
 fi
 
 # Step 1: Compile Static Site
-echo -e "${GREEN}==>${NC} ${BOLD}Compiling ATBCmder Documentation (Bilingual)...${NC}"
+echo -e "${GREEN}==>${NC} ${BOLD}Compiling ATBCmder Documentation (Multilingual)...${NC}"
 
 # Check markdown list spacing before build
 if [ -f "scripts/format_markdown_lists.py" ] && [ -n "$PYTHON_CMD" ]; then
@@ -160,13 +188,18 @@ if [ -f "scripts/format_markdown_lists.py" ] && [ -n "$PYTHON_CMD" ]; then
     fi
 fi
 
-# Build English Documentation
-echo -e "${CYAN}-->${NC} Building English documentation (zensical.en.toml)..."
-$ZENSICAL_CMD build -f zensical.en.toml
-
-# Build Chinese Documentation
-echo -e "${CYAN}-->${NC} Building Chinese documentation (zensical.zh.toml)..."
-$ZENSICAL_CMD build -f zensical.zh.toml
+# Build documentation for each supported language
+for lang in "${LANGS[@]}"; do
+    CONFIG_FILE="zensical.${lang}.toml"
+    if [ ! -f "$CONFIG_FILE" ]; then
+        continue
+    fi
+    if [ ! -d "docs/${lang}" ]; then
+        continue
+    fi
+    echo -e "${CYAN}-->${NC} Building ${lang} documentation (${CONFIG_FILE})..."
+    $ZENSICAL_CMD build -f "$CONFIG_FILE"
+done
 
 # Copy Root Redirect and CNAME
 echo -e "${CYAN}-->${NC} Setting up root redirect & CNAME metadata..."
@@ -213,16 +246,15 @@ if [ -n "$ACTUAL_PORT" ] && [ "$ACTUAL_PORT" != "$ORIGINAL_PORT" ]; then
 fi
 
 SERVER_URL="http://localhost:${PORT}/"
-EN_URL="http://localhost:${PORT}/en/"
-ZH_URL="http://localhost:${PORT}/zh/"
 
 echo ""
 echo -e "${GREEN}======================================================${NC}"
 echo -e "  ${BOLD}ATBCmder Documentation Preview Server Running${NC}"
 echo -e "${GREEN}======================================================${NC}"
-echo -e "  ${BOLD}Home URL (Redirects to /en/):${NC}  ${CYAN}${SERVER_URL}${NC}"
-echo -e "  ${BOLD}English Documentation:${NC}        ${CYAN}${EN_URL}${NC}"
-echo -e "  ${BOLD}Chinese Documentation:${NC}        ${CYAN}${ZH_URL}${NC}"
+echo -e "  ${BOLD}Root URL (Locale-Aware):${NC}    ${CYAN}${SERVER_URL}${NC}"
+for lang in "${LANGS[@]}"; do
+    printf "  %-24s %b%s%b\n" "${BOLD}${lang} Documentation:${NC}" "${CYAN}" "http://localhost:${PORT}/${lang}/" "${NC}"
+done
 echo -e "${GREEN}======================================================${NC}"
 echo -e "  Press ${BOLD}Ctrl + C${NC} to stop the server"
 echo ""
