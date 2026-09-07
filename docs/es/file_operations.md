@@ -70,7 +70,7 @@ Para copiar archivos o directorios:
 3. Aparece el **Copiar cuadro de diálogo**: 
 - **Línea de destino**: se completa automáticamente con la ruta del directorio actual del panel opuesto. Puede editar esta ruta manualmente, agregar un nuevo nombre de subcarpeta para copiar y crear simultáneamente o hacer clic en `...` para explorar. 
 - **Iniciar (`Enter`)**: comienza la copia inmediata en primer plano con un cuadro de diálogo de progreso en tiempo real. 
-- **Agregar a la cola (`F2`)**: pone en cola la transferencia para que se ejecute en segundo plano (consulte la [Sección 7.4](#74-background-operations-queue-cm_operationspanel)). 
+- **Agregar a la cola (`F2`)**: pone en cola la transferencia para que se ejecute en segundo plano (consulte la [Sección 7.4](#74-cola-de-operaciones-en-segundo-plano-cm_operationspanel)). 
 - **Opciones**: amplía las reglas avanzadas de conflicto, la preservación de atributos y las verificaciones de suma de verificación. 
 
 ```
@@ -108,7 +108,7 @@ Mover transfiere archivos desde el directorio de origen al directorio de destino
 3. Presione **`Enter`** para ejecutar: 
 - **Mover el mismo sistema de archivos**: instantáneo y atómico en volúmenes APFS/HFS+ mediante la actualización de las referencias del catálogo del sistema de archivos sin mover bloques de disco sin formato. 
 - **Mover entre sistemas de archivos**: transmite datos a través de volúmenes hasta el destino, verifica la finalización de bytes y elimina de forma segura el origen al llegar verificado. 
-4. Si un archivo existente con el mismo nombre reside en el destino, ATBCmder hace una pausa y convoca el **Diálogo de sobrescritura** (consulte la [Sección 6](#6-collision-handling-conflict-resolution)). 
+4. Si un archivo existente con el mismo nombre reside en el destino, ATBCmder hace una pausa y convoca el **Diálogo de sobrescritura** (consulte la [Sección 6](#6-manejo-de-colisiones-y-resolucion-de-conflictos)). 
 
 ---
 

@@ -70,7 +70,7 @@ So kopieren Sie Dateien oder Verzeichnisse:
 3. Der **Kopieren-Dialog** erscheint: 
 - **Zielzeile**: Wird automatisch mit dem aktuellen Verzeichnispfad des gegenüberliegenden Panels gefüllt. Sie können diesen Pfad manuell bearbeiten, einen neuen Unterordnernamen anhängen, um ihn gleichzeitig zu kopieren und zu erstellen, oder zum Durchsuchen auf `...` klicken. 
 - **Start (`Enter`)**: Beginnt sofort mit dem Kopieren im Vordergrund mit einem Fortschrittsdialog in Echtzeit. 
-- **Zur Warteschlange hinzufügen (`F2`)**: Stellt die Übertragung in eine Warteschlange, damit sie im Hintergrund ausgeführt wird (siehe [Abschnitt 7.4](#74-background-operations-queue-cm_operationspanel)). 
+- **Zur Warteschlange hinzufügen (`F2`)**: Stellt die Übertragung in eine Warteschlange, damit sie im Hintergrund ausgeführt wird (siehe [Abschnitt 7.4](#74-warteschlange-fur-hintergrundoperationen-cm_operationspanel)). 
 - **Optionen**: Erweitert erweiterte Konfliktregeln, Attributerhaltung und Prüfsummenüberprüfungen. 
 
 ```
@@ -108,7 +108,7 @@ Beim Verschieben werden Dateien aus dem Quellverzeichnis in das Zielverzeichnis 
 3. Drücken Sie **`Enter`**, um Folgendes auszuführen: 
 - **Same-Filesystem Move**: Sofort und atomar auf APFS/HFS+-Volumes durch Aktualisieren der Dateisystemkatalogreferenzen ohne Verschieben von Raw-Festplattenblöcken. 
 - **Dateisystemübergreifende Verschiebung**: Streamt Daten über Volumes zum Ziel, überprüft die Byte-Vervollständigung und entfernt die Quelle bei verifizierter Ankunft sicher. 
-4. Wenn sich am Ziel eine vorhandene Datei mit demselben Namen befindet, hält ATBCmder an und ruft den **Überschreibdialog** auf (siehe [Abschnitt 6](#6-collision-handling-conflict-resolution)). 
+4. Wenn sich am Ziel eine vorhandene Datei mit demselben Namen befindet, hält ATBCmder an und ruft den **Überschreibdialog** auf (siehe [Abschnitt 6](#6-kollisionsbehandlung-und-konfliktlosung)). 
 
 ---
 

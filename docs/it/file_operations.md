@@ -70,7 +70,7 @@ Per copiare file o directory:
 3. Viene visualizzata la **finestra di dialogo Copia**: 
 - **Linea di destinazione**: popolata automaticamente con il percorso della directory corrente del pannello opposto. Puoi modificare questo percorso manualmente, aggiungere un nuovo nome di sottocartella da copiare e creare contemporaneamente oppure fare clic su `...` per sfogliare. 
 - **Avvia (`Enter`)**: avvia la copia immediata in primo piano con una finestra di dialogo di avanzamento in tempo reale. 
-- **Aggiungi alla coda (`F2`)**: mette in coda il trasferimento per eseguirlo in background (vedere [Sezione 7.4](#74-background-operations-queue-cm_operationspanel)). 
+- **Aggiungi alla coda (`F2`)**: mette in coda il trasferimento per eseguirlo in background (vedere [Sezione 7.4](#74-coda-delle-operazioni-in-background-cm_operationspanel)). 
 - **Opzioni**: espande le regole di conflitto avanzate, la conservazione degli attributi e le verifiche del checksum. 
 
 ```
@@ -84,7 +84,7 @@ Per copiare file o directory:
 
 #### Duplicazione nel pannello (`Shift+F5` / `cm_CopySamePanel`)
 
-Per clonare rapidamente un file nella directory corrente (ad esempio, creando un backup prima di modificare `nginx.conf`): 
+Per clonar rapidamente un file nella directory corrente (ad esempio, creando un backup prima di modificare `nginx.conf`): 
 
 - Evidenzia l'elemento e premi `Shift+F5` (o `⇧F5`). 
 - ATBCmder richiede un percorso di destinazione nella *stessa* directory, consentendoti di inserire un nuovo nome (ad esempio, `nginx.conf.bak`).
@@ -108,7 +108,7 @@ Lo spostamento trasferisce i file dalla directory di origine alla directory di d
 3. Premere **`Enter`** per eseguire: 
 - **Spostamento dello stesso filesystem**: istantaneo e atomico sui volumi APFS/HFS+ aggiornando i riferimenti del catalogo del filesystem senza spostare i blocchi del disco non elaborato. 
 - **Spostamento tra file system**: trasmette i dati tra volumi alla destinazione, verifica il completamento dei byte e rimuove in modo sicuro l'origine all'arrivo verificato. 
-4. Se un file esistente con lo stesso nome risiede nella destinazione, ATBCmder mette in pausa e richiama la **Finestra di dialogo Sovrascrittura** (vedere [Sezione 6](#6-collision-handling-conflict-resolution)). 
+4. Se un file esistente con lo stesso nome risiede nella destinazione, ATBCmder mette in pausa e richiama la **Finestra di dialogo Sovrascrittura** (vedere [Sezione 6](#6-gestione-delle-collisioni-e-risoluzione-dei-conflitti)). 
 
 ---
 

@@ -70,7 +70,7 @@ Pour copier des fichiers ou des répertoires :
 3. La **boîte de dialogue Copier** apparaît : 
 - **Ligne de destination** : automatiquement renseignée avec le chemin du répertoire actuel du panneau opposé. Vous pouvez modifier ce chemin manuellement, ajouter un nouveau nom de sous-dossier à copier et créer simultanément, ou cliquer sur `...` pour parcourir. 
 - **Démarrer (`Enter`)** : commence la copie immédiate au premier plan avec une boîte de dialogue de progression en temps réel. 
-- **Ajouter à la file d'attente (`F2`)** : Met en file d'attente le transfert à exécuter en arrière-plan (voir [Section 7.4](#74-background-operations-queue-cm_operationspanel)). 
+- **Ajouter à la file d'attente (`F2`)** : Met en file d'attente le transfert à exécuter en arrière-plan (voir [Section 7.4](#74-file-dattente-des-operations-en-arriere-plan-cm_operationspanel)). 
 - **Options** : étend les règles avancées de conflit, la préservation des attributs et les vérifications de la somme de contrôle. 
 
 ```
@@ -108,7 +108,7 @@ Déplacer les fichiers de transfert hors du répertoire source vers le répertoi
 3. Appuyez sur **`Enter`** pour exécuter : 
 - **Déplacement du même système de fichiers** : instantané et atomique sur les volumes APFS/HFS+ en mettant à jour les références du catalogue du système de fichiers sans déplacer les blocs de disque bruts. 
 - **Déplacement entre systèmes de fichiers** : diffuse les données sur plusieurs volumes vers la destination, vérifie l'achèvement des octets et supprime en toute sécurité la source dès son arrivée vérifiée. 
-4. Si un fichier existant portant le même nom réside à la destination, ATBCmder fait une pause et appelle la **boîte de dialogue d'écrasement** (voir [Section 6](#6-collision-handling-conflict-resolution)). 
+4. Si un fichier existant portant le même nom réside à la destination, ATBCmder fait une pause et appelle la **boîte de dialogue d'écrasement** (voir [Section 6](#6-gestion-des-collisions-et-resolution-des-conflits)). 
 
 ---
 

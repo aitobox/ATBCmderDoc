@@ -70,7 +70,7 @@ Para copiar arquivos ou diretórios:
 3. A **caixa de diálogo Copiar** aparece: 
 - **Linha de Destino**: Preenchida automaticamente com o caminho do diretório atual do painel oposto. Você pode editar este caminho manualmente, anexar um novo nome de subpasta para copiar e criar simultaneamente ou clicar em `...` para navegar. 
 - **Iniciar (`Enter`)**: Inicia a cópia imediata em primeiro plano com uma caixa de diálogo de progresso em tempo real. 
-- **Adicionar à fila (`F2`)**: Coloca a transferência na fila para ser executada em segundo plano (consulte [Seção 7.4](#74-background-operations-queue-cm_operationspanel)). 
+- **Adicionar à fila (`F2`)**: Coloca a transferência na fila para ser executada em segundo plano (consulte [Seção 7.4](#74-fila-de-operacoes-em-segundo-plano-cm_operationspanel)). 
 - **Opções**: Expande regras avançadas de conflito, preservação de atributos e verificações de soma de verificação. 
 
 ```
@@ -108,7 +108,7 @@ Mover arquivos de transferência do diretório de origem para o diretório de de
 3. Pressione **`Enter`** para executar: 
 - **Movimento no mesmo sistema de arquivos**: Instantâneo e atômico em volumes APFS/HFS+, atualizando referências de catálogo do sistema de arquivos sem mover blocos de disco brutos. 
 - **Movimento entre sistemas de arquivos**: transmite dados entre volumes até o destino, verifica a conclusão de bytes e remove com segurança a origem após a chegada verificada. 
-4. Se um arquivo existente com o mesmo nome residir no destino, o ATBCmder pausa e invoca a **Diálogo Sobrescrever** (consulte a [Seção 6](#6-collision-handling-conflict-resolution)). 
+4. Se um arquivo existente com o mesmo nome residir no destino, o ATBCmder pausa e invoca a **Diálogo Sobrescrever** (consulte a [Seção 6](#6-tratamento-de-colisoes-e-resolucao-de-conflitos)). 
 
 ---
 
