@@ -1,8 +1,27 @@
-/* Base variables mapped to Material theme colors */
+/* ==========================================================================
+   ATBCmder Documentation — "Glacier & Ocean Tech" Design System
+   Modern Light-Blue & Apple-Inspired Visual Theme
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Root Typography & Monospace Normalization
+   -------------------------------------------------------------------------- */
 :root {
-  --atb-primary: var(--md-primary-fg-color);
-  --atb-accent: var(--md-accent-fg-color);
-  --md-code-font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --atb-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --md-text-font: var(--atb-font-sans);
+  --md-code-font: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Brand Colors */
+  --atb-sky-50: #f0f9ff;
+  --atb-sky-100: #e0f2fe;
+  --atb-sky-200: #bae6fd;
+  --atb-sky-300: #7dd3fc;
+  --atb-sky-400: #38bdf8;
+  --atb-sky-500: #0ea5e9;
+  --atb-sky-600: #0284c7;
+  --atb-sky-700: #0369a1;
+  --atb-sky-800: #075985;
+  --atb-sky-900: #0c4a6e;
 }
 
 /* Ensure code blocks render with native monospace font, zero letter-spacing, and preformatted text */
@@ -12,10 +31,9 @@ code,
 kbd {
   font-family: var(--md-code-font) !important;
   letter-spacing: 0;
-  white-space: pre;
 }
 
-/* CJK Monospace Character Normalizer for ASCII Diagrams */
+/* CJK Monospace Character Normalizer for ASCII Diagrams (DO NOT REMOVE) */
 .cjk-char {
   display: inline-block;
   width: 2ch;
@@ -24,173 +42,597 @@ kbd {
   font-style: normal;
 }
 
-.atb-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* --------------------------------------------------------------------------
+   2. Light Theme Palette: Glacier & Ocean Blue
+   -------------------------------------------------------------------------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0284c7;
+  --md-primary-fg-color--light: #38bdf8;
+  --md-primary-fg-color--dark: #0369a1;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+
+  --md-accent-fg-color: #0ea5e9;
+  --md-accent-fg-color--transparent: rgba(14, 165, 233, 0.12);
+
+  --md-default-fg-color: #0f172a;
+  --md-default-fg-color--light: #475569;
+  --md-default-fg-color--lighter: #94a3b8;
+  --md-default-fg-color--lightest: #e2e8f0;
+
+  --md-default-bg-color: #ffffff;
+  --md-default-bg-color--light: #f8fafc;
+  --md-default-bg-color--lighter: #f1f5f9;
+  --md-default-bg-color--lightest: #e0f2fe;
+
+  --md-typeset-color: #334155;
+  --md-typeset-a-color: #0284c7;
+
+  --atb-page-bg: #f8fafc;
+  --atb-header-bg: rgba(255, 255, 255, 0.86);
+  --atb-header-border: rgba(226, 232, 240, 0.85);
+  --atb-card-bg: #ffffff;
+  --atb-card-border: rgba(2, 132, 199, 0.12);
+  --atb-card-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-/* Hero Section */
-.atb-hero {
-  background: linear-gradient(135deg, var(--atb-primary) 0%, var(--atb-accent) 100%);
-  color: white;
-  padding: 4rem 1rem;
-  text-align: center;
-  border-radius: 0 0 2rem 2rem;
-  margin-bottom: 3rem;
+/* --------------------------------------------------------------------------
+   3. Dark Theme Palette: Deep Midnight Navy
+   -------------------------------------------------------------------------- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #38bdf8;
+  --md-primary-fg-color--light: #7dd3fc;
+  --md-primary-fg-color--dark: #0284c7;
+  --md-primary-bg-color: #0b132b;
+  --md-primary-bg-color--light: rgba(11, 19, 43, 0.7);
+
+  --md-accent-fg-color: #38bdf8;
+  --md-accent-fg-color--transparent: rgba(56, 189, 248, 0.15);
+
+  --md-default-fg-color: #f1f5f9;
+  --md-default-fg-color--light: #94a3b8;
+  --md-default-fg-color--lighter: #64748b;
+  --md-default-fg-color--lightest: #1e293b;
+
+  --md-default-bg-color: #0b132b;
+  --md-default-bg-color--light: #111d3d;
+  --md-default-bg-color--lighter: #18284e;
+  --md-default-bg-color--lightest: rgba(56, 189, 248, 0.1);
+
+  --md-typeset-color: #cbd5e1;
+  --md-typeset-a-color: #38bdf8;
+
+  --md-code-bg-color: #080d1e;
+  --md-code-fg-color: #e2e8f0;
+
+  --atb-page-bg: #0b132b;
+  --atb-header-bg: rgba(11, 19, 43, 0.86);
+  --atb-header-border: rgba(56, 189, 248, 0.18);
+  --atb-card-bg: #111d3d;
+  --atb-card-border: rgba(56, 189, 248, 0.16);
+  --atb-card-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
 }
 
-.atb-hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+/* --------------------------------------------------------------------------
+   4. Layout, Canvas & Ambient Atmosphere
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--atb-font-sans);
+  background-color: var(--atb-page-bg);
+  position: relative;
+  min-height: 100vh;
 }
 
-.atb-hero h1 {
-  font-size: 3.5rem;
+/* Subtle ambient top sky-blue light glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 380px;
+  background: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(186, 230, 253, 0.4) 0%, rgba(224, 242, 254, 0.12) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-md-color-scheme="slate"] body::before {
+  background: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(14, 165, 233, 0.18) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+}
+
+.md-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. Apple Glassmorphic Header
+   -------------------------------------------------------------------------- */
+.md-header {
+  background: var(--atb-header-bg) !important;
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--atb-header-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+  color: var(--md-default-fg-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Top accent gradient line */
+.md-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8 0%, #0284c7 50%, #6366f1 100%);
+  opacity: 0.85;
+}
+
+.md-header__topic .md-ellipsis {
   font-weight: 700;
-  margin: 0 0 1rem;
-  color: white;
+  letter-spacing: -0.01em;
+  color: var(--md-default-fg-color);
 }
 
-.atb-tagline {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.atb-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin-bottom: 2rem;
-}
-
-.atb-cta-container {
+/* Header Action Buttons & Badges */
+.atb-header-ph {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.atb-app-store-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
+.atb-header-ph img {
+  height: 36px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.atb-header-ph:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.atb-header-appstore {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 9999px;
+  font-size: 0.825rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: auto !important;
+  margin-right: 0.5rem;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  color: var(--md-primary-fg-color) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.atb-header-appstore:hover {
+  background: var(--md-primary-fg-color) !important;
+  border-color: var(--md-primary-fg-color);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  transform: translateY(-1px);
+}
+
+.atb-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.atb-header-action {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.65rem !important;
+  border-radius: 8px;
+  font-size: 0.825rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color--light) !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: auto !important;
+  transition: all 0.15s ease;
+}
+
+.atb-header-action:hover {
+  background: rgba(2, 132, 199, 0.08);
+  color: var(--md-primary-fg-color) !important;
+}
+
+.atb-header-lang {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 9999px;
+  font-size: 0.825rem !important;
+  font-weight: 600 !important;
+  color: var(--md-primary-fg-color) !important;
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: auto !important;
+  transition: all 0.2s ease;
+}
+
+.atb-header-lang:hover {
+  background: rgba(14, 165, 233, 0.16);
+  border-color: var(--md-primary-fg-color);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 960px) {
+  .atb-header-ph {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .atb-header-appstore span,
+  .atb-header-action span {
+    display: none;
+  }
+  .atb-header-appstore,
+  .atb-header-action {
+    padding: 0.35rem 0.45rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Sidebar Navigation Polish
+   -------------------------------------------------------------------------- */
+.md-nav__link {
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem !important;
+  font-size: 0.825rem;
+  transition: all 0.15s ease;
+}
+
+.md-nav__link:hover {
+  background: rgba(2, 132, 199, 0.06);
+  color: var(--md-primary-fg-color);
+}
+
+.md-nav__item--active > .md-nav__link {
+  background: rgba(2, 132, 199, 0.1) !important;
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 600;
+  border-left: 3px solid var(--md-primary-fg-color);
+  border-radius: 0 6px 6px 0;
+}
+
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link {
+  background: rgba(56, 189, 248, 0.12) !important;
+  color: var(--md-primary-fg-color) !important;
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+
+/* --------------------------------------------------------------------------
+   7. Typography, Headings & Content Flow
+   -------------------------------------------------------------------------- */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--md-typeset-color);
+}
+
+.md-typeset h1 {
+  font-size: 1.95em;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--md-default-fg-color);
+  margin-bottom: 1.25rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.45em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--md-default-fg-color);
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  position: relative;
+}
+
+.md-typeset h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--atb-sky-400));
+  border-radius: 2px;
+}
+
+.md-typeset h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--md-default-fg-color);
+  margin-top: 1.6rem;
+}
+
+/* Links */
+.md-typeset a {
+  color: var(--md-typeset-a-color);
   font-weight: 500;
-  backdrop-filter: blur(10px);
-  transition: background 0.2s;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.atb-app-store-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+.md-typeset a:hover {
+  border-bottom-color: var(--md-typeset-a-color);
 }
 
-.atb-coming-soon {
-  font-size: 0.875rem;
-  opacity: 0.7;
+/* --------------------------------------------------------------------------
+   8. Apple Keyboard Keycaps (<kbd>)
+   -------------------------------------------------------------------------- */
+kbd {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8em;
+  font-family: var(--md-code-font) !important;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0f172a;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  border: 1px solid #cbd5e1;
+  border-bottom: 2px solid #94a3b8;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  margin: 0 0.15rem;
+  vertical-align: baseline;
+  white-space: nowrap;
 }
 
-/* Features Grid */
-.atb-features {
-  margin-bottom: 4rem;
+[data-md-color-scheme="slate"] kbd {
+  color: #f1f5f9;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-bottom: 2px solid #080d1e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.atb-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+/* Inline Code Badges */
+.md-typeset code:not(pre code) {
+  font-size: 0.85em;
+  color: var(--atb-sky-700);
+  background: rgba(224, 242, 254, 0.6);
+  border: 1px solid rgba(186, 230, 253, 0.8);
+  border-radius: 5px;
+  padding: 0.15rem 0.4rem;
 }
 
-.atb-card {
-  background: var(--md-default-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+[data-md-color-scheme="slate"] .md-typeset code:not(pre code) {
+  color: var(--atb-sky-300);
+  background: rgba(14, 165, 233, 0.12);
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
-.atb-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.atb-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.atb-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.25rem;
-}
-
-.atb-card p {
-  margin: 0;
-  color: var(--md-default-fg-color--light);
-}
-
-/* Screenshots */
-.atb-screenshots {
-  margin-bottom: 4rem;
-}
-
-.atb-screenshots-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.atb-screenshot-figure {
-  margin: 0;
-  background: var(--md-default-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.atb-screenshot-figure img {
+/* --------------------------------------------------------------------------
+   9. Tables with Modern Light-Blue Header & Card Enclosure
+   -------------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
   width: 100%;
-  height: auto;
-  display: block;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 4px 16px -4px rgba(2, 132, 199, 0.06);
+  margin: 1.5rem 0;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--atb-sky-50);
+  color: var(--atb-sky-700);
+  font-weight: 600;
+  border-bottom: 2px solid var(--atb-sky-200);
+  padding: 0.75rem 1rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: rgba(14, 165, 233, 0.12);
+  color: var(--atb-sky-300);
+  border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
 }
 
-.atb-screenshot-figure figcaption {
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.875rem;
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: rgba(2, 132, 199, 0.03);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover {
+  background-color: rgba(56, 189, 248, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   10. Screenshots & Images (Apple Window Aesthetic)
+   -------------------------------------------------------------------------- */
+.md-typeset img {
+  border-radius: 10px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: var(--atb-card-shadow);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-typeset img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -6px rgba(2, 132, 199, 0.18), 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-typeset img:hover {
+  box-shadow: 0 12px 32px -6px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   11. Admonitions & Callout Blocks
+   -------------------------------------------------------------------------- */
+.md-typeset .admonition {
+  border-radius: 10px;
+  border-left-width: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.md-typeset .admonition.note,
+.md-typeset .admonition.info {
+  border-left-color: var(--md-primary-fg-color);
+}
+
+.md-typeset .admonition.tip {
+  border-left-color: #10b981;
+}
+
+.md-typeset .admonition.warning {
+  border-left-color: #f59e0b;
+}
+
+/* --------------------------------------------------------------------------
+   12. Code Blocks & Containers
+   -------------------------------------------------------------------------- */
+.highlight {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+[data-md-color-scheme="slate"] .highlight {
+  border-color: rgba(56, 189, 248, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   13. Footer Refinement
+   -------------------------------------------------------------------------- */
+.md-footer {
+  background: var(--atb-card-bg);
+  border-top: 1px solid var(--md-default-fg-color--lightest);
   color: var(--md-default-fg-color--light);
 }
 
-/* Bottom CTA */
-.atb-bottom-cta {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: var(--md-default-bg-color);
-  border-top: 1px solid var(--md-default-fg-color--lightest);
+.md-footer-meta {
+  background-color: transparent !important;
 }
 
-.atb-bottom-cta h2 {
-  margin: 0 0 1.5rem;
+.md-copyright {
+  font-size: 0.825rem;
+  color: var(--md-default-fg-color--light);
 }
 
-.atb-primary-btn {
-  display: inline-block;
-  background: var(--atb-primary);
-  color: var(--md-primary-bg-color);
-  padding: 0.75rem 2rem;
-  border-radius: 2rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: filter 0.2s;
+/* --------------------------------------------------------------------------
+   14. Blockquotes & Emphasis
+   -------------------------------------------------------------------------- */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  background: rgba(2, 132, 199, 0.04);
+  border-radius: 0 8px 8px 0;
+  padding: 0.8rem 1.2rem;
+  margin: 1.2rem 0;
 }
 
-.atb-primary-btn:hover {
-  filter: brightness(110%);
-  color: var(--md-primary-bg-color);
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background: rgba(56, 189, 248, 0.06);
+  border-left-color: var(--md-primary-fg-color);
 }
+
+/* --------------------------------------------------------------------------
+   15. Mobile Drawer & Header Actions in Drawer
+   -------------------------------------------------------------------------- */
+.md-nav__source .atb-header-actions {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  background: rgba(2, 132, 199, 0.04);
+  border-radius: 8px;
+  margin: 0.5rem 0.8rem;
+}
+
+[data-md-color-scheme="slate"] .md-nav__source .atb-header-actions {
+  background: rgba(56, 189, 248, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   16. Search Modal & Highlight
+   -------------------------------------------------------------------------- */
+.md-search__inner {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25) !important;
+}
+
+.md-search-result__meta {
+  background-color: var(--atb-sky-50);
+  color: var(--atb-sky-700);
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .md-search-result__meta {
+  background-color: rgba(14, 165, 233, 0.15);
+  color: var(--atb-sky-300);
+}
+
+.md-search-result__item:hover {
+  background-color: rgba(2, 132, 199, 0.06);
+}
+
+[data-md-color-scheme="slate"] .md-search-result__item:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   17. Sleek Scrollbars
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(2, 132, 199, 0.22);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 132, 199, 0.45);
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
+}
+

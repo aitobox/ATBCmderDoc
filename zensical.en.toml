@@ -32,10 +32,10 @@ nav = [
 name        = "material"
 custom_dir  = "overrides"
 palette     = [
-  { scheme = "default", primary = "indigo", accent = "deep-purple", media = "(prefers-color-scheme: light)" },
-  { scheme = "slate",   primary = "indigo", accent = "deep-purple", media = "(prefers-color-scheme: dark)" }
+  { scheme = "default", primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: light)" },
+  { scheme = "slate",   primary = "light-blue", accent = "cyan", media = "(prefers-color-scheme: dark)" }
 ]
-font        = { text = "Roboto", code = "Roboto Mono" }
+font        = { text = "Inter", code = "JetBrains Mono" }
 features    = [
   "navigation.top",
   "search.highlight",
