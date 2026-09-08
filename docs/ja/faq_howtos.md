@@ -4,8 +4,8 @@
 
 この章は 2 つの包括的なセクションに分かれています。 
 
-1. **実用的な現実世界のレシピ**: ステップバイステップの手順、UI の視覚表現、キーボード ショートカット、およびパワー ユーザー向けのヒントを含む、価値の高いファイル管理ワークフローをカバーする 5 つの完全なエンドツーエンドのチュートリアル。 
-2. **トラブルシューティング ガイドと FAQ**: 一般的な操作上の質問、権限エラー、自動更新動作、構成のリセット、Apple キーボードのファンクション キー、およびクロスボリューム ファイル転送の仕組みに関する詳細な説明と診断解決策。 
+1. **実践ワークフロー・クックブック**: ステップバイステップの手順、UI の視覚表現、キーボード ショートカット、およびパワー ユーザー向けのヒントを含む、価値の高いファイル管理ワークフローをカバーする 5 つの完全なエンドツーエンドのチュートリアル。 
+2. **トラブルシューティングとよくある質問**: 一般的な操作上の質問、権限エラー、自動更新動作、構成のリセット、Apple キーボードのファンクション キー、およびクロスボリューム ファイル転送の仕組みに関する詳細な説明と診断解決策。 
 
 ---
 
@@ -15,24 +15,24 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              EVERYDAY TASK & DIAGNOSTIC ROUTER                         │
+│                     日常タスク＆トラブルシューティング案内ルーター                     │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│  TASK / GOAL                               TOOL / METHOD            KEYSTROKE          │
+│  タスク / 目標                             推奨ツール / 手法        ショートカット     │
 │  ──────────────────────────────────────    ───────────────────────  ─────────────────  │
-│  [1] Mirror local projects to backup       Directory Synchronizer   Shift+F12 (⇧F12)   │
-│  [2] Reorganize photo libraries by date    Batch Multi-Rename Tool  Ctrl+M (⌃M)        │
-│  [3] Mount home/office NAS or server       Network VFS Manager     cm_ManageConnections│
-│  [4] Update config file in .zip archive    Archive VFS + Lister    Enter ➔ F4 ➔ Save   │
-│  [5] Reclaim disk space from nested clutter Flat Branch View        Cmd+B (⌘B) / Alt+F7│
+│  [1] プロジェクトを外付けHDD/NASへ同期     ディレクトリ同期ツール  Shift+F12 (⇧F12)    │
+│  [2] 撮影日時や連番で写真の一括リネーム    マルチ一括リネーム      Ctrl+M (⌃M)         │
+│  [3] 自宅・社内NASやクラウドをマウント     ネットワーク接続管理    cm_ManageConnections│
+│  [4] .zip 書庫内の設定ファイルを直接編集   書庫 VFS + エディタ     Enter ➔ F4 ➔ 保存   │
+│  [5] 深層の大容量ファイルを発掘・整理      フラットビュー / 検索   Cmd+B (⌘B) / Alt+F7 │
 │                                                                                        │
-│  ISSUE / SYMPTOM                           ROOT CAUSE              RESOLUTION          │
+│  トラブル現象 / エラー                     根本原因                解決策              │
 │  ──────────────────────────────────────    ──────────────────────  ──────────────────  │
-│  "Operation not permitted" error           macOS Sandbox / TCC     cm_GrantAccess      │
-│  Panels don't update external drives       FSEvents missing on FAT  attr_poll_interval │
-│  Want to experiment without risk           Production XML safety    ATBCmder_test.sh   │
-│  F-keys change brightness or volume        macOS hardware F-keys    Fn key or Settings │
-│  Move takes long time across drives        Cross-volume Copy+Delete Verify free space  │
+│  "Operation not permitted" 権限エラー      macOS Sandbox / TCC 制限 cm_GrantAccess     │
+│  外付けドライブで自動更新が反映されない    FAT/exFAT で通知なし    ポーリング調整/更新 │
+│  設定を汚さずに安全に実験したい            本番 XML 隔離保護       テストスクリプト実行│
+│  F1〜F12 が音量や輝度調節になる            macOS のメディアキー    Fn併用または設定変更│
+│  ドライブ間の大容量移動に時間がかかる      物理「コピー+検証+削除」 空き容量の事前確認 │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -42,21 +42,21 @@
 | アクション/診断 | macOS ショートカット | クラシック コマンダー キー | コマンドID | 主な目的 |
  | :--- | :--- | :--- | :--- | :--- |
  | **ディレクトリ同期** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | デュアルパネルのディレクトリ ツリーを比較して同期します。 |
- | **一括複数名前変更** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | トークン、カウンター、正規表現を使用して複数のファイルの名前を変更します。 |
+ | **マルチ一括リネーム (Multi-Rename)** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | トークン、カウンター、正規表現を使用して複数のファイルの名前を変更します。 |
  | **ネットワーク接続** | メニュー: ネットワーク | `cm_ManageConnections`| `cm_ManageConnections`| 保存された SMB、SFTP、WebDAV、および FTP サーバー プロファイルを管理します。 |
  | **クイック ネットワーク接続** | メニュー: ネットワーク | `cm_NetworkConnect` | `cm_NetworkConnect` | リモートサーバーのアドホック接続ダイアログ。 |
- | **インプレース編集をアーカイブ** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | アーカイブメンバーを編集します。 保存時に `RepackWorker` をトリガーします。 |
+ | **インプレース編集をアーカイブ** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | アーカイブ内ファイルを編集します。 保存時に `RepackWorker` をトリガーします。 |
  | **フラットブランチビュー** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | すべてのネストされたファイルを単一のフラット リストに再帰的に表示します。 |
  | **高度な検索** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | 「リストボックスにフィード」出力によるマルチフィルターファイル検索。 |
  | **ファイルシステムへのアクセスを許可**| メニュー: ファイル / ヘルプ | — | `cm_GrantFilesystemAccess`| macOS アプリのサンドボックス権限アシスタントを起動します。 |
  | **手動パネル更新** | `Ctrl+R` / `⌃R` または `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | 即時ディレクトリをディスクから強制的に再読み取りします。 |
  | **システム ターミナルを起動** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | 現在のパネル パスで macOS ターミナルを起動します。 |
  | **フォルダー容量を計算** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | 集約再帰バイト サイズ (単一の場合は `Space`、選択された合計の場合は `Ctrl+L`) を計算します。 |
- | **セキュア ワイプ (細断)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | マルチパス上書きとファイルの永久削除。 |
+ | **完全消去・シュレッド (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | マルチパス上書きとファイルの永久削除。 |
 
  ---
 
-## 2. 実用的な現実世界のレシピ
+## 2. 実践ワークフロー・クックブック
 
 ### 2.1 レシピ 1: 2 つのバックアップ フォルダーの比較と同期
 
@@ -320,22 +320,20 @@ ATBCmder には、永続的なセキュリティ ブックマークを macOS に
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Grant Filesystem Access                                [x] │
+│  ファイルアクセス許可 (Grant Filesystem Access)         [x] │
 ├─────────────────────────────────────────────────────────────┤
-│  Because this version of ATBCmder runs inside a secure      │
-│  macOS Sandbox, it needs your permission to access          │
-│  critical folders.                                          │
+│  安全確保のため ATBCmder は macOS Sandbox 内で動作します。  │
+│  重要フォルダと外付けドライブへのアクセス許可が必要です。   │
 │                                                             │
-│  [  Grant Access to Root Directory (/)  ]                   │
+│  [  ルートディレクトリ (/) へのアクセスを許可  ]            │
 │                                                             │
-│  [  Grant Access to External Disks (/Volumes)  ]            │
+│  [  外付けディスク (/Volumes) へのアクセスを許可  ]         │
 │                                                             │
-│  [  Open Full Disk Access Settings…  ]                      │
+│  [  フルディスクアクセス設定を開く…  ]                      │
 │                                                             │
-│  Root directory access is required by the App Sandbox.      │
-│  Full Disk Access is a separate macOS permission for        │
-│  protected user data.                                       │
-│                                                   [ Done ]  │
+│  ルートアクセスは App Sandbox の基本要件です。              │
+│  フルディスクアクセスは保護された個人データ用の権限です。   │
+│                                                   [ 完了 ]  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -508,16 +506,16 @@ ATBCmder を定期的に使用する場合は、ファンクション キーを�
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Keyboard Shortcuts                                         │
+│  キーボードショートカット                                   │
 ├──────────────────────────────┬──────────────────────────────┤
-│  Keyboard Navigation         │  Use F1, F2, etc. keys as    │
-│  Modifier Keys               │  standard function keys  [ON]│
-│  Function Keys          ◄─── │                              │
-│  Spotlight                   │  When this option is on,     │
-│  Mission Control             │  press the Fn key to use the │
-│  App Shortcuts               │  special features printed    │
-│                              │  on each key.                │
-│                              │                     [ Done ] │
+│  キーボードナビゲーション    │  F1、F2 などのキーを         │
+│  修飾キー                    │  標準機能キーとして使用  [入]│
+│  ファンクションキー     ◄─── │                              │
+│  Spotlight                   │  このオプションがオンの時は  │
+│  Mission Control             │  Fn キーを押して印字された   │
+│  アプリケーション            │  特殊機能を使用します。      │
+│                              │                              │
+│                              │                     [ 完了 ] │
 └──────────────────────────────┴──────────────────────────────┘
 ```
 
@@ -547,14 +545,14 @@ ATBCmder を定期的に使用する場合は、ファンクション キーを�
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              INTRA-VOLUME MOVE (SAME PARTITION)                        │
+│                      同一パーティション内の移動（ミリ秒級で完了）                      │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Users/brain/Movies/          │
+│   移動元: /Users/brain/Downloads/BigFile.iso ➔ 移動先: /Users/brain/Movies/            │
 │                                                                                        │
-│   1. POSIX rename() system call updates filesystem inode directory table.              │
-│   2. Physical data blocks on the SSD are NEVER touched or copied.                      │
-│   3. Execution time: < 5 milliseconds. Free disk space required: 0 bytes.              │
+│   1. POSIX rename() システムコールでファイルシステムの i-node 目録のみを更新。         │
+│   2. SSD 上の実際の物理データブロックには一切読み書きも複製も発生しません。            │
+│   3. 所要時間: 5 ミリ秒未満。必要な追加ディスク容量: 0 バイト。                        │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -566,14 +564,14 @@ ATBCmder を定期的に使用する場合は、ファンクション キーを�
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              CROSS-VOLUME MOVE (ACROSS DRIVES)                         │
+│                       異なるドライブ間の移動（物理パイプライン）                       │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Volumes/ExternalSSD/Movie/   │
+│   移動元: /Users/brain/Downloads/BigFile.iso ➔ 移動先: /Volumes/ExternalSSD/Movie/     │
 │                                                                                        │
-│   Stage 1: Binary Stream Copy (Read from Source SSD ➔ Write to Target External SSD)    │
-│   Stage 2: Verification and Flush (fsync ensures complete write to external media)     │
-│   Stage 3: Source Deletion (Source file is unlinked only after Stage 2 succeeds)       │
+│   フェーズ 1: バイナリストリームコピー（内蔵 SSD から読み出し ➔ 外付け SSD へ書き込み）│
+│   フェーズ 2: 整合性検証とフラッシュ (fsync により外付け媒体への物理書き込みを保証)    │
+│   フェーズ 3: 安全な元ファイル削除（フェーズ 2 の検証成功後にのみ元ファイルを削除）    │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```

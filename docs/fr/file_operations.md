@@ -29,7 +29,7 @@ Les gestionnaires de fichiers orthodoxes utilisent un modèle directionnel **Sou
 
 ### Aide-mémoire pour les opérations de base à double matrice
 
-| Actions | Raccourci macOS | Clé de commandant classique | ID de commande | Descriptif | 
+| Actions | Raccourci macOS | Touche Commander classique | ID de commande | Descriptif | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Copier vers la cible** | `F5` / `Fn+F5` | `F5` | `cm_Copy` | Copie les éléments sélectionnés dans le panneau opposé. | 
 | **Copier dans le même panneau** | `Shift+F5` / `⇧F5` | `Shift+F5` | `cm_CopySamePanel` | Duplique les éléments dans le panneau actif avec une invite de changement de nom. | 

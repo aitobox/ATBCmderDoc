@@ -34,7 +34,7 @@ ATBCmder roteia todo o acesso ao sistema de arquivos através de uma camada de a
 
 ### Folha de dicas de rede e VFS de matriz dupla
 
-| Ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | Descrição | 
+| Ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | Descrição | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Compactar arquivos em arquivo** | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | Abre a caixa de diálogo Archive Pack com opções de formato, compactação e senha. | 
 | **Extrair arquivos do arquivo** | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | Descompacta os arquivos selecionados com resolução de colisão. | 
@@ -473,7 +473,7 @@ Precisa editar um script `nginx.conf` ou Python diretamente em um servidor remot
 
 ## 11. Tabela de referência do teclado mestre de matriz dupla
 
-| Categoria | Descrição da ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | 
+| Categoria | Descrição da ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Operações de arquivo** | Empacotar arquivos/pastas selecionados | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | 
 | **Operações de arquivo** | Extrair arquivo(s) selecionado(s) | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | 

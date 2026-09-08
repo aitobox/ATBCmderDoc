@@ -29,7 +29,7 @@ Orthodoxe Dateimanager verwenden ein Richtungsmodell **Quelle ➔ Ziel**. Wenn S
 
 ### Spickzettel für Dual-Matrix-Kernoperationen
 
-| Aktion | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | Beschreibung | 
+| Aktion | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | Beschreibung | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Auf Ziel kopieren** | `F5` / `Fn+F5` | `F5` | `cm_Copy` | Kopiert ausgewählte Elemente in das gegenüberliegende Bedienfeld. | 
 | **In dasselbe Panel kopieren** | `Shift+F5` / `⇧F5` | `Shift+F5` | `cm_CopySamePanel` | Dupliziert Elemente im aktiven Bereich mit Aufforderung zum Umbenennen. | 

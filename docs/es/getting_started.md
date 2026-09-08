@@ -54,7 +54,7 @@ Cuando inicia una operación en ATBCmder, la aplicación entiende automáticamen
 
 ### Navegación del panel y cambio de enfoque
 
-| Acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Cambiar enfoque** | `Tab` | `Tab` | `cm_FocusSwap` | Alterna el enfoque del teclado entre los paneles izquierdo y derecho (`cm_SwitchPanel`). | 
 | **Enfoque inverso** | `Shift+Tab` | `Shift+Tab` | `cm_FocusSwap` | Invierte el orden de enfoque en paneles y controles. | 

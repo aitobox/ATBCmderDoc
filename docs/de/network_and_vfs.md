@@ -34,7 +34,7 @@ ATBCmder leitet den gesamten Dateisystemzugriff über eine einheitliche Abstrakt
 
 ### Dual-Matrix-VFS- und Netzwerk-Spickzettel
 
-| Aktion | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | Beschreibung | 
+| Aktion | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | Beschreibung | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Dateien ins Archiv packen** | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | Öffnet das Dialogfeld „Archive Pack“ mit Format-, Komprimierungs- und Kennwortoptionen. | 
 | **Dateien aus dem Archiv extrahieren** | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | Entpackt ausgewählte Archive mit Kollisionsauflösung. | 
@@ -246,7 +246,7 @@ So extrahieren Sie Archive auf die Festplatte:
 3. Das Dialogfeld **Dateien extrahieren** wird angezeigt: 
 - **Zu extrahierendes Archiv**: Ausgewählter Container-Quellpfad. 
 - **In Verzeichnis extrahieren**: Zielverzeichnis (standardmäßig das inaktive Panel). 
-- **Vorschau des Inhalts**: Ein interaktives Listenfeld, das Archivmitglieder in Echtzeit lädt. 
+- **Vorschau des Inhalts**: Ein interaktives Listenfeld, das Archiv-Eintrager in Echtzeit lädt. 
 - **Passwort**: Eingabefeld für passwortgeschützte Archive. 
 4. Klicken Sie auf **Start**. Wenn im Zielordner bereits eine Zieldatei vorhanden ist, hält ATBCmder den Worker an und zeigt einen interaktiven Kollisionsdialog an: 
 - **Überschreiben**: Ersetzt die in Konflikt stehende Zieldatei. 
@@ -474,7 +474,7 @@ Müssen Sie ein `nginx.conf` oder ein Python-Skript direkt auf einem Remote-Serv
 
 ## 11. Referenztabelle für Master-Dual-Matrix-Tastaturen
 
-| Kategorie | Aktionsbeschreibung | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | 
+| Kategorie | Aktionsbeschreibung | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Archivierungsvorgänge** | Ausgewählte Dateien/Ordner packen | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | 
 | **Archivierungsvorgänge** | Ausgewählte Archive extrahieren | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | 

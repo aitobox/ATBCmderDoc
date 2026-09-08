@@ -15,44 +15,44 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              EVERYDAY TASK & DIAGNOSTIC ROUTER                         │
+│                  ROUTER DI ATTIVITÀ QUOTIDIANE E RISOLUZIONE PROBLEMI                  │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│  TASK / GOAL                               TOOL / METHOD            KEYSTROKE          │
+│  ATTIVITÀ / OBIETTIVO                      STRUMENTO / METODO       SCORCIATOIA        │
 │  ──────────────────────────────────────    ───────────────────────  ─────────────────  │
-│  [1] Mirror local projects to backup       Directory Synchronizer   Shift+F12 (⇧F12)   │
-│  [2] Reorganize photo libraries by date    Batch Multi-Rename Tool  Ctrl+M (⌃M)        │
-│  [3] Mount home/office NAS or server       Network VFS Manager     cm_ManageConnections│
-│  [4] Update config file in .zip archive    Archive VFS + Lister    Enter ➔ F4 ➔ Save   │
-│  [5] Reclaim disk space from nested clutter Flat Branch View        Cmd+B (⌘B) / Alt+F7│
+│  [1] Sincronizzare progetti su NAS/backup  Sincronizzazione cartelle Shift+F12 (⇧F12)  │
+│  [2] Riorganizzare foto per data in blocco Rinomina multipla       Ctrl+M (⌃M)         │
+│  [3] Montare NAS o server aziendale        Gestore VFS di rete     cm_ManageConnections│
+│  [4] Modificare file dentro un archivio .zip VFS archivi + Editor  Enter ➔ F4 ➔ Salva  │
+│  [5] Trovare file pesanti annidati         Vista piatta (Branch)   Cmd+B (⌘B) / Alt+F7 │
 │                                                                                        │
-│  ISSUE / SYMPTOM                           ROOT CAUSE              RESOLUTION          │
+│  PROBLEMA / SINTOMO                        CAUSA PRINCIPALE        RISOLUZIONE         │
 │  ──────────────────────────────────────    ──────────────────────  ──────────────────  │
-│  "Operation not permitted" error           macOS Sandbox / TCC     cm_GrantAccess      │
-│  Panels don't update external drives       FSEvents missing on FAT  attr_poll_interval │
-│  Want to experiment without risk           Production XML safety    ATBCmder_test.sh   │
-│  F-keys change brightness or volume        macOS hardware F-keys    Fn key or Settings │
-│  Move takes long time across drives        Cross-volume Copy+Delete Verify free space  │
+│  Errore "Operation not permitted"          Sandbox di macOS / TCC cm_GrantAccess       │
+│  Dischi esterni non si aggiornano da soli  FSEvents assente su FAT attr_poll_interval  │
+│  Provare configurazioni senza rischi       Protezione XML originale ATBCmder_test.sh   │
+│  I tasti F regolano volume o luminosità    Tasti multimediali Mac Tasto Fn / Opzioni   │
+│  Spostamento lento tra dischi diversi      Copia + Cancellazione   Verifica spazio     │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Tabella di riferimento rapido a doppia matrice
 
-| Azione/Diagnostica | Scorciatoia macOS | Chiave del comandante classico | ID comando | Scopo primario | 
+| Azione/Diagnostica | Scorciatoia macOS | Tasto Commander classico | ID comando | Scopo primario | 
 | :--- | :--- | :--- | :--- | :--- | 
-| **Sincronizzazione directory** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Confronta e sincronizza alberi di directory a doppio pannello. | 
+| **Sincronizzazione cartelle (Sync Dirs)** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Confronta e sincronizza alberi di directory a doppio pannello. | 
 | **Rinominazione multipla batch** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Rinomina più file utilizzando token, contatori e RegEx. | 
 | **Connessioni di rete** | Menù: Rete | `cm_ManageConnections`| `cm_ManageConnections`| Gestisce i profili server SMB, SFTP, WebDAV e FTP salvati. | 
 | **Connessione di rete rapida** | Menù: Rete | `cm_NetworkConnect` | `cm_NetworkConnect` | Finestra di dialogo di connessione ad hoc per server remoti. | 
-| **Modifica sul posto dell'archivio** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Modifica il membro dell'archivio; attiva `RepackWorker` al salvataggio. | 
-| **Vista ramo piatto** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Visualizza ricorsivamente tutti i file nidificati in un unico elenco semplice. | 
+| **Modifica diretta nell'archivio** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Modifica il elemento dell'archivio; attiva `RepackWorker` al salvataggio. | 
+| **Vista ad albero piatto (Flat Branch View)** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Visualizza ricorsivamente tutti i file nidificati in un unico elenco semplice. | 
 | **Ricerca avanzata** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | Ricerca di file multi-filtro con output "Feed to Listbox". | 
 | **Concedi l'accesso al filesystem**| Menu: File / Aiuto | — | `cm_GrantFilesystemAccess`| Avvia l'assistente per le autorizzazioni di macOS App Sandbox. | 
 | **Aggiornamento manuale del pannello** | `Ctrl+R` / `⌃R` o `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Forza una rilettura immediata della directory dal disco. | 
 | **Avvia terminale di sistema** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Genera macOS Terminale nel percorso corrente del pannello. | 
 | **Calcola lo spazio della cartella** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcola la dimensione in byte ricorsiva aggregata (`Space` per singolo, `Ctrl+L` per il totale selezionato). | 
-| **Cancellazione sicura (distruggi)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sovrascrittura multi-passaggio ed eliminazione permanente dei file. | 
+| **Cancellazione sicura permanente (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sovrascrittura multi-passaggio ed eliminazione permanente dei file. | 
 
 ---
 
@@ -114,7 +114,7 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 - Naviga nella directory di importazione della fotocamera nel pannello attivo. 
 - Seleziona tutte le foto utilizzando **`Cmd+A`** (`⌘A`) oppure premi **`+`** sulla tastiera per inserire una maschera con caratteri jolly come `*.jpg;*.jpeg;*.cr3;*.arw`. 
 2. **Avvia lo strumento di ridenominazione multipla batch**: 
-- Premi **`Ctrl+M`** (`⌃M`) o **`Cmd+M`** (`⌘M`), oppure scegli **File ➔ Strumento di ridenominazione multipla...** dalla barra dei menu. 
+- Premi **`Ctrl+M`** (`⌃M`) o **`Cmd+M`** (`⌘M`), oppure scegli **File ➔ Strumento di ridenominazione in blocco (Multi-Rename)...** dalla barra dei menu. 
 3. **Definisci la maschera del nome file**: 
 - Nel campo **Maschera nome file**, inserisci la struttura desiderata utilizzando i token di metadati: 
      ```
@@ -253,7 +253,7 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 **Obiettivo**: recuperare preziosa capacità SSD individuando rapidamente e rimuovendo in modo sicuro rendering video 4K abbandonati, cartelle `node_modules` gonfie, immagini di dischi virtuali Docker o programmi di installazione DMG obsoleti sparsi all'interno di strutture di directory multilivello. 
 
 ![Flat Branch View](images/branch_view.png) 
-*Figura 9.5: Vista ramo piatto (`Cmd+B`) che mostra contenuti profondamente annidati in un'unica tabella appiattita per l'ordinamento istantaneo delle dimensioni.*
+*Figura 9.5: Vista ad albero piatto (Flat Branch View) (`Cmd+B`) che mostra contenuti profondamente annidati in un'unica tabella appiattita per l'ordinamento istantaneo delle dimensioni.*
 
 #### Metodo A: appiattimento istantaneo tramite vista ramo piatto (`Cmd+B`)
 
@@ -320,22 +320,21 @@ ATBCmder include un assistente di onboarding integrato progettato per registrare
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Grant Filesystem Access                                [x] │
+│  Accesso al File System (Filesystem Access)             [x] │
 ├─────────────────────────────────────────────────────────────┤
-│  Because this version of ATBCmder runs inside a secure      │
-│  macOS Sandbox, it needs your permission to access          │
-│  critical folders.                                          │
+│  Poiché ATBCmder opera in una Sandbox sicura di macOS,      │
+│  richiede la tua autorizzazione per gestire cartelle di     │
+│  sistema e volumi esterni.                                  │
 │                                                             │
-│  [  Grant Access to Root Directory (/)  ]                   │
+│  [  Concedi accesso alla directory principale (/)  ]        │
 │                                                             │
-│  [  Grant Access to External Disks (/Volumes)  ]            │
+│  [  Concedi accesso ai dischi esterni (/Volumes)  ]         │
 │                                                             │
-│  [  Open Full Disk Access Settings…  ]                      │
+│  [  Apri impostazioni Accesso completo al disco…  ]         │
 │                                                             │
-│  Root directory access is required by the App Sandbox.      │
-│  Full Disk Access is a separate macOS permission for        │
-│  protected user data.                                       │
-│                                                   [ Done ]  │
+│  L'accesso alla root è richiesto dalla Sandbox dell'app.    │
+│  Accesso completo protegge i dati utente riservati.         │
+│                                                   [ Fine ]  │
 └─────────────────────────────────────────────────────────────┘
 ```
  
@@ -508,16 +507,16 @@ Se utilizzi ATBCmder regolarmente, la configurazione consigliata di macOS per tr
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Keyboard Shortcuts                                         │
+│  Abbreviazioni da tastiera                                  │
 ├──────────────────────────────┬──────────────────────────────┤
-│  Keyboard Navigation         │  Use F1, F2, etc. keys as    │
-│  Modifier Keys               │  standard function keys  [ON]│
-│  Function Keys          ◄─── │                              │
-│  Spotlight                   │  When this option is on,     │
-│  Mission Control             │  press the Fn key to use the │
-│  App Shortcuts               │  special features printed    │
-│                              │  on each key.                │
-│                              │                     [ Done ] │
+│  Navigazione da tastiera     │  Usa i tasti F1, F2 come     │
+│  Tasti modificatori          │  tasti funzione standard [SÌ]│
+│  Tasti funzione         ◄─── │                              │
+│  Spotlight                   │  Quando è attiva, premi il   │
+│  Mission Control             │  tasto Fn per usare le       │
+│  Abbreviazioni app           │  funzioni speciali stampate  │
+│                              │  su ciascun tasto.           │
+│                              │                     [ Fine ] │
 └──────────────────────────────┴──────────────────────────────┘
 ```
  
@@ -547,14 +546,14 @@ Una domanda frequente da parte degli utenti è perché lo spostamento di un file
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              INTRA-VOLUME MOVE (SAME PARTITION)                        │
+│                   SPOSTAMENTO SULLO STESSO VOLUME (IN MILLISECONDI)                    │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Users/brain/Movies/          │
+│   Sorgente: /Users/brain/Downloads/BigFile.iso ➔ Target: /Users/brain/Movies/          │
 │                                                                                        │
-│   1. POSIX rename() system call updates filesystem inode directory table.              │
-│   2. Physical data blocks on the SSD are NEVER touched or copied.                      │
-│   3. Execution time: < 5 milliseconds. Free disk space required: 0 bytes.              │
+│   1. La chiamata POSIX rename() aggiorna solo la tabella degli inode nel file system.  │
+│   2. I blocchi fisici di dati sull'SSD NON vengono MAI letti o copiati.                │
+│   3. Tempo di esecuzione: < 5 millisecondi. Spazio libero su disco richiesto: 0 byte.  │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -566,14 +565,14 @@ Quando i percorsi di origine e destinazione risiedono sullo **stesso volume fisi
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              CROSS-VOLUME MOVE (ACROSS DRIVES)                         │
+│                     SPOSTAMENTO TRA VOLUMI DIVERSI (PIPELINE DATI)                     │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Volumes/ExternalSSD/Movie/   │
+│   Sorgente: /Users/brain/Downloads/BigFile.iso ➔ Target: /Volumes/ExternalSSD/Movie/   │
 │                                                                                        │
-│   Stage 1: Binary Stream Copy (Read from Source SSD ➔ Write to Target External SSD)    │
-│   Stage 2: Verification and Flush (fsync ensures complete write to external media)     │
-│   Stage 3: Source Deletion (Source file is unlinked only after Stage 2 succeeds)       │
+│   Fase 1: Copia flusso binario (Lettura da SSD interno ➔ Scrittura su SSD externo)     │
+│   Fase 2: Verifica e flush su disco (fsync garantisce la scrittura fisica completa)    │
+│   Fase 3: Eliminazione sicura sorgente (il file sorgente viene rimosso solo dopo)      │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```

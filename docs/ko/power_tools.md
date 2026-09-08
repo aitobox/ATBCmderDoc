@@ -2,7 +2,7 @@
 
 대용량 파일 관리에서 개별 항목 복사, 이동, 삭제와 같은 기본적인 파일 조작은 시작에 불과합니다. 전문 엔지니어, 시스템 관리자, 콘텐츠 제작자 및 데이터 분석가는 일관되지 않게 이름이 지정된 수천 개의 디지털 자산 재구성, 병렬 릴리스 분기 간의 미묘한 코드 회귀 격리, 네트워크 스토리지 어레이 전체에서 동기화된 미러 유지 관리, 깊게 묻혀 있는 구성 파일 찾기, 암호화 방식으로 파일 무결성 확인 등 복잡한 운영 문제에 자주 직면합니다. 
 
-ATBCmder는 이러한 노동 집약적인 작업을 신속하고 결정적인 작업으로 전환합니다. 외부 명령줄 스크립트, 타사 배치 유틸리티 또는 투박한 독립형 diff 애플리케이션을 요구하는 대신 ATBCmder는 포괄적인 자동화 제품군을 정통 듀얼 패널 코어에 직접 통합합니다. 전체 사진 아카이브에서 정규식 대체를 실행해야 하거나, 콘텐츠 수준 해싱을 통해 양방향 디렉터리 동기화 (Sync Dirs) (Sync Dirs)를 수행해야 하거나, 다중 필터 검색 결과를 가상 작업 공간에 공급해야 하는 경우 ATBCmder는 완전한 키보드 효율성으로 필요한 도구를 제공합니다. 
+ATBCmder는 이러한 노동 집약적인 작업을 신속하고 결정적인 작업으로 전환합니다. 외부 명령줄 스크립트, 타사 배치 유틸리티 또는 투박한 독립형 diff 애플리케이션을 요구하는 대신 ATBCmder는 포괄적인 자동화 제품군을 정통 듀얼 패널 코어에 직접 통합합니다. 전체 사진 아카이브에서 정규식 대체를 실행해야 하거나, 콘텐츠 수준 해싱을 통해 양방향 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)를 수행해야 하거나, 다중 필터 검색 결과를 가상 작업 공간에 공급해야 하는 경우 ATBCmder는 완전한 키보드 효율성으로 필요한 도구를 제공합니다. 
 
 ---
 
@@ -32,11 +32,11 @@ ATBCmder는 전동 공구와 자동화를 듀얼 패널 인터페이스와 원�
 
 ### 듀얼 매트릭스 자동화 치트 시트
 
-| 액션 | macOS 바로가기 | 클래식 커맨더 키 | 명령 ID | 설명 | 
+| 액션 | macOS 바로가기 | 클래식 커맨더 단축키 | 명령 ID | 설명 | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **일괄 다중 이름 바꾸기** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 일괄 일괄 이름 변경 도구 (Multi-Rename) 대화 상자를 엽니다. | 
 | **병렬 파일 차이 비교 (File Diff)** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | 선택한 두 파일을 나란히 비교합니다(`cm_CompareContents`의 경우 `Shift+F3`). | 
-| **디렉터리 동기화 (Sync Dirs) (Sync Dirs)** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 듀얼 패널 디렉토리를 비교하고 동기화합니다. | 
+| **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 듀얼 패널 디렉토리를 비교하고 동기화합니다. | 
 | **고급 파일 검색** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 다중 필터 검색 대화 상자를 엽니다. | 
 | **스포트라이트 빠른 검색** | `Ctrl+Shift+F` / `⌃⇧F` | `Ctrl+Shift+F` | *(명령 메뉴)* | 즉각적인 Spotlight 메타데이터 검색을 시작합니다. | 
 | **의미적 명령 입력**| `/` | `/` | `cm_VisSemanticCommand` | 내장된 자연어 명령 모음을 활성화합니다. | 
@@ -44,7 +44,7 @@ ATBCmder는 전동 공구와 자동화를 듀얼 패널 인터페이스와 원�
 | **분할 파일 결합** | 메뉴: 파일 ➔ 파일 결합 | — | `cm_FileLinker` / `cm_Combine` | `.001`, `.002` 청크를 단일 파일로 재조립합니다. | 
 | **체크섬 계산** | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` | MD5, SHA-1, SHA-256 또는 SHA-512 해시를 계산합니다. | 
 | **체크섬 파일 확인** | 도구 메뉴 | — | `cm_CheckSumVerify` / `cm_VerifyChecksum` | `.md5`, `.sha256` 또는 `.sfv`에 대해 파일을 확인합니다. | 
-| **보안 삭제(세단)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | 파일을 안전하게 덮어쓰고 삭제합니다. | 
+| **안전 영구 삭제 (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | 파일을 안전하게 덮어쓰고 삭제합니다. | 
 | **시스템 터미널 실행** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | 현재 패널 경로에서 macOS 터미널을 생성합니다. | 
 
 ---
@@ -289,18 +289,18 @@ diff 뷰어 도구 모음을 사용하면 서식 지정 노이즈에서 실제 �
 
 ---
 
-## 4. 디렉터리 동기화 (Sync Dirs) (Sync Dirs)(`Shift+F12` / `⇧F12` / `cm_SyncDirs`)
+## 4. 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)(`Shift+F12` / `⇧F12` / `cm_SyncDirs`)
 
-로컬 디스크, 백업 드라이브 및 네트워크 스토리지 전체에서 디렉터리 트리를 동기화된 상태로 유지하는 것은 안정적인 시스템의 초석입니다. ATBCmder의 **디렉터리 동기화 (Sync Dirs) (Sync Dirs) 장치**(`SyncDirsDialog`, `fsyncdirsdlg.pas`에 매핑됨)는 전체 폴더 계층을 비교하고 정확한 방향 작업을 결정하며 저장소를 건드리기 전에 모든 파일 복사 및 삭제를 미리 봅니다. 
+로컬 디스크, 백업 드라이브 및 네트워크 스토리지 전체에서 디렉터리 트리를 동기화된 상태로 유지하는 것은 안정적인 시스템의 초석입니다. ATBCmder의 **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs) 장치**(`SyncDirsDialog`, `fsyncdirsdlg.pas`에 매핑됨)는 전체 폴더 계층을 비교하고 정확한 방향 작업을 결정하며 저장소를 건드리기 전에 모든 파일 복사 및 삭제를 미리 봅니다. 
 
 ![Directory Synchronization](images/folder_synchronization.png) 
-*그림 5.2: 재귀 비교 상태, 방향 동기화 화살표 및 비대칭 미러 컨트롤을 표시하는 디렉터리 동기화 (Sync Dirs) (Sync Dirs) 대화 상자.*
+*그림 5.2: 재귀 비교 상태, 방향 동기화 화살표 및 비대칭 미러 컨트롤을 표시하는 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs) 대화 상자.*
 
-### 4.1 디렉터리 동기화 (Sync Dirs) (Sync Dirs) 시작
+### 4.1 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs) 시작
 
 1. 왼쪽 패널에서 **소스 디렉터리**를 열고 오른쪽 패널에서 **대상 디렉터리**를 엽니다. 
-2. **`Shift+F12`**(`⇧F12`)을 누르거나 **명령 ➔ 디렉터리 동기화 (Sync Dirs) (Sync Dirs)...**를 선택합니다. 
-3. 헤더 카드에 두 경로가 미리 입력된 상태로 디렉터리 동기화 (Sync Dirs) (Sync Dirs) 대화 상자가 나타납니다. 
+2. **`Shift+F12`**(`⇧F12`)을 누르거나 **명령 ➔ 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)...**를 선택합니다. 
+3. 헤더 카드에 두 경로가 미리 입력된 상태로 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs) 대화 상자가 나타납니다. 
 
 ---
 
@@ -716,8 +716,8 @@ ATBCmder는 그래픽 이중 패널 워크플로에서 탁월하지만 컴파일
 ## 9. 안전, 성능 및 시스템 경고
 
 > [!CAUTION] 
-> **비대칭 디렉터리 동기화 (Sync Dirs) (Sync Dirs) 비가역성** 
-> 디렉터리 동기화 (Sync Dirs) (Sync Dirs)(`Shift+F12`)에서 **비대칭** 옵션을 활성화하면 소스에 존재하지 않는 대상 디렉터리의 파일이 **영구적으로 삭제**됩니다. **동기화**를 클릭하기 전에 항상 비교 미리보기 테이블을 육안으로 검사하세요. 
+> **비대칭 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs) 비가역성** 
+> 디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)(`Shift+F12`)에서 **비대칭** 옵션을 활성화하면 소스에 존재하지 않는 대상 디렉터리의 파일이 **영구적으로 삭제**됩니다. **동기화**를 클릭하기 전에 항상 비교 미리보기 테이블을 육안으로 검사하세요. 
 
 > [!WARNING] 
 > **다중 이름 바꾸기 RegEx 대체** 
@@ -739,7 +739,7 @@ ATBCmder는 그래픽 이중 패널 워크플로에서 탁월하지만 컴파일
 
 ## 10. 마스터 듀얼 매트릭스 키보드 참조 표
 
-| 기능분야 | 작업 설명 | macOS 바로가기 | 클래식 커맨더 키 | 명령 ID | 
+| 기능분야 | 작업 설명 | macOS 바로가기 | 클래식 커맨더 단축키 | 명령 ID | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **다중 이름 바꾸기** | 일괄 일괄 이름 변경 도구 (Multi-Rename) 실행 | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 
 | **다중 이름 바꾸기** | 실행/이름 바꾸기 시작 | `Enter` / `⏎` | `Enter` | — | 
@@ -751,9 +751,9 @@ ATBCmder는 그래픽 이중 패널 워크플로에서 탁월하지만 컴파일
 | **파일 차이 비교 (File Diff)** | 덩어리를 오른쪽에서 왼쪽으로 복사 | `Alt+Left` / `⌥←` / `Alt+O` | `Ctrl+Alt+Left` | — | 
 | **파일 차이 비교 (File Diff)** | 포커스 편집기에 변경 사항 저장 | `Cmd+S` / `⌘S` | `Ctrl+S` | — | 
 | **파일 차이 비교 (File Diff)** | 차이 다시 계산 | `F5` / `Fn+F5` | `Ctrl+R` | — | 
-| **디렉터리 동기화 (Sync Dirs) (Sync Dirs)**| 동기화 디렉터리 열기 | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
-| **디렉터리 동기화 (Sync Dirs) (Sync Dirs)**| 디렉토리 비교 시작 | `Alt+C` / `⌥C` | `Enter` | — | 
-| **디렉터리 동기화 (Sync Dirs) (Sync Dirs)**| 비교/동기화 취소 | `Stop` | `Esc` | — | 
+| **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)**| 동기화 디렉터리 열기 | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
+| **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)**| 디렉토리 비교 시작 | `Alt+C` / `⌥C` | `Enter` | — | 
+| **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)**| 비교/동기화 취소 | `Stop` | `Esc` | — | 
 | **파일 검색** | 고급 검색 대화 상자 열기 | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 
 | **파일 검색** | Universal Lister에서 결과 보기 | `F3` / `Fn+F3` | `F3` | `cm_View` | 
 | **파일 검색** | 텍스트 편집기에서 결과 편집 | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 

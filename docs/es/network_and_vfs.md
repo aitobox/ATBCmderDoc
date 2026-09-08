@@ -34,7 +34,7 @@ ATBCmder enruta todo el acceso al sistema de archivos a través de una capa de a
 
 ### Hoja de trucos de red y VFS de matriz dual
 
-| Acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Empaquetar archivos en el archivo** | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | Abre el cuadro de diálogo Paquete de archivo con opciones de formato, compresión y contraseña. | 
 | **Extraer archivos del archivo** | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | Desempaqueta los archivos seleccionados con resolución de colisión. | 
@@ -473,7 +473,7 @@ Los firewalls de red con estado y las puertas de enlace NAT frecuentemente corta
 
 ## 11. Tabla de referencia del teclado maestro de matriz dual
 
-| Categoría | Descripción de la acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | 
+| Categoría | Descripción de la acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Operaciones de archivo** | Empaquetar archivos/carpetas seleccionados | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | 
 | **Operaciones de archivo** | Extraer archivos seleccionados | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | 

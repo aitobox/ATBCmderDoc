@@ -32,7 +32,7 @@ ATBCmder divide las herramientas eléctricas y la automatización en seis domini
 
 ### Hoja de referencia de automatización de matriz dual
 
-| Acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Cambio de nombre múltiple por lotes** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Abre el cuadro de diálogo de la herramienta Cambio de nombre múltiple por lotes. | 
 | **Diferenciación de archivos en paralelo** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Compara dos archivos seleccionados uno al lado del otro (`Shift+F3` para `cm_CompareContents`). | 
@@ -44,7 +44,7 @@ ATBCmder divide las herramientas eléctricas y la automatización en seis domini
 | **Combinar archivos divididos** | Menú: Archivos ➔ Combinar archivos | — | `cm_FileLinker` / `cm_Combine` | Vuelve a ensamblar los fragmentos `.001`, `.002` en una sola fila. | 
 | **Calcular suma de comprobación** | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` | Calcula hashes MD5, SHA-1, SHA-256 o SHA-512. | 
 | **Verificar archivo de suma de comprobación** | Menú Herramientas | — | `cm_CheckSumVerify` / `cm_VerifyChecksum` | Verifica archivos con `.md5`, `.sha256` o `.sfv`. | 
-| **Borrado seguro (triturar)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sobrescribe y elimina archivos de forma segura. | 
+| **Borrado seguro (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sobrescribe y elimina archivos de forma segura. | 
 | **Ejecutar terminal del sistema** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Genera la terminal macOS en la ruta del panel actual. | 
 
 ---
@@ -739,7 +739,7 @@ Si bien ATBCmder se destaca en los flujos de trabajo gráficos de doble panel, a
 
 ## 10. Tabla de referencia del teclado maestro de matriz dual
 
-| Área Funcional | Descripción de la acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | 
+| Área Funcional | Descripción de la acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Cambio de nombre múltiple** | Inicie la herramienta de cambio de nombre múltiple por lotes | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 
 | **Cambio de nombre múltiple** | Ejecutar / Iniciar Renombrar | `Enter` / `⏎` | `Enter` | — | 

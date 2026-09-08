@@ -271,7 +271,7 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_FileSearch` / `cm_Search` | 고급 다중 필터 검색 대화 상자 열기 | `⌥F7` / `⌥⌘F` | `Alt+F7` | 메인 | 
 | `cm_FileDiff` / `cm_CompareFiles` | 병렬 시각적 파일 차이 뷰어 열기 | `⌘⇧F12` | `Meta+Shift+F12` | 메인 | 
-| `cm_SyncDirs` | 양방향 디렉터리 동기화 (Sync Dirs) 도구 열기 | `⇧F12` | `Shift+F12` | 메인 | 
+| `cm_SyncDirs` | 양방향 디렉터리 동기화 (Sync Dirs) (Sync Dirs) 도구 열기 | `⇧F12` | `Shift+F12` | 메인 | 
 | `cm_MultiRename` | 일괄 일괄 이름 변경 도구 (Multi-Rename) 열기(RegEx 및 토큰) | `⌘M` | `Ctrl+M` | 메인 | 
 | `cm_Split` | 대용량 파일을 균일한 청크 세그먼트로 분할 | `⌥F6` | `Alt+F6` | 메인 | 
 | `cm_Combine` | 분할된 번호가 매겨진 세그먼트를 원본 파일로 다시 결합 | `⌥F7` | `Alt+F7` | 메인 | 

@@ -41,7 +41,7 @@ O ATBCmder centraliza todas as configurações do usuário em uma arquitetura de
 
 ### Preferências de matriz dupla e folha de referências de personalização
 
-| Ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | Descrição | 
+| Ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | Descrição | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Abrir Preferências** | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | Abre a caixa de diálogo principal de Preferências de várias páginas. | 
 | **Configurar teclas de atalho** | `Cmd+,` ➔ Teclas de atalho | — | `cm_Options` (teclas de atalho) | Acesso direto à tabela de vinculação de atalhos de teclado. | 
@@ -670,7 +670,7 @@ ATBCmder inclui dicas de ferramentas de metadados flutuantes que exibem dimensõ
 
 ## 11. Referência mestre de personalização e preferências de matriz dupla
 
-| Categoria | Descrição da ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | 
+| Categoria | Descrição da ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Preferências** | Abra a caixa de diálogo de preferências principais | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | 
 | **Preferências** | Salvar configurações em XML agora | Menu: Configuração | — | `cm_ConfigSaveSettings` | 

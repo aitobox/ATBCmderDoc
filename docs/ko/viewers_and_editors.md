@@ -33,7 +33,7 @@ ATBCmder는 파일 검사 및 수정을 두 가지 별개의 패러다임으로 
 
 ### 듀얼 매트릭스 검사 및 편집 치트 시트
 
-| 액션 | macOS 바로가기 | 클래식 커맨더 키 | 명령 ID | 설명 | 
+| 액션 | macOS 바로가기 | 클래식 커맨더 단축키 | 명령 ID | 설명 | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **훑어보기 전환** | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | 반대 패널에서 실시간 미리보기를 엽니다. | 
 | **유니버설 뷰어 (Universal Lister)** | `F3` / `Fn+F3` | `F3` | `cm_View` | Universal Lister에서 선택한 항목을 엽니다. | 
@@ -587,7 +587,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 8. 듀얼 매트릭스 키보드 참조 표
 
-| 기능분야 | 작업 설명 | macOS 바로가기 | 클래식 커맨더 키 | 명령 ID | 
+| 기능분야 | 작업 설명 | macOS 바로가기 | 클래식 커맨더 단축키 | 명령 ID | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **훑어보기** | 반대 패널 미리보기 전환 | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | 
 | **훑어보기** | 스위치 패널 및 뒤집기 미리보기 | `Tab` / `⇥` | `Tab` | `cm_SwitchPanel` | 

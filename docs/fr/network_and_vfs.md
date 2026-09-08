@@ -34,7 +34,7 @@ ATBCmder achemine tous les accès au système de fichiers via une couche d'abstr
 
 ### Aide-mémoire VFS et réseau à double matrice
 
-| Actions | Raccourci macOS | Clé de commandant classique | ID de commande | Descriptif | 
+| Actions | Raccourci macOS | Touche Commander classique | ID de commande | Descriptif | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Emballer les fichiers dans l'archive** | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | Ouvre la boîte de dialogue Archive Pack avec les options de format, de compression et de mot de passe. | 
 | **Extraire les fichiers des archives** | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | Décompresse les archives sélectionnées avec résolution de collision. | 
@@ -473,7 +473,7 @@ Besoin d'éditer un `nginx.conf` ou un script Python directement sur un serveur 
 
 ## 11. Tableau de référence du clavier maître à double matrice
 
-| Catégorie | Description de l'action | Raccourci macOS | Clé de commandant classique | ID de commande | 
+| Catégorie | Description de l'action | Raccourci macOS | Touche Commander classique | ID de commande | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Opérations d'archivage** | Pack des fichiers/dossiers sélectionnés | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | 
 | **Opérations d'archivage** | Extraire les archives sélectionnées | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | 

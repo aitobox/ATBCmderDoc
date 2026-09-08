@@ -29,7 +29,7 @@ Los administradores de archivos ortodoxos utilizan un modelo direccional **Fuent
 
 ### Hoja de referencia de operaciones centrales de matriz dual
 
-| Acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Copiar al destino** | `F5` / `Fn+F5` | `F5` | `cm_Copy` | Copia los elementos seleccionados al panel opuesto. | 
 | **Copiar en el mismo panel** | `Shift+F5` / `⇧F5` | `Shift+F5` | `cm_CopySamePanel` | Duplica elementos en el panel activo con mensaje de cambio de nombre. | 
@@ -240,7 +240,7 @@ En los administradores de archivos tradicionales, la posición del cursor y su s
 
 ### 4.1 Acciones de Selección Global
 
-| Acción | Acceso directo a macOS | Clave clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Clave clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Seleccionar todo** | `Cmd+A` / `⌘A` | `Ctrl+A` / `Ctrl+Num+` | `cm_MarkMarkAll` | Marca cada archivo y carpeta en el panel activo. | 
 | **Deseleccionar todo** | `Cmd+Shift+A` / `⇧⌘A`| `Ctrl+Shift+A` / `Ctrl+L` | `cm_MarkUnmarkAll` | Borra todas las marcas en el panel activo. | 
@@ -652,7 +652,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 
 ## 10. Tabla de referencia del teclado de matriz dual
 
-| Categoría | Acción | Acceso directo a macOS | Clave clásica | ID de comando | Descripción | 
+| Categoría | Acción | Atajo de teclado en macOS | Clave clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | :--- | 
 | **Operaciones de archivos principales** | Copiar al destino | `F5` / `Fn+F5` | `F5` | `cm_Copy` | Copia los elementos seleccionados al panel inactivo. | 
 | | Copiar en el mismo panel | `Shift+F5` / `⇧F5` | `Shift+F5` | `cm_CopySamePanel` | Clona el archivo en el panel activo con mensaje de cambio de nombre. | 

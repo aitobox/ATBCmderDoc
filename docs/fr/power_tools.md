@@ -32,7 +32,7 @@ ATBCmder divise les outils électriques et l'automatisation en six domaines fonc
 
 ### Aide-mémoire pour l'automatisation à double matrice
 
-| Actions | Raccourci macOS | Clé de commandant classique | ID de commande | Descriptif | 
+| Actions | Raccourci macOS | Touche Commander classique | ID de commande | Descriptif | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Renommage multiple par lots** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Ouvre la boîte de dialogue de l'outil Batch Multi-Rename. | 
 | **Différence de fichiers côte à côte** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Compare deux fichiers sélectionnés côte à côte (`Shift+F3` pour `cm_CompareContents`). | 
@@ -44,7 +44,7 @@ ATBCmder divise les outils électriques et l'automatisation en six domaines fonc
 | **Combiner des fichiers fractionnés** | Menu : Fichiers ➔ Combiner des fichiers | — | `cm_FileLinker` / `cm_Combine` | Réassemble les morceaux `.001`, `.002` en un seul fichier. | 
 | **Calculer la somme de contrôle** | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` | Calcule les hachages MD5, SHA-1, SHA-256 ou SHA-512. | 
 | **Vérifier le fichier de somme de contrôle** | Menu Outils | — | `cm_CheckSumVerify` / `cm_VerifyChecksum` | Vérifie les fichiers par rapport à `.md5`, `.sha256` ou `.sfv`. | 
-| **Essuyage sécurisé (déchiquetage)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Écrase et supprime les fichiers en toute sécurité. | 
+| **Effacement sécurisé (Broyage définitif)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Écrase et supprime les fichiers en toute sécurité. | 
 | **Exécuter le terminal système** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Génère le terminal macOS au chemin actuel du panneau. | 
 
 ---
@@ -739,7 +739,7 @@ Bien qu'ATBCmder excelle dans les workflows graphiques à double panneau, l'acc�
 
 ## 10. Tableau de référence du clavier principal à double matrice
 
-| Domaine fonctionnel | Description de l'action | Raccourci macOS | Clé de commandant classique | ID de commande | 
+| Domaine fonctionnel | Description de l'action | Raccourci macOS | Touche Commander classique | ID de commande | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Multi-Renommer** | Lancer l'outil de renommage multiple par lots | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 
 | **Multi-Renommer** | Exécuter/Démarrer Renommer | `Enter` / `⏎` | `Enter` | — | 

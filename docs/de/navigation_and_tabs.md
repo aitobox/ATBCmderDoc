@@ -30,7 +30,7 @@ In ATBCmder fungiert jedes Panel als autonome Browsing-Engine, die mit einer eig
 
 ### Spickzettel für die Dual-Matrix-Navigation
 
-| Aktion | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | Beschreibung | 
+| Aktion | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | Beschreibung | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Übergeordnetes Verzeichnis** | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | Eine Verzeichnisebene nach oben verschieben (`..`). | 
 | **Stammverzeichnis** | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | Springen Sie direkt zum Systemstammverzeichnis (`/`). | 

@@ -41,7 +41,7 @@ ATBCmder zentralisiert alle Benutzereinstellungen in einer einheitlichen Präfer
 
 ### Spickzettel für Dual-Matrix-Einstellungen und -Anpassungen
 
-| Aktion | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | Beschreibung | 
+| Aktion | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | Beschreibung | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Einstellungen öffnen** | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | Öffnet das Hauptdialogfeld für mehrseitige Einstellungen. | 
 | **Hotkeys konfigurieren** | `Cmd+,` ➔ Hotkeys | — | `cm_Options` (Hotkeys) | Direkter Zugriff auf die Tastaturkürzel-Bindungstabelle. | 
@@ -595,7 +595,7 @@ ATBCmder entpackt das Archiv sicher, überprüft, ob alle extrahierten Dateien g
 
 > [!IMPORTANT] 
 > **Unternehmenssicherheit: Anti-Traversal-Schutz** 
-> ATBCmder erzwingt eine strikte Pfadüberquerungsvalidierung während des Konfigurationsimports (`zipfile` Bereinigung). Jedes Archivmitglied, das Pfadtrennzeichen (`/`, `\`), Verzeichnisdurchläufe (`..`) oder Nicht-XML-Dateierweiterungen enthält, wird sofort abgelehnt und schützt so Ihr Betriebssystem vor böswilligen Archivmanipulationen. 
+> ATBCmder erzwingt eine strikte Pfadüberquerungsvalidierung während des Konfigurationsimports (`zipfile` Bereinigung). Jedes Archiv-Eintrag, das Pfadtrennzeichen (`/`, `\`), Verzeichnisdurchläufe (`..`) oder Nicht-XML-Dateierweiterungen enthält, wird sofort abgelehnt und schützt so Ihr Betriebssystem vor böswilligen Archivmanipulationen. 
 
 ---
 
@@ -647,7 +647,7 @@ Beim Konfigurieren benutzerdefinierter externer Symbolleistenschaltflächen oder
 
 ### Profi-Tipp 4: Konfiguration der schwebenden Datei-Tooltips
 
-ATBCmder enthält umfangreiche Tooltips für schwebende Metadaten, die Dateiabmessungen, EXIF-Daten, Audio-Bitrate und die Anzahl der Archivmitglieder anzeigen, wenn Sie mit der Maus über Elemente fahren. Sie können Tooltips unter **Einstellungen ➔ Dateiansichten** ein- oder ausschalten. 
+ATBCmder enthält umfangreiche Tooltips für schwebende Metadaten, die Dateiabmessungen, EXIF-Daten, Audio-Bitrate und die Anzahl der Archiv-Eintrager anzeigen, wenn Sie mit der Maus über Elemente fahren. Sie können Tooltips unter **Einstellungen ➔ Dateiansichten** ein- oder ausschalten. 
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
 *Abbildung 7.5: Umfangreiche Metadaten-Tooltips, die detaillierte Dateieigenschaften anzeigen, wenn Sie mit der Maus darüber fahren.* 
@@ -672,7 +672,7 @@ ATBCmder enthält umfangreiche Tooltips für schwebende Metadaten, die Dateiabme
 
 ## 11. Master-Dual-Matrix-Anpassungs- und Voreinstellungen-Befehlsreferenz
 
-| Kategorie | Aktionsbeschreibung | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | 
+| Kategorie | Aktionsbeschreibung | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Einstellungen** | Öffnen Sie den Haupteinstellungsdialog | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | 
 | **Einstellungen** | Einstellungen jetzt in XML speichern | Menü: Konfiguration | — | `cm_ConfigSaveSettings` | 

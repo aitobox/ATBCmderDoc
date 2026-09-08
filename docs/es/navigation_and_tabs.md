@@ -30,7 +30,7 @@ En ATBCmder, cada panel funciona como un motor de navegación autónomo equipado
 
 ### Hoja de referencia de navegación de matriz dual
 
-| Acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Directorio de padres** | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | Subir un nivel de directorio (`..`). | 
 | **Directorio raíz** | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | Salte directamente a la raíz del sistema (`/`). | 
@@ -108,7 +108,7 @@ Construida con `MacNativeTabBar`, la barra de pestañas coincide con la estétic
 
 ### Operaciones con pestañas y teclas de acceso rápido
 
-| Acción | Acceso directo a macOS | Clave clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Clave clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Nueva pestaña** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Abre el directorio actual en una nueva pestaña. | 
 | **Cerrar pestaña** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Cierra la pestaña activa (se conserva al menos 1 pestaña). | 
@@ -407,7 +407,7 @@ Aquí hay tres recetas del mundo real que muestran cómo la navegación, las pes
 **Objetivo**: encontrar y limpiar dispositivos de prueba de gran tamaño y volcados de registros dispersos en docenas de subcarpetas anidadas. 
 
 1. Navegue hasta la parte superior de su proyecto o directorio de medios en el panel activo. 
-2. Presione `Cmd+B` (`⌘B`) o `Ctrl+B` (`cm_FlatView`) para activar **Vista de sucursal plana**. 
+2. Presione `Cmd+B` (`⌘B`) o `Ctrl+B` (`cm_FlatView`) para activar **Vista de árbol plano (Flat Branch View)**. 
 3. Observe cómo todos los subdirectorios se aplanan de forma recursiva en una única lista en el panel. 
 4. Haga clic en el encabezado de la columna **Tamaño** una o dos veces para ordenar todos los archivos de mayor a menor. 
 5. Los archivos más grandes de todo el árbol de directorios aparecen inmediatamente en la parte superior del panel, y la columna **Ruta** muestra sus ubicaciones anidadas exactas. 
@@ -446,7 +446,7 @@ Aquí hay tres recetas del mundo real que muestran cómo la navegación, las pes
 
 ## 11. Tabla de referencia del teclado de matriz dual
 
-| Categoría | Acción | Acceso directo a macOS | Clave clásica | ID de comando interno | 
+| Categoría | Acción | Atajo de teclado en macOS | Clave clásica | ID de comando interno | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Navegación por directorio** | Directorio de padres | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | 
 | | Directorio raíz | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | 

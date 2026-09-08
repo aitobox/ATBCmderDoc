@@ -54,7 +54,7 @@ Quando avvii un'operazione in ATBCmder, l'applicazione comprende automaticamente
 
 ### Navigazione del pannello e cambio messa a fuoco
 
-| Azione | Scorciatoia macOS | Chiave del comandante classico | ID comando | Descrizione | 
+| Azione | Scorciatoia macOS | Tasto Commander classico | ID comando | Descrizione | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Cambia messa a fuoco** | `Tab` | `Tab` | `cm_FocusSwap` | Alterna lo stato attivo della tastiera tra i pannelli sinistro e destro (`cm_SwitchPanel`). | 
 | **Messa a fuoco inversa** | `Shift+Tab` | `Shift+Tab` | `cm_FocusSwap` | Inverte l'ordine di messa a fuoco tra pannelli e controlli. | 
@@ -96,7 +96,7 @@ Completamente integrato nella barra dei menu superiore di macOS. Tutte le operaz
 - **File**: Nuova scheda, Chiudi scheda, Proprietà file, Autorizzazioni sandbox, Esci. 
 - **Segna**: Seleziona gruppo (`Num+`), Deseleziona gruppo (`Num-`), Inverti selezione (`Num*`), Seleziona tutto (`Cmd+A`). 
 - **Comandi**: Hotlist directory (`Ctrl+D`), Unità sinistra/destra (`Alt+F1/F2`), Cerca (`Alt+F7`), Sincronizza directory (`Shift+F12`), Scambia pannelli (`Ctrl+U`), Terminalee (`Ctrl+J`). 
-- **Mostra**: attiva/disattiva la modalità di visualizzazione (Breve, Colonne intere, Miniature, Albero, Vista ramo piatto), visibilità della barra degli strumenti, layout dei pannelli orizzontali. 
+- **Mostra**: attiva/disattiva la modalità di visualizzazione (Breve, Colonne intere, Miniature, Albero, Vista ad albero piatto (Flat Branch View)), visibilità della barra degli strumenti, layout dei pannelli orizzontali. 
 - **Configurazione**: Opzioni/Preferenze (`Cmd+,`), Salva posizione (`cm_ConfigSavePos`), Salva schede.
 
 ### [2] Barra degli strumenti principale in alto

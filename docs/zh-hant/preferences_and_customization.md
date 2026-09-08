@@ -422,7 +422,7 @@ $$	ext{匹配優先順序: } 	exttt{*.min.js} \longrightarrow 	exttt{*.js} \long
 
 ### 6.2 外部命令列呼叫引數替換宏變數
 
-在配置外部啟動程式或 Shell 指令碼時，ATBCmder 支援透過引數宏動態注入當前檔案資訊：
+在配置外部啟動程式或 Shell 腳本時，ATBCmder 支援透過引數宏動態注入當前檔案資訊：
 
 | 宏變數 | 含義說明 | 替換後示例 |
 | :--- | :--- | :--- |
@@ -435,15 +435,15 @@ $$	ext{匹配優先順序: } 	exttt{*.min.js} \longrightarrow 	exttt{*.js} \long
 
 ### 6.3 經典檔案關聯實戰配方
 
-#### 配方 1：在 VS Code 中開啟 Python 指令碼
+#### 配方 1：在 VS Code 中開啟 Python 腳本
 - **匹配規則**：`*.py`
 - **動作名稱**：`在 VS Code 中編輯`
 - **執行命令**：`code %f`
 - **動作型別**：外部 Shell 命令列
 
-#### 配方 2：在系統終端機中一鍵執行 Python 指令碼
+#### 配方 2：在系統終端機機中一鍵執行 Python 腳本
 - **匹配規則**：`*.py`
-- **動作名稱**：`直接執行指令碼`
+- **動作名稱**：`直接執行腳本`
 - **執行命令**：`python3 %f`
 - **動作型別**：外部 Shell 命令列
 
@@ -585,7 +585,7 @@ ATBCmder 會解壓並嚴密校驗所提取的 XML 檔案合法性，安全替換
 
 當您開發自定義擴充套件外掛、測試大改動鍵位對映，或評估測試版功能時，應當保護好日常使用的生產配置檔案。
 
-ATBCmder 原生支援透過環境變數 `ATBCMDER_CONFIG_PATH` 將配置目錄完整重定向。倉庫內自帶了隔離測試指令碼：
+ATBCmder 原生支援透過環境變數 `ATBCMDER_CONFIG_PATH` 將配置目錄完整重定向。倉庫內自帶了隔離測試腳本：
 
 ```bash
 # 以完全物理隔離的沙盒測試模式啟動 ATBCmder：
@@ -621,7 +621,7 @@ chezmoi add ~/Library/Preferences/atbcmder/atbcmder_hotkeys.xml
 5. 在需要確認最新檔案時，使用手動重新整理快速鍵（**`Ctrl+R`** / `⌘R`）。
 
 ### 進階技巧 3：外部命令環境變數與 Homebrew 路徑繼承
-在為工具欄按鈕或檔案關聯配置自定義外部指令碼時，ATBCmder 會完整繼承當前使用者的 Shell 環境變數（包括 `PATH`、`HOME`、`USER` 等）。您可以直接呼叫透過 Homebrew 安裝在 `/opt/homebrew/bin/` 目錄下的各類命令列工具（如 `ffmpeg`、`code`、`git`），無需繁瑣書寫絕對全路徑。
+在為工具欄按鈕或檔案關聯配置自定義外部腳本時，ATBCmder 會完整繼承當前使用者的 Shell 環境變數（包括 `PATH`、`HOME`、`USER` 等）。您可以直接呼叫透過 Homebrew 安裝在 `/opt/homebrew/bin/` 目錄下的各類命令列工具（如 `ffmpeg`、`code`、`git`），無需繁瑣書寫絕對全路徑。
 
 ### 進階技巧 4：浮動後設資料提示框的定製與開閉
 ATBCmder 內建了半透明磨砂質感的浮動後設資料提示卡片，在滑鼠懸停時能夠呈現圖片解析度、EXIF 拍攝引數、音訊位元速率與壓縮包內檔案數。您可以在 **偏好設定 ➔ 檔案檢視** 中根據個人審美偏好自由開啟或關閉該提示。
@@ -642,8 +642,8 @@ ATBCmder 內建了半透明磨砂質感的浮動後設資料提示卡片，在�
 > 透過 `cm_ImportConfiguration` 匯入配置包會無條件覆蓋當前磁碟上的 `atbcmder.xml`、`favtabs.xml` 與 `hotlist.xml`。在匯入來自他人的外部配置包之前，請務必先將自己現有的配置匯出一份副本作為安全備份。
 
 > [!IMPORTANT]
-> **macOS App Sandbox 與完全磁碟訪問許可權**  
-> 若 ATBCmder 在 macOS App Sandbox 沙盒模式下執行，未經使用者明確授權前無法訪問沙盒容器之外的本地卷與外接行動硬碟。若在瀏覽時頻繁遭遇許可權拒絕告警，請在選單欄執行 **`cm_GrantFilesystemAccess`** 完成系統完全磁碟訪問許可權引導。
+> **macOS App Sandbox 與完全磁碟取用權限**  
+> 若 ATBCmder 在 macOS App Sandbox 沙盒模式下執行，未經使用者明確授權前無法訪問沙盒容器之外的本地卷與外接行動硬碟。若在瀏覽時頻繁遭遇許可權拒絕告警，請在選單欄執行 **`cm_GrantFilesystemAccess`** 完成系統完全磁碟取用權限引導。
 
 ---
 

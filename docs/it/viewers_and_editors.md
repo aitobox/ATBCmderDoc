@@ -1,4 +1,4 @@
-# Capitolo 4: Visualizzatore universale (Universal Lister) (Universal Lister) ed editor integrati
+# Capitolo 4: Visualizzatore universale (Universal Lister) (Universal Lister) (Universal Lister) ed editor integrati
 
 Nella gestione ortodossa dei file a doppio pannello, la velocità dipende in larga misura dalla velocità di ispezione. Il lancio di ambienti di sviluppo integrati (IDE) pesanti o di applicazioni desktop gonfie solo per verificare un checksum, controllare una riga di configurazione, ritagliare uno screenshot o esaminare un PDF crea attrito cognitivo e confusione di finestre. 
 
@@ -33,7 +33,7 @@ ATBCmder divide l'ispezione e la modifica dei file in due paradigmi distinti:
 
 ### Foglio informativo di ispezione e modifica a doppia matrice
 
-| Azione | Scorciatoia macOS | Chiave del comandante classico | ID comando | Descrizione | 
+| Azione | Scorciatoia macOS | Tasto Commander classico | ID comando | Descrizione | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Attiva/disattiva visualizzazione rapida** | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | Apre l'anteprima dal vivo nel pannello opposto. | 
 | **Elenco universale** | `F3` / `Fn+F3` | `F3` | `cm_View` | Apre l'elemento selezionato in Universal Lister. | 
@@ -587,7 +587,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 8. Tabella di riferimento della tastiera a doppia matrice
 
-| Area Funzionale | Azione Descrizione | Scorciatoia macOS | Chiave del comandante classico | ID comando | 
+| Area Funzionale | Azione Descrizione | Scorciatoia macOS | Tasto Commander classico | ID comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Visualizzazione rapida** | Attiva/disattiva l'anteprima del pannello opposto | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | 
 | **Visualizzazione rapida** | Cambia pannello e capovolgi anteprima | `Tab` / `⇥` | `Tab` | `cm_SwitchPanel` | 

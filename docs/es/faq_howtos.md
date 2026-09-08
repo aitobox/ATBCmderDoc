@@ -4,7 +4,7 @@ Si bien los administradores de archivos ortodoxos de panel dual son reconocidos 
 
 Este capítulo se divide en dos secciones completas: 
 
-1. **Recetas prácticas del mundo real**: cinco tutoriales completos de principio a fin que cubren flujos de trabajo de administración de archivos de alto valor con procedimientos paso a paso, representaciones visuales de la interfaz de usuario, atajos de teclado y consejos para usuarios avanzados. 
+1. **Recetas prácticas y flujos de trabajo**: cinco tutoriales completos de principio a fin que cubren flujos de trabajo de administración de archivos de alto valor con procedimientos paso a paso, representaciones visuales de la interfaz de usuario, atajos de teclado y consejos para usuarios avanzados. 
 2. **Guía de solución de problemas y preguntas frecuentes**: explicaciones detalladas y resoluciones de diagnóstico para preguntas operativas comunes, errores de permisos, comportamientos de actualización automática, restablecimientos de configuración, teclas de función del teclado Apple y mecanismos de transferencia de archivos entre volúmenes. 
 
 ---
@@ -15,55 +15,55 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              EVERYDAY TASK & DIAGNOSTIC ROUTER                         │
+│                 ENRUTADOR DE TAREAS DIARIAS Y RESOLUCIÓN DE PROBLEMAS                  │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│  TASK / GOAL                               TOOL / METHOD            KEYSTROKE          │
+│  TAREA / OBJETIVO                          HERRAMIENTA / MÉTODO     ATAJO              │
 │  ──────────────────────────────────────    ───────────────────────  ─────────────────  │
-│  [1] Mirror local projects to backup       Directory Synchronizer   Shift+F12 (⇧F12)   │
-│  [2] Reorganize photo libraries by date    Batch Multi-Rename Tool  Ctrl+M (⌃M)        │
-│  [3] Mount home/office NAS or server       Network VFS Manager     cm_ManageConnections│
-│  [4] Update config file in .zip archive    Archive VFS + Lister    Enter ➔ F4 ➔ Save   │
-│  [5] Reclaim disk space from nested clutter Flat Branch View        Cmd+B (⌘B) / Alt+F7│
+│  [1] Sincronizar proyectos a NAS o disco ext. Sincronizador carpetas Shift+F12 (⇧F12)  │
+│  [2] Renombrar fotos por fecha y lote      Renombrado múltiple     Ctrl+M (⌃M)         │
+│  [3] Montar NAS, servidor o nube           Gestor VFS de red       cm_ManageConnections│
+│  [4] Editar archivos dentro de .zip        VFS archivos + Editor   Enter ➔ F4 ➔ Guardar│
+│  [5] Hallar archivos grandes anidados      Vista plana             Cmd+B (⌘B) / Alt+F7 │
 │                                                                                        │
-│  ISSUE / SYMPTOM                           ROOT CAUSE              RESOLUTION          │
+│  PROBLEMA / SÍNTOMA                        CAUSA RAÍZ              RESOLUCIÓN          │
 │  ──────────────────────────────────────    ──────────────────────  ──────────────────  │
-│  "Operation not permitted" error           macOS Sandbox / TCC     cm_GrantAccess      │
-│  Panels don't update external drives       FSEvents missing on FAT  attr_poll_interval │
-│  Want to experiment without risk           Production XML safety    ATBCmder_test.sh   │
-│  F-keys change brightness or volume        macOS hardware F-keys    Fn key or Settings │
-│  Move takes long time across drives        Cross-volume Copy+Delete Verify free space  │
+│  Error "Operation not permitted"           Sandbox de macOS / TCC cm_GrantAccess       │
+│  Discos externos no se actualizan solos    Sin FSEvents en FAT/exFAT attr_poll_interval│
+│  Probar ajustes sin riesgo alguno          Protección XML producción ATBCmder_test.sh  │
+│  Teclas F cambian brillo o volumen         Teclas multimedia macOS Tecla Fn o Ajustes  │
+│  Mover entre volúmenes tarda bastante      Copia física + Borrado Verificar espacio    │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Tabla de referencia rápida de matriz dual
 
-| Acción / Diagnóstico | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Propósito principal | 
+| Acción / Diagnóstico | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Propósito principal | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Sincronización de directorio** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Compara y sincroniza árboles de directorios de doble panel. | 
 | **Cambio de nombre múltiple por lotes** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Cambia el nombre de varios archivos utilizando tokens, contadores y RegEx. | 
 | **Conexiones de red** | Menú: Red | `cm_ManageConnections`| `cm_ManageConnections`| Gestiona perfiles de servidor SMB, SFTP, WebDAV y FTP guardados. | 
 | **Conexión de red rápida** | Menú: Red | `cm_NetworkConnect` | `cm_NetworkConnect` | Cuadro de diálogo de conexión ad-hoc para servidores remotos. | 
-| **Archivar edición in situ** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Edita miembro del archivo; activa `RepackWorker` al guardar. | 
-| **Vista de sucursal plana** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Muestra recursivamente todos los archivos anidados en una única lista plana. | 
+| **Edición directa en archivo comprimido** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Edita elemento del archivo; activa `RepackWorker` al guardar. | 
+| **Vista de árbol plano (Flat Branch View)** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Muestra recursivamente todos los archivos anidados en una única lista plana. | 
 | **Búsqueda avanzada** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | Búsqueda de archivos con múltiples filtros con salida "Feed to Listbox". | 
 | **Conceder acceso al sistema de archivos**| Menú: Archivo / Ayuda | — | `cm_GrantFilesystemAccess`| Inicia el asistente de permisos de la aplicación Sandbox de macOS. | 
 | **Actualización manual del panel** | `Ctrl+R` / `⌃R` o `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Fuerza una relectura inmediata del directorio desde el disco. | 
 | **Terminal del sistema de lanzamiento** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Genera la terminal macOS en la ruta del panel actual. | 
 | **Calcular espacio en carpeta** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcula el tamaño de byte recursivo agregado (`Space` para un solo, `Ctrl+L` para el total seleccionado). | 
-| **Borrado seguro (triturar)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sobrescritura de múltiples pasadas y eliminación permanente de archivos. | 
+| **Borrado seguro (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sobrescritura de múltiples pasadas y eliminación permanente de archivos. | 
 
 ---
 
-## 2. Recetas prácticas del mundo real
+## 2. Recetas prácticas y flujos de trabajo
 
 ### 2.1 Receta 1: Comparar y sincronizar dos carpetas de respaldo
 
 **Objetivo**: Asegúrese de que una unidad de respaldo externa o una carpeta de red contenga una réplica exacta y actualizada de su directorio de proyecto activo, con visibilidad completa de los archivos agregados, modificados o eliminados antes de realizar cambios. 
 
 ![Directory Synchronization](images/folder_synchronization.png) 
-*Figura 9.1: El cuadro de diálogo Sincronización de directorios que muestra comparaciones de directorios en paralelo, flechas de copia direccionales y opciones de espejo asimétrico.*
+*Figura 9.1: El cuadro de diálogo Sincronización de carpetas (Sync Dirs) que muestra comparaciones de directorios en paralelo, flechas de copia direccionales y opciones de espejo asimétrico.*
 
 #### Procedimiento paso a paso
 
@@ -114,7 +114,7 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 - Navegue hasta el directorio de importación de su cámara en el panel activo. 
 - Seleccione todas las fotos usando **`Cmd+A`** (`⌘A`), o presione **`+`** en su teclado para ingresar una máscara comodín como `*.jpg;*.jpeg;*.cr3;*.arw`. 
 2. **Inicie la herramienta de cambio de nombre múltiple por lotes**: 
-- Presione **`Ctrl+M`** (`⌃M`) o **`Cmd+M`** (`⌘M`), o elija **Archivos ➔ Herramienta de cambio de nombre múltiple...** en la barra de menú. 
+- Presione **`Ctrl+M`** (`⌃M`) o **`Cmd+M`** (`⌘M`), o elija **Archivos ➔ Herramienta de renombrado masivo (Multi-Rename)...** en la barra de menú. 
 3. **Defina la máscara del nombre de archivo**: 
 - En el campo **Máscara de nombre de archivo**, ingrese la estructura deseada usando tokens de metadatos: 
      ```
@@ -320,22 +320,21 @@ ATBCmder incluye un asistente de incorporación integrado diseñado para registr
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Grant Filesystem Access                                [x] │
+│  Conceder acceso al sistema (Filesystem Access)         [x] │
 ├─────────────────────────────────────────────────────────────┤
-│  Because this version of ATBCmder runs inside a secure      │
-│  macOS Sandbox, it needs your permission to access          │
-│  critical folders.                                          │
+│  Dado que ATBCmder opera en una Sandbox segura de macOS,    │
+│  requiere su autorización expresa para acceder a carpetas   │
+│  críticas y discos externos.                                │
 │                                                             │
-│  [  Grant Access to Root Directory (/)  ]                   │
+│  [  Conceder acceso al directorio raíz (/)  ]               │
 │                                                             │
-│  [  Grant Access to External Disks (/Volumes)  ]            │
+│  [  Conceder acceso a discos externos (/Volumes)  ]         │
 │                                                             │
-│  [  Open Full Disk Access Settings…  ]                      │
+│  [  Abrir ajustes de Acceso total al disco…  ]              │
 │                                                             │
-│  Root directory access is required by the App Sandbox.      │
-│  Full Disk Access is a separate macOS permission for        │
-│  protected user data.                                       │
-│                                                   [ Done ]  │
+│  El acceso a la raíz es requerido por la Sandbox.           │
+│  Acceso total al disco protege los datos privados.          │
+│                                                  [ Listo ]  │
 └─────────────────────────────────────────────────────────────┘
 ```
  
@@ -508,16 +507,16 @@ Si usa ATBCmder con regularidad, la configuración recomendada es configurar mac
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Keyboard Shortcuts                                         │
+│  Atajos de teclado                                          │
 ├──────────────────────────────┬──────────────────────────────┤
-│  Keyboard Navigation         │  Use F1, F2, etc. keys as    │
-│  Modifier Keys               │  standard function keys  [ON]│
-│  Function Keys          ◄─── │                              │
-│  Spotlight                   │  When this option is on,     │
-│  Mission Control             │  press the Fn key to use the │
-│  App Shortcuts               │  special features printed    │
-│                              │  on each key.                │
-│                              │                     [ Done ] │
+│  Navegación por teclado      │  Usar teclas F1, F2 como     │
+│  Teclas de modificación      │  función estándar        [SÍ]│
+│  Teclas de función      ◄─── │                              │
+│  Spotlight                   │  Con esta opción activa,     │
+│  Mission Control             │  pulse Fn para usar las      │
+│  Atajos de la app            │  funciones especiales        │
+│                              │  impresas en cada tecla.     │
+│                              │                    [ Listo ] │
 └──────────────────────────────┴──────────────────────────────┘
 ```
  
@@ -547,14 +546,14 @@ Una pregunta frecuente de los usuarios es por qué mover un archivo de 20 GB den
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              INTRA-VOLUME MOVE (SAME PARTITION)                        │
+│                      MOVER EN EL MISMO VOLUMEN (EN MILISEGUNDOS)                       │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Users/brain/Movies/          │
+│   Origen: /Users/brain/Downloads/BigFile.iso ➔ Destino: /Users/brain/Movies/           │
 │                                                                                        │
-│   1. POSIX rename() system call updates filesystem inode directory table.              │
-│   2. Physical data blocks on the SSD are NEVER touched or copied.                      │
-│   3. Execution time: < 5 milliseconds. Free disk space required: 0 bytes.              │
+│   1. La llamada POSIX rename() solo actualiza la tabla de inodos del directorio.       │
+│   2. Los bloques de datos físicos en el SSD NUNCA se leen ni se copian.                │
+│   3. Tiempo de ejecución: < 5 milisegundos. Espacio libre requerido: 0 bytes.          │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -566,14 +565,14 @@ Cuando las rutas de origen y destino residen en el **mismo volumen físico del s
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              CROSS-VOLUME MOVE (ACROSS DRIVES)                         │
+│                   MOVER ENTRE VOLÚMENES DIFERENTES (FLUJO DE DATOS)                    │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Volumes/ExternalSSD/Movie/   │
+│   Origen: /Users/brain/Downloads/BigFile.iso ➔ Destino: /Volumes/ExternalSSD/Movie/    │
 │                                                                                        │
-│   Stage 1: Binary Stream Copy (Read from Source SSD ➔ Write to Target External SSD)    │
-│   Stage 2: Verification and Flush (fsync ensures complete write to external media)     │
-│   Stage 3: Source Deletion (Source file is unlinked only after Stage 2 succeeds)       │
+│   Fase 1: Copia de flujo binario (Lectura del SSD interno ➔ Escritura en SSD externo)  │
+│   Fase 2: Verificación y volcado (fsync garantiza la escritura física en el medio)     │
+│   Fase 3: Eliminación segura del origen (el archivo origen se borra solo tras el éxito)│
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```

@@ -30,7 +30,7 @@ No ATBCmder, cada painel opera como um mecanismo de navegação autônomo equipa
 
 ### Folha de dicas de navegação de matriz dupla
 
-| Ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | Descrição | 
+| Ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | Descrição | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Diretório pai** | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | Suba um nível de diretório (`..`). | 
 | **Diretório raiz** | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | Vá diretamente para a raiz do sistema (`/`). | 

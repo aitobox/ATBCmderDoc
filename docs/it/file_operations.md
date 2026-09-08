@@ -29,7 +29,7 @@ I file manager ortodossi utilizzano un modello direzionale **Sorgente ➔ Destin
 
 ### Foglio informativo sulle operazioni core a doppia matrice
 
-| Azione | Scorciatoia macOS | Chiave del comandante classico | ID comando | Descrizione | 
+| Azione | Scorciatoia macOS | Tasto Commander classico | ID comando | Descrizione | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Copia nella destinazione** | `F5` / `Fn+F5` | `F5` | `cm_Copy` | Copia gli elementi selezionati nel pannello opposto. | 
 | **Copia nello stesso pannello** | `Shift+F5` / `⇧F5` | `Shift+F5` | `cm_CopySamePanel` | Duplica gli elementi nel pannello attivo con la richiesta di rinomina. | 

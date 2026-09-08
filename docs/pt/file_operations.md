@@ -29,7 +29,7 @@ Os gerenciadores de arquivos ortodoxos usam um modelo direcional **Origem ➔ De
 
 ### Folha de referências de operações principais de matriz dupla
 
-| Ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | Descrição | 
+| Ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | Descrição | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Copiar para destino** | `F5` / `Fn+F5` | `F5` | `cm_Copy` | Copia os itens selecionados para o painel oposto. | 
 | **Copiar no mesmo painel** | `Shift+F5` / `⇧F5` | `Shift+F5` | `cm_CopySamePanel` | Duplica itens no painel ativo com prompt de renomeação. | 

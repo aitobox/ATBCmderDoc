@@ -85,7 +85,7 @@ Esplora le capacità di ATBCmder attraverso le caratteristiche principali:
 | ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
 | *Layout a doppio pannello con struttura delle directory e anteprima in miniatura.* | *Striscia di azione rapida: Visualizza, Modifica, Copia, Sposta, MkDir, Elimina, Cancella.* | 
 
-| Comandi in linguaggio naturale | Vista ramo piatto ricorsiva | 
+| Comandi in linguaggio naturale | Vista ad albero piatto (Flat Branch View) ricorsiva | 
 | :---: | :---: | 
 | ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
 | *Ricerca istantanea basata su macOS Spotlight e analisi delle query semantiche.* | *Vista ramo (`Cmd+B`) che mostra i contenuti nidificati in un unico elenco semplice.* | 

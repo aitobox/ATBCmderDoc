@@ -41,7 +41,7 @@ ATBCmder centralizza tutte le impostazioni dell'utente in un'architettura di pre
 
 ### Foglio informativo sulle preferenze e personalizzazione della doppia matrice
 
-| Azione | Scorciatoia macOS | Chiave del comandante classico | ID comando | Descrizione | 
+| Azione | Scorciatoia macOS | Tasto Commander classico | ID comando | Descrizione | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Apri Preferenze** | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | Apre la finestra di dialogo principale Preferenze multipagina. | 
 | **Configura tasti di scelta rapida** | `Cmd+,` ➔ Tasti di scelta rapida | — | `cm_Options` (Tasti di scelta rapida) | Accesso diretto alla tabella di associazione delle scorciatoie da tastiera. | 
@@ -594,7 +594,7 @@ ATBCmder decomprime in modo sicuro l'archivio, verifica che tutti i file estratt
 
 > [!IMPORTANT] 
 > **Sicurezza aziendale: protezione anti-trasversale** 
-> ATBCmder applica una rigorosa convalida del percorso trasversale durante l'importazione della configurazione (`zipfile` sanitizzazione). Qualsiasi membro dell'archivio contenente separatori di percorso (`/`, `\`), attraversamenti di directory (`..`) o estensioni di file non XML viene rifiutato immediatamente, proteggendo il sistema operativo da manomissioni dannose dell'archivio. 
+> ATBCmder applica una rigorosa convalida del percorso trasversale durante l'importazione della configurazione (`zipfile` sanitizzazione). Qualsiasi elemento dell'archivio contenente separatori di percorso (`/`, `\`), attraversamenti di directory (`..`) o estensioni di file non XML viene rifiutato immediatamente, proteggendo il sistema operativo da manomissioni dannose dell'archivio. 
 
 ---
 
@@ -671,7 +671,7 @@ ATBCmder include descrizioni comandi di metadati mobili che mostrano le dimensio
 
 ## 11. Riferimento ai comandi Master per la personalizzazione e le preferenze della matrice doppia
 
-| Categoria | Azione Descrizione | Scorciatoia macOS | Chiave del comandante classico | ID comando | 
+| Categoria | Azione Descrizione | Scorciatoia macOS | Tasto Commander classico | ID comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Preferenze** | Apri la finestra di dialogo Preferenze principali | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | 
 | **Preferenze** | Salva le impostazioni in XML adesso | Menù: Configurazione | — | `cm_ConfigSaveSettings` | 

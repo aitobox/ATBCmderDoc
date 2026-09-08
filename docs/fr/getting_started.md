@@ -54,7 +54,7 @@ Lorsque vous lancez une opération dans ATBCmder, l'application comprend automat
 
 ### Navigation dans le panneau et changement de mise au point
 
-| Actions | Raccourci macOS | Clé de commandant classique | ID de commande | Descriptif | 
+| Actions | Raccourci macOS | Touche Commander classique | ID de commande | Descriptif | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Changer de mise au point** | `Tab` | `Tab` | `cm_FocusSwap` | Alterne le focus clavier entre les panneaux gauche et droit (`cm_SwitchPanel`). | 
 | **Mise au point inversée** | `Shift+Tab` | `Shift+Tab` | `cm_FocusSwap` | Inverse l’ordre de mise au point sur les panneaux et les commandes. | 

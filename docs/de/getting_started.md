@@ -56,7 +56,7 @@ Wenn Sie einen Vorgang in ATBCmder starten, versteht die Anwendung automatisch d
 
 ### Panel-Navigation und Fokuswechsel
 
-| Aktion | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | Beschreibung | 
+| Aktion | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | Beschreibung | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Fokus wechseln** | `Tab` | `Tab` | `cm_FocusSwap` | Wechselt den Tastaturfokus zwischen dem linken und dem rechten Bedienfeld (`cm_SwitchPanel`). | 
 | **Fokus umkehren** | `Shift+Tab` | `Shift+Tab` | `cm_FocusSwap` | Kehrt die Fokusreihenfolge über Bedienfelder und Steuerelemente hinweg um. | 

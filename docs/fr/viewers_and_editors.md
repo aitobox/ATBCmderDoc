@@ -33,7 +33,7 @@ ATBCmder divise l'inspection et la modification des fichiers en deux paradigmes 
 
 ### Aide-mémoire pour l'inspection et l'édition à double matrice
 
-| Actions | Raccourci macOS | Clé de commandant classique | ID de commande | Descriptif | 
+| Actions | Raccourci macOS | Touche Commander classique | ID de commande | Descriptif | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Basculer l'affichage rapide** | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | Ouvre l'aperçu en direct dans le panneau opposé. | 
 | **Liste universelle** | `F3` / `Fn+F3` | `F3` | `cm_View` | Ouvre l’élément sélectionné dans Universal Lister. | 
@@ -587,7 +587,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 8. Tableau de référence du clavier à double matrice
 
-| Domaine fonctionnel | Description de l'action | Raccourci macOS | Clé de commandant classique | ID de commande | 
+| Domaine fonctionnel | Description de l'action | Raccourci macOS | Touche Commander classique | ID de commande | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Coup d'œil** | Basculer l'aperçu du panneau opposé | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | 
 | **Coup d'œil** | Panneau de commutation et aperçu inversé | `Tab` / `⇥` | `Tab` | `cm_SwitchPanel` | 

@@ -34,7 +34,7 @@ ATBCmder instrada tutto l'accesso al filesystem attraverso un livello di astrazi
 
 ### VFS a doppia matrice e foglio informativo di rete
 
-| Azione | Scorciatoia macOS | Chiave del comandante classico | ID comando | Descrizione | 
+| Azione | Scorciatoia macOS | Tasto Commander classico | ID comando | Descrizione | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Comprimi i file nell'archivio** | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | Apre la finestra di dialogo Pacchetto archivio con le opzioni di formato, compressione e password. | 
 | **Estrai file dall'archivio** | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | Decomprime gli archivi selezionati con risoluzione delle collisioni. | 
@@ -473,7 +473,7 @@ Hai bisogno di modificare uno script `nginx.conf` o Python direttamente su un se
 
 ## 11. Tabella di riferimento della tastiera master a doppia matrice
 
-| Categoria | Azione Descrizione | Scorciatoia macOS | Chiave del comandante classico | ID comando | 
+| Categoria | Azione Descrizione | Scorciatoia macOS | Tasto Commander classico | ID comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Operazioni di archiviazione** | Comprimi file/cartelle selezionati | `Alt+F5` / `⌥F5` | `Alt+F5` | `cm_PackFiles` | 
 | **Operazioni di archiviazione** | Estrai gli archivi selezionati | `Alt+F9` / `⌥F9` | `Alt+F9` | `cm_ExtractFiles` | 

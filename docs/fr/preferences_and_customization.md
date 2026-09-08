@@ -41,7 +41,7 @@ ATBCmder centralise tous les paramètres utilisateur dans une architecture de pr
 
 ### Aide-mémoire sur les préférences et la personnalisation de la double matrice
 
-| Actions | Raccourci macOS | Clé de commandant classique | ID de commande | Descriptif | 
+| Actions | Raccourci macOS | Touche Commander classique | ID de commande | Descriptif | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Ouvrir les préférences** | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | Ouvre la boîte de dialogue principale Préférences multipage. | 
 | **Configurer les raccourcis clavier** | `Cmd+,` ➔ Raccourcis clavier clavier | — | `cm_Options` (raccourcis clavier) | Accès direct au tableau de liaison des raccourcis clavier. | 
@@ -670,7 +670,7 @@ ATBCmder comprend de riches info-bulles de métadonnées flottantes qui affichen
 
 ## 11. Référence des commandes de personnalisation et de préférences de Master Dual-Matrix
 
-| Catégorie | Description de l'action | Raccourci macOS | Clé de commandant classique | ID de commande | 
+| Catégorie | Description de l'action | Raccourci macOS | Touche Commander classique | ID de commande | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Préférences** | Ouvrir la boîte de dialogue Préférences principales | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | 
 | **Préférences** | Enregistrer les paramètres au format XML maintenant | Menu : Configuration | — | `cm_ConfigSaveSettings` | 

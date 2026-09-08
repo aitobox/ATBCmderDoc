@@ -35,7 +35,7 @@ ATBCmder 是一款為**純鍵盤高效操作**而生的雙面板檔案管理器�
 | **`⌘`** | **Command** (`Cmd`) | `Win` / `Ctrl` | macOS 最主要的操作主鍵 |
 | **`⌥`** | **Option** (`Alt`) | `Alt` | 次級修飾鍵，用於備用動作、特殊字元或增強指令 |
 | **`⇧`** | **Shift** | `Shift` | 擴充套件多選、反轉動作或觸發大寫功能 |
-| **`⌃`** | **Control** (`Ctrl`) | `Ctrl` | 終端機控制鍵及經典 Commander 組合修飾鍵 |
+| **`⌃`** | **Control** (`Ctrl`) | `Ctrl` | 終端機機控制鍵及經典 Commander 組合修飾鍵 |
 | **`⎋`** | **Escape** (`Esc`) | `Esc` | 取消當前操作、清空篩選輸入或關閉模態彈窗 |
 | **`⏎`** | **Return** (`Enter`) | `Enter` | 執行動作、開啟專案或確認對話方塊 |
 | **`⌫`** | **Delete / 退格鍵** | `Backspace` | 向後刪除字元，或在面板中返回上一級父目錄 |
@@ -201,7 +201,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_RightOpenDrives` | 為**右面板**撥出驅動器/磁碟切換選單 | `⌥F2` | `Alt+F2` | Main |
 | `cm_Exchange` | 互換左右面板的當前目錄、分頁與瀏覽狀態 | `⌘U` | `Ctrl+U` | Main |
 | `cm_TargetEqualSource` | 將對側面板同步跳轉到與當前面板完全一致的目錄 | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Main |
-| `cm_SyncSlaveDir` | 開啟雙面板協同映象導航（同進同退） | `⌥S` | *(選單: 命令 ➔ 聯動導航)* | Main |
+| `cm_SyncSlaveDir` | 開啟雙面板協同映像檔導航（同進同退） | `⌥S` | *(選單: 命令 ➔ 聯動導航)* | Main |
 | `cm_DirHotList` | 開啟常用目錄書籤 (Hotlist) 快捷列表 | `⌘D` | `Ctrl+D` | Main |
 | `cm_ConfigDirHotList` | 開啟常用目錄書籤的管理與編輯視窗 | `⇧⌘D` | `Ctrl+Shift+D` | Main |
 | `cm_GoToFirst` | 將游標定位至面板內第一個檔案條目 | `⌘↑` / `Fn+←` *(Home)* | `Home` | Main |
@@ -264,7 +264,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 
 ### 4.6 效率工具與系統輔助
 
-透過快速鍵直接喚起多重批次重新命名、差異對比、雙向同步、檔案粉碎與內建終端機等工具。
+透過快速鍵直接喚起多重批次重新命名、差異對比、雙向同步、檔案粉碎與內建終端機機等工具。
 
 | 命令標識 (Command ID) | 功能描述 | macOS 原生快速鍵 | 經典 Commander 鍵位 | 生效上下文 |
 | :--- | :--- | :---: | :---: | :---: |
@@ -276,7 +276,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_Combine` | 將有序的切片檔案合併復原為原始檔案 | `⌥F7` | `Alt+F7` | Main |
 | `cm_CalculateChecksum` | 計算檔案的安全校驗雜湊值 (MD5, SHA-1, SHA-256) | `⌃X` / `⌘K` | `Ctrl+X` | Main |
 | `cm_VerifyChecksum` | 讀取校驗檔案 (`.md5`, `.sha256`) 批次核驗檔案完整性 | `cm_VerifyChecksum` | *(選單: 檔案 ➔ 驗證校驗值)* | Main |
-| `cm_RunTerm` | 在當前面板目錄路徑下喚起 macOS 系統終端機 | `⌃J` / `F9` | `Ctrl+J` / `F9` | Main |
+| `cm_RunTerm` | 在當前面板目錄路徑下喚起 macOS 系統終端機機 | `⌃J` / `F9` | `Ctrl+J` / `F9` | Main |
 | `cm_FocusCmdLine` | 將鍵盤焦點直接轉移至底部嵌入式命令列輸入框 | `⇧F2` | `Shift+F2` | Main |
 | `cm_ShowCmdLineHistory` | 彈出近期在底部命令列中執行過的歷史指令下拉選單 | `⌥↓` / `⌃↓` | `Alt+F8` / `Ctrl+Down` | Main |
 | `cm_AddPathToCmdLine` | 將當前目錄絕對路徑追加填入到底部命令列中 | `⌘P` | `Ctrl+P` | Main |

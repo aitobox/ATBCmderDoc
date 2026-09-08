@@ -30,7 +30,7 @@ In ATBCmder, ogni pannello funziona come un motore di navigazione autonomo dotat
 
 ### Foglio informativo sulla navigazione a doppia matrice
 
-| Azione | Scorciatoia macOS | Chiave del comandante classico | ID comando | Descrizione | 
+| Azione | Scorciatoia macOS | Tasto Commander classico | ID comando | Descrizione | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Directory principale** | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | Sali di un livello nella directory (`..`). | 
 | **Directory principale** | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | Passa direttamente alla radice del sistema (`/`). | 
@@ -299,7 +299,7 @@ ATBCmder supporta tre distinti layout di visualizzazione ad albero tramite il me
 Flat View (noto anche come Branch View) è una delle funzionalità più potenti di ATBCmder. Attraversa ricorsivamente tutte le sottodirectory e sottocartelle all'interno della cartella corrente, unendo tutti i file nidificati in un **singolo elenco unificato**. 
 
 ![Branch View](images/branch_view.png) 
-*Vista ramo piatto (`Cmd+B`) che mostra i contenuti nidificati in tutte le sottodirectory* 
+*Vista ad albero piatto (Flat Branch View) (`Cmd+B`) che mostra i contenuti nidificati in tutte le sottodirectory* 
 
 - **La colonna del percorso**: nella vista piatta, ATBCmder aggiunge automaticamente una colonna **Percorso** che mostra il percorso relativo della cartella nidificata di ciascun file (ad esempio, `assets/icons/` o `src/core/`). 
 - **Ordinamento globale**: ordina tutti i file nidificati contemporaneamente nell'intero albero del progetto per dimensione, data di modifica o estensione del file. 
@@ -374,7 +374,7 @@ ATBCmder isola e ricorda le preferenze di visualizzazione a livello di **scheda*
 
 - **Modalità di visualizzazione indipendenti**: puoi mantenere la Scheda 1 nella **Visualizzazione colonne complete** per le revisioni del codice, la Scheda 2 nella **Visualizzazione griglia miniature** per le risorse grafiche e la Scheda 3 nella **Visualizzazione breve** per una rapida scrematura. 
 - **Ordinamento indipendente**: ciascuna scheda ricorda la propria colonna di ordinamento (Nome, Estensione, Dimensione, Data o Autorizzazioni) e la direzione di ordinamento (ascendente o discendente). Il passaggio da una scheda all'altra non reimposta mai le priorità di ordinamento. 
-- **Stati flat e albero indipendenti**: una scheda impostata su **Vista ramo piatto** (`Cmd+B` / `cm_FlatView`) o **Modalità visualizzazione albero** mantiene l'appiattimento ricorsivo della directory senza alterare lo stato di visualizzazione di qualsiasi altra scheda in entrambi i pannelli. 
+- **Stati flat e albero indipendenti**: una scheda impostata su **Vista ad albero piatto (Flat Branch View)** (`Cmd+B` / `cm_FlatView`) o **Modalità visualizzazione albero** mantiene l'appiattimento ricorsivo della directory senza alterare lo stato di visualizzazione di qualsiasi altra scheda in entrambi i pannelli. 
 
 ---
 
@@ -407,7 +407,7 @@ Ecco tre ricette del mondo reale che mostrano come la navigazione, le schede e l
 **Obiettivo**: trovare e ripulire dispositivi di test di grandi dimensioni e dump di log sparsi in dozzine di sottocartelle nidificate. 
 
 1. Passare alla parte superiore del progetto o della directory multimediale nel pannello attivo. 
-2. Premere `Cmd+B` (`⌘B`) o `Ctrl+B` (`cm_FlatView`) per attivare la **Vista ramo piatto**. 
+2. Premere `Cmd+B` (`⌘B`) o `Ctrl+B` (`cm_FlatView`) per attivare la **Vista ad albero piatto (Flat Branch View)**. 
 3. Osserva come tutte le sottodirectory vengono appiattite ricorsivamente in un unico elenco nel pannello. 
 4. Fare clic una o due volte sull'intestazione della colonna **Dimensione** per ordinare tutti i file dal più grande al più piccolo. 
 5. I file più grandi nell'intero albero delle directory vengono visualizzati immediatamente nella parte superiore del pannello, con la colonna **Percorso** che mostra le loro esatte posizioni nidificate. 
@@ -482,7 +482,7 @@ Ecco tre ricette del mondo reale che mostrano come la navigazione, le schede e l
 | | Visualizzazione ad albero (Sostituisci) | *Mostra Menù* | `Ctrl+Shift+F8` | `cm_TreeView` | 
 | | Visualizzazione ad albero (divisa) | *Mostra Menù* | — | `cm_TreeViewSplit` | 
 | | Visualizzazione ad albero (entrambi i pannelli)| *Mostra Menù* | — | `cm_TreeViewBoth` | 
-| | Vista ramo piatto | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
+| | Vista ad albero piatto (Flat Branch View) | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Modalità Pannelli Orizzontali | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
 | **Ricerca e filtri** | Sovrapposizione di ricerca rapida | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
 | | Filtro semantico | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |

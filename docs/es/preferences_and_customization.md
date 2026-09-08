@@ -41,7 +41,7 @@ ATBCmder centraliza todas las configuraciones del usuario en una arquitectura de
 
 ### Hoja de trucos de personalización y preferencias de matriz dual
 
-| Acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Abrir Preferencias** | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | Abre el cuadro de diálogo principal de Preferencias de varias páginas. | 
 | **Configurar teclas de acceso rápido** | `Cmd+,` ➔ Teclas de acceso rápido | — | `cm_Options` (teclas de acceso rápido) | Acceso directo a la tabla de vinculación de atajos de teclado. | 
@@ -593,7 +593,7 @@ ATBCmder descomprime de forma segura el archivo, verifica que todos los archivos
 
 > [!IMPORTANT] 
 > **Seguridad empresarial: protección anti-traversal** 
-> ATBCmder aplica una estricta validación transversal de ruta durante la importación de configuración (`zipfile` desinfección). Cualquier miembro del archivo que contenga separadores de ruta (`/`, `\`), recorridos de directorio (`..`) o extensiones de archivo que no sean XML se rechaza inmediatamente, protegiendo su sistema operativo contra manipulaciones maliciosas de archivos. 
+> ATBCmder aplica una estricta validación transversal de ruta durante la importación de configuración (`zipfile` desinfección). Cualquier elemento del archivo que contenga separadores de ruta (`/`, `\`), recorridos de directorio (`..`) o extensiones de archivo que no sean XML se rechaza inmediatamente, protegiendo su sistema operativo contra manipulaciones maliciosas de archivos. 
 
 ---
 
@@ -670,7 +670,7 @@ ATBCmder incluye información sobre herramientas de metadatos flotantes enriquec
 
 ## 11. Referencia de comandos de preferencias y personalización de matriz dual maestra
 
-| Categoría | Descripción de la acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | 
+| Categoría | Descripción de la acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Preferencias** | Abrir el cuadro de diálogo de Preferencias principales | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | 
 | **Preferencias** | Guarde la configuración en XML ahora | Menú: Configuración | — | `cm_ConfigSaveSettings` | 

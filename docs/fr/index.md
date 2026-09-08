@@ -85,7 +85,7 @@ Explorez les capacités d'ATBCmder à travers les principales fonctionnalités 
 | ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
 | *Disposition à deux panneaux avec arborescence de répertoires et aperçu miniature.* | *Bande d'action rapide : Afficher, Modifier, Copier, Déplacer, MkDir, Supprimer, Effacer.* | 
 
-| Commandes en langage naturel | Vue de branche plate récursive | 
+| Commandes en langage naturel | Vue arborescente plate (Flat Branch View) récursive | 
 | :---: | :---: | 
 | ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
 | *Recherche instantanée optimisée par macOS Spotlight et analyse sémantique des requêtes.* | *Vue des branches (`Cmd+B`) affichant le contenu imbriqué dans une seule liste plate.* | 

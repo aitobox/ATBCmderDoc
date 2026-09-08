@@ -30,7 +30,7 @@ Dans ATBCmder, chaque panneau fonctionne comme un moteur de navigation autonome 
 
 ### Aide-mémoire de navigation à double matrice
 
-| Actions | Raccourci macOS | Clé de commandant classique | ID de commande | Descriptif | 
+| Actions | Raccourci macOS | Touche Commander classique | ID de commande | Descriptif | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Répertoire des parents** | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | Remontez d’un niveau de répertoire (`..`). | 
 | **Répertoire racine** | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | Accédez directement à la racine du système (`/`). | 
@@ -300,7 +300,7 @@ ATBCmder prend en charge trois présentations d'arborescence distinctes via le m
 Flat View (également connu sous le nom de Branch View) est l'une des fonctionnalités les plus puissantes d'ATBCmder. Il parcourt de manière récursive tous les sous-répertoires et sous-dossiers du dossier actuel, aplatissant tous les fichiers imbriqués dans une **seule liste unifiée**. 
 
 ![Branch View](images/branch_view.png) 
-*Vue de branche plate (`Cmd+B`) affichant le contenu imbriqué dans tous les sous-répertoires* 
+*Vue arborescente plate (Flat Branch View) (`Cmd+B`) affichant le contenu imbriqué dans tous les sous-répertoires* 
 
 - **La colonne Chemin** : en vue plate, ATBCmder ajoute automatiquement une colonne **Chemin** indiquant le chemin relatif du dossier imbriqué de chaque fichier (par exemple, `assets/icons/` ou `src/core/`). 
 - **Tri global** : Triez simultanément tous les fichiers imbriqués dans l'ensemble de l'arborescence du projet par taille, date de modification ou extension de fichier. 
@@ -375,7 +375,7 @@ ATBCmder isole et mémorise les préférences d'affichage au niveau des **onglet
 
 - **Modes d'affichage indépendants** : vous pouvez conserver l'onglet 1 dans la **Vue complète des colonnes** pour les révisions de code, l'onglet 2 dans la **Vue en grille des miniatures** pour les ressources graphiques et l'onglet 3 dans la **Vue brève** pour un survol rapide. 
 - **Tri indépendant** : chaque onglet mémorise sa propre colonne de tri (nom, extension, taille, date ou autorisations) et son sens de tri (ascendant ou décroissant). Passer d’un onglet à l’autre ne réinitialise jamais vos priorités de tri. 
-- **États plats et arborescents indépendants** : un onglet défini sur **Vue de branche plate** (`Cmd+B` / `cm_FlatView`) ou **Mode d'affichage d'arborescence** maintient son aplatissement de répertoire récursif sans modifier l'état d'affichage de tout autre onglet dans l'un ou l'autre panneau. 
+- **États plats et arborescents indépendants** : un onglet défini sur **Vue arborescente plate (Flat Branch View)** (`Cmd+B` / `cm_FlatView`) ou **Mode d'affichage d'arborescence** maintient son aplatissement de répertoire récursif sans modifier l'état d'affichage de tout autre onglet dans l'un ou l'autre panneau. 
 
 ---
 
@@ -483,7 +483,7 @@ Voici trois recettes concrètes montrant comment la navigation, les onglets et l
 | | Vue arborescente (Remplacer) | *Afficher le menu* | `Ctrl+Shift+F8` | `cm_TreeView` | 
 | | Vue arborescente (divisée) | *Afficher le menu* | — | `cm_TreeViewSplit` | 
 | | Vue arborescente (les deux panneaux) | *Afficher le menu* | — | `cm_TreeViewBoth` | 
-| | Vue de branche plate | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
+| | Vue arborescente plate (Flat Branch View) | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Mode panneaux horizontaux | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
 | **Recherche et filtres** | Superposition de recherche rapide | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
 | | Filtre sémantique | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |

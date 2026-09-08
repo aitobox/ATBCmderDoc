@@ -32,6 +32,15 @@ from mentor_style_guide_batch3 import (
     ASCII_KEYBOARD_SCOPES
 )
 
+from mentor_style_guide_batch4 import (
+    ASCII_FAQ_ROUTING,
+    ASCII_FAQ_GRANT_ACCESS,
+    ASCII_FAQ_FUNCTION_KEYS,
+    ASCII_FAQ_INTRA_VOLUME,
+    ASCII_FAQ_CROSS_VOLUME,
+    BATCH4_TERMINOLOGY_REPLACEMENTS
+)
+
 LANGUAGES = ["zh", "zh-hant", "ja", "de", "fr", "es", "pt", "ko", "ru", "it"]
 
 def fix_alerts(content: str) -> str:
@@ -44,13 +53,16 @@ def fix_alerts(content: str) -> str:
 
 def apply_terminology(content: str, lang: str) -> str:
     """Replace machine translation artifacts with native mentor expressions."""
-    if lang not in TERMINOLOGY_REPLACEMENTS:
-        return content
-    
-    replacements = TERMINOLOGY_REPLACEMENTS[lang]
-    for bad_term, good_term in replacements.items():
-        if bad_term in content:
-            content = content.replace(bad_term, good_term)
+    if lang in TERMINOLOGY_REPLACEMENTS:
+        replacements = TERMINOLOGY_REPLACEMENTS[lang]
+        for bad_term, good_term in replacements.items():
+            if bad_term in content:
+                content = content.replace(bad_term, good_term)
+    if lang in BATCH4_TERMINOLOGY_REPLACEMENTS:
+        replacements = BATCH4_TERMINOLOGY_REPLACEMENTS[lang]
+        for bad_term, good_term in replacements.items():
+            if bad_term in content:
+                content = content.replace(bad_term, good_term)
     return content
 
 def process_markdown_file(content: str, lang: str, code_block_replacer) -> str:
@@ -153,6 +165,22 @@ def replace_keyboard_shortcuts_block(block_content: str, block_index: int, lang:
         return f"```\n{ASCII_KEYBOARD_SCOPES[lang]}\n```\n"
     return block_content
 
+# --- Batch 4 Replacers ---
+
+def replace_faq_block(block_content: str, block_index: int, lang: str) -> str:
+    """Replace ASCII diagrams in faq_howtos.md by block index."""
+    if block_index == 0 and lang in ASCII_FAQ_ROUTING:
+        return f"```\n{ASCII_FAQ_ROUTING[lang]}\n```\n"
+    elif block_index == 4 and lang in ASCII_FAQ_GRANT_ACCESS:
+        return f"```\n{ASCII_FAQ_GRANT_ACCESS[lang]}\n```\n"
+    elif block_index == 9 and lang in ASCII_FAQ_FUNCTION_KEYS:
+        return f"```\n{ASCII_FAQ_FUNCTION_KEYS[lang]}\n```\n"
+    elif block_index == 10 and lang in ASCII_FAQ_INTRA_VOLUME:
+        return f"```\n{ASCII_FAQ_INTRA_VOLUME[lang]}\n```\n"
+    elif block_index == 11 and lang in ASCII_FAQ_CROSS_VOLUME:
+        return f"```\n{ASCII_FAQ_CROSS_VOLUME[lang]}\n```\n"
+    return block_content
+
 def refine_batch_1():
     """Process Batch 1 files: index.md, getting_started.md, navigation_and_tabs.md."""
     print("=== Refining Batch 1: Core Foundation Trilogy (index.md, getting_started.md, navigation_and_tabs.md) ===")
@@ -252,6 +280,39 @@ def refine_batch_3():
             keys_file.write_text(content, encoding="utf-8")
             print(f"[{lang}] Polished keyboard_shortcuts.md")
 
+def refine_batch_4():
+    """Process Batch 4 files: faq_howtos.md, download.md, privacy_policy.md."""
+    print("=== Refining Batch 4: Support, Distribution & FAQ (faq_howtos.md, download.md, privacy_policy.md) ===")
+    
+    for lang in LANGUAGES:
+        lang_dir = Path("docs") / lang
+        if not lang_dir.is_dir():
+            continue
+        
+        # 1. faq_howtos.md
+        faq_file = lang_dir / "faq_howtos.md"
+        if faq_file.is_file():
+            content = faq_file.read_text(encoding="utf-8")
+            content = process_markdown_file(content, lang, replace_faq_block)
+            faq_file.write_text(content, encoding="utf-8")
+            print(f"[{lang}] Polished faq_howtos.md")
+        
+        # 2. download.md
+        dl_file = lang_dir / "download.md"
+        if dl_file.is_file():
+            content = dl_file.read_text(encoding="utf-8")
+            content = process_markdown_file(content, lang, None)
+            dl_file.write_text(content, encoding="utf-8")
+            print(f"[{lang}] Polished download.md")
+        
+        # 3. privacy_policy.md
+        pp_file = lang_dir / "privacy_policy.md"
+        if pp_file.is_file():
+            content = pp_file.read_text(encoding="utf-8")
+            content = process_markdown_file(content, lang, None)
+            pp_file.write_text(content, encoding="utf-8")
+            print(f"[{lang}] Polished privacy_policy.md")
+
 def refine_all_alerts():
     """Ensure all alert tags across all chapters in all languages are canonical."""
     for lang in LANGUAGES:
@@ -267,4 +328,5 @@ if __name__ == "__main__":
     refine_batch_1()
     refine_batch_2()
     refine_batch_3()
-    print("Batch 1, 2 & 3 refinements applied successfully!")
+    refine_batch_4()
+    print("All batches (1, 2, 3 & 4) refinements applied successfully!")

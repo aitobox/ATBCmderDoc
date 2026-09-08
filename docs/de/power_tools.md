@@ -32,7 +32,7 @@ ATBCmder unterteilt Elektrowerkzeuge und Automatisierung in sechs spezialisierte
 
 ### Spickzettel zur Dual-Matrix-Automatisierung
 
-| Aktion | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | Beschreibung | 
+| Aktion | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | Beschreibung | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Batch-Mehrfachumbenennung** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Öffnet das Dialogfeld „Batch-Mehrfachumbenennung“. | 
 | **Side-by-Side-Dateiunterschied** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Vergleicht zwei ausgewählte Dateien nebeneinander (`Shift+F3` für `cm_CompareContents`). | 
@@ -740,7 +740,7 @@ Während sich ATBCmder durch grafische Dual-Panel-Workflows auszeichnet, ist fü
 
 ## 10. Referenztabelle für Master-Dual-Matrix-Tastaturen
 
-| Funktionsbereich | Aktionsbeschreibung | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | 
+| Funktionsbereich | Aktionsbeschreibung | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Mehrfachumbenennung** | Batch-Multi-Rename-Tool starten | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 
 | **Mehrfachumbenennung** | Ausführen / Umbenennen starten | `Enter` / `⏎` | `Enter` | — | 

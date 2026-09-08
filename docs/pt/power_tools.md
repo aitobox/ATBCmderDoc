@@ -32,7 +32,7 @@ ATBCmder divide ferramentas elétricas e automação em seis domínios funcionai
 
 ### Folha de dicas de automação de matriz dupla
 
-| Ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | Descrição | 
+| Ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | Descrição | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Renomeação múltipla em lote** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Abre a caixa de diálogo da ferramenta Renomeação múltipla em lote. | 
 | **Diferença de arquivo lado a lado** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Compara dois arquivos selecionados lado a lado (`Shift+F3` para `cm_CompareContents`). | 
@@ -44,7 +44,7 @@ ATBCmder divide ferramentas elétricas e automação em seis domínios funcionai
 | **Combinar arquivos divididos** | Menu: Arquivos ➔ Combinar Arquivos | — | `cm_FileLinker` / `cm_Combine` | Remonta pedaços `.001`, `.002` em um único arquivo. | 
 | **Calcular soma de verificação** | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` | Calcula hashes MD5, SHA-1, SHA-256 ou SHA-512. | 
 | **Verificar arquivo de soma de verificação** | Menu Ferramentas | — | `cm_CheckSumVerify` / `cm_VerifyChecksum` | Verifica arquivos em relação a `.md5`, `.sha256` ou `.sfv`. | 
-| **Limpeza segura (fragmentar)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Substitui e exclui arquivos com segurança. | 
+| **Exclusão segura permanente (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Substitui e exclui arquivos com segurança. | 
 | **Execute o Terminal do Sistema** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Gera o Terminal macOS no caminho do painel atual. | 
 
 ---
@@ -740,7 +740,7 @@ Embora o ATBCmder seja excelente em fluxos de trabalho gráficos de painel duplo
 
 ## 10. Tabela de referência do teclado mestre de matriz dupla
 
-| Área Funcional | Descrição da ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | 
+| Área Funcional | Descrição da ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Renomeação múltipla** | Iniciar ferramenta de renomeação múltipla em lote | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 
 | **Renomeação múltipla** | Executar / Iniciar Renomear | `Enter` / `⏎` | `Enter` | — | 

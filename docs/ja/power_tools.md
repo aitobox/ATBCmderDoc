@@ -34,7 +34,7 @@ ATBCmder は、電動ツールとオートメーションを、デュアルパ�
 
 | アクション | macOS ショートカット | クラシック コマンダー キー | コマンドID | 説明 |
  | :--- | :--- | :--- | :--- | :--- |
- | **一括複数名前変更** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | [一括複数名前変更ツール] ダイアログを開きます。 |
+ | **マルチ一括リネーム (Multi-Rename)** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | [マルチ一括リネーム (Multi-Rename)ツール] ダイアログを開きます。 |
  | **ファイルの並列差分** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | 選択した 2 つのファイルを並べて比較します (`cm_CompareContents` の場合は `Shift+F3`)。 |
  | **ディレクトリ同期** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | デュアルパネルディレクトリを比較して同期します。 |
  | **高度なファイル検索** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | マルチフィルター検索ダイアログを開きます。 |
@@ -44,7 +44,7 @@ ATBCmder は、電動ツールとオートメーションを、デュアルパ�
  | **分割ファイルを結合** | メニュー: ファイル ➔ ファイルを結合 | — | `cm_FileLinker` / `cm_Combine` | `.001`、`.002` チャンクを単一のファイルに再構築します。 |
  | **チェックサムを計算** | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` | MD5、SHA-1、SHA-256、または SHA-512 ハッシュを計算します。 |
  | **チェックサム ファイルを検証** | ツールメニュー | — | `cm_CheckSumVerify` / `cm_VerifyChecksum` | ファイルを `.md5`、`.sha256`、または `.sfv` と照合して検証します。 |
- | **セキュア ワイプ (細断)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | ファイルを安全に上書きおよび削除します。 |
+ | **完全消去・シュレッド (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | ファイルを安全に上書きおよび削除します。 |
  | **システム ターミナルを実行** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | 現在のパネル パスで macOS ターミナルを起動します。 |
 
  ---
@@ -766,7 +766,7 @@ ATBCmder はグラフィカルなデュアルパネル ワークフローに優�
  | **ファイル ユーティリティ**| 番号付きの分割チャンクを結合する | メニュー: ファイル ➔ ファイルを結合 | — | `cm_FileLinker` / `cm_Combine` |
  | **ファイル ユーティリティ**| チェックサム (ハッシュ) を計算する | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` |
  | **ファイル ユーティリティ**| チェックサムマニフェストファイルを検証する | ツールメニュー | ツールメニュー | `cm_CheckSumVerify` / `cm_VerifyChecksum` |
- | **ファイル ユーティリティ**| 安全なマルチパス ワイプ (細断)| `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` |
+ | **ファイル ユーティリティ**| 安全なマルチパス ワイプ (完全消去 (Wipe))| `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` |
  | **ファイル ユーティリティ**| ネイティブ macOS ターミナルを開く | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` |
 
 ---

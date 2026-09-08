@@ -32,7 +32,7 @@ ATBCmder divide gli utensili elettrici e l'automazione in sei domini funzionali 
 
 ### Foglio informativo sull'automazione a doppia matrice
 
-| Azione | Scorciatoia macOS | Chiave del comandante classico | ID comando | Descrizione | 
+| Azione | Scorciatoia macOS | Tasto Commander classico | ID comando | Descrizione | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Rinominazione multipla batch** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Apre la finestra di dialogo dello strumento Rinomina multipla batch. | 
 | **Differenze file affiancati** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Confronta due file selezionati affiancati (`Shift+F3` per `cm_CompareContents`). | 
@@ -44,7 +44,7 @@ ATBCmder divide gli utensili elettrici e l'automazione in sei domini funzionali 
 | **Combina file divisi** | Menu: File ➔ Combina file | — | `cm_FileLinker` / `cm_Combine` | Riassembla i blocchi `.001`, `.002` in un singolo file. | 
 | **Calcola il checksum** | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` | Calcola gli hash MD5, SHA-1, SHA-256 o SHA-512. | 
 | **Verifica file checksum** | Menu Strumenti | — | `cm_CheckSumVerify` / `cm_VerifyChecksum` | Verifica i file rispetto a `.md5`, `.sha256` o `.sfv`. | 
-| **Cancellazione sicura (distruggi)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sovrascrive ed elimina i file in modo sicuro. | 
+| **Cancellazione sicura permanente (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sovrascrive ed elimina i file in modo sicuro. | 
 | **Esegui terminale di sistema** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Genera macOS Terminale nel percorso corrente del pannello. | 
 
 ---
@@ -739,7 +739,7 @@ Sebbene ATBCmder eccelle nei flussi di lavoro grafici a doppio pannello, l'acces
 
 ## 10. Tabella di riferimento della tastiera master a doppia matrice
 
-| Area Funzionale | Azione Descrizione | Scorciatoia macOS | Chiave del comandante classico | ID comando | 
+| Area Funzionale | Azione Descrizione | Scorciatoia macOS | Tasto Commander classico | ID comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Rinomina multipla** | Avvia lo strumento di ridenominazione multipla batch | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 
 | **Rinomina multipla** | Esegui / Avvia Rinomina | `Enter` / `⏎` | `Enter` | — | 

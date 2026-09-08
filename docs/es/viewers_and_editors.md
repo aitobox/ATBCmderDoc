@@ -1,4 +1,4 @@
-# Capítulo 4: Visor universal (Universal Lister) (Universal Lister) y editores integrados
+# Capítulo 4: Visor universal (Universal Lister) (Universal Lister) (Universal Lister) y editores integrados
 
 En la gestión de archivos ortodoxa de doble panel, la velocidad depende en gran medida de la velocidad de inspección. Lanzar entornos de desarrollo integrados (IDE) pesados ​​o aplicaciones de escritorio infladas solo para verificar una suma de verificación, verificar una línea de configuración, recortar una captura de pantalla o inspeccionar un PDF crea fricción cognitiva y desorden de ventanas. 
 
@@ -33,7 +33,7 @@ ATBCmder divide la inspección y modificación de archivos en dos paradigmas dis
 
 ### Hoja de trucos de inspección y edición de matriz dual
 
-| Acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | Descripción | 
+| Acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | Descripción | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Alternar vista rápida** | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | Abre una vista previa en vivo en el panel opuesto. | 
 | **Listador universal** | `F3` / `Fn+F3` | `F3` | `cm_View` | Abre el elemento seleccionado en Universal Lister. | 
@@ -587,7 +587,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 8. Tabla de referencia del teclado de matriz dual
 
-| Área Funcional | Descripción de la acción | Acceso directo a macOS | Llave de comandante clásica | ID de comando | 
+| Área Funcional | Descripción de la acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Vista rápida** | Alternar vista previa del panel opuesto | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | 
 | **Vista rápida** | Panel de conmutación y vista previa de giro | `Tab` / `⇥` | `Tab` | `cm_SwitchPanel` | 

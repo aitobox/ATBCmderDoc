@@ -1,6 +1,6 @@
 # 제9장: 실전 문제 해결 및 레시피
 
-정통 듀얼 패널 파일 관리자는 원시 속도와 키보드 효율성으로 유명하지만, 실제 작업을 마스터하려면 디렉터리 동기화, 배치 패턴 이름 바꾸기, 원격 가상 파일 시스템, 아카이브 재압축, 재귀 검색과 같은 고유한 하위 시스템이 일상적인 시나리오에서 어떻게 함께 작동하는지 이해해야 하는 경우가 많습니다. 또한 최신 macOS에서 작동하면 모든 사용자가 결국 접하게 되는 보안 경계, 샌드박스 제약 조건 및 시스템 바로 가기 교차점이 발생합니다. 
+정통 듀얼 패널 파일 관리자는 원시 속도와 키보드 효율성으로 유명하지만, 실제 작업을 마스터하려면 디렉터리 동기화 (Sync Dirs), 배치 패턴 이름 바꾸기, 원격 가상 파일 시스템, 아카이브 재압축, 재귀 검색과 같은 고유한 하위 시스템이 일상적인 시나리오에서 어떻게 함께 작동하는지 이해해야 하는 경우가 많습니다. 또한 최신 macOS에서 작동하면 모든 사용자가 결국 접하게 되는 보안 경계, 샌드박스 제약 조건 및 시스템 바로 가기 교차점이 발생합니다. 
 
 이 장은 두 개의 포괄적인 섹션으로 구분됩니다. 
 
@@ -15,44 +15,44 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              EVERYDAY TASK & DIAGNOSTIC ROUTER                         │
+│                       일상 업무 및 문제 해결 빠른 가이드 라우터                        │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│  TASK / GOAL                               TOOL / METHOD            KEYSTROKE          │
+│  작업 목표                                 추천 도구 / 방법         단축키             │
 │  ──────────────────────────────────────    ───────────────────────  ─────────────────  │
-│  [1] Mirror local projects to backup       Directory Synchronizer   Shift+F12 (⇧F12)   │
-│  [2] Reorganize photo libraries by date    Batch Multi-Rename Tool  Ctrl+M (⌃M)        │
-│  [3] Mount home/office NAS or server       Network VFS Manager     cm_ManageConnections│
-│  [4] Update config file in .zip archive    Archive VFS + Lister    Enter ➔ F4 ➔ Save   │
-│  [5] Reclaim disk space from nested clutter Flat Branch View        Cmd+B (⌘B) / Alt+F7│
+│  [1] 로컬 프로젝트를 외장하드/NAS로 동기화 폴더 동기화 도구        Shift+F12 (⇧F12)    │
+│  [2] 촬영 날짜별 사진 대량 일괄 이름 변경  다중 일괄 이름 변경     Ctrl+M (⌃M)         │
+│  [3] 가정/사무실 NAS 및 원격 서버 마운트   네트워크 연결 관리자    cm_ManageConnections│
+│  [4] .zip 압축 해제 없이 설정 파일 직접 수정 압축 VFS + 에디터     Enter ➔ F4 ➔ 저장   │
+│  [5] 깊숙한 대용량 파일 발굴 및 디스크 정리 플랫 브랜치 뷰 / 검색  Cmd+B (⌘B) / Alt+F7 │
 │                                                                                        │
-│  ISSUE / SYMPTOM                           ROOT CAUSE              RESOLUTION          │
+│  문제 현상 / 오류                          근본 원인               해결 방법           │
 │  ──────────────────────────────────────    ──────────────────────  ──────────────────  │
-│  "Operation not permitted" error           macOS Sandbox / TCC     cm_GrantAccess      │
-│  Panels don't update external drives       FSEvents missing on FAT  attr_poll_interval │
-│  Want to experiment without risk           Production XML safety    ATBCmder_test.sh   │
-│  F-keys change brightness or volume        macOS hardware F-keys    Fn key or Settings │
-│  Move takes long time across drives        Cross-volume Copy+Delete Verify free space  │
+│  "Operation not permitted" 권한 오류       macOS 샌드박스 / TCC 차단 cm_GrantAccess    │
+│  외장 드라이브 내용이 자동 갱신 안 됨      FAT 파일시스템 한계     폴링 조정 또는 갱신 │
+│  기존 설정 손상 없이 안전하게 테스트       운영 XML 격리 보호      테스트 스크립트 실행│
+│  F1~F12 키가 음량이나 밝기 조절            macOS 기본 미디어 키    Fn 키 병용 또는 설정│
+│  드라이브 간 대용량 이동 시간 지연         볼륨 간 복사+검증+삭제 여유 공간 사전 확인  │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### 듀얼 매트릭스 빠른 참조 테이블
 
-| 조치/진단 | macOS 바로가기 | 클래식 커맨더 키 | 명령 ID | 주요 목적 | 
+| 조치/진단 | macOS 바로가기 | 클래식 커맨더 단축키 | 명령 ID | 주요 목적 | 
 | :--- | :--- | :--- | :--- | :--- | 
-| **디렉터리 동기화** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 이중 패널 디렉터리 트리를 비교하고 동기화합니다. | 
+| **디렉터리 동기화 (Sync Dirs)** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 이중 패널 디렉터리 트리를 비교하고 동기화합니다. | 
 | **일괄 다중 이름 바꾸기** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 토큰, 카운터 및 RegEx를 사용하여 여러 파일의 이름을 바꿉니다. | 
 | **네트워크 연결** | 메뉴: 네트워크 | `cm_ManageConnections`| `cm_ManageConnections`| 저장된 SMB, SFTP, WebDAV 및 FTP 서버 프로필을 관리합니다. | 
 | **빠른 네트워크 연결** | 메뉴: 네트워크 | `cm_NetworkConnect` | `cm_NetworkConnect` | 원격 서버에 대한 임시 연결 대화 상자입니다. | 
-| **내부 편집 보관** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 아카이브 회원을 편집합니다. 저장 시 `RepackWorker`을 트리거합니다. | 
+| **압축 파일 내 직접 편집 (In-Place Edit)** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 압축 파일 내 항목을 직접 편집합니다. 저장 시 `RepackWorker`을 트리거합니다. | 
 | **플랫 브랜치 뷰** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 단일 단순 목록에 중첩된 모든 파일을 반복적으로 표시합니다. | 
 | **고급 검색** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | "Feed to Listbox" 출력을 사용한 다중 필터 파일 검색. | 
 | **파일 시스템 액세스 권한 부여**| 메뉴: 파일/도움말 | — | `cm_GrantFilesystemAccess`| macOS App Sandbox 권한 도우미를 시작합니다. | 
 | **수동 패널 새로 고침** | `Ctrl+R` / `⌃R` 또는 `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | 디스크에서 즉시 디렉터리를 다시 읽도록 합니다. | 
 | **실행 시스템 터미널** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | 현재 패널 경로에서 macOS 터미널을 생성합니다. | 
 | **폴더 공간 계산** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | 총 재귀 바이트 크기를 계산합니다(단일의 경우 `Space`, 선택한 전체의 경우 `Ctrl+L`). | 
-| **보안 삭제(세단)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | 다중 패스 덮어쓰기 및 영구 파일 삭제. | 
+| **안전 영구 삭제 (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | 다중 패스 덮어쓰기 및 영구 파일 삭제. | 
 
 ---
 
@@ -63,16 +63,16 @@
 **목표**: 외부 백업 드라이브 또는 네트워크 폴더에 활성 프로젝트 디렉터리의 정확한 최신 복제본이 포함되어 있는지 확인하고 변경하기 전에 추가, 수정 또는 삭제된 파일을 완벽하게 볼 수 있습니다. 
 
 ![Directory Synchronization](images/folder_synchronization.png) 
-*그림 9.1: 병렬 디렉터리 비교, 방향 복사 화살표 및 비대칭 미러 옵션을 표시하는 디렉터리 동기화 대화 상자.*
+*그림 9.1: 병렬 디렉터리 비교, 방향 복사 화살표 및 비대칭 미러 옵션을 표시하는 디렉터리 동기화 (Sync Dirs) 대화 상자.*
 
 #### 단계별 절차
 
 1. **이중 패널에서 소스와 대상 정렬**: 
 - **왼쪽 패널**에서 기본 로컬 작업 디렉터리(예: `~/Documents/Projects/AppAlpha`)로 이동합니다. 
 - **`Tab`**을 눌러 **오른쪽 패널**로 전환하고 대상 백업 대상(예: `/Volumes/BackupDrive/Backups/AppAlpha`)으로 이동합니다. 
-2. **디렉터리 동기화 실행**: 
+2. **디렉터리 동기화 (Sync Dirs) 실행**: 
 - **`Shift+F12`**(`⇧F12`)을 누르거나 메뉴 표시줄에서 **Commands ➔ Dirs 동기화...**를 선택합니다. 
-- 왼쪽 경로와 오른쪽 경로가 자동으로 채워진 상태로 디렉터리 동기화 대화 상자가 열립니다. 
+- 왼쪽 경로와 오른쪽 경로가 자동으로 채워진 상태로 디렉터리 동기화 (Sync Dirs) 대화 상자가 열립니다. 
 3. **비교 매개변수 구성**: 
 - **Compare Subdirectories**를 선택하면 중첩된 모든 폴더를 반복적으로 탐색할 수 있습니다. 
 - 파일 크기와 수정 타임스탬프에만 의존하기보다는 암호화 확실성(`filecmp`을 통해 파일 바이트 확인)이 필요한 경우 **콘텐츠별 비교**를 선택하세요. 
@@ -106,15 +106,15 @@
 **목표**: 정리되지 않은 수백 개의 카메라 파일(예: `DSC_0012.JPG`, `DSC_0013.JPG`, `IMG_4901.CR3`)을 제로 패딩된 시퀀스 카운터 및 실시간 안전 미리보기를 사용하여 `2026-09-06_Vacation_001.jpg`과 같은 깔끔하고 정렬 가능한 파일 이름으로 변환합니다. 
 
 ![Batch Multi-Rename Tool](images/multi_rename_dialog.png) 
-*그림 9.2: 실시간 미리보기 행, 메타데이터 토큰, 숫자 카운터 제어 및 충돌 감지 기능을 갖춘 일괄 다중 이름 바꾸기 도구.*
+*그림 9.2: 실시간 미리보기 행, 메타데이터 토큰, 숫자 카운터 제어 및 충돌 감지 기능을 갖춘 일괄 일괄 이름 변경 도구 (Multi-Rename).*
 
 #### 단계별 절차
 
 1. **사진 선택**: 
 - 활성 패널에서 카메라 가져오기 디렉터리로 이동합니다. 
 - **`Cmd+A`**(`⌘A`)을 사용하여 모든 사진을 선택하거나 키보드에서 **`+`**을 눌러 `*.jpg;*.jpeg;*.cr3;*.arw`과 같은 와일드카드 마스크를 입력합니다. 
-2. **일괄 다중 이름 바꾸기 도구 실행**: 
-- **`Ctrl+M`** (`⌃M`) 또는 **`Cmd+M`** (`⌘M`)을 누르거나 메뉴 표시줄에서 **파일 ➔ 다중 이름 바꾸기 도구...**를 선택합니다. 
+2. **일괄 일괄 이름 변경 도구 (Multi-Rename) 실행**: 
+- **`Ctrl+M`** (`⌃M`) 또는 **`Cmd+M`** (`⌘M`)을 누르거나 메뉴 표시줄에서 **파일 ➔ 일괄 이름 변경 도구 (Multi-Rename)...**를 선택합니다. 
 3. **파일 이름 마스크 정의**: 
 - **파일 이름 마스크** 필드에 메타데이터 토큰을 사용하여 원하는 구조를 입력합니다. 
      ```
@@ -153,7 +153,7 @@
 
 > [!TIP] 
 > **⚡ 전문가 팁: 외부 편집기 작업 흐름(`⌘I`)**: 
-> 클라이언트 이름 또는 트랙 제목 목록이 불규칙한 경우 다중 이름 바꾸기 도구 내에서 **`Cmd+I`** (`⌘I` / 외부 편집기에서 편집)을 누르세요. ATBCmder는 대상 이름을 기본 텍스트 편집기로 내보냅니다. Vim, VS Code 또는 TextEdit에서 목록을 편집하고 문서를 저장하면 ATBCmder가 수정된 이름을 미리 보기 그리드로 즉시 가져옵니다. 
+> 클라이언트 이름 또는 트랙 제목 목록이 불규칙한 경우 일괄 이름 변경 도구 (Multi-Rename) 내에서 **`Cmd+I`** (`⌘I` / 외부 편집기에서 편집)을 누르세요. ATBCmder는 대상 이름을 기본 텍스트 편집기로 내보냅니다. Vim, VS Code 또는 TextEdit에서 목록을 편집하고 문서를 저장하면 ATBCmder가 수정된 이름을 미리 보기 그리드로 즉시 가져옵니다. 
 
 ---
 
@@ -320,22 +320,21 @@ ATBCMder에는 macOS에 영구 보안 북마크를 등록하도록 설계된 내
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Grant Filesystem Access                                [x] │
+│  파일 시스템 접근 권한 허용 (Filesystem Access)         [x] │
 ├─────────────────────────────────────────────────────────────┤
-│  Because this version of ATBCmder runs inside a secure      │
-│  macOS Sandbox, it needs your permission to access          │
-│  critical folders.                                          │
+│  ATBCmder는 macOS 샌드박스 보안 환경에서 실행되므로,        │
+│  핵심 시스템 폴더 및 외장 드라이브 접근에 대한              │
+│  사용자의 명시적 승인이 필요합니다.                         │
 │                                                             │
-│  [  Grant Access to Root Directory (/)  ]                   │
+│  [  루트 디렉토리 (/) 접근 권한 허용  ]                     │
 │                                                             │
-│  [  Grant Access to External Disks (/Volumes)  ]            │
+│  [  외장 디스크 (/Volumes) 접근 권한 허용  ]                │
 │                                                             │
-│  [  Open Full Disk Access Settings…  ]                      │
+│  [  전체 디스크 접근 권한 설정 열기…  ]                     │
 │                                                             │
-│  Root directory access is required by the App Sandbox.      │
-│  Full Disk Access is a separate macOS permission for        │
-│  protected user data.                                       │
-│                                                   [ Done ]  │
+│  루트 접근 승인은 앱 샌드박스 구동에 필수입니다.            │
+│  전체 디스크 접근 권한은 사용자 데이터를 보호합니다.        │
+│                                                   [ 완료 ]  │
 └─────────────────────────────────────────────────────────────┘
 ```
  
@@ -491,7 +490,7 @@ ATBCmder는 샌드박스 테스트 실행 프로그램 스크립트를 제공합
 - **`Fn+F6`**: 파일 이동/이름 바꾸기(`cm_Rename`) 
 - **`Fn+F7`**: 새 폴더 생성(`cm_MakeDir`) 
 - **`Fn+F8`**: 휴지통으로 삭제(`cm_Delete`) 
-- **`Fn+Shift+F12`**: 디렉터리 동기화(`cm_SyncDirs`)
+- **`Fn+Shift+F12`**: 디렉터리 동기화 (Sync Dirs)(`cm_SyncDirs`)
 
 #### 해결 방법 2: macOS 설정에서 시스템 전체에 표준 기능 키를 활성화합니다.
 
@@ -508,16 +507,16 @@ ATBCmder를 정기적으로 사용하는 경우 기능 키를 표준 `F1`-`F12` 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Keyboard Shortcuts                                         │
+│  키보드 단축키                                              │
 ├──────────────────────────────┬──────────────────────────────┤
-│  Keyboard Navigation         │  Use F1, F2, etc. keys as    │
-│  Modifier Keys               │  standard function keys  [ON]│
-│  Function Keys          ◄─── │                              │
-│  Spotlight                   │  When this option is on,     │
-│  Mission Control             │  press the Fn key to use the │
-│  App Shortcuts               │  special features printed    │
-│                              │  on each key.                │
-│                              │                     [ Done ] │
+│  키보드 내비게이션           │  F1, F2 등의 키를 표준       │
+│  보조 키                     │  기능 키로 사용          [켬]│
+│  기능 키               ◄───  │                              │
+│  Spotlight                   │  옵션 활성화 시 Fn 키를 눌러 │
+│  Mission Control             │  눌러 각 키에 인쇄된 특수    │
+│  앱 단축키                   │  동작을 실행합니다.          │
+│                              │                              │
+│                              │                     [ 완료 ] │
 └──────────────────────────────┴──────────────────────────────┘
 ```
  
@@ -547,14 +546,14 @@ ATBCmder를 정기적으로 사용하는 경우 기능 키를 표준 `F1`-`F12` 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              INTRA-VOLUME MOVE (SAME PARTITION)                        │
+│                  동일 볼륨 파티션 내 파일 이동 (밀리초 내 즉각 완료)                   │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Users/brain/Movies/          │
+│   원본: /Users/brain/Downloads/BigFile.iso ➔ 대상: /Users/brain/Movies/                │
 │                                                                                        │
-│   1. POSIX rename() system call updates filesystem inode directory table.              │
-│   2. Physical data blocks on the SSD are NEVER touched or copied.                      │
-│   3. Execution time: < 5 milliseconds. Free disk space required: 0 bytes.              │
+│   1. POSIX rename() 원자적 시스템 호출이 파일시스템 inode 디렉토리 포인터만 갱신.      │
+│   2. SSD에 기록된 실제 데이터 블록은 물리적으로 전혀 복사되거나 읽히지 않습니다.       │
+│   3. 소요 시간: 5 밀리초 미만. 추가로 요구되는 디스크 여유 공간: 0 바이트.             │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -566,14 +565,14 @@ ATBCmder를 정기적으로 사용하는 경우 기능 키를 표준 `F1`-`F12` 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                              CROSS-VOLUME MOVE (ACROSS DRIVES)                         │
+│                  다른 물리 드라이브 간 이동 (물리적 파이프라인 단계)                   │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                        │
-│   Source: /Users/brain/Downloads/BigFile.iso   ➔ Target: /Volumes/ExternalSSD/Movie/   │
+│   원본: /Users/brain/Downloads/BigFile.iso ➔ 대상: /Volumes/ExternalSSD/Movie/         │
 │                                                                                        │
-│   Stage 1: Binary Stream Copy (Read from Source SSD ➔ Write to Target External SSD)    │
-│   Stage 2: Verification and Flush (fsync ensures complete write to external media)     │
-│   Stage 3: Source Deletion (Source file is unlinked only after Stage 2 succeeds)       │
+│   1단계: 바이너리 스트림 복사 (내장 SSD에서 스트리밍 읽기 ➔ 외장 SSD로 직접 쓰기)      │
+│   2단계: 무결성 검증 및 디스크 플러시 (fsync를 통해 외장 매체에 물리적 쓰기 완료 보장) │
+│   3단계: 원본 파일 안전 삭제 (2단계가 완벽하게 성공한 후에만 원본 연결 해제)           │
 │                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```

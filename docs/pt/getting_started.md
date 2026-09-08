@@ -54,7 +54,7 @@ Ao iniciar uma operação no ATBCmder, o aplicativo entende automaticamente a di
 
 ### Navegação no painel e mudança de foco
 
-| Ação | Atalho do macOS | Chave do Comandante Clássico | ID do comando | Descrição | 
+| Ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | Descrição | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Mudar foco** | `Tab` | `Tab` | `cm_FocusSwap` | Alterna o foco do teclado entre os painéis esquerdo e direito (`cm_SwitchPanel`). | 
 | **Foco reverso** | `Shift+Tab` | `Shift+Tab` | `cm_FocusSwap` | Inverte a ordem do foco nos painéis e controles. | 

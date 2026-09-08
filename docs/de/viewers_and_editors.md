@@ -33,7 +33,7 @@ ATBCmder unterteilt die Dateiprüfung und -änderung in zwei unterschiedliche Pa
 
 ### Spickzettel für Dual-Matrix-Inspektion und -Bearbeitung
 
-| Aktion | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | Beschreibung | 
+| Aktion | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | Beschreibung | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Schnellansicht umschalten** | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | Öffnet die Live-Vorschau im gegenüberliegenden Bereich. | 
 | **Universal Lister** | `F3` / `Fn+F3` | `F3` | `cm_View` | Öffnet das ausgewählte Element im Universal Lister. | 
@@ -590,7 +590,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 8. Referenztabelle für Dual-Matrix-Tastaturen
 
-| Funktionsbereich | Aktionsbeschreibung | macOS-Verknüpfung | Klassischer Commander-Schlüssel | Befehls-ID | 
+| Funktionsbereich | Aktionsbeschreibung | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Schnellansicht** | Vorschau des gegenüberliegenden Panels umschalten | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | 
 | **Schnellansicht** | Bedienfeld wechseln und Vorschau umdrehen | `Tab` / `⇥` | `Tab` | `cm_SwitchPanel` | 
