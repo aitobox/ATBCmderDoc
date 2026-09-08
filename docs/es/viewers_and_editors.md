@@ -1,4 +1,4 @@
-# Capítulo 4: Visor universal (Universal Lister) y editores integrados
+# Capítulo 4: Visor universal (Universal Lister) (Universal Lister) y editores integrados
 
 En la gestión de archivos ortodoxa de doble panel, la velocidad depende en gran medida de la velocidad de inspección. Lanzar entornos de desarrollo integrados (IDE) pesados ​​o aplicaciones de escritorio infladas solo para verificar una suma de verificación, verificar una línea de configuración, recortar una captura de pantalla o inspeccionar un PDF crea fricción cognitiva y desorden de ventanas. 
 

@@ -12,17 +12,17 @@ Total Commander と Norton Commander で 20 年間の記憶がある場合でも
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      DUAL-MATRIX KEYBOARD ENGINE                            │
+│                       デュアルマトリックス キーボード構造                   │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│  CLASSIC COMMANDER PARADIGM          │  NATIVE macOS PARADIGM               │
-│  • Function Key Centric (F1–F12)     │  • Modifier Chords (⌘, ⌥, ⇧, ⌃)      │
-│  • Dedicated Keypad Marking (+, -, *)│  • Finder Parity (⌘C, ⌘V, ⌘⌫, ⏎)     │
-│  • Zero-Modal Terminal Velocity      │  • Native Menu Bar Integration       │
-│  Examples:                           │  Examples:                           │
-│    F5        ➔ Copy Files            │    ⌘C ➔ ⌘V   ➔ Copy Files            │
-│    F6        ➔ Move Files            │    ⌘C ➔ ⌥⌘V  ➔ Move Files            │
-│    Shift+F4  ➔ Create Text File      │    ⇧⌘4       ➔ Create Text File      │
-│    Alt+F7    ➔ Find Files            │    ⌥⌘F       ➔ Find Files            │
+│  クラシック Commander 体系           │  macOS ネイティブ体系                │
+│  • ファンクションキー中心 (F1–F12)   │  • 修飾キーコンビネーション(⌘, ⌥, ⇧, ⌃)│
+│  • テンキー記号による範囲選択(+, -, *)│ • Finder互換操作 (⌘C, ⌘V, ⌘⌫, ⏎)    │
+│  • 指先が跳ねるブラインド操作        │  • ネイティブメニューバー連携        │
+│  操作例:                             │  操作例:                             │
+│    F5        ➔ 対側へコピー          │    ⌘C ➔ ⌘V   ➔ ファイルをコピー      │
+│    F6        ➔ 対側へ移動            │    ⌘C ➔ ⌥⌘V  ➔ ファイルを移動        │
+│    Shift+F4  ➔ 新規テキスト作成      │    ⇧⌘4       ➔ 新規テキスト作成      │
+│    Alt+F7    ➔ ファイル高度検索      │    ⌥⌘F       ➔ ファイル高度検索      │
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -99,15 +99,15 @@ Total Commander と Norton Commander で 20 年間の記憶がある場合でも
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          APPLICATION SCOPE: Main                            │
-│  Global commands, panel navigation, window management, toolbar, power tools │
+│                          アプリケーション全体スコープ (Main)                │
+│  グローバルコマンド、パネル移動、タブ切替、ツールバー、パワー機能           │
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│  PANEL SCOPE: FilePanel       │  MODAL TOOLS SCOPES                         │
-│  Active during directory      │  • Viewer      (Lister preview window)      │
-│  table and thumbnail browsing │  • Editor      (Built-in code editor)       │
-│  (marking, range selection,   │  • Differ      (Side-by-side diff viewer)   │
-│  inline editing, space count) │  • FindFiles   (Multi-threaded file search) │
-│                               │  • MultiRename (Batch rename engine)        │
+│  ファイルパネルスコープ       │  専用ツールスコープ (Modal Tools)           │
+│  リスト・サムネイル一覧操作時 │  • Viewer      (Universal Lister プレビュー)│
+│  (ファイル選択、ワイルドカード│  • Editor      (内蔵コードエディタ)         │
+│  インラインリネーム、容量計算)│  • Differ      (2画面差分比較ツール)        │
+│                               │  • FindFiles   (高度なファイル検索)         │
+│                               │  • MultiRename (一括リネームツール)         │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
 

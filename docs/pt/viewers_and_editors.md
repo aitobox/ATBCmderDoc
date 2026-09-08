@@ -1,4 +1,4 @@
-# Capítulo 4: Visualizador universal (Universal Lister) e editores integrados
+# Capítulo 4: Visualizador universal (Universal Lister) (Universal Lister) e editores integrados
 
 No gerenciamento ortodoxo de arquivos com painel duplo, a velocidade depende muito da velocidade da inspeção. Lançar ambientes de desenvolvimento integrados (IDEs) pesados ​​ou aplicativos de desktop inchados apenas para verificar uma soma de verificação, verificar uma linha de configuração, cortar uma captura de tela ou inspecionar um PDF cria atrito cognitivo e confusão de janelas. 
 

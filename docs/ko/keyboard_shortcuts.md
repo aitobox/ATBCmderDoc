@@ -12,17 +12,17 @@ Total Commander 및 Norton Commander의 20년 머슬 메모리를 보유하고 �
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      DUAL-MATRIX KEYBOARD ENGINE                            │
+│                         듀얼 매트릭스 단축키 구조                           │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│  CLASSIC COMMANDER PARADIGM          │  NATIVE macOS PARADIGM               │
-│  • Function Key Centric (F1–F12)     │  • Modifier Chords (⌘, ⌥, ⇧, ⌃)      │
-│  • Dedicated Keypad Marking (+, -, *)│  • Finder Parity (⌘C, ⌘V, ⌘⌫, ⏎)     │
-│  • Zero-Modal Terminal Velocity      │  • Native Menu Bar Integration       │
-│  Examples:                           │  Examples:                           │
-│    F5        ➔ Copy Files            │    ⌘C ➔ ⌘V   ➔ Copy Files            │
-│    F6        ➔ Move Files            │    ⌘C ➔ ⌥⌘V  ➔ Move Files            │
-│    Shift+F4  ➔ Create Text File      │    ⇧⌘4       ➔ Create Text File      │
-│    Alt+F7    ➔ Find Files            │    ⌥⌘F       ➔ Find Files            │
+│  클래식 COMMANDER 패러다임           │  macOS 네이티브 패러다임             │
+│  • 기능 키 중심 워크플로우 (F1–F12)  │  • 조합 수식 키 중심 (⌘, ⌥, ⇧, ⌃)    │
+│  • 전용 키패드 파일 마킹 (+, -, *)   │  • Finder 단축키 완전 호환 (⌘C, ⌘V)  │
+│  • 손끝에서 끝나는 초고속 조작       │  • 네이티브 시스템 메뉴 바 통합      │
+│  주요 예시:                          │  주요 예시:                          │
+│    F5        ➔ 대상 패널로 복사      │    ⌘C ➔ ⌘V   ➔ 파일 복사             │
+│    F6        ➔ 대상 패널로 이동      │    ⌘C ➔ ⌥⌘V  ➔ 파일 이동             │
+│    Shift+F4  ➔ 새 텍스트 파일 생성   │    ⇧⌘4       ➔ 새 텍스트 파일 생성   │
+│    Alt+F7    ➔ 고급 파일 검색        │    ⌥⌘F       ➔ 고급 파일 검색        │
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -99,15 +99,15 @@ Total Commander 및 Norton Commander의 20년 머슬 메모리를 보유하고 �
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          APPLICATION SCOPE: Main                            │
-│  Global commands, panel navigation, window management, toolbar, power tools │
+│                         애플리케이션 전역 범위: Main                        │
+│  전역 명령, 패널 전환, 탭 탐색, 도구 모음, 파워 툴                          │
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│  PANEL SCOPE: FilePanel       │  MODAL TOOLS SCOPES                         │
-│  Active during directory      │  • Viewer      (Lister preview window)      │
-│  table and thumbnail browsing │  • Editor      (Built-in code editor)       │
-│  (marking, range selection,   │  • Differ      (Side-by-side diff viewer)   │
-│  inline editing, space count) │  • FindFiles   (Multi-threaded file search) │
-│                               │  • MultiRename (Batch rename engine)        │
+│  패널 유효 범위: FilePanel    │  모달 도구 유효 범위                        │
+│  디렉터리 목록 및 썸네일 탐색 │  • Viewer      (Universal Lister 뷰어 창)   │
+│  (다중 선택, 와일드카드 마킹, │  • Editor      (내장 코드/텍스트 에디터)    │
+│  인라인 이름 변경, 용량 계산) │  • Differ      (나란히 파일 차이 비교 창)   │
+│                               │  • FindFiles   (다중 스레드 파일 검색 창)   │
+│                               │  • MultiRename (일괄 이름 변경 도구)        │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
  
@@ -271,8 +271,8 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_FileSearch` / `cm_Search` | 고급 다중 필터 검색 대화 상자 열기 | `⌥F7` / `⌥⌘F` | `Alt+F7` | 메인 | 
 | `cm_FileDiff` / `cm_CompareFiles` | 병렬 시각적 파일 차이 뷰어 열기 | `⌘⇧F12` | `Meta+Shift+F12` | 메인 | 
-| `cm_SyncDirs` | 양방향 디렉터리 동기화 도구 열기 | `⇧F12` | `Shift+F12` | 메인 | 
-| `cm_MultiRename` | 일괄 다중 이름 바꾸기 도구 열기(RegEx 및 토큰) | `⌘M` | `Ctrl+M` | 메인 | 
+| `cm_SyncDirs` | 양방향 디렉터리 동기화 (Sync Dirs) 도구 열기 | `⇧F12` | `Shift+F12` | 메인 | 
+| `cm_MultiRename` | 일괄 일괄 이름 변경 도구 (Multi-Rename) 열기(RegEx 및 토큰) | `⌘M` | `Ctrl+M` | 메인 | 
 | `cm_Split` | 대용량 파일을 균일한 청크 세그먼트로 분할 | `⌥F6` | `Alt+F6` | 메인 | 
 | `cm_Combine` | 분할된 번호가 매겨진 세그먼트를 원본 파일로 다시 결합 | `⌥F7` | `Alt+F7` | 메인 | 
 | `cm_CalculateChecksum` | 암호화 해시 계산(MD5, SHA-1, SHA-256) | `⌃X` / `⌘K` | `Ctrl+X` | 메인 | 
@@ -396,7 +396,7 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 
 ---
 
-### 5.5 일괄 다중 이름 바꾸기 도구(`MultiRename` 컨텍스트)
+### 5.5 일괄 일괄 이름 변경 도구 (Multi-Rename)(`MultiRename` 컨텍스트)
 
 일괄 이름 바꾸기 작업 공간 내에서 활성화됩니다. 
 
@@ -421,7 +421,7 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 3. **애플리케이션 숨기기(`⌘H`)**: 
 - macOS에서 `⌘H`은 맨 앞의 애플리케이션을 숨깁니다. ATBCmder는 `⌘H` 또는 `⇧⌘.`을 사용하여 숨겨진 도트 파일을 전환합니다. `⌘H`을 통해 숨겨진 파일을 엄격하게 전환하려면 macOS에서 "응용 프로그램 숨기기"를 비활성화하거나 Finder 표준 `⇧⌘.`(`Cmd+Shift+Period`)을 사용하세요. 
 4. **창 최소화(`⌘M`)**: 
-- macOS는 창을 Dock으로 최소화하기 위해 `⌘M`을 할당합니다. ATBCmder는 `⌘M`을 일괄 다중 이름 바꾸기 도구(`cm_MultiRename`)에 할당합니다. ATBCmder는 기본 창 내에서 `⌘M`을 캡처하지만 `Ctrl+M` 또는 도구 모음을 통해 다중 이름 바꾸기를 트리거할 수도 있습니다. 
+- macOS는 창을 Dock으로 최소화하기 위해 `⌘M`을 할당합니다. ATBCmder는 `⌘M`을 일괄 일괄 이름 변경 도구 (Multi-Rename)(`cm_MultiRename`)에 할당합니다. ATBCmder는 기본 창 내에서 `⌘M`을 캡처하지만 `Ctrl+M` 또는 도구 모음을 통해 다중 이름 바꾸기를 트리거할 수도 있습니다. 
 
 ---
 

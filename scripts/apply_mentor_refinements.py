@@ -27,6 +27,11 @@ from mentor_style_guide_batch2 import (
     ASCII_POWER_TOOLS_MAP
 )
 
+from mentor_style_guide_batch3 import (
+    ASCII_KEYBOARD_ENGINE,
+    ASCII_KEYBOARD_SCOPES
+)
+
 LANGUAGES = ["zh", "zh-hant", "ja", "de", "fr", "es", "pt", "ko", "ru", "it"]
 
 def fix_alerts(content: str) -> str:
@@ -138,6 +143,16 @@ def replace_power_tools_block(block_content: str, block_index: int, lang: str) -
         return f"```\n{ASCII_POWER_TOOLS_MAP[lang]}\n```\n"
     return block_content
 
+# --- Batch 3 Replacers ---
+
+def replace_keyboard_shortcuts_block(block_content: str, block_index: int, lang: str) -> str:
+    """Replace ASCII diagrams in keyboard_shortcuts.md by block index."""
+    if block_index == 0 and lang in ASCII_KEYBOARD_ENGINE:
+        return f"```\n{ASCII_KEYBOARD_ENGINE[lang]}\n```\n"
+    elif block_index == 1 and lang in ASCII_KEYBOARD_SCOPES:
+        return f"```\n{ASCII_KEYBOARD_SCOPES[lang]}\n```\n"
+    return block_content
+
 def refine_batch_1():
     """Process Batch 1 files: index.md, getting_started.md, navigation_and_tabs.md."""
     print("=== Refining Batch 1: Core Foundation Trilogy (index.md, getting_started.md, navigation_and_tabs.md) ===")
@@ -204,6 +219,39 @@ def refine_batch_2():
             power_file.write_text(content, encoding="utf-8")
             print(f"[{lang}] Polished power_tools.md")
 
+def refine_batch_3():
+    """Process Batch 3 files: network_and_vfs.md, preferences_and_customization.md, keyboard_shortcuts.md."""
+    print("=== Refining Batch 3: System & Customization (network_and_vfs.md, preferences_and_customization.md, keyboard_shortcuts.md) ===")
+    
+    for lang in LANGUAGES:
+        lang_dir = Path("docs") / lang
+        if not lang_dir.is_dir():
+            continue
+        
+        # 1. network_and_vfs.md
+        vfs_file = lang_dir / "network_and_vfs.md"
+        if vfs_file.is_file():
+            content = vfs_file.read_text(encoding="utf-8")
+            content = process_markdown_file(content, lang, None)
+            vfs_file.write_text(content, encoding="utf-8")
+            print(f"[{lang}] Polished network_and_vfs.md")
+        
+        # 2. preferences_and_customization.md
+        pref_file = lang_dir / "preferences_and_customization.md"
+        if pref_file.is_file():
+            content = pref_file.read_text(encoding="utf-8")
+            content = process_markdown_file(content, lang, None)
+            pref_file.write_text(content, encoding="utf-8")
+            print(f"[{lang}] Polished preferences_and_customization.md")
+        
+        # 3. keyboard_shortcuts.md
+        keys_file = lang_dir / "keyboard_shortcuts.md"
+        if keys_file.is_file():
+            content = keys_file.read_text(encoding="utf-8")
+            content = process_markdown_file(content, lang, replace_keyboard_shortcuts_block)
+            keys_file.write_text(content, encoding="utf-8")
+            print(f"[{lang}] Polished keyboard_shortcuts.md")
+
 def refine_all_alerts():
     """Ensure all alert tags across all chapters in all languages are canonical."""
     for lang in LANGUAGES:
@@ -218,4 +266,5 @@ if __name__ == "__main__":
     refine_all_alerts()
     refine_batch_1()
     refine_batch_2()
-    print("Batch 1 & 2 refinements applied successfully!")
+    refine_batch_3()
+    print("Batch 1, 2 & 3 refinements applied successfully!")

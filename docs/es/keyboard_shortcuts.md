@@ -12,17 +12,17 @@ Ya sea que tenga veinte años de memoria muscular de Total Commander y Norton Co
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      DUAL-MATRIX KEYBOARD ENGINE                            │
+│                    ARQUITECTURA DE TECLADO DE DOBLE MATRIZ                  │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│  CLASSIC COMMANDER PARADIGM          │  NATIVE macOS PARADIGM               │
-│  • Function Key Centric (F1–F12)     │  • Modifier Chords (⌘, ⌥, ⇧, ⌃)      │
-│  • Dedicated Keypad Marking (+, -, *)│  • Finder Parity (⌘C, ⌘V, ⌘⌫, ⏎)     │
-│  • Zero-Modal Terminal Velocity      │  • Native Menu Bar Integration       │
-│  Examples:                           │  Examples:                           │
-│    F5        ➔ Copy Files            │    ⌘C ➔ ⌘V   ➔ Copy Files            │
-│    F6        ➔ Move Files            │    ⌘C ➔ ⌥⌘V  ➔ Move Files            │
-│    Shift+F4  ➔ Create Text File      │    ⇧⌘4       ➔ Create Text File      │
-│    Alt+F7    ➔ Find Files            │    ⌥⌘F       ➔ Find Files            │
+│  PARADIGMA CLÁSICO COMMANDER         │  PARADIGMA NATIVO DE MACOS           │
+│  • Teclas de función (F1–F12)        │  • Teclas modificadoras (⌘, ⌥, ⇧, ⌃) │
+│  • Marcado numérico (+, -, *)        │  • Paridad con Finder (⌘C, ⌘V, ⌘⌫, ⏎)│
+│  • Máxima velocidad táctil           │  • Integración con la barra de menús │
+│  Ejemplos:                           │  Ejemplos:                           │
+│    F5        ➔ Copiar archivos       │    ⌘C ➔ ⌘V   ➔ Copiar archivos       │
+│    F6        ➔ Mover archivos        │    ⌘C ➔ ⌥⌘V  ➔ Mover archivos        │
+│    Shift+F4  ➔ Crear archivo de texto│    ⇧⌘4       ➔ Crear archivo de texto│
+│    Alt+F7    ➔ Buscar archivos       │    ⌥⌘F       ➔ Buscar archivos       │
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -99,15 +99,15 @@ Para evitar colisiones de teclas de acceso rápido entre diferentes áreas de ap
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          APPLICATION SCOPE: Main                            │
-│  Global commands, panel navigation, window management, toolbar, power tools │
+│                        ÁMBITO DE APLICACIÓN: Main                           │
+│  Comandos globales, navegación entre paneles, pestañas, barra de herramientas│
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│  PANEL SCOPE: FilePanel       │  MODAL TOOLS SCOPES                         │
-│  Active during directory      │  • Viewer      (Lister preview window)      │
-│  table and thumbnail browsing │  • Editor      (Built-in code editor)       │
-│  (marking, range selection,   │  • Differ      (Side-by-side diff viewer)   │
-│  inline editing, space count) │  • FindFiles   (Multi-threaded file search) │
-│                               │  • MultiRename (Batch rename engine)        │
+│  ÁMBITO PANEL: FilePanel      │  ÁMBITOS DE HERRAMIENTAS MODALES            │
+│  Activo en la tabla de        │  • Viewer      (Ventana del visor Lister)   │
+│  archivos y miniaturas        │  • Editor      (Editor de código integrado) │
+│  (selección, comodines,       │  • Differ      (Comparador de diferencias)  │
+│  renombrado directo, tamaño)  │  • FindFiles   (Búsqueda avanzada)          │
+│                               │  • MultiRename (Renombrado masivo)          │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
  
@@ -396,7 +396,7 @@ Activo dentro del cuadro de diálogo de búsqueda multiproceso en segundo plano.
 
 ---
 
-### 5.5 Herramienta de cambio de nombre múltiple por lotes (`MultiRename` contexto)
+### 5.5 Herramienta de renombrado masivo (Multi-Rename) por lotes (`MultiRename` contexto)
 
 Activo dentro del espacio de trabajo de cambio de nombre por lotes. 
 

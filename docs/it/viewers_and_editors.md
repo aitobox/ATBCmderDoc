@@ -1,4 +1,4 @@
-# Capitolo 4: Visualizzatore universale (Universal Lister) ed editor integrati
+# Capitolo 4: Visualizzatore universale (Universal Lister) (Universal Lister) ed editor integrati
 
 Nella gestione ortodossa dei file a doppio pannello, la velocità dipende in larga misura dalla velocità di ispezione. Il lancio di ambienti di sviluppo integrati (IDE) pesanti o di applicazioni desktop gonfie solo per verificare un checksum, controllare una riga di configurazione, ritagliare uno screenshot o esaminare un PDF crea attrito cognitivo e confusione di finestre. 
 

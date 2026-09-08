@@ -12,17 +12,17 @@ Quer você tenha vinte anos de memória muscular do Total Commander e do Norton 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      DUAL-MATRIX KEYBOARD ENGINE                            │
+│                    ARQUITETURA DE TECLADO EM MATRIZ DUPLA                   │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│  CLASSIC COMMANDER PARADIGM          │  NATIVE macOS PARADIGM               │
-│  • Function Key Centric (F1–F12)     │  • Modifier Chords (⌘, ⌥, ⇧, ⌃)      │
-│  • Dedicated Keypad Marking (+, -, *)│  • Finder Parity (⌘C, ⌘V, ⌘⌫, ⏎)     │
-│  • Zero-Modal Terminal Velocity      │  • Native Menu Bar Integration       │
-│  Examples:                           │  Examples:                           │
-│    F5        ➔ Copy Files            │    ⌘C ➔ ⌘V   ➔ Copy Files            │
-│    F6        ➔ Move Files            │    ⌘C ➔ ⌥⌘V  ➔ Move Files            │
-│    Shift+F4  ➔ Create Text File      │    ⇧⌘4       ➔ Create Text File      │
-│    Alt+F7    ➔ Find Files            │    ⌥⌘F       ➔ Find Files            │
+│  PARADIGMA CLÁSSICO COMMANDER        │  PARADIGMA NATIVO DO MACOS           │
+│  • Teclas de função (F1–F12)         │  • Teclas modificadoras (⌘, ⌥, ⇧, ⌃) │
+│  • Marcação numérica (+, -, *)       │  • Paridade com o Finder (⌘C, ⌘V, ⌘⌫)│
+│  • Máxima agilidade de digitação     │  • Integração com a barra de menus   │
+│  Exemplos:                           │  Exemplos:                           │
+│    F5        ➔ Copiar arquivos       │    ⌘C ➔ ⌘V   ➔ Copiar arquivos       │
+│    F6        ➔ Mover arquivos        │    ⌘C ➔ ⌥⌘V  ➔ Mover arquivos        │
+│    Shift+F4  ➔ Criar arquivo de texto│    ⇧⌘4       ➔ Criar arquivo de texto│
+│    Alt+F7    ➔ Buscar arquivos       │    ⌥⌘F       ➔ Buscar arquivos       │
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -99,15 +99,15 @@ Para evitar colisões de teclas de atalho entre diferentes áreas de aplicação
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          APPLICATION SCOPE: Main                            │
-│  Global commands, panel navigation, window management, toolbar, power tools │
+│                        ESCOPO DA APLICAÇÃO: Main                            │
+│  Comandos globais, navegação entre painéis, abas, barra de ferramentas      │
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│  PANEL SCOPE: FilePanel       │  MODAL TOOLS SCOPES                         │
-│  Active during directory      │  • Viewer      (Lister preview window)      │
-│  table and thumbnail browsing │  • Editor      (Built-in code editor)       │
-│  (marking, range selection,   │  • Differ      (Side-by-side diff viewer)   │
-│  inline editing, space count) │  • FindFiles   (Multi-threaded file search) │
-│                               │  • MultiRename (Batch rename engine)        │
+│  ESCOPO PAINEL: FilePanel     │  ESCOPOS DE FERRAMENTAS MODAIS              │
+│  Ativo na navegação de        │  • Viewer      (Janela Universal Lister)    │
+│  diretórios e miniaturas      │  • Editor      (Editor de código integrado) │
+│  (seleção, máscaras,          │  • Differ      (Comparador de arquivos Diff)│
+│  renomeação direta, tamanho)  │  • FindFiles   (Busca avançada de arquivos) │
+│                               │  • MultiRename (Renomeação em lote)         │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
  

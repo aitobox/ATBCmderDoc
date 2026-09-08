@@ -12,17 +12,17 @@ ATBCmder изначально разрабатывался как файловы
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      DUAL-MATRIX KEYBOARD ENGINE                            │
+│                  ДВУХМАТРИЧНАЯ СИСТЕМА ГОРЯЧИХ КЛАВИШ                       │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│  CLASSIC COMMANDER PARADIGM          │  NATIVE macOS PARADIGM               │
-│  • Function Key Centric (F1–F12)     │  • Modifier Chords (⌘, ⌥, ⇧, ⌃)      │
-│  • Dedicated Keypad Marking (+, -, *)│  • Finder Parity (⌘C, ⌘V, ⌘⌫, ⏎)     │
-│  • Zero-Modal Terminal Velocity      │  • Native Menu Bar Integration       │
-│  Examples:                           │  Examples:                           │
-│    F5        ➔ Copy Files            │    ⌘C ➔ ⌘V   ➔ Copy Files            │
-│    F6        ➔ Move Files            │    ⌘C ➔ ⌥⌘V  ➔ Move Files            │
-│    Shift+F4  ➔ Create Text File      │    ⇧⌘4       ➔ Create Text File      │
-│    Alt+F7    ➔ Find Files            │    ⌥⌘F       ➔ Find Files            │
+│  КЛАССИЧЕСКИЙ COMMANDER              │  СТАНДАРТ MACOS                      │
+│  • Функциональные клавиши (F1–F12)   │  • Клавиши модификаторы (⌘, ⌥, ⇧, ⌃) │
+│  • Выделение на цифровом блоке (+, -)│  • Совместимость с Finder (⌘C, ⌘V, ⏎)│
+│  • Мгновенная слепая работа          │  • Интеграция с системным меню macOS │
+│  Примеры:                            │  Примеры:                            │
+│    F5        ➔ Копировать файлы      │    ⌘C ➔ ⌘V   ➔ Копировать файлы      │
+│    F6        ➔ Переместить файлы     │    ⌘C ➔ ⌥⌘V  ➔ Переместить файлы     │
+│    Shift+F4  ➔ Создать текстовый файл│    ⇧⌘4       ➔ Создать текстовый файл│
+│    Alt+F7    ➔ Поиск файлов          │    ⌥⌘F       ➔ Поиск файлов          │
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -99,15 +99,15 @@ ATBCmder изначально разрабатывался как файловы
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          APPLICATION SCOPE: Main                            │
-│  Global commands, panel navigation, window management, toolbar, power tools │
+│                     ГЛОБАЛЬНАЯ ОБЛАСТЬ ПРИЛОЖЕНИЯ: Main                     │
+│  Общие команды, навигация по панелям, вкладки, панель инструментов, утилиты │
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│  PANEL SCOPE: FilePanel       │  MODAL TOOLS SCOPES                         │
-│  Active during directory      │  • Viewer      (Lister preview window)      │
-│  table and thumbnail browsing │  • Editor      (Built-in code editor)       │
-│  (marking, range selection,   │  • Differ      (Side-by-side diff viewer)   │
-│  inline editing, space count) │  • FindFiles   (Multi-threaded file search) │
-│                               │  • MultiRename (Batch rename engine)        │
+│  ОБЛАСТЬ ПАНЕЛИ: FilePanel    │  ОБЛАСТИ МОДАЛЬНЫХ ИНСТРУМЕНТОВ             │
+│  Действует в списке файлов и  │  • Viewer      (Просмотр Universal Lister)  │
+│  эскизах (выделение, маски,   │  • Editor      (Встроенный редактор кода)   │
+│  быстрое переименование,      │  • Differ      (Сравнение файлов Diff)      │
+│  подсчет размера)             │  • FindFiles   (Многопоточный поиск файлов) │
+│                               │  • MultiRename (Пакетное переименование)    │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
  

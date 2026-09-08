@@ -45,7 +45,7 @@ ATBCmder 將高階工具與自動化系統劃分為六大核心領域，與雙�
 | **計算雜湊校驗值** | `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` | 計算 MD5, SHA-1, SHA-256, SHA-512 安全雜湊 |
 | **校驗檔案完整性** | 選單: 工具 | — | `cm_CheckSumVerify` / `cm_VerifyChecksum` | 讀取 `.md5` / `.sha256` 清單核驗磁碟檔案完整性 |
 | **物理安全粉碎抹除**| `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | 多輪覆寫物理扇區，永久安全粉碎機密檔案 |
-| **開啟系統終端機** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | 在當前面板所在路徑下喚起 macOS 系統終端機 |
+| **開啟系統終端機機** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | 在當前面板所在路徑下喚起 macOS 系統終端機機 |
 
 ---
 
@@ -626,13 +626,13 @@ ATBCmder 採用了雙軌制的搜尋後臺工作機制：
 
 ---
 
-### 7.5 嵌入式系統終端機秒開 (`Ctrl+J` / `⌃J` / `cm_RunTerm`)
+### 7.5 嵌入式系統終端機機秒開 (`Ctrl+J` / `⌃J` / `cm_RunTerm`)
 
 遇到需要快速執行 Git、執行編譯指令碼或啟動測試服務的場景：
 
-- 按下 **`Ctrl+J`**（`⌃J`）或點選選單欄 **命令 ➔ 執行終端機**。
-- ATBCmder 會瞬間喚起 macOS 原生 **終端機 (Terminal.app)** 或你偏好的 iTerm2。
-- **核心便利**：終端機新分頁的當前工作目錄 (`cwd`) 會**精準初始化為你當前面板開啟的絕對路徑**，徹底免去繁瑣的手敲 `cd /Users/...`。
+- 按下 **`Ctrl+J`**（`⌃J`）或點選選單欄 **命令 ➔ 執行終端機機**。
+- ATBCmder 會瞬間喚起 macOS 原生 **終端機機 (Terminal.app)** 或你偏好的 iTerm2。
+- **核心便利**：終端機機新分頁的當前工作目錄 (`cwd`) 會**精準初始化為你當前面板開啟的絕對路徑**，徹底免去繁瑣的手敲 `cd /Users/...`。
 
 ---
 
@@ -747,7 +747,7 @@ ATBCmder 採用了雙軌制的搜尋後臺工作機制：
 | **實用工具** | 計算檔案安全雜湊值 (Checksum)| `Ctrl+X` / `⌃X` | `Ctrl+X` | `cm_CheckSumCalc` / `cm_CalculateChecksum` |
 | **實用工具** | 驗證校驗清單檔案完整性 | 選單: 工具 | 選單: 工具 | `cm_CheckSumVerify` / `cm_VerifyChecksum` |
 | **實用工具** | 多輪覆寫安全粉碎抹除 (Wipe) | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` |
-| **實用工具** | 在當前目錄喚起系統終端機 | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` |
+| **實用工具** | 在當前目錄喚起系統終端機機 | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` |
 
 ---
 

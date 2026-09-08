@@ -12,17 +12,17 @@ Unabhängig davon, ob Sie über zwanzig Jahre Muskelgedächtnis von Total Comman
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      DUAL-MATRIX KEYBOARD ENGINE                            │
+│                    DUAL-MATRIX-TASTATUR-ARCHITEKTUR                         │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│  CLASSIC COMMANDER PARADIGM          │  NATIVE macOS PARADIGM               │
-│  • Function Key Centric (F1–F12)     │  • Modifier Chords (⌘, ⌥, ⇧, ⌃)      │
-│  • Dedicated Keypad Marking (+, -, *)│  • Finder Parity (⌘C, ⌘V, ⌘⌫, ⏎)     │
-│  • Zero-Modal Terminal Velocity      │  • Native Menu Bar Integration       │
-│  Examples:                           │  Examples:                           │
-│    F5        ➔ Copy Files            │    ⌘C ➔ ⌘V   ➔ Copy Files            │
-│    F6        ➔ Move Files            │    ⌘C ➔ ⌥⌘V  ➔ Move Files            │
-│    Shift+F4  ➔ Create Text File      │    ⇧⌘4       ➔ Create Text File      │
-│    Alt+F7    ➔ Find Files            │    ⌥⌘F       ➔ Find Files            │
+│  KLASSISCHES COMMANDER-PARADIGMA     │  NATIVES macOS-PARADIGMA             │
+│  • Fokus auf Funktionstasten (F1–F12)│  • Modifier-Kombinationen (⌘, ⌥, ⇧, ⌃)│
+│  • Tastenfeld-Markierung (+, -, *)   │  • Finder-Parität (⌘C, ⌘V, ⌘⌫, ⏎)    │
+│  • Höchste Tastatur-Geschwindigkeit  │  • Native Menüleisten-Integration    │
+│  Beispiele:                          │  Beispiele:                          │
+│    F5        ➔ Dateien kopieren      │    ⌘C ➔ ⌘V   ➔ Dateien kopieren      │
+│    F6        ➔ Dateien bewegen       │    ⌘C ➔ ⌥⌘V  ➔ Dateien bewegen       │
+│    Shift+F4  ➔ Textdatei anlegen     │    ⇧⌘4       ➔ Textdatei anlegen     │
+│    Alt+F7    ➔ Dateien suchen        │    ⌥⌘F       ➔ Dateien suchen        │
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -99,15 +99,15 @@ Um Hotkey-Kollisionen zwischen verschiedenen Anwendungsbereichen zu verhindern (
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          APPLICATION SCOPE: Main                            │
-│  Global commands, panel navigation, window management, toolbar, power tools │
+│                      ANWENDUNGS-GÜLTIGKEITSBEREICH: Main                    │
+│  Globale Befehle, Panel-Navigation, Tabs, Symbolleiste, Power-Tools         │
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│  PANEL SCOPE: FilePanel       │  MODAL TOOLS SCOPES                         │
-│  Active during directory      │  • Viewer      (Lister preview window)      │
-│  table and thumbnail browsing │  • Editor      (Built-in code editor)       │
-│  (marking, range selection,   │  • Differ      (Side-by-side diff viewer)   │
-│  inline editing, space count) │  • FindFiles   (Multi-threaded file search) │
-│                               │  • MultiRename (Batch rename engine)        │
+│  PANEL-BEREICH: FilePanel     │  MODALE WERKZEUGBEREICHE                    │
+│  Aktiv bei Verzeichnis- und   │  • Viewer      (Lister-Vorschaufenster)     │
+│  Miniaturansichten (Auswahl,  │  • Editor      (Integrierter Code-Editor)   │
+│  Platzhalter, Direktumbenenn.,│  • Differ      (Differenz-Vergleich)        │
+│  Größenberechnung)            │  • FindFiles   (Erweiterte Dateisuche)      │
+│                               │  • MultiRename (Mehrfach-Umbenennung)       │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
  

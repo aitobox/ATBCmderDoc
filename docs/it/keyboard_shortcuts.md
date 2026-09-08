@@ -12,17 +12,17 @@ Che tu abbia vent'anni di memoria muscolare da Total Commander e Norton Commande
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      DUAL-MATRIX KEYBOARD ENGINE                            │
+│                  ARCHITETTURA TASTIERA A DOPPIA MATRICE                     │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│  CLASSIC COMMANDER PARADIGM          │  NATIVE macOS PARADIGM               │
-│  • Function Key Centric (F1–F12)     │  • Modifier Chords (⌘, ⌥, ⇧, ⌃)      │
-│  • Dedicated Keypad Marking (+, -, *)│  • Finder Parity (⌘C, ⌘V, ⌘⌫, ⏎)     │
-│  • Zero-Modal Terminal Velocity      │  • Native Menu Bar Integration       │
-│  Examples:                           │  Examples:                           │
-│    F5        ➔ Copy Files            │    ⌘C ➔ ⌘V   ➔ Copy Files            │
-│    F6        ➔ Move Files            │    ⌘C ➔ ⌥⌘V  ➔ Move Files            │
-│    Shift+F4  ➔ Create Text File      │    ⇧⌘4       ➔ Create Text File      │
-│    Alt+F7    ➔ Find Files            │    ⌥⌘F       ➔ Find Files            │
+│  PARADIGMA CLASSICO COMMANDER        │  PARADIGMA NATIVO MACOS              │
+│  • Tasti funzione al centro (F1–F12) │  • Modificatori di sistema (⌘, ⌥, ⇧) │
+│  • Selezione tastierino (+, -, *)    │  • Piena parità con Finder (⌘C, ⌘V)  │
+│  • Controllo rapido da tastiera      │  • Integrazione barra dei menu       │
+│  Esempi:                             │  Esempi:                             │
+│    F5        ➔ Copia file            │    ⌘C ➔ ⌘V   ➔ Copia file            │
+│    F6        ➔ Sposta file           │    ⌘C ➔ ⌥⌘V  ➔ Sposta file           │
+│    Shift+F4  ➔ Crea file di testo    │    ⇧⌘4       ➔ Crea file di testo    │
+│    Alt+F7    ➔ Cerca file            │    ⌥⌘F       ➔ Cerca file            │
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -99,15 +99,15 @@ Per evitare collisioni di tasti di scelta rapida tra diverse aree di applicazion
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          APPLICATION SCOPE: Main                            │
-│  Global commands, panel navigation, window management, toolbar, power tools │
+│                       AMBITO APPLICAZIONE: Main                             │
+│  Comandi globali, navigazione pannelli, schede, barra strumenti, strumenti  │
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│  PANEL SCOPE: FilePanel       │  MODAL TOOLS SCOPES                         │
-│  Active during directory      │  • Viewer      (Lister preview window)      │
-│  table and thumbnail browsing │  • Editor      (Built-in code editor)       │
-│  (marking, range selection,   │  • Differ      (Side-by-side diff viewer)   │
-│  inline editing, space count) │  • FindFiles   (Multi-threaded file search) │
-│                               │  • MultiRename (Batch rename engine)        │
+│  AMBITO PANNELLO: FilePanel   │  AMBITI STRUMENTI MODALI                    │
+│  Attivo durante l'esplorazione│  • Viewer      (Finestra Universal Lister)  │
+│  di tabelle file e miniature  │  • Editor      (Editor di codice integrato) │
+│  (selezione, filtri,          │  • Differ      (Confronto file affiancato)  │
+│  rinomina diretta, calcolo)   │  • FindFiles   (Ricerca avanzata file)      │
+│                               │  • MultiRename (Ridenominazione in blocco)  │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
  
@@ -272,7 +272,7 @@ Avvia strumenti di automazione avanzati, utilità batch e strumenti di sistema i
 | `cm_FileSearch` / `cm_Search` | Apri la finestra di dialogo Ricerca avanzata multifiltro | `⌥F7` / `⌥⌘F` | `Alt+F7` | Principale | 
 | `cm_FileDiff` / `cm_CompareFiles` | Apri visualizzatore differenze file visivi affiancati | `⌘⇧F12` | `Meta+Shift+F12` | Principale | 
 | `cm_SyncDirs` | Apri lo strumento di sincronizzazione della directory bidirezionale | `⇧F12` | `Shift+F12` | Principale | 
-| `cm_MultiRename` | Strumento di ridenominazione multipla batch aperto (RegEx e token) | `⌘M` | `Ctrl+M` | Principale | 
+| `cm_MultiRename` | Strumento di ridenominazione in blocco (Multi-Rename) batch aperto (RegEx e token) | `⌘M` | `Ctrl+M` | Principale | 
 | `cm_Split` | Dividi file di grandi dimensioni in segmenti uniformi | `⌥F6` | `Alt+F6` | Principale | 
 | `cm_Combine` | Combina nuovamente i segmenti numerati divisi nel file originale | `⌥F7` | `Alt+F7` | Principale | 
 | `cm_CalculateChecksum` | Calcola l'hash crittografico (MD5, SHA-1, SHA-256) | `⌃X` / `⌘K` | `Ctrl+X` | Principale | 
@@ -396,7 +396,7 @@ Attivo all'interno della finestra di dialogo di ricerca multi-thread in backgrou
 
 ---
 
-### 5.5 Strumento di ridenominazione multipla batch (contesto`MultiRename`)
+### 5.5 Strumento di ridenominazione in blocco (Multi-Rename) batch (contesto`MultiRename`)
 
 Attivo all'interno dell'area di lavoro di ridenominazione batch. 
 
