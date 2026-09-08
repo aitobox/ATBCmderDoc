@@ -95,7 +95,7 @@ La matrice de décision suivante mappe les objectifs courants de gestion de fich
 > **Risque de perte de données en miroir asymétrique** : 
 > Lorsque le mode **Asymétrique** est coché, les fichiers présents sur le lecteur cible qui ont été supprimés ou renommés sur la source seront **définitivement supprimés** sans être déplacés vers la corbeille macOS. Consultez toujours le tableau de comparaison directionnelle avant de cliquer sur Synchroniser ! 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **⚡ Conseil de pro : vérification au niveau du contenu pour les médias et le code** : 
 > Lors de la sauvegarde de séquences vidéo ou de référentiels Git, les tailles de fichiers peuvent correspondre alors que de subtiles corruptions d'octets internes existent. Cochez toujours **Comparer par contenu** pour les archives critiques. Bien que la comparaison octet par octet prenne plus de temps via USB ou Wi-Fi, elle garantit une intégrité des données à 100 %. 
 
@@ -151,7 +151,7 @@ La matrice de décision suivante mappe les objectifs courants de gestion de fich
 > **Sécurité des extensions** : 
 > Par défaut, le **Masque d'extension** est défini sur `[E]`, préservant ainsi l'extension du fichier d'origine non modifiée. Ne supprimez jamais `[E]` sauf si vous avez explicitement l'intention de supprimer les extensions de vos fichiers.
 
-> [!ASTUCE] 
+> [!TIP] 
 > **⚡ Conseil de pro : flux de travail de l'éditeur externe (`⌘I`)** : 
 > Si vous disposez d'une liste irrégulière de noms de clients ou de titres de pistes, appuyez sur **`Cmd+I`** (`⌘I` / Modifier dans un éditeur externe) dans l'outil Multi-Rename. ATBCmder exporte les noms des cibles vers votre éditeur de texte par défaut. Modifiez la liste dans Vim, VS Code ou TextEdit, enregistrez le document et ATBCmder importe immédiatement les noms révisés dans la grille d'aperçu. 
 
@@ -201,7 +201,7 @@ La matrice de décision suivante mappe les objectifs courants de gestion de fich
 7. **Reconnexion rapide depuis la barre de menu** : 
 - Tous les profils enregistrés apparaissent automatiquement sous **Réseau ➔ Connexions enregistrées**. Cliquez simplement sur n'importe quel serveur enregistré pour le monter instantanément. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **⚡ Conseil de pro : Authentification par clé SSH pour SFTP** : 
 > Pour un accès automatisé au serveur cloud, configurez l'authentification par clé publique. Dans votre profil de connexion SFTP, laissez le champ du mot de passe vide et pointez sur votre clé privée locale (par exemple, `~/.ssh/id_ed25519`). Si la clé est protégée par une phrase secrète, ATBCmder vous la demande une fois et l'enregistre en toute sécurité dans votre trousseau macOS. 
 
@@ -294,7 +294,7 @@ La matrice de décision suivante mappe les objectifs courants de gestion de fich
 - Sélectionnez les fichiers indésirables et appuyez sur **`F8`** (`Fn+F8` / `cm_Delete`) pour les déplacer en toute sécurité vers la corbeille macOS. 
 - Si vous avez besoin d'un effacement permanent et irrécupérable des données (par exemple, effacer les données confidentielles du client), appuyez sur **`Alt+Delete`** (`⌥⌫` / `cm_Wipe`) pour déclencher le déchiquetage sécurisé des fichiers en plusieurs passes. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **⚡ Astuce de pro : Identification des fichiers en double identiques via des sommes de contrôle** : 
 > Si vous pensez que plusieurs fichiers volumineux sont des doublons exacts, sélectionnez-les et appuyez sur **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Choisissez **SHA-256** et cliquez sur Calculer. Les résumés de hachage correspondants confirment 100 % des doublons binaires, vous permettant de supprimer les copies superflues en toute confiance. 
 

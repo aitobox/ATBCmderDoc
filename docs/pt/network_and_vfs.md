@@ -143,7 +143,7 @@ Ao navegar dentro de um arquivo:
 3. **Visualização instantânea (`F3` / `Fn+F3`)**: Destaque qualquer documento, imagem ou arquivo de origem dentro do arquivo e pressione `F3`. ATBCmder extrai automaticamente o arquivo de destino para uma sandbox temporária segura e o renderiza dentro do Universal Lister. 
 4. **Cópia seletiva (`F5` / `Fn+F5`)**: Em vez de descompactar um arquivo inteiro de vários gigabytes apenas para recuperar um ou dois arquivos, selecione os membros específicos necessários e pressione `F5`. ATBCmder descompacta apenas os itens escolhidos diretamente no painel inativo. 
 
-> [!NOTA] 
+> [!NOTE] 
 > Ao visualizar ou copiar arquivos individuais de um arquivo, o ATBCmder transmite apenas os bytes do arquivo solicitados diretamente do fluxo do contêiner. Ele não desperdiça espaço em disco ou tempo descompactando arquivos irmãos não selecionados. 
 
 ---
@@ -189,7 +189,7 @@ ATBCmder torna a edição de arquivos dentro de arquivos tão fácil quanto a ed
 6. Feche o editor com `Cmd+W` (`⌘W`) ou `Esc`. 
 7. O `RepackWorker` do ATBCmder atualiza automaticamente o membro interno, compacta a estrutura atualizada em um arquivo temporário, substitui atomicamente o arquivo original e atualiza a visualização do painel. 
 
-> [!CUIDADO] 
+> [!CAUTION] 
 > **Proteção de segurança de arquivo grande (`ArchiveRepackWarningMB`)** 
 > Reembalar um arquivo compactado requer descompactar e recodificar fluxos de contêiner. Modificar um arquivo de 10 KB dentro de um arquivo de vídeo `.tar.gz` de 20 GB forçaria o computador a reescrever todos os 20 GB de dados. 
 > 
@@ -305,7 +305,7 @@ Ao contrário das bibliotecas SMB Python de espaço de usuário ingênuo que sof
 - **Aceleração nativa do kernel do macOS (`mount_smbfs`)**: no macOS, o `SambaMounter` do ATBCmder aproveita o subsistema `/sbin/mount_smbfs` nativo da Apple. Ele monta o compartilhamento remoto diretamente na árvore VFS do macOS (`/Volumes/` ou em um diretório de montagem isolado), desbloqueando a taxa de transferência completa de leitura/gravação SMB3 acelerada por hardware. 
 - **Detecção de montagem existente**: se o macOS Finder ou um script do sistema já tiver montado o compartilhamento SMB de destino, o ATBCmder detectará automaticamente o ponto de montagem ativo da tabela OS `mount` e navegará até ele instantaneamente, evitando conexões de rede redundantes. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Requisito de nome de compartilhamento SMB** 
 > Um servidor SMB não pode ser navegado no nível do nome de host simples. Um URI SMB **deve** incluir o compartilhamento de destino ou o nome de exportação no caminho: 
 > 
@@ -456,16 +456,16 @@ Precisa editar um script `nginx.conf` ou Python diretamente em um servidor remot
 
 ## 10. Alertas de sistema e segurança
 
-> [!AVISO] 
+> [!WARNING] 
 > **Incompatibilidade de verificação de chave de host SSH** 
 > Se um servidor SFTP regenerar suas chaves de host (por exemplo, após uma reinstalação do sistema operacional) ou se for tentada uma interceptação de rede man-in-the-middle, o ATBCmder detecta que a chave do servidor não corresponde à impressão digital registrada em `~/.ssh/known_hosts`. 
 > Nunca ignore avisos de chave de host em redes Wi-Fi públicas não confiáveis ​​sem verificar de forma independente a impressão digital da chave pública do servidor com o administrador do sistema. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Espaço de cache temporário para arquivos remotos grandes** 
 > Ao visualizar (`F3`) ou editar (`F4`) arquivos de vários gigabytes armazenados em servidores VFS remotos, o ATBCmder transmite o item de destino para seu volume `/tmp` local. Certifique-se de que o contêiner APFS principal do seu Mac tenha espaço de armazenamento livre suficiente antes de abrir grandes arquivos remotos de vídeo ou banco de dados. 
 
-> [!CUIDADO] 
+> [!CAUTION] 
 > **Desmontando compartilhamentos de rede remotos** 
 > Para compartilhamentos SMB montados via macOS `mount_smbfs`, encerrar a conectividade de rede sem desconectar pode deixar identificadores de montagem obsoletos em `/Volumes/`. Sempre use o menu da unidade do painel ou a ação de desconexão antes de fechar seu laptop ou mudar de rede Wi-Fi. 
 

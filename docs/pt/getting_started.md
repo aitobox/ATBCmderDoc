@@ -14,16 +14,16 @@ O ATBCmder substitui esse atrito pelo paradigma **Orthodox File Manager (OFM)** 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE (SOURCE) PANEL                     INACTIVE (TARGET) PANEL              │
+│  PAINEL ATIVO (Origem)                     PAINEL INATIVO (Destino)             │
 │  /Users/username/Downloads                 /Volumes/BackupDrive/Projects        │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│  Name               Size    Date    │   │  Name                Size     Date    │
-│  ▸ [..]                     --:--   │ C │  ▸ [..]                       --:--   │
-│  ▸ Project_Assets   <DIR>   Yesterday O │  ▸ 2025_Archive      <DIR>    May 12  │
-│  ● release_notes.md 14.2 KB Today   │ P │  ▸ Website_V2        <DIR>    Aug 28  │
-│  ● update_v1.7.pkg  84.5 MB Today   │ Y │  ● config.yaml       3.2 KB   Jun 04  │
+│  Nome               Tamanho Data    │ C │  Nome               Tamanho  Data     │
+│  ▸ [..]                     --:--   │ O │  ▸ [..]                       --:--   │
+│  ▸ Project_Assets   <DIR>   Ontem   │ P │  ▸ 2025_Archive      <DIR>    12 maio │
+│  ● release_notes.md 14.2 KB Hoje    │ I │  ▸ Website_V2        <DIR>    28 ago  │
+│  ● update_v1.7.pkg  84.5 MB Hoje    │ A │  ● config.yaml       3.2 KB   04 jun  │
 │                                     │ ➔ │                                       │
-│  [ Focused / Blue Accent Outline ]  │   │  [ Unfocused / Subdued Outline ]      │
+│  [ Em foco / Borda destacada ]      │   │  [ Fora de foco / Borda suave ]       │
 └─────────────────────────────────────┴───┴───────────────────────────────────────┘
 ```
 
@@ -69,25 +69,23 @@ ATBCmder fornece uma interface macOS limpa e nativa construída com Qt6 e PySide
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [1] NATIVE MACOS MENU BAR                                                       │
+│ [1] BARRA DE MENUS NATIVA DO MACOS                                              │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...   │
+│ [2] BARRA PRINCIPAL  [ ↺ Atualizar ] [ 📋 Copiar ] [ ✂ Mover ] ...              │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│ [3] BREADCRUMB BAR (Left Panel)     │   │ [3] BREADCRUMB BAR (Right Panel)      │
+│ [3] RUTA DE NAVEGAÇÃO (Esquerda)    │   │ [3] RUTA DE NAVEGAÇÃO (Direita)       │
 │  / ▸ Users ▸ username ▸ Projects    │   │  /Volumes ▸ Backup ▸ Assets           │
 ├─────────────────────────────────────┤   ├───────────────────────────────────────┤
-│ [4] FOLDER TABS: [Dev] [Docs] [+]   │[6]│ [4] FOLDER TABS: [Photos] [Backup] [+]│
-├─────────────────────────────────────┤MID│───────────────────────────────────────┤
-│                                     │DLE│                                       │
-│ [5] DUAL FILE PANEL (Left)          │   │ [5] DUAL FILE PANEL (Right)           │
-│     - Virtualized table listing     │BAR│     - Virtualized table listing       │
-│     - Name, Ext, Size, Date, Attr   │ & │     - Name, Ext, Size, Date, Attr     │
-│     - Real-time sort & filter       │SPL│     - Real-time sort & filter         │
-│                                     │IT-│                                       │
-│                                     │TER│                                       │
+│ [4] ABAS: [Dev] [Docs] [+]          │[6]│ [4] ABAS: [Fotos] [Backup] [+]        │
+├─────────────────────────────────────┤BAR│───────────────────────────────────────┤
+│                                     │RA │                                       │
+│ [5] PAINEL DUPLO (Esquerdo)         │   │ [5] PAINEL DUPLO (Direito)            │
+│     - Listagem virtualizada rápida  │ME-│     - Listagem virtualizada rápida    │
+│     - Nome, Ext, Tamanho, Data      │DIA│     - Nome, Ext, Tamanho, Data        │
+│     - Ordenação e filtros em tempo real│ │     - Ordenação e filtros em tempo real│
 ├─────────────────────────────────────┴───┴───────────────────────────────────────┤
-│ [7] STATUS BAR & DRIVE STORAGE METER                                            │
-│  3 of 28 files selected (42.8 MB / 1.2 GB)  |  Macintosh HD: 218.4 GB free      │
+│ [7] BARRA DE STATUS E ESPAÇO EM DISCO                                           │
+│  3 de 28 selecionados (42.8 MB / 1.2 GB)     |  Macintosh HD: 218.4 GB livres   │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -243,7 +241,7 @@ Se preferir não conceder acesso root amplo ao ATBCmder, não é necessário cli
 
 #### Etapa 5: Acesso total ao disco (FDA) para dados protegidos do sistema
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Marcadores de sandbox versus acesso total ao disco (FDA)**: 
 > 
 > - **Marcadores de Sandbox** concedem acesso geral ao sistema de arquivos para pastas de usuário padrão, arquivos e unidades externas. 
@@ -365,7 +363,7 @@ Se você usou Total Commander, Double Commander ou Norton Commander em um teclad
 
 No entanto, os teclados Apple lidam com a linha de funções de maneira diferente quando prontos para uso. 
 
-> [!AVISO] 
+> [!WARNING] 
 > ### 🍎 Conflito de hardware de chave de função do macOS 
 > Em teclados Apple (teclados integrados do MacBook, Apple Magic Keyboard), as teclas da linha superior são padronizadas como **Recursos especiais de hardware do macOS** (Brilho da tela, Controle de missão, Spotlight, Ditado, Não perturbe, Controles de mídia e Volume de áudio). 
 > 

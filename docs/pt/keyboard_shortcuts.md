@@ -48,7 +48,7 @@ Ao longo deste guia e nas caixas de diálogo de preferências do ATBCmder, as co
 
 ## 2. Função macOS (`Fn`) Orientação principal
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > ### Como usar teclas de função em teclados Mac 
 > 
 > Por padrão, os teclados Apple (incluindo teclados MacBook integrados, Magic Keyboards e Touch Bar Macs) atribuem a linha física superior (`F1` a `F12`) aos controles de hardware, como brilho da tela, Mission Control, Spotlight, Dictation, reprodução de mídia e volume do alto-falante. 

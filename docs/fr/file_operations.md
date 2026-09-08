@@ -638,11 +638,11 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 
 ## 9. Alertes de sécurité et de système
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > **Suppression définitive sur les disques externes et réseau** : 
 > Les disques externes formatés avec FAT32, exFAT ou NTFS (via des pilotes tiers) et les partages réseau distants (SMB/SFTP) manquent souvent d'un répertoire système macOS `.Corbeillees`. Lors de la suppression d'éléments de ces volumes, ATBCmder vous avertira que la corbeille n'est pas disponible. La confirmation de cette action **supprime définitivement** les fichiers. Vérifiez toujours les en-têtes de chemin avant de confirmer. 
 
-> [!ATTENTION] 
+> [!CAUTION] 
 > **Écrasement de fichiers dans les opérations par lots** : 
 > Lorsque vous utilisez **Overwrite All** dans la boîte de dialogue de collision, ATBCmder supprime les autres alertes de collision pour l'ensemble de cette tâche. Si votre répertoire source contient des noms de fichiers en double accidentels, les fichiers cibles existants seront remplacés de manière irréversible. Pensez à utiliser **Renommer automatiquement** ou **Écraser l'ancienne** pour les copies par lots sans surveillance. 
 
@@ -650,7 +650,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 > **Limites du lien physique APFS** : 
 > Les liens physiques ne peuvent pas s'étendre sur différents volumes APFS, partitions de disque ou images disque. Si vous tentez de créer un lien physique entre deux points de montage différents (tels que `/Users/...` à `/Volumes/ExternalDrive/...`), l'opération échouera. Utilisez des **Liens symboliques** (`cm_SymLink`) lors de la création de liens entre différents volumes de stockage. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **Optimisation des vitesses de transfert NVMe** : 
 > ATBCmder est optimisé pour la mémoire unifiée Apple Silicon moderne et les SSD PCIe 4.0/5.0 NVMe. Par défaut, les opérations sur les fichiers utilisent un **tampon de copie de 1 Mo** hautes performances (`operations.copy_buffer_size`). Vous pouvez affiner ce tampon sous **Préférences** → **Opérations sur les fichiers** pour correspondre aux interfaces réseau 10GbE haut de gamme ou aux baies de stockage spécialisées. 
 

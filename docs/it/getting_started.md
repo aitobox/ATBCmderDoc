@@ -14,16 +14,16 @@ ATBCmder sostituisce questo attrito con il collaudato paradigma **Orthodox File 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE (SOURCE) PANEL                     INACTIVE (TARGET) PANEL              │
+│  PANNELLO ATTIVO (Sorgente)                PANNELLO INATTIVO (Destinazione)     │
 │  /Users/username/Downloads                 /Volumes/BackupDrive/Projects        │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│  Name               Size    Date    │   │  Name                Size     Date    │
-│  ▸ [..]                     --:--   │ C │  ▸ [..]                       --:--   │
-│  ▸ Project_Assets   <DIR>   Yesterday O │  ▸ 2025_Archive      <DIR>    May 12  │
-│  ● release_notes.md 14.2 KB Today   │ P │  ▸ Website_V2        <DIR>    Aug 28  │
-│  ● update_v1.7.pkg  84.5 MB Today   │ Y │  ● config.yaml       3.2 KB   Jun 04  │
+│  Nome               Dimens. Data    │ C │  Nome               Dimens.  Data     │
+│  ▸ [..]                     --:--   │ O │  ▸ [..]                       --:--   │
+│  ▸ Project_Assets   <DIR>   Ieri    │ P │  ▸ 2025_Archive      <DIR>    12 mag  │
+│  ● release_notes.md 14.2 KB Oggi    │ I │  ▸ Website_V2        <DIR>    28 ago  │
+│  ● update_v1.7.pkg  84.5 MB Oggi    │ A │  ● config.yaml       3.2 KB   04 giu  │
 │                                     │ ➔ │                                       │
-│  [ Focused / Blue Accent Outline ]  │   │  [ Unfocused / Subdued Outline ]      │
+│  [ Con focus / Bordo evidenziato ]  │   │  [ Senza focus / Bordo attenuato ]    │
 └─────────────────────────────────────┴───┴───────────────────────────────────────┘
 ```
 
@@ -49,7 +49,7 @@ Quando avvii un'operazione in ATBCmder, l'applicazione comprende automaticamente
 - **Sposta (`F6` / `Cmd+C` ➔ `Opt+Cmd+V`)**: sposta i file selezionati dal pannello Attivo al pannello Inattivo senza dover digitare o cercare la directory di destinazione. 
 - **Sincronizzazione delle directory (`Shift+F12` / `cm_SyncDirs`)**: confronta la directory nel pannello attivo con la directory nel pannello inattivo. 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **Non sono necessarie congetture tramite trascinamento**: non è necessario trascinare gli elementi oltre i limiti dello schermo. Seleziona semplicemente ciò che desideri nel pannello attivo, premi `F5` (Copia) o `F6` (Sposta), premi `Enter` per confermare la richiesta e ATBCmder trasferisce immediatamente i file.
 
 ### Navigazione del pannello e cambio messa a fuoco
@@ -69,25 +69,23 @@ ATBCmder fornisce un'interfaccia macOS nativa e pulita, realizzata con Qt6 e PyS
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [1] NATIVE MACOS MENU BAR                                                       │
+│ [1] BARRA DEI MENU NATIVA DI MACOS                                              │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...   │
+│ [2] BARRA STRUMENTI  [ ↺ Ricarica ] [ 📋 Copia ] [ ✂ Sposta ] [ 🗑 Elimina ] ...│
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│ [3] BREADCRUMB BAR (Left Panel)     │   │ [3] BREADCRUMB BAR (Right Panel)      │
+│ [3] BARRA DEL PERCORSO (Sinistra)   │   │ [3] BARRA DEL PERCORSO (Destra)       │
 │  / ▸ Users ▸ username ▸ Projects    │   │  /Volumes ▸ Backup ▸ Assets           │
 ├─────────────────────────────────────┤   ├───────────────────────────────────────┤
-│ [4] FOLDER TABS: [Dev] [Docs] [+]   │[6]│ [4] FOLDER TABS: [Photos] [Backup] [+]│
-├─────────────────────────────────────┤MID│───────────────────────────────────────┤
-│                                     │DLE│                                       │
-│ [5] DUAL FILE PANEL (Left)          │   │ [5] DUAL FILE PANEL (Right)           │
-│     - Virtualized table listing     │BAR│     - Virtualized table listing       │
-│     - Name, Ext, Size, Date, Attr   │ & │     - Name, Ext, Size, Date, Attr     │
-│     - Real-time sort & filter       │SPL│     - Real-time sort & filter         │
-│                                     │IT-│                                       │
-│                                     │TER│                                       │
+│ [4] SCHEDE: [Dev] [Docs] [+]        │[6]│ [4] SCHEDE: [Foto] [Backup] [+]       │
+├─────────────────────────────────────┤BAR│───────────────────────────────────────┤
+│                                     │RA │                                       │
+│ [5] DOPPIO PANNELLO (Sinistra)      │   │ [5] DOPPIO PANNELLO (Destra)          │
+│     - Tabella virtualizzata rapida  │ME-│     - Tabella virtualizzata rapida    │
+│     - Nome, Est, Dimens, Data, Dir. │DIA│     - Nome, Est, Dimens, Data, Dir.   │
+│     - Ordinamento e filtri in tempo reale│ │     - Ordinamento e filtri in tempo reale│
 ├─────────────────────────────────────┴───┴───────────────────────────────────────┤
-│ [7] STATUS BAR & DRIVE STORAGE METER                                            │
-│  3 of 28 files selected (42.8 MB / 1.2 GB)  |  Macintosh HD: 218.4 GB free      │
+│ [7] BARRA DI STATO E SPAZIO SU DISCO                                            │
+│  3 di 28 selezionati (42.8 MB / 1.2 GB)      |  Macintosh HD: 218.4 GB liberi   │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -243,7 +241,7 @@ Se preferisci non concedere un ampio accesso root ad ATBCmder, non è necessario
 
 #### Passaggio 5: accesso completo al disco (FDA) per i dati di sistema protetti
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Segnalibri Sandbox e accesso completo al disco (FDA)**: 
 > 
 > - **Segnalibri Sandbox** garantiscono l'accesso generale al filesystem a cartelle utente standard, file e unità esterne. 
@@ -365,7 +363,7 @@ Se hai utilizzato Total Commander, Double Commander o Norton Commander sulla tas
 
 Tuttavia, le tastiere Apple gestiscono la riga delle funzioni in modo diverso di default. 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > ### 🍎 Conflitto hardware del tasto funzione macOS 
 > Sulle tastiere Apple (tastiere integrate MacBook, Apple Magic Keyboard), i tasti della fila superiore sono impostati su **Funzioni hardware speciali macOS** (Luminosità display, Controllo missione, Spotlight, Dettatura, Non disturbare, Controlli multimediali e Volume audio). 
 > 

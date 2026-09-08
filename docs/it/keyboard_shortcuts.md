@@ -48,7 +48,7 @@ In questa guida e nelle finestre di dialogo delle preferenze di ATBCmder, le com
 
 ## 2. Guida ai tasti funzione macOS (`Fn`).
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > ### Come utilizzare i tasti funzione sulle tastiere Mac 
 > 
 > Per impostazione predefinita, le tastiere Apple (incluse le tastiere MacBook integrate, le tastiere Magic e i Mac Touch Bar) assegnano la riga fisica superiore (da`F1` a `F12`) ai controlli hardware come luminosità del display, Mission Control, Spotlight, Dettatura, riproduzione multimediale e volume degli altoparlanti. 

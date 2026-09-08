@@ -716,19 +716,19 @@ Embora o ATBCmder seja excelente em fluxos de trabalho gráficos de painel duplo
 
 ## 9. Alertas de segurança, desempenho e sistema
 
-> [!CUIDADO] 
+> [!CAUTION] 
 > **Irreversibilidade da sincronização de diretório assimétrica** 
 > Habilitar a opção **Assimétrica** na Sincronização de diretório (`Shift+F12`) faz com que os arquivos no diretório de destino que não existem na origem sejam **excluídos permanentemente**. Sempre realize uma inspeção visual da tabela de visualização de comparação antes de clicar em **Sincronizar**. 
 
-> [!AVISO] 
+> [!WARNING] 
 > **Substituições RegEx com múltiplas renomeações** 
 > Ao realizar substituições de expressões regulares com referências anteriores (`$1`, `$2`), certifique-se de que os números do seu grupo de captura correspondam aos parênteses no seu padrão. Teste seu padrão nas linhas da tabela de visualização ao vivo antes de clicar em **Iniciar renomeação**. Se nomes duplicados de destino aparecerem, o ATBCmder bloqueará a execução para protegê-lo contra perda de dados. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Limitações de destruição da unidade de estado sólido (SSD)** 
 > O utilitário Secure Wipe (`cm_Wipe` / `Alt+Delete`) substitui os dados do arquivo com múltiplas passagens de bytes aleatórios e zero, seguidas por uma chamada `fsync`. No entanto, as unidades de estado sólido (SSDs) modernas utilizam algoritmos de nivelamento de desgaste e superprovisionamento no nível do controlador que podem redirecionar gravações para blocos flash alternativos. Para descarte de SSD de alta segurança, combine a destruição de arquivos com a criptografia de disco completo do macOS FileVault. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Disponibilidade em destaque em volumes de rede e FAT** 
 > Fast Spotlight Search (`Ctrl+Shift+F`) depende de índices de metadados do macOS, que estão ativos por padrão em unidades APFS internas. Montagens de rede remotas (SMB, SFTP) e unidades exFAT externas podem não ser indexadas pelo Spotlight. Se uma consulta Spotlight não retornar resultados em uma unidade externa, use **Deep Scan** (`Alt+F7`) ou habilite a verificação recursiva de diretório. 
 

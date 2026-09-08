@@ -12,19 +12,19 @@ No ATBCmder, cada painel opera como um mecanismo de navegação autônomo equipa
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [NAVEGAÇÃO]   🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [TAB STRIP]   [★ Source (Locked)] [Assets] [Build Output] [+]                   │
+│ [ABAS]        [★ Código (Bloqueado)] [Recursos] [Saída Build] [+]               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  Name                         Ext       Size      Date Modified      Attr       │
+│  Nome                         Tipo      Tamanho   Modificado         Permissões │
 │  ▸ [..]                                           --:--              drwxr-xr-x │
-│  ▸ core                       <DIR>               Today, 14:22       drwxr-xr-x │
-│  ▸ ui                         <DIR>               Today, 15:05       drwxr-xr-x │
-│  ● main.py                    py        8.4 KB    Today, 15:10       -rw-r--r-- │
-│  ● config.xml                 xml       12.1 KB   Yesterday, 19:40   -rw-r--r-- │
+│  ▸ core                       <DIR>               Hoje, 14:22        drwxr-xr-x │
+│  ▸ ui                         <DIR>               Hoje, 15:05        drwxr-xr-x │
+│  ● main.py                    py        8.4 KB    Hoje, 15:10        -rw-r--r-- │
+│  ● config.xml                 xml       12.1 KB   Ontem, 19:40       -rw-r--r-- │
 │                                                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [QUICK SEARCH]  🔍 Find: mai_   (Matches: main.py)                              │
+│ [BUSCA RÁPIDA]  🔍 Buscar: mai_   (Correspondência: main.py)                    │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -239,7 +239,7 @@ No macOS, todas as partições internas, unidades USB-C/Thunderbolt externas, DM
 - **Comutador de unidade do painel direito (`Alt+F2` / `⌥F2` / `cm_RightOpenDrives`)**: atalho principal do Commander clássico que abre o menu de seleção de unidade e volume direcionado ao painel direito. 
 - **Menu da unidade do painel ativo (`Alt+D` / `⌥D` / `cm_Drives`)**: abre um menu pop-up listando todos os volumes montados, sistema de arquivos raiz `/`, página inicial do usuário `~` e pontos de extremidade de rede conectados para o painel atualmente em foco. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Permissões de unidades externas do macOS**: ao navegar para unidades externas em `/Volumes` pela primeira vez, o macOS App Sandbox pode solicitar permissão. ATBCmder exibirá uma caixa de diálogo de autorização para criar um marcador de escopo de segurança persistente para essa unidade. 
 
 ---
@@ -431,7 +431,7 @@ Aqui estão três receitas do mundo real que mostram como a navegação, as guia
 
 ## 10. Alertas de segurança e sistema
 
-> [!NOTA] 
+> [!NOTE] 
 > **Armazenamento externo e compartilhamentos de rede**: 
 > Ao acessar unidades USB externas ou compartilhamentos de rede (`/Volumes/...`) em guias ou marcadores, certifique-se de que o volume esteja montado no momento. Se uma unidade for desmontada quando o ATBCmder for iniciado, as guias que apontam para ela exibirão com segurança um aviso de "Local indisponível" em vez de travar ou remover a guia. 
 
@@ -439,7 +439,7 @@ Aqui estão três receitas do mundo real que mostram como a navegação, as guia
 > **Espelhamento de guias entre painéis**: 
 > Quer que o painel direito espelhe imediatamente todas as guias abertas do painel esquerdo? Use Menu **Guias** → **Copiar todas as guias para o painel oposto** (`cm_CopyAllTabsToOpposite`) para replicar o layout da guia em ambos os lados. 
 
-> [!AVISO] 
+> [!WARNING] 
 > **Cuidado com operações em Flat View (`Cmd+B`)**: 
 > Na Visualização de ramificação plana, os arquivos de várias ramificações de diretório distintas aparecem lado a lado em uma lista. Tenha cuidado ao usar `Cmd+A` (Selecionar tudo) seguido de `F8` (Excluir) ou `F6` (Mover), pois sua ação será aplicada recursivamente em todos os subdiretórios aninhados. 
 

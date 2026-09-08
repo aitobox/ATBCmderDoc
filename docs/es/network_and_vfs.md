@@ -143,7 +143,7 @@ Al navegar dentro de un archivo:
 3. **Vista previa instantánea (`F3` / `Fn+F3`)**: resalte cualquier documento, imagen o archivo fuente dentro del archivo y presione `F3`. ATBCmder extrae automáticamente el archivo de destino a un entorno limitado temporal seguro y lo procesa dentro de Universal Lister. 
 4. **Copia selectiva (`F5` / `Fn+F5`)**: en lugar de descomprimir un archivo completo de varios gigabytes solo para recuperar uno o dos archivos, seleccione los miembros específicos que necesita y presione `F5`. ATBCmder descomprime solo los elementos elegidos directamente en el panel inactivo. 
 
-> [!NOTA] 
+> [!NOTE] 
 > Al obtener una vista previa o copiar archivos individuales de un archivo, ATBCmder transmite solo los bytes del archivo solicitado directamente desde la secuencia del contenedor. No desperdicia espacio en disco ni tiempo descomprimiendo archivos hermanos no seleccionados. 
 
 ---
@@ -189,7 +189,7 @@ ATBCmder hace que editar archivos dentro de archivos sea tan sencillo como edita
 6. Cierre el editor con `Cmd+W` (`⌘W`) o `Esc`. 
 7. `RepackWorker` de ATBCmder actualiza automáticamente el miembro interno, comprime la estructura actualizada en un archivo temporal, reemplaza atómicamente el archivo original y actualiza la vista del panel. 
 
-> [!PRECAUCIÓN] 
+> [!CAUTION] 
 > **Guardia de seguridad de archivo grande (`ArchiveRepackWarningMB`)** 
 > Para volver a empaquetar un archivo comprimido es necesario descomprimir y volver a codificar los flujos del contenedor. Modificar un archivo de 10 KB dentro de un archivo de video `.tar.gz` de 20 GB obligaría a la computadora a reescribir los 20 GB de datos. 
 > 
@@ -305,7 +305,7 @@ A diferencia de las bibliotecas Python SMB de espacio de usuario ingenuo que suf
 - **Aceleración del kernel nativo de macOS (`mount_smbfs`)**: en macOS, `SambaMounter` de ATBCmder aprovecha el subsistema nativo `/sbin/mount_smbfs` de Apple. Monta el recurso compartido remoto directamente en el árbol VFS de macOS (`/Volumes/` o un directorio de montaje aislado), desbloqueando el rendimiento completo de lectura/escritura SMB3 acelerado por hardware. 
 - **Detección de montaje existente**: si macOS Finder o un script del sistema ya ha montado el recurso compartido SMB de destino, ATBCmder detecta automáticamente el punto de montaje activo de la tabla OS `mount` y navega hasta él instantáneamente, evitando conexiones de red redundantes. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Requisito de nombre compartido para PYMES** 
 > No se puede explorar un servidor SMB en el nivel de nombre de host simple. Un URI de SMB **debe** incluir el recurso compartido de destino o el nombre de exportación en la ruta: 
 > 
@@ -456,16 +456,16 @@ Los firewalls de red con estado y las puertas de enlace NAT frecuentemente corta
 
 ## 10. Sistema y alertas de seguridad
 
-> [!ADVERTENCIA] 
+> [!WARNING] 
 > **No coincide la verificación de la clave del host SSH** 
 > Si un servidor SFTP regenera sus claves de host (por ejemplo, después de una reinstalación del sistema operativo) o si se intenta una interceptación de red por parte de un intermediario, ATBCmder detecta que la clave del servidor no coincide con la huella digital registrada en `~/.ssh/known_hosts`. 
 > Nunca omita las advertencias de la clave del host en redes Wi-Fi públicas que no sean de confianza sin verificar de forma independiente la huella digital de la clave pública del servidor con el administrador del sistema. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Espacio de caché temporal para archivos remotos grandes** 
 > Al ver (`F3`) o editar (`F4`) archivos de varios gigabytes almacenados en servidores VFS remotos, ATBCmder transmite el elemento de destino a su volumen `/tmp` local. Asegúrese de que el contenedor APFS principal de su Mac tenga suficiente espacio de almacenamiento libre antes de abrir archivos remotos masivos de video o bases de datos. 
 
-> [!PRECAUCIÓN] 
+> [!CAUTION] 
 > **Desmontar recursos compartidos de red remota** 
 > Para recursos compartidos SMB montados a través de macOS `mount_smbfs`, finalizar la conectividad de red sin desconectarse puede dejar identificadores de montaje obsoletos en `/Volumes/`. Utilice siempre el menú de unidad del panel o la acción de desconexión antes de cerrar su computadora portátil o cambiar de red Wi-Fi. 
 

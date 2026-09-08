@@ -640,11 +640,11 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 
 ## 9. Sicherheits- und Systemwarnungen
 
-> [!WARNUNG] 
+> [!WARNING] 
 > **Permanente Löschung auf externen Laufwerken und Netzwerklaufwerken**: 
 > Externen Laufwerken, die mit FAT32, exFAT oder NTFS (über Treiber von Drittanbietern) und Remote-Netzwerkfreigaben (SMB/SFTP) formatiert sind, fehlt oft ein macOS-Systemverzeichnis `.Papierkorbes`. Wenn Sie Elemente aus diesen Volumes löschen, werden Sie von ATBCmder darauf hingewiesen, dass der Papierkorb nicht verfügbar ist. Durch Bestätigen dieser Aktion werden die Dateien **dauerhaft gelöscht**. Überprüfen Sie die Pfadüberschriften immer noch einmal, bevor Sie sie bestätigen. 
 
-> [!ACHTUNG] 
+> [!CAUTION] 
 > **Überschreiben von Dateien bei Stapelvorgängen**: 
 > Wenn Sie im Kollisionsdialog **Alle überschreiben** verwenden, unterdrückt ATBCmder weitere Kollisionswarnungen für den gesamten Job. Wenn Ihr Quellverzeichnis versehentlich doppelte Dateinamen enthält, werden vorhandene Zieldateien unwiderruflich ersetzt. Erwägen Sie die Verwendung von **Automatisches Umbenennen** oder **Älteres überschreiben** für unbeaufsichtigte Stapelkopien. 
 

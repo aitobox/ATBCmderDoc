@@ -567,19 +567,19 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 7. Avvisi di sicurezza e sistema
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Osservatori esterni delle modifiche** 
 > Se un file aperto viene modificato o troncato da un'applicazione esterna mentre si lavora nell'editor interno (`F4`), ATBCmder visualizza un avviso di conflitto di modifiche esterne prima del salvataggio. Scegli sempre **Ricarica** per controllare la versione più recente del disco o **Salva con nome** per conservare le modifiche locali in un file separato. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Sicurezza dei file binari: modalità testo e modalità esadecimale** 
 > L'apertura di un file binario sconosciuto in modalità testo e il salvataggio su disco può danneggiare permanentemente il file a causa delle sostituzioni della decodifica UTF-8 (`\ufffd`). L'Universal Lister di ATBCmder è di sola lettura per impostazione predefinita, garantendo che i tuoi file binari non vengano mai sovrascritti accidentalmente durante l'ispezione. 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Visualizzazione rapida delle prestazioni sulle condivisioni di rete remote** 
 > Durante la navigazione su server remoti ad alta latenza (FTP, SFTP o WebDAV) con Visualizzazione rapida (`Cmd+Q`) attiva, l'anteprima di enormi file di archivio o video remoti attiverà lo streaming remoto. Se la larghezza di banda della rete è limitata, disattiva la Visualizzazione rapida (`Cmd+Q`) per sfogliare gli alberi delle directory alla massima velocità. 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **Accessibilità tasti funzione macOS** 
 > Sui moderni Apple MacBook e Magic Keyboards, i tasti funzione (`F1`-`F12`) sono mappati per impostazione predefinita sui controlli hardware (luminosità, riproduzione multimediale). Per attivare `F3` o `F4`, tieni premuto il tasto **`Fn`** (ad esempio `Fn+F3`, `Fn+F4`). In alternativa, abilita **"Utilizza i tasti F1, F2, ecc. come tasti funzione standard"** in macOS *Impostazioni di sistema ➔ Tastiera ➔ Scorciatoie da tastiera ➔ Tasti funzione*. 
 

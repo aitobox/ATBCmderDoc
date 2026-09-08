@@ -716,11 +716,11 @@ Während sich ATBCmder durch grafische Dual-Panel-Workflows auszeichnet, ist fü
 
 ## 9. Sicherheits-, Leistungs- und Systemwarnungen
 
-> [!ACHTUNG] 
+> [!CAUTION] 
 > **Unumkehrbarkeit der asymmetrischen Verzeichnissynchronisierung** 
 > Das Aktivieren der Option **Asymmetrisch** in der Verzeichnissynchronisierung (`Shift+F12`) führt dazu, dass Dateien im Zielverzeichnis, die in der Quelle nicht vorhanden sind, **dauerhaft gelöscht** werden. Führen Sie immer eine visuelle Prüfung der Vergleichsvorschautabelle durch, bevor Sie auf **Synchronisieren** klicken. 
 
-> [!WARNUNG] 
+> [!WARNING] 
 > **RegEx-Ersetzungen mit mehreren Umbenennungen** 
 > Stellen Sie beim Ersetzen regulärer Ausdrücke mit Rückverweisen (`$1`, `$2`) sicher, dass Ihre Erfassungsgruppennummern mit den Klammern in Ihrem Muster übereinstimmen. Testen Sie Ihr Muster anhand der Tabellenzeilen der Live-Vorschau, bevor Sie auf **Umbenennen starten** klicken. Wenn doppelte Zielnamen auftreten, blockiert ATBCmder die Ausführung, um Sie vor Datenverlust zu schützen. 
 

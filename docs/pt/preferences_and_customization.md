@@ -218,7 +218,7 @@ Siga este passo a passo prático para religar um comando existente ou atribuir u
 
 Se você tentar atribuir um acorde de tonalidade que já foi reivindicado por outro comando dentro do mesmo contexto, o mecanismo de detecção de colisão do ATBCmder intervém imediatamente. Uma caixa de diálogo de alerta exibe a atribuição conflitante: 
 
-> [!AVISO] 
+> [!WARNING] 
 > **Conflito de atalho detectado** 
 > O atalho `Ctrl+M` já está atribuído a `cm_MultiRename` no contexto `FilePanel`. 
 > Deseja sobrescrevê-lo e reatribuir `Ctrl+M` para `cm_MarkCurrentExtension`? 
@@ -591,7 +591,7 @@ Para restaurar um backup de configuração em uma nova máquina ou reverter para
 
 O ATBCmder descompacta o arquivo com segurança, verifica se todos os arquivos extraídos são configurações XML válidas, substitui os arquivos do disco ativo, recarrega o singleton interno `Config()` e atualiza os painéis de arquivos e os layouts de colunas imediatamente - tudo sem exigir a reinicialização do aplicativo. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Segurança Empresarial: Proteção Anti-Traversal** 
 > ATBCmder impõe validação estrita de passagem de caminho durante a importação de configuração (sanitização `zipfile`). Qualquer membro de arquivo contendo separadores de caminho (`/`, `\`), travessias de diretório (`..`) ou extensões de arquivo não XML é rejeitado imediatamente, protegendo seu sistema operacional contra adulteração maliciosa de arquivo. 
 
@@ -654,15 +654,15 @@ ATBCmder inclui dicas de ferramentas de metadados flutuantes que exibem dimensõ
 
 ## 10. Alertas de segurança e sistema
 
-> [!CUIDADO] 
+> [!CAUTION] 
 > **Verificação de substituição de atalho** 
 > Substituir um atalho primário no contexto `Main` ou `FilePanel` o desvincula do comando original imediatamente. Se você acidentalmente desvincular comandos essenciais como `F5` (Copiar) ou `Enter` (Abrir), use o botão **Redefinir para padrões** no Editor de teclas de atalho para restaurar os atalhos de teclado de fábrica. 
 
-> [!AVISO] 
+> [!WARNING] 
 > **A importação de configuração substitui todas as configurações** 
 > Restaurar um pacote de configuração por meio de `cm_ImportConfiguration` substitui completamente seus arquivos `atbcmder.xml`, `favtabs.xml` e `hotlist.xml` atuais. Sempre exporte um backup da sua configuração existente antes de importar um arquivo externo. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Sandbox do aplicativo macOS e acesso total ao disco** 
 > Se o ATBCmder estiver em execução no macOS App Sandbox, ele não poderá ler arquivos de configuração ou diretórios fora de seu contêiner sem permissão explícita do usuário. Se você encontrar erros de permissão ao acessar unidades externas, execute **`cm_GrantFilesystemAccess`** para concluir o fluxo de integração do macOS Full Disk Access. 
 

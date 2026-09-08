@@ -48,7 +48,7 @@ Total Commander 및 Norton Commander의 20년 머슬 메모리를 보유하고 �
 
 ## 2. macOS 기능(`Fn`) 주요 지침
 
-> [!중요] 
+> [!IMPORTANT] 
 > ### Mac 키보드에서 기능 키를 사용하는 방법 
 > 
 > 기본적으로 Apple 키보드(내장 MacBook 키보드, Magic Keyboard 및 Touch Bar Mac 포함)는 디스플레이 밝기, Mission Control, Spotlight, 받아쓰기, 미디어 재생 및 스피커 볼륨과 같은 하드웨어 제어에 최상위 물리적 행(`F1` ~ `F12`)을 할당합니다. 

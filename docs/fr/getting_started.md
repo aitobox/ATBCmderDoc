@@ -14,16 +14,16 @@ ATBCmder remplace cette friction par le paradigme éprouvé du **Orthodox File M
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE (SOURCE) PANEL                     INACTIVE (TARGET) PANEL              │
+│  PANNEAU ACTIF (Source)                    PANNEAU INACTIF (Cible)              │
 │  /Users/username/Downloads                 /Volumes/BackupDrive/Projects        │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│  Name               Size    Date    │   │  Name                Size     Date    │
-│  ▸ [..]                     --:--   │ C │  ▸ [..]                       --:--   │
-│  ▸ Project_Assets   <DIR>   Yesterday O │  ▸ 2025_Archive      <DIR>    May 12  │
-│  ● release_notes.md 14.2 KB Today   │ P │  ▸ Website_V2        <DIR>    Aug 28  │
-│  ● update_v1.7.pkg  84.5 MB Today   │ Y │  ● config.yaml       3.2 KB   Jun 04  │
+│  Nom                Taille  Date    │ C │  Nom                Taille   Date     │
+│  ▸ [..]                     --:--   │ O │  ▸ [..]                       --:--   │
+│  ▸ Project_Assets   <DIR>   Hier    │ P │  ▸ 2025_Archive      <DIR>    12 mai  │
+│  ● release_notes.md 14.2 KB Auj.    │ I │  ▸ Website_V2        <DIR>    28 août │
+│  ● update_v1.7.pkg  84.5 MB Auj.    │ E │  ● config.yaml       3.2 KB   04 juin │
 │                                     │ ➔ │                                       │
-│  [ Focused / Blue Accent Outline ]  │   │  [ Unfocused / Subdued Outline ]      │
+│  [ Avec focus / Contour accentué ]  │   │  [ Sans focus / Contour estompé ]     │
 └─────────────────────────────────────┴───┴───────────────────────────────────────┘
 ```
 
@@ -49,7 +49,7 @@ Lorsque vous lancez une opération dans ATBCmder, l'application comprend automat
 - **Déplacer (`F6` / `Cmd+C` ➔ `Opt+Cmd+V`)** : Déplace les fichiers sélectionnés du panneau actif vers le panneau inactif sans avoir besoin de saisir ou de rechercher le répertoire de destination. 
 - **Synchronisation du répertoire (`Shift+F12` / `cm_SyncDirs`)** : Compare le répertoire du panneau actif avec le répertoire du panneau inactif. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **Aucune hypothèse de glisser-déposer requise** : vous n'avez pas besoin de faire glisser des éléments au-delà des limites de l'écran. Sélectionnez simplement ce que vous voulez dans le panneau actif, appuyez sur `F5` (Copier) ou `F6` (Déplacer), appuyez sur `Enter` pour confirmer l'invite et ATBCmder transfère les fichiers immédiatement.
 
 ### Navigation dans le panneau et changement de mise au point
@@ -69,25 +69,23 @@ ATBCmder fournit une interface macOS propre et native construite avec Qt6 et PyS
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [1] NATIVE MACOS MENU BAR                                                       │
+│ [1] BARRE DE MENUS MACOS NATIVE                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...   │
+│ [2] BARRE D'OUTILS  [ ↺ Actualiser ] [ 📋 Copier ] [ ✂ Déplacer ] ...           │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│ [3] BREADCRUMB BAR (Left Panel)     │   │ [3] BREADCRUMB BAR (Right Panel)      │
+│ [3] FIL D'ARIANE (Panneau gauche)   │   │ [3] FIL D'ARIANE (Panneau droit)      │
 │  / ▸ Users ▸ username ▸ Projects    │   │  /Volumes ▸ Backup ▸ Assets           │
 ├─────────────────────────────────────┤   ├───────────────────────────────────────┤
-│ [4] FOLDER TABS: [Dev] [Docs] [+]   │[6]│ [4] FOLDER TABS: [Photos] [Backup] [+]│
-├─────────────────────────────────────┤MID│───────────────────────────────────────┤
-│                                     │DLE│                                       │
-│ [5] DUAL FILE PANEL (Left)          │   │ [5] DUAL FILE PANEL (Right)           │
-│     - Virtualized table listing     │BAR│     - Virtualized table listing       │
-│     - Name, Ext, Size, Date, Attr   │ & │     - Name, Ext, Size, Date, Attr     │
-│     - Real-time sort & filter       │SPL│     - Real-time sort & filter         │
-│                                     │IT-│                                       │
-│                                     │TER│                                       │
+│ [4] ONGLETS : [Dev] [Docs] [+]      │[6]│ [4] ONGLETS : [Photos] [Backup] [+]   │
+├─────────────────────────────────────┤BAR│───────────────────────────────────────┤
+│                                     │RE │                                       │
+│ [5] DOUBLE PANNEAU (Gauche)         │   │ [5] DOUBLE PANNEAU (Droit)            │
+│     - Table virtualisée ultra-rapide│MI-│     - Table virtualisée ultra-rapide  │
+│     - Nom, Ext, Taille, Date, Droits│LIE│     - Nom, Ext, Taille, Date, Droits  │
+│     - Tri et filtre en temps réel   │U  │     - Tri et filtre en temps réel     │
 ├─────────────────────────────────────┴───┴───────────────────────────────────────┤
-│ [7] STATUS BAR & DRIVE STORAGE METER                                            │
-│  3 of 28 files selected (42.8 MB / 1.2 GB)  |  Macintosh HD: 218.4 GB free      │
+│ [7] BARRE D'ÉTAT ET JAUGE DE STOCKAGE                                           │
+│  3 sur 28 sélectionnés (42.8 Mo / 1.2 Go)    |  Macintosh HD : 218.4 Go libres  │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -365,7 +363,7 @@ Si vous avez utilisé Total Commander, Double Commander ou Norton Commander sur 
 
 Cependant, les claviers Apple gèrent différemment la ligne de fonctions dès la sortie de la boîte. 
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > ### 🍎 Conflit matériel entre les touches de fonction macOS 
 > Sur les claviers Apple (claviers intégrés MacBook, Apple Magic Keyboard), les touches de la rangée supérieure sont par défaut **Fonctionnalités matérielles spéciales macOS** (luminosité de l'écran, contrôle de mission, projecteur, dictée, ne pas déranger, commandes multimédias et volume audio). 
 > 

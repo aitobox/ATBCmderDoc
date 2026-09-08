@@ -14,17 +14,17 @@ ATBCmder ersetzt diese Reibung durch das bewährte **Orthodox File Manager (OFM)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE (SOURCE) PANEL                     INACTIVE (TARGET) PANEL              │
+│  AKTIVES PANEL (Quelle)                    INAKTIVES PANEL (Ziel)               │
 │  /Users/username/Downloads                 /Volumes/BackupDrive/Projects        │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│  Name               Size    Date    │   │  Name                Size     Date    │
-│  ▸ [..]                     --:--   │ C │  ▸ [..]                       --:--   │
-│  ▸ Project_Assets   <DIR>   Yesterday O │  ▸ 2025_Archive      <DIR>    May 12  │
-│  ● release_notes.md 14.2 KB Today   │ P │  ▸ Website_V2        <DIR>    Aug 28  │
-│  ● update_v1.7.pkg  84.5 MB Today   │ Y │  ● config.yaml       3.2 KB   Jun 04  │
+│  Name               Größe   Datum   │ K │  Name                Größe    Datum   │
+│  ▸ [..]                     --:--   │ O │  ▸ [..]                       --:--   │
+│  ▸ Project_Assets   <DIR>   Gestern │ P │  ▸ 2025_Archive      <DIR>    12. Mai │
+│  ● release_notes.md 14.2 KB Heute   │ I │  ▸ Website_V2        <DIR>    28. Aug │
+│  ● update_v1.7.pkg  84.5 MB Heute   │ E │  ● config.yaml       3.2 KB   04. Jun │
 │                                     │ ➔ │                                       │
-│  [ Focused / Blue Accent Outline ]  │   │  [ Unfocused / Subdued Outline ]      │
-└─────────────────────────────────────┴───┴───────────────────────────────────────┘
+│  [ Fokussiert / Blauer Rahmen ]     │   │  [ Nicht fokussiert / Dezenter Rahmen]│
+└─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Das aktive (Quelle) vs. inaktive (Ziel) Modell
@@ -71,25 +71,23 @@ ATBCmder bietet eine saubere, native macOS-Schnittstelle, die mit Qt6 und PySide
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [1] NATIVE MACOS MENU BAR                                                       │
+│ [1] NATIVE MACOS-MENÜLEISTE                                                     │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [2] TOP MAIN TOOLBAR  [ ↺ Refresh ] [ 📋 Copy ] [ ✂ Move ] [ 🗑 Delete ] ...   │
+│ [2] HAUPTSYMBOLLEISTE  [ ↺ Neu laden ] [ 📋 Kopieren ] [ ✂ Bewegen ] ...        │
 ├─────────────────────────────────────┬───┬───────────────────────────────────────┤
-│ [3] BREADCRUMB BAR (Left Panel)     │   │ [3] BREADCRUMB BAR (Right Panel)      │
+│ [3] PFADZEILE (Linkes Panel)        │   │ [3] PFADZEILE (Rechtes Panel)         │
 │  / ▸ Users ▸ username ▸ Projects    │   │  /Volumes ▸ Backup ▸ Assets           │
 ├─────────────────────────────────────┤   ├───────────────────────────────────────┤
-│ [4] FOLDER TABS: [Dev] [Docs] [+]   │[6]│ [4] FOLDER TABS: [Photos] [Backup] [+]│
-├─────────────────────────────────────┤MID│───────────────────────────────────────┤
-│                                     │DLE│                                       │
-│ [5] DUAL FILE PANEL (Left)          │   │ [5] DUAL FILE PANEL (Right)           │
-│     - Virtualized table listing     │BAR│     - Virtualized table listing       │
-│     - Name, Ext, Size, Date, Attr   │ & │     - Name, Ext, Size, Date, Attr     │
-│     - Real-time sort & filter       │SPL│     - Real-time sort & filter         │
-│                                     │IT-│                                       │
-│                                     │TER│                                       │
+│ [4] ORDNER-TABS: [Dev] [Docs] [+]   │[6]│ [4] ORDNER-TABS: [Fotos] [Backup] [+] │
+├─────────────────────────────────────┤MIT│───────────────────────────────────────┤
+│                                     │TEL│                                       │
+│ [5] DUAL-DATEIPANEL (Links)         │   │ [5] DUAL-DATEIPANEL (Rechts)          │
+│     - Virtualisierte Tabellenansicht│LEI│     - Virtualisierte Tabellenansicht  │
+│     - Name, Ext, Größe, Datum, Rechte│STE│     - Name, Ext, Größe, Datum, Rechte │
+│     - Echtzeit-Sortierung & Filter  │   │     - Echtzeit-Sortierung & Filter    │
 ├─────────────────────────────────────┴───┴───────────────────────────────────────┤
-│ [7] STATUS BAR & DRIVE STORAGE METER                                            │
-│  3 of 28 files selected (42.8 MB / 1.2 GB)  |  Macintosh HD: 218.4 GB free      │
+│ [7] STATUSLEISTE & SPEICHERANZEIGE                                              │
+│  3 von 28 gewählt (42.8 MB / 1.2 GB)         |  Macintosh HD: 218.4 GB frei     │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -368,7 +366,7 @@ Wenn Sie Total Commander, Double Commander oder Norton Commander auf einer PC-Ta
 
 Allerdings handhaben Apple-Tastaturen die Funktionszeile standardmäßig anders. 
 
-> [!WARNUNG] 
+> [!WARNING] 
 > ### 🍎 macOS-Funktionstasten-Hardwarekonflikt 
 > Auf Apple-Tastaturen (eingebaute MacBook-Tastaturen, Apple Magic Keyboard) sind die Tasten der oberen Reihe standardmäßig auf **macOS-spezifische Hardwarefunktionen** (Anzeigehelligkeit, Mission Control, Spotlight, Diktieren, Nicht stören, Mediensteuerung und Audiolautstärke) eingestellt. 
 > 

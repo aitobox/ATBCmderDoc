@@ -472,7 +472,7 @@ macOS se basa en Darwin UNIX y proporciona dos tipos de enlaces distintos:
 3. ATBCmder crea una entrada de directorio adicional en el panel de destino que comparte exactamente el mismo inodo. 
 4. Los cambios escritos en cualquiera de los archivos se reflejan instantáneamente en ambos. Eliminar un archivo no elimina datos hasta que el recuento de enlaces llegue a cero. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Restricciones de límites de enlaces**: los enlaces físicos no pueden cruzar los límites de los volúmenes ni crearse en recursos compartidos de red (`vfs://`). Los enlaces simbólicos se deben utilizar siempre que se establezcan enlaces entre diferentes unidades o puntos de montaje remotos. 
 
 ---
@@ -638,19 +638,19 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 
 ## 9. Alertas de seguridad y sistema
 
-> [!ADVERTENCIA] 
+> [!WARNING] 
 > **Eliminación permanente en unidades externas y de red**: 
 > Las unidades externas formateadas con FAT32, exFAT o NTFS (a través de controladores de terceros) y los recursos compartidos de red remotos (SMB/SFTP) a menudo carecen de un directorio `.Papeleraes` del sistema macOS. Al eliminar elementos de estos volúmenes, ATBCmder le avisará que la Papelera no está disponible. Confirmar esta acción **elimina permanentemente** los archivos. Siempre verifique los encabezados de las rutas antes de confirmar. 
 
-> [!PRECAUCIÓN] 
+> [!CAUTION] 
 > **Sobrescribir archivos en operaciones por lotes**: 
 > Cuando se utiliza **Sobrescribir todo** en el cuadro de diálogo de colisión, ATBCmder suprime más alertas de colisión para todo ese trabajo. Si su directorio de origen contiene nombres de archivos duplicados accidentalmente, los archivos de destino existentes se reemplazarán irreversiblemente. Considere usar **Renombrar automáticamente** o **Sobrescribir versiones anteriores** para copias por lotes desatendidas. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Limitaciones del enlace duro APFS**: 
 > Los enlaces físicos no pueden abarcar diferentes volúmenes APFS, particiones de disco o imágenes de disco. Si intenta crear un vínculo físico entre dos puntos de montaje diferentes (como `/Users/...` a `/Volumes/ExternalDrive/...`), la operación fallará. Utilice **Enlaces simbólicos** (`cm_SymLink`) siempre que establezca enlaces entre diferentes volúmenes de almacenamiento. 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **Optimización de las velocidades de transferencia NVMe**: 
 > ATBCmder está optimizado para la memoria unificada Apple Silicon moderna y SSD NVMe PCIe 4.0/5.0. De forma predeterminada, las operaciones de archivos utilizan un **búfer de copia de 1 MB** de alto rendimiento (`operations.copy_buffer_size`). Puede ajustar este búfer en **Preferencias** → **Operaciones de archivos** para que coincida con interfaces de red de 10 GbE de alta gama o matrices de almacenamiento especializadas. 
 

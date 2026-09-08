@@ -2,7 +2,7 @@
 
 Grazie per il tuo interesse per ATBCmder! Forniamo due diversi metodi di download e installazione per soddisfare le tue esigenze. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Requisiti di sistema e architettura** 
 > 
 > - **Sistema operativo**: macOS 12.0 (Monterey) o successivo (inclusi macOS 13 Ventura, macOS 14 Sonoma e macOS 15 Sequoia). 

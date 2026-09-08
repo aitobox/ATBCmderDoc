@@ -95,7 +95,7 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 > **Peligro de pérdida de datos de duplicación asimétrica**: 
 > Cuando se marca el modo **Asimétrico**, los archivos presentes en la unidad de destino que se eliminaron o cambiaron de nombre en la fuente se **eliminarán permanentemente** sin pasar a la Papelera de macOS. ¡Revise siempre la tabla de comparación direccional antes de hacer clic en Sincronizar! 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **⚡ Consejo profesional: verificación a nivel de contenido para medios y código**: 
 > Al realizar copias de seguridad de secuencias de vídeo o repositorios Git, los tamaños de los archivos pueden coincidir mientras existen sutiles daños en los bytes internos. Consulte siempre **Comparar por contenido** para archivos de misión crítica. Aunque la comparación byte a byte lleva más tiempo a través de USB o Wi-Fi, garantiza el 100% de integridad de los datos. 
 
@@ -147,11 +147,11 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 7. **Ejecutar el cambio de nombre**: 
 - Presione **`Enter`** o haga clic en **Iniciar cambio de nombre**. ATBCmder realiza los cambios de nombre de forma atómica en el disco y actualiza la vista del panel. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Seguridad de la extensión**: 
 > De forma predeterminada, la **Máscara de extensión** está configurada en `[E]`, preservando la extensión del archivo original sin modificar. Nunca elimine `[E]` a menos que tenga la intención explícita de eliminar las extensiones de sus archivos.
 
-> [!CONSEJO] 
+> [!TIP] 
 > **⚡ Consejo profesional: flujo de trabajo del editor externo (`⌘I`)**: 
 > Si tiene una lista irregular de nombres de clientes o títulos de pistas, presione **`Cmd+I`** (`⌘I` / Editar en editor externo) dentro de la herramienta Multi-Rename. ATBCmder exporta los nombres de los objetivos a su editor de texto predeterminado. Edite la lista en Vim, VS Code o TextEdit, guarde el documento y ATBCmder importará inmediatamente los nombres revisados ​​en la cuadrícula de vista previa. 
 
@@ -201,7 +201,7 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 7. **Reconexión rápida desde la barra de menú**: 
 - Todos los perfiles guardados aparecen automáticamente en **Red ➔ Conexiones guardadas**. Simplemente haga clic en cualquier servidor guardado para montarlo al instante. 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **⚡ Consejo profesional: autenticación basada en claves SSH para SFTP**: 
 > Para el acceso automatizado al servidor en la nube, configure la autenticación de clave pública. En su perfil de conexión SFTP, deje el campo de contraseña en blanco y apunte a su clave privada local (por ejemplo, `~/.ssh/id_ed25519`). Si la clave está protegida por una frase de contraseña, ATBCmder la solicita una vez y la guarda de forma segura en su llavero macOS. 
 
@@ -242,7 +242,7 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 4. Reemplaza atómicamente el archivo original en el disco, garantizando que no se produzcan daños si el sistema pierde energía a mitad de escritura. 
 5. La vista del panel activo se actualiza automáticamente para mostrar los tamaños de bytes de los miembros y las marcas de tiempo actualizados.
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Guardia de reempaquetado de archivos grandes (`ArchiveRepackWarningMB`)**: 
 > Actualizar un único archivo de texto de 2 KB dentro de un archivo de 15 GB requiere reescribir todo el archivo en el disco. Para evitar picos inesperados de CPU y desgaste de SSD, ATBCmder verifica el tamaño del archivo. Si el archivo supera `ArchiveRepackWarningMB` (predeterminado: 500 MB), aparecerá un cuadro de diálogo de advertencia: *"Este archivo tiene 1,4 GB. Al volver a empaquetarlo se reescribirá todo el archivo. ¿Desea continuar?"* Puede personalizar este umbral en **Configuración ➔ Opciones ➔ Archivos**. 
 
@@ -294,7 +294,7 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 - Seleccione archivos no deseados y presione **`F8`** (`Fn+F8` / `cm_Delete`) para moverlos de forma segura a la Papelera de macOS. 
 - Si necesita un borrado permanente e irrecuperable de datos (por ejemplo, borrar datos confidenciales del cliente), presione **`Alt+Delete`** (`⌥⌫` / `cm_Wipe`) para activar la destrucción segura de archivos en múltiples pasadas. 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **⚡ Consejo profesional: identificación de archivos duplicados idénticos mediante sumas de verificación**: 
 > Si sospecha que varios archivos grandes son duplicados exactos, selecciónelos y presione **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Elija **SHA-256** y haga clic en Calcular. Los resúmenes de hash coincidentes confirman duplicados binarios al 100%, lo que le permite eliminar copias superfluas con total confianza. 
 

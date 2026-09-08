@@ -189,7 +189,7 @@ ATBCmder rend l'édition de fichiers dans des archives aussi simple que l'éditi
 6. Fermez l'éditeur avec `Cmd+W` (`⌘W`) ou `Esc`. 
 7. `RepackWorker` d'ATBCmder met automatiquement à jour le membre interne, compresse la structure mise à jour dans un fichier temporaire, remplace atomiquement l'archive d'origine et actualise la vue du panneau. 
 
-> [!ATTENTION] 
+> [!CAUTION] 
 > **Grande protection des archives (`ArchiveRepackWarningMB`)** 
 > Le reconditionnement d'une archive compressée nécessite la décompression et le réencodage des flux de conteneurs. La modification d'un fichier de 10 Ko dans une archive vidéo `.tar.gz` de 20 Go forcerait l'ordinateur à réécrire les 20 Go de données. 
 > 
@@ -456,7 +456,7 @@ Besoin d'éditer un `nginx.conf` ou un script Python directement sur un serveur 
 
 ## 10. Alertes système et sécurité
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > **Incohérence de vérification de la clé de l'hôte SSH** 
 > Si un serveur SFTP régénère ses clés d'hôte (par exemple, après une réinstallation du système d'exploitation) ou si une interception réseau de type man-in-the-middle est tentée, ATBCmder détecte que la clé du serveur ne correspond pas à l'empreinte digitale enregistrée dans `~/.ssh/known_hosts`. 
 > Ne contournez jamais les avertissements de clé d'hôte sur les réseaux Wi-Fi publics non fiables sans vérifier indépendamment l'empreinte digitale de la clé publique du serveur avec votre administrateur système. 
@@ -465,7 +465,7 @@ Besoin d'éditer un `nginx.conf` ou un script Python directement sur un serveur 
 > **Espace de cache temporaire pour les gros fichiers distants** 
 > Lors de la visualisation (`F3`) ou de la modification (`F4`) de fichiers de plusieurs gigaoctets stockés sur des serveurs VFS distants, ATBCmder diffuse l'élément cible sur votre volume `/tmp` local. Assurez-vous que le conteneur APFS principal de votre Mac dispose de suffisamment d'espace de stockage libre avant d'ouvrir d'énormes fichiers vidéo ou de base de données distants. 
 
-> [!ATTENTION] 
+> [!CAUTION] 
 > **Démontage des partages réseau distants** 
 > Pour les partages SMB montés via macOS `mount_smbfs`, la fin de la connectivité réseau sans déconnexion peut laisser des handles de montage obsolètes dans `/Volumes/`. Utilisez toujours le menu du lecteur du panneau ou l'action de déconnexion avant de fermer votre ordinateur portable ou de changer de réseau Wi-Fi. 
 

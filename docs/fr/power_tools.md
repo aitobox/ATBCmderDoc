@@ -715,11 +715,11 @@ Bien qu'ATBCmder excelle dans les workflows graphiques à double panneau, l'acc�
 
 ## 9. Alertes de sécurité, de performances et de système
 
-> [!ATTENTION] 
+> [!CAUTION] 
 > **Irréversibilité de la synchronisation asymétrique des annuaires** 
 > L'activation de l'option **Asymétrique** dans la synchronisation d'annuaire (`Shift+F12`) entraîne la **suppression définitive** des fichiers du répertoire cible qui n'existent pas dans la source. Effectuez toujours une inspection visuelle du tableau d'aperçu de comparaison avant de cliquer sur **Synchroniser**. 
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > **Substitutions RegEx multi-renommages** 
 > Lorsque vous effectuez des substitutions d'expressions régulières avec des références arrière (`$1`, `$2`), assurez-vous que les numéros de votre groupe de capture correspondent aux parenthèses de votre modèle. Testez votre modèle par rapport aux lignes du tableau d'aperçu en direct avant de cliquer sur **Démarrer Renommer**. Si des noms de cibles en double apparaissent, ATBCmder bloque l'exécution pour vous protéger contre la perte de données. 
 
@@ -731,7 +731,7 @@ Bien qu'ATBCmder excelle dans les workflows graphiques à double panneau, l'acc�
 > **Disponibilité Spotlight sur les volumes réseau et FAT** 
 > La recherche rapide Spotlight (`Ctrl+Shift+F`) s'appuie sur les index de métadonnées macOS, qui sont actifs par défaut sur les lecteurs APFS internes. Les supports réseau distants (SMB, SFTP) et les lecteurs exFAT externes ne peuvent pas être indexés par Spotlight. Si une requête Spotlight ne renvoie aucun résultat sur un lecteur externe, utilisez **Analyse approfondie** (`Alt+F7`) ou activez l'analyse récursive des répertoires. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **Compatibilité des touches de fonction Apple (`Fn`)** 
 > Sur les Apple Magic Keyboards et MacBooks, les touches de fonction (`F1`-`F12`) sont par défaut sur les actions matérielles (luminosité, volume). Pour appuyer sur `Shift+F12` ou `Alt+F7`, maintenez la touche **`Fn`** : `Fn+Shift+F12`, `Fn+Alt+F7`. Vous pouvez également activer **"Utiliser les touches F1, F2, etc. comme touches de fonction standard"** dans macOS *Paramètres système ➔ Clavier ➔ Raccourcis clavier clavier ➔ Touches de fonction*. 
 

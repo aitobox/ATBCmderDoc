@@ -567,15 +567,15 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 7. Alertas de segurança e sistema
 
-> [!AVISO] 
+> [!WARNING] 
 > **Vigilantes de modificação externa** 
 > Se um arquivo aberto for modificado ou truncado por um aplicativo externo enquanto você estiver trabalhando no Editor Interno (`F4`), o ATBCmder exibirá um aviso de conflito de alteração externa antes de salvar. Sempre escolha **Recarregar** para inspecionar a versão mais recente do disco ou **Salvar como** para preservar suas modificações locais em um arquivo separado. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Segurança de arquivos binários: modo texto versus modo hexadecimal** 
 > Abrir um arquivo binário desconhecido no Modo Texto e salvá-lo de volta no disco pode corromper permanentemente o arquivo devido a substituições de decodificação UTF-8 (`\ufffd`). O Universal Lister do ATBCmder é somente leitura por padrão, garantindo que seus arquivos binários nunca sejam substituídos acidentalmente durante a inspeção. 
 
-> [!CUIDADO] 
+> [!CAUTION] 
 > **Desempenho de visualização rápida em compartilhamentos de rede remotos** 
 > Ao navegar em servidores remotos de alta latência (FTP, SFTP ou WebDAV) com Quick View (`Cmd+Q`) ativo, a visualização de vídeos remotos massivos ou arquivos compactados acionará o streaming remoto. Se a largura de banda da rede for limitada, desative a Visualização Rápida (`Cmd+Q`) para navegar nas árvores de diretórios em velocidade total. 
 

@@ -14,53 +14,53 @@ Willkommen im offiziellen Dokumentationsportal für **ATBCmder** – dem schnell
 Herkömmliche Einzelfenster-Desktop-Dateimanager wie macOS Finder zwingen Benutzer dazu, sich in einem endlosen Kreislauf überlappender Fenster zu öffnen, den Überblick über Quell- und Zielordner zu verlieren und das Risiko einzugehen, versehentlich in falsche Unterordner zu gelangen. 
 
 ```
-Traditional File Browsing (Finder):
+Herkömmliche Dateiverwaltung (Finder):
 ┌────────────────────────┐      ┌────────────────────────┐
-│ Folder A (Where was I?)│ ──?  │ Folder B (Which one?)  │  → Clutter, lost focus,
-└────────────────────────┘      └────────────────────────┘    and accidental drops
+│ Ordner A (Wo war ich?) │ ──?  │ Ordner B (Welcher?)    │  → Fensterchaos, Fokusverlust
+└────────────────────────┘      └────────────────────────┘    und falsches Ablegen
 
-The ATBCmder Way (Orthodox Dual-Panel):
+Der ATBCmder-Weg (Orthodoxes Dual-Panel):
 ┌───────────────────────────────┬───────────────────────────────┐
-│     ACTIVE PANEL (Source)     │    INACTIVE PANEL (Target)    │
-│  Files waiting for action     │  Predictable destination      │
-│  [ Copy / Move / Diff / Sync  ═════════════════════════════► ]│
+│     AKTIVES PANEL (Quelle)    │    INAKTIVES PANEL (Ziel)     │
+│  Dateien warten auf Aktion    │  Klares, verlässliches Ziel   │
+│  [ Kopieren / Bewegen / Sync  ═════════════════════════════► ]│
 └───────────────────────────────┴───────────────────────────────┘
 ```
  
 
 ATBCmder löst dieses Problem durch das **Quelle-Ziel-Dual-Panel-Paradigma**: 
 
-- **Konstante Ausrichtung**: Zwei unabhängige Verzeichnisansichten sind jederzeit nebeneinander sichtbar. 
+- **Klare Orientierung auf einen Blick**: Zwei unabhängige Verzeichnisansichten sind jederzeit nebeneinander sichtbar. 
 - **Vorhersehbare Richtungsoperationen**: Wenn Sie Kopieren (`F5`) oder Verschieben (`F6`) auslösen, überträgt ATBCmder automatisch Elemente vom **Aktiven Bereich** (wo sich Ihr Cursor befindet) in den **Inaktiven Bereich** (die entgegengesetzte Ansicht). Kein Ziehen, kein Raten, kein Suchen nach versteckten Zielfenstern. 
-- **Tastaturgeschwindigkeit**: Lassen Sie Ihre Hände auf der Tastatur. Springen Sie durch Verzeichnisse, wählen Sie Dateien mit Platzhaltern aus, prüfen Sie Archive und führen Sie Stapeltransformationen in Millisekunden aus. 
+- **Flüssiger Tastatur-Flow**: Lassen Sie Ihre Hände auf der Tastatur. Springen Sie durch Verzeichnisse, wählen Sie Dateien mit Platzhaltern aus, prüfen Sie Archive und führen Sie Stapeltransformationen in Millisekunden aus. 
 - **Keine Unordnung im Finder-Fenster**: Ein Fenster verwaltet alles – lokale Volumes, Netzwerkserver (FTP, SFTP, SMB, WebDAV), Archivinhalte (`.zip`, `.7z`, `.tar`) und Hintergrundübertragungswarteschlangen. 
 
 ---
 
-## Visuelle Interface-Tour und Sehenswürdigkeiten
+## Benutzeroberfläche und Funktionsbereiche im Überblick
 
-ATBCmder organisiert die Stromversorgung in einem übersichtlichen, intuitiven Layout, das Ihnen einen sofortigen Überblick über die Situation beider Verzeichnisse gibt. 
+ATBCmder vereint maximale Produktivität und Kontrolle in einem übersichtlichen, intuitiven Layout, das Ihnen einen sofortigen Überblick über die Situation beider Verzeichnisse gibt. 
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│ [1] Menu Bar: File   Mark   Commands   Show   Configuration   Help                       │
+│ [1] Menüleiste: Datei   Markieren   Befehle   Ansicht   Konfiguration   Hilfe            │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
-│ [2] Main Toolbar:  [🔍 Search]  [⚡ Queue]  [⚙️ Preferences]  [📁 Drive Bar]             │
+│ [2] Hauptsymbolleiste: [🔍 Suchen]  [⚡ Warteschlange]  [⚙️ Einstellungen]  [📁 Laufwerke] │
 ├─────────────────────────────────────────────┬────────────────────────────────────────────┤
-│ [3] Breadcrumbs: 🏠 > Users > brain > work  │ [3] Breadcrumbs: 💾 > Volumes > Backup     │
+│ [3] Pfadzeile: 🏠 > Users > brain > work    │ [3] Pfadzeile: 💾 > Volumes > Backup       │
 ├─────────────────────────────────────────────┼────────────────────────────────────────────┤
-│ [4] Tab Bar: [Project Alpha ✕] [Docs] [+]   │ [4] Tab Bar: [2026 Archive ✕] [+]          │
+│ [4] Tab-Leiste: [Projekt Alpha ✕] [Docs] [+]│ [4] Tab-Leiste: [2026 Archiv ✕] [+]        │
 ├──────────────────────────────────────┬──────┼────────────────────────────────────────────┤
-│ [5] Left Panel (Active / Source)     │ [6]  │ [5] Right Panel (Inactive / Target)        │
-│ 📁 .. [Parent Directory]             │  M   │ 📁 .. [Parent Directory]                   │
+│ [5] Linkes Panel (Aktiv / Quelle)    │ [6]  │ [5] Rechtes Panel (Inaktiv / Ziel)         │
+│ 📁 .. [Übergeordneter Ordner]        │  M   │ 📁 .. [Übergeordneter Ordner]              │
 │ 📁 assets                            │  I   │ 📁 archive_2025                            │
-│ 📁 src                               │  D   │ 📁 release_builds                          │
-│ 📄 Cargo.toml             1.2 KB     │  D   │ 📄 CHANGELOG.md                 14.8 KB    │
-│ 📄 main.rs                8.4 KB     │  L   │ 📄 README.md                     4.1 KB    │
-│ 📄 config.json            2.1 KB     │  E   │ 📦 backup_bundle.zip           128.4 MB    │
+│ 📁 src                               │  T   │ 📁 release_builds                          │
+│ 📄 Cargo.toml             1.2 KB     │  T   │ 📄 CHANGELOG.md                 14.8 KB    │
+│ 📄 main.rs                8.4 KB     │  E   │ 📄 README.md                     4.1 KB    │
+│ 📄 config.json            2.1 KB     │  L   │ 📦 backup_bundle.zip           128.4 MB    │
 │                                      │      │                                            │
 ├──────────────────────────────────────┴──────┴────────────────────────────────────────────┤
-│ [7] Status Bar: 6 items | 2 selected (10.5 KB)   │ Drive: 142.6 GB free / 494.3 GB total │
+│ [7] Statusleiste: 6 Objekte | 2 gewählt (10.5 KB)│ Speicher: 142.6 GB frei / 494.3 GB     │
 └──────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

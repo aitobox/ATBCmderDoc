@@ -12,19 +12,19 @@ En ATBCmder, cada panel funciona como un motor de navegación autónomo equipado
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [RUTA MIGA]   🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [TAB STRIP]   [★ Source (Locked)] [Assets] [Build Output] [+]                   │
+│ [PESTAÑAS]    [★ Código (Bloqueado)] [Recursos] [Compilación] [+]               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  Name                         Ext       Size      Date Modified      Attr       │
+│  Nombre                       Tipo      Tamaño    Modificado         Permisos   │
 │  ▸ [..]                                           --:--              drwxr-xr-x │
-│  ▸ core                       <DIR>               Today, 14:22       drwxr-xr-x │
-│  ▸ ui                         <DIR>               Today, 15:05       drwxr-xr-x │
-│  ● main.py                    py        8.4 KB    Today, 15:10       -rw-r--r-- │
-│  ● config.xml                 xml       12.1 KB   Yesterday, 19:40   -rw-r--r-- │
+│  ▸ core                       <DIR>               Hoy, 14:22         drwxr-xr-x │
+│  ▸ ui                         <DIR>               Hoy, 15:05         drwxr-xr-x │
+│  ● main.py                    py        8.4 KB    Hoy, 15:10         -rw-r--r-- │
+│  ● config.xml                 xml       12.1 KB   Ayer, 19:40        -rw-r--r-- │
 │                                                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [QUICK SEARCH]  🔍 Find: mai_   (Matches: main.py)                              │
+│ [BÚSQUEDA RÁPIDA]  🔍 Buscar: mai_   (Coincidencia: main.py)                     │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -238,7 +238,7 @@ En macOS, todas las particiones internas, unidades USB-C/Thunderbolt externas, D
 - **Conmutador de unidad del panel derecho (`Alt+F2` / `⌥F2` / `cm_RightOpenDrives`)**: acceso directo principal de Classic Commander que abre el menú de selección de unidad y volumen dirigido al panel derecho. 
 - **Menú de unidad de panel activo (`Alt+D` / `⌥D` / `cm_Drives`)**: abre un menú emergente que enumera todos los volúmenes montados, el sistema de archivos raíz `/`, el hogar del usuario `~` y los puntos finales de red conectados para el panel actualmente enfocado. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Permisos de unidades externas de macOS**: al navegar a unidades externas bajo `/Volumes` por primera vez, la aplicación Sandbox de macOS puede solicitarle permiso. ATBCmder mostrará un cuadro de diálogo de autorización para crear un marcador persistente con ámbito de seguridad para esa unidad. 
 
 ---
@@ -430,15 +430,15 @@ Aquí hay tres recetas del mundo real que muestran cómo la navegación, las pes
 
 ## 10. Alertas de seguridad y sistema
 
-> [!NOTA] 
+> [!NOTE] 
 > **Almacenamiento externo y recursos compartidos de red**: 
 > Al acceder a unidades USB externas o recursos compartidos de red (`/Volumes/...`) dentro de pestañas o marcadores, asegúrese de que el volumen esté actualmente montado. Si se desmonta una unidad cuando se inicia ATBCmder, las pestañas que apuntan a ella mostrarán de forma segura un aviso de "Ubicación no disponible" en lugar de bloquearse o eliminar la pestaña. 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **Reflejo de pestañas en todos los paneles**: 
 > ¿Quiere que su panel derecho refleje inmediatamente todas las pestañas abiertas de su panel izquierdo? Utilice Menú **Pestañas** → **Copiar todas las pestañas al panel opuesto** (`cm_CopyAllTabsToOpposite`) para replicar el diseño de pestañas en ambos lados. 
 
-> [!ADVERTENCIA] 
+> [!WARNING] 
 > **Precaución con operaciones en vista plana (`Cmd+B`)**: 
 > En la vista de rama plana, los archivos de varias ramas de directorio distintas aparecen uno al lado del otro en una lista. Tenga cuidado al utilizar `Cmd+A` (Seleccionar todo) seguido de `F8` (Eliminar) o `F6` (Mover), ya que su acción se aplicará de forma recursiva en todos los subdirectorios anidados. 
 

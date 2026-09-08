@@ -48,7 +48,7 @@ A lo largo de esta guía y dentro de los cuadros de diálogo de preferencias de 
 
 ## 2. Guía clave de función macOS (`Fn`)
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > ### Cómo utilizar las teclas de función en teclados Mac 
 > 
 > De forma predeterminada, los teclados Apple (incluidos los teclados MacBook integrados, los Magic Keyboard y los Touch Bar Mac) asignan la fila física superior (`F1` a `F12`) a controles de hardware como el brillo de la pantalla, Mission Control, Spotlight, Dictado, reproducción multimedia y volumen del altavoz. 

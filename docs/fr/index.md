@@ -14,53 +14,53 @@ Bienvenue sur le portail de documentation officiel de **ATBCmder**, le gestionna
 Les gestionnaires de fichiers de bureau traditionnels à fenêtre unique comme macOS Finder obligent les utilisateurs à ouvrir un cycle sans fin de fenêtres qui se chevauchent, à perdre la trace des dossiers source et de destination et à risquer des chutes accidentelles dans de mauvais sous-dossiers. 
 
 ```
-Traditional File Browsing (Finder):
+Navigation traditionnelle (Finder):
 ┌────────────────────────┐      ┌────────────────────────┐
-│ Folder A (Where was I?)│ ──?  │ Folder B (Which one?)  │  → Clutter, lost focus,
-└────────────────────────┘      └────────────────────────┘    and accidental drops
+│ Dossier A (J'étais où?)│ ──?  │ Dossier B (Lequel ?)   │  → Fenêtres superposées, perte
+└────────────────────────┘      └────────────────────────┘    de focus et glissers erronés
 
-The ATBCmder Way (Orthodox Dual-Panel):
+La méthode ATBCmder (Double panneau orthodoxe):
 ┌───────────────────────────────┬───────────────────────────────┐
-│     ACTIVE PANEL (Source)     │    INACTIVE PANEL (Target)    │
-│  Files waiting for action     │  Predictable destination      │
-│  [ Copy / Move / Diff / Sync  ═════════════════════════════► ]│
+│     PANNEAU ACTIF (Source)    │    PANNEAU INACTIF (Cible)    │
+│  Fichiers prêts pour l'action │  Destination prévisible       │
+│  [ Copier / Déplacer / Synchro ════════════════════════════► ]│
 └───────────────────────────────┴───────────────────────────────┘
 ```
  
 
 ATBCmder résout ce problème grâce au **paradigme à double panneau source-cible** : 
 
-- **Orientation constante** : deux vues de répertoire indépendantes sont visibles côte à côte à tout moment. 
+- **Une vision claire et permanente** : deux vues de répertoire indépendantes sont visibles côte à côte à tout moment. 
 - **Opérations directionnelles prévisibles** : lorsque vous déclenchez la copie (`F5`) ou le déplacement (`F6`), ATBCmder transfère automatiquement les éléments du **Panneau actif** (où se trouve votre curseur) vers le **Panneau inactif** (la vue opposée). Pas de glisser, pas de devinettes, pas de recherche de fenêtres de destination cachées. 
 - **Vitesse du clavier** : gardez vos mains sur le clavier. Parcourez les répertoires, sélectionnez les fichiers avec des caractères génériques, inspectez les archives et exécutez des transformations par lots en quelques millisecondes. 
 - **Zero Finder Window Clutter** : Une seule fenêtre gère tout : volumes locaux, serveurs réseau (FTP, SFTP, SMB, WebDAV), contenus d'archives (`.zip`, `.7z`, `.tar`) et files d'attente de transfert en arrière-plan. 
 
 ---
 
-## Visite de l'interface visuelle et monuments
+## Visite guidée de l'interface et zones clés
 
-ATBCmder organise l'alimentation dans une présentation claire et intuitive conçue pour vous donner une connaissance instantanée de la situation des deux répertoires. 
+ATBCmder organise la puissance et la productivité dans une présentation claire et intuitive conçue pour vous donner une connaissance instantanée de la situation des deux répertoires. 
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│ [1] Menu Bar: File   Mark   Commands   Show   Configuration   Help                       │
+│ [1] Barre de menus : Fichier   Marquer   Commandes   Affichage   Options   Aide          │
 ├──────────────────────────────────────────────────────────────────────────────────────────┤
-│ [2] Main Toolbar:  [🔍 Search]  [⚡ Queue]  [⚙️ Preferences]  [📁 Drive Bar]             │
+│ [2] Barre d'outils : [🔍 Recherche]  [⚡ File d'attente]  [⚙️ Réglages]  [📁 Disques]     │
 ├─────────────────────────────────────────────┬────────────────────────────────────────────┤
-│ [3] Breadcrumbs: 🏠 > Users > brain > work  │ [3] Breadcrumbs: 💾 > Volumes > Backup     │
+│ [3] Fil d'Ariane : 🏠 > Users > brain > work│ [3] Fil d'Ariane : 💾 > Volumes > Backup   │
 ├─────────────────────────────────────────────┼────────────────────────────────────────────┤
-│ [4] Tab Bar: [Project Alpha ✕] [Docs] [+]   │ [4] Tab Bar: [2026 Archive ✕] [+]          │
+│ [4] Onglets : [Projet Alpha ✕] [Docs] [+]   │ [4] Onglets : [Archive 2026 ✕] [+]         │
 ├──────────────────────────────────────┬──────┼────────────────────────────────────────────┤
-│ [5] Left Panel (Active / Source)     │ [6]  │ [5] Right Panel (Inactive / Target)        │
-│ 📁 .. [Parent Directory]             │  M   │ 📁 .. [Parent Directory]                   │
+│ [5] Panneau gauche (Actif / Source)  │ [6]  │ [5] Panneau droit (Inactif / Cible)        │
+│ 📁 .. [Dossier parent]               │  M   │ 📁 .. [Dossier parent]                     │
 │ 📁 assets                            │  I   │ 📁 archive_2025                            │
-│ 📁 src                               │  D   │ 📁 release_builds                          │
-│ 📄 Cargo.toml             1.2 KB     │  D   │ 📄 CHANGELOG.md                 14.8 KB    │
-│ 📄 main.rs                8.4 KB     │  L   │ 📄 README.md                     4.1 KB    │
-│ 📄 config.json            2.1 KB     │  E   │ 📦 backup_bundle.zip           128.4 MB    │
+│ 📁 src                               │  L   │ 📁 release_builds                          │
+│ 📄 Cargo.toml             1.2 KB     │  I   │ 📄 CHANGELOG.md                 14.8 KB    │
+│ 📄 main.rs                8.4 KB     │  E   │ 📄 README.md                     4.1 KB    │
+│ 📄 config.json            2.1 KB     │  U   │ 📦 backup_bundle.zip           128.4 MB    │
 │                                      │      │                                            │
 ├──────────────────────────────────────┴──────┴────────────────────────────────────────────┤
-│ [7] Status Bar: 6 items | 2 selected (10.5 KB)   │ Drive: 142.6 GB free / 494.3 GB total │
+│ [7] Barre d'état : 6 éléments | 2 sélectionnés   │ Disque : 142.6 Go libres / 494.3 Go    │
 └──────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

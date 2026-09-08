@@ -567,19 +567,19 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 7. Alertas de seguridad y sistema
 
-> [!ADVERTENCIA] 
+> [!WARNING] 
 > **Vigilantes de modificaciones externas** 
 > Si una aplicación externa modifica o trunca un archivo abierto mientras trabaja en el Editor interno (`F4`), ATBCmder muestra una advertencia de conflicto de cambio externo antes de guardarlo. Elija siempre **Recargar** para inspeccionar la última versión del disco o **Guardar como** para conservar sus modificaciones locales en un archivo separado. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Seguridad de archivos binarios: modo texto versus modo hexadecimal** 
 > Abrir un archivo binario desconocido en modo texto y guardarlo nuevamente en el disco puede dañar permanentemente el archivo debido a los reemplazos de decodificación UTF-8 (`\ufffd`). Universal Lister de ATBCmder es de solo lectura de forma predeterminada, lo que garantiza que sus archivos binarios nunca se sobrescriban accidentalmente durante la inspección. 
 
-> [!PRECAUCIÓN] 
+> [!CAUTION] 
 > **Vista rápida del rendimiento en recursos compartidos de red remota** 
 > Al explorar servidores remotos de alta latencia (FTP, SFTP o WebDAV) con la Vista rápida (`Cmd+Q`) activa, la vista previa de archivos remotos masivos de video o archivos activará la transmisión remota. Si el ancho de banda de la red es limitado, desactive la Vista rápida (`Cmd+Q`) para explorar los árboles de directorios a toda velocidad. 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **Accesibilidad de teclas de función de macOS** 
 > En los MacBooks y Magic Keyboards de Apple modernos, las teclas de función (`F1`-`F12`) están asignadas de forma predeterminada a controles de hardware (brillo, reproducción multimedia). Para activar `F3` o `F4`, mantenga presionada la tecla **`Fn`** (por ejemplo, `Fn+F3`, `Fn+F4`). Alternativamente, habilite **"Usar teclas F1, F2, etc. como teclas de función estándar"** en macOS *Configuración del sistema ➔ Teclado ➔ Atajos de teclado ➔ Teclas de función*. 
 

@@ -147,7 +147,7 @@ A matriz de decisão a seguir mapeia objetivos comuns de gerenciamento de arquiv
 7. **Execute a Renomeação**: 
 - Pressione **`Enter`** ou clique em **Iniciar Renomear**. ATBCmder executa as renomeações atomicamente no disco e atualiza a visualização do painel. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Segurança de extensão**: 
 > Por padrão, a **Máscara de extensão** é definida como `[E]`, preservando a extensão do arquivo original sem modificações. Nunca exclua `[E]` a menos que você pretenda explicitamente remover extensões de seus arquivos.
 
@@ -242,7 +242,7 @@ A matriz de decisão a seguir mapeia objetivos comuns de gerenciamento de arquiv
 4. Ele substitui atomicamente o arquivo original no disco, garantindo que nenhuma corrupção ocorra se o sistema perder energia no meio da gravação. 
 5. A visualização do painel ativo é atualizada automaticamente para exibir tamanhos de bytes de membros e carimbos de data/hora atualizados.
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Proteção de reembalagem de arquivos grandes (`ArchiveRepackWarningMB`)**: 
 > A atualização de um único arquivo de texto de 2 KB dentro de um arquivo de 15 GB requer a reescrita de todo o arquivo compactado no disco. Para evitar picos inesperados de CPU e desgaste de SSD, o ATBCmder verifica o tamanho do arquivo. Se o arquivo exceder `ArchiveRepackWarningMB` (padrão: 500 MB), uma caixa de diálogo de aviso solicitará: *"Este arquivo tem 1,4 GB. A reembalagem reescreverá o arquivo inteiro. Deseja continuar?"* Você pode personalizar esse limite em **Configuração ➔ Opções ➔ Arquivos**. 
 

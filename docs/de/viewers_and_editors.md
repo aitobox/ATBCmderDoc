@@ -570,7 +570,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 7. Sicherheits- und Systemwarnungen
 
-> [!WARNUNG] 
+> [!WARNING] 
 > **Externe Änderungsbeobachter** 
 > Wenn eine geöffnete Datei von einer externen Anwendung geändert oder abgeschnitten wird, während Sie im internen Editor (`F4`) arbeiten, zeigt ATBCmder vor dem Speichern eine externe Änderungskonfliktwarnung an. Wählen Sie immer **Neu laden**, um die neueste Festplattenversion zu überprüfen, oder **Speichern unter**, um Ihre lokalen Änderungen in einer separaten Datei zu speichern. 
 
@@ -578,7 +578,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 > **Sicherheit von Binärdateien: Text- vs. Hex-Modus** 
 > Das Öffnen einer unbekannten Binärdatei im Textmodus und das Zurückspeichern auf der Festplatte kann die Datei aufgrund von UTF-8-Dekodierungsersetzungen (`\ufffd`) dauerhaft beschädigen. Der Universal Lister von ATBCmder ist standardmäßig schreibgeschützt und stellt so sicher, dass Ihre Binärdateien bei der Inspektion nie versehentlich überschrieben werden. 
 
-> [!ACHTUNG] 
+> [!CAUTION] 
 > **Schnellansicht der Leistung bei Remote-Netzwerkfreigaben** 
 > Beim Durchsuchen von Remote-Servern mit hoher Latenz (FTP, SFTP oder WebDAV) und aktivierter Schnellansicht (`Cmd+Q`) löst die Vorschau großer Remote-Video- oder Archivdateien ein Remote-Streaming aus. Wenn die Netzwerkbandbreite begrenzt ist, schalten Sie die Schnellansicht aus (`Cmd+Q`), um Verzeichnisbäume mit voller Geschwindigkeit zu durchsuchen. 
 

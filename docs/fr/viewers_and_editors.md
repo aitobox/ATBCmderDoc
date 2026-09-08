@@ -567,7 +567,7 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 
 ## 7. Alertes de sécurité et de système
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > **Observateurs de modifications externes** 
 > Si un fichier ouvert est modifié ou tronqué par une application externe pendant que vous travaillez dans l'éditeur interne (`F4`), ATBCmder affiche un avertissement de conflit de modification externe avant de l'enregistrer. Choisissez toujours **Recharger** pour inspecter la dernière version du disque ou **Enregistrer sous** pour conserver vos modifications locales dans un fichier séparé. 
 
@@ -575,11 +575,11 @@ Step 8: Check the "Execute" permission for Owner (chmod +x) and press Enter.
 > **Sécurité des fichiers binaires : mode texte ou mode hexadécimal** 
 > L'ouverture d'un fichier binaire inconnu en mode texte et sa sauvegarde sur le disque peuvent corrompre définitivement le fichier en raison des remplacements du décodage UTF-8 (`\ufffd`). Le Lister universel d'ATBCmder est en lecture seule par défaut, garantissant que vos fichiers binaires ne sont jamais écrasés accidentellement lors de l'inspection. 
 
-> [!ATTENTION] 
+> [!CAUTION] 
 > **Performances d'affichage rapide sur les partages réseau distants** 
 > Lorsque vous parcourez des serveurs distants à haute latence (FTP, SFTP ou WebDAV) avec Quick View (`Cmd+Q`) actif, la prévisualisation de fichiers vidéo ou d'archives distants volumineux déclenchera la diffusion à distance. Si la bande passante du réseau est limitée, désactivez Quick View (`Cmd+Q`) pour parcourir les arborescences de répertoires à pleine vitesse. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **Accessibilité des touches de fonction macOS** 
 > Sur les Apple MacBook et Magic Keyboards modernes, les touches de fonction (`F1`-`F12`) sont mappées par défaut aux commandes matérielles (luminosité, lecture multimédia). Pour déclencher `F3` ou `F4`, maintenez la touche **`Fn`** (par exemple `Fn+F3`, `Fn+F4`). Vous pouvez également activer **"Utiliser les touches F1, F2, etc. comme touches de fonction standard"** dans macOS *Paramètres système ➔ Clavier ➔ Raccourcis clavier clavier ➔ Touches de fonction*. 
 

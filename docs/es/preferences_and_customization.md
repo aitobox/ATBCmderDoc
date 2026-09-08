@@ -218,7 +218,7 @@ Siga este tutorial práctico para volver a vincular un comando existente o asign
 
 Si intenta asignar un acorde clave que ya ha sido reclamado por otro comando dentro del mismo contexto, el motor de detección de colisiones de ATBCmder interviene inmediatamente. Un cuadro de diálogo de alerta muestra la asignación en conflicto: 
 
-> [!ADVERTENCIA] 
+> [!WARNING] 
 > **Conflicto de acceso directo detectado** 
 > El acceso directo `Ctrl+M` ya está asignado a `cm_MultiRename` en el contexto `FilePanel`. 
 > ¿Quieres sobrescribirlo y reasignar `Ctrl+M` a `cm_MarkCurrentExtension`? 
@@ -284,7 +284,7 @@ Los administradores de archivos de doble panel a menudo tienen problemas con las
 - Escanea las entradas del directorio y expande la columna para que coincida con el nombre de archivo más amplio más el relleno de seguridad (+50 px). 
 - Garantiza que cero nombres de archivos se trunquen con puntos suspensivos (`...`), ideal para archivos multimedia y conjuntos de datos científicos. 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **Optimización de directorios grandes**: 
 > En directorios que contienen decenas de miles de elementos, medir cada cadena individual congelaría la interfaz. ATBCmder aplica automáticamente el muestreo por pasos inteligente (`_MAX_SAMPLE = 200`), evaluando un subconjunto de filas distribuidas uniformemente para calcular métricas de tipografía en menos de 2 milisegundos mientras ignora los marcadores del directorio principal (`..`). 
 
@@ -591,7 +591,7 @@ Para restaurar una copia de seguridad de la configuración en una nueva máquina
 
 ATBCmder descomprime de forma segura el archivo, verifica que todos los archivos extraídos sean configuraciones XML válidas, reemplaza los archivos de disco activos, recarga el singleton interno `Config()` y actualiza inmediatamente los paneles de archivos y los diseños de columnas, todo sin necesidad de reiniciar la aplicación. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Seguridad empresarial: protección anti-traversal** 
 > ATBCmder aplica una estricta validación transversal de ruta durante la importación de configuración (`zipfile` desinfección). Cualquier miembro del archivo que contenga separadores de ruta (`/`, `\`), recorridos de directorio (`..`) o extensiones de archivo que no sean XML se rechaza inmediatamente, protegiendo su sistema operativo contra manipulaciones maliciosas de archivos. 
 
@@ -654,15 +654,15 @@ ATBCmder incluye información sobre herramientas de metadatos flotantes enriquec
 
 ## 10. Alertas de seguridad y sistema
 
-> [!PRECAUCIÓN] 
+> [!CAUTION] 
 > **Verificación de sobrescritura de acceso directo** 
 > Sobrescribir un acceso directo principal en el contexto `Main` o `FilePanel` lo desvincula del comando original inmediatamente. Si accidentalmente desvincula comandos esenciales como `F5` (Copiar) o `Enter` (Abrir), use el botón **Restablecer valores predeterminados** en el Editor de teclas de acceso rápido para restaurar las combinaciones de teclas de fábrica. 
 
-> [!ADVERTENCIA] 
+> [!WARNING] 
 > **La importación de configuración reemplaza todas las configuraciones** 
 > Restaurar un paquete de configuración a través de `cm_ImportConfiguration` sobrescribe completamente sus archivos actuales `atbcmder.xml`, `favtabs.xml` y `hotlist.xml`. Exporte siempre una copia de seguridad de su configuración existente antes de importar un archivo externo. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Sandbox de aplicaciones macOS y acceso total al disco** 
 > Si ATBCmder se ejecuta en macOS App Sandbox, no puede leer archivos o directorios de configuración fuera de su contenedor sin el permiso explícito del usuario. Si encuentra errores de permiso al acceder a unidades externas, ejecute **`cm_GrantFilesystemAccess`** para completar el flujo de incorporación de Acceso total al disco de macOS. 
 

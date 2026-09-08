@@ -143,7 +143,7 @@ Durante la navigazione all'interno di un archivio:
 3. **Anteprima istantanea (`F3` / `Fn+F3`)**: evidenzia qualsiasi documento, immagine o file di origine all'interno dell'archivio e premi `F3`. ATBCmder estrae automaticamente il file di destinazione in una sandbox temporanea sicura e lo esegue il rendering all'interno dell'Universal Lister. 
 4. **Copia selettiva (`F5` / `Fn+F5`)**: invece di decomprimere un intero archivio multi-gigabyte solo per recuperare uno o due file, seleziona i membri specifici di cui hai bisogno e premi `F5`. ATBCmder decomprime solo gli elementi scelti direttamente nel pannello inattivo. 
 
-> [!NOTA] 
+> [!NOTE] 
 > Durante l'anteprima o la copia di singoli file da un archivio, ATBCmder trasmette solo i byte di file richiesti direttamente dal flusso del contenitore. Non spreca spazio su disco o tempo decomprimendo i file di pari livello non selezionati. 
 
 ---
@@ -189,7 +189,7 @@ ATBCmder rende la modifica dei file all'interno degli archivi altrettanto sempli
 6. Chiudere l'editor con `Cmd+W` (`⌘W`) o `Esc`. 
 7. `RepackWorker` di ATBCmder aggiorna automaticamente il membro interno, comprime la struttura aggiornata in un file temporaneo, sostituisce atomicamente l'archivio originale e aggiorna la visualizzazione del pannello. 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Protezione di sicurezza per archivio grande (`ArchiveRepackWarningMB`)** 
 > Il repacking di un archivio compresso richiede la decompressione e la ricodifica dei flussi del contenitore. La modifica di un file da 10 KB all'interno di un archivio video `.tar.gz` da 20 GB costringerebbe il computer a riscrivere tutti i 20 GB di dati. 
 > 
@@ -305,7 +305,7 @@ A differenza delle ingenue librerie SMB Python per lo spazio utente che soffrono
 - **Accelerazione kernel nativa di macOS (`mount_smbfs`)**: su macOS, `SambaMounter` di ATBCmder sfrutta il sottosistema `/sbin/mount_smbfs` nativo di Apple. Monta la condivisione remota direttamente nell'albero VFS di macOS (`/Volumes/` o una directory di montaggio isolata), sbloccando il throughput di lettura/scrittura SMB3 completo con accelerazione hardware. 
 - **Rilevamento montaggio esistente**: se macOS Finder o uno script di sistema ha già montato la condivisione SMB di destinazione, ATBCmder rileva automaticamente il punto di montaggio attivo dalla tabella `mount` del sistema operativo e vi accede immediatamente, evitando connessioni di rete ridondanti. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Requisito nome condivisione PMI** 
 > Non è possibile esplorare un server SMB a livello del semplice nome host. Un URI SMB **deve** includere la condivisione di destinazione o il nome di esportazione nel percorso: 
 > 
@@ -456,16 +456,16 @@ Hai bisogno di modificare uno script `nginx.conf` o Python direttamente su un se
 
 ## 10. Avvisi di sistema e sicurezza
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Mancata corrispondenza nella verifica della chiave host SSH** 
 > Se un server SFTP rigenera le sue chiavi host (ad esempio, dopo una reinstallazione del sistema operativo) o se viene tentata un'intercettazione di rete man-in-the-middle, ATBCmder rileva che la chiave del server non corrisponde all'impronta digitale registrata in `~/.ssh/known_hosts`. 
 > Non ignorare mai gli avvisi relativi alla chiave host su reti Wi-Fi pubbliche non attendibili senza verificare in modo indipendente l'impronta digitale della chiave pubblica del server con l'amministratore di sistema. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Spazio cache temporaneo per file remoti di grandi dimensioni** 
 > Durante la visualizzazione (`F3`) o la modifica (`F4`) di file multi-gigabyte archiviati su server VFS remoti, ATBCmder trasmette l'elemento di destinazione al volume `/tmp` locale. Assicurati che il contenitore APFS primario del tuo Mac disponga di spazio di archiviazione libero sufficiente prima di aprire enormi file video o database remoti. 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Smontaggio delle condivisioni di rete remote** 
 > Per le condivisioni SMB montate tramite macOS `mount_smbfs`, l'interruzione della connettività di rete senza disconnessione può lasciare handle di montaggio obsoleti in `/Volumes/`. Utilizzare sempre il menu dell'unità del pannello o l'azione di disconnessione prima di chiudere il laptop o cambiare rete Wi-Fi. 
 

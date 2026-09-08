@@ -472,7 +472,7 @@ O macOS é baseado no Darwin UNIX, fornecendo dois tipos de links distintos:
 3. ATBCmder cria uma entrada de diretório adicional no painel de destino compartilhando exatamente o mesmo inode. 
 4. As alterações gravadas em qualquer arquivo são refletidas instantaneamente em ambos. A exclusão de um arquivo não exclui dados até que a contagem de links chegue a zero. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Restrições de limite de link**: links físicos não podem cruzar limites de volume ou ser criados em compartilhamentos de rede (`vfs://`). Os links simbólicos devem ser usados ​​sempre que houver links entre unidades diferentes ou pontos de montagem remotos. 
 
 ---
@@ -638,15 +638,15 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 
 ## 9. Alertas de segurança e sistema
 
-> [!AVISO] 
+> [!WARNING] 
 > **Exclusão permanente em unidades externas e de rede**: 
 > Unidades externas formatadas com FAT32, exFAT ou NTFS (por meio de drivers de terceiros) e compartilhamentos de rede remotos (SMB/SFTP) geralmente não possuem um diretório do sistema macOS `.Lixeiraes`. Ao excluir itens desses volumes, o ATBCmder irá alertá-lo de que a Lixeira não está disponível. Confirmar esta ação **exclui permanentemente** os arquivos. Sempre verifique os cabeçalhos dos caminhos antes de confirmar. 
 
-> [!CUIDADO] 
+> [!CAUTION] 
 > **Substituindo arquivos em operações em lote**: 
 > Ao usar **Overwrite All** na caixa de diálogo de colisão, o ATBCmder suprime outros alertas de colisão para todo o trabalho. Se o seu diretório de origem contiver nomes de arquivos duplicados acidentalmente, os arquivos de destino existentes serão substituídos irreversivelmente. Considere usar **Renomear automaticamente** ou **Substituir mais antigo** para cópias em lote autônomas. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Limitações do link físico APFS**: 
 > Links físicos não podem abranger diferentes volumes APFS, partições de disco ou imagens de disco. Se você tentar criar um link físico entre dois pontos de montagem diferentes (como `/Users/...` a `/Volumes/ExternalDrive/...`), a operação falhará. Use **Links Simbólicos** (`cm_SymLink`) sempre que vincular diferentes volumes de armazenamento. 
 

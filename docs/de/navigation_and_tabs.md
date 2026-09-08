@@ -12,19 +12,19 @@ In ATBCmder fungiert jedes Panel als autonome Browsing-Engine, die mit einer eig
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [PFADZEILE]   🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [TAB STRIP]   [★ Source (Locked)] [Assets] [Build Output] [+]                   │
+│ [TAB-LEISTE]  [★ Quellcode (Gesperrt)] [Assets] [Build-Ausgabe] [+]             │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  Name                         Ext       Size      Date Modified      Attr       │
+│  Name                         Typ       Größe     Geändert           Rechte     │
 │  ▸ [..]                                           --:--              drwxr-xr-x │
-│  ▸ core                       <DIR>               Today, 14:22       drwxr-xr-x │
-│  ▸ ui                         <DIR>               Today, 15:05       drwxr-xr-x │
-│  ● main.py                    py        8.4 KB    Today, 15:10       -rw-r--r-- │
-│  ● config.xml                 xml       12.1 KB   Yesterday, 19:40   -rw-r--r-- │
+│  ▸ core                       <DIR>               Heute, 14:22       drwxr-xr-x │
+│  ▸ ui                         <DIR>               Heute, 15:05       drwxr-xr-x │
+│  ● main.py                    py        8.4 KB    Heute, 15:10       -rw-r--r-- │
+│  ● config.xml                 xml       12.1 KB   Gestern, 19:40     -rw-r--r-- │
 │                                                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [QUICK SEARCH]  🔍 Find: mai_   (Matches: main.py)                              │
+│ [SCHNELLSUCHE]  🔍 Suchen: mai_   (Treffer: main.py)                            │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -49,7 +49,7 @@ In ATBCmder fungiert jedes Panel als autonome Browsing-Engine, die mit einer eig
 
 ## 2. Grundlegende Verzeichnisnavigation: Pfade, Breadcrumbs und Verknüpfungen
 
-ATBCmder bietet Ihnen mehrere redundante, ergonomische Möglichkeiten, sich durch Ihr Dateisystem zu bewegen – unabhängig davon, ob Sie Mausgesten, Trackpad-Klicks oder reine Tastaturgeschwindigkeit bevorzugen.
+ATBCmder bietet Ihnen mehrere redundante, ergonomische Möglichkeiten, sich durch Ihr Dateisystem zu bewegen – unabhängig davon, ob Sie Mausgesten, Trackpad-Klicks oder reine Flüssiger Tastatur-Flow bevorzugen.
 
 ### Maus- und Trackpad-Navigation
 
@@ -446,7 +446,7 @@ Hier sind drei Rezepte aus der Praxis, die zeigen, wie Navigation, Tabs und Hotl
 > **Tabs bereichsübergreifend spiegeln**: 
 > Möchten Sie, dass Ihr rechter Bereich sofort alle geöffneten Registerkarten Ihres linken Bereichs widerspiegelt? Verwenden Sie das Menü **Tabs** → **Alle Tabs in den gegenüberliegenden Bereich kopieren** (`cm_CopyAllTabsToOpposite`), um Ihr Tab-Layout auf beiden Seiten zu reproduzieren. 
 
-> [!WARNUNG] 
+> [!WARNING] 
 > **Achtung bei Vorgängen in der flachen Ansicht (`Cmd+B`)**: 
 > In der flachen Zweigansicht werden Dateien aus mehreren unterschiedlichen Verzeichniszweigen nebeneinander in einer Liste angezeigt. Seien Sie vorsichtig, wenn Sie `Cmd+A` (Alle auswählen) gefolgt von `F8` (Löschen) oder `F6` (Verschieben) verwenden, da Ihre Aktion rekursiv auf alle verschachtelten Unterverzeichnisse angewendet wird. 
 

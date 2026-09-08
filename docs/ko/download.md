@@ -2,7 +2,7 @@
 
 ATBCMder에 관심을 가져주셔서 감사합니다! 우리는 귀하의 필요에 맞게 두 가지 다운로드 및 설치 방법을 제공합니다. 
 
-> [!중요] 
+> [!IMPORTANT] 
 > **시스템 및 아키텍처 요구 사항** 
 > 
 > - **운영 체제**: macOS 12.0(Monterey) 이상(macOS 13 Ventura, macOS 14 Sonoma 및 macOS 15 Sequoia 포함). 

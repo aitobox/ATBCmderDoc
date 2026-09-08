@@ -12,19 +12,19 @@ In ATBCmder, ogni pannello funziona come un motore di navigazione autonomo dotat
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [PERCORSO]    🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [TAB STRIP]   [★ Source (Locked)] [Assets] [Build Output] [+]                   │
+│ [SCHEDE]      [★ Sorgente (Bloccato)] [Risorse] [Output Build] [+]              │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  Name                         Ext       Size      Date Modified      Attr       │
+│  Nome                         Tipo      Dimens.   Modificato il      Permessi   │
 │  ▸ [..]                                           --:--              drwxr-xr-x │
-│  ▸ core                       <DIR>               Today, 14:22       drwxr-xr-x │
-│  ▸ ui                         <DIR>               Today, 15:05       drwxr-xr-x │
-│  ● main.py                    py        8.4 KB    Today, 15:10       -rw-r--r-- │
-│  ● config.xml                 xml       12.1 KB   Yesterday, 19:40   -rw-r--r-- │
+│  ▸ core                       <DIR>               Oggi, 14:22        drwxr-xr-x │
+│  ▸ ui                         <DIR>               Oggi, 15:05        drwxr-xr-x │
+│  ● main.py                    py        8.4 KB    Oggi, 15:10        -rw-r--r-- │
+│  ● config.xml                 xml       12.1 KB   Ieri, 19:40        -rw-r--r-- │
 │                                                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [QUICK SEARCH]  🔍 Find: mai_   (Matches: main.py)                              │
+│ [RICERCA RAPIDA]  🔍 Cerca: mai_   (Corrispondenza: main.py)                    │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -238,7 +238,7 @@ Su macOS, tutte le partizioni interne, le unità USB-C/Thunderbolt esterne, i DM
 - **Selettore unità pannello destro (`Alt+F2` / `⌥F2` / `cm_RightOpenDrives`)**: collegamento principale del Classic Commander che apre il menu di selezione dell'unità e del volume destinato al pannello destro. 
 - **Menu Unità pannello attivo (`Alt+D` / `⌥D` / `cm_Drives`)**: apre un menu popup che elenca tutti i volumi montati, il file system root `/`, la home utente `~` e gli endpoint di rete connessi per l'utente attualmente selezionato pannello. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Autorizzazioni unità esterne macOS**: quando si naviga su unità esterne in `/Volumes` per la prima volta, macOS App Sandbox potrebbe richiedere l'autorizzazione. ATBCmder visualizzerà una finestra di dialogo di autorizzazione per creare un segnalibro persistente con ambito di sicurezza per quell'unità. 
 
 ---
@@ -430,15 +430,15 @@ Ecco tre ricette del mondo reale che mostrano come la navigazione, le schede e l
 
 ## 10. Avvisi di sicurezza e di sistema
 
-> [!NOTA] 
+> [!NOTE] 
 > **Archiviazione esterna e condivisioni di rete**: 
 > Quando si accede a unità USB esterne o condivisioni di rete (`/Volumes/...`) all'interno di schede o segnalibri, assicurarsi che il volume sia attualmente montato. Se un'unità viene smontata all'avvio di ATBCmder, le schede che puntano ad essa visualizzeranno in modo sicuro un avviso "Posizione non disponibile" anziché arrestarsi in modo anomalo o rimuovere la scheda. 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **Mirroring delle schede sui pannelli**: 
 > Vuoi che il pannello di destra rispecchi immediatamente tutte le schede aperte del pannello di sinistra? Utilizza il menu **Schede** → **Copia tutte le schede nel pannello opposto** (`cm_CopyAllTabsToOpposite`) per replicare il layout delle schede su entrambi i lati. 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Attenzione con le operazioni in visualizzazione piatta (`Cmd+B`)**: 
 > Nella vista Ramo semplice, i file provenienti da più rami di directory distinti vengono visualizzati fianco a fianco in un unico elenco. Fai attenzione quando usi `Cmd+A` (Seleziona tutto) seguito da `F8` (Elimina) o `F6` (Sposta), poiché l'azione verrà applicata in modo ricorsivo a tutte le sottodirectory nidificate. 
 

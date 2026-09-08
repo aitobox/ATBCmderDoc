@@ -218,7 +218,7 @@ Segui questa pratica procedura dettagliata per associare nuovamente un comando e
 
 Se si tenta di assegnare un accordo di tonalità già richiesto da un altro comando nello stesso contesto, il motore di rilevamento delle collisioni di ATBCmder interviene immediatamente. Una finestra di dialogo di avviso visualizza l'assegnazione in conflitto: 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Rilevato conflitto di scorciatoie** 
 > La scorciatoia `Ctrl+M` è già assegnata a `cm_MultiRename` nel contesto `FilePanel`. 
 > Vuoi sovrascriverlo e riassegnare `Ctrl+M` a `cm_MarkCurrentExtension`? 
@@ -284,7 +284,7 @@ I file manager a doppio pannello spesso hanno problemi con le diverse lunghezze 
 - Esegue la scansione delle voci della directory ed espande la colonna in modo che corrisponda al nome file singolo più ampio più il riempimento di sicurezza (+50 px). 
 - Garantisce che zero nomi di file vengano troncati con i puntini di sospensione (`...`), ideale per archivi multimediali e set di dati scientifici. 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **Ottimizzazione di directory di grandi dimensioni**: 
 > Nelle directory contenenti decine di migliaia di elementi, la misurazione di ogni singola stringa bloccherebbe l'interfaccia. ATBCmder applica automaticamente il campionamento a passi intelligente (`_MAX_SAMPLE = 200`), valutando un sottoinsieme di righe distribuito uniformemente per calcolare le metriche tipografiche in meno di 2 millisecondi ignorando i marcatori della directory principale (`..`). 
 
@@ -592,7 +592,7 @@ Per ripristinare un backup della configurazione su una nuova macchina o ripristi
 
 ATBCmder decomprime in modo sicuro l'archivio, verifica che tutti i file estratti siano configurazioni XML valide, sostituisce i file del disco attivi, ricarica il singleton interno `Config()` e aggiorna immediatamente sia i pannelli dei file che i layout delle colonne, il tutto senza richiedere il riavvio dell'applicazione. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Sicurezza aziendale: protezione anti-trasversale** 
 > ATBCmder applica una rigorosa convalida del percorso trasversale durante l'importazione della configurazione (`zipfile` sanitizzazione). Qualsiasi membro dell'archivio contenente separatori di percorso (`/`, `\`), attraversamenti di directory (`..`) o estensioni di file non XML viene rifiutato immediatamente, proteggendo il sistema operativo da manomissioni dannose dell'archivio. 
 
@@ -655,15 +655,15 @@ ATBCmder include descrizioni comandi di metadati mobili che mostrano le dimensio
 
 ## 10. Avvisi di sicurezza e di sistema
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Verifica sovrascrittura scorciatoia** 
 > La sovrascrittura di una scorciatoia primaria nel contesto `Main` o `FilePanel` la separa immediatamente dal comando originale. Se svincoli accidentalmente comandi essenziali come `F5` (Copia) o `Enter` (Apri), utilizza il pulsante **Ripristina impostazioni predefinite** nell'editor dei tasti di scelta rapida per ripristinare le associazioni di tasti di fabbrica. 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **L'importazione della configurazione sostituisce tutte le impostazioni** 
 > Il ripristino di un pacchetto di configurazione tramite `cm_ImportConfiguration` sovrascrive completamente i file `atbcmder.xml`, `favtabs.xml` e `hotlist.xml` correnti. Esporta sempre un backup della configurazione esistente prima di importare un archivio esterno. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Sandbox dell'app macOS e accesso completo al disco** 
 > Se ATBCmder è in esecuzione nella sandbox dell'app macOS, non può leggere file di configurazione o directory all'esterno del suo contenitore senza l'autorizzazione esplicita dell'utente. Se riscontri errori di autorizzazione durante l'accesso alle unità esterne, esegui **`cm_GrantFilesystemAccess`** per completare il flusso di onboarding Accesso completo al disco macOS. 
 

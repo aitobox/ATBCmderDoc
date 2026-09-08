@@ -12,19 +12,19 @@ Dans ATBCmder, chaque panneau fonctionne comme un moteur de navigation autonome 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [FIL D'ARIANE] 🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src              │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [TAB STRIP]   [★ Source (Locked)] [Assets] [Build Output] [+]                   │
+│ [ONGLETS]     [★ Source (Verrouillé)] [Assets] [Sortie Build] [+]               │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  Name                         Ext       Size      Date Modified      Attr       │
+│  Nom                          Type      Taille    Modifié le         Droits     │
 │  ▸ [..]                                           --:--              drwxr-xr-x │
-│  ▸ core                       <DIR>               Today, 14:22       drwxr-xr-x │
-│  ▸ ui                         <DIR>               Today, 15:05       drwxr-xr-x │
-│  ● main.py                    py        8.4 KB    Today, 15:10       -rw-r--r-- │
-│  ● config.xml                 xml       12.1 KB   Yesterday, 19:40   -rw-r--r-- │
+│  ▸ core                       <DIR>               Aujourd'hui, 14:22 drwxr-xr-x │
+│  ▸ ui                         <DIR>               Aujourd'hui, 15:05 drwxr-xr-x │
+│  ● main.py                    py        8.4 KB    Aujourd'hui, 15:10 -rw-r--r-- │
+│  ● config.xml                 xml       12.1 KB   Hier, 19:40        -rw-r--r-- │
 │                                                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [QUICK SEARCH]  🔍 Find: mai_   (Matches: main.py)                              │
+│ [RECHERCHE RAPIDE]  🔍 Chercher: mai_   (Correspondance : main.py)              │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -435,11 +435,11 @@ Voici trois recettes concrètes montrant comment la navigation, les onglets et l
 > **Stockage externe et partages réseau** : 
 > Lorsque vous accédez à des lecteurs USB externes ou à des partages réseau (`/Volumes/...`) dans des onglets ou des signets, assurez-vous que le volume est actuellement monté. Si un lecteur est démonté au lancement d'ATBCmder, les onglets pointant vers lui afficheront en toute sécurité un avis « Emplacement indisponible » plutôt que de planter ou de supprimer l'onglet. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **Mise en miroir des onglets sur les panneaux** : 
 > Vous souhaitez que votre panneau de droite reflète immédiatement tous les onglets ouverts de votre panneau de gauche ? Utilisez Menu **Onglets** → **Copier tous les onglets dans le panneau opposé** (`cm_CopyAllTabsToOpposite`) pour reproduire la disposition de vos onglets des deux côtés. 
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > **Attention concernant les opérations en vue plate (`Cmd+B`)** : 
 > Dans Flat Branch View, les fichiers de plusieurs branches de répertoires distinctes apparaissent côte à côte dans une seule liste. Soyez prudent lorsque vous utilisez `Cmd+A` (Sélectionner tout) suivi de `F8` (Supprimer) ou `F6` (Déplacer), car votre action s'appliquera de manière récursive dans tous les sous-répertoires imbriqués. 
 

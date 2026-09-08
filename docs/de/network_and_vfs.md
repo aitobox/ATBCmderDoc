@@ -189,7 +189,7 @@ ATBCmder macht das Bearbeiten von Dateien in Archiven genauso mühelos wie das B
 6. Schließen Sie den Editor mit `Cmd+W` (`⌘W`) oder `Esc`. 
 7. `RepackWorker` von ATBCmder aktualisiert automatisch das interne Mitglied, komprimiert die aktualisierte Struktur in eine temporäre Datei, ersetzt atomar das Originalarchiv und aktualisiert die Panelansicht. 
 
-> [!ACHTUNG] 
+> [!CAUTION] 
 > **Großer Archivschutz (`ArchiveRepackWarningMB`)** 
 > Das Neupacken eines komprimierten Archivs erfordert das Dekomprimieren und Neukodieren von Container-Streams. Das Ändern einer 10-KB-Datei in einem 20-GB-Videoarchiv `.tar.gz` würde den Computer dazu zwingen, alle 20 GB an Daten neu zu schreiben. 
 > 
@@ -457,7 +457,7 @@ Müssen Sie ein `nginx.conf` oder ein Python-Skript direkt auf einem Remote-Serv
 
 ## 10. System- und Sicherheitswarnungen
 
-> [!WARNUNG] 
+> [!WARNING] 
 > **Nichtübereinstimmung des SSH-Hostschlüssels** 
 > Wenn ein SFTP-Server seine Hostschlüssel neu generiert (z. B. nach einer Neuinstallation des Betriebssystems) oder wenn versucht wird, ein Man-in-the-Middle-Netzwerk abzufangen, erkennt ATBCmder, dass der Serverschlüssel nicht mit dem in `~/.ssh/known_hosts` registrierten Fingerabdruck übereinstimmt. 
 > Umgehen Sie niemals Hostschlüsselwarnungen in nicht vertrauenswürdigen öffentlichen Wi-Fi-Netzwerken, ohne den Fingerabdruck des öffentlichen Schlüssels des Servers unabhängig von Ihrem Systemadministrator zu überprüfen. 
@@ -466,7 +466,7 @@ Müssen Sie ein `nginx.conf` oder ein Python-Skript direkt auf einem Remote-Serv
 > **Temporärer Cache-Speicherplatz für große Remote-Dateien** 
 > Beim Anzeigen (`F3`) oder Bearbeiten (`F4`) von Multi-Gigabyte-Dateien, die auf Remote-VFS-Servern gespeichert sind, streamt ATBCmder das Zielelement auf Ihr lokales `/tmp`-Volume. Stellen Sie sicher, dass der primäre APFS-Container Ihres Mac über ausreichend freien Speicherplatz verfügt, bevor Sie umfangreiche Remote-Video- oder Datenbankdateien öffnen. 
 
-> [!ACHTUNG] 
+> [!CAUTION] 
 > **Entfernte Netzwerkfreigaben aushängen** 
 > Bei SMB-Freigaben, die über macOS `mount_smbfs` gemountet wurden, kann das Beenden der Netzwerkverbindung ohne Trennen der Verbindung dazu führen, dass veraltete Mount-Handles in `/Volumes/` zurückbleiben. Verwenden Sie immer das Bedienfeld-Laufwerksmenü oder die Trennaktion, bevor Sie Ihren Laptop schließen oder das Wi-Fi-Netzwerk wechseln. 
 

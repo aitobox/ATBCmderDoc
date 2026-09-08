@@ -715,23 +715,23 @@ Si bien ATBCmder se destaca en los flujos de trabajo gráficos de doble panel, a
 
 ## 9. Alertas de seguridad, rendimiento y sistema
 
-> [!PRECAUCIÓN] 
+> [!CAUTION] 
 > **Irreversibilidad de sincronización de directorios asimétrica** 
 > Habilitar la opción **Asimétrica** en Sincronización de directorios (`Shift+F12`) hace que los archivos en el directorio de destino que no existen en el origen se **eliminen permanentemente**. Realice siempre una inspección visual de la tabla de vista previa de comparación antes de hacer clic en **Sincronizar**. 
 
-> [!ADVERTENCIA] 
+> [!WARNING] 
 > **Sustituciones de expresiones regulares con múltiples cambios de nombre** 
 > Al realizar sustituciones de expresiones regulares con referencias inversas (`$1`, `$2`), asegúrese de que los números de su grupo de captura coincidan con los paréntesis en su patrón. Pruebe su patrón con las filas de la tabla de vista previa en vivo antes de hacer clic en **Iniciar cambio de nombre**. Si aparecen nombres duplicados de destino, ATBCmder bloquea la ejecución para protegerlo de la pérdida de datos. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Limitaciones de destrucción de unidades de estado sólido (SSD)** 
 > La utilidad Secure Wipe (`cm_Wipe` / `Alt+Delete`) sobrescribe los datos del archivo con múltiples pases de bytes aleatorios y cero, seguidos de una llamada `fsync`. Sin embargo, las unidades de estado sólido (SSD) modernas utilizan algoritmos de nivelación de desgaste y sobreaprovisionamiento a nivel de controlador que pueden redirigir las escrituras a bloques flash alternativos. Para eliminar SSD de alta seguridad, combine la destrucción de archivos con el cifrado de disco completo de macOS FileVault. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Disponibilidad destacada en volúmenes de red y FAT** 
 > Fast Spotlight Search (`Ctrl+Shift+F`) se basa en índices de metadatos de macOS, que están activos de forma predeterminada en las unidades APFS internas. Es posible que Spotlight no indexe los montajes de red remotos (SMB, SFTP) y las unidades exFAT externas. Si una consulta de Spotlight no arroja resultados en una unidad externa, utilice **Escaneo profundo** (`Alt+F7`) o habilite el escaneo de directorio recursivo. 
 
-> [!CONSEJO] 
+> [!TIP] 
 > **Compatibilidad con teclas de función de Apple (`Fn`)** 
 > En Apple Magic Keyboards y MacBooks, las teclas de función (`F1`-`F12`) utilizan de forma predeterminada acciones de hardware (brillo, volumen). Para presionar `Shift+F12` o `Alt+F7`, mantenga presionada la tecla **`Fn`**: `Fn+Shift+F12`, `Fn+Alt+F7`. Alternativamente, habilite **"Usar teclas F1, F2, etc. como teclas de función estándar"** en macOS *Configuración del sistema ➔ Teclado ➔ Atajos de teclado ➔ Teclas de función*. 
 

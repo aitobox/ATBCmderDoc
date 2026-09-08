@@ -91,11 +91,11 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
    - Inspect the summary count at the bottom: *e.g., "Left to Right: 42 files (128.4 MB) | Right to Left: 0 files | Deletes: 3 files"*.
    - Click **Synchronize** to launch the non-blocking background transfer queue. Progress bars reflect active transfer volume and remaining item counts.
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Pericolo di perdita di dati del mirroring asimmetrico**: 
 > Quando è selezionata la modalità **Asimmetrica**, i file presenti sull'unità di destinazione che sono stati eliminati o rinominati nell'origine verranno **rimossi permanentemente** senza essere spostati nel Cestino di macOS. Rivedi sempre la tabella di confronto direzionale prima di fare clic su Sincronizza! 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **⚡ Suggerimento professionale: verifica a livello di contenuto per contenuti multimediali e codice**: 
 > Quando si esegue il backup di riprese video o repository Git, le dimensioni dei file potrebbero corrispondere mentre esistono sottili corruzioni interne dei byte. Controlla sempre **Confronta per contenuto** per gli archivi mission-critical. Sebbene il confronto byte per byte richieda più tempo su USB o Wi-Fi, garantisce l'integrità dei dati al 100%. 
 
@@ -147,11 +147,11 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 7. **Esegui la ridenominazione**: 
 - Premi **`Enter`** o fai clic su **Avvia rinomina**. ATBCmder esegue le ridenominazioni atomicamente sul disco e aggiorna la visualizzazione del pannello. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Sicurezza dell'estensione**: 
 > Per impostazione predefinita, la **Maschera estensione** è impostata su `[E]`, preservando l'estensione del file originale senza modifiche. Non eliminare mai `[E]` a meno che tu non intenda esplicitamente rimuovere le estensioni dai tuoi file.
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **⚡ Suggerimento professionale: flusso di lavoro dell'editor esterno (`⌘I`)**: 
 > Se disponi di un elenco irregolare di nomi di clienti o titoli di tracce, premi **`Cmd+I`** (`⌘I` / Modifica nell'editor esterno) all'interno dello strumento Rinomina multipla. ATBCmder esporta i nomi di destinazione nel tuo editor di testo predefinito. Modifica l'elenco in Vim, VS Code o TextEdit, salva il documento e ATBCmder importa immediatamente i nomi modificati nella griglia di anteprima. 
 
@@ -201,7 +201,7 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 7. **Riconnessione rapida dalla barra dei menu**: 
 - Tutti i profili salvati vengono visualizzati automaticamente in **Rete ➔ Connessioni salvate**. Basta fare clic su qualsiasi server salvato per montarlo immediatamente. 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **⚡ Suggerimento professionale: autenticazione basata su chiave SSH per SFTP**: 
 > Per l'accesso automatizzato al server cloud, configurare l'autenticazione con chiave pubblica. Nel tuo profilo di connessione SFTP, lascia vuoto il campo della password e punta alla tua chiave privata locale (ad esempio, `~/.ssh/id_ed25519`). Se la chiave è protetta da una passphrase, ATBCmder la richiede una volta e la salva in modo sicuro nel portachiavi macOS. 
 
@@ -242,7 +242,7 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 4. Sostituisce atomicamente il file di archivio originale sul disco, garantendo che non si verifichi alcun danneggiamento se il sistema perde potenza durante la scrittura. 
 5. La visualizzazione del pannello attivo si aggiorna automaticamente per visualizzare le dimensioni in byte e i timestamp aggiornati dei membri.
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Protezione reimballaggio archivio grande (`ArchiveRepackWarningMB`)**: 
 > L'aggiornamento di un singolo file di testo da 2 KB all'interno di un archivio da 15 GB richiede la riscrittura dell'intero file di archivio su disco. Per evitare picchi imprevisti della CPU e usura dell'SSD, ATBCmder controlla la dimensione dell'archivio. Se l'archivio supera `ArchiveRepackWarningMB` (impostazione predefinita: 500 MB), viene visualizzata una finestra di dialogo di avviso: *"Questo archivio è di 1,4 GB. La ricompressione riscriverà l'intero file. Vuoi continuare?"* È possibile personalizzare questa soglia in **Configurazione ➔ Opzioni ➔ Archivi**. 
 
@@ -294,7 +294,7 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 - Seleziona i file indesiderati e premi **`F8`** (`Fn+F8` / `cm_Delete`) per spostarli in modo sicuro nel Cestino di macOS. 
 - Se hai bisogno della cancellazione permanente e irrecuperabile dei dati (ad esempio, cancellazione dei dati riservati del cliente), premi **`Alt+Delete`** (`⌥⌫` / `cm_Wipe`) per attivare la distruzione sicura dei file a più passaggi. 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **⚡ Suggerimento professionale: identificare file duplicati identici tramite checksum**: 
 > Se sospetti che più file di grandi dimensioni siano duplicati esatti, selezionali e premi **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Scegli **SHA-256** e fai clic su Calcola. I digest di hash corrispondenti confermano i duplicati binari al 100%, consentendoti di eliminare le copie superflue in totale sicurezza. 
 

@@ -218,7 +218,7 @@ Suivez cette procédure pas à pas pratique pour relier une commande existante o
 
 Si vous tentez d'attribuer un accord clé déjà réclamé par une autre commande dans le même contexte, le moteur de détection de collision d'ATBCmder intervient immédiatement. Une boîte de dialogue d'alerte affiche l'affectation en conflit : 
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > **Conflit de raccourci détecté** 
 > Le raccourci `Ctrl+M` est déjà affecté à `cm_MultiRename` dans le contexte `FilePanel`. 
 > Voulez-vous l'écraser et réaffecter `Ctrl+M` à `cm_MarkCurrentExtension` ? 
@@ -284,7 +284,7 @@ Les gestionnaires de fichiers à double panneau ont souvent du mal à gérer la 
 - Analyse les entrées du répertoire et agrandit la colonne pour qu'elle corresponde au nom de fichier unique le plus large plus un remplissage de sécurité (+50 px). 
 - Garantit qu'aucun nom de fichier n'est tronqué avec des points de suspension (`...`), idéal pour les archives multimédias et les ensembles de données scientifiques. 
 
-> [!ASTUCE] 
+> [!TIP] 
 > **Optimisation de grands annuaires** : 
 > Dans des répertoires contenant des dizaines de milliers d'éléments, mesurer chaque chaîne individuelle figerait l'interface. ATBCmder applique automatiquement un échantillonnage par étapes intelligent (`_MAX_SAMPLE = 200`), évaluant un sous-ensemble de lignes uniformément réparti pour calculer les métriques typographiques en moins de 2 millisecondes tout en ignorant les marqueurs du répertoire parent (`..`). 
 
@@ -654,11 +654,11 @@ ATBCmder comprend de riches info-bulles de métadonnées flottantes qui affichen
 
 ## 10. Alertes de sécurité et de système
 
-> [!ATTENTION] 
+> [!CAUTION] 
 > **Vérification d'écrasement des raccourcis** 
 > L'écrasement d'un raccourci principal dans le contexte `Main` ou `FilePanel` le dissocie immédiatement de la commande d'origine. Si vous dissociez accidentellement des commandes essentielles telles que `F5` (Copier) ou `Enter` (Ouvrir), utilisez le bouton **Réinitialiser les paramètres par défaut** dans l'éditeur de raccourcis clavier pour restaurer les raccourcis clavier d'usine. 
 
-> [!AVERTISSEMENT] 
+> [!WARNING] 
 > **L'importation de configuration remplace tous les paramètres** 
 > La restauration d'un ensemble de configuration via `cm_ImportConfiguration` écrase complètement vos fichiers `atbcmder.xml`, `favtabs.xml` et `hotlist.xml` actuels. Exportez toujours une sauvegarde de votre configuration existante avant d'importer une archive externe. 
 

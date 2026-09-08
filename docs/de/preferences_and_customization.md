@@ -218,7 +218,7 @@ Befolgen Sie diese praktische Anleitung, um einen vorhandenen Befehl erneut zu b
 
 Wenn Sie versuchen, einen Schlüsselakkord zuzuweisen, der bereits von einem anderen Befehl im selben Kontext beansprucht wird, greift die Kollisionserkennungs-Engine von ATBCmder sofort ein. Ein Warndialog zeigt die widersprüchliche Zuweisung an: 
 
-> [!WARNUNG] 
+> [!WARNING] 
 > **Verknüpfungskonflikt erkannt** 
 > Die Verknüpfung `Ctrl+M` ist `cm_MultiRename` im Kontext `FilePanel` bereits zugewiesen. 
 > Möchten Sie es überschreiben und `Ctrl+M` zu `cm_MarkCurrentExtension` neu zuweisen? 
@@ -656,11 +656,11 @@ ATBCmder enthält umfangreiche Tooltips für schwebende Metadaten, die Dateiabme
 
 ## 10. Sicherheits- und Systemwarnungen
 
-> [!ACHTUNG] 
+> [!CAUTION] 
 > **Verifizierung des Überschreibens der Verknüpfung** 
 > Durch das Überschreiben einer primären Verknüpfung im Kontext `Main` oder `FilePanel` wird die Bindung sofort vom ursprünglichen Befehl gelöst. Wenn Sie versehentlich wichtige Befehle wie `F5` (Kopieren) oder `Enter` (Öffnen) entbinden, verwenden Sie die Schaltfläche **Auf Standardwerte zurücksetzen** im Hotkey-Editor, um die werkseitigen Tastenbelegungen wiederherzustellen. 
 
-> [!WARNUNG] 
+> [!WARNING] 
 > **Konfigurationsimport ersetzt alle Einstellungen** 
 > Durch das Wiederherstellen eines Konfigurationspakets über `cm_ImportConfiguration` werden Ihre aktuellen Dateien `atbcmder.xml`, `favtabs.xml` und `hotlist.xml` vollständig überschrieben. Exportieren Sie immer eine Sicherung Ihrer vorhandenen Konfiguration, bevor Sie ein externes Archiv importieren. 
 

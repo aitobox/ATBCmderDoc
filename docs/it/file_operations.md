@@ -472,7 +472,7 @@ macOS è basato su Darwin UNIX e fornisce due tipi di collegamento distinti:
 3. ATBCmder crea una voce di directory aggiuntiva nel pannello di destinazione condividendo esattamente lo stesso inode. 
 4. Le modifiche scritte su uno dei file si riflettono immediatamente su entrambi. L'eliminazione di un file non elimina i dati finché il conteggio dei collegamenti non raggiunge lo zero. 
 
-> [!NOTA] 
+> [!NOTE] 
 > **Restrizioni sui limiti dei collegamenti**: i collegamenti reali non possono oltrepassare i limiti del volume o essere creati su condivisioni di rete (`vfs://`). I collegamenti simbolici dovrebbero essere utilizzati ogni volta che si effettua il collegamento tra diverse unità o punti di montaggio remoti. 
 
 ---
@@ -638,19 +638,19 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 
 ## 9. Avvisi di sicurezza e sistema
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Eliminazione permanente su unità esterne e di rete**: 
 > Le unità esterne formattate con FAT32, exFAT o NTFS (tramite driver di terze parti) e le condivisioni di rete remote (SMB/SFTP) spesso non dispongono di una directory `.Cestinoes` del sistema macOS. Quando elimini elementi da questi volumi, ATBCmder ti avviserà che il Cestino non è disponibile. Confermando questa azione **elimina permanentemente** i file. Controlla sempre le intestazioni del percorso prima di confermare. 
 
-> [!ATTENZIONE] 
+> [!WARNING] 
 > **Sovrascrittura di file in operazioni batch**: 
 > Quando si utilizza **Sovrascrivi tutto** nella finestra di dialogo delle collisioni, ATBCmder sopprime ulteriori avvisi di collisione per l'intero lavoro. Se la directory di origine contiene nomi di file duplicati accidentalmente, i file di destinazione esistenti verranno sostituiti in modo irreversibile. Prendi in considerazione l'utilizzo della **Rinomina automatica** o **Sovrascrivi le versioni precedenti** per le copie batch automatiche. 
 
-> [!IMPORTANTE] 
+> [!IMPORTANT] 
 > **Limitazioni del collegamento reale APFS**: 
 > I collegamenti reali non possono estendersi su diversi volumi APFS, partizioni del disco o immagini del disco. Se tenti di creare un collegamento reale tra due diversi punti di montaggio (come da `/Users/...` a `/Volumes/ExternalDrive/...`), l'operazione fallirà. Utilizza i **Collegamenti simbolici** (`cm_SymLink`) ogni volta che ti colleghi a diversi volumi di archiviazione. 
 
-> [!CONSIGLIO] 
+> [!TIP] 
 > **Ottimizzazione delle velocità di trasferimento NVMe**: 
 > ATBCmder è ottimizzato per la moderna memoria unificata Apple Silicon e gli SSD PCIe 4.0/5.0 NVMe. Per impostazione predefinita, le operazioni sui file utilizzano un **buffer di copia da 1 MB** ad alte prestazioni (`operations.copy_buffer_size`). È possibile ottimizzare questo buffer in **Preferenze** → **Operazioni sui file** per adattarlo alle interfacce di rete 10GbE di fascia alta o agli array di archiviazione specializzati. 
 
