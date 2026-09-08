@@ -152,7 +152,7 @@ else
     echo -e "${RED}Error:${NC} zensical command not found."
     echo -e "Please activate the conda environment or install zensical:"
     echo -e "  ${CYAN}conda activate ATBCmderDoc${NC}"
-    echo -e "  or: ${CYAN}pip install zensical${NC}"
+    echo -e "  or: ${CYAN}pip install zensical markdown-gfm-admonition${NC}"
     exit 1
 fi
 

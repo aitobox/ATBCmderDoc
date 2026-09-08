@@ -662,6 +662,50 @@ kbd {
   border-left-color: #f59e0b;
 }
 
+.md-typeset .admonition.important {
+  border-left-color: #8b5cf6;
+  background-color: rgba(139, 92, 246, 0.08);
+}
+
+.md-typeset .important > .admonition-title:before,
+.md-typeset .important > summary:before {
+  background-color: #8b5cf6;
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+  mask-image: var(--md-admonition-icon--warning);
+}
+
+.md-typeset .admonition.caution {
+  border-left-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.md-typeset .caution > .admonition-title:before,
+.md-typeset .caution > summary:before {
+  background-color: #ef4444;
+  -webkit-mask-image: var(--md-admonition-icon--danger);
+  mask-image: var(--md-admonition-icon--danger);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.important {
+  background-color: rgba(139, 92, 246, 0.12);
+  border-left-color: #a78bfa;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .important > .admonition-title:before,
+[data-md-color-scheme="slate"] .md-typeset .important > summary:before {
+  background-color: #a78bfa;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.caution {
+  background-color: rgba(239, 68, 68, 0.12);
+  border-left-color: #f87171;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .caution > .admonition-title:before,
+[data-md-color-scheme="slate"] .md-typeset .caution > summary:before {
+  background-color: #f87171;
+}
+
 /* --------------------------------------------------------------------------
    12. Code Blocks & Containers
    -------------------------------------------------------------------------- */
