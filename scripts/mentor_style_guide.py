@@ -73,6 +73,10 @@ TERMINOLOGY_REPLACEMENTS: Dict[str, Dict[str, str]] = {
         "organiza la energía": "organiza toda su potencia y productividad",
         "Sin adivinanzas al arrastrar y soltar": "Adiós a la pesadilla de arrastrar y soltar",
         "Operaciones direccionales: siempre Origen ➔ Destino": "La regla de oro: siempre de Origen a Destino",
+        "Visor universal": "Visor universal (Universal Lister)",
+        "Herramienta de cambio de nombre múltiple": "Herramienta de renombrado masivo (Multi-Rename)",
+        "Sincronización de directorios": "Sincronización de carpetas (Sync Dirs)",
+        "Comparación de archivos": "Comparación de archivos (File Diff)",
     },
     "pt": {
         "Orientação constante": "Orientação clara e constante",
@@ -82,6 +86,10 @@ TERMINOLOGY_REPLACEMENTS: Dict[str, Dict[str, str]] = {
         "organiza a energia": "organiza toda a sua potência e produtividade",
         "Sem adivinhações ao arrastar e soltar": "Chega de sofrer com arrastar e soltar",
         "Operações direcionais: sempre Origem ➔ Destino": "A regra de ouro: sempre da Origem para o Destino",
+        "Visualizador universal": "Visualizador universal (Universal Lister)",
+        "Ferramenta de renomeação múltipla": "Ferramenta de renomeação em lote (Multi-Rename)",
+        "Sincronização de diretórios": "Sincronização de pastas (Sync Dirs)",
+        "Comparação de arquivos": "Comparação de arquivos (File Diff)",
     },
     "ko": {
         "일정한 방향성": "항상 명확한 작업 시야",
@@ -90,10 +98,12 @@ TERMINOLOGY_REPLACEMENTS: Dict[str, Dict[str, str]] = {
         "더블 커맨더": "Double Commander",
         "노턴 커맨더": "Norton Commander",
         "시각적 인터페이스 둘러보기 및 주요 요소": "인터페이스 둘러보기 및 핵심 구역 안내",
-        "드래그 앤 드롭으로 헤맬 필요が 없습니다": "조마조마한 마우스 드래그 앤 드롭은 이제 그만",
         "드래그 앤 드롭으로 헤맬 필요가 없습니다": "조마조마한 마우스 드래그 앤 드롭은 이제 그만",
-        "방향性 있는 작업: 항상 원본 ➔ 대상": "작업의 황금률: 항상 '원본'에서 '대상'으로",
         "방향성 있는 작업: 항상 원본 ➔ 대상": "작업의 황금률: 항상 '원본'에서 '대상'으로",
+        "유니버설 리스터": "유니버설 뷰어 (Universal Lister)",
+        "다중 이름 바꾸기 도구": "일괄 이름 변경 도구 (Multi-Rename)",
+        "디렉터리 동기화": "디렉터리 동기화 (Sync Dirs)",
+        "파일 비교": "파일 차이 비교 (File Diff)",
     },
     "ru": {
         "Постоянная ориентация": "Всегда ясный и контролируемый обзор",
@@ -101,6 +111,10 @@ TERMINOLOGY_REPLACEMENTS: Dict[str, Dict[str, str]] = {
         "Визуальный обзор интерфейса и ориентиры": "Обзор интерфейса и ключевых зон",
         "Никаких догадок при перетаскивании": "Забудьте о нервном перетаскивании мышью",
         "Направленные операции: всегда Источник ➔ Приемник": "Золотое правило: всегда от Источника к Приемнику",
+        "Универсальный просмотрщик": "Универсальный просмотрщик (Universal Lister)",
+        "Инструмент группового переименования": "Пакетное переименование (Multi-Rename)",
+        "Синхронизация каталогов": "Синхронизация каталогов (Sync Dirs)",
+        "Сравнение файлов": "Сравнение файлов (File Diff)",
     },
     "it": {
         "Orientamento costante": "Orientamento visivo immediato e costante",
@@ -110,6 +124,10 @@ TERMINOLOGY_REPLACEMENTS: Dict[str, Dict[str, str]] = {
         "organizza l'alimentazione": "organizza la massima potenza e produttività",
         "Nessun dubbio con il drag-and-drop": "Basta trascinare i file con l'ansia di sbagliare",
         "Operazioni direzionali: sempre Sorgente ➔ Destinazione": "La regola d'oro: sempre dalla Sorgente alla Destinazione",
+        "Visualizzatore universale": "Visualizzatore universale (Universal Lister)",
+        "Strumento di ridenominazione multipla": "Strumento di ridenominazione in blocco (Multi-Rename)",
+        "Sincronizzazione directory": "Sincronizzazione cartelle (Sync Dirs)",
+        "Confronto file": "Confronto file (File Diff)",
     }
 }
 

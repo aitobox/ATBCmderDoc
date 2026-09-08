@@ -12,21 +12,21 @@ ATBCmder unterteilt Elektrowerkzeuge und Automatisierung in sechs spezialisierte
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                DUAL FILE PANELS                                        │
-│     Left Panel (Source / Directory A)        Right Panel (Target / Directory B)        │
+│                                DUALES DATEIPANEL                                       │
+│          Linkes Panel (Quelle / Ordner A)              Rechtes Panel (Ziel / Ordner B) │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                          │                                             │
-│  [1] Batch Multi-Rename (Ctrl+M)         │  [2] Side-by-Side File Diff (Meta+Shift+F12)│
-│      Tokens, RegEx, Counters, Preview    │      Line highlights, Hunk sync, In-place   │
+│  [1] Mehrfach-Umbenennung (Ctrl+M)       │  [2] Datei-Differenzvergleich (⌘⇧F12)       │
+│      Platzhalter, RegEx, Zähler, Vorschau│      Zeilen-Highlight, Hunk-Sync, Speichern │
 │                                          │                                             │
-│  [3] Directory Sync (Shift+F12)          │  [4] Advanced Search (Alt+F7)               │
-│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox│
+│  [3] Ordner-Synchronisierung (Shift+F12) │  [4] Erweiterte Suche (Alt+F7)              │
+│      Inhalt/Datum, Asymmetrischer Spiegel│      Spotlight / Tiefenscan ➔ An Liste senden│
 │                                          │                                             │
-│  [5] Semantic Command Bar (/)            │  [6] File Utilities & Security              │
-│      Spotlight queries, AI intent, NLP   │      Split/Link, Checksum, Wipe (Alt+Del)   │
+│  [5] Semantische Befehlszeile (/)        │  [6] Datei-Dienstprogramme & Sicherheit     │
+│      Spotlight-Filter, KI-Befehle, NLP   │      Teilen/Zusammenfügen, Hash, Schreddern │
 │                                          │                                             │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [Feed to Listbox] ➔ Populates virtual panel tab for bulk operations across directories│
+│  [An Liste senden] ➔ Führt Suchergebnisse in einem virtuellen Tab für Stapelaktionen zusammen│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

@@ -12,24 +12,18 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE PANEL (Source)                              INACTIVE PANEL (Target)            │
+│  활성 패널 (원본 Source)                            비활성 패널 (대상 Target)          │
 │  /Users/brain/Downloads                             /Volumes/ExternalSSD/Projects      │
 ├──────────────────────────────────────────────┬───┬─────────────────────────────────────┤
-│  Name                         Size   Date    │   │  Name                        Size   │
-│  ▸ [..]                              --:--   │   │  ▸ [..]                             │
-│  ✔ database_dump.sql        1.8 GB   14:10   │ C │  ▸ client_portal            <DIR>   │
-│  ✔ schema_migration.sql      42 KB   14:12   │ O │  ▸ microservices            <DIR>   │
-│  ● notes.txt                  4 KB   09:30   │ P │  ● .env.production          2.1 KB  │
-│                                              │ Y │                                     │
-│  [2 files selected: 1.8 GB]                  │ ➔ │  [Destination ready for ingest]     │
+│  이름                         크기   수정일  │ 복│  이름                         크기  │
+│  ▸ [..]                              --:--   │ 사│  ▸ [..]                             │
+│  ✔ database_dump.sql        1.8 GB   14:10   │ ➔ │  ▸ client_portal                    │
+│  ✔ schema_migration.sql      42 KB   14:12   │   │  ▸ microservices                    │
+│  ● notes.txt                  4 KB   09:30   │ 대│  ● .env.production                  │
+│                                              │ 상│                                     │
+│  [2개 파일 선택됨: 1.8 GB]                   │   │  [대상 디렉터리 준비 완료]          │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
-│                         ▼ Press F5 (Copy) or F6 (Move) ▼                               │
-│  ┌──────────────────────────────────────────────────────────────────────────────────┐  │
-│  │ Copy file(s)                                                                     │  │
-│  │ Copy selected 2 files?                                                           │  │
-│  │ To: [/Volumes/ExternalSSD/Projects                                          ] […]│  │
-│  │ [Options ▼]        [Add To Queue #1 ▾]       [Cancel]               [Start (⏎)]  │  │
-│  └──────────────────────────────────────────────────────────────────────────────────┘  │
+│  [F5] 복사     [F6] 이동     [Shift+F5] 동일 위치 복제     [F8 / ⌘⌫] 휴지통으로 이동   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

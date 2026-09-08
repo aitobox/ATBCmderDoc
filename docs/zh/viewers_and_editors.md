@@ -16,18 +16,18 @@ ATBCmder 将文件的检查与修改划分为两大清晰模式：
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │  激活面板 (文件列表浏览)                            对侧闲置面板 (快速预览 Quick View) │
-│  /Users/brain/Projects/atbcmder/src                 [快速预览视图: main.py]            │
+│  /Users/brain/Projects/atbcmder/src                 [正在快速预览: main.py]            │
 ├──────────────────────────────────────────────┬───┬─────────────────────────────────────┤
 │  名称                         大小   修改时间│   │ 0001: """                           │
-│  ▸ [..]                              --:--   │ 快│ 0002: 主程序核心入口脚本            │
-│  ✔ main.py                    8.4 KB 15:10   │ 速│ 0003: """                           │
-│  ● config.xml                12.1 KB 14:20   │ 预│ 0004: import sys                    │
-│  ● hero_banner.png          248.5 KB 09:12   │ 览│ 0005: from PySide6.QtWidgets import │
-│  ● sample_invoice.pdf       512.0 KB 11:30   │   │ 0006:     QApplication              │
-│  ● release_theme.mp3          4.2 MB 16:45   │ ➔ │                                     │
-│  ● firmware_dump.bin          1.0 MB 10:00   │   │ [UTF-8] [Python] [LF] [第 1/140 行] │
+│  ▸ [..]                              --:--   │ Q │ 0002: 主程序入口入口文件            │
+│  ✔ main.py                    8.4 KB 15:10   │ U │ 0003: """                           │
+│  ● config.xml                12.1 KB 14:20   │ I │ 0004: import sys                    │
+│  ● hero_banner.png          248.5 KB 09:12   │ C │ 0005: from PySide6.QtWidgets import │
+│  ● sample_invoice.pdf       512.0 KB 11:30   │ K │ 0006:     QApplication              │
+│  ● release_theme.mp3          4.2 MB 16:45   │   │                                     │
+│  ● firmware_dump.bin          1.0 MB 10:00   │ V │ [UTF-8] [Python] [LF] [行 1/140]    │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
-│   [Cmd+Q / Ctrl+Q] 切换快速预览   [F3] 全能查看器 Lister   [F4] 内置双模编辑器         │
+│   [Cmd+Q / Ctrl+Q] 开启/关闭快速预览   [F3] 全能查看器   [F4] 内置轻量代码/图像编辑器  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

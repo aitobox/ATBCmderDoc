@@ -12,24 +12,18 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE PANEL (Source)                              INACTIVE PANEL (Target)            │
+│  АКТИВНАЯ ПАНЕЛЬ (Источник)                         НЕАКТИВНАЯ ПАНЕЛЬ (Приемник)       │
 │  /Users/brain/Downloads                             /Volumes/ExternalSSD/Projects      │
 ├──────────────────────────────────────────────┬───┬─────────────────────────────────────┤
-│  Name                         Size   Date    │   │  Name                        Size   │
-│  ▸ [..]                              --:--   │   │  ▸ [..]                             │
-│  ✔ database_dump.sql        1.8 GB   14:10   │ C │  ▸ client_portal            <DIR>   │
-│  ✔ schema_migration.sql      42 KB   14:12   │ O │  ▸ microservices            <DIR>   │
-│  ● notes.txt                  4 KB   09:30   │ P │  ● .env.production          2.1 KB  │
-│                                              │ Y │                                     │
-│  [2 files selected: 1.8 GB]                  │ ➔ │  [Destination ready for ingest]     │
+│  Имя                          Размер Дата    │   │  Имя                          Размер│
+│  ▸ [..]                              --:--   │ К │  ▸ [..]                             │
+│  ✔ database_dump.sql        1.8 GB   14:10   │ О │  ▸ client_portal                    │
+│  ✔ schema_migration.sql      42 KB   14:12   │ П │  ▸ microservices                    │
+│  ● notes.txt                  4 KB   09:30   │ ➔ │  ● .env.production                  │
+│                                              │   │                                     │
+│  [Выбрано 2 файла: 1.8 GB]                   │   │  [Целевая папка готова к записи]    │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
-│                         ▼ Press F5 (Copy) or F6 (Move) ▼                               │
-│  ┌──────────────────────────────────────────────────────────────────────────────────┐  │
-│  │ Copy file(s)                                                                     │  │
-│  │ Copy selected 2 files?                                                           │  │
-│  │ To: [/Volumes/ExternalSSD/Projects                                          ] […]│  │
-│  │ [Options ▼]        [Add To Queue #1 ▾]       [Cancel]               [Start (⏎)]  │  │
-│  └──────────────────────────────────────────────────────────────────────────────────┘  │
+│  [F5] Копировать   [F6] Переместить   [Shift+F5] Дублировать   [F8 / ⌘⌫] В Корзину     │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

@@ -12,24 +12,18 @@ Les gestionnaires de fichiers orthodoxes utilisent un modèle directionnel **Sou
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE PANEL (Source)                              INACTIVE PANEL (Target)            │
+│  PANNEAU ACTIF (Source)                             PANNEAU INACTIF (Cible)            │
 │  /Users/brain/Downloads                             /Volumes/ExternalSSD/Projects      │
 ├──────────────────────────────────────────────┬───┬─────────────────────────────────────┤
-│  Name                         Size   Date    │   │  Name                        Size   │
-│  ▸ [..]                              --:--   │   │  ▸ [..]                             │
-│  ✔ database_dump.sql        1.8 GB   14:10   │ C │  ▸ client_portal            <DIR>   │
-│  ✔ schema_migration.sql      42 KB   14:12   │ O │  ▸ microservices            <DIR>   │
-│  ● notes.txt                  4 KB   09:30   │ P │  ● .env.production          2.1 KB  │
-│                                              │ Y │                                     │
-│  [2 files selected: 1.8 GB]                  │ ➔ │  [Destination ready for ingest]     │
+│  Nom                          Taille Date    │   │  Nom                          Taille│
+│  ▸ [..]                              --:--   │ C │  ▸ [..]                             │
+│  ✔ database_dump.sql        1.8 GB   14:10   │ O │  ▸ client_portal                    │
+│  ✔ schema_migration.sql      42 KB   14:12   │ P │  ▸ microservices                    │
+│  ● notes.txt                  4 KB   09:30   │ ➔ │  ● .env.production                  │
+│                                              │   │                                     │
+│  [2 fichiers sélectionnés : 1.8 GB]          │   │  [Dossier cible prêt à recevoir]    │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
-│                         ▼ Press F5 (Copy) or F6 (Move) ▼                               │
-│  ┌──────────────────────────────────────────────────────────────────────────────────┐  │
-│  │ Copy file(s)                                                                     │  │
-│  │ Copy selected 2 files?                                                           │  │
-│  │ To: [/Volumes/ExternalSSD/Projects                                          ] […]│  │
-│  │ [Options ▼]        [Add To Queue #1 ▾]       [Cancel]               [Start (⏎)]  │  │
-│  └──────────────────────────────────────────────────────────────────────────────────┘  │
+│  [F5] Copier   [F6] Déplacer   [Shift+F5] Dupliquer   [F8 / ⌘⌫] Mettre à la corbeille  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

@@ -12,21 +12,21 @@ ATBCmder divide gli utensili elettrici e l'automazione in sei domini funzionali 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                DUAL FILE PANELS                                        │
-│     Left Panel (Source / Directory A)        Right Panel (Target / Directory B)        │
+│                                DOPPIO PANNELLO FILE                                    │
+│          Pannello sinistro (Sorgente / A)              Pannello destro (Destinazione / B)│
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                          │                                             │
-│  [1] Batch Multi-Rename (Ctrl+M)         │  [2] Side-by-Side File Diff (Meta+Shift+F12)│
-│      Tokens, RegEx, Counters, Preview    │      Line highlights, Hunk sync, In-place   │
+│  [1] Ridenominazione in blocco (Ctrl+M)  │  [2] Confronto file affiancato (⌘⇧F12)      │
+│      Token, RegEx, Contatori, Anteprima  │      Evidenziazione righe, Sync, Salvataggio│
 │                                          │                                             │
-│  [3] Directory Sync (Shift+F12)          │  [4] Advanced Search (Alt+F7)               │
-│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox│
+│  [3] Sincronizzazione cartelle (Shift+F12)│ [4] Ricerca avanzata (Alt+F7)              │
+│      Confronto contenuto/data, Mirror    │      Spotlight / Scansione ➔ Invia a elenco │
 │                                          │                                             │
-│  [5] Semantic Command Bar (/)            │  [6] File Utilities & Security              │
-│      Spotlight queries, AI intent, NLP   │      Split/Link, Checksum, Wipe (Alt+Del)   │
+│  [5] Barra comandi semantici (/)         │  [6] Utilità file e sicurezza               │
+│      Query Spotlight, Comandi IA         │      Divisione/Unione, Checksum, Triturazione│
 │                                          │                                             │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [Feed to Listbox] ➔ Populates virtual panel tab for bulk operations across directories│
+│  [Invia a elenco] ➔ Raccoglie i risultati in una scheda virtuale per azioni in blocco  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,7 +36,7 @@ ATBCmder divide gli utensili elettrici e l'automazione in sei domini funzionali 
 | :--- | :--- | :--- | :--- | :--- | 
 | **Rinominazione multipla batch** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Apre la finestra di dialogo dello strumento Rinomina multipla batch. | 
 | **Differenze file affiancati** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Confronta due file selezionati affiancati (`Shift+F3` per `cm_CompareContents`). | 
-| **Sincronizzazione directory** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Confronta e sincronizza le directory a doppio pannello. | 
+| **Sincronizzazione cartelle (Sync Dirs)** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Confronta e sincronizza le directory a doppio pannello. | 
 | **Ricerca avanzata dei file** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | Apre la finestra di dialogo di ricerca multi-filtro. | 
 | **Ricerca rapida Spotlight** | `Ctrl+Shift+F` / `⌃⇧F` | `Ctrl+Shift+F` | *(Menu Comandi)* | Avvia la ricerca istantanea dei metadati Spotlight. | 
 | **Inserimento di comandi semantici**| `/` | `/` | `cm_VisSemanticCommand` | Attiva la barra dei comandi incorporata in linguaggio naturale. | 
@@ -49,9 +49,9 @@ ATBCmder divide gli utensili elettrici e l'automazione in sei domini funzionali 
 
 ---
 
-## 2. Strumento di ridenominazione multipla batch (`Ctrl+M` / `⌃M` / `cm_MultiRename`)
+## 2. Strumento di ridenominazione in blocco (Multi-Rename) batch (`Ctrl+M` / `⌃M` / `cm_MultiRename`)
 
-Rinominare manualmente decine o centinaia di file è noioso e soggetto a errori. Lo **Strumento di ridenominazione multipla batch** (`cm_MultiRename`, mappato su `fmultirename.pas` nell'architettura classica) consente di definire modelli di denominazione flessibili, applicare contatori di sequenze dinamiche, eseguire conversioni di maiuscole e minuscole ed eseguire potenti regole di ricerca e sostituzione di espressioni regolari (RegEx) con garanzie di sicurezza visiva in tempo reale. 
+Rinominare manualmente decine o centinaia di file è noioso e soggetto a errori. Lo **Strumento di ridenominazione in blocco (Multi-Rename) batch** (`cm_MultiRename`, mappato su `fmultirename.pas` nell'architettura classica) consente di definire modelli di denominazione flessibili, applicare contatori di sequenze dinamiche, eseguire conversioni di maiuscole e minuscole ed eseguire potenti regole di ricerca e sostituzione di espressioni regolari (RegEx) con garanzie di sicurezza visiva in tempo reale. 
 
 ![Batch Multi-Rename Tool](images/multi_rename_dialog.png) 
 *Figura 5.1: Lo strumento di ridenominazione multipla batch con righe di anteprima in tempo reale, maschere di token, parametri del contatore numerico e rilevamento di duplicati.*
@@ -59,7 +59,7 @@ Rinominare manualmente decine o centinaia di file è noioso e soggetto a errori.
 ### 2.1 Il flusso di lavoro di ridenominazione multipla
 
 1. **Seleziona file**: nel pannello dei file attivi, seleziona i file o le directory che desideri rinominare utilizzando `Space`, `Insert` o la selezione con caratteri jolly (`+`). Se non è selezionato nulla, viene utilizzato l'elemento sotto il cursore. 
-2. **Strumento di avvio**: premi **`Ctrl+M`** (`⌃M`) o scegli **File ➔ Strumento di ridenominazione multipla...** dalla barra dei menu. 
+2. **Strumento di avvio**: premi **`Ctrl+M`** (`⌃M`) o scegli **File ➔ Strumento di ridenominazione in blocco (Multi-Rename)...** dalla barra dei menu. 
 3. **Configura modelli e regole**: inserisci le maschere del nome file/estensione, imposta le opzioni del contatore o definisci le stringhe di ricerca e sostituzione. 
 4. **Ispeziona l'anteprima dal vivo**: la tabella a 3 colonne (`Old Name`, `New Name`, `Directory`) si aggiorna istantaneamente a ogni pressione di un tasto. 
 5. **Esegui**: fare clic su **Avvia Rinomina** (o premere `Enter`). ATBCmder esegue le rinominazioni in modo atomico e aggiorna i pannelli dei file. 
@@ -751,9 +751,9 @@ Sebbene ATBCmder eccelle nei flussi di lavoro grafici a doppio pannello, l'acces
 | **Differenza file** | Copia pezzo da destra a sinistra | `Alt+Left` / `⌥←` / `Alt+O` | `Ctrl+Alt+Left` | — | 
 | **Differenza file** | Salva modifiche nell'editor selezionato | `Cmd+S` / `⌘S` | `Ctrl+S` | — | 
 | **Differenza file** | Ricalcola le differenze | `F5` / `Fn+F5` | `Ctrl+R` | — | 
-| **Sincronizzazione directory**| Apri Sincronizza directory | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
-| **Sincronizzazione directory**| Avvia confronto directory | `Alt+C` / `⌥C` | `Enter` | — | 
-| **Sincronizzazione directory**| Annulla confronto/sincronizzazione | Fare clic su `Stop` | `Esc` | — | 
+| **Sincronizzazione cartelle (Sync Dirs)**| Apri Sincronizza directory | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
+| **Sincronizzazione cartelle (Sync Dirs)**| Avvia confronto directory | `Alt+C` / `⌥C` | `Enter` | — | 
+| **Sincronizzazione cartelle (Sync Dirs)**| Annulla confronto/sincronizzazione | Fare clic su `Stop` | `Esc` | — | 
 | **Ricerca file** | Apri la finestra di dialogo Ricerca avanzata | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 
 | **Ricerca file** | Visualizza risultato in Lister universale | `F3` / `Fn+F3` | `F3` | `cm_View` | 
 | **Ricerca file** | Modifica risultato nell'editor di testo | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 

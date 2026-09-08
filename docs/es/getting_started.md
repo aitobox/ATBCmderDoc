@@ -47,7 +47,7 @@ Cuando inicia una operación en ATBCmder, la aplicación entiende automáticamen
 
 - **Copiar (`F5` / `Cmd+C` ➔ `Cmd+V`)**: Copia los archivos seleccionados del panel Activo (Fuente) directamente al directorio que se muestra actualmente en el panel Inactivo (Destino). 
 - **Mover (`F6` / `Cmd+C` ➔ `Opt+Cmd+V`)**: Mueve archivos seleccionados del panel Activo al panel Inactivo sin necesidad de escribir o buscar el directorio de destino. 
-- **Sincronización de directorios (`Shift+F12` / `cm_SyncDirs`)**: Compara el directorio en el panel activo con el directorio en el panel inactivo. 
+- **Sincronización de carpetas (Sync Dirs) (`Shift+F12` / `cm_SyncDirs`)**: Compara el directorio en el panel activo con el directorio en el panel inactivo. 
 
 > [!TIP] 
 > **No se requieren conjeturas de arrastrar y soltar**: no es necesario arrastrar elementos a través de los límites de la pantalla. Simplemente seleccione lo que desea en el panel activo, presione `F5` (Copiar) o `F6` (Mover), presione `Enter` para confirmar el mensaje y ATBCmder transferirá los archivos inmediatamente.
@@ -95,7 +95,7 @@ Totalmente integrado en la barra de menú superior de macOS. Todas las operacion
 
 - **Archivo**: Nueva pestaña, Cerrar pestaña, Propiedades del archivo, Permisos de Sandbox, Salir. 
 - **Marcar**: Seleccionar grupo (`Num+`), Deseleccionar grupo (`Num-`), Invertir selección (`Num*`), Seleccionar todo (`Cmd+A`). 
-- **Comandos**: Lista activa de directorios (`Ctrl+D`), Unidades izquierda/derecha (`Alt+F1/F2`), Búsqueda (`Alt+F7`), Sincronización de directorios (`Shift+F12`), Paneles de intercambio (`Ctrl+U`), Terminal (`Ctrl+J`). 
+- **Comandos**: Lista activa de directorios (`Ctrl+D`), Unidades izquierda/derecha (`Alt+F1/F2`), Búsqueda (`Alt+F7`), Sincronización de carpetas (Sync Dirs) (`Shift+F12`), Paneles de intercambio (`Ctrl+U`), Terminal (`Ctrl+J`). 
 - **Mostrar**: alterna el modo de vista (breve, columnas completas, miniaturas, árbol, vista de rama plana), visibilidad de la barra de herramientas, diseño de paneles horizontales. 
 - **Configuración**: Opciones/Preferencias (`Cmd+,`), Guardar Posición (`cm_ConfigSavePos`), Guardar Pestañas.
 

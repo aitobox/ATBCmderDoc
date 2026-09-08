@@ -12,21 +12,21 @@ ATBCmder divide ferramentas elétricas e automação em seis domínios funcionai
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                DUAL FILE PANELS                                        │
-│     Left Panel (Source / Directory A)        Right Panel (Target / Directory B)        │
+│                                PAINEL DUPLO DE ARQUIVOS                                │
+│          Painel esquerdo (Origem / Pasta A)            Painel direito (Destino / Pasta B)│
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                          │                                             │
-│  [1] Batch Multi-Rename (Ctrl+M)         │  [2] Side-by-Side File Diff (Meta+Shift+F12)│
-│      Tokens, RegEx, Counters, Preview    │      Line highlights, Hunk sync, In-place   │
+│  [1] Renomeação em lote (Ctrl+M)         │  [2] Comparador Diff lado a lado (⌘⇧F12)    │
+│      Máscaras, RegEx, Contadores, Prévia │      Destaque de linhas, Mesclagem, Edição  │
 │                                          │                                             │
-│  [3] Directory Sync (Shift+F12)          │  [4] Advanced Search (Alt+F7)               │
-│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox│
+│  [3] Sincronização de pastas (Shift+F12) │  [4] Busca avançada de arquivos (Alt+F7)    │
+│      Conteúdo/Data, Espelhamento         │      Spotlight / Varredura ➔ Enviar à lista │
 │                                          │                                             │
-│  [5] Semantic Command Bar (/)            │  [6] File Utilities & Security              │
-│      Spotlight queries, AI intent, NLP   │      Split/Link, Checksum, Wipe (Alt+Del)   │
+│  [5] Barra de comandos semânticos (/)    │  [6] Utilitários de arquivo e segurança     │
+│      Consultas Spotlight, Intenções IA   │      Dividir/Unir, Checksum, Trituração     │
 │                                          │                                             │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [Feed to Listbox] ➔ Populates virtual panel tab for bulk operations across directories│
+│  [Enviar à lista] ➔ Carrega resultados em uma aba virtual para ações em lote           │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -294,7 +294,7 @@ Se qualquer arquivo selecionado para comparação contiver bytes nulos ou assina
 Manter as árvores de diretórios sincronizadas em discos locais, unidades de backup e armazenamento em rede é a base de sistemas confiáveis. O **Sincronizador de diretórios** do ATBCmder (`SyncDirsDialog`, mapeado para `fsyncdirsdlg.pas`) compara hierarquias de pastas inteiras, determina operações direcionais exatas e visualiza cada cópia e exclusão de arquivo antes de tocar em seu armazenamento. 
 
 ![Directory Synchronization](images/folder_synchronization.png) 
-*Figura 5.2: Caixa de diálogo Sincronização de diretórios exibindo status de comparação recursiva, setas de sincronização direcionais e controles de espelho assimétricos.*
+*Figura 5.2: Caixa de diálogo Sincronização de pastas (Sync Dirs) exibindo status de comparação recursiva, setas de sincronização direcionais e controles de espelho assimétricos.*
 
 ### 4.1 Iniciando a sincronização de diretório
 

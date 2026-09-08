@@ -15,19 +15,19 @@ ATBCmder는 파일 검사 및 수정을 두 가지 별개의 패러다임으로 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE PANEL (File Navigation)                     INACTIVE PANEL (Quick View)        │
-│  /Users/brain/Projects/atbcmder/src                 [Quick View Preview: main.py]      │
+│  활성 패널 (파일 목록 탐색)                         비활성 패널 (Quick View 빠른 미리보기)│
+│  /Users/brain/Projects/atbcmder/src                 [미리보기 표시 중: main.py]        │
 ├──────────────────────────────────────────────┬───┬─────────────────────────────────────┤
-│  Name                         Size   Date    │   │ 0001: """                           │
-│  ▸ [..]                              --:--   │ Q │ 0002: Main application entry point  │
+│  이름                         크기   수정일  │   │ 0001: """                           │
+│  ▸ [..]                              --:--   │ Q │ 0002: 메인 프로그램 진입점          │
 │  ✔ main.py                    8.4 KB 15:10   │ U │ 0003: """                           │
 │  ● config.xml                12.1 KB 14:20   │ I │ 0004: import sys                    │
 │  ● hero_banner.png          248.5 KB 09:12   │ C │ 0005: from PySide6.QtWidgets import │
 │  ● sample_invoice.pdf       512.0 KB 11:30   │ K │ 0006:     QApplication              │
 │  ● release_theme.mp3          4.2 MB 16:45   │   │                                     │
-│  ● firmware_dump.bin          1.0 MB 10:00   │ V │ [UTF-8] [Python] [LF] [Line 1/140]  │
+│  ● firmware_dump.bin          1.0 MB 10:00   │ V │ [UTF-8] [Python] [LF] [줄 1/140]    │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
-│   [Cmd+Q / Ctrl+Q] Toggle Quick View    [F3] Universal Lister    [F4] Internal Editor  │
+│   [Cmd+Q / Ctrl+Q] Quick View 토글     [F3] Lister 뷰어     [F4] 내장 코드 에디터      │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,7 +36,7 @@ ATBCmder는 파일 검사 및 수정을 두 가지 별개의 패러다임으로 
 | 액션 | macOS 바로가기 | 클래식 커맨더 키 | 명령 ID | 설명 | 
 | :--- | :--- | :--- | :--- | :--- | 
 | **훑어보기 전환** | `Cmd+Q` / `⌘Q` | `Ctrl+Q` | `cm_QuickView` | 반대 패널에서 실시간 미리보기를 엽니다. | 
-| **유니버설 리스터** | `F3` / `Fn+F3` | `F3` | `cm_View` | Universal Lister에서 선택한 항목을 엽니다. | 
+| **유니버설 뷰어 (Universal Lister)** | `F3` / `Fn+F3` | `F3` | `cm_View` | Universal Lister에서 선택한 항목을 엽니다. | 
 | **내부 편집자** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 텍스트의 경우 코드 편집기를 열고 그래픽의 경우 이미지 편집기를 엽니다. | 
 | **새 파일 생성 및 편집** | `Shift+F4` / `⇧F4` | `Shift+F4` | `cm_EditNew` | 이름을 묻는 메시지를 표시하고 편집기를 엽니다. | 
 | **스위치 패널 초점** | `Tab` / `⇥` | `Tab` | `cm_SwitchPanel` | 초점을 전환합니다. 훑어보기를 대칭으로 뒤집습니다. | 
@@ -138,7 +138,7 @@ Quick View 컨테이너는 파일 확장자, MIME 서명 및 원시 바이트 �
 
 ## 3. 범용 리스터(`F3` / `Fn+F3` / `cm_View`)
 
-훑어보기는 이중 패널 창 내에서 빠른 미리 보기에 최적화되어 있지만 **유니버설 리스터**(`F3` / `Fn+F3` / `cm_View`)는 전용 최상위 비모달 창(`UniversalViewerDialog`)을 엽니다. 여러 Universal Lister 창을 동시에 열 수 있으므로 문서를 나란히 비교하거나 보조 디스플레이에서 로그 스트리밍을 유지할 수 있습니다.
+훑어보기는 이중 패널 창 내에서 빠른 미리 보기에 최적화되어 있지만 **유니버설 뷰어 (Universal Lister)**(`F3` / `Fn+F3` / `cm_View`)는 전용 최상위 비모달 창(`UniversalViewerDialog`)을 엽니다. 여러 Universal Lister 창을 동시에 열 수 있으므로 문서를 나란히 비교하거나 보조 디스플레이에서 로그 스트리밍을 유지할 수 있습니다.
 
 ### 최고의 빠른 작업 도구 모음
 

@@ -1,4 +1,4 @@
-# Capitolo 4: Visualizzatore universale ed editor integrati
+# Capitolo 4: Visualizzatore universale (Universal Lister) ed editor integrati
 
 Nella gestione ortodossa dei file a doppio pannello, la velocità dipende in larga misura dalla velocità di ispezione. Il lancio di ambienti di sviluppo integrati (IDE) pesanti o di applicazioni desktop gonfie solo per verificare un checksum, controllare una riga di configurazione, ritagliare uno screenshot o esaminare un PDF crea attrito cognitivo e confusione di finestre. 
 
@@ -15,19 +15,19 @@ ATBCmder divide l'ispezione e la modifica dei file in due paradigmi distinti:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE PANEL (File Navigation)                     INACTIVE PANEL (Quick View)        │
-│  /Users/brain/Projects/atbcmder/src                 [Quick View Preview: main.py]      │
+│  PANNELLO ATTIVO (Navigazione file)                 PANNELLO INATTIVO (Quick View)     │
+│  /Users/brain/Projects/atbcmder/src                 [Anteprima rapida: main.py]        │
 ├──────────────────────────────────────────────┬───┬─────────────────────────────────────┤
-│  Name                         Size   Date    │   │ 0001: """                           │
-│  ▸ [..]                              --:--   │ Q │ 0002: Main application entry point  │
+│  Nome                         Dim.   Data    │   │ 0001: """                           │
+│  ▸ [..]                              --:--   │ Q │ 0002: Punto di ingresso principale  │
 │  ✔ main.py                    8.4 KB 15:10   │ U │ 0003: """                           │
 │  ● config.xml                12.1 KB 14:20   │ I │ 0004: import sys                    │
 │  ● hero_banner.png          248.5 KB 09:12   │ C │ 0005: from PySide6.QtWidgets import │
 │  ● sample_invoice.pdf       512.0 KB 11:30   │ K │ 0006:     QApplication              │
 │  ● release_theme.mp3          4.2 MB 16:45   │   │                                     │
-│  ● firmware_dump.bin          1.0 MB 10:00   │ V │ [UTF-8] [Python] [LF] [Line 1/140]  │
+│  ● firmware_dump.bin          1.0 MB 10:00   │ V │ [UTF-8] [Python] [LF] [Riga 1/140]  │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
-│   [Cmd+Q / Ctrl+Q] Toggle Quick View    [F3] Universal Lister    [F4] Internal Editor  │
+│   [Cmd+Q / Ctrl+Q] Attiva Quick View    [F3] Visualizzatore Lister    [F4] Editor      │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

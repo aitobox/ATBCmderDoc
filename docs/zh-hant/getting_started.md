@@ -97,7 +97,7 @@ ATBCmder 基於 Qt6 與 PySide6 構建，深度遵循 Apple 人機互動指南 (
 
 - **檔案 (File)**：新建分頁、關閉分頁、屬性詳情、沙盒檔案系統授權、退出。
 - **選擇 (Mark)**：萬用字元選擇組 (`Num+`)、取消選擇組 (`Num-`)、反選 (`Num*`)、全選 (`Cmd+A`)。
-- **命令 (Commands)**：常用目錄書籤 (`Ctrl+D`)、左/右驅動器列表 (`Alt+F1/F2`)、全域性搜尋 (`Alt+F7`)、資料夾同步 (`Shift+F12`)、左右互換 (`Ctrl+U`)、調出終端機 (`Ctrl+J`)。
+- **命令 (Commands)**：常用目錄書籤 (`Ctrl+D`)、左/右驅動器列表 (`Alt+F1/F2`)、全域性搜尋 (`Alt+F7`)、資料夾同步 (`Shift+F12`)、左右互換 (`Ctrl+U`)、調出終端機機 (`Ctrl+J`)。
 - **顯示 (Show)**：多檢視模式切換（簡要、詳細、縮圖、樹狀、平鋪扁平檢視）、工具欄顯隱、水平雙面板切換。
 - **配置 (Configuration)**：偏好設定 (`Cmd+,`)、儲存當前視窗位置與比例 (`cm_ConfigSavePos`)、儲存分頁組。
 
@@ -116,7 +116,7 @@ ATBCmder 基於 Qt6 與 PySide6 構建，深度遵循 Apple 人機互動指南 (
   - **在新分頁中開啟**：保留當前面板，並在新標籤中展開該上級目錄。
   - **在Finder中顯示**：呼叫系統 Finder 揭示定位該資料夾 (`open -R`)。
   - **複製路徑**：一鍵將該節點的絕對 UNIX 路徑複製至剪貼簿。
-  - **在終端機中開啟**：直接在系統終端機中以此目錄作為工作路徑啟動 (`open -a Terminal`)。
+  - **在終端機機中開啟**：直接在系統終端機機中以此目錄作為工作路徑啟動 (`open -a Terminal`)。
 - **位址列直接編輯模式 (`BreadcrumbLineEdit`)**：雙擊麵包屑欄右側的空白區域，路徑條將瞬間轉換為文字輸入框。您可直接貼上或輸入任意路徑（例如 `/var/log`、`~/Library` 或 `vfs://` 壓縮包虛擬路徑），按回車立即直達，按 `Esc` 退出。
 
 ### [4] 資料夾分頁欄
@@ -247,7 +247,7 @@ ATBCmder 內建了 **安全範圍書籤 (Security-Scoped Bookmarks)** 技術，�
 1. 點選選單欄 **配置** → **開啟配置目錄** (`cm_OpenConfigDirectory`)。
 2. 找到並刪除 `sandbox_bookmarks.plist` 檔案。
 3. 重啟 ATBCmder 即可。
-4. 若需重置 macOS 系統級的 TCC 許可權記錄，在終端機執行：
+4. 若需重置 macOS 系統級的 TCC 許可權記錄，在終端機機執行：
    ```bash
    tccutil reset SystemPolicyAllFiles com.aitobox.atbcmder
    ```

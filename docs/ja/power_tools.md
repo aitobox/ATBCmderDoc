@@ -12,21 +12,21 @@ ATBCmder は、電動ツールとオートメーションを、デュアルパ�
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                DUAL FILE PANELS                                        │
-│     Left Panel (Source / Directory A)        Right Panel (Target / Directory B)        │
+│                                デュアルファイル操作パネル                              │
+│          左パネル (操作元 / フォルダ A)                右パネル (操作先 / フォルダ B)  │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                          │                                             │
-│  [1] Batch Multi-Rename (Ctrl+M)         │  [2] Side-by-Side File Diff (Meta+Shift+F12)│
-│      Tokens, RegEx, Counters, Preview    │      Line highlights, Hunk sync, In-place   │
+│  [1] 一括リネーム (Ctrl+M)               │  [2] 2画面ファイル差分比較 (Meta+Shift+F12) │
+│      トークン、正規表現、連番、安全プレビュー│  行ハイライト、差分同期、直接編集・保存 │
 │                                          │                                             │
-│  [3] Directory Sync (Shift+F12)          │  [4] Advanced Search (Alt+F7)               │
-│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox│
+│  [3] ディレクトリ同期 (Shift+F12)        │  [4] 高度なファイル検索 (Alt+F7)            │
+│      内容/更新日時比較、非対称ミラー同期 │      Spotlight / 詳細検索 ➔ リストへ転送    │
 │                                          │                                             │
-│  [5] Semantic Command Bar (/)            │  [6] File Utilities & Security              │
-│      Spotlight queries, AI intent, NLP   │      Split/Link, Checksum, Wipe (Alt+Del)   │
+│  [5] セマンティック検索バー (/)          │  [6] セキュリティ＆ファイルユーティリティ   │
+│      Spotlight 連携、自然言語 AI クエリ  │      ファイル分割・結合、ハッシュ、完全消去 │
 │                                          │                                             │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [Feed to Listbox] ➔ Populates virtual panel tab for bulk operations across directories│
+│  [リストボックスへ転送] ➔ 検索結果を仮想タブに集約し、フォルダ横断で一括処理を実行     │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

@@ -12,21 +12,21 @@ ATBCmder divise les outils électriques et l'automatisation en six domaines fonc
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                DUAL FILE PANELS                                        │
-│     Left Panel (Source / Directory A)        Right Panel (Target / Directory B)        │
+│                                DOUBLE PANNEAU DE FICHIERS                              │
+│          Panneau gauche (Source / Dossier A)           Panneau droit (Cible / Dossier B)│
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                          │                                             │
-│  [1] Batch Multi-Rename (Ctrl+M)         │  [2] Side-by-Side File Diff (Meta+Shift+F12)│
-│      Tokens, RegEx, Counters, Preview    │      Line highlights, Hunk sync, In-place   │
+│  [1] Renommage par lot (Ctrl+M)          │  [2] Différence de fichiers côte à côte (⌘⇧F12)│
+│      Balises, RegEx, Compteurs, Aperçu   │      Surlignage, Fusion de blocs, Édition   │
 │                                          │                                             │
-│  [3] Directory Sync (Shift+F12)          │  [4] Advanced Search (Alt+F7)               │
-│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox│
+│  [3] Synchronisation de dossiers (⇧F12)  │  [4] Recherche avancée (Alt+F7)             │
+│      Comparaison contenu/date, Miroir    │      Spotlight / Analyse ➔ Vers la liste    │
 │                                          │                                             │
-│  [5] Semantic Command Bar (/)            │  [6] File Utilities & Security              │
-│      Spotlight queries, AI intent, NLP   │      Split/Link, Checksum, Wipe (Alt+Del)   │
+│  [5] Barre de commande sémantique (/)    │  [6] Utilitaires et sécurité                │
+│      Requêtes Spotlight, Requêtes IA     │      Découpage/Fusion, Hachage, Broyage     │
 │                                          │                                             │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [Feed to Listbox] ➔ Populates virtual panel tab for bulk operations across directories│
+│  [Vers la liste] ➔ Charge les résultats dans un onglet virtuel pour traitement par lot │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

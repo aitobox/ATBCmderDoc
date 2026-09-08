@@ -15,19 +15,19 @@ ATBCmder は、ファイルの検査と変更を 2 つの異なるパラダイ�
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  ACTIVE PANEL (File Navigation)                     INACTIVE PANEL (Quick View)        │
-│  /Users/brain/Projects/atbcmder/src                 [Quick View Preview: main.py]      │
+│  アクティブパネル (ファイル一覧)                    非アクティブパネル (Quick View)    │
+│  /Users/brain/Projects/atbcmder/src                 [プレビュー表示中: main.py]        │
 ├──────────────────────────────────────────────┬───┬─────────────────────────────────────┤
-│  Name                         Size   Date    │   │ 0001: """                           │
-│  ▸ [..]                              --:--   │ Q │ 0002: Main application entry point  │
+│  名前                         サイズ 更新日時│   │ 0001: """                           │
+│  ▸ [..]                              --:--   │ Q │ 0002: メインエントリポイント        │
 │  ✔ main.py                    8.4 KB 15:10   │ U │ 0003: """                           │
 │  ● config.xml                12.1 KB 14:20   │ I │ 0004: import sys                    │
 │  ● hero_banner.png          248.5 KB 09:12   │ C │ 0005: from PySide6.QtWidgets import │
 │  ● sample_invoice.pdf       512.0 KB 11:30   │ K │ 0006:     QApplication              │
 │  ● release_theme.mp3          4.2 MB 16:45   │   │                                     │
-│  ● firmware_dump.bin          1.0 MB 10:00   │ V │ [UTF-8] [Python] [LF] [Line 1/140]  │
+│  ● firmware_dump.bin          1.0 MB 10:00   │ V │ [UTF-8] [Python] [LF] [行 1/140]    │
 ├──────────────────────────────────────────────┴───┴─────────────────────────────────────┤
-│   [Cmd+Q / Ctrl+Q] Toggle Quick View    [F3] Universal Lister    [F4] Internal Editor  │
+│   [Cmd+Q / Ctrl+Q] Quick View切替      [F3] Lister表示      [F4] 内蔵エディタ起動      │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

@@ -12,21 +12,21 @@ ATBCmder divide las herramientas eléctricas y la automatización en seis domini
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                DUAL FILE PANELS                                        │
-│     Left Panel (Source / Directory A)        Right Panel (Target / Directory B)        │
+│                                PANEL DUAL DE ARCHIVOS                                  │
+│          Panel izquierdo (Origen / Carpeta A)          Panel derecho (Destino / Carpeta B)│
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │                                          │                                             │
-│  [1] Batch Multi-Rename (Ctrl+M)         │  [2] Side-by-Side File Diff (Meta+Shift+F12)│
-│      Tokens, RegEx, Counters, Preview    │      Line highlights, Hunk sync, In-place   │
+│  [1] Renombrado masivo (Ctrl+M)          │  [2] Comparador de diferencias Diff (⌘⇧F12) │
+│      Comodines, RegEx, Contadores, Vista │      Resaltado de líneas, Fusión, Edición   │
 │                                          │                                             │
-│  [3] Directory Sync (Shift+F12)          │  [4] Advanced Search (Alt+F7)               │
-│      Content/Date compare, Asym mirror   │      Spotlight / Deep scan ➔ Feed to Listbox│
+│  [3] Sincronización de carpetas (⇧F12)   │  [4] Búsqueda avanzada (Alt+F7)             │
+│      Contenido/Fecha, Espejo asimétrico  │      Spotlight / Escaneo ➔ Enviar a lista   │
 │                                          │                                             │
-│  [5] Semantic Command Bar (/)            │  [6] File Utilities & Security              │
-│      Spotlight queries, AI intent, NLP   │      Split/Link, Checksum, Wipe (Alt+Del)   │
+│  [5] Barra de comandos semánticos (/)    │  [6] Utilidades de archivos y seguridad     │
+│      Búsqueda Spotlight, Consultas IA    │      Dividir/Unir, Checksum, Borrado seguro │
 │                                          │                                             │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [Feed to Listbox] ➔ Populates virtual panel tab for bulk operations across directories│
+│  [Enviar a lista] ➔ Carga los resultados en una pestaña virtual para acciones en lote │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -49,9 +49,9 @@ ATBCmder divide las herramientas eléctricas y la automatización en seis domini
 
 ---
 
-## 2. Herramienta de cambio de nombre múltiple por lotes (`Ctrl+M` / `⌃M` / `cm_MultiRename`)
+## 2. Herramienta de renombrado masivo (Multi-Rename) por lotes (`Ctrl+M` / `⌃M` / `cm_MultiRename`)
 
-Cambiar el nombre de docenas o cientos de archivos manualmente es tedioso y propenso a errores. La **Herramienta de cambio de nombre múltiple por lotes** (`cm_MultiRename`, asignada a `fmultirename.pas` en la arquitectura clásica) le permite definir patrones de nombres flexibles, aplicar contadores de secuencia dinámicos, realizar conversiones de casos y ejecutar poderosas reglas de búsqueda y reemplazo de expresiones regulares (RegEx) con garantías de seguridad visual en tiempo real. 
+Cambiar el nombre de docenas o cientos de archivos manualmente es tedioso y propenso a errores. La **Herramienta de renombrado masivo (Multi-Rename) por lotes** (`cm_MultiRename`, asignada a `fmultirename.pas` en la arquitectura clásica) le permite definir patrones de nombres flexibles, aplicar contadores de secuencia dinámicos, realizar conversiones de casos y ejecutar poderosas reglas de búsqueda y reemplazo de expresiones regulares (RegEx) con garantías de seguridad visual en tiempo real. 
 
 ![Batch Multi-Rename Tool](images/multi_rename_dialog.png) 
 *Figura 5.1: La herramienta de cambio de nombre múltiple por lotes que presenta filas de vista previa en vivo, máscaras de tokens, parámetros de contador numérico y detección de duplicados.*
@@ -59,7 +59,7 @@ Cambiar el nombre de docenas o cientos de archivos manualmente es tedioso y prop
 ### 2.1 El flujo de trabajo de cambio de nombre múltiple
 
 1. **Seleccionar archivos**: en el panel de archivos activos, seleccione los archivos o directorios cuyo nombre desea cambiar usando `Space`, `Insert` o la selección con comodín (`+`). Si no se selecciona nada, se utiliza el elemento debajo del cursor. 
-2. **Herramienta de inicio**: Presione **`Ctrl+M`** (`⌃M`) o elija **Archivos ➔ Herramienta de cambio de nombre múltiple...** en la barra de menú. 
+2. **Herramienta de inicio**: Presione **`Ctrl+M`** (`⌃M`) o elija **Archivos ➔ Herramienta de renombrado masivo (Multi-Rename)...** en la barra de menú. 
 3. **Configurar plantillas y reglas**: ingrese máscaras de nombre de archivo/extensión, establezca opciones de contador o defina cadenas de búsqueda y reemplazo. 
 4. **Inspeccionar vista previa en vivo**: la tabla de 3 columnas (`Old Name`, `New Name`, `Directory`) se actualiza instantáneamente con cada pulsación de tecla. 
 5. **Ejecutar**: haga clic en **Iniciar cambio de nombre** (o presione `Enter`). ATBCmder realiza los cambios de nombre de forma atómica y actualiza los paneles de archivos. 
@@ -289,7 +289,7 @@ Si cualquiera de los archivos seleccionados para comparar contiene bytes nulos o
 
 ---
 
-## 4. Sincronización de directorios (`Shift+F12` / `⇧F12` / `cm_SyncDirs`)
+## 4. Sincronización de carpetas (Sync Dirs) (`Shift+F12` / `⇧F12` / `cm_SyncDirs`)
 
 Mantener los árboles de directorios sincronizados en los discos locales, las unidades de respaldo y el almacenamiento en red es la piedra angular de los sistemas confiables. El **Sincronizador de directorios** de ATBCmder (`SyncDirsDialog`, asignado a `fsyncdirsdlg.pas`) compara jerarquías de carpetas completas, determina operaciones direccionales exactas y obtiene una vista previa de cada copia y eliminación de archivos antes de tocar su almacenamiento. 
 
@@ -717,7 +717,7 @@ Si bien ATBCmder se destaca en los flujos de trabajo gráficos de doble panel, a
 
 > [!CAUTION] 
 > **Irreversibilidad de sincronización de directorios asimétrica** 
-> Habilitar la opción **Asimétrica** en Sincronización de directorios (`Shift+F12`) hace que los archivos en el directorio de destino que no existen en el origen se **eliminen permanentemente**. Realice siempre una inspección visual de la tabla de vista previa de comparación antes de hacer clic en **Sincronizar**. 
+> Habilitar la opción **Asimétrica** en Sincronización de carpetas (Sync Dirs) (`Shift+F12`) hace que los archivos en el directorio de destino que no existen en el origen se **eliminen permanentemente**. Realice siempre una inspección visual de la tabla de vista previa de comparación antes de hacer clic en **Sincronizar**. 
 
 > [!WARNING] 
 > **Sustituciones de expresiones regulares con múltiples cambios de nombre** 
