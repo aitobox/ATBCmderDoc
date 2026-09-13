@@ -616,7 +616,7 @@ ATBCmder를 정기적으로 사용하는 경우 기능 키를 표준 `F1`-`F12` 
 
 #### Q6: ATBCMder는 Intel(x86_64) Mac을 지원합니까?
 
-현재 ATBCmder는 Apple의 통합 메모리, Metal 하드웨어 가속 및 Neural Engine 하위 시스템을 완벽하게 활용하기 위해 **Apple Silicon(M1/M2/M3/M4, ARM64 아키텍처)** Mac용으로 기본적으로 독점적으로 컴파일되었습니다. **Intel(x86_64) Mac은 현재 지원되지 않습니다.** 
+네! 버전 1.8.0부터 ATBCmder는 **Apple Silicon(M1/M2/M3/M4, ARM64 아키텍처)** 및 **Intel(x86_64)** Mac(macOS 12.0 이상)을 모두 기본 지원하는 유니버설 듀얼 아키텍처 패키지를 제공합니다.
 
 ---
 

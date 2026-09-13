@@ -1,7 +1,7 @@
 # ATBCmder 에 오신 것을 환영합니다
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md) 
-[![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md) 
+[![Architecture](https://img.shields.io/badge/arch-Universal%20(ARM64%20%7C%20x86__64)-blue.svg)](download.md) 
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
@@ -169,7 +169,7 @@ ATBCmder는 투박한 X11, 와인 래퍼 또는 유지 관리되지 않는 레�
 
 ### 📥 [10장: 다운로드 및 설치](download.md)
 
-Sequoia를 통한 macOS 12.0+ Monterey 설치 옵션. Mac App Store에서 직접 다운로드하거나 Apple Silicon(M1/M2/M3/M4, ARM64 아키텍처)용으로 기본 제작된 독립형 DMG 설치 프로그램 패키지를 다운로드하세요. *참고: Intel(x86_64) Mac은 현재 지원되지 않습니다.* 
+macOS 12.0+ Monterey부터 Sequoia까지의 설치 가이드. Mac App Store에서 직접 다운로드하거나 Apple Silicon(M1/M2/M3/M4, ARM64) 및 Intel(x86_64) 듀얼 아키텍처를 기본 지원하는 독립형 DMG 설치 패키지를 다운로드하세요.
 
 ---
 

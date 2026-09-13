@@ -578,7 +578,7 @@ Apple 鍵盤（MacBook 筆記本內建鍵盤與 Magic Keyboard）出廠預設將
 按下 **`Ctrl+J`**（`⌃J`）或執行命令 **`cm_RunTerm`**。ATBCmder 會自動開啟一個新的終端機視窗（支援系統 Terminal 或 iTerm2），其初始工作目錄會自動設定為你當前面板所在的絕對路徑。
 
 #### Q6：ATBCmder 是否支援 Intel (x86_64) 晶片的 Mac？
-目前 ATBCmder 僅支援 **Apple Silicon (M1/M2/M3/M4，ARM64 架構)** 晶片的 Mac 電腦，以充分發揮蘋果統一記憶體架構與 Metal 硬體加速帶來的極致效能。**目前暫不支援 Intel (x86_64) 架構晶片。**
+支援！自 1.8.0 版本起，ATBCmder 已全面提供 Universal 通用安裝包與雙架構原生支援，無論是 **Apple Silicon (M1/M2/M3/M4，ARM64 架構)** 還是 **Intel (x86_64 架構)** 的 Mac 電腦（macOS 12.0 及更高版本）均可流暢執行。
 
 ---
 

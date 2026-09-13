@@ -1,7 +1,7 @@
 # ATBCmder User Guide & Documentation Portal
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md)
-[![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md)
+[![Architecture](https://img.shields.io/badge/arch-Universal%20(ARM64%20%7C%20x86__64)-blue.svg)](download.md)
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md)
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md)
 
@@ -156,7 +156,7 @@ Comprehensive dual-matrix shortcut reference guide comparing native macOS shortc
 Practical, step-by-step walkthroughs for common real-world tasks: synchronizing directory backups, batch renaming camera photo libraries with timestamps, mounting network NAS drives, updating configuration files inside remote archives, and diagnosing macOS sandbox permission errors or auto-refresh issues.
 
 ### 📥 [Chapter 10: Download & Installation](download.md)
-Installation options for macOS 12.0+ Monterey through Sequoia. Download directly from the Mac App Store or grab standalone DMG installer packages natively built for Apple Silicon (M1/M2/M3/M4, ARM64 architecture). *Note: Intel (x86_64) Macs are not currently supported.*
+Installation options for macOS 12.0+ Monterey through Sequoia. Download directly from the Mac App Store or grab standalone DMG installer packages natively built with universal dual-architecture support for Apple Silicon (M1/M2/M3/M4, ARM64) and Intel (x86_64) Macs.
 
 ---
 

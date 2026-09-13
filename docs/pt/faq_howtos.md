@@ -616,7 +616,7 @@ Pressione **`Ctrl+J`** (`⌃J`) ou execute o comando **`cm_RunTerm`**. ATBCmder 
 
 #### P6: O ATBCmder oferece suporte a Macs Intel (x86_64)?
 
-Atualmente, o ATBCmder é compilado nativamente e exclusivamente para Macs **Apple Silicon (M1/M2/M3/M4, arquitetura ARM64)** para aproveitar totalmente a memória unificada da Apple, a aceleração de hardware Metal e os subsistemas Neural Engine. **Macs Intel (x86_64) não são suportados no momento.** 
+Sim! A partir da versão 1.8.0, o ATBCmder fornece pacotes universais com suporte nativo para Macs **Apple Silicon (M1/M2/M3/M4, arquitetura ARM64)** e **Intel (x86_64)** no macOS 12.0 ou superior.
 
 ---
 

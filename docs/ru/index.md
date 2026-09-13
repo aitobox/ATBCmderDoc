@@ -1,7 +1,7 @@
 # Добро пожаловать в ATBCmder
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md) 
-[![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md) 
+[![Architecture](https://img.shields.io/badge/arch-Universal%20(ARM64%20%7C%20x86__64)-blue.svg)](download.md) 
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
@@ -169,7 +169,7 @@ ATBCmder был создан, чтобы привнести аутентичны
 
 ### 📥 [Глава 10: Загрузка и установка](download.md)
 
-Варианты установки macOS 12.0+ Monterey через Sequoia. Загрузите непосредственно из Mac App Store или используйте автономные установочные пакеты DMG, созданные специально для Apple Silicon (архитектура M1/M2/M3/M4, ARM64). *Примечание: компьютеры Mac с процессором Intel (x86_64) в настоящее время не поддерживаются.* 
+Варианты установки macOS 12.0+ Monterey через Sequoia. Загрузите непосредственно из Mac App Store или используйте автономные установочные пакеты DMG с нативной поддержкой обеих архитектур: Apple Silicon (M1/M2/M3/M4, ARM64) и Intel (x86_64).
 
 ---
 

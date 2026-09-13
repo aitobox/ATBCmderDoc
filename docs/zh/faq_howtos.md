@@ -578,7 +578,7 @@ Apple 键盘（MacBook 笔记本内置键盘与 Magic Keyboard）出厂默认将
 按下 **`Ctrl+J`**（`⌃J`）或执行命令 **`cm_RunTerm`**。ATBCmder 会自动打开一个新的终端窗口（支持系统 Terminal 或 iTerm2），其初始工作目录会自动设定为你当前面板所在的绝对路径。
 
 #### Q6：ATBCmder 是否支持 Intel (x86_64) 芯片的 Mac？
-目前 ATBCmder 仅支持 **Apple Silicon (M1/M2/M3/M4，ARM64 架构)** 芯片的 Mac 电脑，以充分发挥苹果统一内存架构与 Metal 硬件加速带来的极致性能。**目前暂不支持 Intel (x86_64) 架构芯片。**
+支持！自 1.8.0 版本起，ATBCmder 已全面提供 Universal 通用安装包与双架构原生支持，无论是 **Apple Silicon (M1/M2/M3/M4，ARM64 架构)** 还是 **Intel (x86_64 架构)** 的 Mac 电脑（macOS 12.0 及更高版本）均可流畅运行。
 
 ---
 

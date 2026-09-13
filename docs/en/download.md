@@ -6,8 +6,8 @@ Thank you for your interest in ATBCmder! We provide two different download and i
 > **System & Architecture Requirements**  
 >
 > - **Operating System**: macOS 12.0 (Monterey) or later (including macOS 13 Ventura, macOS 14 Sonoma, and macOS 15 Sequoia).  
-> - **Supported Hardware Architecture**: **Apple Silicon (M1 / M2 / M3 / M4, ARM64)**.  
-> - **Intel (x86_64) Compatibility**: Intel-based Macs are **not supported** at this time.
+> - **Supported Hardware Architecture**: **Universal (Apple Silicon ARM64 & Intel x86_64)**.  
+> - **Intel (x86_64) Compatibility**: Fully supported via universal binaries and dual-architecture packaging.
 
 ## 1. Mac App Store (Recommended)
 
@@ -17,11 +17,11 @@ This is the recommended way to install ATBCmder. **ATBCmder is now officially av
 
 ## 2. DMG Installer Download
 
-If you cannot access the Mac App Store or prefer direct downloads, we provide a standalone DMG installer package built natively for Apple Silicon (ARM64).
+If you cannot access the Mac App Store or prefer direct downloads, we provide standalone DMG installer packages built natively for macOS with dual-architecture support (Universal / ARM64 & Intel x86_64).
 
-- **DMG Download Link**: [Click here to download ATBCmder DMG](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder) *(Apple Silicon / ARM64 only)*
+- **DMG Download Link**: [Click here to download ATBCmder DMG](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder) *(Universal: Apple Silicon & Intel x86_64)*
 
-*Note: When installing via DMG, macOS security features might require you to explicitly allow the application in "System Settings > Privacy & Security" the first time you open it. Intel (x86_64) Macs are not supported.*
+*Note: When installing via DMG, macOS security features might require you to explicitly allow the application in "System Settings > Privacy & Security" the first time you open it.*
 
 ### ⚠️ Grant Full Disk Access
 
@@ -34,6 +34,15 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 5. The system will ask you to enter your Mac login password or use Touch ID to confirm the changes.
 
 ## Release Notes
+
+### 1.8.0 (2026-09-11)
+
+- Universal Package: Support x86_64 and ARM universal packages
+- Automated Build: Auto build package via GitHub Actions
+- Smart File Associations & External Apps: Introduced standalone file associations management (`extassoc.xml`) allowing custom actions, external viewers, and editors per extension; integrated smart fallback to macOS LaunchServices and a dedicated "Open With" dialog
+- Large File Transfer & 64-bit Overflow Protection: Completely eliminated 32-bit integer overflow issues in progress signals and text panel sliders, ensuring seamless transfers and accurate progress reporting for files larger than 2GB across mounted volumes and network shares
+- Unified Viewer ESC Navigation Hierarchy: Standardized ESC key handling across all preview panels with tiered dismissals (search bar → active filter → fullscreen → close window), eliminating shortcut collisions and optimizing rapid file switching
+- Real-Time Dynamic Localization: Bottom function key bar (F3–F8) now instantly retranslates upon language changes in Preferences without requiring an application restart
 
 ### 1.7.0 (2026-09-06)
 

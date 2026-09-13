@@ -1,7 +1,7 @@
 # Bienvenido a ATBCmder
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md) 
-[![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md) 
+[![Architecture](https://img.shields.io/badge/arch-Universal%20(ARM64%20%7C%20x86__64)-blue.svg)](download.md) 
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
@@ -169,7 +169,7 @@ Tutoriales prácticos paso a paso para tareas comunes del mundo real: sincroniza
 
 ### 📥 [Capítulo 10: Descarga e instalación](download.md)
 
-Opciones de instalación para macOS 12.0+ Monterey a través de Sequoia. Descárguelo directamente desde Mac App Store o obtenga paquetes de instalación de DMG independientes creados de forma nativa para Apple Silicon (arquitectura M1/M2/M3/M4, ARM64). *Nota: Las Mac Intel (x86_64) no son compatibles actualmente.* 
+Opciones de instalación para macOS 12.0+ Monterey a través de Sequoia. Descárguelo directamente desde Mac App Store u obtenga paquetes de instalación DMG independientes creados de forma nativa con compatibilidad de doble arquitectura para Apple Silicon (M1/M2/M3/M4, ARM64) e Intel (x86_64).
 
 ---
 

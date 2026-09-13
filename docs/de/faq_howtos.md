@@ -623,7 +623,7 @@ Drücken Sie **`Ctrl+J`** (`⌃J`) oder führen Sie den Befehl **`cm_RunTerm`** 
 
 #### F6: Unterstützt ATBCmder Intel-Macs (x86_64)?
 
-Derzeit wird ATBCmder nativ und exklusiv für **Apple Silicon (M1/M2/M3/M4, ARM64-Architektur)** Macs kompiliert, um den einheitlichen Speicher, die Metal-Hardwarebeschleunigung und die Neural Engine-Subsysteme von Apple voll auszunutzen. **Intel (x86_64) Macs werden derzeit nicht unterstützt.** 
+Ja! Ab Version 1.8.0 bietet ATBCmder universelle Dual-Architektur-Pakete, die sowohl **Apple Silicon (M1/M2/M3/M4, ARM64-Architektur)** als auch **Intel (x86_64)** Mac-Computer unter macOS 12.0 oder neuer nativ unterstützen.
 
 ---
 

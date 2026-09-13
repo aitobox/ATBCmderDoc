@@ -1,6 +1,6 @@
 # Chapter 1: Fundamentals & macOS Setup
 
-Welcome to **ATBCmder**! Designed natively for macOS 12+ on Apple Silicon (M1/M2/M3/M4, ARM64 architecture; Intel x86_64 is not currently supported), ATBCmder brings the unmatched speed, keyboard agility, and precision of orthodox dual-panel file management to the Mac.
+Welcome to **ATBCmder**! Designed natively for macOS 12+ with dual-architecture support for both Apple Silicon (M1/M2/M3/M4, ARM64) and Intel (x86_64) Macs, ATBCmder brings the unmatched speed, keyboard agility, and precision of orthodox dual-panel file management to the Mac.
 
 This chapter walks you through the core dual-panel philosophy, details every major interface landmark, guides you through macOS App Sandbox permissions onboarding, and provides the essential system configurations required for a seamless experience.
 

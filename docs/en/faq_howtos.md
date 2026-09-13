@@ -595,7 +595,7 @@ Press **`Cmd+H`** (`⌘H`) or **`Cmd+Shift+Period`** (`⇧⌘.`), or execute com
 Press **`Ctrl+J`** (`⌃J`) or execute command **`cm_RunTerm`**. ATBCmder spawns a new macOS Terminal (or iTerm2) session with its current working directory set to the exact path of your active file panel.
 
 #### Q6: Does ATBCmder support Intel (x86_64) Macs?
-Currently, ATBCmder is compiled natively and exclusively for **Apple Silicon (M1/M2/M3/M4, ARM64 architecture)** Macs to fully leverage Apple's unified memory, Metal hardware acceleration, and Neural Engine subsystems. **Intel (x86_64) Macs are not supported at this time.**
+Yes! Starting with version 1.8.0, ATBCmder provides dual-architecture universal packages natively supporting both **Apple Silicon (M1/M2/M3/M4, ARM64)** and **Intel (x86_64)** Mac computers running macOS 12.0 or later.
 
 ---
 

@@ -6,8 +6,8 @@
 > **Requisitos de sistema y arquitectura** 
 > 
 > - **Sistema operativo**: macOS 12.0 (Monterey) o posterior (incluidos macOS 13 Ventura, macOS 14 Sonoma y macOS 15 Sequoia). 
-> - **Arquitectura de hardware compatible**: **Apple Silicon (M1/M2/M3/M4, ARM64)**. 
-> - **Compatibilidad Intel (x86_64)**: Las Mac basadas en Intel **no son compatibles** en este momento.
+> - **Arquitectura de hardware compatible**: **Universal (Apple Silicon ARM64 e Intel x86_64)**. Soporte completo para Apple Silicon (M1 / M2 / M3 / M4) y computadoras Mac con procesador Intel.  
+> - **Compatibilidad Intel (x86_64)**: Totalmente compatible a partir de la versión 1.8.0 mediante paquetes binarios universales.
 
 ## 1. Tienda de aplicaciones de Mac (recomendada)
 
@@ -17,11 +17,11 @@ Esta es la forma recomendada de instalar ATBCmder. **¡ATBCmder ya está disponi
 
 ## 2. Descarga del instalador DMG
 
-Si no puede acceder a Mac App Store o prefiere las descargas directas, le proporcionamos un paquete de instalación de DMG independiente creado de forma nativa para Apple Silicon (ARM64). 
+Si no puede acceder a Mac App Store o prefiere descargas directas, ofrecemos paquetes de instalación DMG independientes creados de forma nativa para macOS con soporte de doble arquitectura (Universal / ARM64 e Intel x86_64).
 
-- **Enlace de descarga de DMG**: [Haga clic aquí para descargar ATBCmder DMG](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder) *(solo Apple Silicon / ARM64)* 
+- **Enlace de descarga de DMG**: [Haga clic aquí para descargar ATBCmder DMG](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder) *(Universal: Apple Silicon e Intel x86_64)*
 
-*Nota: Al instalar a través de DMG, las funciones de seguridad de macOS pueden requerir que permita explícitamente la aplicación en "Configuración del sistema > Privacidad y seguridad" la primera vez que la abra. No se admiten Mac Intel (x86_64).*
+*Nota: Al instalar a través de DMG, las funciones de seguridad de macOS pueden requerir que permita explícitamente la aplicación en "Configuración del sistema > Privacidad y seguridad" la primera vez que la abra.*
 
 ### ⚠️ Otorgar acceso completo al disco
 
@@ -34,6 +34,15 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 5. El sistema le pedirá que ingrese su contraseña de inicio de sesión de Mac o use Touch ID para confirmar los cambios.
 
 ## Notas de la versión
+
+### 1.8.0 (2026-09-11)
+
+- Soporte de paquetes universales: Compatibilidad con paquetes universales para arquitecturas x86_64 y ARM
+- Flujo de compilación automatizado: Compilación y empaquetado automáticos a través de GitHub Actions
+- Asociaciones de archivos inteligentes y apps externas: Nuevo sistema de asociaciones (`extassoc.xml`) para configurar acciones, editores y visores externos por extensión; alternancia inteligente con macOS LaunchServices y diálogo "Abrir con"
+- Transferencia de archivos grandes y protección contra desbordamiento de 64 bits: Eliminación de desbordamientos de enteros de 32 bits en señales de progreso para garantizar transferencias fluidas de archivos superiores a 2 GB
+- Jerarquía unificada de salida con tecla ESC en visor: Control escalonado de la tecla ESC (barra de búsqueda → filtro → pantalla completa → cerrar ventana) para evitar conflictos de atajos
+- Localización dinámica en tiempo real: La barra de teclas de función inferior (F3–F8) se actualiza de inmediato al cambiar el idioma en las preferencias sin necesidad de reiniciar
 
 ### 1.7.0 (2026-09-06)
 

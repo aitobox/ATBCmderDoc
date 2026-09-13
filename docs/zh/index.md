@@ -1,7 +1,7 @@
 # ATBCmder 用户手册与文档中心
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md)
-[![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md)
+[![Architecture](https://img.shields.io/badge/arch-Universal%20(ARM64%20%7C%20x86__64)-blue.svg)](download.md)
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md)
 [![Privacy](https://img.shields.io/badge/telemetry-零数据收集-brightgreen.svg)](privacy_policy.md)
 
@@ -156,7 +156,7 @@ ATBCmder 专为在现代 macOS 上重塑纯正 Commander 体验而生，无需�
 图文并茂的手把手实战教程：双向备份同步比对、相机照片按时间戳批量改名、连接挂载家用或办公 NAS 共享、免解压直接修改服务器压缩包内的配置，以及排查 macOS 权限阻拦与外接盘刷新问题。
 
 ### 📥 [第 10 章：下载与安装指引](download.md)
-支持 macOS 12.0+ Monterey、Ventura、Sonoma 到 Sequoia 的完整安装指引。提供 Mac App Store 商店版及独立 DMG 安装包，专为 Apple Silicon (M1/M2/M3/M4，ARM64 架构) 原生构建。*注意：目前暂不支持 Intel (x86_64) 架构芯片。*
+支持 macOS 12.0+ Monterey、Ventura、Sonoma 到 Sequoia 的完整安装指引。提供 Mac App Store 商店版及独立 DMG 安装包，原生支持 Apple Silicon (M1/M2/M3/M4，ARM64 架构) 与 Intel (x86_64) 双架构。
 
 ---
 

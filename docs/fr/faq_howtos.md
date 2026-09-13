@@ -617,7 +617,7 @@ Appuyez sur **`Ctrl+J`** (`⌃J`) ou exécutez la commande **`cm_RunTerm`**. ATB
 
 #### Q6 : ATBCmder prend-il en charge les Mac Intel (x86_64) ?
 
-Actuellement, ATBCmder est compilé de manière native et exclusive pour les Mac **Apple Silicon (M1/M2/M3/M4, architecture ARM64)** afin de tirer pleinement parti de la mémoire unifiée d'Apple, de l'accélération matérielle Metal et des sous-systèmes Neural Engine. **Les Mac Intel (x86_64) ne sont pas pris en charge pour le moment.** 
+Oui ! Depuis la version 1.8.0, ATBCmder fournit des packages binaires universels prenant en charge nativement les Mac **Apple Silicon (M1/M2/M3/M4, architecture ARM64)** et **Intel (x86_64)** sous macOS 12.0 ou version ultérieure.
 
 ---
 

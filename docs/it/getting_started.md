@@ -1,6 +1,6 @@
 # Capitolo 1: Concetti fondamentali e configurazione di macOS
 
-Benvenuto su **ATBCmder**! Progettato nativamente per macOS 12+ su Apple Silicon (M1/M2/M3/M4, architettura ARM64; Intel x86_64 non è attualmente supportato), ATBCmder porta sul Mac la velocità senza pari, l'agilità della tastiera e la precisione della gestione ortodossa dei file a doppio pannello. 
+Benvenuto su **ATBCmder**! Progettato nativamente per macOS 12+ con supporto per entrambe le architetture Apple Silicon (M1/M2/M3/M4, architettura ARM64) e Intel (x86_64), ATBCmder porta sul Mac la velocità senza pari, l'agilità della tastiera e la precisione della gestione ortodossa dei file a doppio pannello. 
 
 Questo capitolo ti illustra la filosofia principale del doppio pannello, descrive in dettaglio tutti i principali punti di riferimento dell'interfaccia, ti guida attraverso l'onboarding delle autorizzazioni di macOS App Sandbox e fornisce le configurazioni di sistema essenziali necessarie per un'esperienza senza interruzioni. 
 

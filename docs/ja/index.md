@@ -1,7 +1,7 @@
 # ATBCmder へようこそ
 
 [![macOS](https://img.shields.io/badge/platform-macOS%2012%2B-blue.svg)](download.md)
- [![Architecture](https://img.shields.io/badge/arch-Apple%20Silicon%20(ARM64)-orange.svg)](download.md)
+ [![Architecture](https://img.shields.io/badge/arch-Universal%20(ARM64%20%7C%20x86__64)-blue.svg)](download.md)
  [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md)
  [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md)
 
@@ -169,7 +169,7 @@ ATBCmder を自分の作業スタイルに合わせて構成します。 リア�
 
 ### 📥 [第 10 章: ダウンロードとインストール](download.md)
 
-macOS 12.0 以降のモントレーからセコイアまでのインストール オプション。 Mac App Store から直接ダウンロードするか、Apple Silicon (M1/M2/M3/M4、ARM64 アーキテクチャ) 用にネイティブに構築されたスタンドアロンの DMG インストーラー パッケージを入手します。 *注意: Intel (x86_64) Mac は現在サポートされていません。*
+macOS 12.0+ Monterey から Sequoia までのインストール オプション。Mac App Store から直接ダウンロードするか、Apple Silicon (M1/M2/M3/M4、ARM64) および Intel (x86_64) の両アーキテクチャをネイティブサポートするスタンドアロン DMG インストーラー パッケージをご利用ください。
 
  ---
 
