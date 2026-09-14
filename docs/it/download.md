@@ -35,6 +35,18 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 1.9.1 (14-09-2026)
+
+- Passaggio di ricerca rapida nel tutorial interattivo: Percorso formativo ampliato a 25 passaggi con esercitazione pratica di ricerca e filtro rapido (`⌘S` / `Ctrl+S`); aggiunta la voce di ricerca rapida nel menu Comandi e perfezionata la pulizia dell'overlay durante i cambi di passaggio
+- Pipeline di pacchettizzazione CI e rafforzamento delle dipendenze: Ripristinata la dipendenza `ebooklib` nelle build di rilascio per garantire l'anteprima completa dei file EPUB; migliorata la pulizia dell'area di lavoro per evitare conflitti di permessi
+
+### 1.9.0 (13-09-2026)
+
+- Sistema di tutorial interattivo per nuovi utenti: Aggiunto un percorso introduttivo interattivo in 24 passaggi per i nuovi utenti con finestra di benvenuto al primo avvio (accessibile in qualsiasi momento da "Aiuto → Tutorial interattivo"); include overlay a riflettore (spotlight), schede informative fluttuanti adattive e doppio suggerimento con percorso di menu e scorciatoia nativa
+- Aggiornamento della sicurezza di rete SFTP: Sostituita l'accettazione automatica non sicura della chiave host con una rigorosa politica di verifica TOFU (Trust-On-First-Use); la connessione a host SFTP sconosciuti ora mostra una finestra di dialogo interattiva per la conferma dell'impronta digitale SHA-256, salvando le chiavi in modo sicuro in `~/.ssh/known_hosts` contro gli attacchi MITM
+- Scorciatoie native macOS e rifinitura della navigazione: Risolti i conflitti dei tasti modificatori per `Command+Su` (navigazione alla cartella superiore) e `Command+Shift+F1` (attivazione vista miniature), standardizzando tutte le indicazioni con i simboli nativi di macOS (⌘, ⌥, ⌃, ⇧)
+- Prestazioni del core e pipeline di build: Ottimizzata la corrispondenza dei template semantici e la reattività dell'autocompletamento; ristrutturati i flussi di lavoro di rilascio automatizzati di GitHub Actions con protezioni anti-crash della sandbox AppKit
+
 ### 1.8.0 (11-09-2026)
 
 - Supporto per pacchetti universali: Supporto per pacchetti universali con architetture x86_64 e ARM

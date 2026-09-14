@@ -35,6 +35,18 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 1.9.1 (2026-09-14)
+
+- Nueva etapa de búsqueda rápida en el tutorial interactivo: El plan de aprendizaje se amplía a 25 pasos con entrenamiento práctico de búsqueda y filtrado rápido (`⌘S` / `Ctrl+S`); nuevo acceso en el menú Comandos y limpieza fluida de la interfaz superpuesta
+- Robustecimiento del flujo de compilación CI: Restauración de la dependencia `ebooklib` para asegurar la visualización completa de EPUB; mejora de la limpieza del espacio de trabajo para evitar conflictos de permisos
+
+### 1.9.0 (2026-09-13)
+
+- Sistema de tutorial interactivo para principiantes: Nuevo recorrido de aprendizaje de 24 pasos con diálogo de bienvenida en el primer inicio (accesible desde "Ayuda → Tutorial interactivo"); incluye máscara de foco resaltado, tarjetas flotantes adaptativas y visualización dual de menú y atajos nativos
+- Actualización de seguridad de red SFTP: Sustitución de la aceptación automática de claves por una estricta política TOFU (confianza en el primer uso); confirmación interactiva de huella SHA-256 para prevenir ataques MITM y guardado seguro en `known_hosts`
+- Atajos de teclado nativos y navegación macOS: Corrección de conflictos en `Command+Arriba` (directorio superior) y `Command+Shift+F1` (vista en miniatura) con estandarización de símbolos macOS (⌘, ⌥, ⌃, ⇧)
+- Rendimiento del núcleo y automatización de versiones: Optimización del emparejamiento de plantillas semánticas y autocompletado; rediseño de GitHub Actions con protecciones contra fallos del sandbox de AppKit
+
 ### 1.8.0 (2026-09-11)
 
 - Soporte de paquetes universales: Compatibilidad con paquetes universales para arquitecturas x86_64 y ARM

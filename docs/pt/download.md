@@ -35,6 +35,18 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 1.9.1 (14/09/2026)
+
+- Etapa de busca rápida no tutorial interativo: Currículo expandido para 25 etapas com treinamento prático para busca e filtragem rápida (`⌘S` / `Ctrl+S`); adicionada entrada de busca rápida no menu Comandos e aprimorada a limpeza de sobreposição durante as transições de etapas
+- Pipeline de empacotamento de CI e reforço de dependências: Restaurada a dependência `ebooklib` nas compilações de lançamento para garantir suporte completo à pré-visualização de EPUB; melhorada a limpeza da área de trabalho para evitar conflitos de permissões
+
+### 1.9.0 (13/09/2026)
+
+- Sistema de tutorial interativo para novatos: Adicionado currículo introdutório interativo de 24 etapas para novos usuários com diálogo de boas-vindas na primeira inicialização (acessível a qualquer momento em "Ajuda → Tutorial Interativo"); apresenta máscara de destaque estilo holofote, cartões flutuantes adaptativos e exibição dupla de caminho de menu e atalhos nativos
+- Atualização de segurança de rede SFTP: Substituição do aceite automático inseguro de chave de host por uma política rigorosa de verificação TOFU (Trust-On-First-Use); a conexão a hosts SFTP desconhecidos agora exibe uma caixa de diálogo interativa para confirmação da impressão digital SHA-256, salvando as chaves com segurança em `~/.ssh/known_hosts` contra ataques MITM
+- Atalhos nativos do macOS e aprimoramento de navegação: Correção do tratamento de teclas modificadoras em `Command+Cima` (navegar para a pasta superior) e `Command+Shift+F1` (alternar visualização de miniaturas), padronizando todos os atalhos com símbolos nativos do macOS (⌘, ⌥, ⌃, ⇧)
+- Desempenho do núcleo e pipeline de compilação: Otimização da correspondência de modelos semânticos e da capacidade de resposta do preenchimento automático; reestruturação dos fluxos de trabalho automatizados de lançamento no GitHub Actions com proteção contra falhas da sandbox do AppKit
+
 ### 1.8.0 (11/09/2026)
 
 - Suporte a pacotes universais: Suporte para pacotes universais nas arquiteturas x86_64 e ARM

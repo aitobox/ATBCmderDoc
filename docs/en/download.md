@@ -35,6 +35,18 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.9.1 (2026-09-14)
+
+- Interactive Tutorial Quick Search Step: Expanded curriculum to 25 steps with interactive hands-on training for Quick Search & Filter (`⌘S` / `Ctrl+S`); added a Quick Search entry in the Commands menu and refined overlay cleanup during step transitions
+- CI Packaging Pipeline & Dependency Hardening: Restored `ebooklib` in release build dependencies to ensure full EPUB preview capabilities; improved workspace cleanup steps to prevent permission conflicts
+
+### 1.9.0 (2026-09-13)
+
+- Newbie Interactive Tutorial System: Added a 24-step interactive onboarding curriculum for newcomers with a first-run welcome prompt (accessible anytime via "Help → Interactive Tutorial"); features a spotlight cutout overlay, adaptive floating cards, and dual menu-path + native shortcut prompts
+- SFTP Network Security Upgrade: Replaced insecure host key auto-acceptance with a strict TOFU (Trust-On-First-Use) verification policy; connecting to unknown SFTP hosts now prompts with an interactive SHA-256 fingerprint confirmation dialog and safely persists keys to `~/.ssh/known_hosts` against MITM attacks
+- macOS Native Shortcuts & Navigation Polish: Fixed `Command+Up` (parent folder navigation) and `Command+Shift+F1` (thumbnail view toggle) modifier handling, standardizing all key prompts with native macOS symbols (⌘, ⌥, ⌃, ⇧)
+- Core Performance & Packaging Pipeline: Optimized semantic template matching and autocompletion responsiveness; restructured GitHub Actions automated release workflows with AppKit sandbox anti-crash protections
+
 ### 1.8.0 (2026-09-11)
 
 - Universal Package: Support x86_64 and ARM universal packages

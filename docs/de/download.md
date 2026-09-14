@@ -35,6 +35,18 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 1.9.1 (14.09.2026)
+
+- Interaktives Tutorial um Schnellsuche erweitert: Das Tutorial umfasst nun 25 Schritte inklusive Schnellsuche und Filterung (`⌘S` / `Ctrl+S`); neuer Eintrag im Befehlsmenü und saubere Overlay-Bereinigung bei Schrittwechseln
+- CI-Build-Pipeline & Abhängigkeiten gehärtet: `ebooklib` in den Release-Build-Abhängigkeiten wiederhergestellt für volle EPUB-Vorschauunterstützung; verbesserte automatische Workspace-Bereinigung zur Vermeidung von Rechtekonflikten
+
+### 1.9.0 (13.09.2026)
+
+- Interaktives Einführungstutorial: Neues 24-stufiges interaktives Tutorial mit Begrüßungsdialog beim ersten Start (jederzeit über "Hilfe → Interaktives Tutorial" aufrufbar); ausgestattet mit Spotlight-Ausschnittsmaske, dynamischer Infokarte und kombinierter Menü-/Tastenkürzel-Anzeige
+- SFTP-Netzwerksicherheits-Upgrade: Unsichere Richtlinien durch strikte TOFU-Hostschlüssel-Verifizierung (Trust-On-First-Use) ersetzt; neue SFTP-Verbindungen fordern nun eine SHA-256-Fingerabdruck-Bestätigung an, um MITM-Angriffe abzuwehren und Schlüssel sicher in `known_hosts` zu speichern
+- macOS Tastenkürzel- & Navigationsoptimierung: Behebung von Tastenkonflikten bei `Command+Up` (Übergeordneter Ordner) und `Command+Shift+F1` (Miniaturansicht) sowie Vereinheitlichung der macOS-Tastatursymbole (⌘, ⌥, ⌃, ⇧)
+- Kernleistung & Build-Workflows: Optimierte semantische Vorlagenzuordnung und Autovervollständigung; Neugestaltung der GitHub Actions Release-Workflows mit AppKit-Sandbox-Absturzsicherung
+
 ### 1.8.0 (11.09.2026)
 
 - Universal-Paket-Unterstützung: Unterstützung für x86_64- und ARM-Universalpakete
