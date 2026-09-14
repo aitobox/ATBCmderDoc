@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
+<div align="center">
+  <img src="images/treeview+thumbview.png" alt="ATBCmder Dual-Panel-Dateimanager-Oberfläche" style="width: 100%; height: auto;">
+</div>
+
 Willkommen im offiziellen Dokumentationsportal für **ATBCmder** – dem schnellen, tastaturgesteuerten Dual-Panel-Dateimanager, der speziell für macOS entwickelt wurde. ATBCmder vereint die Geschwindigkeits- und Befehlstradition traditioneller Dateimanager (Total Commander, Double Commander, Norton Commander) mit modernem macOS-Design, nativer Systemintegration und fortschrittlichen Power-Tools. 
 
 ---

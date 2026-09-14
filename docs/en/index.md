@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md)
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md)
 
+<div align="center">
+  <img src="images/treeview+thumbview.png" alt="ATBCmder Dual-Panel File Manager Interface Showcase" style="width: 100%; height: auto;">
+</div>
+
 Welcome to the official documentation portal for **ATBCmder** — the fast, keyboard-first, dual-panel file manager designed specifically for macOS. ATBCmder unites the speed and command heritage of orthodox file managers (Total Commander, Double Commander, Norton Commander) with modern macOS design, native system integration, and advanced power tools.
 
 ---

@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
+<div align="center">
+  <img src="images/treeview+thumbview.png" alt="Demonstração da interface do gerenciador de arquivos de painel duplo ATBCmder" style="width: 100%; height: auto;">
+</div>
+
 Bem-vindo ao portal de documentação oficial do **ATBCmder** — o gerenciador de arquivos rápido, com teclado duplo e painel duplo, projetado especificamente para macOS. ATBCmder une a herança de velocidade e comando de gerenciadores de arquivos ortodoxos (Total Commander, Double Commander, Norton Commander) com design moderno do macOS, integração de sistema nativo e ferramentas elétricas avançadas. 
 
 ---

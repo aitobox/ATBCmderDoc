@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
+<div align="center">
+  <img src="images/treeview+thumbview.png" alt="ATBCmder 듀얼 패널 파일 관리자 인터페이스 시연" style="width: 100%; height: auto;">
+</div>
+
 macOS용으로 특별히 설계된 빠른 키보드 우선 듀얼 패널 파일 관리자인 **ATBCmder**의 공식 문서 포털에 오신 것을 환영합니다. ATBCmder는 정통 파일 관리자(Total Commander, Double Commander, Norton Commander)의 속도 및 명령 유산을 최신 macOS 디자인, 기본 시스템 통합 및 고급 전동 도구와 통합합니다. 
 
 ---

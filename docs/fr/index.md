@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
+<div align="center">
+  <img src="images/treeview+thumbview.png" alt="Démonstration de l'interface du gestionnaire de fichiers à double panneau ATBCmder" style="width: 100%; height: auto;">
+</div>
+
 Bienvenue sur le portail de documentation officiel de **ATBCmder**, le gestionnaire de fichiers rapide à double panneau, doté d'un clavier d'abord, conçu spécifiquement pour macOS. ATBCmder allie l'héritage de vitesse et de commande des gestionnaires de fichiers orthodoxes (Total Commander, Double Commander, Norton Commander) avec une conception macOS moderne, une intégration système native et des outils électriques avancés. 
 
 ---

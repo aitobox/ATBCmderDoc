@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md)
 [![Privacy](https://img.shields.io/badge/telemetry-零資料收集-brightgreen.svg)](privacy_policy.md)
 
+<div align="center">
+  <img src="images/treeview+thumbview.png" alt="ATBCmder 雙面板檔案管理器介面展示" style="width: 100%; height: auto;">
+</div>
+
 歡迎查閱 **ATBCmder** 官方中文使用者指南！ATBCmder 是一款專為 macOS 打造的高效、全鍵盤驅動的雙面板檔案管理器。它將經典正統檔案管理器（Total Commander、Double Commander、Norton Commander）的高速操控精髓，與現代 macOS 視覺設計、原生系統整合和強大的生產力工具深度融合。
 
 ---

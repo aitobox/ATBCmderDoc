@@ -5,6 +5,10 @@
 [![Release](https://img.shields.io/badge/release-latest-green.svg)](download.md) 
 [![Privacy](https://img.shields.io/badge/telemetry-zero%20tracking-brightgreen.svg)](privacy_policy.md) 
 
+<div align="center">
+  <img src="images/treeview+thumbview.png" alt="Демонстрация интерфейса двухпанельного файлового менеджера ATBCmder" style="width: 100%; height: auto;">
+</div>
+
 Добро пожаловать на официальный портал документации **ATBCmder** — быстрого двухпанельного файлового менеджера с клавиатурой, разработанного специально для macOS. ATBCmder объединяет в себе скорость и командное наследие традиционных файловых менеджеров (Total Commander, Double Commander, Norton Commander) с современным дизайном macOS, встроенной системной интеграцией и передовыми мощными инструментами. 
 
 ---
