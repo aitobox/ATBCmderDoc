@@ -1,4 +1,4 @@
-# Chapitre 9: Recettes pratiques et dépannage
+# Chapitre 10: Recettes pratiques et dépannage
 
 Alors que les gestionnaires de fichiers orthodoxes à double panneau sont réputés pour leur vitesse brute et l'efficacité de leur clavier, la maîtrise des tâches du monde réel nécessite souvent de comprendre comment des sous-systèmes distincts, tels que la synchronisation d'annuaires, le renommage de modèles par lots, les systèmes de fichiers virtuels distants, le reconditionnement d'archives et la recherche récursive, fonctionnent ensemble dans les scénarios quotidiens. De plus, fonctionner dans macOS moderne introduit des limites de sécurité, des contraintes de bac à sable et des intersections de raccourcis système que chaque utilisateur finit par rencontrer. 
 
@@ -637,7 +637,7 @@ Pour que ATBCmder continue de fonctionner à une vitesse maximale dans les flux 
 <p> 
 <a href="index.md">&larr; Revenir au portail de documentation</a> &nbsp;&bull;&nbsp; 
 <a href="getting_started.md">Chapitre 1 : Principes de base</a> &nbsp;&bull;&nbsp; 
-<a href="keyboard_shortcuts.md">Chapitre 8 : Raccourcis clavier</a> &nbsp;&bull;&nbsp; 
-<a href="download.md">Chapitre 10 : Téléchargement et installation &rarr;</a> 
+<a href="keyboard_shortcuts.md">Chapitre 9: Raccourcis</a> &nbsp;&bull;&nbsp; 
+<a href="download.md">Chapitre 11: Téléchargement et installation &rarr;</a> 
 </p> 
 </div>

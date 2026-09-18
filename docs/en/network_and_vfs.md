@@ -479,6 +479,6 @@ Need to edit an `nginx.conf` or a Python script directly on a remote server?
 ---
 
 <div align="center">
-  <p>Ready to customize hotkeys, panel views, and application behavior?</p>
-  <p><strong><a href="preferences_and_customization.md">Proceed to Chapter 7: Preferences & Customization &rarr;</a></strong></p>
+  <p>Ready to monitor system resources, analyze disk usage, and safely clean caches?</p>
+  <p><strong><a href="system_tools.md">Proceed to Chapter 7: System Tools & Maintenance &rarr;</a></strong></p>
 </div>

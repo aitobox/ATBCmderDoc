@@ -1,4 +1,4 @@
-# Kapitel 7: Einstellungen & Anpassung
+# Kapitel 8: Einstellungen & Anpassung
 
 Ein wirklich effizienter Dateimanager muss sich an Ihren Arbeitsablauf anpassen und Sie nicht dazu zwingen, sich an seine Standardeinstellungen anzupassen. Jeder Ingenieur, Systemadministrator, digitale Archivar und Kreativprofi bringt unterschiedliche Muskelgedächtnis-, Anzeigeanforderungen und Betriebsgewohnheiten mit: Einige verlassen sich strikt auf die herkömmlichen Norton Commander/Total Commander-Funktionstasten (`F1`–`F10`), während andere native macOS-Verknüpfungen erwarten (`Cmd+C`, `Cmd+V`, `Cmd+O`); Einige erfordern eine dynamische automatische Spaltenanpassung mit typografischen Subpixelmetriken, während andere starre, feste Spaltengrenzen benötigen. Einige erfordern eine aggressive Echtzeitüberwachung von Dateisystemereignissen, während andere über Netzwerkfreigaben mit hoher Latenz laufen, bei denen passives Polling obligatorisch ist. 
 
@@ -695,7 +695,7 @@ ATBCmder enthält umfangreiche Tooltips für schwebende Metadaten, die Dateiabme
 
 --- 
 
-<div align="center"> 
-<p>Bereit, alle Tastaturkürzel und Befehlsmatrizen in der gesamten Anwendung zu beherrschen?</p> 
-<p><strong><a href="keyboard_shortcuts.md">Fahren Sie mit Kapitel 8 fort: Master-Tastaturkürzel &rarr;</a></strong></p> 
+<div align="center">
+  <p>Bereit, alle Tastaturkurzbefehle und Befehlsmatrizen der gesamten Anwendung zu beherrschen?</p>
+  <p><strong><a href="keyboard_shortcuts.md">Weiter zu Kapitel 9: Tastaturkurzbefehle-Referenz &rarr;</a></strong></p>
 </div>

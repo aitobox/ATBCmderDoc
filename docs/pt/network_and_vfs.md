@@ -493,7 +493,7 @@ Precisa editar um script `nginx.conf` ou Python diretamente em um servidor remot
 
 --- 
 
-<div align="center"> 
-<p>Pronto para personalizar teclas de atalho, visualizações de painel e comportamento de aplicativos?</p> 
-<p><strong><a href="preferences_and_customization.md">Prossiga para o Capítulo 7: Preferências e personalização &rarr;</a></strong></p> 
+<div align="center">
+  <p>Pronto para monitorar recursos do sistema, analisar o uso do disco e limpar caches com segurança?</p>
+  <p><strong><a href="system_tools.md">Avançar para o Capítulo 7: Ferramentas do sistema e manutenção &rarr;</a></strong></p>
 </div>

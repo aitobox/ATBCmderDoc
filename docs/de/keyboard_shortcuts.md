@@ -1,4 +1,4 @@
-# Kapitel 8: Tastaturkurzbefehle-Referenz
+# Kapitel 9: Tastaturkurzbefehle-Referenz
 
 ATBCmder ist von Grund auf als Dateimanager für die Tastatur konzipiert. Alle Dateivorgänge, Verzeichnissprünge, Ansichtsumwandlungen und Batch-Dienstprogramme können ohne Mausinteraktion ausgeführt werden. 
 
@@ -287,7 +287,20 @@ Starten Sie erweiterte Automatisierungstools, Batch-Dienstprogramme und eingebet
 
 ---
 
-### 4.7 System, Konfiguration und Hilfe
+### 4.7 Integrierte System-Tools
+
+Überwachen Sie die Betriebssystemleistung, analysieren Sie den Speicherplatz mit Treemaps, bereinigen Sie System-Caches sicher und deinstallieren Sie Anwendungen gründlich.
+
+| Befehls-ID | Beschreibung | Primärer macOS-Kurzbefehl (mit ⌘/⌥/⇧/⌃) | Klassischer Commander-Kurzbefehl (mit Fn-Tasten) | Kontext |
+| :--- | :--- | :---: | :---: | :---: |
+| `cm_SystemStatus` | Systemstatus- & Diagnosemonitor öffnen | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Hauptfenster |
+| `cm_DiskUsageAnalyzer` | Festplattenbelegungsanalyse öffnen (Baum + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Hauptfenster |
+| `cm_CleanSystem` | Sicheren zweistufigen Systemreiniger öffnen | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Hauptfenster |
+| `cm_UninstallApp` | Tiefgehenden Anwendungs-Deinstallierer öffnen | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Hauptfenster |
+
+---
+
+### 4.8 System, Konfiguration und Hilfe
 
 Greifen Sie auf Anwendungseinstellungen, Konfigurationsverwaltung, Software-Updates und Benutzerdokumentation zu. 
 
@@ -452,7 +465,7 @@ Benutzertastenkombinationen werden unter `~/.config/atbcmder/atbcmder_hotkeys.xm
 
 --- 
 
-<div align="center"> 
-<p>Suchen Sie nach praktischen Alltagsrezepten, NAS-Montage-Workflows oder Tipps zur Fehlerbehebung?</p> 
-<p><strong><a href="faq_howtos.md">Fahren Sie mit Kapitel 9 fort: Rezepte aus der Praxis und Fehlerbehebung &rarr;</a></strong></p> 
+<div align="center">
+  <p>Suchen Sie nach praktischen Alltagsrezepten, NAS-Mounting-Workflows oder Tipps zur Fehlerbehebung?</p>
+  <p><strong><a href="faq_howtos.md">Weiter zu Kapitel 10: Praxislösungen & Fehlerbehebung &rarr;</a></strong></p>
 </div>

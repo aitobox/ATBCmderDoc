@@ -114,7 +114,7 @@ Si viene de Finder o de sistemas operativos de escritorio estándar, los adminis
 1. **Comience con los conceptos básicos**: lea el [Capítulo 1: Fundamentos y configuración de macOS](getting_started.md) para comprender los paneles activos e inactivos, la barra de herramientas intermedia y cómo otorgar permisos de disco a macOS. 
 2. **Domine las operaciones diarias**: aprenda a copiar, mover, cambiar el nombre y eliminar sin tocar el mouse en el [Capítulo 3: Cola y operaciones diarias de archivos](file_operations.md). 
 3. **Vista previa de todo al instante**: descubra cómo obtener una vista previa de imágenes, escuchar archivos de audio, leer códigos e inspeccionar archivos PDF con una sola pulsación de tecla en el [Capítulo 4: Listadores y editores universales](viewers_and_editors.md). 
-4. **Siga las guías prácticas**: consulte los flujos de trabajo prácticos cotidianos y las preguntas comunes en el [Capítulo 9: Recetas y solución de problemas del mundo real](faq_howtos.md). 
+4. **Siga guías prácticas**: Consulte flujos de trabajo cotidianos y preguntas frecuentes en el [Capítulo 10: Soluciones prácticas y resolución de problemas](faq_howtos.md).
 
 ---
 
@@ -124,10 +124,11 @@ Si viene de Finder o de sistemas operativos de escritorio estándar, los adminis
 
 ATBCmder fue creado para llevar la experiencia auténtica de Commander a macOS moderno sin ejecutar X11 torpe, envoltorios de vino o puertos heredados sin mantenimiento: 
 
-1. **Domine las combinaciones de teclas de matriz dual**: revise nuestra matriz completa de atajos de teclado en paralelo (`macOS Cmd` frente a `Commander Fn`) en el [Capítulo 8: Atajos de teclado maestros](keyboard_shortcuts.md). 
+1. **Domine los atajos de matriz dual**: Revise nuestra guía de atajos completa comparando atajos nativos de macOS con teclas de función clásicas en el [Capítulo 9: Referencia maestra de atajos de teclado](keyboard_shortcuts.md).
 2. **Aproveche las herramientas eléctricas avanzadas**: utilice la herramienta de cambio de nombre múltiple por lotes (`Ctrl+M`), la diferenciación de archivos en paralelo (`Meta+Shift+F12`), la sincronización de carpetas (`Shift+F12`) y la búsqueda avanzada en el [Capítulo 5: Herramientas eléctricas y automatización] (power_tools.md). 
 3. **Conéctese a sistemas virtuales y remotos**: explore y edite directamente dentro de los archivos `.zip` y `.tar` con reempaquetado en vivo, o administre servidores remotos a través de SFTP, SMB y WebDAV en el [Capítulo 6: Red y sistemas de archivos virtuales] (network_and_vfs.md). 
-4. **Personalice y transfiera su configuración**: vuelva a vincular comandos, configure el comportamiento de actualización automática y exporte su configuración XML en el [Capítulo 7: Preferencias y personalización](preferences_and_customization.md). 
+4. **Supervisar el sistema y mantener el almacenamiento**: Use la cápsula de estado en tiempo real (`⌘⇧M`), el analizador de disco Treemap (`⌘⇧D`), el limpiador de sistema seguro (`⌘⇧C`) y el desinstalador profundo de aplicaciones (`⌘⇧U`) en el [Capítulo 7: Herramientas del sistema y mantenimiento](system_tools.md).
+5. **Personalice y migre su configuración**: Reasigne comandos, configure la actualización automática y exporte su configuración XML en el [Capítulo 8: Preferencias y personalización](preferences_and_customization.md).
 
 ---
 
@@ -159,19 +160,22 @@ Automatice desafíos complejos de administración de archivos: cambio de nombre 
 
 Trate los servidores remotos y los archivos comprimidos como carpetas locales normales utilizando URI `vfs://` unificados. Navegue dentro de archivos `.zip`, `.tar` y `.7z` sin descomprimirlos, edite archivos en el lugar con reempaquetado en vivo automatizado, cree archivos cifrados (`Alt+F5`) y administre conexiones persistentes a través de FTP, SFTP (claves SSH), WebDAV y recursos compartidos de red SMB/Samba.
 
-### ⚙️ [Capítulo 7: Preferencias y personalización](preferences_and_customization.md)
+### 🛠️ [Capítulo 7: Herramientas del sistema y mantenimiento](system_tools.md)
+Supervise el rendimiento del sistema en tiempo real desde la cápsula de estado de la barra de herramientas o la consola de diagnóstico completa (`cm_SystemStatus`), analice el uso del almacenamiento con treemaps interactivos (`cm_DiskUsageAnalyzer`), limpie cachés, registros y artefactos de desarrollo de forma segura mediante análisis de riesgo en dos etapas (`cm_CleanSystem`) y realice una desinstalación profunda de aplicaciones eliminando restos huérfanos en `~/Library/` (`cm_UninstallApp`).
+
+### ⚙️ [Capítulo 8: Preferencias y personalización](preferences_and_customization.md)
 
 Configure ATBCmder para que coincida con su estilo de trabajo exacto. Busque y vincule teclas de acceso rápido primarias/secundarias con advertencias de conflictos en tiempo real, personalice las columnas de la tabla de archivos y las reglas de ajuste automático, ajuste la sensibilidad de actualización automática del observador de archivos, defina asociaciones de extensiones de archivos personalizadas y exporte/importe perfiles de configuración portátiles (`cm_ExportConfiguration`).
 
-### ⌨️ [Capítulo 8: Atajos de teclado maestros](keyboard_shortcuts.md)
+### ⌨️ [Capítulo 9: Referencia maestra de atajos de teclado](keyboard_shortcuts.md)
 
 Guía de referencia completa de atajos de matriz dual que compara los atajos nativos de macOS (modificadores `Cmd`) con las teclas de función clásicas de Commander (`F1`-`F12`). Incluye instrucciones dedicadas para el comportamiento del modificador `Fn` del teclado Apple y la configuración de las "teclas de función estándar" de macOS.
 
-### ❓ [Capítulo 9: Recetas del mundo real y solución de problemas](faq_howtos.md)
+### ❓ [Capítulo 10: Soluciones prácticas y resolución de problemas](faq_howtos.md)
 
 Tutoriales prácticos paso a paso para tareas comunes del mundo real: sincronización de copias de seguridad de directorios, cambio de nombre por lotes de bibliotecas de fotografías de cámaras con marcas de tiempo, montaje de unidades NAS de red, actualización de archivos de configuración dentro de archivos remotos y diagnóstico de errores de permisos de entorno aislado de macOS o problemas de actualización automática.
 
-### 📥 [Capítulo 10: Descarga e instalación](download.md)
+### 📥 [Capítulo 11: Descarga e instalación](download.md)
 
 Opciones de instalación para macOS 12.0+ Monterey a través de Sequoia. Descárguelo directamente desde Mac App Store u obtenga paquetes de instalación DMG independientes creados de forma nativa con compatibilidad de doble arquitectura para Apple Silicon (M1/M2/M3/M4, ARM64) e Intel (x86_64).
 

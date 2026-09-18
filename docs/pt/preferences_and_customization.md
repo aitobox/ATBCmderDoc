@@ -1,4 +1,4 @@
-# Capítulo 7: Preferências e personalização
+# Capítulo 8: Preferências e personalização
 
 Um gerenciador de arquivos verdadeiramente eficiente deve se adaptar ao seu fluxo de trabalho, e não forçá-lo a se adaptar aos seus padrões. Cada engenheiro, administrador de sistema, arquivista digital e profissional criativo traz memória muscular, requisitos de exibição e hábitos operacionais distintos: alguns dependem estritamente das teclas de função ortodoxas do Norton Commander / Total Commander (`F1`–`F10`), enquanto outros esperam atalhos nativos do macOS (`Cmd+C`, `Cmd+V`, `Cmd+O`); alguns exigem ajuste automático de coluna dinâmico com métricas tipográficas de subpixel, enquanto outros precisam de limites de coluna fixos e rígidos; alguns exigem monitoramento agressivo de eventos do sistema de arquivos em tempo real, enquanto outros são executados em compartilhamentos de rede de alta latência, onde a pesquisa passiva é obrigatória. 
 
@@ -693,7 +693,7 @@ ATBCmder inclui dicas de ferramentas de metadados flutuantes que exibem dimensõ
 
 --- 
 
-<div align="center"> 
-<p>Pronto para dominar todos os atalhos de teclado e matrizes de comando em todo o aplicativo?</p> 
-<p><strong><a href="keyboard_shortcuts.md">Prossiga para o Capítulo 8: Atalhos de teclado mestre &rarr;</a></strong></p> 
+<div align="center">
+  <p>Pronto para dominar todos os atalhos de teclado e matrizes de comandos da aplicação?</p>
+  <p><strong><a href="keyboard_shortcuts.md">Avançar para o Capítulo 9: Referência mestre de atalhos de teclado &rarr;</a></strong></p>
 </div>

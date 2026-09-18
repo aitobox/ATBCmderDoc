@@ -114,7 +114,7 @@ Si vous utilisez le Finder ou des systèmes d'exploitation de bureau standard, l
 1. **Commencez par les concepts de base** : lisez [Chapitre 1 : Principes de base et configuration de macOS](getting_started.md) pour comprendre les panneaux actifs et inactifs, la barre d'outils centrale et l'octroi d'autorisations de disque macOS. 
 2. **Maîtrisez les opérations quotidiennes** : Apprenez à copier, déplacer, renommer et supprimer sans toucher votre souris dans [Chapitre 3 : Opérations quotidiennes sur les fichiers et file d'attente](file_operations.md). 
 3. **Prévisualisez tout instantanément** : découvrez comment prévisualiser des images, écouter des fichiers audio, lire du code et inspecter des PDF d'une seule touche dans [Chapitre 4 : Listeur et éditeurs universels](viewers_and_editors.md). 
-4. **Suivez les guides pratiques** : découvrez les flux de travail pratiques quotidiens et les questions courantes dans le [Chapitre 9 : Recettes et dépannage du monde réel](faq_howtos.md). 
+4. **Suivez des guides pratiques**: Consultez les flux de travail quotidiens et les questions fréquentes dans le [Chapitre 10: Recettes pratiques et dépannage](faq_howtos.md).
 
 ---
 
@@ -159,19 +159,22 @@ Automatisez les défis de gestion de fichiers complexes : renommage multiple p
 
 Traitez les serveurs distants et les archives compressées comme des dossiers locaux ordinaires à l'aide d'URI `vfs://` unifiés. Naviguez dans les archives `.zip`, `.tar` et `.7z` sans décompression, modifiez les fichiers sur place avec le reconditionnement automatisé en direct, créez des archives cryptées (`Alt+F5`) et gérez les connexions persistantes sur les partages réseau FTP, SFTP (clés SSH), WebDAV et SMB/Samba.
 
-### ⚙️ [Chapitre 7 : Préférences et personnalisation](preferences_and_customization.md)
+### 🛠️ [Chapitre 7: Outils système et maintenance](system_tools.md)
+Surveillez les performances du système en temps réel depuis la capsule d'état de la barre d'outils ou la console de diagnostic complète (`cm_SystemStatus`), analysez l'espace disque avec des treemaps interactives (`cm_DiskUsageAnalyzer`), nettoyez en toute sécurité les caches, journaux et artefacts de développement grâce à une analyse des risques en deux étapes (`cm_CleanSystem`), et réalisez une désinstallation approfondie des applications incluant la suppression des résidus orphelins dans `~/Library/` (`cm_UninstallApp`).
+
+### ⚙️ [Chapitre 8: Préférences et personnalisation](preferences_and_customization.md)
 
 Configurez ATBCmder pour qu'il corresponde exactement à votre style de travail. Recherchez et associez les raccourcis clavier primaires/secondaires avec des avertissements de conflit en temps réel, personnalisez les colonnes de la table de fichiers et les règles d'ajustement automatique, ajustez la sensibilité d'actualisation automatique de l'observateur de fichiers, définissez des associations d'extensions de fichiers personnalisées et exportez/importez des profils de configuration portables (`cm_ExportConfiguration`).
 
-### ⌨️ [Chapitre 8 : Raccourcis clavier clavier principal](keyboard_shortcuts.md)
+### ⌨️ [Chapitre 9: Répertoire principal des raccourcis clavier](keyboard_shortcuts.md)
 
 Guide de référence complet des raccourcis à double matrice comparant les raccourcis macOS natifs (modificateurs `Cmd`) avec les touches de fonction Commander classiques (`F1`-`F12`). Comprend des instructions dédiées au comportement du modificateur du clavier Apple `Fn` et à la configuration des « touches de fonction standard » de macOS.
 
-### ❓ [Chapitre 9 : Recettes du monde réel et dépannage](faq_howtos.md)
+### ❓ [Chapitre 10: Recettes pratiques et dépannage](faq_howtos.md)
 
 Procédures pas à pas pratiques pour les tâches courantes du monde réel : synchronisation des sauvegardes de répertoires, renommage par lots des bibliothèques de photos d'appareils photo avec horodatages, montage de lecteurs NAS réseau, mise à jour des fichiers de configuration dans des archives distantes et diagnostic des erreurs d'autorisation du bac à sable macOS ou des problèmes d'actualisation automatique.
 
-### 📥 [Chapitre 10 : Téléchargement et installation](download.md)
+### 📥 [Chapitre 11: Téléchargement et installation](download.md)
 
 Options d'installation pour macOS 12.0+ Monterey via Sequoia. Téléchargez directement depuis le Mac App Store ou récupérez les packages d'installation DMG autonomes conçus nativement avec prise en charge de la double architecture pour Apple Silicon (M1/M2/M3/M4, ARM64) et Intel (x86_64).
 

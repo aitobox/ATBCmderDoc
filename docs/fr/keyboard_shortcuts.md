@@ -1,4 +1,4 @@
-# Chapitre 8: Répertoire principal des raccourcis clavier
+# Chapitre 9: Répertoire principal des raccourcis clavier
 
 ATBCmder est conçu dès le départ comme un gestionnaire de fichiers axé sur le clavier. Chaque opération de fichier, saut de répertoire, transformation de vue et utilitaire de traitement par lots peut être exécuté sans aucune interaction avec la souris. 
 
@@ -287,7 +287,20 @@ Lancez des outils d'automatisation avancés, des utilitaires par lots et des out
 
 ---
 
-### 4.7 Système, configuration et aide
+### 4.7 Outils système intégrés
+
+Surveillez les performances du système d'exploitation, analysez le stockage des répertoires avec des treemaps, purgez en toute sécurité les caches système et effectuez une désinstallation approfondie des applications.
+
+| ID de commande | Description | Raccourci macOS principal (glyphes ⌘/⌥/⇧/⌃) | Raccourci Commander classique (touches Fn) | Contexte |
+| :--- | :--- | :---: | :---: | :---: |
+| `cm_SystemStatus` | Ouvrir le moniteur d'état et de diagnostic du système | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principal |
+| `cm_DiskUsageAnalyzer` | Ouvrir l'analyseur d'espace disque (Arborescence + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principal |
+| `cm_CleanSystem` | Ouvrir le nettoyeur système sécurisé en deux étapes | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principal |
+| `cm_UninstallApp` | Ouvrir le désinstallateur approfondi d'applications | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principal |
+
+---
+
+### 4.8 Système, configuration et aide
 
 Accédez aux préférences des applications, à la gestion de la configuration, aux mises à jour logicielles et à la documentation utilisateur. 
 
@@ -451,7 +464,7 @@ Les raccourcis clavier utilisateur sont enregistrés dans `~/.config/atbcmder/at
 
 --- 
 
-<div align="center"> 
-<p>Vous recherchez des recettes pratiques au quotidien, des flux de travail de montage de NAS ou des conseils de dépannage ?</p> 
-<p><strong><a href="faq_howtos.md">Passez au chapitre 9 : Recettes réelles et dépannage &rarr;</a></strong></p> 
+<div align="center">
+  <p>Vous recherchez des recettes pratiques, des flux de travail pour monter un NAS ou des conseils de dépannage ?</p>
+  <p><strong><a href="faq_howtos.md">Passer au Chapitre 10: Recettes pratiques et dépannage &rarr;</a></strong></p>
 </div>

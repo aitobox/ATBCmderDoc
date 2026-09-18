@@ -21,10 +21,11 @@ nav = [
   { "Chapter 4: Universal Lister & Built-in Editors" = "viewers_and_editors.md" },
   { "Chapter 5: Power Tools & Automation" = "power_tools.md" },
   { "Chapter 6: Virtual File Systems & Network" = "network_and_vfs.md" },
-  { "Chapter 7: Preferences & Customization" = "preferences_and_customization.md" },
-  { "Chapter 8: Master Keyboard Shortcut Reference" = "keyboard_shortcuts.md" },
-  { "Chapter 9: Real-World Recipes & Troubleshooting" = "faq_howtos.md" },
-  { "Chapter 10: Download & Installation" = "download.md" },
+  { "Chapter 7: System Tools & Maintenance" = "system_tools.md" },
+  { "Chapter 8: Preferences & Customization" = "preferences_and_customization.md" },
+  { "Chapter 9: Master Keyboard Shortcut Reference" = "keyboard_shortcuts.md" },
+  { "Chapter 10: Real-World Recipes & Troubleshooting" = "faq_howtos.md" },
+  { "Chapter 11: Download & Installation" = "download.md" },
   { "Privacy Policy" = "privacy_policy.md" }
 ]
 

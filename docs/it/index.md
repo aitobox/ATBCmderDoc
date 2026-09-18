@@ -114,7 +114,7 @@ Se provieni da Finder o da sistemi operativi desktop standard, i file manager or
 1. **Inizia con i concetti fondamentali**: leggi il [Capitolo 1: Nozioni fondamentali e configurazione di macOS](getting_started.md) per comprendere i pannelli attivi e inattivi, la barra degli strumenti centrale e la concessione delle autorizzazioni del disco di macOS. 
 2. **Operazioni quotidiane principali**: scopri come copiare, spostare, rinominare ed eliminare senza toccare il mouse nel [Capitolo 3: Operazioni giornaliere sui file e coda](file_operations.md). 
 3. **Anteprima di tutto all'istante**: scopri come visualizzare in anteprima le immagini, ascoltare file audio, leggere il codice e controllare i PDF premendo un solo tasto nel [Capitolo 4: Universal Lister & Editors](viewers_and_editors.md). 
-4. **Segui le guide pratiche**: scopri i flussi di lavoro pratici di tutti i giorni e le domande comuni nel [Capitolo 9: Ricette reali e risoluzione dei problemi](faq_howtos.md). 
+4. **Segui le guide pratiche**: Consulta i flussi di lavoro quotidiani e le domande frequenti nel [Capitolo 10: Ricette pratiche e risoluzione dei problemi](faq_howtos.md).
 
 ---
 
@@ -124,10 +124,11 @@ Se provieni da Finder o da sistemi operativi desktop standard, i file manager or
 
 ATBCmder è stato creato per portare l'autentica esperienza di Commander sui moderni macOS senza eseguire goffi X11, wine wrapper o porte legacy non mantenute: 
 
-1. **Padroneggia le combinazioni di tasti a doppia matrice**: rivedi la nostra matrice completa di scorciatoie affiancate (`macOS Cmd` vs `Commander Fn`) nel [Capitolo 8: Scorciatoie da tastiera principali](keyboard_shortcuts.md). 
+1. **Padroneggia le scorciatoie a doppia matrice**: Consulta la nostra guida comparativa completa nel [Capitolo 9: Guida rapida alle scorciatoie da tastiera](keyboard_shortcuts.md).
 2. **Sfrutta strumenti avanzati**: utilizzare lo strumento di ridenominazione multipla batch (`Ctrl+M`), Diff. file affiancati (`Meta+Shift+F12`), Sincronizzazione cartelle (`Shift+F12`) e Ricerca avanzata nel [Capitolo 5: Strumenti elettrici e automazione](power_tools.md). 
 3. **Connettiti a sistemi remoti e virtuali**: sfoglia e modifica direttamente all'interno degli archivi `.zip` e `.tar` con repacking in tempo reale o gestisci server remoti tramite SFTP, SMB e WebDAV nel [Capitolo 6: File system virtuali e rete](network_and_vfs.md). 
-4. **Personalizza e trasferisci la tua configurazione**: associa nuovamente i comandi, configura il comportamento di aggiornamento automatico ed esporta l'XML di configurazione nel [Capitolo 7: Preferenze e personalizzazione](preferences_and_customization.md). 
+4. **Monitora il sistema e gestisci l'archiviazione**: Usa la capsula di stato in tempo reale (`⌘⇧M`), l'analizzatore di disco Treemap (`⌘⇧D`), il pulitore di sistema sicuro (`⌘⇧C`) e il disinstallatore approfondito di applicazioni (`⌘⇧U`) nel [Capitolo 7: Strumenti di sistema e manutenzione](system_tools.md).
+5. **Personalizza ed esporta la configurazione**: Riassegna i comandi, configura l'aggiornamento automatico ed esporta la configurazione XML nel [Capitolo 8: Preferenze e personalizzazione](preferences_and_customization.md).
 
 ---
 
@@ -159,19 +160,22 @@ Automatizza le complesse sfide di gestione dei file: ridenominazione multipla ba
 
 Tratta i server remoti e gli archivi compressi come normali cartelle locali utilizzando URI `vfs://` unificati. Naviga all'interno degli archivi `.zip`, `.tar` e `.7z` senza decomprimerli, modifica i file sul posto con il repacking automatico in tempo reale, crea archivi crittografati (`Alt+F5`) e gestisci connessioni persistenti su FTP, SFTP (chiavi SSH), WebDAV e SMB/Samba condivisioni di rete.
 
-### ⚙️ [Capitolo 7: Preferenze e personalizzazione](preferences_and_customization.md)
+### 🛠️ [Capitolo 7: Strumenti di sistema e manutenzione](system_tools.md)
+Monitora le prestazioni del sistema in tempo reale dalla capsula di stato della barra degli strumenti o dalla console di diagnostica completa (`cm_SystemStatus`), analizza lo spazio di archiviazione con treemap interattive (`cm_DiskUsageAnalyzer`), elimina in sicurezza cache, log e artefatti di sviluppo tramite analisi del rischio a due fasi (`cm_CleanSystem`) ed esegui la disinstallazione approfondita delle applicazioni inclusa la rimozione dei residui orphelins in `~/Library/` (`cm_UninstallApp`).
+
+### ⚙️ [Capitolo 8: Preferenze e personalizzazione](preferences_and_customization.md)
 
 Configura ATBCmder per adattarlo esattamente al tuo stile di lavoro. Cerca e associa tasti di scelta rapida primari/secondari con avvisi di conflitto in tempo reale, personalizza le colonne della tabella dei file e le regole di adattamento automatico, regola la sensibilità dell'aggiornamento automatico del watcher dei file, definisce associazioni di estensioni di file personalizzate ed esporta/importa profili di configurazione portatili (`cm_ExportConfiguration`).
 
-### ⌨️ [Capitolo 8: Scorciatoie da tastiera principali](keyboard_shortcuts.md)
+### ⌨️ [Capitolo 9: Guida rapida alle scorciatoie da tastiera](keyboard_shortcuts.md)
 
 Guida completa di riferimento alle scorciatoie a doppia matrice che confronta le scorciatoie native di macOS (modificatori `Cmd`) con i classici tasti funzione di Commander (`F1`-`F12`). Include istruzioni dedicate per il comportamento del modificatore `Fn` della tastiera Apple e la configurazione dei "tasti funzione standard" di macOS.
 
-### ❓ [Capitolo 9: Ricette reali e risoluzione dei problemi](faq_howtos.md)
+### ❓ [Capitolo 10: Ricette pratiche e risoluzione dei problemi](faq_howtos.md)
 
 Procedure dettagliate dettagliate per attività comuni nel mondo reale: sincronizzazione dei backup di directory, ridenominazione in batch delle librerie di foto della fotocamera con timestamp, montaggio di unità NAS di rete, aggiornamento dei file di configurazione all'interno di archivi remoti e diagnosi di errori di autorizzazione sandbox di macOS o problemi di aggiornamento automatico.
 
-### 📥 [Capitolo 10: Download e installazione](download.md)
+### 📥 [Capitolo 11: Download e installazione](download.md)
 
 Opzioni di installazione per macOS 12.0+ Monterey tramite Sequoia. Scarica direttamente dal Mac App Store o prendi i pacchetti di installazione DMG autonomi creati nativamente con supporto alla doppia architettura per Apple Silicon (M1/M2/M3/M4, ARM64) e Intel (x86_64). 
 

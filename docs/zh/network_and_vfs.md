@@ -477,6 +477,6 @@ ATBCmder 内置的 `stream_copy_file` 引擎支持**跨协议直接管道流式�
 ---
 
 <div align="center">
-  <p>准备好定制属于您的个性化快捷键、面板视图与操作行为了吗？</p>
-  <p><strong><a href="preferences_and_customization.md">前往第 7 章：偏好设置与个性化定制 &rarr;</a></strong></p>
+  <p>准备好监控系统资源、深入分析磁盘占用并安全清理缓存了吗？</p>
+  <p><strong><a href="system_tools.md">前往第 7 章：系统工具与日常维护 &rarr;</a></strong></p>
 </div>

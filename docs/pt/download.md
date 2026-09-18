@@ -1,4 +1,4 @@
-# Capítulo 10: Download e instalação
+# Capítulo 11: Download e instalação
 
 Obrigado pelo seu interesse no ATBCmder! Fornecemos dois métodos diferentes de download e instalação para atender às suas necessidades. 
 

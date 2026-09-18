@@ -1,4 +1,4 @@
-# Capítulo 7: Preferencias y personalización
+# Capítulo 8: Preferencias y personalización
 
 Un administrador de archivos verdaderamente eficiente debe adaptarse a su flujo de trabajo, no obligarlo a adaptarse a sus valores predeterminados. Cada ingeniero, administrador de sistemas, archivero digital y profesional creativo aporta una memoria muscular, requisitos de visualización y hábitos operativos distintos: algunos dependen estrictamente de las teclas de función ortodoxas de Norton Commander/Total Commander (`F1`–`F10`), mientras que otros esperan atajos nativos de macOS (`Cmd+C`, `Cmd+V`, `Cmd+O`); algunos exigen un ajuste automático de columnas dinámico con métricas tipográficas de subpíxeles, mientras que otros necesitan límites de columna rígidos y fijos; algunos requieren un monitoreo agresivo de eventos del sistema de archivos en tiempo real, mientras que otros se ejecutan en recursos compartidos de red de alta latencia donde el sondeo pasivo es obligatorio. 
 

@@ -1,4 +1,4 @@
-# Capítulo 8: Referencia maestra de atajos de teclado
+# Capítulo 9: Referencia maestra de atajos de teclado
 
 ATBCmder está diseñado desde cero como un administrador de archivos basado en el teclado. Cada operación de archivo, salto de directorio, transformación de vista y utilidad por lotes se puede ejecutar sin interacción con el mouse. 
 
@@ -287,7 +287,20 @@ Inicie herramientas de automatización avanzadas, utilidades por lotes y herrami
 
 ---
 
-### 4.7 Sistema, configuración y ayuda
+### 4.7 Herramientas del sistema integradas
+
+Supervise el rendimiento del sistema operativo, analice el almacenamiento de directorios con mapas de árbol, limpie cachés del sistema de forma segura y desinstale aplicaciones en profundidad.
+
+| ID de comando | Descripción | Atajo principal de macOS (con glifos ⌘/⌥/⇧/⌃) | Atajo clásico de Commander (con teclas Fn) | Contexto |
+| :--- | :--- | :---: | :---: | :---: |
+| `cm_SystemStatus` | Abrir monitor de estado y diagnóstico del sistema | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principal |
+| `cm_DiskUsageAnalyzer` | Abrir analizador de uso de disco (Árbol + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principal |
+| `cm_CleanSystem` | Abrir limpiador de sistema seguro en dos etapas | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principal |
+| `cm_UninstallApp` | Abrir desinstalador profundo de aplicaciones | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principal |
+
+---
+
+### 4.8 Sistema, configuración y ayuda
 
 Acceda a las preferencias de la aplicación, gestión de configuración, actualizaciones de software y documentación del usuario. 
 
@@ -451,7 +464,7 @@ Las combinaciones de teclas del usuario se guardan en `~/.config/atbcmder/atbcmd
 
 --- 
 
-<div align="center"> 
-<p>¿Busca recetas prácticas para el día a día, flujos de trabajo de montaje de NAS o consejos para la resolución de problemas?</p> 
-<p><strong><a href="faq_howtos.md">Continúe con el Capítulo 9: Recetas del mundo real y solución de problemas &rarr;</a></strong></p> 
+<div align="center">
+  <p>¿Busca recetas prácticas para el día a día, flujos de montaje NAS o consejos de solución de problemas?</p>
+  <p><strong><a href="faq_howtos.md">Continuar al Capítulo 10: Soluciones prácticas y resolución de problemas &rarr;</a></strong></p>
 </div>

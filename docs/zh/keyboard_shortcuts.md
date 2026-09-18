@@ -1,4 +1,4 @@
-# 第 8 章：快捷键速查掌中宝
+# 第 9 章：终极快捷键全书
 
 ATBCmder 是一款为**纯键盘高效操作**而生的双面板文件管理器。无论是日常文件复制移动、跨目录跳转、视图切换，还是批量重命名与内容对比，完全无需触碰鼠标即可瞬间完成。
 
@@ -286,7 +286,20 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 
 ---
 
-### 4.7 系统偏好、配置与帮助
+### 4.7 集成系统工具
+
+实时监控操作系统性能，使用矩形树状图分析目录空间占用，安全清除系统缓存，并深度卸载应用程序。
+
+| 命令标识 (Command ID) | 功能描述 | macOS 原生快捷键 | 经典 Commander 键位 | 生效上下文 |
+| :--- | :--- | :---: | :---: | :---: |
+| `cm_SystemStatus` | 打开系统状态与诊断监控控制台 | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Main |
+| `cm_DiskUsageAnalyzer` | 打开磁盘空间占用分析器 (树状表 + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Main |
+| `cm_CleanSystem` | 打开两阶段安全系统清理器 | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Main |
+| `cm_UninstallApp` | 打开应用程序深度卸载器 | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Main |
+
+---
+
+### 4.8 系统偏好、配置与帮助
 
 快速访问软件偏好设置、配置导入导出以及在线文档。
 
@@ -452,5 +465,5 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 
 <div align="center">
   <p>想了解如何使用双向同步做日常备份？或是快速连接局域网 NAS？</p>
-  <p><strong><a href="faq_howtos.md">前往第 9 章：实战指南与疑难解答 &rarr;</a></strong></p>
+  <p><strong><a href="faq_howtos.md">前往第 10 章：实战指南与疑难解答 &rarr;</a></strong></p>
 </div>

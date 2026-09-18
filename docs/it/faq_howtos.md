@@ -1,4 +1,4 @@
-# Capitolo 9: Ricette pratiche e risoluzione dei problemi
+# Capitolo 10: Ricette pratiche e risoluzione dei problemi
 
 Sebbene i file manager ortodossi a doppio pannello siano rinomati per la loro velocità pura e l'efficienza della tastiera, padroneggiare le attività del mondo reale spesso richiede la comprensione di come sottosistemi distinti, come la sincronizzazione delle directory, la ridenominazione di modelli batch, i file system virtuali remoti, il repacking degli archivi e la ricerca ricorsiva, lavorano insieme negli scenari quotidiani. Inoltre, operare all’interno dei moderni macOS introduce limiti di sicurezza, vincoli sandbox e intersezioni di scorciatoie di sistema che ogni utente incontra prima o poi. 
 
@@ -636,7 +636,7 @@ Per mantenere ATBCmder performante alla massima velocità nei flussi di lavoro a
 <p> 
 <a href="index.md">&larr; Ritorna al portale della documentazione</a> &nbsp;&bull;&nbsp; 
 <a href="getting_started.md">Capitolo 1: Nozioni fondamentali</a> &nbsp;&bull;&nbsp; 
-<a href="keyboard_shortcuts.md">Capitolo 8: Scorciatoie</a> &nbsp;&bull;&nbsp; 
-<a href="download.md">Capitolo 10: Download e installazione &rarr;</a> 
+<a href="keyboard_shortcuts.md">Capitolo 9: Scorciatoie</a> &nbsp;&bull;&nbsp; 
+<a href="download.md">Capitolo 11: Download e installazione &rarr;</a> 
 </p> 
 </div>

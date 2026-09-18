@@ -21,10 +21,11 @@ nav = [
   { "Kapitel 4: Universeller Betrachter & Editoren" = "viewers_and_editors.md" },
   { "Kapitel 5: Power-Tools & Automatisierung" = "power_tools.md" },
   { "Kapitel 6: Virtuelle Dateisysteme & Netzwerk" = "network_and_vfs.md" },
-  { "Kapitel 7: Einstellungen & Anpassung" = "preferences_and_customization.md" },
-  { "Kapitel 8: Tastaturkurzbefehle-Referenz" = "keyboard_shortcuts.md" },
-  { "Kapitel 9: Praxislösungen & Fehlerbehebung" = "faq_howtos.md" },
-  { "Kapitel 10: Download & Installation" = "download.md" },
+  { "Kapitel 7: System-Tools & Wartung" = "system_tools.md" },
+  { "Kapitel 8: Einstellungen & Anpassung" = "preferences_and_customization.md" },
+  { "Kapitel 9: Tastaturkurzbefehle-Referenz" = "keyboard_shortcuts.md" },
+  { "Kapitel 10: Praxislösungen & Fehlerbehebung" = "faq_howtos.md" },
+  { "Kapitel 11: Download & Installation" = "download.md" },
   { "Datenschutzerklärung" = "privacy_policy.md" }
 ]
 

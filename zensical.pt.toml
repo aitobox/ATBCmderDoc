@@ -21,10 +21,11 @@ nav = [
   { "Capítulo 4: Visualizador universal e editores integrados" = "viewers_and_editors.md" },
   { "Capítulo 5: Ferramentas avançadas e automação" = "power_tools.md" },
   { "Capítulo 6: Sistemas de arquivos virtuais e rede" = "network_and_vfs.md" },
-  { "Capítulo 7: Preferências e personalização" = "preferences_and_customization.md" },
-  { "Capítulo 8: Referência mestre de atalhos de teclado" = "keyboard_shortcuts.md" },
-  { "Capítulo 9: Receitas práticas e solução de problemas" = "faq_howtos.md" },
-  { "Capítulo 10: Download e instalação" = "download.md" },
+  { "Capítulo 7: Ferramentas do sistema e manutenção" = "system_tools.md" },
+  { "Capítulo 8: Preferências e personalização" = "preferences_and_customization.md" },
+  { "Capítulo 9: Referência mestre de atalhos de teclado" = "keyboard_shortcuts.md" },
+  { "Capítulo 10: Receitas práticas e solução de problemas" = "faq_howtos.md" },
+  { "Capítulo 11: Download e instalação" = "download.md" },
   { "Política de privacidade" = "privacy_policy.md" }
 ]
 

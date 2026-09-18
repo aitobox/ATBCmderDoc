@@ -494,6 +494,6 @@ ATBCmder の `stream_copy_file` エンジンは、**サーバー間の直接ス�
 ---
 
  <div align="center">
- <p>ホットキー、パネル ビュー、アプリケーションの動作をカスタマイズする準備はできましたか?</p>
- <p><strong><a href="preferences_and_customization.md">第 7 章: 環境設定とカスタマイズに進む &rarr;</a></strong></p>
- </div>
+  <p>システムリソースを監視し、ディスク使用量を分析し、安全にキャッシュをクリーンアップする準備はできましたか？</p>
+  <p><strong><a href="system_tools.md">第7章：システムツールとメンテナンスに進む &rarr;</a></strong></p>
+</div>

@@ -1,4 +1,4 @@
-# Capítulo 8: Referência mestre de atalhos de teclado
+# Capítulo 9: Referência mestre de atalhos de teclado
 
 ATBCmder foi projetado desde o início como um gerenciador de arquivos que prioriza o teclado. Cada operação de arquivo, salto de diretório, transformação de visualização e utilitário em lote pode ser executado sem interação do mouse. 
 
@@ -287,7 +287,20 @@ Inicie ferramentas avançadas de automação, utilitários em lote e ferramentas
 
 ---
 
-### 4.7 Sistema, Configuração e Ajuda
+### 4.7 Ferramentas integradas do sistema
+
+Monitore o desempenho do sistema operacional, analise o armazenamento de diretórios com treemaps, limpe caches do sistema com segurança e desinstale aplicativos profundamente.
+
+| ID do comando | Descrição | Atalho principal do macOS (com glifos ⌘/⌥/⇧/⌃) | Atalho clássico do Commander (com teclas Fn) | Contexto |
+| :--- | :--- | :---: | :---: | :---: |
+| `cm_SystemStatus` | Abrir monitor de status e diagnóstico do sistema | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principal |
+| `cm_DiskUsageAnalyzer` | Abrir analisador de uso do disco (Árvore + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principal |
+| `cm_CleanSystem` | Abrir limpador de sistema seguro em duas etapas | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principal |
+| `cm_UninstallApp` | Abrir desinstalador profundo de aplicativos | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principal |
+
+---
+
+### 4.8 Sistema, Configuração e Ajuda
 
 Acesse preferências de aplicativos, gerenciamento de configuração, atualizações de software e documentação do usuário. 
 
@@ -451,7 +464,7 @@ Os atalhos de teclado do usuário são salvos em `~/.config/atbcmder/atbcmder_ho
 
 --- 
 
-<div align="center"> 
-<p>Procurando receitas práticas para o dia a dia, fluxos de trabalho de montagem de NAS ou dicas para solução de problemas?</p> 
-<p><strong><a href="faq_howtos.md">Prossiga para o Capítulo 9: Receitas do mundo real e solução de problemas &rarr;</a></strong></p> 
+<div align="center">
+  <p>Procurando receitas práticas do dia a dia, fluxos de montagem de NAS ou dicas de solução de problemas?</p>
+  <p><strong><a href="faq_howtos.md">Avançar para o Capítulo 10: Receitas práticas e solução de problemas &rarr;</a></strong></p>
 </div>

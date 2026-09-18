@@ -112,7 +112,7 @@ If you are coming from Finder or standard desktop operating systems, orthodox fi
 1. **Start with the Core Concepts**: Read [Chapter 1: Fundamentals & macOS Setup](getting_started.md) to understand Active vs. Inactive panels, the Middle Toolbar, and granting macOS disk permissions.
 2. **Master Daily Operations**: Learn how to copy, move, rename, and delete without touching your mouse in [Chapter 3: Daily File Operations & Queue](file_operations.md).
 3. **Preview Everything Instantly**: Discover how to preview images, listen to audio files, read code, and inspect PDFs with a single keystroke in [Chapter 4: Universal Lister & Editors](viewers_and_editors.md).
-4. **Follow Hands-On Guides**: Check out practical everyday workflows and common questions in [Chapter 9: Real-World Recipes & Troubleshooting](faq_howtos.md).
+4. **Follow Hands-On Guides**: Check out practical everyday workflows and common questions in [Chapter 10: Real-World Recipes & Troubleshooting](faq_howtos.md).
 
 ---
 
@@ -121,10 +121,11 @@ If you are coming from Finder or standard desktop operating systems, orthodox fi
 
 ATBCmder was created to bring the authentic Commander experience to modern macOS without running clunky X11, wine wrappers, or unmaintained legacy ports:
 
-1. **Master the Dual-Matrix Keybindings**: Review our complete side-by-side shortcut matrix (`macOS Cmd` vs `Commander Fn`) in [Chapter 8: Master Keyboard Shortcuts](keyboard_shortcuts.md).
+1. **Master the Dual-Matrix Keybindings**: Review our complete side-by-side shortcut matrix (`macOS Cmd` vs `Commander Fn`) in [Chapter 9: Master Keyboard Shortcuts](keyboard_shortcuts.md).
 2. **Harness Advanced Power Tools**: Use the Batch Multi-Rename Tool (`Ctrl+M`), Side-by-Side File Diff (`Meta+Shift+F12`), Folder Sync (`Shift+F12`), and Advanced Search in [Chapter 5: Power Tools & Automation](power_tools.md).
 3. **Connect to Remote & Virtual Systems**: Browse and edit directly inside `.zip` and `.tar` archives with live repacking, or manage remote servers via SFTP, SMB, and WebDAV in [Chapter 6: Virtual File Systems & Network](network_and_vfs.md).
-4. **Customize & Port Your Setup**: Rebind commands, configure auto-refresh behavior, and export your configuration XML in [Chapter 7: Preferences & Customization](preferences_and_customization.md).
+4. **Monitor System & Maintain Storage**: Use the real-time resource monitor HUD (`⌘⇧M`), visual Treemap disk analyzer (`⌘⇧D`), safe system cleaner (`⌘⇧C`), and deep application uninstaller (`⌘⇧U`) in [Chapter 7: System Tools & Maintenance](system_tools.md).
+5. **Customize & Port Your Setup**: Rebind commands, configure auto-refresh behavior, and export your configuration XML in [Chapter 8: Preferences & Customization](preferences_and_customization.md).
 
 ---
 
@@ -150,16 +151,19 @@ Automate complex file management challenges: Batch Multi-Rename (`Ctrl+M`) with 
 ### 🌐 [Chapter 6: Virtual File Systems & Network](network_and_vfs.md)
 Treat remote servers and compressed archives like ordinary local folders using unified `vfs://` URIs. Navigate inside `.zip`, `.tar`, and `.7z` archives without uncompressing, edit files in-place with automated live repacking, create encrypted archives (`Alt+F5`), and manage persistent connections across FTP, SFTP (SSH keys), WebDAV, and SMB/Samba network shares.
 
-### ⚙️ [Chapter 7: Preferences & Customization](preferences_and_customization.md)
+### 🛠️ [Chapter 7: System Tools & Maintenance](system_tools.md)
+Inspect real-time system performance from the toolbar status capsule HUD or full diagnostic console (`cm_SystemStatus`), analyze storage usage with interactive squarified treemaps (`cm_DiskUsageAnalyzer`), safely purge caches, logs, and development artifacts using two-stage risk analysis (`cm_CleanSystem`), and perform deep application uninstallation including orphaned remnant removal across `~/Library/` (`cm_UninstallApp`).
+
+### ⚙️ [Chapter 8: Preferences & Customization](preferences_and_customization.md)
 Configure ATBCmder to match your exact work style. Search and bind primary/secondary hotkeys with real-time conflict warnings, customize file table columns and auto-fitting rules, adjust file watcher auto-refresh sensitivity, define custom file extension associations, and export/import portable configuration profiles (`cm_ExportConfiguration`).
 
-### ⌨️ [Chapter 8: Master Keyboard Shortcuts](keyboard_shortcuts.md)
+### ⌨️ [Chapter 9: Master Keyboard Shortcuts](keyboard_shortcuts.md)
 Comprehensive dual-matrix shortcut reference guide comparing native macOS shortcuts (`Cmd` modifiers) with classic Commander function keys (`F1`-`F12`). Includes dedicated instructions for Apple keyboard `Fn` modifier behavior and the macOS "standard function keys" configuration.
 
-### ❓ [Chapter 9: Real-World Recipes & Troubleshooting](faq_howtos.md)
+### ❓ [Chapter 10: Real-World Recipes & Troubleshooting](faq_howtos.md)
 Practical, step-by-step walkthroughs for common real-world tasks: synchronizing directory backups, batch renaming camera photo libraries with timestamps, mounting network NAS drives, updating configuration files inside remote archives, and diagnosing macOS sandbox permission errors or auto-refresh issues.
 
-### 📥 [Chapter 10: Download & Installation](download.md)
+### 📥 [Chapter 11: Download & Installation](download.md)
 Installation options for macOS 12.0+ Monterey through Sequoia. Download directly from the Mac App Store or grab standalone DMG installer packages natively built with universal dual-architecture support for Apple Silicon (M1/M2/M3/M4, ARM64) and Intel (x86_64) Macs.
 
 ---

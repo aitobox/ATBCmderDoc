@@ -114,7 +114,7 @@ Wenn Sie Finder oder Standard-Desktop-Betriebssysteme verwenden, könnten herkö
 1. **Beginnen Sie mit den Kernkonzepten**: Lesen Sie [Kapitel 1: Grundlagen und macOS-Setup](getting_started.md), um aktive vs. inaktive Bedienfelder, die mittlere Symbolleiste und das Gewähren von macOS-Festplattenberechtigungen zu verstehen. 
 2. **Tägliche Vorgänge meistern**: Erfahren Sie in [Kapitel 3: Tägliche Dateivorgänge und Warteschlange] (file_operations.md), wie Sie kopieren, verschieben, umbenennen und löschen, ohne die Maus zu berühren. 
 3. **Alles sofort in der Vorschau anzeigen**: Erfahren Sie in [Kapitel 4: Universal Lister & Editors](viewers_and_editors.md), wie Sie mit einem einzigen Tastendruck eine Vorschau von Bildern anzeigen, Audiodateien anhören, Code lesen und PDFs überprüfen können. 
-4. **Befolgen Sie praktische Anleitungen**: Sehen Sie sich praktische Alltagsabläufe und häufige Fragen in [Kapitel 9: Rezepte aus der Praxis und Fehlerbehebung](faq_howtos.md) an. 
+4. **Praktische Anleitungen nutzen**: Entdecken Sie Schritt-für-Schritt-Anleitungen und häufig gestellte Fragen in [Kapitel 10: Praxislösungen & Fehlerbehebung](faq_howtos.md).
 
 ---
 
@@ -127,7 +127,8 @@ ATBCmder wurde entwickelt, um das authentische Commander-Erlebnis auf modernes m
 1. **Beherrschen Sie die Dual-Matrix-Tastenkombinationen**: Sehen Sie sich unsere vollständige Parallel-Tastenkombinationsmatrix (`macOS Cmd` vs. `Commander Fn`) in [Kapitel 8: Master-Tastenkombinationen] (keyboard_shortcuts.md) an. 
 2. **Erweiterte Elektrowerkzeuge nutzen**: Verwenden Sie das Batch Multi-Rename Tool (`Ctrl+M`), den Side-by-Side-Dateivergleich (`Meta+Shift+F12`), die Ordnersynchronisierung (`Shift+F12`) und die erweiterte Suche in [Kapitel 5: Elektrowerkzeuge und Automatisierung] (power_tools.md). 
 3. **Verbindung zu Remote- und virtuellen Systemen herstellen**: Durchsuchen und bearbeiten Sie direkt in den Archiven `.zip` und `.tar` mit Live-Neuverpackung oder verwalten Sie Remote-Server über SFTP, SMB und WebDAV in [Kapitel 6: Virtuelle Dateisysteme und Netzwerk] (network_and_vfs.md). 
-4. **Anpassen und Portieren Ihres Setups**: Binden Sie Befehle neu, konfigurieren Sie das automatische Aktualisierungsverhalten und exportieren Sie Ihre Konfigurations-XML in [Kapitel 7: Einstellungen und Anpassung](preferences_and_customization.md). 
+4. **System überwachen & Speicher warten**: Nutzen Sie die Echtzeit-Ressourcenüberwachungs-HUD (`⌘⇧M`), den visuellen Treemap-Festplattenanalysator (`⌘⇧D`), den sicheren Systemreiniger (`⌘⇧C`) und den tiefgehenden Anwendungs-Deinstallierer (`⌘⇧U`) in [Kapitel 7: System-Tools & Wartung](system_tools.md).
+5. **Setup anpassen & portieren**: Befehle neu belegen, Auto-Refresh konfigurieren und Konfigurations-XML exportieren in [Kapitel 8: Einstellungen & Anpassung](preferences_and_customization.md).
 
 ---
 
@@ -159,19 +160,22 @@ Automatisieren Sie komplexe Herausforderungen bei der Dateiverwaltung: Batch-Meh
 
 Behandeln Sie Remote-Server und komprimierte Archive wie gewöhnliche lokale Ordner mit einheitlichen `vfs://`-URIs. Navigieren Sie in den Archiven `.zip`, `.tar` und `.7z` ohne Dekomprimierung, bearbeiten Sie Dateien direkt mit automatisiertem Live-Neupacken, erstellen Sie verschlüsselte Archive (`Alt+F5`) und verwalten Sie dauerhafte Verbindungen über FTP, SFTP (SSH-Schlüssel), WebDAV und SMB/Samba-Netzwerkfreigaben.
 
-### ⚙️ [Kapitel 7: Einstellungen und Anpassung](preferences_and_customization.md)
+### 🛠️ [Kapitel 7: System-Tools & Wartung](system_tools.md)
+Überwachen Sie die Systemleistung in Echtzeit über die Statuskapsel-HUD der Symbolleiste oder die vollständige Diagnosekonsole (`cm_SystemStatus`), analysieren Sie die Speicherbelegung mit interaktiven Treemaps (`cm_DiskUsageAnalyzer`), bereinigen Sie Caches, Protokolle und Entwicklungsartefakte sicher mit zweistufiger Risikoanalyse (`cm_CleanSystem`) und führen Sie eine tiefgehende Anwendungsdeinstallation einschließlich verwaister Überreste in `~/Library/` durch (`cm_UninstallApp`).
+
+### ⚙️ [Kapitel 8: Einstellungen & Anpassung](preferences_and_customization.md)
 
 Konfigurieren Sie ATBCmder so, dass er genau zu Ihrem Arbeitsstil passt. Suchen und binden Sie primäre/sekundäre Hotkeys mit Echtzeit-Konfliktwarnungen, passen Sie Dateitabellenspalten und automatische Anpassungsregeln an, passen Sie die Empfindlichkeit der automatischen Aktualisierung des Datei-Watchers an, definieren Sie benutzerdefinierte Dateierweiterungszuordnungen und exportieren/importieren Sie tragbare Konfigurationsprofile (`cm_ExportConfiguration`).
 
-### ⌨️ [Kapitel 8: Master-Tastaturkürzel](keyboard_shortcuts.md)
+### ⌨️ [Kapitel 9: Tastaturkurzbefehle-Referenz](keyboard_shortcuts.md)
 
 Umfassendes Dual-Matrix-Shortcut-Referenzhandbuch, das native macOS-Shortcuts (`Cmd`-Modifikatoren) mit klassischen Commander-Funktionstasten (`F1`-`F12`) vergleicht. Enthält spezielle Anweisungen für das Modifikatorverhalten der Apple-Tastatur `Fn` und die macOS-Konfiguration der „Standardfunktionstasten“.
 
-### ❓ [Kapitel 9: Rezepte aus der Praxis und Fehlerbehebung](faq_howtos.md)
+### ❓ [Kapitel 10: Praxislösungen & Fehlerbehebung](faq_howtos.md)
 
 Praktische Schritt-für-Schritt-Anleitungen für gängige Aufgaben aus der Praxis: Synchronisieren von Verzeichnissicherungen, Batch-Umbenennen von Kamerafotobibliotheken mit Zeitstempeln, Mounten von Netzwerk-NAS-Laufwerken, Aktualisieren von Konfigurationsdateien in Remote-Archiven und Diagnostizieren von macOS-Sandbox-Berechtigungsfehlern oder Problemen mit der automatischen Aktualisierung.
 
-### 📥 [Kapitel 10: Download und Installation](download.md)
+### 📥 [Kapitel 11: Download & Installation](download.md)
 
 Installationsoptionen für macOS 12.0+ Monterey über Sequoia. Laden Sie es direkt aus dem Mac App Store herunter oder holen Sie sich eigenständige DMG-Installationspakete mit nativer Unterstützung für Apple Silicon (M1/M2/M3/M4, ARM64) und Intel (x86_64).
 

@@ -114,7 +114,7 @@ Se você vier do Finder ou de sistemas operacionais de desktop padrão, os geren
 1. **Comece com os conceitos principais**: leia o [Capítulo 1: Fundamentos e configuração do macOS](getting_started.md) para entender os painéis Ativo versus Inativo, a barra de ferramentas intermediária e a concessão de permissões de disco do macOS. 
 2. **Domine as operações diárias**: aprenda como copiar, mover, renomear e excluir sem tocar no mouse no [Capítulo 3: Operações diárias e fila de arquivos](file_operations.md). 
 3. **Visualizar tudo instantaneamente**: descubra como visualizar imagens, ouvir arquivos de áudio, ler códigos e inspecionar PDFs com um único toque de tecla no [Capítulo 4: Lista universal e editores](viewers_and_editors.md). 
-4. **Siga os guias práticos**: confira fluxos de trabalho práticos do dia a dia e perguntas comuns no [Capítulo 9: Receitas e solução de problemas do mundo real](faq_howtos.md). 
+4. **Siga guias práticos**: Confira fluxos de trabalho cotidianos e perguntas frequentes no [Capítulo 10: Receitas práticas e solução de problemas](faq_howtos.md).
 
 ---
 
@@ -124,10 +124,11 @@ Se você vier do Finder ou de sistemas operacionais de desktop padrão, os geren
 
 ATBCmder foi criado para trazer a experiência autêntica do Commander para o macOS moderno sem executar o X11 desajeitado, wine wrappers ou portas legadas sem manutenção: 
 
-1. **Domine os atalhos de teclado de matriz dupla**: revise nossa matriz de atalhos lado a lado completa (`macOS Cmd` vs `Commander Fn`) no [Capítulo 8: Domine os atalhos de teclado](keyboard_shortcuts.md). 
+1. **Domine os atalhos de matriz dupla**: Revise nosso guia comparando atalhos nativos do macOS com teclas de função clássicas no [Capítulo 9: Referência mestre de atalhos de teclado](keyboard_shortcuts.md).
 2. **Aproveite ferramentas elétricas avançadas**: use a ferramenta de multi-renomeação em lote (`Ctrl+M`), comparação de arquivos lado a lado (`Meta+Shift+F12`), sincronização de pasta (`Shift+F12`) e pesquisa avançada no [Capítulo 5: Ferramentas elétricas e automação](power_tools.md). 
 3. **Conecte-se a sistemas remotos e virtuais**: navegue e edite diretamente nos arquivos `.zip` e `.tar` com reempacotamento em tempo real ou gerencie servidores remotos via SFTP, SMB e WebDAV no [Capítulo 6: Rede e sistemas de arquivos virtuais](network_and_vfs.md). 
-4. **Personalizar e portar sua configuração**: Revincule comandos, configure o comportamento de atualização automática e exporte seu XML de configuração no [Capítulo 7: Preferências e Personalização](preferences_and_customization.md). 
+4. **Monitore o sistema e faça manutenção**: Use a cápsula de status em tempo real (`⌘⇧M`), o analisador de disco Treemap (`⌘⇧D`), o limpador de sistema seguro (`⌘⇧C`) e o desinstalador profundo de aplicativos (`⌘⇧U`) no [Capítulo 7: Ferramentas do sistema e manutenção](system_tools.md).
+5. **Personalize e migre sua configuração**: Reatribua comandos, configure a atualização automática e exporte sua configuração XML no [Capítulo 8: Preferências e personalização](preferences_and_customization.md).
 
 ---
 
@@ -159,19 +160,22 @@ Automatize desafios complexos de gerenciamento de arquivos: multi-renomeação e
 
 Trate servidores remotos e arquivos compactados como pastas locais comuns usando URIs `vfs://` unificados. Navegue dentro dos arquivos `.zip`, `.tar` e `.7z` sem descompactar, edite arquivos no local com reempacotamento automático ao vivo, crie arquivos criptografados (`Alt+F5`) e gerencie conexões persistentes através de FTP, SFTP (chaves SSH), WebDAV e compartilhamentos de rede SMB/Samba.
 
-### ⚙️ [Capítulo 7: Preferências e Personalização](preferences_and_customization.md)
+### 🛠️ [Capítulo 7: Ferramentas do sistema e manutenção](system_tools.md)
+Monitore o desempenho do sistema em tempo real na cápsula de status da barra de ferramentas ou no console de diagnóstico completo (`cm_SystemStatus`), analise o uso de armazenamento com treemaps interativos (`cm_DiskUsageAnalyzer`), limpe com segurança caches, logs e artefatos de desenvolvimento usando análise de risco em dois estágios (`cm_CleanSystem`) e execute desinstalação profunda de aplicativos, incluindo remoção de resíduos órfãos em `~/Library/` (`cm_UninstallApp`).
+
+### ⚙️ [Capítulo 8: Preferências e personalização](preferences_and_customization.md)
 
 Configure o ATBCmder para corresponder exatamente ao seu estilo de trabalho. Pesquise e vincule teclas de atalho primárias/secundárias com avisos de conflito em tempo real, personalize colunas de tabelas de arquivos e regras de ajuste automático, ajuste a sensibilidade de atualização automática do observador de arquivos, defina associações de extensão de arquivo personalizadas e exporte/importe perfis de configuração portáteis (`cm_ExportConfiguration`).
 
-### ⌨️ [Capítulo 8: Atalhos de teclado mestres](keyboard_shortcuts.md)
+### ⌨️ [Capítulo 9: Referência mestre de atalhos de teclado](keyboard_shortcuts.md)
 
 Guia abrangente de referência de atalhos de matriz dupla comparando atalhos nativos do macOS (modificadores `Cmd`) com teclas de função clássicas do Commander (`F1`-`F12`). Inclui instruções dedicadas para o comportamento do modificador `Fn` do teclado Apple e a configuração das "teclas de função padrão" do macOS.
 
-### ❓ [Capítulo 9: Receitas e solução de problemas do mundo real](faq_howtos.md)
+### ❓ [Capítulo 10: Receitas práticas e solução de problemas](faq_howtos.md)
 
 Orientações práticas e passo a passo para tarefas comuns do mundo real: sincronização de backups de diretório, renomeação em lote de bibliotecas de fotos de câmeras com carimbos de data e hora, montagem de unidades NAS de rede, atualização de arquivos de configuração em arquivos remotos e diagnóstico de erros de permissão de sandbox do macOS ou problemas de atualização automática.
 
-### 📥 [Capítulo 10: Download e instalação](download.md)
+### 📥 [Capítulo 11: Download e instalação](download.md)
 
 Opções de instalação para macOS 12.0+ Monterey por meio do Sequoia. Baixe diretamente da Mac App Store ou obtenha pacotes de instalação DMG independentes criados nativamente com suporte de arquitetura dupla para Apple Silicon (M1/M2/M3/M4, ARM64) e Intel (x86_64).
 

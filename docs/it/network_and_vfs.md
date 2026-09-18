@@ -493,7 +493,7 @@ Hai bisogno di modificare uno script `nginx.conf` o Python direttamente su un se
 
 --- 
 
-<div align="center"> 
-<p>Pronto a personalizzare i tasti di scelta rapida, le visualizzazioni dei pannelli e il comportamento dell'applicazione?</p> 
-<p><strong><a href="preferences_and_customization.md">Procedi al capitolo 7: Preferenze e personalizzazione &rarr;</a></strong></p> 
+<div align="center">
+  <p>Pronto a monitorare le risorse di sistema, analizzare lo spazio su disco e ripulire le cache in sicurezza?</p>
+  <p><strong><a href="system_tools.md">Procedi al Capitolo 7: Strumenti di sistema e manutenzione &rarr;</a></strong></p>
 </div>

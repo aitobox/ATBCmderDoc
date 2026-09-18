@@ -1,4 +1,4 @@
-# Download ATBCmder
+# Chapter 11: Download & Installation
 
 Thank you for your interest in ATBCmder! We provide two different download and installation methods to suit your needs.
 

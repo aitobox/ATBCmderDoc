@@ -494,7 +494,7 @@ Müssen Sie ein `nginx.conf` oder ein Python-Skript direkt auf einem Remote-Serv
 
 --- 
 
-<div align="center"> 
-<p>Bereit, Hotkeys, Bedienfeldansichten und Anwendungsverhalten anzupassen?</p> 
-<p><strong><a href="preferences_and_customization.md">Fahren Sie mit Kapitel 7 fort: Einstellungen und Anpassung &rarr;</a></strong></p> 
+<div align="center">
+  <p>Bereit, Systemressourcen zu überwachen, Speicherplatz zu analysieren und Caches sicher zu leeren?</p>
+  <p><strong><a href="system_tools.md">Weiter zu Kapitel 7: System-Tools & Wartung &rarr;</a></strong></p>
 </div>

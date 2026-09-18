@@ -493,7 +493,7 @@ Los firewalls de red con estado y las puertas de enlace NAT frecuentemente corta
 
 --- 
 
-<div align="center"> 
-<p>¿Listo para personalizar las teclas de acceso rápido, las vistas del panel y el comportamiento de las aplicaciones?</p> 
-<p><strong><a href="preferences_and_customization.md">Continúe con el Capítulo 7: Preferencias y personalización →ATB_HTML_00006__</strong></p> 
+<div align="center">
+  <p>¿Listo para monitorizar recursos del sistema, analizar el uso del disco y limpiar cachés de forma segura?</p>
+  <p><strong><a href="system_tools.md">Continuar al Capítulo 7: Herramientas del sistema y mantenimiento &rarr;</a></strong></p>
 </div>

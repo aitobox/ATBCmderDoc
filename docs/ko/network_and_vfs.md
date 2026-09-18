@@ -493,7 +493,7 @@ ATBCMder의 `stream_copy_file` 엔진은 직접적인 **서버 간 스트리밍*
 
 --- 
 
-<div align="center"> 
-<p>단축키, 패널 보기 및 응용 프로그램 동작을 사용자 정의할 준비가 되셨습니까?</p> 
-<p><strong><a href="preferences_and_customization.md">7장으로 이동: 기본 설정 및 사용자 정의 &rarr;</a></strong></p> 
+<div align="center">
+  <p>시스템 리소스를 모니터링하고 디스크 사용량을 분석하며 캐시를 안전하게 정리할 준비가 되셨습니까?</p>
+  <p><strong><a href="system_tools.md">제7장: 시스템 도구 및 유지 관리로 이동 &rarr;</a></strong></p>
 </div>

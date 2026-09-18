@@ -21,10 +21,11 @@ nav = [
   { "第4章：万能ビューアーと内蔵エディター" = "viewers_and_editors.md" },
   { "第5章：高度なツールと自動化" = "power_tools.md" },
   { "第6章：仮想ファイルシステムとネットワーク" = "network_and_vfs.md" },
-  { "第7章：環境設定とカスタマイズ" = "preferences_and_customization.md" },
-  { "第8章：マスターキーボードショートカット一覧" = "keyboard_shortcuts.md" },
-  { "第9章：実践レシピとトラブルシューティング" = "faq_howtos.md" },
-  { "第10章：ダウンロードとインストール" = "download.md" },
+  { "第7章：システムツールとメンテナンス" = "system_tools.md" },
+  { "第8章：環境設定とカスタマイズ" = "preferences_and_customization.md" },
+  { "第9章：マスターキーボードショートカット一覧" = "keyboard_shortcuts.md" },
+  { "第10章：実践レシピとトラブルシューティング" = "faq_howtos.md" },
+  { "第11章：ダウンロードとインストール" = "download.md" },
   { "プライバシーポリシー" = "privacy_policy.md" }
 ]
 

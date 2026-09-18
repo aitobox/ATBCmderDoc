@@ -1,4 +1,4 @@
-# 第 9 章：实战场景指南与疑难解答
+# 第 10 章：实战场景解决方案与故障排查
 
 虽然正统双面板文件管理器以极速和高效纯键盘操作闻名，但在实际日常工作中，我们往往需要将多个子系统协同配合——例如双向文件夹同步、正则批量重命名、远程虚拟文件系统、免解压编辑压缩包以及递归检索等。此外，在现代 macOS 系统中运行，你也会遇到沙盒安全权限边界、功能键调度以及跨驱动器数据迁移等特有场景。
 
@@ -598,7 +598,7 @@ Apple 键盘（MacBook 笔记本内置键盘与 Magic Keyboard）出厂默认将
   <p>
     <a href="index.md">&larr; 返回文档中心主页</a> &nbsp;&bull;&nbsp;
     <a href="getting_started.md">第 1 章：新手起步</a> &nbsp;&bull;&nbsp;
-    <a href="keyboard_shortcuts.md">第 8 章：快捷键速查掌中宝</a> &nbsp;&bull;&nbsp;
-    <a href="download.md">下载与更新日志 &rarr;</a>
+    <a href="keyboard_shortcuts.md">第 9 章：终极快捷键全书</a> &nbsp;&bull;&nbsp;
+    <a href="download.md">第 11 章：软件下载与安装指南 &rarr;</a>
   </p>
 </div>

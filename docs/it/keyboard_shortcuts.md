@@ -1,4 +1,4 @@
-# Capitolo 8: Guida rapida alle scorciatoie da tastiera
+# Capitolo 9: Guida rapida alle scorciatoie da tastiera
 
 ATBCmder è progettato da zero come un file manager basato sulla tastiera. Ogni operazione sui file, salto di directory, trasformazione di viste e utilità batch può essere eseguita senza alcuna interazione con il mouse. 
 
@@ -287,7 +287,20 @@ Avvia strumenti di automazione avanzati, utilità batch e strumenti di sistema i
 
 ---
 
-### 4.7 Sistema, configurazione e guida
+### 4.7 Strumenti di sistema integrati
+
+Monitora le prestazioni del sistema operativo, analizza lo spazio di archiviazione con le treemap, pulisci in sicurezza le cache di sistema ed esegui la disinstallazione approfondita delle applicazioni.
+
+| ID comando | Descrizione | Scorciatoia principale macOS (con glifi ⌘/⌥/⇧/⌃) | Scorciatoia classica Commander (con tasti Fn) | Contesto |
+| :--- | :--- | :---: | :---: | :---: |
+| `cm_SystemStatus` | Apri monitor di stato e diagnostica del sistema | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principale |
+| `cm_DiskUsageAnalyzer` | Apri analizzatore di utilizzo del disco (Albero + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principale |
+| `cm_CleanSystem` | Apri pulitore di sistema sicuro a due fasi | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principale |
+| `cm_UninstallApp` | Apri programma di disinstallazione approfondita | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principale |
+
+---
+
+### 4.8 Sistema, configurazione e guida
 
 Accedi alle preferenze dell'applicazione, alla gestione della configurazione, agli aggiornamenti software e alla documentazione utente. 
 
@@ -451,7 +464,7 @@ Le combinazioni di tasti dell'utente vengono salvate in `~/.config/atbcmder/atbc
 
 --- 
 
-<div align="center"> 
-<p>Cerchi ricette pratiche per tutti i giorni, flussi di lavoro per il montaggio del NAS o suggerimenti per la risoluzione dei problemi?</p> 
-<p><strong><a href="faq_howtos.md">Procedi al capitolo 9: Ricette reali e risoluzione dei problemi &rarr;</a></strong></p> 
+<div align="center">
+  <p>Cerchi ricette pratiche per tutti i giorni, flussi di montaggio NAS o suggerimenti per la risoluzione dei problemi?</p>
+  <p><strong><a href="faq_howtos.md">Procedi al Capitolo 10: Ricette pratiche e risoluzione dei problemi &rarr;</a></strong></p>
 </div>

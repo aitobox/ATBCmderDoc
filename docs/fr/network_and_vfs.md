@@ -493,7 +493,7 @@ Besoin d'éditer un `nginx.conf` ou un script Python directement sur un serveur 
 
 --- 
 
-<div align="center"> 
-<p>Prêt à personnaliser les raccourcis clavier, les vues des panneaux et le comportement des applications ?</p> 
-<p><strong><a href="preferences_and_customization.md">Passer au chapitre 7 : Préférences et personnalisation &rarr;</a></strong></p> 
+<div align="center">
+  <p>Prêt à surveiller les ressources système, analyser l'espace disque et nettoyer les caches en toute sécurité ?</p>
+  <p><strong><a href="system_tools.md">Passer au Chapitre 7: Outils système et maintenance &rarr;</a></strong></p>
 </div>

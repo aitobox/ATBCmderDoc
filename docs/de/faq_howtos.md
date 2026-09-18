@@ -1,4 +1,4 @@
-# Kapitel 9: Praxislösungen & Fehlerbehebung
+# Kapitel 10: Praxislösungen & Fehlerbehebung
 
 Während orthodoxe Dual-Panel-Dateimanager für ihre enorme Geschwindigkeit und Tastatureffizienz bekannt sind, erfordert die Bewältigung realer Aufgaben oft ein Verständnis dafür, wie verschiedene Subsysteme – wie Verzeichnissynchronisierung, Stapelmusterumbenennung, entfernte virtuelle Dateisysteme, Archivumpacken und rekursive Suche – in alltäglichen Szenarien zusammenarbeiten. Darüber hinaus führt der Betrieb unter modernem macOS zu Sicherheitsgrenzen, Sandbox-Einschränkungen und Überschneidungen mit Systemverknüpfungen, auf die jeder Benutzer irgendwann stößt. 
 
@@ -643,7 +643,7 @@ Um sicherzustellen, dass ATBCmder in allen Unternehmensworkflows mit Höchstgesc
 <p> 
 <a href="index.md">&larr; Zurück zum Dokumentationsportal</a> &nbsp;&bull;&nbsp; 
 <a href="getting_started.md">Kapitel 1: Grundlagen</a> &nbsp;&bull;&nbsp; 
-<a href="keyboard_shortcuts.md">Kapitel 8: Verknüpfungen</a> &nbsp;&bull;&nbsp; 
-<a href="download.md">Kapitel 10: Download und Installation &rarr;</a> 
+<a href="keyboard_shortcuts.md">Kapitel 9: Tastaturkurzbefehle</a> &nbsp;&bull;&nbsp; 
+<a href="download.md">Kapitel 11: Download & Installation &rarr;</a> 
 </p> 
 </div>

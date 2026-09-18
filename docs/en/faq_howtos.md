@@ -1,4 +1,4 @@
-# Chapter 9: Real-World Recipes & Troubleshooting
+# Chapter 10: Real-World Recipes & Troubleshooting
 
 While orthodox dual-panel file managers are renowned for their raw speed and keyboard efficiency, mastering real-world tasks often requires understanding how distinct subsystems—such as directory synchronization, batch pattern renaming, remote virtual filesystems, archive repacking, and recursive search—work together in everyday scenarios. Furthermore, operating within modern macOS introduces security boundaries, sandbox constraints, and system shortcut intersections that every user eventually encounters.
 
@@ -615,7 +615,7 @@ To keep ATBCmder performing at peak velocity across enterprise workflows:
   <p>
     <a href="index.md">&larr; Return to Documentation Portal</a> &nbsp;&bull;&nbsp;
     <a href="getting_started.md">Chapter 1: Fundamentals</a> &nbsp;&bull;&nbsp;
-    <a href="keyboard_shortcuts.md">Chapter 8: Shortcuts</a> &nbsp;&bull;&nbsp;
-    <a href="download.md">Chapter 10: Download & Installation &rarr;</a>
+    <a href="keyboard_shortcuts.md">Chapter 9: Shortcuts</a> &nbsp;&bull;&nbsp;
+    <a href="download.md">Chapter 11: Download & Installation &rarr;</a>
   </p>
 </div>

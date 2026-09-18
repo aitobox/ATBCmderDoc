@@ -21,10 +21,11 @@ nav = [
   { "第 4 章：全能万用查看器与内置编辑器" = "viewers_and_editors.md" },
   { "第 5 章：高阶生产力工具与自动化" = "power_tools.md" },
   { "第 6 章：虚拟文件系统与网络互联" = "network_and_vfs.md" },
-  { "第 7 章：偏好设置与深度个性化定制" = "preferences_and_customization.md" },
-  { "第 8 章：终极快捷键全书" = "keyboard_shortcuts.md" },
-  { "第 9 章：实战场景解决方案与故障排查" = "faq_howtos.md" },
-  { "第 10 章：软件下载与安装指南" = "download.md" },
+  { "第 7 章：系统工具与日常维护" = "system_tools.md" },
+  { "第 8 章：偏好设置与深度个性化定制" = "preferences_and_customization.md" },
+  { "第 9 章：终极快捷键全书" = "keyboard_shortcuts.md" },
+  { "第 10 章：实战场景解决方案与故障排查" = "faq_howtos.md" },
+  { "第 11 章：软件下载与安装指南" = "download.md" },
   { "隐私政策" = "privacy_policy.md" }
 ]
 

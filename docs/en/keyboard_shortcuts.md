@@ -1,4 +1,4 @@
-# Chapter 8: Master Keyboard Shortcut Reference
+# Chapter 9: Master Keyboard Shortcut Reference
 
 ATBCmder is designed from the ground up as a keyboard-first file manager. Every file operation, directory jump, view transformation, and batch utility can be executed with zero mouse interaction.
 
@@ -286,7 +286,20 @@ Launch advanced automation tools, batch utilities, and embedded system tools dir
 
 ---
 
-### 4.7 System, Configuration & Help
+### 4.7 Integrated System Tools
+
+Monitor operating system performance, analyze directory storage with treemaps, safely purge system caches, and perform deep application uninstallation.
+
+| Command ID | Description | Primary macOS Shortcut (with ⌘/⌥/⇧/⌃ glyphs) | Classic Commander Shortcut (with Fn keys) | Context |
+| :--- | :--- | :---: | :---: | :---: |
+| `cm_SystemStatus` | Open System Status & Diagnostics Monitor | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Main |
+| `cm_DiskUsageAnalyzer` | Open Disk Usage Analyzer (Tree + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Main |
+| `cm_CleanSystem` | Open Safe Two-Stage System Cleaner | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Main |
+| `cm_UninstallApp` | Open Deep Application Uninstaller | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Main |
+
+---
+
+### 4.8 System, Configuration & Help
 
 Access application preferences, configuration management, software updates, and user documentation.
 
@@ -452,5 +465,5 @@ User keybindings are saved to `~/.config/atbcmder/atbcmder_hotkeys.xml` (or `~/L
 
 <div align="center">
   <p>Looking for practical everyday recipes, NAS mounting workflows, or troubleshooting tips?</p>
-  <p><strong><a href="faq_howtos.md">Proceed to Chapter 9: Real-World Recipes & Troubleshooting &rarr;</a></strong></p>
+  <p><strong><a href="faq_howtos.md">Proceed to Chapter 10: Real-World Recipes & Troubleshooting &rarr;</a></strong></p>
 </div>

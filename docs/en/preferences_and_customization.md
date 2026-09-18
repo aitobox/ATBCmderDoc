@@ -1,4 +1,4 @@
-# Chapter 7: Preferences & Customization
+# Chapter 8: Preferences & Customization
 
 A truly efficient file manager must adapt to your workflow, not force you to adapt to its defaults. Every engineer, system administrator, digital archivist, and creative professional brings distinct muscle memory, display requirements, and operational habits: some rely strictly on orthodox Norton Commander / Total Commander function keys (`F1`–`F10`), while others expect native macOS shortcuts (`Cmd+C`, `Cmd+V`, `Cmd+O`); some demand dynamic column auto-fitting with sub-pixel typographic metrics, while others need rigid, fixed column boundaries; some require aggressive real-time filesystem event monitoring, while others run across high-latency network shares where passive polling is mandatory.
 
@@ -674,5 +674,5 @@ ATBCmder includes rich floating metadata tooltips that display file dimensions, 
 
 <div align="center">
   <p>Ready to master all keyboard shortcuts and command matrixes across the entire application?</p>
-  <p><strong><a href="keyboard_shortcuts.md">Proceed to Chapter 8: Master Keyboard Shortcuts &rarr;</a></strong></p>
+  <p><strong><a href="keyboard_shortcuts.md">Proceed to Chapter 9: Master Keyboard Shortcuts &rarr;</a></strong></p>
 </div>

@@ -1,4 +1,4 @@
-# 제9장: 실전 문제 해결 및 레시피
+# 제10장: 실전 문제 해결 및 레시피
 
 정통 듀얼 패널 파일 관리자는 원시 속도와 키보드 효율성으로 유명하지만, 실제 작업을 마스터하려면 디렉터리 동기화 (Sync Dirs), 배치 패턴 이름 바꾸기, 원격 가상 파일 시스템, 아카이브 재압축, 재귀 검색과 같은 고유한 하위 시스템이 일상적인 시나리오에서 어떻게 함께 작동하는지 이해해야 하는 경우가 많습니다. 또한 최신 macOS에서 작동하면 모든 사용자가 결국 접하게 되는 보안 경계, 샌드박스 제약 조건 및 시스템 바로 가기 교차점이 발생합니다. 
 
@@ -636,7 +636,7 @@ ATBCMder가 기업 워크플로우 전체에서 최고 속도로 성능을 유�
 <p> 
 <a href="index.md">&larr; 문서 포털로 돌아가기</a> &nbsp;&bull;&nbsp; 
 <a href="getting_started.md">1장: 기본 사항</a> &nbsp;&bull;&nbsp; 
-<a href="keyboard_shortcuts.md">8장: 바로가기</a> &nbsp;&bull;&nbsp; 
-<a href="download.md">10장: 다운로드 및 설치 &rarr;</a> 
+<a href="keyboard_shortcuts.md">제9장: 단축키</a> &nbsp;&bull;&nbsp; 
+<a href="download.md">제11장: 다운로드 및 설치 가이드 &rarr;</a> 
 </p> 
 </div>

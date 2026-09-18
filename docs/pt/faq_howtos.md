@@ -1,4 +1,4 @@
-# Capítulo 9: Receitas práticas e solução de problemas
+# Capítulo 10: Receitas práticas e solução de problemas
 
 Embora os gerenciadores de arquivos ortodoxos de painel duplo sejam conhecidos por sua velocidade bruta e eficiência de teclado, dominar tarefas do mundo real geralmente requer a compreensão de como subsistemas distintos – como sincronização de diretórios, renomeação de padrões de lote, sistemas de arquivos virtuais remotos, reempacotamento de arquivos e pesquisa recursiva – funcionam juntos em cenários cotidianos. Além disso, operar no macOS moderno introduz limites de segurança, restrições de sandbox e interseções de atalhos do sistema que todo usuário eventualmente encontra. 
 
@@ -636,7 +636,7 @@ Para manter o desempenho do ATBCmder em velocidade máxima em todos os fluxos de
 <p> 
 <a href="index.md">&larr; Retornar ao Portal de Documentação</a> &nbsp;&bull;&nbsp; 
 <a href="getting_started.md">Capítulo 1: Fundamentos</a> &nbsp;&bull;&nbsp; 
-<a href="keyboard_shortcuts.md">Capítulo 8: Atalhos</a> &nbsp;&bull;&nbsp; 
-<a href="download.md">Capítulo 10: Download e instalação &rarr;</a> 
+<a href="keyboard_shortcuts.md">Capítulo 9: Atalhos</a> &nbsp;&bull;&nbsp; 
+<a href="download.md">Capítulo 11: Download e instalação &rarr;</a> 
 </p> 
 </div>

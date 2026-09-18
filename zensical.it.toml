@@ -21,10 +21,11 @@ nav = [
   { "Capitolo 4: Visualizzatore universale ed editor integrati" = "viewers_and_editors.md" },
   { "Capitolo 5: Strumenti avanzati e automazione" = "power_tools.md" },
   { "Capitolo 6: File system virtuali e rete" = "network_and_vfs.md" },
-  { "Capitolo 7: Preferenze e personalizzazione" = "preferences_and_customization.md" },
-  { "Capitolo 8: Guida rapida alle scorciatoie da tastiera" = "keyboard_shortcuts.md" },
-  { "Capitolo 9: Ricette pratiche e risoluzione dei problemi" = "faq_howtos.md" },
-  { "Capitolo 10: Download e installazione" = "download.md" },
+  { "Capitolo 7: Strumenti di sistema e manutenzione" = "system_tools.md" },
+  { "Capitolo 8: Preferenze e personalizzazione" = "preferences_and_customization.md" },
+  { "Capitolo 9: Guida rapida alle scorciatoie da tastiera" = "keyboard_shortcuts.md" },
+  { "Capitolo 10: Ricette pratiche e risoluzione dei problemi" = "faq_howtos.md" },
+  { "Capitolo 11: Download e installazione" = "download.md" },
   { "Informativa sulla privacy" = "privacy_policy.md" }
 ]
 

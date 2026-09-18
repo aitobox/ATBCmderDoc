@@ -1,4 +1,4 @@
-# Chapitre 7: Préférences et personnalisation
+# Chapitre 8: Préférences et personnalisation
 
 Un gestionnaire de fichiers vraiment efficace doit s'adapter à votre flux de travail et ne pas vous obliger à vous adapter à ses paramètres par défaut. Chaque ingénieur, administrateur système, archiviste numérique et professionnel de la création apporte une mémoire musculaire, des exigences d'affichage et des habitudes opérationnelles distinctes : certains s'appuient strictement sur les touches de fonction orthodoxes Norton Commander / Total Commander (`F1`–`F10`), tandis que d'autres s'attendent à des raccourcis macOS natifs (`Cmd+C`, `Cmd+V`, `Cmd+O`); certains exigent un ajustement automatique des colonnes dynamiques avec des métriques typographiques sous-pixels, tandis que d'autres ont besoin de limites de colonnes rigides et fixes ; certains nécessitent une surveillance agressive des événements du système de fichiers en temps réel, tandis que d'autres fonctionnent sur des partages réseau à latence élevée où une interrogation passive est obligatoire. 
 
@@ -693,7 +693,7 @@ ATBCmder comprend de riches info-bulles de métadonnées flottantes qui affichen
 
 --- 
 
-<div align="center"> 
-<p>Prêt à maîtriser tous les raccourcis clavier et matrices de commandes dans l'ensemble de l'application ?</p> 
-<p><strong><a href="keyboard_shortcuts.md">Passez au chapitre 8 : Raccourcis clavier clavier principal &rarr;</a></strong></p> 
+<div align="center">
+  <p>Prêt à maîtriser tous les raccourcis clavier et matrices de commandes de l'application ?</p>
+  <p><strong><a href="keyboard_shortcuts.md">Passer au Chapitre 9: Répertoire principal des raccourcis clavier &rarr;</a></strong></p>
 </div>

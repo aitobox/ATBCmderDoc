@@ -1,4 +1,4 @@
-# Capitolo 7: Preferenze e personalizzazione
+# Capitolo 8: Preferenze e personalizzazione
 
 Un file manager veramente efficiente deve adattarsi al tuo flusso di lavoro, non costringerti ad adattarti alle sue impostazioni predefinite. Ogni ingegnere, amministratore di sistema, archivista digitale e professionista creativo possiede memoria muscolare, requisiti di visualizzazione e abitudini operative distinti: alcuni si affidano rigorosamente ai tasti funzione ortodossi di Norton Commander/Total Commander (`F1`–`F10`), mentre altri si aspettano scorciatoie native di macOS (`Cmd+C`, `Cmd+V`, `Cmd+O`); alcuni richiedono l'adattamento automatico dinamico delle colonne con metriche tipografiche sub-pixel, mentre altri necessitano di confini di colonna rigidi e fissi; alcuni richiedono un monitoraggio aggressivo degli eventi del file system in tempo reale, mentre altri vengono eseguiti su condivisioni di rete ad alta latenza dove il polling passivo è obbligatorio. 
 
@@ -694,7 +694,7 @@ ATBCmder include descrizioni comandi di metadati mobili che mostrano le dimensio
 
 --- 
 
-<div align="center"> 
-<p>Pronto a padroneggiare tutte le scorciatoie da tastiera e le matrici di comandi nell'intera applicazione?</p> 
-<p><strong><a href="keyboard_shortcuts.md">Procedi al capitolo 8: Scorciatoie da tastiera principali &rarr;</a></strong></p> 
+<div align="center">
+  <p>Pronto a padroneggiare tutte le scorciatoie da tastiera e le matrici di comandi dell'applicazione?</p>
+  <p><strong><a href="keyboard_shortcuts.md">Procedi al Capitolo 9: Guida rapida alle scorciatoie da tastiera &rarr;</a></strong></p>
 </div>

@@ -1,4 +1,4 @@
-# Capítulo 9: Soluciones prácticas y resolución de problemas
+# Capítulo 10: Soluciones prácticas y resolución de problemas
 
 Si bien los administradores de archivos ortodoxos de panel dual son reconocidos por su velocidad bruta y la eficiencia del teclado, dominar las tareas del mundo real a menudo requiere comprender cómo los distintos subsistemas (como la sincronización de directorios, el cambio de nombre de patrones por lotes, los sistemas de archivos virtuales remotos, el reempaquetado de archivos y la búsqueda recursiva) funcionan juntos en escenarios cotidianos. Además, operar dentro de macOS moderno introduce límites de seguridad, restricciones de espacio aislado e intersecciones de accesos directos al sistema que todo usuario eventualmente encuentra. 
 
@@ -636,7 +636,7 @@ Para que ATBCmder siga funcionando a su máxima velocidad en todos los flujos de
 <p> 
 <a href="index.md">&larr; Volver al Portal de Documentación</a> &nbsp;&bull;&nbsp; 
 <a href="getting_started.md">Capítulo 1: Fundamentos</a> &nbsp;&bull;&nbsp; 
-<a href="keyboard_shortcuts.md">Capítulo 8: Atajos</a> &nbsp;&bull;&nbsp; 
+<a href="keyboard_shortcuts.md">Capítulo 9: Atajos</a> &nbsp;&bull;&nbsp; 
 <a href="download.md">Capítulo 10: Descarga e instalación →ATB_HTML_00013__ 
 </p> 
 </div>

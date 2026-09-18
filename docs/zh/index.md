@@ -112,7 +112,7 @@ ATBCmder 在直观的现代化界面中蕴含了专业级功能，让您一眼�
 1. **从核心概念起步**：阅读 [第 1 章：新手起步与 macOS 设置](getting_started.md)，了解当前激活面板与对侧面板的关系、中间工具栏用法，以及为软件授予 macOS 完全磁盘访问权限。
 2. **掌握高频日常操作**：在 [第 3 章：日常文件操作与后台队列](file_operations.md) 中，学习如何不碰鼠标快速完成复制、移动、改名和删除。
 3. **极速预览各类文件**：在 [第 4 章：全能查看器与内置编辑器](viewers_and_editors.md) 中，了解如何按一下按键秒开图片、听音频、读代码和翻阅 PDF。
-4. **跟随实战场景手册**：查看日常备份、NAS 挂载等真实图文教学，尽在 [第 9 章：实战场景指南与疑难解答](faq_howtos.md)。
+4. **跟随实战场景手册**：查看日常备份、NAS 挂载等真实图文教学，尽在 [第 10 章：实战场景指南与疑难解答](faq_howtos.md)。
 
 ---
 
@@ -121,10 +121,11 @@ ATBCmder 在直观的现代化界面中蕴含了专业级功能，让您一眼�
 
 ATBCmder 专为在现代 macOS 上重塑纯正 Commander 体验而生，无需运行沉重的 Wine 模拟层或老旧的 X11 移植：
 
-1. **查阅双矩阵快捷键映射**：在 [第 8 章：快捷键速查掌中宝](keyboard_shortcuts.md) 中对比熟悉的经典 `F1-F12` 键位与 macOS `⌘ Command` 组合键对照。
+1. **查阅双矩阵快捷键映射**：在 [第 9 章：终极快捷键全书](keyboard_shortcuts.md) 中对比熟悉的经典 `F1-F12` 键位与 macOS `⌘ Command` 组合键对照。
 2. **探索高级高阶工具**：在 [第 5 章：进阶工具与自动化](power_tools.md) 中深入使用多重重命名 (`Ctrl+M`)、双栏差异比对 (`Meta+Shift+F12`)、目录同步 (`Shift+F12`) 和高级搜索。
 3. **连接远程与虚拟文件系统**：在 [第 6 章：虚拟文件系统与网络](network_and_vfs.md) 中体验对 `.zip`、`.tar` 压缩包的免解压原地编辑与实时重打包回写，以及 SFTP、SMB、WebDAV 稳定挂载。
-4. **导入导出便携化配置**：在 [第 7 章：偏好设置与个性化定制](preferences_and_customization.md) 中定制热键、微调内核级 FSEvents 自动刷新，并实现配置跨设备无缝迁移。
+4. **监控系统与维护存储**：在 [第 7 章：系统工具与日常维护](system_tools.md) 中使用实时状态胶囊 HUD (`⌘⇧M`)、直观矩形树状图磁盘分析器 (`⌘⇧D`)、两阶段安全系统清理器 (`⌘⇧C`) 以及深度应用程序卸载器 (`⌘⇧U`)。
+5. **导入导出便携化配置**：在 [第 8 章：偏好设置与个性化定制](preferences_and_customization.md) 中定制热键、微调内核级 FSEvents 自动刷新，并实现配置跨设备无缝迁移。
 
 ---
 
@@ -150,16 +151,19 @@ ATBCmder 专为在现代 macOS 上重塑纯正 Commander 体验而生，无需�
 ### 🌐 [第 6 章：虚拟文件系统与网络](network_and_vfs.md)
 通过统一的 `vfs://` URI 体系，像操作本地文件夹一样畅游远程服务器和压缩包。无需事先解压即可直接浏览 `.zip`、`.tar`、`.7z`，并在保存后自动无感重打包；创建高强度加密压缩包 (`Alt+F5`)；通过网络连接管理器长期稳定管理 FTP、SFTP（SSH 密钥认证）、WebDAV 及局域网 SMB/Samba 共享。
 
-### ⚙️ [第 7 章：偏好设置与个性化定制](preferences_and_customization.md)
+### 🛠️ [第 7 章：系统工具与日常维护](system_tools.md)
+通过工具栏状态胶囊 HUD 或完整诊断控制台实时监控系统性能 (`cm_SystemStatus`)；使用直观的交互式矩形树状图深入洞察磁盘占用 (`cm_DiskUsageAnalyzer`)；依托两阶段安全风险分析安全清除应用缓存、系统日志与构建冗余 (`cm_CleanSystem`)；一键彻底卸载应用程序并扫除 `~/Library/` 下分散的各类孤儿残留 (`cm_UninstallApp`)。
+
+### ⚙️ [第 8 章：偏好设置与个性化定制](preferences_and_customization.md)
 让 ATBCmder 深度契合您的工作习惯。搜索并绑定主次快捷键并带有实时按键冲突预警、定制文件列表列宽自适应规则、调节文件变动监控灵敏度、配置特定扩展名外部联动程序，以及一键导入导出便携化配置包 (`cm_ExportConfiguration`)。
 
-### ⌨️ [第 8 章：快捷键速查掌中宝](keyboard_shortcuts.md)
+### ⌨️ [第 9 章：终极快捷键全书](keyboard_shortcuts.md)
 详尽的双矩阵快捷键速查宝典，并排对照 macOS 原生快捷键（含 `⌘`、`⌥`、`⌃`、`⇧` 符号）与经典 Commander 功能键 (`F1`-`F12`)。包含 MacBook 键盘 `Fn` 键行为说明与 macOS 标准功能键设置指引。
 
-### ❓ [第 9 章：实战场景指南与疑难解答](faq_howtos.md)
+### ❓ [第 10 章：实战场景指南与疑难解答](faq_howtos.md)
 图文并茂的手把手实战教程：双向备份同步比对、相机照片按时间戳批量改名、连接挂载家用或办公 NAS 共享、免解压直接修改服务器压缩包内的配置，以及排查 macOS 权限阻拦与外接盘刷新问题。
 
-### 📥 [第 10 章：下载与安装指引](download.md)
+### 📥 [第 11 章：下载与安装指引](download.md)
 支持 macOS 12.0+ Monterey、Ventura、Sonoma 到 Sequoia 的完整安装指引。提供 Mac App Store 商店版及独立 DMG 安装包，原生支持 Apple Silicon (M1/M2/M3/M4，ARM64 架构) 与 Intel (x86_64) 双架构。
 
 ---
