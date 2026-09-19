@@ -82,22 +82,37 @@ ATBCmder organizza la potenza in un layout pulito e intuitivo progettato per dar
 
 ## Vetrina delle interfacce
 
-Esplora le capacità di ATBCmder attraverso le caratteristiche principali: 
+Esplora le capacità di ATBCmder attraverso le caratteristiche principali:
 
-| Doppi pannelli e visualizzazione ad albero | Barra degli strumenti di azione rapida centrale | 
-| :---: | :---: | 
-| ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
-| *Layout a doppio pannello con struttura delle directory e anteprima in miniatura.* | *Striscia di azione rapida: Visualizza, Modifica, Copia, Sposta, MkDir, Elimina, Cancella.* | 
+### Doppi pannelli e visualizzazione ad albero
 
-| Comandi in linguaggio naturale | Vista ad albero piatto (Flat Branch View) ricorsiva | 
-| :---: | :---: | 
-| ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
-| *Ricerca istantanea basata su macOS Spotlight e analisi delle query semantiche.* | *Vista ramo (`Cmd+B`) che mostra i contenuti nidificati in un unico elenco semplice.* | 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*Layout a doppio pannello con struttura delle directory e anteprima in miniatura.*
 
-| VFS di rete e remoto | Archivio VFS (nessuna estrazione necessaria) | 
-| :---: | :---: | 
-| ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) | 
-| *Connettiti a condivisioni di rete FTP, SFTP, WebDAV e SMB/Samba.* | *Sfoglia e modifica gli archivi ZIP, TAR, 7z come cartelle standard.* | 
+### Barra degli strumenti di azione rapida centrale
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*Striscia di azione rapida: Visualizza, Modifica, Copia, Sposta, MkDir, Elimina, Cancella.*
+
+### Comandi in linguaggio naturale
+
+![Natural Language File Search](images/semantic_command.png)  
+*Ricerca istantanea basata su macOS Spotlight e analisi delle query semantiche.*
+
+### Vista ad albero piatto (Flat Branch View) ricorsiva
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*Vista ramo (`Cmd+B`) che mostra i contenuti nidificati in un unico elenco semplice.*
+
+### VFS di rete e remoto
+
+![Network VFS](images/network_vfs.png)  
+*Connettiti a condivisioni di rete FTP, SFTP, WebDAV e SMB/Samba.*
+
+### Archivio VFS (nessuna estrazione necessaria)
+
+![Archive VFS](images/archive_vfs.png)  
+*Sfoglia e modifica gli archivi ZIP, TAR, 7z come cartelle standard.* 
 
 ---
 

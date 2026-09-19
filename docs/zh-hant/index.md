@@ -83,20 +83,35 @@ ATBCmder 在直觀的現代化介面中蘊含了專業級功能，讓您一眼�
 
 透過以下核心截圖，感受 ATBCmder 的強大與便捷：
 
-| 雙面板與樹狀目錄檢視 | 居中快速操作工具欄 |
-| :---: | :---: |
-| ![樹狀與縮圖檢視](images/treeview+thumbview.png) | ![居中垂直工具欄](images/middle_toolbar.png) |
-| *雙面板並排，結合左側樹狀目錄與右側縮圖展示* | *中間豎條快捷操作：檢視、編輯、複製、移動、新建、刪除、粉碎* |
+### 雙面板與樹狀目錄檢視
 
-| 自然語言語義化搜尋與過濾 | 遞迴平鋪扁平檢視 (Branch View) |
-| :---: | :---: |
-| ![自然語言命令與搜尋](images/semantic_command.png) | ![巢狀目錄遞迴展開扁平檢視](images/branch_view.png) |
-| *基於 macOS Spotlight 與語義化解析的快速篩選條* | *按 `Cmd+B` 將多層子目錄下所有檔案平鋪在一個列表中批次管理* |
+![樹狀與縮圖檢視](images/treeview+thumbview.png)  
+*雙面板並排，結合左側樹狀目錄與右側縮圖展示*
 
-| 遠端網路檔案系統 (FTP/SFTP/WebDAV/SMB) | 壓縮包虛擬檔案系統 (無需解壓即點即用) |
-| :---: | :---: |
-| ![遠端網路連線與管理](images/network_vfs.png) | ![壓縮包內虛擬檔案瀏覽與編輯](images/archive_vfs.png) |
-| *如同本地磁碟一樣無縫掛載管理 NAS 與遠端雲伺服器* | *回車直接進入 ZIP/TAR/7z 壓縮包，支援免解壓直接預覽與編輯回寫* |
+### 居中快速操作工具欄
+
+![居中垂直工具欄](images/middle_toolbar.png)  
+*中間豎條快捷操作：檢視、編輯、複製、移動、新建、刪除、粉碎*
+
+### 自然語言語義化搜尋與過濾
+
+![自然語言命令與搜尋](images/semantic_command.png)  
+*基於 macOS Spotlight 與語義化解析的快速篩選條*
+
+### 遞迴平鋪扁平檢視 (Branch View)
+
+![巢狀目錄遞迴展開扁平檢視](images/branch_view.png)  
+*按 `Cmd+B` 將多層子目錄下所有檔案平鋪在一個列表中批次管理*
+
+### 遠端網路檔案系統 (FTP/SFTP/WebDAV/SMB)
+
+![遠端網路連線與管理](images/network_vfs.png)  
+*如同本地磁碟一樣無縫掛載管理 NAS 與遠端雲伺服器*
+
+### 壓縮包虛擬檔案系統 (無需解壓即點即用)
+
+![壓縮包內虛擬檔案瀏覽與編輯](images/archive_vfs.png)  
+*回車直接進入 ZIP/TAR/7z 壓縮包，支援免解壓直接預覽與編輯回寫*
 
 ---
 

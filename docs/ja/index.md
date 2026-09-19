@@ -82,22 +82,37 @@ ATBCmder は、両方のディレクトリの状況を即座に認識できる�
 
 ## インターフェースのショーケース
 
-重要な機能のハイライトを通じて ATBCmder の機能を探ってください。 
+重要な機能のハイライトを通じて ATBCmder の機能を探ってください。
 
-| デュアルパネルとツリービュー | 中央のクイックアクションツールバー |
- | :---: | :---: |
- | ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) |
- | *ディレクトリ ツリーとサムネイル プレビューを備えたデュアル パネル レイアウト。* | *クイック アクション ストリップ: 表示、編集、コピー、移動、MkDir、削除、ワイプ。* |
+### デュアルパネルとツリービュー
 
- | 自然言語コマンド | 再帰的フラット ブランチ ビュー |
- | :---: | :---: |
- | ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) |
- | *macOS Spotlight とセマンティック クエリ解析を利用したインスタント検索* | *単一のフラット リストにネストされたコンテンツを表示するブランチ ビュー (`Cmd+B`)。 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*ディレクトリ ツリーとサムネイル プレビューを備えたデュアル パネル レイアウト。*
 
-| ネットワークとリモート VFS | アーカイブ VFS (抽出不要) |
- | :---: | :---: |
- | ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) |
- | *FTP、SFTP、WebDAV、および SMB/Samba ネットワーク共有に接続します。* | *標準フォルダーと同様に、ZIP、TAR、7z アーカイブ内を参照して編集します。* |
+### 中央のクイックアクションツールバー
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*クイック アクション ストリップ: 表示、編集、コピー、移動、MkDir、削除、ワイプ。*
+
+### 自然言語コマンド
+
+![Natural Language File Search](images/semantic_command.png)  
+*macOS Spotlight とセマンティック クエリ解析を利用したインスタント検索*
+
+### 再帰的フラット ブランチ ビュー
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*単一のフラット リストにネストされたコンテンツを表示するブランチ ビュー (`Cmd+B`)。*
+
+### ネットワークとリモート VFS
+
+![Network VFS](images/network_vfs.png)  
+*FTP、SFTP、WebDAV、および SMB/Samba ネットワーク共有に接続します。*
+
+### アーカイブ VFS (抽出不要)
+
+![Archive VFS](images/archive_vfs.png)  
+*標準フォルダーと同様に、ZIP、TAR、7z アーカイブ内を参照して編集します。*
 
  ---
 

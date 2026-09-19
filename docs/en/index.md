@@ -83,20 +83,35 @@ ATBCmder organizes power into a clean, intuitive layout designed to give you ins
 
 Explore ATBCmder's capabilities through key feature highlights:
 
-| Dual Panels & Tree View | Middle Quick-Action Toolbar |
-| :---: | :---: |
-| ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) |
-| *Dual-panel layout with directory tree and thumbnail preview.* | *Quick action strip: View, Edit, Copy, Move, MkDir, Delete, Wipe.* |
+### Dual Panels & Tree View
 
-| Natural Language Commands | Recursive Flat Branch View |
-| :---: | :---: |
-| ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) |
-| *Instant search powered by macOS Spotlight and semantic query parsing.* | *Branch View (`Cmd+B`) displaying nested contents in a single flat list.* |
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*Dual-panel layout with directory tree and thumbnail preview.*
 
-| Network & Remote VFS | Archive VFS (No Extraction Needed) |
-| :---: | :---: |
-| ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) |
-| *Connect to FTP, SFTP, WebDAV, and SMB/Samba network shares.* | *Browse and edit inside ZIP, TAR, 7z archives like standard folders.* |
+### Middle Quick-Action Toolbar
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*Quick action strip: View, Edit, Copy, Move, MkDir, Delete, Wipe.*
+
+### Natural Language Commands
+
+![Natural Language File Search](images/semantic_command.png)  
+*Instant search powered by macOS Spotlight and semantic query parsing.*
+
+### Recursive Flat Branch View
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*Branch View (`Cmd+B`) displaying nested contents in a single flat list.*
+
+### Network & Remote VFS
+
+![Network VFS](images/network_vfs.png)  
+*Connect to FTP, SFTP, WebDAV, and SMB/Samba network shares.*
+
+### Archive VFS (No Extraction Needed)
+
+![Archive VFS](images/archive_vfs.png)  
+*Browse and edit inside ZIP, TAR, 7z archives like standard folders.*
 
 ---
 

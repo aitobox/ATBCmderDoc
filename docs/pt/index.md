@@ -82,22 +82,37 @@ O ATBCmder organiza o poder em um layout limpo e intuitivo, projetado para forne
 
 ## Vitrine de interface
 
-Explore os recursos do ATBCmder por meio dos principais destaques dos recursos: 
+Explore os recursos do ATBCmder por meio dos principais destaques dos recursos:
 
-| Painéis duplos e visualização em árvore | Barra de ferramentas de ação rápida central | 
-| :---: | :---: | 
-| ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
-| *Layout de painel duplo com árvore de diretórios e visualização de miniaturas.* | *Faixa de ação rápida: Visualizar, Editar, Copiar, Mover, MkDir, Excluir, Limpar.* | 
+### Painéis duplos e visualização em árvore
 
-| Comandos de linguagem natural | Visualização de ramificação plana recursiva | 
-| :---: | :---: | 
-| ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
-| *Pesquisa instantânea com tecnologia macOS Spotlight e análise de consulta semântica.* | *Visualização de ramificação (`Cmd+B`) exibindo conteúdo aninhado em uma única lista simples.* | 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*Layout de painel duplo com árvore de diretórios e visualização de miniaturas.*
 
-| Rede e VFS remoto | Arquivar VFS (sem necessidade de extração) | 
-| :---: | :---: | 
-| ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) | 
-| *Conecte-se a compartilhamentos de rede FTP, SFTP, WebDAV e SMB/Samba.* | *Navegue e edite dentro de arquivos ZIP, TAR, 7z como pastas padrão.* | 
+### Barra de ferramentas de ação rápida central
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*Faixa de ação rápida: Visualizar, Editar, Copiar, Mover, MkDir, Excluir, Limpar.*
+
+### Comandos de linguagem natural
+
+![Natural Language File Search](images/semantic_command.png)  
+*Pesquisa instantânea com tecnologia macOS Spotlight e análise de consulta semântica.*
+
+### Visualização de ramificação plana recursiva
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*Visualização de ramificação (`Cmd+B`) exibindo conteúdo aninhado em uma única lista simples.*
+
+### Rede e VFS remoto
+
+![Network VFS](images/network_vfs.png)  
+*Conecte-se a compartilhamentos de rede FTP, SFTP, WebDAV e SMB/Samba.*
+
+### Arquivar VFS (sem necessidade de extração)
+
+![Archive VFS](images/archive_vfs.png)  
+*Navegue e edite dentro de arquivos ZIP, TAR, 7z como pastas padrão.* 
 
 ---
 

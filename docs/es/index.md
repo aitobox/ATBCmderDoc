@@ -82,22 +82,37 @@ ATBCmder organiza toda su potencia y productividad en un diseño limpio e intuit
 
 ## Muestra de interfaz
 
-Explore las capacidades de ATBCmder a través de características clave destacadas: 
+Explore las capacidades de ATBCmder a través de características clave destacadas:
 
-| Paneles dobles y vista de árbol | Barra de herramientas de acción rápida central | 
-| :---: | :---: | 
-| ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
-| *Diseño de panel dual con árbol de directorios y vista previa en miniatura.* | *Banda de acciones rápidas: Ver, Editar, Copiar, Mover, MkDir, Eliminar, Limpiar.* | 
+### Paneles dobles y vista de árbol
 
-| Comandos de lenguaje natural | Vista de rama plana recursiva | 
-| :---: | :---: | 
-| ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
-| *Búsqueda instantánea impulsada por macOS Spotlight y análisis de consultas semánticas.* | *Vista de sucursal (`Cmd+B`) que muestra contenidos anidados en una única lista plana.* | 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*Diseño de panel dual con árbol de directorios y vista previa en miniatura.*
 
-| Red y VFS remoto | Archivo VFS (no se necesita extracción) | 
-| :---: | :---: | 
-| ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) | 
-| *Conéctese a redes compartidas FTP, SFTP, WebDAV y SMB/Samba.* | *Explore y edite dentro de archivos ZIP, TAR y 7z como carpetas estándar.* | 
+### Barra de herramientas de acción rápida central
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*Banda de acciones rápidas: Ver, Editar, Copiar, Mover, MkDir, Eliminar, Limpiar.*
+
+### Comandos de lenguaje natural
+
+![Natural Language File Search](images/semantic_command.png)  
+*Búsqueda instantánea impulsada por macOS Spotlight y análisis de consultas semánticas.*
+
+### Vista de rama plana recursiva
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*Vista de sucursal (`Cmd+B`) que muestra contenidos anidados en una única lista plana.*
+
+### Red y VFS remoto
+
+![Network VFS](images/network_vfs.png)  
+*Conéctese a redes compartidas FTP, SFTP, WebDAV y SMB/Samba.*
+
+### Archivo VFS (no se necesita extracción)
+
+![Archive VFS](images/archive_vfs.png)  
+*Explore y edite dentro de archivos ZIP, TAR y 7z como carpetas estándar.* 
 
 ---
 

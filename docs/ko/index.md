@@ -82,22 +82,37 @@ ATBCmder는 두 디렉토리에 대한 즉각적인 상황 인식을 제공하�
 
 ## 인터페이스 쇼케이스
 
-주요 기능 하이라이트를 통해 ATBCMder의 기능을 살펴보세요. 
+주요 기능 하이라이트를 통해 ATBCMder의 기능을 살펴보세요.
 
-| 듀얼 패널 및 트리 보기 | 중간 빠른 작업 도구 모음 | 
-| :---: | :---: | 
-| ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
-| *디렉토리 트리와 썸네일 미리보기가 포함된 듀얼 패널 레이아웃.* | *빠른 작업 스트립: 보기, 편집, 복사, 이동, MkDir, 삭제, 지우기.* | 
+### 듀얼 패널 및 트리 보기
 
-| 자연어 명령 | 재귀적 평면 분기 보기 | 
-| :---: | :---: | 
-| ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
-| *macOS Spotlight 및 의미론적 쿼리 구문 분석을 통한 즉각적인 검색.* | *단일 단순 목록에 중첩된 내용을 표시하는 분기 보기(`Cmd+B`).* | 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*디렉토리 트리와 썸네일 미리보기가 포함된 듀얼 패널 레이아웃.*
 
-| 네트워크 및 원격 VFS | 아카이브 VFS(추출 필요 없음) | 
-| :---: | :---: | 
-| ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) | 
-| *FTP, SFTP, WebDAV 및 SMB/Samba 네트워크 공유에 연결합니다.* | *표준 폴더처럼 ZIP, TAR, 7z 아카이브 내부를 탐색하고 편집하세요.* | 
+### 중간 빠른 작업 도구 모음
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*빠른 작업 스트립: 보기, 편집, 복사, 이동, MkDir, 삭제, 지우기.*
+
+### 자연어 명령
+
+![Natural Language File Search](images/semantic_command.png)  
+*macOS Spotlight 및 의미론적 쿼리 구문 분석을 통한 즉각적인 검색.*
+
+### 재귀적 평면 분기 보기
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*단일 단순 목록에 중첩된 내용을 표시하는 분기 보기(`Cmd+B`).*
+
+### 네트워크 및 원격 VFS
+
+![Network VFS](images/network_vfs.png)  
+*FTP, SFTP, WebDAV 및 SMB/Samba 네트워크 공유에 연결합니다.*
+
+### 아카이브 VFS(추출 필요 없음)
+
+![Archive VFS](images/archive_vfs.png)  
+*표준 폴더처럼 ZIP, TAR, 7z 아카이브 내부를 탐색하고 편집하세요.* 
 
 ---
 

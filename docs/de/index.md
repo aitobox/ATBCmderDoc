@@ -82,22 +82,37 @@ ATBCmder vereint maximale Produktivität und Kontrolle in einem übersichtlichen
 
 ## Interface-Showcase
 
-Entdecken Sie die Fähigkeiten von ATBCmder anhand der wichtigsten Funktionshighlights: 
+Entdecken Sie die Fähigkeiten von ATBCmder anhand der wichtigsten Funktionshighlights:
 
-| Dual-Panels und Baumansicht | Mittlere Schnellaktionssymbolleiste | 
-| :---: | :---: | 
-| ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
-| *Dual-Panel-Layout mit Verzeichnisbaum und Miniaturvorschau.* | *Schnellaktionsleiste: Anzeigen, Bearbeiten, Kopieren, Verschieben, MkDir, Löschen, Löschen.* | 
+### Dual-Panels und Baumansicht
 
-| Befehle in natürlicher Sprache | Rekursive flache Zweigansicht | 
-| :---: | :---: | 
-| ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
-| *Sofortige Suche mit macOS Spotlight und semantischer Abfrageanalyse.* | *Zweigansicht (`Cmd+B`) zeigt verschachtelte Inhalte in einer einzelnen flachen Liste an.* | 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*Dual-Panel-Layout mit Verzeichnisbaum und Miniaturvorschau.*
 
-| Netzwerk- und Remote-VFS | VFS archivieren (keine Extraktion erforderlich) | 
-| :---: | :---: | 
-| ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) | 
-| *Stellen Sie eine Verbindung zu FTP-, SFTP-, WebDAV- und SMB/Samba-Netzwerkfreigaben her.* | *Durchsuchen und bearbeiten Sie ZIP-, TAR- und 7z-Archive wie Standardordner.* | 
+### Mittlere Schnellaktionssymbolleiste
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*Schnellaktionsleiste: Anzeigen, Bearbeiten, Kopieren, Verschieben, MkDir, Löschen, Löschen.*
+
+### Befehle in natürlicher Sprache
+
+![Natural Language File Search](images/semantic_command.png)  
+*Sofortige Suche mit macOS Spotlight und semantischer Abfrageanalyse.*
+
+### Rekursive flache Zweigansicht
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*Zweigansicht (`Cmd+B`) zeigt verschachtelte Inhalte in einer einzelnen flachen Liste an.*
+
+### Netzwerk- und Remote-VFS
+
+![Network VFS](images/network_vfs.png)  
+*Stellen Sie eine Verbindung zu FTP-, SFTP-, WebDAV- und SMB/Samba-Netzwerkfreigaben her.*
+
+### VFS archivieren (keine Extraktion erforderlich)
+
+![Archive VFS](images/archive_vfs.png)  
+*Durchsuchen und bearbeiten Sie ZIP-, TAR- und 7z-Archive wie Standardordner.* 
 
 ---
 

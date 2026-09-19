@@ -82,22 +82,37 @@ ATBCmder organise la puissance et la productivité dans une présentation claire
 
 ## Vitrine des interfaces
 
-Explorez les capacités d'ATBCmder à travers les principales fonctionnalités : 
+Explorez les capacités d'ATBCmder à travers les principales fonctionnalités :
 
-| Panneaux doubles et vue arborescente | Barre d'outils d'action rapide centrale | 
-| :---: | :---: | 
-| ![Tree View and Thumbnail Display](images/treeview+thumbview.png) | ![Middle Toolbar](images/middle_toolbar.png) | 
-| *Disposition à deux panneaux avec arborescence de répertoires et aperçu miniature.* | *Bande d'action rapide : Afficher, Modifier, Copier, Déplacer, MkDir, Supprimer, Effacer.* | 
+### Panneaux doubles et vue arborescente
 
-| Commandes en langage naturel | Vue arborescente plate (Flat Branch View) récursive | 
-| :---: | :---: | 
-| ![Natural Language File Search](images/semantic_command.png) | ![Flat View of Nested Directories](images/branch_view.png) | 
-| *Recherche instantanée optimisée par macOS Spotlight et analyse sémantique des requêtes.* | *Vue des branches (`Cmd+B`) affichant le contenu imbriqué dans une seule liste plate.* | 
+![Tree View and Thumbnail Display](images/treeview+thumbview.png)  
+*Disposition à deux panneaux avec arborescence de répertoires et aperçu miniature.*
 
-| Réseau et VFS distant | Archiver VFS (aucune extraction nécessaire) | 
-| :---: | :---: | 
-| ![Network VFS](images/network_vfs.png) | ![Archive VFS](images/archive_vfs.png) | 
-| *Connectez-vous aux partages réseau FTP, SFTP, WebDAV et SMB/Samba.* | *Parcourez et modifiez les archives ZIP, TAR, 7z comme des dossiers standard.* | 
+### Barre d'outils d'action rapide centrale
+
+![Middle Toolbar](images/middle_toolbar.png)  
+*Bande d'action rapide : Afficher, Modifier, Copier, Déplacer, MkDir, Supprimer, Effacer.*
+
+### Commandes en langage naturel
+
+![Natural Language File Search](images/semantic_command.png)  
+*Recherche instantanée optimisée par macOS Spotlight et analyse sémantique des requêtes.*
+
+### Vue arborescente plate (Flat Branch View) récursive
+
+![Flat View of Nested Directories](images/branch_view.png)  
+*Vue des branches (`Cmd+B`) affichant le contenu imbriqué dans une seule liste plate.*
+
+### Réseau et VFS distant
+
+![Network VFS](images/network_vfs.png)  
+*Connectez-vous aux partages réseau FTP, SFTP, WebDAV et SMB/Samba.*
+
+### Archiver VFS (aucune extraction nécessaire)
+
+![Archive VFS](images/archive_vfs.png)  
+*Parcourez et modifiez les archives ZIP, TAR, 7z comme des dossiers standard.* 
 
 ---
 
