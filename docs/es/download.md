@@ -35,6 +35,41 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 1.9.6 (2026-09-21)
+
+- Modo de cambio de tamaño personalizado en el editor de imágenes: Se añadió el modo «Tamaño personalizado (Custom Size)» al diálogo de redimensionamiento, permitiendo ingresar directamente los píxeles de ancho y alto con bloqueo de relación de aspecto opcional para un escalado exacto
+- Refuerzo de seguridad en el sandbox y cumplimiento para Mac App Store: Cumplimiento riguroso de las directrices de revisión de Apple 2.4.5(v) y 2.5.2; se eliminaron las solicitudes de autorización del directorio raíz en modo sandbox y se deshabilitaron la interfaz y la lógica de terminación de procesos (SIGKILL/SIGTERM) en la versión de App Store
+- Desbordamiento adaptativo en la barra de herramientas y estabilidad de Diff Viewer: Se incorporó la gestión automática del desbordamiento en la barra de herramientas principal para agrupar botones excedentes en un menú desplegable en pantallas reducidas; se solucionó un bloqueo intermitente en el visor de diferencias en macOS x86
+- Localización del menú «Herramientas» en los 30 idiomas: Traducción completa y pulida del menú superior «Herramientas (Tools)» y sus opciones en los 30 idiomas disponibles
+- Rendimiento de la interfaz y robustez en CI/CD: Eliminación de referencias residuales en el panel de texto para acelerar drásticamente el cambio de temas; actualización de los flujos de trabajo de CI para admitir ejecutores ARM64 parametrizados y reintentos automáticos en la transferencia de artefactos
+
+### 1.9.5 (2026-09-19)
+
+- Herencia de App Sandbox para ejecutables auxiliares en Mac App Store: Se incorporaron permisos dedicados (`com.apple.security.app-sandbox` y `com.apple.security.inherit`) para todos los ejecutables auxiliares (como el binario de herramientas del sistema `atbsys`) en `Contents/MacOS/`, garantizando que los procesos secundarios hereden las políticas de seguridad del contenedor principal y cumplan plenamente las directrices de revisión de Mac App Store
+- Firma de código con Hardened Runtime para ejecutables en DMG: Activación de Hardened Runtime (`--options runtime`) junto con sus permisos correspondientes en todos los ejecutables Mach-O auxiliares para distribuciones DMG, asegurando el cumplimiento riguroso de los estándares de firma Developer ID y notarización de Apple
+- Depuración de estructura del paquete y pruebas de integración: Eliminación automática de directorios de binarios redundantes (`Contents/Resources/bin`) para optimizar el bundle; se agregaron pruebas de integración automatizadas para validar los permisos de sandbox, Hardened Runtime y la integridad de los scripts de empaquetado
+
+### 1.9.4 (2026-09-19)
+
+- Suite de herramientas y mantenimiento del sistema ATBSys: Integración nativa completa de herramientas de mantenimiento del sistema, incluyendo una cápsula de estado en la barra de herramientas principal (monitoreo en tiempo real de CPU, memoria, disco y velocidad de red con menú contextual de pausa/intervalo/ocultar y selector en preferencias), panel integral de estado del sistema (métricas de recursos y gestión de procesos con finalización/forzado de cierre mediante clic derecho), analizador de espacio en disco (visualización jerárquica Treemap, ordenación interactiva por columnas, acciones de mostrar en Finder/enviar a la papelera y exportación de informes a CSV/TXT), limpiador seguro en dos etapas (análisis y limpieza de cachés de usuario, registros, archivos residuales, categorías Homebrew, CocoaPods, Docker y protección por lista blanca `~/.config/mole/whitelist`), y desinstalador profundo de aplicaciones con detección de residuos
+- Motor nativo en Go de alto rendimiento y registros de auditoría: Impulsado por el binario independiente y ligero `atbsys` escrito en Go nativo, con comunicación asíncrona no bloqueante mediante QProcess; empaquetado como Universal Binary con integración total en el flujo de empaquetado y CI/CD; todas las operaciones de limpieza y desinstalación se registran de forma estructurada en registros de auditoría en el directorio de registros de ATBCmder
+- Tutorial interactivo ampliado a 27 pasos: El plan de incorporación para principiantes se amplía con lecciones prácticas dedicadas a las utilidades del sistema; se rediseña el motor de resaltado de la barra de menús nativa de macOS para garantizar una alineación precisa e independiente del idioma seleccionado
+- Localización exhaustiva a 30 idiomas y documentación oficial: Traducción completa de todas las utilidades ATBSys, menús de la cápsula, ajustes y tutorial en los 30 idiomas admitidos; guía de usuario en inglés ampliada con el Capítulo 7 («Chapter 7 System Tools & Maintenance»)
+- Detalles de interfaz y robustez de empaquetado: Ensanchamiento de la cápsula de estado y de las etiquetas de velocidad de red para evitar el truncamiento de texto durante transferencias de alta velocidad; perfeccionamiento del diseño acoplado a la derecha y de la desvinculación de atajos; verificación de seguridad reforzada en la inyección de dylibs de arquitectura simple y universales en ejecutores macOS 12 x86_64
+
+### 1.9.3 (2026-09-17)
+
+- Vista previa de archivos .ini en el visor universal: Soporte nativo para previsualizar archivos de configuración `.ini` como texto plano en el Visor Universal (F3) y en la Vista Rápida (`Ctrl+Q` / `⌘Q`), facilitando la inspección directa sin abrir editores externos
+- Empaquetado para App Store y firmado de bibliotecas dinámicas: Compilación e inyección automatizada de `libATBLicenseKit.dylib` en `Contents/Frameworks/` para compilaciones de Mac App Store y DMG; incorporación de firmado de código y notarización para bibliotecas dinámicas, mejora en la detección de rutas en tiempo de ejecución y fusión segura de binarios universales
+- Estabilidad del tutorial interactivo: Se corrigieron los tiempos de espera y bloqueos en los pasos de navegación del hotlist de favoritos, se restablecieron correctamente los estados de transición pendientes y se desconectaron señales obsoletas para evitar fugas de eventos
+
+### 1.9.2 (2026-09-17)
+
+- Sistema de licencias y prueba StoreKit 2: Sistema nativo de compra y licencias de Mac App Store basado en Swift StoreKit 2, con seguimiento de prueba por días naturales, validación de recibos sin conexión y restauración de compras; insignia en la barra de herramientas, diálogo de pago y compatibilidad universal desde macOS 12+ (Apple Silicon e Intel)
+- Ejecución de comandos Shell integrada: La barra de comandos inferior permite ejecutar comandos de shell directamente en el terminal del sistema (Terminal / iTerm2); autocompletado con Tab y navegación directa de paneles con `cd`
+- Renovación de sincronización de carpetas y Diff por palabras: Sincronización (`cm_SyncDirs`) rediseñada en vista clásica de 7 columnas con integración de Diff por doble clic y prevención de pérdida de datos; el visor de diferencias añade resaltado por palabras/caracteres y navegación rápida
+- Alineación con el almacenamiento de macOS y robustecimiento de VFS: Visualización de capacidad y espacio libre sincronizada con el panel "Almacenamiento" de macOS; VFS de red (SFTP/FTP/Samba/WebDAV) optimizado con comprobaciones de conexión, reconexión automática y FTPS; icono de bandeja minimalista monocromático
+
 ### 1.9.1 (2026-09-14)
 
 - Nueva etapa de búsqueda rápida en el tutorial interactivo: El plan de aprendizaje se amplía a 25 pasos con entrenamiento práctico de búsqueda y filtrado rápido (`⌘S` / `Ctrl+S`); nuevo acceso en el menú Comandos y limpieza fluida de la interfaz superpuesta

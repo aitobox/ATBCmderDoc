@@ -35,6 +35,41 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 1.9.6 (21.09.2026)
+
+- Bildeditor mit benutzerdefinierter Größenänderung: Der Dialog zur Bildskalierung wurde um den Modus „Benutzerdefinierte Größe (Custom Size)“ erweitert, der die direkte Eingabe von Zielbreite und -höhe in Pixeln mit optionaler Seitenverhältnissperre ermöglicht
+- Härtung der Mac App Store Sandbox & Richtlinienkonformität: Strikte Einhaltung der Apple App Store Review Guidelines 2.4.5(v) und 2.5.2; Abfragen zur Autorisierung des Root-Verzeichnisses wurden in der Sandbox entfernt und das Beenden externer Prozesse (SIGKILL/SIGTERM) samt UI in der MAS-Sandbox deaktiviert
+- Automatische Toolbar-Überlaufbehandlung & Diff-Viewer-Stabilität: Die Hauptsymbolleiste verstaut überzählige Aktionsschaltflächen auf kleineren Bildschirmen nun automatisch in einem Überlaufmenü; ein zeitweiser Hänger des Diff-Viewers unter macOS x86 wurde behoben
+- Vervollständigung der Menülokalisierung in 30 Sprachen: Das Hauptmenü „Werkzeuge (Tools)“ und die zugehörigen Aktionen wurden in allen 30 unterstützten Sprachen vollständig übersetzt
+- UI-Performance & CI/CD-Stabilität: Beseitigung verwaister Widget-Referenzen im Textpanel zur spürbaren Beschleunigung des Theme-Wechsels; parametrisierte ARM64-Runner-Auswahl und exponentielles Backoff mit Wiederholungsversuchen für Build-Artefakte in GitHub Actions hinzugefügt
+
+### 1.9.5 (19.09.2026)
+
+- Sandbox-Vererbung für Hilfsprogramme im Mac App Store: Dedizierte Helper-Entitlements (`com.apple.security.app-sandbox` und `com.apple.security.inherit`) für alle Hilfsausführungsdateien (wie das `atbsys`-Systemtool-Binary) in `Contents/MacOS/` hinzugefügt. Dadurch erben Kindprozesse die App-Sandbox-Sicherheitsrichtlinien der Hauptanwendung vollständig, um den Bestimmungen des Mac App Store lückenlos zu entsprechen
+- Hardened Runtime-Codesignierung für DMG-Hilfsprogramme: Für alle zusätzlichen Mach-O-Binärdateien in DMG-Distributionspaketen wurde Hardened Runtime (`--options runtime`) mit entsprechenden Berechtigungen aktiviert, um die Anforderungen für Apple Developer ID-Signierung und Notarisierung (Notarization) strikt zu erfüllen
+- Bereinigung der Bundle-Struktur & Packaging-Integrationstests: Automatische Bereinigung redundanter Ressourcen-Binärverzeichnisse (`Contents/Resources/bin`) zur Optimierung der Paketstruktur; zusätzliche automatisierte Integrationstests zur Überprüfung von Sandbox-Berechtigungen und Hardened Runtime für alle Build-Skripte hinzugefügt
+
+### 1.9.4 (19.09.2026)
+
+- ATBSys Systemwerkzeuge & Wartungssuite: Vollständige Integration nativer Systemwartungstools, einschließlich der Systemstatus-Kapsel in der Hauptsymbolleiste (Echtzeitüberwachung von CPU, RAM, Festplatte und Netzwerkübertragungsrate mit Kontextmenü für Pause/Aktualisierungsintervall/Ausblenden sowie Einstellungsumschaltung), Systemstatus-Panel (vollständige Hardwareressourcen-Metriken und Prozessverwaltung mit Beenden/Kill per Rechtsklick), Festplattenanalysator (Treemap-Hierarchievisualisierung, Spaltensortierung, Öffnen/Im Finder anzeigen/In den Papierkorb sowie CSV/TXT-Export), zweistufiger sicherer Systembereiniger (Bereinigung von Caches, Protokollen, Dateiresten sowie Homebrew-, CocoaPods- und Docker-Kategorien mit `~/.config/mole/whitelist`-Schutz) und Deinstallationsprogramm für Anwendungen mit Erkennung verbleibender Restdateien
+- Nativer Hochleistungs-Go-Engine & Audit-Protokollierung: Angetrieben durch die schlanke, eigenständige Go-basierte `atbsys`-Bridge mit asynchroner, nicht-blockierender QProcess-Kommunikation und Universal-Binary-Unterstützung; vollständig in automatisierte Builds und CI/CD-Pipelines integriert; alle Bereinigungs- und Deinstallationsvorgänge werden zur maximalen Sicherheit und Nachvollziehbarkeit im ATBCmder-Logverzeichnis strukturiert protokolliert
+- Interaktives Einführungstutorial auf 27 Schritte erweitert: Das Onboarding-Curriculum wurde um praktische Übungen zu Systemüberwachungs- und Wartungstools erweitert; die Menüleisten-Hervorhebung wurde für präzise, sprachunabhängige Ausrichtung auf der nativen macOS-Menüleiste überarbeitet
+- Vollständige Lokalisierung in 30 Sprachen & Dokumentation: Alle Komponenten von ATBSys, Statuskapsel-Menüs, Einstellungen und Tutorials wurden für alle 30 unterstützten Sprachen vollständig übersetzt; das offizielle englische Benutzerhandbuch wurde um Kapitel 7 („Chapter 7 System Tools & Maintenance“) erweitert
+- UI-Optimierungen & Build-Stabilität: Statuskapsel und Netzwerk-Labels verbreitert, um Textabschneidungen bei hohen Übertragungsraten zuverlässig zu verhindern; rechtsbündiges Kapsel-Layout und Tastenkürzel-Synchronisation verbessert; dylib- und Binär-Injektionsprüfungen für Einzelarchitektur- und Universal-Binaries unter macOS 12 x86_64 gehärtet
+
+### 1.9.3 (17.09.2026)
+
+- Vorschau von .ini-Dateien im Universal-Betrachter: Native Klartext-Vorschauunterstützung für `.ini`-Konfigurationsdateien im Universal-Viewer (F3) und in der Schnellansicht (`Ctrl+Q` / `⌘Q`) hinzugefügt, sodass Konfigurationen ohne externe Editoren sofort eingesehen werden können
+- App Store-Paketierung & Signierung dynamischer Bibliotheken: Automatische Kompilierung und Einbindung von `libATBLicenseKit.dylib` in `Contents/Frameworks/` für Mac App Store- und DMG-Builds; separate Codesignierung und Beglaubigung für Dynamic Libraries hinzugefügt, Bundle-Pfade zur Laufzeit verbessert und Zusammenführung von Universal-Binaries abgesichert
+- Stabilität des interaktiven Tutorials optimiert: Zeitüberschreitungen und Blockaden bei Schritten zur Hotlist-Navigation behoben, ausstehende Schrittübergänge sauber zurückgesetzt und verwaiste Signalverbindungen getrennt, um Signal-Leaks im Onboarding zu verhindern
+
+### 1.9.2 (17.09.2026)
+
+- StoreKit 2 Lizenzierungs- & Testversionssystem: Natives Swift StoreKit 2 Lizenzierungs- und Einmalkauf-System für den Mac App Store mit kalendertäglicher Testphasen-Zählung, Offline-Belegprüfung und Kaufwiederherstellung; Lizenz-Badge in der Symbolleiste, Paywall-Dialog und universelle Unterstützung ab macOS 12+ (Apple Silicon & Intel)
+- Integrierte Shell-Befehlsausführung & Terminal-Anbindung: Die untere Befehlszeile führt Shell-Befehle direkt im Systemterminal (Terminal / iTerm2) aus; unterstützt Tab-Vervollständigung und direkte Verzeichnisnavigation bei `cd`-Befehlen
+- Verzeichnissynchronisation & Inline-Wort-Diff: Synchronisation (`cm_SyncDirs`) auf ein klassisches 7-Spalten-Layout umgestellt mit Doppelklick-Diff-Verknüpfung und Vermeidung asymmetrischer Datenverluste; Diff-Viewer bietet zeichen-/wortgenaue Inline-Hervorhebung und Navigation zum ersten/letzten Unterschied
+- macOS Speicherplatzabgleich & VFS-Härtung: Laufwerkskapazitäts- und Freispeicheranzeige an macOS "Speicher"-Spezifikationen angepasst; Netzwerk-VFS (SFTP/FTP/Samba/WebDAV) mit Verbindungsprüfungen, automatischer Wiederverbindung und FTPS gehärtet; minimalistisches monochromes Tray-Icon
+
 ### 1.9.1 (14.09.2026)
 
 - Interaktives Tutorial um Schnellsuche erweitert: Das Tutorial umfasst nun 25 Schritte inklusive Schnellsuche und Filterung (`⌘S` / `Ctrl+S`); neuer Eintrag im Befehlsmenü und saubere Overlay-Bereinigung bei Schrittwechseln

@@ -35,6 +35,41 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.9.6 (2026-09-21)
+
+- Image Editor Custom Size Resize Mode: Introduced a "Custom Size" mode to the image resize dialog, allowing direct pixel input for target width and height with an optional aspect ratio lock toggle, giving users precise control over image scaling
+- Mac App Store Sandbox & Review Compliance Hardening: Strictly complied with Apple App Store Review Guidelines 2.4.5(v) and 2.5.2 by removing root directory authorization prompts in sandboxed builds and disabling process termination (SIGKILL/SIGTERM) UI and logic in MAS sandbox mode, eliminating sandbox violation and rejection risks
+- Adaptive Toolbar Overflow & Diff Viewer Stability: Added automatic overflow handling to the main toolbar to gracefully collapse action buttons into a dropdown menu on smaller or compact screens; resolved an intermittent hang in the Diff Viewer test suite on macOS x86
+- 30-Language Menu Localization: Completed comprehensive translations for the top-level "Tools" menu and related actions across all 30 supported languages
+- UI Performance & CI/CD Pipeline Resilience: Cleaned up residual text panel widget references to significantly accelerate theme restyling and redraw speeds; updated CI/CD workflows to support parameterized ARM64 runner selection (self-hosted vs. cloud) with exponential backoff and retry for artifact transfers
+
+### 1.9.5 (2026-09-19)
+
+- Mac App Store Helper Executable Sandbox Inheritance: Added dedicated helper entitlements (`com.apple.security.app-sandbox` and `com.apple.security.inherit`) for all child executables (such as the `atbsys` system tools binary) in `Contents/MacOS/`, ensuring helper processes properly inherit the main application's App Sandbox container and security policies for full Mac App Store compliance
+- Hardened Runtime Code Signing for DMG Helpers: Enabled Hardened Runtime (`--options runtime`) with appropriate entitlements for all auxiliary Mach-O executables in DMG distribution bundles, guaranteeing complete compliance with Apple Developer ID code-signing and notarization requirements
+- Bundle Structure Cleanup & Packaging Integration Tests: Automated removal of redundant resource binary directories (`Contents/Resources/bin`) for cleaner bundle structure and App Store policy compliance; added automated packaging integration tests covering helper entitlements, Hardened Runtime, and multi-architecture build scripts
+
+### 1.9.4 (2026-09-19)
+
+- ATBSys System Tools & Maintenance Suite: Fully integrated native system utility suite, featuring a main toolbar System Status Capsule (real-time CPU, Memory, Disk, and Network bandwidth monitoring with right-click pause/interval/hide menu and settings toggle), full System Status Panel (hardware metrics and right-click process termination/kill management), Disk Space Analyzer (squarified Treemap hierarchy visualization, interactive column sorting, reveal/trash actions, and CSV/TXT report export), two-stage safe System Cleaner (scans and cleans user caches, application logs, leftover files, plus Homebrew, CocoaPods, and Docker categories with `~/.config/mole/whitelist` protection), and deep Application Uninstaller with remnant detection
+- High-Performance Go Bridge Engine & Audit Logging: Powered by the lightweight, standalone Go native binary `atbsys`, communicating via asynchronous non-blocking QProcess; packaged as a Universal Binary with automated bundling and CI/CD pipeline integration; all cleaning and uninstallation operations are structured and recorded in audit logs in the ATBCmder log directory
+- Interactive Onboarding Tutorial Expanded to 27 Steps: Upgraded beginner tutorial curriculum to include hands-on walkthroughs for system monitoring and maintenance tools; redesigned menu bar highlight positioning for language-agnostic precision on macOS native menu bars
+- Comprehensive 30-Language Localization & Official Documentation: Complete translations for all ATBSys components, status capsule options, settings, and tutorial steps across all 30 supported languages; official English user guide enriched with Chapter 7: System Tools & Maintenance
+- UI Polishing & Packaging Hardening: Widened the status bar capsule and network rate labels to eliminate text truncation during high-throughput network transfers; refined right-aligned capsule layout and menu shortcut unbinding synchronization; hardened dylib and binary injection logic for single-architecture and universal binaries on macOS 12 x86_64 runners
+
+### 1.9.3 (2026-09-17)
+
+- Universal Viewer .ini File Preview Support: Added native plain text preview support for `.ini` configuration files in the Universal Viewer (F3) and Quick View (`Ctrl+Q` / `⌘Q`), enabling instant inspection of configuration settings without opening external editors
+- App Store Packaging & Frameworks Signing: Automated compilation and injection of `libATBLicenseKit.dylib` into `Contents/Frameworks/` for macOS Store and DMG release builds; added strict code-signing and notarization for dynamic libraries, enhanced runtime bundle discovery, and hardened universal binary merging
+- Interactive Tutorial Engine Stability: Resolved step navigation timeouts in the favorite hotlist curriculum, properly cleared pending transition flags upon step switching, and disconnected dangling event signals to eliminate signal leaks during onboarding
+
+### 1.9.2 (2026-09-17)
+
+- StoreKit 2 Licensing & Trial System: Built-in Swift StoreKit 2 licensing and lifetime purchase system for the Mac App Store, featuring local calendar-day trial tracking, offline receipt validation, and purchase restoration; includes a toolbar license badge, paywall dialog, and universal binary support (macOS 12+, Apple Silicon & Intel)
+- Embedded Shell Command Execution: Bottom command line bar now directly executes arbitrary shell commands in system terminal (Terminal / iTerm2); supports Tab path completion, and pure `cd` commands navigate active panels directly
+- Directory Sync Overhaul & Inline Word Diff: Redesigned Directory Synchronization (`cm_SyncDirs`) with a classic 7-column grid and double-click Diff integration, eliminating asymmetric sync risks; Diff Viewer adds fine-grained inline word/character highlighting and First/Last diff navigation
+- macOS Native Storage Alignment & VFS Hardening: Drive capacity and free space display aligned with macOS System Settings "Storage" specs; Network VFS (SFTP/FTP/Samba/WebDAV) strengthened with liveness checks, auto-reconnect, and FTPS; updated system tray to a minimalist monochrome template icon
+
 ### 1.9.1 (2026-09-14)
 
 - Interactive Tutorial Quick Search Step: Expanded curriculum to 25 steps with interactive hands-on training for Quick Search & Filter (`⌘S` / `Ctrl+S`); added a Quick Search entry in the Commands menu and refined overlay cleanup during step transitions

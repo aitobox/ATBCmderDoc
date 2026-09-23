@@ -35,6 +35,41 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 1.9.6 (21/09/2026)
+
+- Modo de redimensionamento personalizado no editor de imagens: Introduzido o modo "Tamanho Personalizado (Custom Size)" na caixa de diálogo de redimensionamento de imagem, permitindo a entrada direta de pixels para largura e altura com bloqueio opcional de proporção, oferecendo aos usuários controle preciso sobre o dimensionamento
+- Reforço de segurança no Sandbox e conformidade para Mac App Store: Cumprimento rigoroso das Diretrizes de Revisão da Apple App Store 2.4.5(v) e 2.5.2; remoção de solicitações de autorização de diretório raiz em compilações em sandbox e desativação da interface e lógica de encerramento de processos (SIGKILL/SIGTERM) no modo sandbox da MAS, eliminando riscos de violação e rejeição
+- Transbordamento adaptativo da barra de ferramentas e estabilidade do visualizador Diff: Adicionado tratamento automático de transbordamento à barra de ferramentas principal para recolher botões de ação em um menu suspenso em telas menores; resolvido travamento intermitente na suíte de testes do visualizador Diff no macOS x86
+- Localização do menu em 30 idiomas: Concluídas traduções abrangentes para o menu de nível superior "Ferramentas (Tools)" e ações relacionadas em todos os 30 idiomas suportados
+- Desempenho da interface e resiliência do pipeline CI/CD: Limpeza de referências residuais a widgets no painel de texto para acelerar significativamente a troca de temas e a velocidade de redesenho; fluxos de trabalho de CI/CD atualizados para suportar seleção parametrizada de executores ARM64 (auto-hospedados vs. nuvem) com espera exponencial e repetição no envio de artefatos
+
+### 1.9.5 (19/09/2026)
+
+- Herança de sandbox para executáveis auxiliares na Mac App Store: Adicionadas permissões dedicadas (`com.apple.security.app-sandbox` e `com.apple.security.inherit`) para todos os executáveis secundários (como o binário de ferramentas do sistema `atbsys`) em `Contents/MacOS/`, garantindo que os processos auxiliares herdem corretamente o contêiner App Sandbox e as políticas de segurança do aplicativo principal para total conformidade com a Mac App Store
+- Assinatura de código Hardened Runtime para auxiliares DMG: Habilitado o Hardened Runtime (`--options runtime`) com os direitos apropriados para todos os executáveis Mach-O auxiliares em pacotes de distribuição DMG, garantindo total conformidade com os requisitos de assinatura de código e notarização do Apple Developer ID
+- Limpeza da estrutura do pacote e testes de integração de empacotamento: Remoção automatizada de diretórios de binários de recursos redundantes (`Contents/Resources/bin`) para uma estrutura de pacote mais limpa e em conformidade com a App Store; adição de testes de integração de empacotamento automatizados abrangendo direitos de auxiliares, Hardened Runtime e scripts de compilação multiarquitetura
+
+### 1.9.4 (19/09/2026)
+
+- Suíte de ferramentas do sistema e manutenção ATBSys: Integração completa do conjunto nativo de utilitários do sistema, com Cápsula de Status do Sistema na barra de ferramentas principal (monitoramento em tempo real de CPU, memória, disco e tráfego de rede com menu de pausa/intervalo/ocultação e alternância nas preferências), Painel Completo de Status do Sistema (métricas de hardware e gerenciamento/finalização de processos com clique com o botão direito), Analisador de Espaço em Disco (visualização hierárquica Treemap, ordenação interativa de colunas, ações de revelar no Finder/mover para a lixeira e exportação de relatórios em CSV/TXT), Limpador de Sistema seguro em duas etapas (varredura e limpeza de caches do usuário, registros de aplicativos, arquivos residuais, categorias Homebrew, CocoaPods e Docker com proteção de lista permitida `~/.config/mole/whitelist`) e Desinstalador Profundo de Aplicativos com detecção de sobras
+- Motor bridge nativo em Go de alto desempenho e logs de auditoria: Desenvolvido sobre o binário nativo em Go leve e independente `atbsys`, comunicando-se via QProcess assíncrono e não bloqueante; empacotado como Universal Binary com automação de empacotamento e integração ao pipeline de CI/CD; todas as operações de limpeza e desinstalação são estruturadas e registradas em logs de auditoria no diretório de logs do ATBCmder
+- Tutorial interativo para iniciantes expandido para 27 etapas: Currículo de integração para iniciantes aprimorado com orientações práticas para ferramentas de monitoramento e manutenção do sistema; reprojetado o posicionamento do destaque da barra de menus para precisão independente do idioma na barra de menus nativa do macOS
+- Localização abrangente em 30 idiomas e documentação oficial: Traduções completas para todos os componentes do ATBSys, opções da cápsula de status, configurações e etapas do tutorial em todos os 30 idiomas suportados; guia oficial do usuário em inglês enriquecido com o Capítulo 7: Ferramentas do Sistema e Manutenção
+- Refinamento de interface e fortalecimento de empacotamento: Alargamento da cápsula da barra de status e dos rótulos de taxa de rede para eliminar o truncamento de texto durante transferências de alta taxa; refinamento do layout da cápsula alinhada à direita e sincronização de desvinculação de atalhos; fortalecimento da verificação de injeção de dylibs e binários de arquitetura única e universais em executores macOS 12 x86_64
+
+### 1.9.3 (17/09/2026)
+
+- Suporte a pré-visualização de arquivos .ini no visualizador universal: Adicionado suporte nativo a pré-visualização em texto simples para arquivos de configuração `.ini` no Visualizador Universal (F3) e na Visualização Rápida (`Ctrl+Q` / `⌘Q`), permitindo inspeção instantânea de configurações sem abrir editores externos
+- Empacotamento para App Store e assinatura de frameworks: Compilação e injeção automatizadas de `libATBLicenseKit.dylib` em `Contents/Frameworks/` para compilações de lançamento da Mac App Store e DMG; adicionadas assinatura de código estrita e notarização para bibliotecas dinâmicas, aprimoramento da descoberta de pacotes em tempo de execução e fusão protegida de binários universais
+- Estabilidade do mecanismo do tutorial interativo: Resolução de tempos limites de navegação de etapas no currículo de favoritos (Hotlist), redefinição adequada de sinalizadores de transição pendentes na alternância de etapas e desconexão de sinais de eventos pendentes para eliminar vazamento de sinais durante a integração
+
+### 1.9.2 (17/09/2026)
+
+- Sistema de licença e avaliação StoreKit 2: Sistema nativo de compra definitiva e licenciamento da Mac App Store baseado em Swift StoreKit 2, com contagem de avaliação por dias do calendário local, validação de recibos offline e restauração de compras; emblema de licença na barra de ferramentas, diálogo de paywall e suporte a binários universais (macOS 12+, Apple Silicon e Intel)
+- Execução de comandos Shell incorporada: A barra de linha de comando inferior agora executa comandos de shell diretamente no terminal do sistema (Terminal / iTerm2); oferece suporte ao preenchimento de caminhos com Tab e comandos `cd` puros navegam diretamente nos painéis ativos
+- Reformulação da sincronização de diretórios e Diff em linha por palavra: Sincronização de pastas (`cm_SyncDirs`) reprojetada em uma grade clássica de 7 colunas com integração de Diff por clique duplo, eliminando riscos de sincronização assimétrica; o visualizador Diff adiciona destaque detalhado de palavras/caracteres em linha e navegação para a primeira/última diferença
+- Alinhamento de armazenamento nativo do macOS e reforço do VFS: Exibição da capacidade do drive e do espaço livre alinhada às especificações de "Armazenamento" dos Ajustes do Sistema do macOS; VFS de rede (SFTP/FTP/Samba/WebDAV) reforçado com verificações de conectividade, reconexão automática e FTPS; ícone da bandeja do sistema atualizado para um ícone minimalista monocromático
+
 ### 1.9.1 (14/09/2026)
 
 - Etapa de busca rápida no tutorial interativo: Currículo expandido para 25 etapas com treinamento prático para busca e filtragem rápida (`⌘S` / `Ctrl+S`); adicionada entrada de busca rápida no menu Comandos e aprimorada a limpeza de sobreposição durante as transições de etapas
