@@ -320,7 +320,7 @@ ATBCmder 支援為每一項核心指令分配 **兩組獨立的快速鍵組合**
 2. **磁碟永久快取**：快取在使用者本地快取目錄中：
    - 本地路徑：`~/.cache/atbcmder/thumbnails/`
    - 快取鍵採用組合雜湊機制生成，融合了檔案絕對路徑、修改時間戳 (`mtime`)、請求畫素邊長以及系統快取版本號：
-     $$	ext{Cache Key} = 	ext{SHA256}(	ext{filepath} + 	ext{mtime} + 	ext{size} + 	ext{version})$$
+     $$\text{Cache Key} = \text{SHA256}(\text{filepath} + \text{mtime} + \text{size} + \text{version})$$
    - 一旦檔案在磁碟上被修改，時間戳發生變化，舊快取立即失效並在後臺自動重繪。
 3. **多執行緒併發解碼池**：圖片生成完全由獨立的後臺 `QThread` 執行緒池負責，呼叫 Pillow (PIL) 或硬體加速的 `QImage` 管道，絕不阻塞主介面操作。
 
@@ -414,7 +414,7 @@ ATBCmder 融合了作業系統原生事件驅動機制與主動輪詢機制：
 
 檔案關聯規則在匹配時遵循從最精確到最通用的優先順序順序：
 
-$$	ext{匹配優先順序: } 	exttt{*.min.js} \longrightarrow 	exttt{*.js} \longrightarrow 	exttt{text/*} \longrightarrow 	exttt{*}$$
+$$\text{匹配優先順序: } \texttt{*.min.js} \longrightarrow \texttt{*.js} \longrightarrow \texttt{text/*} \longrightarrow \texttt{*}$$
 
 每個關聯規則可配置多組動作（例如“在 VS Code 中編輯”、“16 進位制查閱”、“使用 Python 執行”），其中可以指定某一項為回車觸發的預設動作。
 

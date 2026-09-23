@@ -9,9 +9,15 @@ site_dir     = "site/fr"
 
 extra_javascript = [
   "javascripts/language-detector.js",
-  "javascripts/ascii-diagram.js"
+  "javascripts/ascii-diagram.js",
+  "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js",
+  "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js",
+  "javascripts/katex.js"
 ]
-extra_css        = ["stylesheets/extra.css"]
+extra_css = [
+  "stylesheets/extra.css",
+  "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+]
 
 nav = [
   { "Bienvenue sur ATBCmder" = "index.md" },

@@ -30,8 +30,14 @@ APP_STORE_URL = "https://apps.apple.com/app/atbcmder/id6792398333"
 EXTRA_JAVASCRIPT = [
     "javascripts/language-detector.js",
     "javascripts/ascii-diagram.js",
+    "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js",
+    "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js",
+    "javascripts/katex.js",
 ]
-EXTRA_CSS = ["stylesheets/extra.css"]
+EXTRA_CSS = [
+    "stylesheets/extra.css",
+    "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
+]
 
 THEME_NAME = "material"
 THEME_CUSTOM_DIR = "overrides"
@@ -87,7 +93,11 @@ def generate_config_content(lang: Dict[str, Any]) -> str:
         comma = "," if i < len(EXTRA_JAVASCRIPT) - 1 else ""
         lines.append(f'  "{js}"{comma}')
     lines.append("]")
-    lines.append(f'extra_css        = ["{EXTRA_CSS[0]}"]')
+    lines.append("extra_css = [")
+    for i, css in enumerate(EXTRA_CSS):
+        comma = "," if i < len(EXTRA_CSS) - 1 else ""
+        lines.append(f'  "{css}"{comma}')
+    lines.append("]")
     lines.append("")
     lines.append("nav = [")
     for i, filename in enumerate(NAV_ORDER):

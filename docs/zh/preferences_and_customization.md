@@ -320,7 +320,7 @@ ATBCmder 支持为每一项核心指令分配 **两组独立的快捷键组合**
 2. **磁盘永久缓存**：缓存在用户本地缓存目录中：
    - 本地路径：`~/.cache/atbcmder/thumbnails/`
    - 缓存键采用组合哈希机制生成，融合了文件绝对路径、修改时间戳 (`mtime`)、请求像素边长以及系统缓存版本号：
-     $$	ext{Cache Key} = 	ext{SHA256}(	ext{filepath} + 	ext{mtime} + 	ext{size} + 	ext{version})$$
+     $$\text{Cache Key} = \text{SHA256}(\text{filepath} + \text{mtime} + \text{size} + \text{version})$$
    - 一旦文件在磁盘上被修改，时间戳发生变化，旧缓存立即失效并在后台自动重绘。
 3. **多线程并发解码池**：图片生成完全由独立的后台 `QThread` 线程池负责，调用 Pillow (PIL) 或硬件加速的 `QImage` 管道，绝不阻塞主界面操作。
 
@@ -414,7 +414,7 @@ ATBCmder 融合了操作系统原生事件驱动机制与主动轮询机制：
 
 文件关联规则在匹配时遵循从最精确到最通用的优先级顺序：
 
-$$	ext{匹配优先级: } 	exttt{*.min.js} \longrightarrow 	exttt{*.js} \longrightarrow 	exttt{text/*} \longrightarrow 	exttt{*}$$
+$$\text{匹配优先级: } \texttt{*.min.js} \longrightarrow \texttt{*.js} \longrightarrow \texttt{text/*} \longrightarrow \texttt{*}$$
 
 每个关联规则可配置多组动作（例如“在 VS Code 中编辑”、“16 进制查阅”、“使用 Python 执行”），其中可以指定某一项为回车触发的默认动作。
 
