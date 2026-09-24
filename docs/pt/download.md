@@ -35,6 +35,22 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 1.9.8 (24/09/2026)
+
+- Precisão de 64 bits (>2 GB) nas ferramentas do sistema e melhorias no desinstalador: Corrigido o estouro de sinal inteiro de 32 bits do Qt e a perda de precisão de 64 bits ao relatar contagens de bytes de limpeza superiores a 2 GB; adicionada a exibição e ordenação por data de instalação de aplicativos no Desinstalador de Aplicativos
+- Conformidade com o sandbox da Mac App Store e propagação do diretório pessoal real: Propagado o diretório pessoal real do usuário (`real_home`) pela ponte `atbsys` para limpeza precisa de disco e detecção de resíduos dentro do App Sandbox; reforçadas as interfaces de elevação de privilégios, execução de terminal e scripts para estrita conformidade com as diretrizes de revisão da App Store
+- Controles de layout nas preferências e correções na Lista de Favoritos de Diretórios (Hotlist): Adicionados controles de alternância de layout da janela principal nas Preferências Gerais com sincronização em tempo real do `MainWindow` e `ThemeManager`, e desativada a cápsula de status do sistema na barra de ferramentas principal por padrão para um espaço de trabalho inicial mais limpo; corrigidos menus suspensos vazios e retradução dinâmica de idioma nas configurações da Lista de Favoritos de Diretórios
+- Padronização terminológica e aprimoramento do seletor de idioma: Padronizada a tradução chinesa de "Directory Hotlist" para "路径收藏夹" em todas as interfaces e aprimorado o seletor de idioma nas Preferências com exibição dupla (nome no idioma nativo e nome traduzido)
+- Preservação de ACL das Chaves do macOS e confiabilidade de cópia em fluxo: Preservadas as listas de controle de acesso (ACLs) existentes das Chaves do macOS (Keychain) e eliminadas gravações redundantes na inicialização para evitar solicitações repetidas de autorização; garantida a emissão determinística do sinal `operation_completed` antes da conclusão da thread no `StreamCopyWorker`
+
+### 1.9.7 (23/09/2026)
+
+- Aplicação imediata de configurações em tempo de execução (Hot Reload): Todas as configurações em 7 páginas principais de opções (Operações de Arquivo, Editor, Visualizador, Pesquisa Rápida e Filtro, Abas, Ícones do Painel de Arquivos e Ordenação) agora entram em vigor imediatamente após salvar, sem necessidade de reiniciar o aplicativo; adicionado o parâmetro configurável `sort_folder_mode` com suporte para Pastas Primeiro, Arquivos Primeiro e Ordenação Mista
+- Segurança e paridade na sincronização de diretórios: Auditoria abrangente da Sincronização de Diretórios (`cm_SyncDirs`) alinhando o comportamento diretamente ao clássico Double Commander; fortalecidas a validação de estado bidirecional e as verificações de segurança para eliminar riscos de sincronização assimétrica
+- Dicas de ferramentas inteligentes para nomes de arquivos truncados com precisão CJK: Adicionadas dicas de ferramentas (tooltips) inteligentes ao passar o mouse e selecionar que aparecem exclusivamente quando nomes de arquivos longos são truncados com reticências, mantendo a interface limpa para itens totalmente visíveis; integrados cálculos de alta precisão de largura de caracteres CJK para eliminar discrepâncias métricas de fontes
+- Refinamento do fluxo de trabalho de painel duplo e interações: A compactação e extração de arquivos via clique com o botão direito definem por padrão o diretório do painel oposto como destino, com foco padrão no botão Iniciar; refinada a ordem dos botões e a ação padrão do teclado na caixa de diálogo de confirmação de exclusão; restaurados os cursores de ponteiro para os botões de ação da barra de ferramentas central
+- Diretório pessoal real no sandbox da Mac App Store e reforço de FDA: Implementado o motor de resolução `real_home` para resolver com precisão os diretórios pessoais do usuário e Listas de Favoritos sob contêineres App Sandbox; corrigidos falsos alarmes de Acesso Total ao Disco (FDA) com fechamento automático de diálogos após autorização; migradas as métricas de CPU do sistema para Mach host statistics para conformidade com o sandbox
+
 ### 1.9.6 (21/09/2026)
 
 - Modo de redimensionamento personalizado no editor de imagens: Introduzido o modo "Tamanho Personalizado (Custom Size)" na caixa de diálogo de redimensionamento de imagem, permitindo a entrada direta de pixels para largura e altura com bloqueio opcional de proporção, oferecendo aos usuários controle preciso sobre o dimensionamento

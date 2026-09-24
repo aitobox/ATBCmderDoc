@@ -35,6 +35,22 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 1.9.8 (24/09/2026)
+
+- Précision 64 bits (>2 Go) des outils système et amélioration du désinstalleur : Correction du dépassement d'entier 32 bits des signaux Qt et de la perte de précision 64 bits lors du nettoyage de volumes supérieurs à 2 Go ; ajout de la date d'installation des applications dans le désinstalleur
+- Conformité au bac à sable Mac App Store et transmission du dossier personnel réel : Transmission du véritable répertoire utilisateur (`real_home`) au pont `atbsys` pour une détection exacte des fichiers résiduels sous App Sandbox ; renforcement de la conformité App Store pour l'élévation de privilèges, le terminal et les scripts
+- Contrôles de disposition des préférences et correctifs des favoris (Hotlist) : Ajout d'options d'affichage de la disposition dans les préférences générales et désactivation par défaut de la capsule d'état système sur la barre d'outils principale pour une interface épurée ; correction des listes déroulantes vides et de la retraduction dynamique dans les options de la liste des favoris
+- Harmonisation terminologique et sélecteur de langue amélioré : Unification de la traduction chinoise de « Directory Hotlist » en « 路径收藏夹 » et enrichissement du sélecteur de langue avec affichage bilingue (nom natif et nom traduit)
+- Préservation des ACL du Trousseau macOS et fiabilité de la copie en flux : Conservation des listes de contrôle d'accès (ACL) existantes du Trousseau macOS et suppression des écritures redondantes au démarrage pour éviter les demandes d'autorisation répétées ; garantie de l'ordre d'émission du signal `operation_completed` dans `StreamCopyWorker`
+
+### 1.9.7 (23/09/2026)
+
+- Prise en compte immédiate des préférences à l'exécution (Hot Reload) : Les modifications apportées sur 7 pages de paramètres (Opérations de fichiers, Éditeur, Visionneuse, Recherche rapide & Filtre, Onglets, Icônes de liste et Tri) s'appliquent désormais instantanément sans redémarrer ; ajout d'un mode de tri des dossiers (Dossiers en premier, Fichiers en premier, Mixte)
+- Sécurisation et parité de la synchronisation de répertoires : Audit approfondi de la synchronisation (Sync Dirs) pour s'aligner fidèlement sur le comportement de Double Commander ; renforcement des vérifications bidirectionnelles afin de bannir tout risque de désynchronisation asymétrique
+- Info-bulles intelligentes pour les noms tronqués avec précision CJK : Affichage sélectif d'une info-bulle uniquement lorsque le nom de fichier est tronqué faute d'espace ; calcul précis de la largeur des caractères asiatiques (CJK) pour éliminer les erreurs d'affichage
+- Optimisation du flux de travail à double panneau : L'archivage et l'extraction par clic droit ciblent par défaut le répertoire du panneau opposé avec focus sur le bouton Démarrer ; réorganisation ergonomique du dialogue de confirmation de suppression ; restauration du curseur pointeur sur la barre d'outils centrale
+- Dossier personnel réel et accès complet au disque (FDA) en bac à sable MAS : Intégration du moteur `real_home` pour cibler le véritable dossier utilisateur et la liste des favoris sous App Sandbox ; fiabilisation de la détection de l'accès complet au disque avec fermeture automatique du dialogue ; statistiques CPU migrées vers Mach host statistics
+
 ### 1.9.6 (21/09/2026)
 
 - Mode de redimensionnement personnalisé dans l'éditeur d'images : Ajout d'un mode « Taille personnalisée (Custom Size) » dans la boîte de dialogue de redimensionnement, permettant la saisie directe de la largeur et de la hauteur en pixels avec verrouillage optionnel des proportions

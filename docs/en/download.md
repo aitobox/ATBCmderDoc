@@ -35,6 +35,22 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 1.9.8 (2026-09-24)
+
+- System Tools >2GB Metric Precision & Uninstaller Enhancements: Fixed 32-bit integer signal overflow and 64-bit precision loss when reporting cleanup byte counts exceeding 2 GB; added application installation date display and sorting in the Application Uninstaller
+- Mac App Store Sandbox Compliance & Real Home Propagation: Propagated the real user home directory (`real_home`) across the `atbsys` bridge for accurate disk cleaning and remnant detection inside the App Sandbox; hardened elevation, terminal execution, and scripting interfaces for strict App Store review compliance
+- Preferences Layout Controls & Directory Hotlist Fixes: Added main window layout toggle controls in General Preferences with live `MainWindow` and `ThemeManager` synchronization, and disabled the main toolbar system status capsule by default for a cleaner initial workspace; fixed empty dropdown menus and live language retranslation in Directory Hotlist settings
+- Localization Terminology & Language Selector Polish: Standardized the Chinese translation of "Directory Hotlist" to "路径收藏夹" across all UI surfaces and enhanced the Preferences language selector with dual native-script and localized display names
+- Keychain ACL Preservation & Stream Copy Reliability: Preserved existing macOS Keychain access control lists (ACLs) and eliminated redundant startup writes to prevent repeated Keychain authorization prompts; ensured deterministic `operation_completed` signal emission before thread completion in `StreamCopyWorker`
+
+### 1.9.7 (2026-09-23)
+
+- Runtime Settings Immediate Application (Hot Reload): All configuration settings across 7 major options pages (File Operations, Editor, Viewer, Quick Search & Filter, Tabs, File Panel Icons, and Sorting) now take effect immediately upon saving without restarting the application; added a configurable `sort_folder_mode` supporting Folders First, Files First, and Mixed sorting
+- Directory Synchronization Safety & Parity: Comprehensive audit of Directory Synchronization (`cm_SyncDirs`) aligning behavior directly with classic Double Commander; strengthened bidirectional state validation and safety checks to eliminate asymmetric synchronization risks
+- Smart Tooltips for Truncated Filenames with CJK Precision: Added intelligent hover/selection tooltips that appear exclusively when long filenames are truncated with ellipses, keeping UI clean for fully visible items; integrated high-precision CJK character width calculations to eliminate font metric discrepancies
+- Dual-Panel Workflow & Interaction Polish: Right-click archive packing and unpacking defaults destination to the peer panel directory with default focus on the Start button; refined delete confirmation dialog button ordering and keyboard default; restored pointer cursors for middle toolbar action buttons
+- Mac App Store Sandbox Real Home & FDA Hardening: Implemented the `real_home` resolution engine to resolve user home directories and Favorite Hotlists accurately under App Sandbox containers; fixed Full Disk Access (FDA) false alarms and auto-closed prompt dialogs upon authorization; migrated system CPU metrics to Mach host statistics for sandbox compliance
+
 ### 1.9.6 (2026-09-21)
 
 - Image Editor Custom Size Resize Mode: Introduced a "Custom Size" mode to the image resize dialog, allowing direct pixel input for target width and height with an optional aspect ratio lock toggle, giving users precise control over image scaling

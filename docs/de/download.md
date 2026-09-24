@@ -35,6 +35,22 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 1.9.8 (24.09.2026)
+
+- 64-Bit-Präzision über 2 GB in Systemwerkzeugen & Deinstallationsprogramm-Verbesserungen: 32-Bit-Integer-Signalüberlauf und 64-Bit-Genauigkeitsverlust bei Bereinigungsgrößen über 2 GB behoben; Anzeige und Sortierung nach Installationsdatum im Anwendungs-Deinstallationsprogramm hinzugefügt
+- Mac App Store Sandbox-Konformität & Weitergabe des echten Benutzerordners: Übergabe des echten Benutzerverzeichnisses (`real_home`) an die `atbsys`-Brücke für präzise Bereinigung und Restdateierkennung in der App Sandbox; Berechtigungserhöhung, Terminal-Start und Scripting-APIs für App Store-Richtlinien gehärtet
+- Layout-Steuerung in den Einstellungen & Korrekturen für die Verzeichnis-Favoritenliste: Neue Layout-Umschaltoptionen in den allgemeinen Einstellungen mit Live-Synchronisierung hinzugefügt und die Systemstatus-Kapsel in der Hauptsymbolleiste standardmäßig ausgeblendet; leere Dropdown-Menüs und dynamische Sprachübersetzung auf der Einstellungsseite der Favoritenliste (Directory Hotlist) behoben
+- Vereinheitlichte Lokalisierung & optimierte Sprachauswahl: Chinesische Übersetzung für „Directory Hotlist“ auf „路径收藏夹“ vereinheitlicht und die Sprachauswahl in den Einstellungen um zweisprachige Anzeigenamen (Eigennamen + lokalisierte Bezeichnung) erweitert
+- Beibehaltung der Schlüsselbund-ACL & Zuverlässigkeit beim Stream-Kopieren: Bestehende macOS-Schlüsselbund-Zugriffssteuerungslisten (ACLs) bleiben erhalten und redundante Schreibvorgänge beim Start werden vermieden, um wiederholte Passwortabfragen zu verhindern; deterministische `operation_completed`-Signalfolge im `StreamCopyWorker` sichergestellt
+
+### 1.9.7 (23.09.2026)
+
+- Sofortige Laufzeitübernahme der Einstellungen (Hot Reload): Alle Änderungen auf 7 zentralen Einstellungsseiten (Dateioperationen, Editor, Viewer, Schnellsuche & Filter, Tabs, Dateilisten-Icons und Sortierung) werden nun sofort ohne Neustart angewendet; konfigurierbarer Ordnersortiermodus hinzugefügt (Ordner zuerst, Dateien zuerst, Gemischt)
+- Sicherheit und Parität bei der Verzeichnissynchronisierung: Umfassende Sicherheitsüberprüfung von Sync Dirs zur perfekten Angleichung an Double Commander; verbesserte bidirektionale Statusprüfungen verhindern versehentliche asymmetrische Synchronisationsrisiken
+- Intelligente Tooltips für gekürzte Dateinamen mit CJK-Präzision: Tooltips erscheinen jetzt nur noch bei Dateinamen, die aufgrund der Spaltenbreite mit Auslassungspunkten gekürzt werden; hochpräzise Breitenberechnung für ostasiatische Schriftzeichen (CJK) verhindert Messfehler
+- Verfeinerungen für den Dual-Panel-Workflow: Rechtsklick-Packen und -Entpacken verwendet automatisch das gegenüberliegende Panel als Zielverzeichnis mit Fokus auf der Start-Schaltfläche; Löschbestätigungsdialog für macOS optimiert; Zeigecursor auf der mittleren Symbolleiste wiederhergestellt
+- Mac App Store Sandbox Real-Home & FDA-Härtung: Implementierung von `real_home` zur korrekten Auflösung des echten Benutzerverzeichnisses und der Favoritenliste unter App Sandbox; Festplattendirektzugriff-Erkennung (FDA) korrigiert mit automatischer Dialogschließung; CPU-Statistiken auf Mach host statistics umgestellt
+
 ### 1.9.6 (21.09.2026)
 
 - Bildeditor mit benutzerdefinierter Größenänderung: Der Dialog zur Bildskalierung wurde um den Modus „Benutzerdefinierte Größe (Custom Size)“ erweitert, der die direkte Eingabe von Zielbreite und -höhe in Pixeln mit optionaler Seitenverhältnissperre ermöglicht

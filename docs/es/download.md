@@ -35,6 +35,22 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 1.9.8 (2026-09-24)
+
+- Precisión de 64 bits (>2 GB) en herramientas del sistema y mejoras del desinstalador: Se corrigió el desbordamiento de señales de enteros de 32 bits y la pérdida de precisión de 64 bits al informar tamaños de limpieza superiores a 2 GB; se añadió la visualización y ordenación por fecha de instalación en el desinstalador de aplicaciones
+- Cumplimiento del sandbox de Mac App Store y propagación del directorio personal real: Transmisión del directorio de inicio real del usuario (`real_home`) al puente `atbsys` para una detección precisa de archivos residuales bajo App Sandbox; refuerzo de la elevación de permisos, ejecución de terminal y scripts conforme a las directrices de revisión de App Store
+- Controles de diseño en preferencias y correcciones en favoritos de directorios (Hotlist): Se añadieron controles de visibilidad de diseño en Preferencias generales y se desactivó por defecto la cápsula de estado del sistema en la barra de herramientas principal para una interfaz más limpia; se corrigieron los menús desplegables vacíos y la retraducción dinámica en las opciones de Hotlist
+- Unificación terminológica y selector de idioma mejorado: Se estandarizó la traducción al chino de «Directory Hotlist» como «路径收藏夹» y se mejoró el selector de idioma en Preferencias mostrando tanto el nombre nativo como el nombre traducido
+- Preservación de ACL del llavero de macOS y fiabilidad de copia por flujo: Se conservaron las listas de control de acceso (ACL) existentes en el Llavero de macOS y se eliminaron las escrituras redundantes al iniciar para evitar solicitudes repetidas de autorización; se garantizó la emisión determinista de `operation_completed` antes de finalizar el hilo en `StreamCopyWorker`
+
+### 1.9.7 (2026-09-23)
+
+- Aplicación inmediata de preferencias en tiempo de ejecución (Hot Reload): Todas las configuraciones en 7 páginas principales (Operaciones de archivos, Editor, Visor, Búsqueda rápida y filtro, Pestañas, Iconos y Ordenación) ahora surten efecto al instante sin reiniciar la aplicación; se agregó el modo de ordenación de carpetas (Carpetas primero, Archivos primero, Mezclado)
+- Seguridad y paridad en la sincronización de directorios: Auditoría integral de la sincronización de directorios (Sync Dirs) alineando la experiencia con el clásico Double Commander; comprobaciones de estado bidireccionales reforzadas para evitar riesgos de sincronización asimétrica
+- Información sobre herramientas inteligente para nombres truncados con precisión CJK: Las notas flotantes ahora se muestran exclusivamente cuando el nombre se recorta con puntos suspensivos por falta de espacio; cálculo exacto del ancho de caracteres CJK para evitar errores de detección
+- Perfeccionamiento del flujo de trabajo de doble panel: La compresión y extracción mediante clic derecho establece por defecto el panel opuesto como destino con foco en el botón Iniciar; optimización del diálogo de confirmación de eliminación; restitución del cursor de mano en la barra de herramientas central
+- Directorio de inicio real y acceso total al disco (FDA) en el sandbox de MAS: Implementación del mecanismo `real_home` para resolver con precisión la carpeta de usuario y los favoritos bajo App Sandbox; corrección de la detección de Acceso total al disco (FDA) con cierre automático tras autorización; métricas de CPU adaptadas con Mach host statistics
+
 ### 1.9.6 (2026-09-21)
 
 - Modo de cambio de tamaño personalizado en el editor de imágenes: Se añadió el modo «Tamaño personalizado (Custom Size)» al diálogo de redimensionamiento, permitiendo ingresar directamente los píxeles de ancho y alto con bloqueo de relación de aspecto opcional para un escalado exacto
