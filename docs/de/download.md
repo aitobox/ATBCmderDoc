@@ -35,6 +35,22 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.0.0 (28.09.2026)
+
+- 🎉 ATBCmder 2.0 Großer Architektur-Meilenstein: Dieser Meilenstein markiert die vollständige Reife der modernen Dual-Panel-Dateimanager-Architektur, die die legendäre Tastatursteuerung von Double Commander mit nativer macOS-Leistung und modernem Design vereint
+- Vollständige Lokalisierung in allen 31 Sprachen: Vollständige muttersprachliche Übersetzung der Berechtigungsführung und des nativen Drag-to-Grant-Panels für alle 31 unterstützten Sprachen abgeschlossen; alle .mo-Kataloge neu kompiliert und automatisierte Sprachtests integriert
+- Revolutionärer Festplattenvollzugriff mit „Drag-to-Grant“: Das schwebende Cocoa-NonactivatingPanel ermöglicht das direkte Hineinziehen des App-Symbols in die Systemeinstellungen ohne Fokusverlust; der Anleitungsdialog dockt sauber an und bietet eine benutzerfreundliche „Beenden und neu öffnen“-Option ohne lästige Timer
+- Perfektionierter Dual-Panel-Workflow & Benutzerführung: Doppelklick auf die mittlere Leiste oder den Trenner setzt die Panels blitzschnell auf ein perfektes 50:50-Verhältnis zurück; die Hauptsymbolleiste enthält standardmäßig die Systemstatus-Kapsel mit Schnelltaste zum Schließen und Rechtsklick-Kontextmenü
+- Moderner Texteditor & leistungsstarke ATBSys-Systemwerkzeuge: Der integrierte Editor unterstützt die macOS-Tasten Pos1/Ende mit Smart-Home-Zeilennavigation; nahtlose Anbindung an den Go-nativen `atbsys`-Daemon für 64-Bit-Präzisionsbereinigung und gründliche Anwendungsdeinstallation
+
+### 1.9.9 (27.09.2026)
+
+- Festplattenvollzugriff mit „Drag-to-Grant“ & Neugestaltung der Berechtigungsführung: Innovatives schwebendes Cocoa-NonactivatingPanel ermöglicht das direkte Ziehen des App-Symbols in die Systemeinstellungen ohne Fokusverlust; der Anleitungsdialog platziert sich automatisch neben den Systemeinstellungen und bietet nach der Freigabe eine benutzergesteuerte Option zum Beenden und Neustarten anstelle von automatischen Neustart-Timern
+- Schnelle 5:5-Gleichverteilung für Dual-Panels & Verfeinerung der mittleren Leiste: Ein Doppelklick auf die mittlere Symbolleiste oder den Trenner setzt die Panelbreiten (oder -höhen) sofort auf ein exaktes 50:50-Verhältnis mit lokalisiertem Tooltip zurück; Speicherlecks bei Sprachabonnements sowie Cursor-Überhänge behoben und Detailansichten optimiert
+- Tastatur-Navigation im Editor (Home/End & Smart Home): Der integrierte Texteditor unterstützt nun vollständig die macOS-Standardtasten Pos1/Ende; Smart Home springt beim ersten Tastendruck zum ersten Zeichen ohne Leerzeichen und beim zweiten Druck an den absoluten Zeilenanfang
+- Systemstatus-Kapsel in der Symbolleiste & Kontextmenü: Die Systemstatusanzeige auf der Hauptsymbolleiste ist nun standardmäßig aktiv und verfügt über eine Schnelltrennschaltfläche (×); neues Rechtsklick-Kontextmenü für die Symbolleiste zur einfachen Steuerung von Symbolen und Systemmonitoren hinzugefügt
+- Parität bei gemischter Ordnersortierung & schnellere Schriftarten-Darstellung: Der gemischte Sortiermodus (`sort_folder_mode = mixed`) ordnet Dateien und Ordner über alle Spalten hinweg nahtlos verschachtelt an; Pseudofont-Deklarationen wurden entfernt, um CoreText-Alias-Overhead zu vermeiden, und Interaktionskonflikte im Menü behoben
+
 ### 1.9.8 (24.09.2026)
 
 - 64-Bit-Präzision über 2 GB in Systemwerkzeugen & Deinstallationsprogramm-Verbesserungen: 32-Bit-Integer-Signalüberlauf und 64-Bit-Genauigkeitsverlust bei Bereinigungsgrößen über 2 GB behoben; Anzeige und Sortierung nach Installationsdatum im Anwendungs-Deinstallationsprogramm hinzugefügt

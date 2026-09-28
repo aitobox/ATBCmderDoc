@@ -35,6 +35,22 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.0.0 (2026-09-28)
+
+- 🎉 ATBCmder 2.0 Major Architecture Milestone: Celebrates the complete maturity of ATBCmder's modern dual-panel file manager architecture, bringing together the legendary keyboard-centric workflow of Double Commander with modern, native macOS performance and design
+- Complete 31-Language Global Localization: Finished full, natural localization for the entire permission onboarding flow and native Drag-to-Grant panel across all 31 supported languages; recompiled all .mo catalogs and added automated multilingual regression tests for a seamless worldwide experience
+- Revolutionary Drag-to-Grant Full Disk Access: Built on native Cocoa NonactivatingPanel to let users drag the application icon directly into System Settings without stealing window focus; the guidance dialog docks intelligently alongside System Settings with a smooth Quit & Reopen option, banishing disruptive auto-restart timers
+- Dual-Panel Workflow & Human Interface Polish: Double-click the middle splitter or toolbar to instantly snap panels to a balanced 50:50 ratio with localized tooltips; the main toolbar features a sleek system status capsule by default with quick-close and context menu toggles; refined mixed folder sorting across all columns
+- Modern Text Editor & High-Performance ATBSys Suite: The built-in editor now provides full macOS Home/End navigation with Smart Home line positioning; seamlessly integrated with our native Go `atbsys` system daemon for 64-bit precision junk cleaning and deep application remnant uninstallation
+
+### 1.9.9 (2026-09-27)
+
+- Drag-to-Grant Full Disk Access & Redesigned Onboarding: Introduced an innovative floating panel powered by native Cocoa NonactivatingPanel that allows dragging the app icon straight into System Settings without stealing window focus; the guidance dialog docks cleanly alongside System Settings and provides a smooth Quit & Reopen option upon FDA grant, completely eliminating jarring auto-restart timers
+- Dual-Panel 5:5 Equalization & Middle Splitter Polish: Double-clicking the middle toolbar or splitter instantly equalizes panel widths (or heights in horizontal mode) to a 50:50 ratio with localized tooltips; resolved i18n subscriber leaks, fixed mouse cursor leaks, and refined viewer and dialog styling
+- Editor Keyboard Ergonomics (Home/End & Smart Home): Built-in text editor now fully supports standard Home and End key navigation on macOS, featuring Smart Home behavior (toggling between the first non-whitespace character and column 0)
+- Toolbar System Status Controls & Context Menu: Enabled the system status capsule on the main toolbar by default with a quick-dismiss (×) button, and introduced a right-click toolbar context menu to effortlessly toggle toolbar components and system monitors
+- Mixed Folder Sorting Parity & Font Rendering Acceleration: Ensured `sort_folder_mode = mixed` truly interleaves files and folders across all column sorts with immediate runtime application; removed pseudo font declarations to eliminate macOS CoreText alias lookup overhead, unified tutorial card heights, and prevented native menu click-through
+
 ### 1.9.8 (2026-09-24)
 
 - System Tools >2GB Metric Precision & Uninstaller Enhancements: Fixed 32-bit integer signal overflow and 64-bit precision loss when reporting cleanup byte counts exceeding 2 GB; added application installation date display and sorting in the Application Uninstaller

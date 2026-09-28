@@ -35,6 +35,22 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.0.0 (28/09/2026)
+
+- 🎉 Marco arquitetural principal do ATBCmder 2.0: Celebra a maturidade definitiva da arquitetura moderna do gerenciador de arquivos de painel duplo, unindo o lendário fluxo centrado no teclado do Double Commander ao desempenho e design nativos do macOS moderno
+- Localização global completa em 31 idiomas: Tradução nativa integral de todo o fluxo de concessão de permissões e do painel flutuante «Arrastar para autorizar» (Drag-to-Grant) em todos os 31 idiomas suportados; recompilados todos os catálogos .mo e adicionados testes automatizados de regressão multilíngue
+- Concessão revolucionária de Acesso Total ao Disco «Arrastar para autorizar»: Baseado no Cocoa NonactivatingPanel nativo para permitir que os usuários arrastem o ícone do aplicativo diretamente para os Ajustes do Sistema sem roubar o foco da janela; o diálogo de orientação se acopla suavemente ao lado dos Ajustes do Sistema com a opção «Encerrar e reabrir», eliminando temporizadores automáticos incômodos
+- Refinamento do fluxo de painel duplo e interface humana: Dê um clique duplo na barra ou divisor central para redefinir instantaneamente os painéis para a proporção equilibrada de 50:50 com dicas de ferramentas localizadas; a barra de ferramentas principal inclui por padrão uma cápsula de status do sistema elegante com botão de fechamento rápido e menu de contexto; aperfeiçoada a ordenação mista de pastas em todas as colunas
+- Editor de texto moderno e suíte ATBSys de alto desempenho: O editor integrado agora oferece navegação completa com as teclas Home/End do macOS e posicionamento de linha Smart Home; totalmente integrado ao daemon nativo em Go `atbsys` para limpeza de resíduos com precisão de 64 bits e desinstalação profunda de aplicativos
+
+### 1.9.9 (27/09/2026)
+
+- Acesso Total ao Disco «Arrastar para autorizar» e experiência de introdução reformulada: Introduzido um inovador painel flutuante baseado em Cocoa NonactivatingPanel que permite arrastar o ícone do app diretamente para os Ajustes do Sistema sem perder o foco; a janela de orientação se posiciona automaticamente ao lado dos Ajustes do Sistema e disponibiliza a opção «Encerrar e reabrir» após a concessão de FDA, eliminando temporizadores forçados de reinicialização
+- Equalização 5:5 de painel duplo e aprimoramento do divisor central: Clicar duas vezes na barra de ferramentas central ou divisor iguala instantaneamente as dimensões dos painéis na proporção 50:50 com dicas de ferramentas localizadas; corrigidos vazamentos em assinaturas i18n, eliminada retenção indevida do cursor do mouse e aprimorado o estilo do visualizador e de diálogos
+- Ergonomia do teclado no editor (Home/End e Smart Home): O editor de texto integrado agora suporta totalmente a navegação padrão pelas teclas Home e End no macOS, incluindo o comportamento Smart Home (alternando entre o primeiro caractere não vazio e a coluna zero da linha)
+- Controle da cápsula de status do sistema na barra de ferramentas e menu de contexto: A cápsula de status do sistema na barra de ferramentas principal agora vem ativada por padrão com botão de fechamento rápido (×); adicionado menu de contexto com clique direito para alternar facilmente componentes da barra de ferramentas e monitores
+- Paridade na ordenação mista de pastas e aceleração da renderização de fontes: O modo de ordenação mista (`sort_folder_mode = mixed`) intercala de forma contínua arquivos e pastas em todas as ordenações de colunas com aplicação imediata em tempo de execução; removidas declarações de pseudo-fontes para eliminar sobrecarga no CoreText, unificadas as alturas dos cartões do tutorial e prevenido o clique indesejado em menus nativos
+
 ### 1.9.8 (24/09/2026)
 
 - Precisão de 64 bits (>2 GB) nas ferramentas do sistema e melhorias no desinstalador: Corrigido o estouro de sinal inteiro de 32 bits do Qt e a perda de precisão de 64 bits ao relatar contagens de bytes de limpeza superiores a 2 GB; adicionada a exibição e ordenação por data de instalação de aplicativos no Desinstalador de Aplicativos

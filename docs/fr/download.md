@@ -35,6 +35,22 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.0.0 (28/09/2026)
+
+- 🎉 Étape majeure de l'architecture ATBCmder 2.0 : Marque la pleine maturité de notre architecture moderne de gestionnaire de fichiers à double panneau, associant l'efficacité au clavier de Double Commander à la fluidité et au design natif de macOS
+- Localisation complète et globale dans les 31 langues : Traduction native intégrale du parcours d'autorisation et du panneau flottant Drag-to-Grant dans les 31 langues prises en charge ; recompilation de tous les catalogues .mo et intégration de tests de régression multilingues
+- Accès complet au disque révolutionnaire « Drag-to-Grant » : Conçu sur un Cocoa NonactivatingPanel natif permettant de glisser l'icône directement dans les Réglages Système sans dérober le focus ; le guide s'arrime à côté des réglages avec l'option sereine « Quitter et rouvrir », sans aucun compte à rebours forcé
+- Ergonomie et flux de travail à double panneau soignés : Un double-clic sur la barre ou le séparateur central rééquilibre instantanément les panneaux à 50:50 ; la barre d'outils principale intègre la capsule d'état système avec fermeture rapide et menu contextuel clic droit personnalisable
+- Éditeur de texte moderne et suite d'outils système ATBSys : L'éditeur intégré prend en charge les touches Début/Fin de macOS avec navigation intelligente Smart Home ; intégration approfondie du démon système Go `atbsys` pour un nettoyage haute précision 64 bits et une désinstallation complète des applications
+
+### 1.9.9 (27/09/2026)
+
+- Accès complet au disque par glisser-déposer (Drag-to-Grant) et guidage repensé : Panneau flottant exclusif basé sur Cocoa NonactivatingPanel permettant de glisser l'icône directement dans les Réglages Système sans voler le focus ; la boîte d'aide s'aligne automatiquement à côté des réglages et propose l'option « Quitter et rouvrir » dès l'autorisation obtenue, supprimant les redémarrages forcés par compte à rebours
+- Égalisation rapide 5:5 des doubles panneaux et optimisation du séparateur central : Un double-clic sur la barre d'outils centrale ou le séparateur réinitialise instantanément la largeur (ou la hauteur) des panneaux à 50:50 avec info-bulle localisée ; élimination des fuites d'abonnements linguistiques et réinitialisation fiable du curseur de la souris
+- Navigation clavier dans l'éditeur (Home/End et début de ligne intelligent) : Prise en charge native complète des touches Début et Fin sous macOS avec comportement « Smart Home » (bascule entre le premier caractère non vide et le début absolu de la ligne)
+- Gestion de la capsule d'état système et menu contextuel de barre d'outils : La capsule d'état système est activée par défaut avec un bouton de fermeture rapide (×) ; ajout d'un menu contextuel par clic droit pour basculer facilement les composants de la barre d'outils et les indicateurs système
+- Tri mixte des dossiers et accélération du rendu des polices : Le mode de tri mixte (`sort_folder_mode = mixed`) imbrique fidèlement dossiers et fichiers sur toutes les colonnes ; suppression des déclarations de pseudo-polices pour accélérer CoreText et fiabilisation de l'affichage des cartes du tutoriel
+
 ### 1.9.8 (24/09/2026)
 
 - Précision 64 bits (>2 Go) des outils système et amélioration du désinstalleur : Correction du dépassement d'entier 32 bits des signaux Qt et de la perte de précision 64 bits lors du nettoyage de volumes supérieurs à 2 Go ; ajout de la date d'installation des applications dans le désinstalleur

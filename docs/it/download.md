@@ -35,6 +35,22 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 2.0.0 (28-09-2026)
+
+- 🎉 Traguardo architetturale fondamentale di ATBCmder 2.0: Celebra la piena maturità dell'architettura moderna del file manager a doppio pannello, combinando il leggendario flusso di lavoro orientato alla tastiera di Double Commander con prestazioni e design nativi moderni per macOS
+- Localizzazione globale completa in 31 lingue: Traduzione nativa completa e naturale dell'intero flusso di concessione delle autorizzazioni e del pannello nativo «Trascina per autorizzare» (Drag-to-Grant) in tutte le 31 lingue supportate; ricompilati tutti i cataloghi .mo e aggiunti test di regressione multilingue automatici
+- Concessione rivoluzionaria dell'Accesso completo al disco «Trascina per autorizzare»: Basato sul Cocoa NonactivatingPanel nativo per consentire agli utenti di trascinare l'icona dell'applicazione direttamente nelle Impostazioni di Sistema senza sottrarre il focus alla finestra; la finestra guida si aggancia intelligentemente a lato delle Impostazioni di Sistema con l'opzione fluida «Esci e riapri», eliminando i fastidiosi timer di riavvio automatico
+- Perfezionamento del flusso a doppio pannello e interfaccia utente: Facendo doppio clic sulla barra centrale o sul divisore è possibile ripristinare istantaneamente i pannelli a un rapporto bilanciato 50:50 con tooltip localizzati; la barra degli strumenti principale include per impostazione predefinita una capsula di stato del sistema elegante con chiusura rapida e menu contestuale; perfezionato l'ordinamento misto delle cartelle su tutte le colonne
+- Editor di testo moderno e suite ATBSys ad alte prestazioni: L'editor integrato offre ora la navigazione standard Home/End su macOS con posizionamento intelligente della riga Smart Home; perfettamente integrato con il daemon nativo in Go `atbsys` per la pulizia dei dati a 64 bit ad alta precisione e la disinstallazione approfondita dei residui delle applicazioni
+
+### 1.9.9 (27-09-2026)
+
+- Accesso completo al disco «Trascina per autorizzare» e procedura guidata rinnovata: Introdotto un innovativo pannello mobile basato su Cocoa NonactivatingPanel che consente di trascinare l'icona dell'app direttamente nelle Impostazioni di Sistema senza sottrarre il focus alla finestra; il dialogo esplicativo si posiziona automaticamente a lato delle Impostazioni di Sistema e offre l'opzione «Esci e riapri» alla concessione dell'autorizzazione FDA, eliminando i fastidiosi timer di riavvio forzato
+- Pareggiamento 5:5 del doppio pannello e rifinitura del divisore centrale: Facendo doppio clic sulla barra centrale o sul divisore si ripristinano istantaneamente le dimensioni dei pannelli su un rapporto identico 50:50 con suggerimenti localizzati; risolti i problemi di leak nelle sottoscrizioni i18n, eliminati i cursori del mouse residui e migliorato lo stile del visualizzatore e dei dialoghi
+- Ergonomia della tastiera nell'editor (Home/End e Smart Home): L'editor di testo integrato supporta ora pienamente i tasti Home ed End su macOS con comportamento Smart Home (alternando il cursore tra il primo carattere non vuoto e l'inizio assoluto della riga)
+- Gestione della capsula di stato del sistema e menu contestuale: La capsula di stato del sistema sulla barra degli strumenti principale è ora abilitata per impostazione predefinita con pulsante di chiusura rapida (×); introdotto un menu contestuale con clic destro per attivare o disattivare agevolmente i singoli componenti della barra
+- Parità nell'ordinamento misto delle cartelle e accelerazione del rendering: La modalità di ordinamento misto (`sort_folder_mode = mixed`) intercala fedelmente file e cartelle su tutte le colonne con applicazione immediata a runtime; rimosse le dichiarazioni di pseudo-font per eliminare l'overhead di CoreText, uniformate le altezze delle schede del tutorial e impedito il clic passante sui menu nativi
+
 ### 1.9.8 (24-09-2026)
 
 - Precisione a 64 bit (>2 GB) negli strumenti di sistema e miglioramenti al disinstallatore: Risolto l'overflow dei segnali interi a 32 bit di Qt e la perdita di precisione a 64 bit durante il conteggio delle pulizie superiori a 2 GB; aggiunti la visualizzazione e l'ordinamento per data di installazione nel Disinstallatore di applicazioni

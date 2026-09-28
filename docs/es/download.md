@@ -35,6 +35,22 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.0.0 (2026-09-28)
+
+- 🎉 Hito arquitectónico mayor de ATBCmder 2.0: Marca la madurez definitiva de la moderna arquitectura del administrador de archivos de doble panel, fusionando el legendario flujo de trabajo por teclado de Double Commander con el rendimiento y diseño nativo de macOS
+- Localización global completa en los 31 idiomas: Traducción nativa exhaustiva del proceso de permisos y del panel flotante Drag-to-Grant en todos los 31 idiomas admitidos; recompilación de catálogos binarios .mo e incorporación de pruebas de regresión multilingües
+- Concesión revolucionaria de acceso total al disco «Drag-to-Grant»: Panel Cocoa NonactivatingPanel que permite arrastrar el icono directamente a Ajustes del Sistema sin alterar el foco; el asistente se acopla junto a los ajustes ofreciendo «Salir y volver a abrir», sin temporizadores forzados
+- Perfeccionamiento del flujo de doble panel e interacción: El doble clic en el divisor o barra central iguala al instante los paneles a un ratio equilibrado de 50:50; la barra de herramientas principal integra la cápsula de monitorización del sistema con cierre rápido y menú contextual
+- Editor de texto moderno y potente suite del sistema ATBSys: El editor integrado incorpora compatibilidad total con teclas Inicio/Fin en macOS y Smart Home; integración fluida con el demonio Go `atbsys` para limpieza de datos en 64 bits y desinstalación profunda de aplicaciones
+
+### 1.9.9 (2026-09-27)
+
+- Concesión de acceso total al disco mediante arrastrar y soltar (Drag-to-Grant): Innovador panel flotante basado en Cocoa NonactivatingPanel que permite arrastrar el icono directamente a Ajustes del Sistema sin perder el foco; el diálogo de guía se alinea automáticamente junto a Ajustes del Sistema y ofrece «Salir y volver a abrir» tras conceder el permiso, eliminando los reinicios forzados por temporizador
+- Nivelación rápida 5:5 de paneles dobles y mejoras en la barra central: Un doble clic en la barra intermedia o en el divisor restablece al instante los paneles en una proporción exacta de 50:50 con información sobre herramientas localizada; se eliminaron fugas de suscripciones de idioma y bloqueos del cursor del ratón
+- Ergonomía del teclado en el editor (Home/End e inicio inteligente): El editor integrado ahora admite plenamente las teclas Inicio y Fin en macOS con función «Smart Home» (alterna entre el primer carácter sin espacios y el inicio absoluto de la línea)
+- Control de la cápsula de estado del sistema y menú contextual: La cápsula de estado del sistema está visible por defecto en la barra de herramientas principal con un botón de cierre rápido (×); se añadió un menú contextual de clic derecho para alternar fácilmente los componentes de la barra
+- Paridad de ordenación mixta de carpetas y renderizado de fuentes optimizado: El modo de ordenación mixta (`sort_folder_mode = mixed`) intercala de forma continua archivos y carpetas en todas las columnas; se eliminaron pseudo-fuentes para reducir la carga de CoreText y se perfeccionó la interacción del tutorial
+
 ### 1.9.8 (2026-09-24)
 
 - Precisión de 64 bits (>2 GB) en herramientas del sistema y mejoras del desinstalador: Se corrigió el desbordamiento de señales de enteros de 32 bits y la pérdida de precisión de 64 bits al informar tamaños de limpieza superiores a 2 GB; se añadió la visualización y ordenación por fecha de instalación en el desinstalador de aplicaciones
