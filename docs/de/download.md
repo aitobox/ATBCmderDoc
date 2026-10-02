@@ -35,6 +35,14 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.1.0 (02.10.2026)
+
+- Apple HIG Neugestaltung für Laufwerksleiste & Tabs: Laufwerksleiste und Navigationsschaltflächen wurden im randlosen Apple-Stil (Borderless Controls) komplett neu gestaltet; Breadcrumb-Pfadleiste und Datei-Tabs erstrahlen nun in dezenten Tonal Surfaces nach Apple HIG für ein makelloses macOS-Erscheinungsbild
+- Moderne HIG-Schrittschalter, Kapsel-Tooltips & Paginierung: Numerische Eingabefelder (QSpinBox / QDoubleSpinBox) wurden mit integrierten macOS-HIG-Steppern modernisiert; neue transluzente Kapsel-Tooltips mit intelligenter Ausrichtung unter Icons eingeführt und Einstellungsansichten an HIG-Standards angepasst
+- Symbolleisten-Erweiterungen & Optimierung der Miniaturansicht: Neues Icon für „Zielverzeichnis an Quelle angleichen (`cm_TargetEqualSource`)“ in der mittleren vertikalen Leiste; Anzeigereihenfolge von Auswahl-Häkchen auf Miniaturbildern korrigiert; Überlauf von Zoom-Schaltflächen im Bildeditor behoben
+- Umfassende Überprüfung aller 31 Sprachen & Terminologie-Feinschliff: Alle Menüs, Beschriftungen und Dialoge in sämtlichen 31 unterstützten Sprachen wurden gründlich auditiert, vereinheitlicht und sprachlich optimiert für ein konsistentes weltweites Erlebnis
+- Verbesserungen der Entwickler-Tools & CI/CD-Infrastruktur: Standardisierter Lokalisierungs-Workflow (`atb-python-i18n`) eingeführt, Token-Auflösung für Release-Helfer optimiert und Test-Isolation für maximale Pipeline-Zuverlässigkeit gestärkt
+
 ### 2.0.0 (28.09.2026)
 
 - 🎉 ATBCmder 2.0 Großer Architektur-Meilenstein: Dieser Meilenstein markiert die vollständige Reife der modernen Dual-Panel-Dateimanager-Architektur, die die legendäre Tastatursteuerung von Double Commander mit nativer macOS-Leistung und modernem Design vereint

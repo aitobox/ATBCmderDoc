@@ -35,6 +35,14 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 2.1.0 (02-10-2026)
+
+- Riprogettazione Apple HIG per barra delle unità e schede: Riprogettata la barra delle unità e i pulsanti di navigazione con controlli senza bordi in stile Apple; modernizzate la barra del percorso breadcrumb e le schede dei file utilizzando superfici tonali Apple HIG per un'estetica raffinata e nativa per macOS
+- Stepper moderni HIG, tooltip a capsula e paginazione: Aggiornati i controlli numerici (QSpinBox / QDoubleSpinBox) con stepper integrati secondo macOS HIG; introdotti tooltip a capsula traslucida in stile Apple posizionati in modo intelligente sotto le icone; adattate la paginazione e le icone delle impostazioni agli standard HIG
+- Barra degli strumenti verticale e gerarchia delle miniature: Aggiunta un'icona dedicata per «Rendi la destinazione uguale all'origine (`cm_TargetEqualSource`)» sulla barra centrale verticale; corretto l'ordine z del badge di selezione delle miniature per garantire che venga visualizzato in primo piano sopra le immagini; risolto il trabocco dei pulsanti di zoom nella barra di stato dell'editor di immagini
+- Revisione completa della terminologia e localizzazione in 31 lingue: Revisione e perfezionamento della terminologia dell'interfaccia utente, dei tooltip e delle finestre di dialogo in tutte le 31 lingue supportate, eliminando voci mancanti e formulazioni imprecise per un'esperienza naturale da madrelingua
+- Miglioramenti agli strumenti e all'infrastruttura di automazione: Standardizzati i flussi di lavoro dei cataloghi di localizzazione (`atb-python-i18n`), semplificata la risoluzione dei token per gli helper di rilascio e rafforzato l'isolamento dei test per una pipeline CI/CD affidabile
+
 ### 2.0.0 (28-09-2026)
 
 - 🎉 Traguardo architetturale fondamentale di ATBCmder 2.0: Celebra la piena maturità dell'architettura moderna del file manager a doppio pannello, combinando il leggendario flusso di lavoro orientato alla tastiera di Double Commander con prestazioni e design nativi moderni per macOS

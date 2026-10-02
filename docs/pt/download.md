@@ -35,6 +35,14 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.1.0 (02/10/2026)
+
+- Redesenho Apple HIG para barra de unidades e abas: Redesenhada a barra de unidades e os botões de navegação com controles sem bordas no estilo Apple; modernizada a barra de caminho breadcrumb e as abas de arquivos usando superfícies tonais Apple HIG para uma estética nativa e refinada no macOS
+- Steppers modernos HIG, dicas em cápsula e paginação: Controles numéricos (QSpinBox / QDoubleSpinBox) atualizados com steppers integrados ao macOS HIG; introduzidas dicas de ferramentas translúcidas em formato de cápsula no estilo Apple posicionadas inteligentemente sob os ícones; paginação e ícones de configurações adaptados aos padrões HIG
+- Barra de ferramentas vertical e hierarquia de miniaturas: Adicionado um ícone dedicado para «Igualar destino à origem (`cm_TargetEqualSource`)» na barra central vertical; corrigida a ordem z das marcas de seleção em miniaturas para renderização confiável sobre as imagens; resolvido o transbordamento do botão de zoom na barra de status do editor de imagens
+- Localização abrangente e revisão terminológica em 31 idiomas: Auditoria e refinamento minucioso de termos da interface, dicas de ferramentas e textos de diálogos em todos os 31 idiomas suportados, eliminando chaves ausentes e frases inadequadas para uma experiência nativa autêntica
+- Aprimoramentos nas ferramentas e na infraestrutura de automação: Padronizados os fluxos de trabalho de catálogos localizados (`atb-python-i18n`), otimizada a resolução de tokens para utilitários de lançamento e reforçado o isolamento de testes para entregas robustas em CI/CD
+
 ### 2.0.0 (28/09/2026)
 
 - 🎉 Marco arquitetural principal do ATBCmder 2.0: Celebra a maturidade definitiva da arquitetura moderna do gerenciador de arquivos de painel duplo, unindo o lendário fluxo centrado no teclado do Double Commander ao desempenho e design nativos do macOS moderno

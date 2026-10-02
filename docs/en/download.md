@@ -35,6 +35,14 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.1.0 (2026-10-02)
+
+- Apple HIG Redesign for Drive Bar & Tabs: Redesigned the drive bar and navigation buttons with Apple-style borderless controls; modernized the breadcrumb path bar and file tabs using Apple HIG borderless tonal surfaces for a polished, native macOS aesthetic
+- Modern HIG Steppers, Capsule Tooltips & Pagination: Upgraded numeric controls (QSpinBox / QDoubleSpinBox) with macOS HIG integrated steppers; introduced Apple-style translucent capsule tooltips positioned intelligently beneath icons; adapted settings pagination and icons to HIG standards
+- Dual-Panel Vertical Toolbar & Thumbnail Hierarchy Polish: Added a dedicated icon for "Target Equal Source (`cm_TargetEqualSource`)" to the vertical middle toolbar; fixed the z-order of thumbnail selection checkmark badges to ensure they render reliably atop images; fixed image editor status bar zoom button overflow
+- Comprehensive 31-Language Localization & Terminology Review: Audited and refined UI terminology, tooltips, and dialog text across all 31 supported languages, eliminating missing keys and awkward phrasing for a natural native-speaker experience
+- Tooling & Automation Infrastructure Improvements: Standardized localized catalog workflows (`atb-python-i18n`), streamlined token resolution for release helpers, and hardened test isolation for robust CI/CD delivery
+
 ### 2.0.0 (2026-09-28)
 
 - 🎉 ATBCmder 2.0 Major Architecture Milestone: Celebrates the complete maturity of ATBCmder's modern dual-panel file manager architecture, bringing together the legendary keyboard-centric workflow of Double Commander with modern, native macOS performance and design
