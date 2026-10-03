@@ -35,6 +35,14 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.2.0 (03.10.2026)
+
+- Hauptsymbolleiste mit verbesserter Ergonomie & Apple HIG-Farbverläufen: Vergrößerung der Haupt-Icons auf 38px und der Leistenhöhe auf 42px für optimale Klickbarkeit auf hochauflösenden Retina-Displays; neue Icons mit dynamischen Apple HIG-Farbverläufen und erhöhtem Kontrast; optimierte Größenhierarchie zwischen Haupt- und Mittelleiste
+- Vollständige Einstellungsverknüpfung & Code-Editor-Korrekturen: Bisher nicht angebundene Optionen (Schriftzoom, Packer-Standardwerte, automatische Einrückung, Textumbruchbreite im Viewer) vollständig implementiert; Tabulatorbreite (`tab_size`) und Einrückungsregeln im integrierten Code-Editor (`CodeEditorWidget`) dauerhaft korrigiert
+- Speicheroptimierung & tiefgreifende Leistungssteigerung: Umstrukturierung des Icon- und Metadaten-Cachings mit Lazy-Loading für komplexe Widgets; saubere Freigabe von Ressourcen und schwache Referenzen beseitigen Speicherlecks für dauerhaft flüssige Dateinavigation
+- Dialog-Stabilität ohne Hänger & stabiler Fokus in der Baumansicht: Mögliche Hänger beim Schließen von `ArchiveDialog` und `SplitLinkDialog` behoben; der Tastaturfokus auf dem aktiven Tab bleibt beim Wechseln der Baumansicht (Tree View) nahtlos erhalten
+- Optimiertes Nuitka-Packaging & Crash-Prävention: Effizientere Build-Skripte für eigenständige App- und DMG-Pakete senken den Speicherbedarf und die Dateigröße; Beseitigung problematischer Compiler-Flags verhindert Abstürze beim Programmstart
+
 ### 2.1.0 (02.10.2026)
 
 - Apple HIG Neugestaltung für Laufwerksleiste & Tabs: Laufwerksleiste und Navigationsschaltflächen wurden im randlosen Apple-Stil (Borderless Controls) komplett neu gestaltet; Breadcrumb-Pfadleiste und Datei-Tabs erstrahlen nun in dezenten Tonal Surfaces nach Apple HIG für ein makelloses macOS-Erscheinungsbild

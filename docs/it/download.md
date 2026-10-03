@@ -35,6 +35,14 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 2.2.0 (03-10-2026)
+
+- Ergonomia della barra degli strumenti principale e sfumature Apple HIG: Icone della barra principale ingrandite a 38px e altezza della barra portata a 42px per evitare elementi schiacciati e offrire comodi bersagli di clic sui display Retina; rinnovate le icone con vivaci sfumature colorate in stile Apple HIG e contrasto migliorato, armonizzando le proporzioni tra la barra principale e quella centrale
+- Integrazione completa delle preferenze e impostazioni dell'editor di codice: Collegati completamente i parametri precedentemente disconnessi (zoom dei caratteri, impostazioni predefinite dell'archiviatore, rientro automatico, larghezza massima del testo nel visualizzatore); corretto il salvataggio della dimensione delle tabulazioni (`tab_size`) e del rientro in `CodeEditorWidget` tramite caricamento affidabile della configurazione a runtime
+- Gestione globale della memoria e ottimizzazione profonda delle prestazioni: Revisione della cache delle icone e dei metadati dei file con inizializzazione differita (lazy loading) per i componenti pesanti; rafforzato il ciclo di vita dei widget e la pulizia dei riferimenti deboli per eliminare i memory leak, garantendo fluidità nella navigazione di directory molto grandi
+- Prevenzione dei blocchi nei dialoghi modali e stabilità del focus nella vista ad albero: Risolti i potenziali blocchi modali alla chiusura di `ArchiveDialog` e `SplitLinkDialog`; garantito il mantenimento continuo del focus da tastiera sulla scheda attiva durante il passaggio alla modalità vista ad albero e la navigazione delle cartelle
+- Ottimizzazioni del packaging Nuitka e prevenzione dei crash: Ottimizzate le pipeline di compilazione per app standalone e DMG per ridurre il picco di memoria di build e le dimensioni del bundle; perfezionati i flag del compilatore per eliminare i crash di avvio dovuti a importazioni di test nelle versioni distribuite
+
 ### 2.1.0 (02-10-2026)
 
 - Riprogettazione Apple HIG per barra delle unità e schede: Riprogettata la barra delle unità e i pulsanti di navigazione con controlli senza bordi in stile Apple; modernizzate la barra del percorso breadcrumb e le schede dei file utilizzando superfici tonali Apple HIG per un'estetica raffinata e nativa per macOS

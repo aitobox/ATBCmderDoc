@@ -35,6 +35,14 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.2.0 (03/10/2026)
+
+- Ergonomie de la barre d'outils principale et dégradés Apple HIG : Icônes agrandies à 38px et hauteur de barre ajustée à 42px pour un confort de clic parfait sur écrans Retina ; icônes rafraîchies avec de superbes dégradés de couleurs Apple HIG et contraste accru ; hiérarchie visuelle équilibrée entre la barre principale et centrale
+- Raccordement complet des préférences et configuration de l'éditeur : Intégration globale des paramètres jusqu'alors dissociés (zoom de police, options de compression par défaut, indentation automatique, largeur de retour à la ligne du visualiseur) ; correction de la taille des tabulations (`tab_size`) dans `CodeEditorWidget`
+- Gestion de la mémoire et optimisation des performances : Refonte du cache des icônes et métadonnées avec chargement différé (lazy loading) des composants lourds ; cycle de vie des widgets renforcé pour éliminer les fuites de mémoire lors du parcours de répertoires volumineux
+- Clôture stable des dialogues et maintien du focus de l'arborescence : Élimination des blocages potentiels à la fermeture de `ArchiveDialog` et `SplitLinkDialog` ; préservation continue du focus clavier sur l'onglet actif lors du basculement en mode arborescence (Tree View)
+- Optimisation du packaging Nuitka et prévention des plantages : Réduction de l'empreinte mémoire lors de la compilation et allègement de la taille finale de l'application et du DMG ; fiabilisation des dépendances pour supprimer tout risque d'interruption anormale au démarrage
+
 ### 2.1.0 (02/10/2026)
 
 - Refonte Apple HIG pour la barre des lecteurs et les onglets : Modernisation complète de la barre des volumes et des boutons de navigation avec des commandes sans bordure de style Apple ; la barre de chemin (Breadcrumbs) et les onglets adoptent des surfaces tonales Apple HIG pour une finition macOS native élégante

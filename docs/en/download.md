@@ -35,6 +35,14 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.2.0 (2026-10-03)
+
+- Main Toolbar Ergonomics & Apple HIG Gradients: Enlarged main toolbar icons to 38px and increased toolbar height to 42px, eliminating squashed graphics and providing comfortable click targets on Retina displays; refreshed toolbar icons with vibrant Apple HIG colorful gradients and enhanced glyph contrast, harmonizing sizing between the main and middle toolbars
+- Complete Preferences Wiring & Code Editor Settings: Fully wired up previously disconnected settings across the app (font zoom, archive compression defaults, editor auto-indent, viewer maximum text width); fixed tab size (`tab_size`) and indentation persistence in `CodeEditorWidget` via reliable runtime configuration loading
+- Global Memory Management & Deep Performance Optimization: Overhauled icon and file metadata caching with lazy initialization for heavy UI components; hardened component lifecycles and weak-reference cleanups to eliminate memory leaks, keeping large directory browsing snappy and light
+- Modal Dialog Hang Prevention & Tree View Focus Stability: Fixed potential modal hanging on closing `ArchiveDialog` and `SplitLinkDialog`; guaranteed active tab keyboard focus preservation during tree view mode toggling and folder hierarchy navigation
+- Nuitka Packaging Optimizations & Crash Prevention: Streamlined standalone and DMG build pipelines to lower peak build memory and bundle size; refined compiler flags to eradicate runtime mock/unittest import crashes on packaged application releases
+
 ### 2.1.0 (2026-10-02)
 
 - Apple HIG Redesign for Drive Bar & Tabs: Redesigned the drive bar and navigation buttons with Apple-style borderless controls; modernized the breadcrumb path bar and file tabs using Apple HIG borderless tonal surfaces for a polished, native macOS aesthetic

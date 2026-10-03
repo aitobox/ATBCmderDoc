@@ -35,6 +35,14 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.2.0 (2026-10-03)
+
+- Ergonomía en la barra de herramientas principal y degradados Apple HIG: Iconos ampliados a 38px y altura de barra optimizada a 42px para evitar deformaciones y facilitar el clic en pantallas Retina; nuevos iconos con degradados de color Apple HIG y mayor contraste; escala equilibrada entre la barra principal y central
+- Conexión total de preferencias y corrección del editor de código: Conexión exhaustiva de configuraciones previas (zoom de fuentes, opciones por defecto del compresor, sangría automática, ancho de línea del visor); corrección permanente del tamaño de tabulación (`tab_size`) y sangría en `CodeEditorWidget`
+- Gestión de memoria y optimización avanzada del rendimiento: Renovación de la memoria caché de iconos y metadatos con inicialización diferida de componentes pesados; ciclo de vida reforzado con referencias débiles para erradicar fugas de memoria en sesiones prolongadas
+- Prevención de bloqueos en diálogos y estabilidad de foco en árbol: Se corrigieron bloqueos intermitentes al cerrar `ArchiveDialog` y `SplitLinkDialog`; se mantiene de forma continua el foco del teclado en la pestaña activa al cambiar o navegar en el modo de árbol (Tree View)
+- Optimización de empaquetado Nuitka y prevención de errores de inicio: Mejora sustancial en los scripts de empaquetado DMG, reduciendo el consumo de memoria durante la compilación y el peso final de la app; corrección de parámetros para asegurar un arranque infalible
+
 ### 2.1.0 (2026-10-02)
 
 - Rediseño Apple HIG de la barra de unidades y pestañas: Renovación completa de la barra de unidades y botones de navegación con controles sin bordes al estilo Apple; la barra de ruta y pestañas se actualizaron con superficies tonales Apple HIG, logrando una estética nativa y pulida en macOS

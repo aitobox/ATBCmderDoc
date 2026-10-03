@@ -35,6 +35,14 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.2.0 (03/10/2026)
+
+- Ergonomia da barra de ferramentas principal e gradientes Apple HIG: Ícones da barra principal ampliados para 38px e altura da barra aumentada para 42px, eliminando gráficos achatados e proporcionando áreas confortáveis de clique em telas Retina; ícones renovados com gradientes coloridos vibrantes no estilo Apple HIG e contraste aprimorado, harmonizando as proporções entre a barra principal e a central
+- Conexão completa de preferências e configurações do editor de código: Conectadas totalmente configurações antes desconectadas (zoom de fonte, padrões de compactação de arquivos, recuo automático, largura máxima de texto no visualizador); corrigida a persistência do tamanho de tabulação (`tab_size`) e do recuo no `CodeEditorWidget` via carregamento confiável de configurações em tempo de execução
+- Gerenciamento global de memória e otimização profunda de desempenho: Reformulação do cache de ícones e metadados de arquivos com inicialização lenta (lazy loading) para componentes pesados; ciclo de vida dos widgets e limpeza de referências fracas fortalecidos para eliminar vazamentos de memória, mantendo a navegação rápida em diretórios grandes
+- Prevenção de travamentos em diálogos modais e estabilidade de foco na visualização em árvore: Corrigidos travamentos potenciais ao fechar `ArchiveDialog` e `SplitLinkDialog`; garantida a preservação estável do foco do teclado na aba ativa durante a alternância do modo de árvore e a navegação em pastas
+- Otimizações de empacotamento Nuitka e prevenção de falhas: Pipelines de compilação de aplicativos independentes e DMG aprimoradas para reduzir o consumo de memória na compilação e o tamanho do pacote; sinalizadores do compilador refinados para erradicar falhas de inicialização causadas por importações de teste em versões empacotadas
+
 ### 2.1.0 (02/10/2026)
 
 - Redesenho Apple HIG para barra de unidades e abas: Redesenhada a barra de unidades e os botões de navegação com controles sem bordas no estilo Apple; modernizada a barra de caminho breadcrumb e as abas de arquivos usando superfícies tonais Apple HIG para uma estética nativa e refinada no macOS
