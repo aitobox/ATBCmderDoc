@@ -37,7 +37,7 @@ ATBCmder는 전동 공구와 자동화를 듀얼 패널 인터페이스와 원�
 | **일괄 다중 이름 바꾸기** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | 일괄 일괄 이름 변경 도구 (Multi-Rename) 대화 상자를 엽니다. | 
 | **병렬 파일 차이 비교 (File Diff)** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | 선택한 두 파일을 나란히 비교합니다(`cm_CompareContents`의 경우 `Shift+F3`). | 
 | **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 듀얼 패널 디렉토리를 비교하고 동기화합니다. | 
-| **고급 파일 검색** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 다중 필터 검색 대화 상자를 엽니다. | 
+| **고급 파일 검색** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | 다중 필터 검색 대화 상자를 엽니다. | 
 | **스포트라이트 빠른 검색** | `Ctrl+Shift+F` / `⌃⇧F` | `Ctrl+Shift+F` | *(명령 메뉴)* | 즉각적인 Spotlight 메타데이터 검색을 시작합니다. | 
 | **의미적 명령 입력**| `/` | `/` | `cm_VisSemanticCommand` | 내장된 자연어 명령 모음을 활성화합니다. | 
 | **대용량 파일 분할** | `Alt+F6` / `⌥F6` | `Alt+F6` | `cm_FileSpliter` / `cm_Split` | 대용량 파일을 번호가 매겨진 청크로 분할합니다. | 
@@ -367,7 +367,7 @@ ATBCmder는 근본적으로 다른 두 가지 동기화 철학을 지원합니�
 
 ---
 
-## 5. 고급 파일 검색 및 목록 상자 피드(`Alt+F7` / `⌥F7` / `cm_Search`)
+## 5. 고급 파일 검색 및 목록 상자 피드(`Cmd+F` / `⌘F` / `cm_Search`)
 
 중첩된 폴더 구조에서 특정 파일을 찾는 것은 일반적인 관리 병목 현상입니다. ATBCmder는 고성능 **고급 파일 검색 대화 상자**(`SearchDialog`, `fFindDlg.pas`에 매핑됨)를 제공하며 기본 macOS Spotlight 인덱싱과 심층적인 파일 시스템 검색 엔진 및 필수 **목록 상자에 피드** 기능을 결합합니다. 
 
@@ -376,7 +376,7 @@ ATBCmder는 근본적으로 다른 두 가지 동기화 철학을 지원합니�
 
 ### 5.1 검색 시작
 
-- 아무 패널에서나 **`Alt+F7`**(`⌥F7`)을 누르거나 **명령 ➔ 파일 검색...**을 선택합니다. 
+- 아무 패널에서나 **`Cmd+F`**(`⌘F`)을 누르거나 **명령 ➔ 파일 검색...**을 선택합니다. 
 - 활성 패널의 현재 경로가 미리 채워진 **디렉토리에서 검색** 필드와 함께 검색 대화 상자가 열립니다. 
 
 ---
@@ -754,7 +754,7 @@ ATBCmder는 그래픽 이중 패널 워크플로에서 탁월하지만 컴파일
 | **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)**| 동기화 디렉터리 열기 | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
 | **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)**| 디렉토리 비교 시작 | `Alt+C` / `⌥C` | `Enter` | — | 
 | **디렉터리 동기화 (Sync Dirs) (Sync Dirs) (Sync Dirs)**| 비교/동기화 취소 | `Stop` | `Esc` | — | 
-| **파일 검색** | 고급 검색 대화 상자 열기 | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 
+| **파일 검색** | 고급 검색 대화 상자 열기 | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | 
 | **파일 검색** | Universal Lister에서 결과 보기 | `F3` / `Fn+F3` | `F3` | `cm_View` | 
 | **파일 검색** | 텍스트 편집기에서 결과 편집 | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 
 | **파일 검색** | 활성 패널의 파일로 이동 | `Enter` / `⏎` | `Enter` | — | 

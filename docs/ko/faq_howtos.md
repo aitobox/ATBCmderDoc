@@ -47,7 +47,7 @@
 | **빠른 네트워크 연결** | 메뉴: 네트워크 | `cm_NetworkConnect` | `cm_NetworkConnect` | 원격 서버에 대한 임시 연결 대화 상자입니다. | 
 | **압축 파일 내 직접 편집 (In-Place Edit)** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 압축 파일 내 항목을 직접 편집합니다. 저장 시 `RepackWorker`을 트리거합니다. | 
 | **플랫 브랜치 뷰** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 단일 단순 목록에 중첩된 모든 파일을 반복적으로 표시합니다. | 
-| **고급 검색** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | "Feed to Listbox" 출력을 사용한 다중 필터 파일 검색. | 
+| **고급 검색** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` | "Feed to Listbox" 출력을 사용한 다중 필터 파일 검색. | 
 | **파일 시스템 액세스 권한 부여**| 메뉴: 파일/도움말 | — | `cm_GrantFilesystemAccess`| macOS App Sandbox 권한 도우미를 시작합니다. | 
 | **수동 패널 새로 고침** | `Ctrl+R` / `⌃R` 또는 `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | 디스크에서 즉시 디렉터리를 다시 읽도록 합니다. | 
 | **실행 시스템 터미널** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | 현재 패널 경로에서 macOS 터미널을 생성합니다. | 

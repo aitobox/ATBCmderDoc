@@ -233,7 +233,7 @@ Switch seamlessly between compact lists, detailed metadata columns, visual thumb
 | `cm_ShowHiddenFiles` | Toggle visibility of hidden files (`.` dotfiles) | `⌘H` / `⇧⌘.` | `Ctrl+H` | Main |
 | `cm_ShowSysFiles` | Toggle visibility of macOS system & protected files | `⇧⌘.` | `Ctrl+.` | Main |
 | `cm_QuickSearch` | Open in-panel Quick Search bar (type letters to filter) | `⌥S` / `⌃S` *(or typing)* | `Ctrl+S` / *(Letter typing)* | Main |
-| `cm_SemanticFilter` | Open Natural Language Semantic Smart Filter bar | `⌘F` | `Ctrl+F` | Main |
+| `cm_SemanticFilter` | Open Natural Language Semantic Smart Filter bar | `⌥F7` | `Alt+F7` | Main |
 | `cm_HorizontalFilePanels` | Toggle horizontal dual-panel layout (stacked vertically) | `⇧⌘H` | `Ctrl+Shift+H` | Main |
 
 ---
@@ -268,7 +268,7 @@ Launch advanced automation tools, batch utilities, and embedded system tools dir
 
 | Command ID | Description | Primary macOS Shortcut (with ⌘/⌥/⇧/⌃ glyphs) | Classic Commander Shortcut (with Fn keys) | Context |
 | :--- | :--- | :---: | :---: | :---: |
-| `cm_FileSearch` / `cm_Search` | Open Advanced Multi-Filter Search Dialog | `⌥F7` / `⌥⌘F` | `Alt+F7` | Main |
+| `cm_FileSearch` / `cm_Search` | Open Advanced Multi-Filter Search Dialog | `⌘F` / `⌃F` | `Ctrl+F` | Main |
 | `cm_FileDiff` / `cm_CompareFiles` | Open Side-by-Side Visual File Difference Viewer | `⌘⇧F12` | `Meta+Shift+F12` | Main |
 | `cm_SyncDirs` | Open Two-Way Directory Synchronization Tool | `⇧F12` | `Shift+F12` | Main |
 | `cm_MultiRename` | Open Batch Multi-Rename Tool (RegEx & tokens) | `⌘M` | `Ctrl+M` | Main |

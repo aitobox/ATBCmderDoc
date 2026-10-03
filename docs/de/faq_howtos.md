@@ -47,7 +47,7 @@ Die folgende Entscheidungsmatrix ordnet allgemeine Dateiverwaltungsziele und tec
 | **Schnelle Netzwerkverbindung** | Menü: Netzwerk | `cm_NetworkConnect` | `cm_NetworkConnect` | Ad-hoc-Verbindungsdialog für Remote-Server. | 
 | **Direktbearbeitung in Archiven (In-Place Edit)** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Bearbeitet Archiv-Eintrag; löst beim Speichern `RepackWorker` aus. | 
 | **Flache Verzeichnisansicht (Flat Branch View)** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Zeigt rekursiv alle verschachtelten Dateien in einer einzigen flachen Liste an. | 
-| **Erweiterte Suche** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | Dateisuche mit mehreren Filtern und Ausgabe „Feed to Listbox“. | 
+| **Erweiterte Suche** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` | Dateisuche mit mehreren Filtern und Ausgabe „Feed to Listbox“. | 
 | **Dateisystemzugriff gewähren**| Menü: Datei / Hilfe | — | `cm_GrantFilesystemAccess`| Startet den Berechtigungsassistenten für die macOS App Sandbox. | 
 | **Manuelle Panel-Aktualisierung** | `Ctrl+R` / `⌃R` oder `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Erzwingt ein sofortiges erneutes Lesen des Verzeichnisses von der Festplatte. | 
 | **Systemterminal starten** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Erzeugt das macOS-Terminal im aktuellen Panel-Pfad. | 

@@ -233,7 +233,7 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | `cm_ShowHiddenFiles` | 切换是否显示以点 `.` 开头的隐藏文件 | `⌘H` / `⇧⌘.` | `Ctrl+H` | Main |
 | `cm_ShowSysFiles` | 切换是否显示 macOS 系统关键受保护文件 | `⇧⌘.` | `Ctrl+.` | Main |
 | `cm_QuickSearch` | 呼出面板内快速搜索栏（直接键入字符过滤列表） | `⌥S` / `⌃S` *(或直接键盘打字)* | `Ctrl+S` / *(直接打字)* | Main |
-| `cm_SemanticFilter` | 呼出自然语言语义智能过滤栏 | `⌘F` | `Ctrl+F` | Main |
+| `cm_SemanticFilter` | 呼出自然语言语义智能过滤栏 | `⌥F7` | `Alt+F7` | Main |
 | `cm_HorizontalFilePanels` | 切换水平上下堆叠显示双面板（默认左右并排） | `⇧⌘H` | `Ctrl+Shift+H` | Main |
 
 ---
@@ -268,7 +268,7 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 
 | 命令标识 (Command ID) | 功能描述 | macOS 原生快捷键 | 经典 Commander 键位 | 生效上下文 |
 | :--- | :--- | :---: | :---: | :---: |
-| `cm_FileSearch` / `cm_Search` | 呼出高级多维度文件搜索对话框 | `⌥F7` / `⌥⌘F` | `Alt+F7` | Main |
+| `cm_FileSearch` / `cm_Search` | 呼出高级多维度文件搜索对话框 | `⌘F` / `⌃F` | `Ctrl+F` | Main |
 | `cm_FileDiff` / `cm_CompareFiles` | 启动双栏文件差异对比工具 (Diff) | `⌘⇧F12` | `Meta+Shift+F12` | Main |
 | `cm_SyncDirs` | 启动文件夹双向同步工具 (Sync Dirs) | `⇧F12` | `Shift+F12` | Main |
 | `cm_MultiRename` | 启动多重批量重命名工具（支持正则与动态占位符） | `⌘M` | `Ctrl+M` | Main |

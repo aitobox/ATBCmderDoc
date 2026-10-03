@@ -341,7 +341,7 @@ ATBCmder は、上級ユーザーやパワーキーボーディスト向けに�
 4. **クイック検索、フィルター、セマンティック フィルター**:
  - **クイック検索 (`Ctrl+S` / `cm_QuickSearch`)**: すべてのファイルを表示したまま、一致の間でカーソルを移動します。 
 - **クイック フィルター (`cm_QuickFilter`)**: 一致しないファイルをすべて一時的に非表示にし、テーブル内の一致する行のみを表示します。 
-- **セマンティック フィルター (`Ctrl+F` / `cm_SemanticFilter`)**: macOS Spotlight 経由で自然言語クエリ (例: `/larger than 10MB`、`//today modified pdf`) を使用します。
+- **セマンティック フィルター (`Option+F7` / `cm_SemanticFilter`)**: macOS Spotlight 経由で自然言語クエリ (例: `/larger than 10MB`、`//today modified pdf`) を使用します。
 
 ### 自動フィッティング列モード
 
@@ -485,7 +485,7 @@ ATBCmder は、個々の **タブ レベル** (`TabState`) でビュー設定を
  | | フラットブランチビュー | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` |
  | | 水平パネルモード | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` |
  | **検索とフィルター** | クイック検索オーバーレイ | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` |
- | | セマンティックフィルター | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |
+ | | セマンティックフィルター | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 
 ---
 

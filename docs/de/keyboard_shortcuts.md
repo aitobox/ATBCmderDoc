@@ -234,7 +234,7 @@ Wechseln Sie nahtlos zwischen kompakten Listen, detaillierten Metadatenspalten, 
 | `cm_ShowHiddenFiles` | Sichtbarkeit versteckter Dateien umschalten (`.` dotfiles) | `⌘H` / `⇧⌘.` | `Ctrl+H` | Haupt | 
 | `cm_ShowSysFiles` | Sichtbarkeit des macOS-Systems und geschützter Dateien umschalten | `⇧⌘.` | `Ctrl+.` | Haupt | 
 | `cm_QuickSearch` | Öffnen Sie die Schnellsuchleiste im Bedienfeld (geben Sie die zu filternden Buchstaben ein) | `⌥S` / `⌃S` *(oder Eingabe)* | `Ctrl+S` / *(Buchstabeneingabe)* | Haupt | 
-| `cm_SemanticFilter` | Öffnen Sie die semantische Smart-Filterleiste für natürliche Sprache | `⌘F` | `Ctrl+F` | Haupt | 
+| `cm_SemanticFilter` | Öffnen Sie die semantische Smart-Filterleiste für natürliche Sprache | `⌥F7` | `Alt+F7` | Haupt | 
 | `cm_HorizontalFilePanels` | Horizontales Dual-Panel-Layout umschalten (vertikal gestapelt) | `⇧⌘H` | `Ctrl+Shift+H` | Haupt |
 
 ---
@@ -269,7 +269,7 @@ Starten Sie erweiterte Automatisierungstools, Batch-Dienstprogramme und eingebet
 
 | Befehls-ID | Beschreibung | Primäre macOS-Verknüpfung (mit ⌘/⌥/⇧/⌃-Glyphen) | Klassische Commander-Verknüpfung (mit Fn-Tasten) | Kontext | 
 | :--- | :--- | :---: | :---: | :---: | 
-| `cm_FileSearch` / `cm_Search` | Öffnen Sie das Dialogfeld „Erweiterte Multifilter-Suche“ | `⌥F7` / `⌥⌘F` | `Alt+F7` | Haupt | 
+| `cm_FileSearch` / `cm_Search` | Öffnen Sie das Dialogfeld „Erweiterte Multifilter-Suche“ | `⌘F` / `⌃F` | `Ctrl+F` | Haupt | 
 | `cm_FileDiff` / `cm_CompareFiles` | Öffnen Sie den Side-by-Side Visual File Difference Viewer | `⌘⇧F12` | `Meta+Shift+F12` | Haupt | 
 | `cm_SyncDirs` | Öffnen Sie das Tool zur bidirektionalen Verzeichnissynchronisierung | `⇧F12` | `Shift+F12` | Haupt | 
 | `cm_MultiRename` | Öffnen Sie das Batch-Multi-Rename-Tool (RegEx und Token) | `⌘M` | `Ctrl+M` | Haupt | 

@@ -37,7 +37,7 @@ ATBCmder divides power tools and automation into six specialized functional doma
 | **Batch Multi-Rename** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Opens the Batch Multi-Rename tool dialog. |
 | **Side-by-Side File Diff** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Compares two selected files side by side (`Shift+F3` for `cm_CompareContents`). |
 | **Directory Synchronize** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Compares and synchronizes dual panel directories. |
-| **Advanced File Search** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | Opens the multi-filter search dialog. |
+| **Advanced File Search** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | Opens the multi-filter search dialog. |
 | **Spotlight Fast Search** | `Ctrl+Shift+F` / `⌃⇧F` | `Ctrl+Shift+F` | *(Commands Menu)* | Initiates instant Spotlight metadata search. |
 | **Semantic Command Input**| `/` | `/` | `cm_VisSemanticCommand` | Activates embedded natural language command bar. |
 | **Split Large File** | `Alt+F6` / `⌥F6` | `Alt+F6` | `cm_FileSpliter` / `cm_Split` | Splits large file into numbered chunks. |
@@ -359,7 +359,7 @@ ATBCmder supports two fundamentally different synchronization philosophies:
 
 ---
 
-## 5. Advanced File Search & Feed to Listbox (`Alt+F7` / `⌥F7` / `cm_Search`)
+## 5. Advanced File Search & Feed to Listbox (`Cmd+F` / `⌘F` / `cm_Search`)
 
 Locating specific files across nested folder structures is a common administrative bottleneck. ATBCmder provides a high-performance **Advanced File Search Dialog** (`SearchDialog`, mapped to `fFindDlg.pas`), combining native macOS Spotlight indexing with a deep filesystem scanning engine and the indispensable **Feed to Listbox** capability.
 
@@ -368,7 +368,7 @@ Locating specific files across nested folder structures is a common administrati
 
 ### 5.1 Launching Search
 
-- Press **`Alt+F7`** (`⌥F7`) in any panel, or choose **Commands ➔ Search Files...**.
+- Press **`Cmd+F`** (`⌘F`) in any panel, or choose **Commands ➔ Search Files...**.
 - The search dialog opens with the **Search in directory** field pre-filled with the active panel’s current path.
 
 ---
@@ -736,7 +736,7 @@ While ATBCmder excels at graphical dual-panel workflows, shell access is often r
 | **Directory Sync**| Open Synchronize Directories | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` |
 | **Directory Sync**| Start Directory Comparison | `Alt+C` / `⌥C` | `Enter` | — |
 | **Directory Sync**| Cancel Comparison / Sync | Click `Stop` | `Esc` | — |
-| **File Search** | Open Advanced Search Dialog | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` |
+| **File Search** | Open Advanced Search Dialog | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` |
 | **File Search** | View Result in Universal Lister | `F3` / `Fn+F3` | `F3` | `cm_View` |
 | **File Search** | Edit Result in Text Editor | `F4` / `Fn+F4` | `F4` | `cm_Edit` |
 | **File Search** | Go to File in Active Panel | `Enter` / `⏎` | `Enter` | — |

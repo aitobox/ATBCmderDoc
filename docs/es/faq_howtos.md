@@ -47,7 +47,7 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 | **Conexión de red rápida** | Menú: Red | `cm_NetworkConnect` | `cm_NetworkConnect` | Cuadro de diálogo de conexión ad-hoc para servidores remotos. | 
 | **Edición directa en archivo comprimido** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Edita elemento del archivo; activa `RepackWorker` al guardar. | 
 | **Vista de árbol plano (Flat Branch View)** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Muestra recursivamente todos los archivos anidados en una única lista plana. | 
-| **Búsqueda avanzada** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | Búsqueda de archivos con múltiples filtros con salida "Feed to Listbox". | 
+| **Búsqueda avanzada** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` | Búsqueda de archivos con múltiples filtros con salida "Feed to Listbox". | 
 | **Conceder acceso al sistema de archivos**| Menú: Archivo / Ayuda | — | `cm_GrantFilesystemAccess`| Inicia el asistente de permisos de la aplicación Sandbox de macOS. | 
 | **Actualización manual del panel** | `Ctrl+R` / `⌃R` o `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Fuerza una relectura inmediata del directorio desde el disco. | 
 | **Terminal del sistema de lanzamiento** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Genera la terminal macOS en la ruta del panel actual. | 

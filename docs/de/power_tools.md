@@ -37,7 +37,7 @@ ATBCmder unterteilt Elektrowerkzeuge und Automatisierung in sechs spezialisierte
 | **Batch-Mehrfachumbenennung** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Öffnet das Dialogfeld „Batch-Mehrfachumbenennung“. | 
 | **Side-by-Side-Dateiunterschied** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Vergleicht zwei ausgewählte Dateien nebeneinander (`Shift+F3` für `cm_CompareContents`). | 
 | **Verzeichnissynchronisierung** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Vergleicht und synchronisiert Dual-Panel-Verzeichnisse. | 
-| **Erweiterte Dateisuche** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | Öffnet den Suchdialog mit mehreren Filtern. | 
+| **Erweiterte Dateisuche** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | Öffnet den Suchdialog mit mehreren Filtern. | 
 | **Spotlight-Schnellsuche** | `Ctrl+Shift+F` / `⌃⇧F` | `Ctrl+Shift+F` | *(Befehlsmenü)* | Leitet eine sofortige Spotlight-Metadatensuche ein. | 
 | **Semantische Befehlseingabe**| `/` | `/` | `cm_VisSemanticCommand` | Aktiviert die eingebettete Befehlsleiste in natürlicher Sprache. | 
 | **Große Datei teilen** | `Alt+F6` / `⌥F6` | `Alt+F6` | `cm_FileSpliter` / `cm_Split` | Teilt große Dateien in nummerierte Blöcke auf. | 
@@ -367,7 +367,7 @@ ATBCmder unterstützt zwei grundsätzlich unterschiedliche Synchronisationsphilo
 
 ---
 
-## 5. Erweiterte Dateisuche und Zuführung zur Listbox (`Alt+F7` / `⌥F7` / `cm_Search`)
+## 5. Erweiterte Dateisuche und Zuführung zur Listbox (`Cmd+F` / `⌘F` / `cm_Search`)
 
 Das Auffinden bestimmter Dateien in verschachtelten Ordnerstrukturen ist ein häufiger administrativer Engpass. ATBCmder bietet einen leistungsstarken **Dialog zur erweiterten Dateisuche** (`SearchDialog`, zugeordnet zu `fFindDlg.pas`), der die native macOS Spotlight-Indizierung mit einer umfassenden Dateisystem-Scan-Engine und der unverzichtbaren Funktion **Feed to Listbox** kombiniert. 
 
@@ -376,7 +376,7 @@ Das Auffinden bestimmter Dateien in verschachtelten Ordnerstrukturen ist ein hä
 
 ### 5.1 Suche starten
 
-- Drücken Sie in einem beliebigen Bereich **`Alt+F7`** (`⌥F7`) oder wählen Sie **Befehle ➔ Dateien durchsuchen...**. 
+- Drücken Sie in einem beliebigen Bereich **`Cmd+F`** (`⌘F`) oder wählen Sie **Befehle ➔ Dateien durchsuchen...**. 
 - Das Suchdialogfeld wird geöffnet und das Feld **Im Verzeichnis suchen** ist bereits mit dem aktuellen Pfad des aktiven Panels ausgefüllt. 
 
 ---
@@ -755,7 +755,7 @@ Während sich ATBCmder durch grafische Dual-Panel-Workflows auszeichnet, ist fü
 | **Verzeichnissynchronisierung**| Öffnen Sie Verzeichnisse synchronisieren | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
 | **Verzeichnissynchronisierung**| Verzeichnisvergleich starten | `Alt+C` / `⌥C` | `Enter` | — | 
 | **Verzeichnissynchronisierung**| Vergleich/Synchronisierung abbrechen | Klicken Sie auf `Stop` | `Esc` | — | 
-| **Dateisuche** | Erweitertes Suchdialogfeld öffnen | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 
+| **Dateisuche** | Erweitertes Suchdialogfeld öffnen | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | 
 | **Dateisuche** | Ergebnis im Universal Lister anzeigen | `F3` / `Fn+F3` | `F3` | `cm_View` | 
 | **Dateisuche** | Ergebnis im Texteditor bearbeiten | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 
 | **Dateisuche** | Gehen Sie im aktiven Bereich zu Datei | `Enter` / `⏎` | `Enter` | — | 

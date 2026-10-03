@@ -37,7 +37,7 @@ ATBCmder divide las herramientas eléctricas y la automatización en seis domini
 | **Cambio de nombre múltiple por lotes** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Abre el cuadro de diálogo de la herramienta Cambio de nombre múltiple por lotes. | 
 | **Diferenciación de archivos en paralelo** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Compara dos archivos seleccionados uno al lado del otro (`Shift+F3` para `cm_CompareContents`). | 
 | **Sincronización de directorio** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Compara y sincroniza directorios de panel dual. | 
-| **Búsqueda avanzada de archivos** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | Abre el cuadro de diálogo de búsqueda de filtros múltiples. | 
+| **Búsqueda avanzada de archivos** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | Abre el cuadro de diálogo de búsqueda de filtros múltiples. | 
 | **Búsqueda rápida destacada** | `Ctrl+Shift+F` / `⌃⇧F` | `Ctrl+Shift+F` | *(Menú de comandos)* | Inicia la búsqueda instantánea de metadatos de Spotlight. | 
 | **Entrada de comando semántico**| `/` | `/` | `cm_VisSemanticCommand` | Activa la barra de comandos de lenguaje natural integrada. | 
 | **Dividir archivo grande** | `Alt+F6` / `⌥F6` | `Alt+F6` | `cm_FileSpliter` / `cm_Split` | Divide un archivo grande en partes numeradas. | 
@@ -367,7 +367,7 @@ ATBCmder admite dos filosofías de sincronización fundamentalmente diferentes:
 
 ---
 
-## 5. Búsqueda avanzada de archivos y alimentación al cuadro de lista (`Alt+F7` / `⌥F7` / `cm_Search`)
+## 5. Búsqueda avanzada de archivos y alimentación al cuadro de lista (`Cmd+F` / `⌘F` / `cm_Search`)
 
 La localización de archivos específicos en estructuras de carpetas anidadas es un cuello de botella administrativo común. ATBCmder proporciona un **Diálogo de búsqueda avanzada de archivos** de alto rendimiento (`SearchDialog`, asignado a `fFindDlg.pas`), que combina la indexación nativa de macOS Spotlight con un motor de escaneo profundo del sistema de archivos y la indispensable capacidad **Feed to Listbox**. 
 
@@ -376,7 +376,7 @@ La localización de archivos específicos en estructuras de carpetas anidadas es
 
 ### 5.1 Iniciar la búsqueda
 
-- Presione **`Alt+F7`** (`⌥F7`) en cualquier panel, o elija **Comandos ➔ Buscar archivos...**. 
+- Presione **`Cmd+F`** (`⌘F`) en cualquier panel, o elija **Comandos ➔ Buscar archivos...**. 
 - El cuadro de diálogo de búsqueda se abre con el campo **Buscar en directorio** precargado con la ruta actual del panel activo. 
 
 ---
@@ -754,7 +754,7 @@ Si bien ATBCmder se destaca en los flujos de trabajo gráficos de doble panel, a
 | **Sincronización de directorio**| Abra Sincronizar directorios | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
 | **Sincronización de directorio**| Iniciar comparación de directorios | `Alt+C` / `⌥C` | `Enter` | — | 
 | **Sincronización de directorio**| Cancelar comparación/sincronización | Haga clic en `Stop` | `Esc` | — | 
-| **Búsqueda de archivos** | Abrir cuadro de diálogo de búsqueda avanzada | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 
+| **Búsqueda de archivos** | Abrir cuadro de diálogo de búsqueda avanzada | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | 
 | **Búsqueda de archivos** | Ver resultados en Universal Lister | `F3` / `Fn+F3` | `F3` | `cm_View` | 
 | **Búsqueda de archivos** | Editar resultado en el editor de texto | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 
 | **Búsqueda de archivos** | Ir a Archivo en Panel Activo | `Enter` / `⏎` | `Enter` | — | 

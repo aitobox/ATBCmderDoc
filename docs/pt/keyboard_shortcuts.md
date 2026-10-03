@@ -234,7 +234,7 @@ Alterne perfeitamente entre listas compactas, colunas de metadados detalhados, g
 | `cm_ShowHiddenFiles` | Alternar a visibilidade de arquivos ocultos (`.` dotfiles) | `⌘H` / `⇧⌘.` | `Ctrl+H` | Principal | 
 | `cm_ShowSysFiles` | Alternar visibilidade do sistema macOS e arquivos protegidos | `⇧⌘.` | `Ctrl+.` | Principal | 
 | `cm_QuickSearch` | Abra a barra de pesquisa rápida no painel (digite letras para filtrar) | `⌥S` / `⌃S` *(ou digitando)* | `Ctrl+S` / *(digitação de letras)* | Principal | 
-| `cm_SemanticFilter` | Abra a barra de filtro inteligente semântico de linguagem natural | `⌘F` | `Ctrl+F` | Principal | 
+| `cm_SemanticFilter` | Abra a barra de filtro inteligente semântico de linguagem natural | `⌥F7` | `Alt+F7` | Principal | 
 | `cm_HorizontalFilePanels` | Alternar layout horizontal de painel duplo (empilhado verticalmente) | `⇧⌘H` | `Ctrl+Shift+H` | Principal |
 
 ---
@@ -269,7 +269,7 @@ Inicie ferramentas avançadas de automação, utilitários em lote e ferramentas
 
 | ID do comando | Descrição | Atalho primário do macOS (com glifos ⌘/⌥/⇧/⌃) | Atalho clássico do Commander (com teclas Fn) | Contexto | 
 | :--- | :--- | :---: | :---: | :---: | 
-| `cm_FileSearch` / `cm_Search` | Abrir caixa de diálogo de pesquisa avançada de vários filtros | `⌥F7` / `⌥⌘F` | `Alt+F7` | Principal | 
+| `cm_FileSearch` / `cm_Search` | Abrir caixa de diálogo de pesquisa avançada de vários filtros | `⌘F` / `⌃F` | `Ctrl+F` | Principal | 
 | `cm_FileDiff` / `cm_CompareFiles` | Abra o visualizador de diferenças de arquivos visuais lado a lado | `⌘⇧F12` | `Meta+Shift+F12` | Principal | 
 | `cm_SyncDirs` | Abra a ferramenta de sincronização de diretório bidirecional | `⇧F12` | `Shift+F12` | Principal | 
 | `cm_MultiRename` | Ferramenta de multi-renomeação em lote aberto (RegEx e tokens) | `⌘M` | `Ctrl+M` | Principal | 

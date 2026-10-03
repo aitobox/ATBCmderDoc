@@ -47,7 +47,7 @@ The following decision matrix maps common file management objectives and technic
 | **Quick Network Connect** | Menu: Network | `cm_NetworkConnect` | `cm_NetworkConnect` | Ad-hoc connection dialog for remote servers. |
 | **Archive In-Place Edit** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Edits archive member; triggers `RepackWorker` on save. |
 | **Flat Branch View** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Recursively displays all nested files in a single flat list. |
-| **Advanced Search** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | Multi-filter file search with "Feed to Listbox" output. |
+| **Advanced Search** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` | Multi-filter file search with "Feed to Listbox" output. |
 | **Grant Filesystem Access**| Menu: File / Help | — | `cm_GrantFilesystemAccess`| Launches macOS App Sandbox permission assistant. |
 | **Manual Panel Refresh** | `Ctrl+R` / `⌃R` or `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Forces an immediate directory re-read from disk. |
 | **Launch System Terminal** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Spawns macOS Terminal at current panel path. |

@@ -347,7 +347,7 @@ Mit der Schnellsuche können Sie direkt zu jeder Datei springen, indem Sie ihren
 4. **Schnellsuche vs. Filter vs. semantischer Filter**: 
 - **Schnellsuche (`Ctrl+S` / `cm_QuickSearch`)**: Navigiert mit dem Cursor zwischen Treffern, während alle Dateien sichtbar bleiben. 
 - **Schnellfilter (`cm_QuickFilter`)**: Versteckt vorübergehend alle nicht übereinstimmenden Dateien und zeigt nur übereinstimmende Zeilen in der Tabelle an. 
-- **Semantischer Filter (`Ctrl+F` / `cm_SemanticFilter`)**: Verwendet natürliche Sprachabfragen (z. B. `/larger than 10MB`, `//today modified pdf`) über macOS Spotlight.
+- **Semantischer Filter (`Option+F7` / `cm_SemanticFilter`)**: Verwendet natürliche Sprachabfragen (z. B. `/larger than 10MB`, `//today modified pdf`) über macOS Spotlight.
 
 ### Automatisch anpassende Spaltenmodi
 
@@ -493,7 +493,7 @@ Hier sind drei Rezepte aus der Praxis, die zeigen, wie Navigation, Tabs und Hotl
 | | Flache Zweigansicht | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Horizontaler Panel-Modus | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
 | **Suche & Filter** | Schnellsuche-Overlay | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
-| | Semantischer Filter | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |
+| | Semantischer Filter | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 
 --- 
 

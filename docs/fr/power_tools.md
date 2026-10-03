@@ -37,7 +37,7 @@ ATBCmder divise les outils électriques et l'automatisation en six domaines fonc
 | **Renommage multiple par lots** | `Ctrl+M` / `⌃M` | `Ctrl+M` | `cm_MultiRename` | Ouvre la boîte de dialogue de l'outil Batch Multi-Rename. | 
 | **Différence de fichiers côte à côte** | `Meta+Shift+F12` / `⌘⇧F12` | `Meta+Shift+F12` | `cm_FileDiff` / `cm_CompareFiles` | Compare deux fichiers sélectionnés côte à côte (`Shift+F3` pour `cm_CompareContents`). | 
 | **Synchronisation du répertoire** | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | Compare et synchronise les répertoires à double panneau. | 
-| **Recherche avancée de fichiers** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | Ouvre la boîte de dialogue de recherche multi-filtres. | 
+| **Recherche avancée de fichiers** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | Ouvre la boîte de dialogue de recherche multi-filtres. | 
 | **Recherche rapide Spotlight** | `Ctrl+Shift+F` / `⌃⇧F` | `Ctrl+Shift+F` | *(Menu Commandes)* | Lance une recherche instantanée de métadonnées Spotlight. | 
 | **Entrée de commande sémantique**| `/` | `/` | `cm_VisSemanticCommand` | Active la barre de commandes en langage naturel intégrée. | 
 | ** Diviser un gros fichier ** | `Alt+F6` / `⌥F6` | `Alt+F6` | `cm_FileSpliter` / `cm_Split` | Divise les gros fichiers en morceaux numérotés. | 
@@ -367,7 +367,7 @@ ATBCmder prend en charge deux philosophies de synchronisation fondamentalement d
 
 ---
 
-## 5. Recherche avancée de fichiers et alimentation vers la liste (`Alt+F7` / `⌥F7` / `cm_Search`)
+## 5. Recherche avancée de fichiers et alimentation vers la liste (`Cmd+F` / `⌘F` / `cm_Search`)
 
 La localisation de fichiers spécifiques dans des structures de dossiers imbriquées constitue un goulot d'étranglement administratif courant. ATBCmder fournit une **boîte de dialogue de recherche de fichiers avancée** hautes performances (`SearchDialog`, mappée à `fFindDlg.pas`), combinant l'indexation native macOS Spotlight avec un moteur d'analyse approfondie du système de fichiers et l'indispensable fonctionnalité **Feed to Listbox**. 
 
@@ -376,7 +376,7 @@ La localisation de fichiers spécifiques dans des structures de dossiers imbriqu
 
 ### 5.1 Lancement de la recherche
 
-- Appuyez sur **`Alt+F7`** (`⌥F7`) dans n'importe quel panneau ou choisissez **Commandes ➔ Rechercher des fichiers...**. 
+- Appuyez sur **`Cmd+F`** (`⌘F`) dans n'importe quel panneau ou choisissez **Commandes ➔ Rechercher des fichiers...**. 
 - La boîte de dialogue de recherche s'ouvre avec le champ **Rechercher dans le répertoire** pré-rempli avec le chemin actuel du panneau actif. 
 
 ---
@@ -754,7 +754,7 @@ Bien qu'ATBCmder excelle dans les workflows graphiques à double panneau, l'acc�
 | **Synchronisation d'annuaire**| Ouvrir les répertoires de synchronisation | `Shift+F12` / `⇧F12` | `Shift+F12` | `cm_SyncDirs` | 
 | **Synchronisation d'annuaire**| Démarrer la comparaison des annuaires | `Alt+C` / `⌥C` | `Enter` | — | 
 | **Synchronisation d'annuaire**| Annuler la comparaison/synchronisation | Cliquez sur `Stop` | `Esc` | — | 
-| **Recherche de fichiers** | Ouvrir la boîte de dialogue de recherche avancée | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` / `cm_FileSearch` | 
+| **Recherche de fichiers** | Ouvrir la boîte de dialogue de recherche avancée | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` / `cm_FileSearch` | 
 | **Recherche de fichiers** | Afficher le résultat dans Universal Lister | `F3` / `Fn+F3` | `F3` | `cm_View` | 
 | **Recherche de fichiers** | Modifier le résultat dans l'éditeur de texte | `F4` / `Fn+F4` | `F4` | `cm_Edit` | 
 | **Recherche de fichiers** | Accédez au fichier dans le panneau actif | `Enter` / `⏎` | `Enter` | — | 

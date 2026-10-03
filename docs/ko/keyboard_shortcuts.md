@@ -234,7 +234,7 @@ Total Commander 및 Norton Commander의 20년 머슬 메모리를 보유하고 �
 | `cm_ShowHiddenFiles` | 숨겨진 파일(`.` 도트 파일) 표시 여부 전환 | `⌘H` / `⇧⌘.` | `Ctrl+H` | 메인 | 
 | `cm_ShowSysFiles` | macOS 시스템 및 보호된 파일의 가시성 전환 | `⇧⌘.` | `Ctrl+.` | 메인 | 
 | `cm_QuickSearch` | 패널 내 빠른 검색 창 열기(필터링할 문자 입력) | `⌥S` / `⌃S` *(또는 입력)* | `Ctrl+S` / *(문자 입력)* | 메인 | 
-| `cm_SemanticFilter` | 개방형 자연어 의미 스마트 필터 막대 | `⌘F` | `Ctrl+F` | 메인 | 
+| `cm_SemanticFilter` | 개방형 자연어 의미 스마트 필터 막대 | `⌥F7` | `Alt+F7` | 메인 | 
 | `cm_HorizontalFilePanels` | 수평 이중 패널 레이아웃 전환(수직으로 쌓임) | `⇧⌘H` | `Ctrl+Shift+H` | 메인 |
 
 ---
@@ -269,7 +269,7 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 
 | 명령 ID | 설명 | 기본 macOS 단축키(⌘/⌥/⇧/⌃ 문자 포함) | 클래식 Commander 단축키(Fn 키 포함) | 컨텍스트 | 
 | :--- | :--- | :---: | :---: | :---: | 
-| `cm_FileSearch` / `cm_Search` | 고급 다중 필터 검색 대화 상자 열기 | `⌥F7` / `⌥⌘F` | `Alt+F7` | 메인 | 
+| `cm_FileSearch` / `cm_Search` | 고급 다중 필터 검색 대화 상자 열기 | `⌘F` / `⌃F` | `Ctrl+F` | 메인 | 
 | `cm_FileDiff` / `cm_CompareFiles` | 병렬 시각적 파일 차이 뷰어 열기 | `⌘⇧F12` | `Meta+Shift+F12` | 메인 | 
 | `cm_SyncDirs` | 양방향 디렉터리 동기화 (Sync Dirs) (Sync Dirs) 도구 열기 | `⇧F12` | `Shift+F12` | 메인 | 
 | `cm_MultiRename` | 일괄 일괄 이름 변경 도구 (Multi-Rename) 열기(RegEx 및 토큰) | `⌘M` | `Ctrl+M` | 메인 | 

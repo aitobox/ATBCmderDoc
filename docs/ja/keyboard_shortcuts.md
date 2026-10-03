@@ -234,7 +234,7 @@ Total Commander と Norton Commander で 20 年間の記憶がある場合でも
  | `cm_ShowHiddenFiles` | 隠しファイルの表示/非表示を切り替えます (`.` dotfiles) | `⌘H` / `⇧⌘.` | `Ctrl+H` | メイン |
  | `cm_ShowSysFiles` | macOS システムと保護されたファイルの表示を切り替え | `⇧⌘.` | `Ctrl+.` | メイン |
  | `cm_QuickSearch` | パネル内のクイック検索バーを開きます (フィルターする文字を入力します) | `⌥S` / `⌃S` *(または入力)* | `Ctrl+S` / *(文字入力)* | メイン |
- | `cm_SemanticFilter` | 自然言語セマンティック スマート フィルター バーを開く | `⌘F` | `Ctrl+F` | メイン |
+ | `cm_SemanticFilter` | 自然言語セマンティック スマート フィルター バーを開く | `⌥F7` | `Alt+F7` | メイン |
  | `cm_HorizontalFilePanels` | 水平デュアルパネルレイアウト (垂直に積み重ね) を切り替える | `⇧⌘H` | `Ctrl+Shift+H` | メイン |
 
 ---
@@ -269,7 +269,7 @@ ATBCmder を使用すると、いずれかのパネルで無制限のタブを�
 
 | コマンドID | 説明 | プライマリ macOS ショートカット (⌘/⌥/⇧/⌃ グリフ付き) | クラシック コマンダー ショートカット (Fn キー付き) | コンテキスト |
  | :--- | :--- | :---: | :---: | :---: |
- | `cm_FileSearch` / `cm_Search` | [高度なマルチフィルター検索]ダイアログを開く | `⌥F7` / `⌥⌘F` | `Alt+F7` | メイン |
+ | `cm_FileSearch` / `cm_Search` | [高度なマルチフィルター検索]ダイアログを開く | `⌘F` / `⌃F` | `Ctrl+F` | メイン |
  | `cm_FileDiff` / `cm_CompareFiles` | サイドバイサイド ビジュアル ファイル差分ビューアを開く | `⌘⇧F12` | `Meta+Shift+F12` | メイン |
  | `cm_SyncDirs` | 双方向ディレクトリ同期ツールを開く | `⇧F12` | `Shift+F12` | メイン |
  | `cm_MultiRename` | バッチ複数名前変更ツールを開く (正規表現とトークン) | `⌘M` | `Ctrl+M` | メイン |

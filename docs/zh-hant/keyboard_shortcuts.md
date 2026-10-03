@@ -233,7 +233,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_ShowHiddenFiles` | 切換是否顯示以點 `.` 開頭的隱藏檔案 | `⌘H` / `⇧⌘.` | `Ctrl+H` | Main |
 | `cm_ShowSysFiles` | 切換是否顯示 macOS 系統關鍵受保護檔案 | `⇧⌘.` | `Ctrl+.` | Main |
 | `cm_QuickSearch` | 撥出面板內快速搜尋欄（直接鍵入字元過濾列表） | `⌥S` / `⌃S` *(或直接鍵盤打字)* | `Ctrl+S` / *(直接打字)* | Main |
-| `cm_SemanticFilter` | 撥出自然語言語義智慧過濾欄 | `⌘F` | `Ctrl+F` | Main |
+| `cm_SemanticFilter` | 撥出自然語言語義智慧過濾欄 | `⌥F7` | `Alt+F7` | Main |
 | `cm_HorizontalFilePanels` | 切換水平上下堆疊顯示雙面板（預設左右並排） | `⇧⌘H` | `Ctrl+Shift+H` | Main |
 
 ---
@@ -268,7 +268,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 
 | 命令標識 (Command ID) | 功能描述 | macOS 原生快速鍵 | 經典 Commander 鍵位 | 生效上下文 |
 | :--- | :--- | :---: | :---: | :---: |
-| `cm_FileSearch` / `cm_Search` | 撥出高階多維度檔案搜尋對話方塊 | `⌥F7` / `⌥⌘F` | `Alt+F7` | Main |
+| `cm_FileSearch` / `cm_Search` | 撥出高階多維度檔案搜尋對話方塊 | `⌘F` / `⌃F` | `Ctrl+F` | Main |
 | `cm_FileDiff` / `cm_CompareFiles` | 啟動雙欄檔案差異對比工具 (Diff) | `⌘⇧F12` | `Meta+Shift+F12` | Main |
 | `cm_SyncDirs` | 啟動資料夾雙向同步工具 (Sync Dirs) | `⇧F12` | `Shift+F12` | Main |
 | `cm_MultiRename` | 啟動多重批次重新命名工具（支援正則與動態佔位符） | `⌘M` | `Ctrl+M` | Main |

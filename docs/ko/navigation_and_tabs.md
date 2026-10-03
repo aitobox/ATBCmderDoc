@@ -341,7 +341,7 @@ ATBCMder는 **표시** 메뉴를 통해 세 가지 고유한 트리 보기 레�
 4. **빠른 검색 vs. 필터 vs. 시맨틱 필터**: 
 - **빠른 검색(`Ctrl+S` / `cm_QuickSearch`)**: 모든 파일이 표시된 상태에서 일치 항목 간에 커서를 이동합니다. 
 - **빠른 필터(`cm_QuickFilter`)**: 일치하지 않는 모든 파일을 일시적으로 숨기고 테이블에 일치하는 행만 표시합니다. 
-- **의미 체계 필터(`Ctrl+F` / `cm_SemanticFilter`)**: macOS Spotlight를 통해 자연어 쿼리(예: `/larger than 10MB`, `//today modified pdf`)를 사용합니다.
+- **의미 체계 필터(`Option+F7` / `cm_SemanticFilter`)**: macOS Spotlight를 통해 자연어 쿼리(예: `/larger than 10MB`, `//today modified pdf`)를 사용합니다.
 
 ### 열 자동 맞춤 모드
 
@@ -485,7 +485,7 @@ ATBCmder는 개별 **탭 수준**(`TabState`)에서 보기 기본 설정을 분�
 | | 플랫 브랜치 뷰 | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | 수평 패널 모드 | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
 | **검색 및 필터** | 빠른 검색 오버레이 | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
-| | 의미 필터 | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |
+| | 의미 필터 | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 
 --- 
 

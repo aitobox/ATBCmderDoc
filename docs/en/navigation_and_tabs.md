@@ -338,7 +338,7 @@ Quick Search allows you to leap directly to any file by typing its name without 
 4. **Quick Search vs. Filter vs. Semantic Filter**:
    - **Quick Search (`Ctrl+S` / `cm_QuickSearch`)**: Navigates the cursor between matches while keeping all files visible.
    - **Quick Filter (`cm_QuickFilter`)**: Temporarily hides all non-matching files, displaying only matching rows in the table.
-   - **Semantic Filter (`Ctrl+F` / `cm_SemanticFilter`)**: Uses natural language queries (e.g., `/larger than 10MB`, `//today modified pdf`) via macOS Spotlight.
+   - **Semantic Filter (`Option+F7` / `cm_SemanticFilter`)**: Uses natural language queries (e.g., `/larger than 10MB`, `//today modified pdf`) via macOS Spotlight.
 
 ### Auto-Fitting Column Modes
 
@@ -482,7 +482,7 @@ Here are three real-world recipes showcasing how navigation, tabs, and hotlists 
 | | Flat Branch View | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` |
 | | Horizontal Panels Mode | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` |
 | **Search & Filters** | Quick Search Overlay | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` |
-| | Semantic Filter | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |
+| | Semantic Filter | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 
 ---
 

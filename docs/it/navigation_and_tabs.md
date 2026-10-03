@@ -341,7 +341,7 @@ La ricerca rapida ti consente di passare direttamente a qualsiasi file digitando
 4. **Ricerca rapida, filtro e filtro semantico**: 
 - **Ricerca rapida (`Ctrl+S` / `cm_QuickSearch`)**: sposta il cursore tra le corrispondenze mantenendo tutti i file visibili. 
 - **Filtro rapido (`cm_QuickFilter`)**: nasconde temporaneamente tutti i file non corrispondenti, visualizzando solo le righe corrispondenti nella tabella. 
-- **Filtro semantico (`Ctrl+F` / `cm_SemanticFilter`)**: utilizza query in linguaggio naturale (ad esempio, `/larger than 10MB`, `//today modified pdf`) tramite macOS Spotlight.
+- **Filtro semantico (`Option+F7` / `cm_SemanticFilter`)**: utilizza query in linguaggio naturale (ad esempio, `/larger than 10MB`, `//today modified pdf`) tramite macOS Spotlight.
 
 ### Modalità di colonna con adattamento automatico
 
@@ -485,7 +485,7 @@ Ecco tre ricette del mondo reale che mostrano come la navigazione, le schede e l
 | | Vista ad albero piatto (Flat Branch View) | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Modalità Pannelli Orizzontali | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
 | **Ricerca e filtri** | Sovrapposizione di ricerca rapida | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
-| | Filtro semantico | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |
+| | Filtro semantico | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 
 --- 
 

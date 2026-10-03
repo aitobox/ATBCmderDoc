@@ -234,7 +234,7 @@ Passa senza problemi tra elenchi compatti, colonne di metadati dettagliate, grig
 | `cm_ShowHiddenFiles` | Attiva/disattiva la visibilità dei file nascosti (`.` dotfiles) | `⌘H` / `⇧⌘.` | `Ctrl+H` | Principale | 
 | `cm_ShowSysFiles` | Attiva/disattiva la visibilità del sistema macOS e dei file protetti | `⇧⌘.` | `Ctrl+.` | Principale | 
 | `cm_QuickSearch` | Apri la barra di ricerca rapida nel pannello (digita le lettere per filtrare) | `⌥S` / `⌃S` *(o digitando)* | `Ctrl+S` / *(Digitazione lettere)* | Principale | 
-| `cm_SemanticFilter` | Aprire la barra del filtro intelligente semantico del linguaggio naturale | `⌘F` | `Ctrl+F` | Principale | 
+| `cm_SemanticFilter` | Aprire la barra del filtro intelligente semantico del linguaggio naturale | `⌥F7` | `Alt+F7` | Principale | 
 | `cm_HorizontalFilePanels` | Attiva/disattiva il layout orizzontale a doppio pannello (impilato verticalmente) | `⇧⌘H` | `Ctrl+Shift+H` | Principale |
 
 ---
@@ -269,7 +269,7 @@ Avvia strumenti di automazione avanzati, utilità batch e strumenti di sistema i
 
 | ID comando | Descrizione | Scorciatoia macOS principale (con glifi ⌘/⌥/⇧/⌃) | Scorciatoia Commander classica (con tasti Fn) | Contesto | 
 | :--- | :--- | :---: | :---: | :---: | 
-| `cm_FileSearch` / `cm_Search` | Apri la finestra di dialogo Ricerca avanzata multifiltro | `⌥F7` / `⌥⌘F` | `Alt+F7` | Principale | 
+| `cm_FileSearch` / `cm_Search` | Apri la finestra di dialogo Ricerca avanzata multifiltro | `⌘F` / `⌃F` | `Ctrl+F` | Principale | 
 | `cm_FileDiff` / `cm_CompareFiles` | Apri visualizzatore differenze file visivi affiancati | `⌘⇧F12` | `Meta+Shift+F12` | Principale | 
 | `cm_SyncDirs` | Apri lo strumento di sincronizzazione della directory bidirezionale | `⇧F12` | `Shift+F12` | Principale | 
 | `cm_MultiRename` | Strumento di ridenominazione in blocco (Multi-Rename) batch aperto (RegEx e token) | `⌘M` | `Ctrl+M` | Principale | 

@@ -337,7 +337,7 @@ ATBCmder 提供 5 種各有所長的檢視模式，幫您在不同的檔案管�
 4. **快搜、快篩與語義搜尋的區別**：
    - **快速搜尋 (`Ctrl+S` / `cm_QuickSearch`)**：游標在不同匹配項間上下跳動定位，周圍不匹配的檔案依然可見。
    - **快速過濾 (`cm_QuickFilter`)**：臨時隱藏不匹配的檔案，列表裡只留符合條件的條目。
-   - **語義搜尋 (`Ctrl+F` / `cm_SemanticFilter`)**：藉助 macOS Spotlight，輸入自然語言進行語義檢索（如 `/大於 10MB`、`//今天修改的 pdf`）。
+   - **語義搜尋 (`Option+F7` / `cm_SemanticFilter`)**：藉助 macOS Spotlight，輸入自然語言進行語義檢索（如 `/大於 10MB`、`//今天修改的 pdf`）。
 
 ### 表格列寬智慧自適應規則
 
@@ -481,7 +481,7 @@ ATBCmder 提供 5 種各有所長的檢視模式，幫您在不同的檔案管�
 | | 平鋪扁平展開檢視 | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` |
 | | 水平雙面板堆疊 | `Ctrl+Shift+H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` |
 | **搜尋與過濾** | 列表內即時快搜 | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` |
-| | Spotlight 語義過濾 | `Ctrl+F` / `⌃F` | `Ctrl+F` | `cm_SemanticFilter` |
+| | Spotlight 語義過濾 | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 
 ---
 

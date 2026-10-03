@@ -47,7 +47,7 @@ A matriz de decisão a seguir mapeia objetivos comuns de gerenciamento de arquiv
 | **Conexão rápida de rede** | Menu: Rede | `cm_NetworkConnect` | `cm_NetworkConnect` | Diálogo de conexão ad-hoc para servidores remotos. | 
 | **Edição direta no arquivo compactado** | `F4` / `Fn+F4` | `F4` | `cm_Edit` | Edita item do arquivo; aciona `RepackWorker` ao salvar. | 
 | **Visualização em árvore plana (Flat Branch View)** | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | Exibe recursivamente todos os arquivos aninhados em uma única lista simples. | 
-| **Pesquisa Avançada** | `Alt+F7` / `⌥F7` | `Alt+F7` | `cm_Search` | Pesquisa de arquivos com vários filtros com saída "Feed to Listbox". | 
+| **Pesquisa Avançada** | `Cmd+F` / `⌘F` | `Ctrl+F` | `cm_Search` | Pesquisa de arquivos com vários filtros com saída "Feed to Listbox". | 
 | **Conceder acesso ao sistema de arquivos**| Menu: Arquivo / Ajuda | — | `cm_GrantFilesystemAccess`| Inicia o assistente de permissão do macOS App Sandbox. | 
 | **Atualização manual do painel** | `Ctrl+R` / `⌃R` ou `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Força uma releitura imediata do diretório do disco. | 
 | **Iniciar terminal do sistema** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Gera o Terminal macOS no caminho do painel atual. | 
