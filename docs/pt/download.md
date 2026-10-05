@@ -35,6 +35,14 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.3.0 (05/10/2026)
+
+- Etiquetas de cores nativas do macOS Finder e sincronização em tempo real: Integração profunda com as APIs macOS Foundation (`NSURLTagNamesKey`) e `NSWorkspace` para exibir etiquetas de pontos coloridos nativos do Finder nos painéis de arquivos; oferece suporte à ordenação pela ordem nativa de cores do Finder com verificação de viewport a cada 2 segundos para sincronização imediata; inclui visibilidade de coluna personalizável nas Preferências e nomes de cores totalmente localizados
+- Reformulação da sincronização de diretórios (`cm_SyncDirs`): Painel de sincronização de diretórios totalmente reprojetado para eliminar bloqueios de interface e inclusão de um diálogo dedicado a erros (`SyncErrorsDialog`); introduzidos Inverter diretórios, exclusão bidirecional (`OP_DELETE_BOTH`), sintaxe de exclusão por curinga com barra vertical `|`, estatísticas de seleção em tempo real, exportação para CSV, submenus de seleção, «Revelar no Finder» e persistência da geometria da janela e largura das colunas
+- Dicas de contexto interativas em vidro fosco Apple HIG: Desenvolvida uma arquitetura centralizada de tooltips com cartões em vidro fosco translúcido a 80% adaptados às aparências Clara e Escura do macOS; dicas unificadas na barra de ferramentas, divisores, caminhos breadcrumb, teclas de função Fx e caixas de diálogo com emblemas de atalhos nativos do macOS, suprimindo dicas Qt duplicadas
+- Conformidade com atalhos nativos do macOS e desduplicação automática de conflitos: Descrições e símbolos de atalhos padronizados de acordo com as convenções oficiais do macOS, sincronizando rigorosamente menus e ações da barra de ferramentas; eliminação de conflitos históricos 1 para 1 com desduplicação automática em diálogos de configurações, registro de comandos e armazenamento XML
+- Cobertura de tradução de 100% em 31 idiomas e expansão de demonstrações: Atingida cobertura total de 100% na localização com tratamento gramatical preciso de plurais em todos os 31 idiomas suportados; visualizador universal de arquivos (F3) aprimorado com opção «Abrir em modo texto» e suporte a dicas ao passar o mouse sobre nomes de arquivos truncados; scripts de demonstração expandidos para filtro rápido, renomeação em lote, VFS transparente de arquivos compactados, sincronização de diretórios e exibição em árvore
+
 ### 2.2.0 (03/10/2026)
 
 - Ergonomia da barra de ferramentas principal e gradientes Apple HIG: Ícones da barra principal ampliados para 38px e altura da barra aumentada para 42px, eliminando gráficos achatados e proporcionando áreas confortáveis de clique em telas Retina; ícones renovados com gradientes coloridos vibrantes no estilo Apple HIG e contraste aprimorado, harmonizando as proporções entre a barra principal e a central

@@ -35,6 +35,14 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.3.0 (05/10/2026)
+
+- Étiquettes de couleur natives macOS Finder et synchronisation en direct : Intégration avancée des API Foundation (`NSURLTagNamesKey`) et `NSWorkspace` pour afficher les pastilles de couleur Finder dans les panneaux de fichiers ; prend en charge le tri selon l'ordre natif de Finder, la détection en direct via scrutation toutes les 2 secondes, le masquage/affichage personnalisable dans les Préférences et la localisation complète des noms de couleurs
+- Refonte majeure de la synchronisation de répertoires (`cm_SyncDirs`): Réécriture complète du panneau éliminant les blocages d'interface et ajout d'un dialogue dédié aux erreurs (`SyncErrorsDialog`) ; intègre l'inversion des dossiers, la suppression bilatérale (`OP_DELETE_BOTH`), la syntaxe d'exclusion par tube `|`, les statistiques en direct, l'export CSV, des sous-menus de sélection, « Afficher dans le Finder » et la mémorisation des dimensions de fenêtres et largeurs de colonnes
+- Cartes d'infobulles interactives en verre dépoli Apple HIG : Nouvelle architecture centralisée avec cartes translucides à 80 % parfaitement adaptées aux modes clair et sombre de macOS ; unification des infobulles sur la barre d'outils, le séparateur, le fil d'Ariane, les touches Fx et les dialogues avec badges de raccourcis macOS natifs et suppression des bulles Qt redondantes
+- Harmonisation avec les raccourcis natifs macOS et déduplication automatique : Description et symboles des raccourcis alignés sur les conventions macOS officielles avec synchronisation stricte entre menus et barres d'outils ; élimination des conflits historiques 1 pour 1 et déduplication automatique dans les préférences, le registre et le stockage XML
+- Couverture intégrale à 100 % des 31 langues et enrichissement des démos : Atteinte de 100 % de couverture de traduction avec gestion précise des pluriels dans les 31 langues ; la visionneuse universelle (F3) s'enrichit d'un bouton « Ouvrir en mode texte » et les noms de fichiers tronqués s'affichent au survol ; enrichissement des scénarios de démonstration (filtre rapide, renommage groupé, VFS d'archives transparent, synchronisation et arborescence)
+
 ### 2.2.0 (03/10/2026)
 
 - Ergonomie de la barre d'outils principale et dégradés Apple HIG : Icônes agrandies à 38px et hauteur de barre ajustée à 42px pour un confort de clic parfait sur écrans Retina ; icônes rafraîchies avec de superbes dégradés de couleurs Apple HIG et contraste accru ; hiérarchie visuelle équilibrée entre la barre principale et centrale

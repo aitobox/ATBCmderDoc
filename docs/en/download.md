@@ -35,6 +35,14 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.3.0 (2026-10-05)
+
+- macOS Finder Native Color Tags & Live-Sync: Deeply integrated macOS Foundation APIs (`NSURLTagNamesKey`) and `NSWorkspace` to display native color dot tags in file panels; supports sorting by Finder native color order with 2-second viewport polling for real-time tag synchronization; includes customizable column visibility in Preferences and fully localized color labels
+- Directory Synchronization Overhaul (`cm_SyncDirs`): Comprehensively re-engineered directory synchronization to eliminate UI state deadlocks and added a dedicated `SyncErrorsDialog`; introduced Swap Dirs, bidirectional deletion (`OP_DELETE_BOTH`), pipe `|` wildcard exclusion syntax, real-time selection statistics, CSV export, selection submenus, and Reveal in Finder with persistent window geometry and column widths
+- Apple HIG Frosted Glass Interactive Tooltips: Built a centralized tooltip architecture featuring 80% translucent frosted glass cards matching native macOS Light and Dark appearances; unified tooltips across toolbars, splitters, breadcrumbs, Fx function keys, and dialogs with native macOS shortcut badges while suppressing duplicate Qt tooltips
+- Native macOS Shortcut Conventions & Conflict Auto-Deduplication: Standardized shortcut descriptions and glyphs to match native macOS conventions, strictly synchronizing menu items and toolbar actions; eliminated historical 1-to-1 shortcut collisions with automatic deduplication across settings dialogs, command registry, and XML storage
+- 100% 31-Language Translation Coverage & Demo Showcase Expansion: Reached 100% localization coverage and accurate plural forms across all 31 supported languages; enhanced Universal File Viewer (F3) with an "Open in Text Mode" fallback and added hover tooltips for truncated filenames; expanded demo scripts to showcase Quick Filter, Multi-Rename, transparent archive VFS, directory sync, and Tree View
+
 ### 2.2.0 (2026-10-03)
 
 - Main Toolbar Ergonomics & Apple HIG Gradients: Enlarged main toolbar icons to 38px and increased toolbar height to 42px, eliminating squashed graphics and providing comfortable click targets on Retina displays; refreshed toolbar icons with vibrant Apple HIG colorful gradients and enhanced glyph contrast, harmonizing sizing between the main and middle toolbars

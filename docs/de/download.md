@@ -35,6 +35,14 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.3.0 (05.10.2026)
+
+- Native macOS Finder-Farbetiketten & Live-Synchronisierung: Tiefe Integration von macOS Foundation-APIs (`NSURLTagNamesKey`) und `NSWorkspace` zur Anzeige farbiger Finder-Markierungen in Dateilisten; unterstützt Sortierung nach nativer Finder-Farbreihenfolge, 2-Sekunden-Viewport-Polling für Echtzeit-Tag-Updates, konfigurierbare Spaltensichtbarkeit in den Einstellungen und vollständige Lokalisierung der Farbnamen
+- Umfassende Überarbeitung des Verzeichnisabgleichs (`cm_SyncDirs`): Vollständige Neugestaltung des Abgleichs zur Beseitigung von UI-Deadlocks inklusive neuem Fehlerdialog (`SyncErrorsDialog`); bietet Verzeichnistausch, beidseitiges Löschen (`OP_DELETE_BOTH`), Pipe-Ausschluss-Syntax (`|`), Live-Auswahlstatistiken, CSV-Export, Auswahl-Untermenüs, „Im Finder anzeigen“ sowie automatische Geometrie- und Spaltenbreitenspeicherung
+- Apple HIG Milchglas-Tooltips mit interaktiven Karten: Neues zentrales Tooltip-System mit eleganten, zu 80 % durchscheinenden Milchglaskarten für helle und dunkle macOS-Erscheinungsbilder; nahtlose Tooltip-Einbindung für Symbolleisten, Trennleisten, Breadcrumbs, Fx-Funktionstasten und Dialoge mit nativen macOS-Tastenkürzel-Badges unter Unterdrückung redundanter Qt-Tooltips
+- Vollständige Anpassung an macOS-Tastenkürzel-Standards & Konfliktbereinigung: Tastenkombinationen und Symbole entsprechen nun vollständig den offiziellen macOS-Richtlinien; Menü- und Symbolleisten-Kürzel wurden synchronisiert und historische 1:1-Konflikte durch automatische Deduplizierung in Einstellungen, Registry und XML-Speicher restlos beseitigt
+- 100 % Übersetzung in 31 Sprachen & Erweiterung der Demo-Präsentation: Volle 100 % Lokalisierungsabdeckung mit akkurater Pluralgrammatik in allen 31 Sprachen; universeller Dateibetrachter (F3) um „Im Textmodus öffnen“ ergänzt; gekürzte Dateinamen werden beim Daraufzeigen vollständig eingeblendet; Demofunktionen für Schnellfilter, Mehrfach-Umbenennung, transparentes Archiv-VFS, Verzeichnisabgleich und Baumansicht erweitert
+
 ### 2.2.0 (03.10.2026)
 
 - Hauptsymbolleiste mit verbesserter Ergonomie & Apple HIG-Farbverläufen: Vergrößerung der Haupt-Icons auf 38px und der Leistenhöhe auf 42px für optimale Klickbarkeit auf hochauflösenden Retina-Displays; neue Icons mit dynamischen Apple HIG-Farbverläufen und erhöhtem Kontrast; optimierte Größenhierarchie zwischen Haupt- und Mittelleiste
