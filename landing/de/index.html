@@ -349,32 +349,55 @@
         }
 
         
-        /* Mobile Navigation */
-        .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary); }
-        
+        /* Hamburger & Mobile Nav Drawer */
+        .hamburger { display: none; }
+        .mobile-nav-drawer { display: none; }
+
         /* Responsive */
-        @media (max-width: 768px) {
-            .hamburger { display: block; }
-            .nav-actions-container {
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-actions { display: none; }
+            .hamburger {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.6rem;
+                cursor: pointer;
+                color: var(--text-primary);
+                line-height: 1;
+                padding: 0.25rem;
+            }
+            .mobile-nav-drawer {
                 display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
                 background: var(--bg-surface);
                 backdrop-filter: blur(20px);
                 -webkit-backdrop-filter: blur(20px);
-                padding: 1rem;
+                border-top: 1px solid var(--glass-border);
                 border-bottom: 1px solid var(--glass-border);
+                padding: 1.25rem 1.5rem;
+                gap: 1.25rem;
+            }
+            .mobile-nav-drawer.active {
+                display: flex;
+            }
+            .mobile-nav-drawer nav {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
                 gap: 1rem;
             }
-            .nav-actions-container.active { display: flex; }
-            nav { flex-direction: column; width: 100%; gap: 1rem; }
-            .nav-actions-container .btn-app-store { width: 100%; justify-content: center; }
-            .hero-actions { flex-direction: column; padding: 0 2rem; }
-        }
-
+            .mobile-nav-drawer .header-actions-mobile {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--glass-border);
+            }
+            .mobile-nav-drawer .btn-app-store {
+                width: 100%;
+                justify-content: center;
+            }
             .hero-actions { flex-direction: column; padding: 0 2rem; }
         }
     </style>
@@ -384,26 +407,24 @@
 <header>
     <div class="container header-content">
         <div class="brand">ATBCmder <span class="version-pill">macOS Native</span></div>
-        <button class="hamburger" id="mobile-menu-btn" aria-label="Menu">☰</button>
-        <div class="nav-actions-container" id="nav-menu">
-            <nav>
-                <a href="#dual-panel">Doppelpaneel</a>
-                <a href="#universal-preview">Universelle Vorschau</a>
-                <a href="#remote-vfs">Remote-VFS</a>
-                <a href="#system-tools">Systemwerkzeuge</a>
-                <a href="#instant-search">Schnellsuche</a>
-            </nav>
-            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
-                <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Im Mac App Store herunterladen</a>
-                <a href="/guide/de/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Benutzerhandbuch</a>
-                <details class="lang-dropdown" id="landing-lang-switcher">
-                    <summary aria-label="Select Language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
-                        <span>Deutsch</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-                    </summary>
-                    <div class="lang-menu" role="menu">
-                                <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
+        <nav class="desktop-nav">
+            <a href="#dual-panel">Doppelpaneel</a>
+            <a href="#universal-preview">Universelle Vorschau</a>
+            <a href="#remote-vfs">Remote-VFS</a>
+            <a href="#system-tools">Systemwerkzeuge</a>
+            <a href="#instant-search">Schnellsuche</a>
+        </nav>
+        <div class="header-actions">
+            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Im Mac App Store herunterladen</a>
+            <a href="/guide/de/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Benutzerhandbuch</a>
+            <details class="lang-dropdown" id="landing-lang-switcher">
+                <summary aria-label="Select Language">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+                    <span>Deutsch</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                </summary>
+                <div class="lang-menu" role="menu">
+                            <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
         <a href="/zh/" class="lang-item" data-lang="zh"><span>简体中文</span></a>
         <a href="/zh-hant/" class="lang-item" data-lang="zh-hant"><span>繁體中文</span></a>
         <a href="/ja/" class="lang-item" data-lang="ja"><span>日本語</span></a>
@@ -414,10 +435,44 @@
         <a href="/ko/" class="lang-item" data-lang="ko"><span>한국어</span></a>
         <a href="/ru/" class="lang-item" data-lang="ru"><span>Русский</span></a>
         <a href="/it/" class="lang-item" data-lang="it"><span>Italiano</span></a>
-                    </div>
-                </details>
-                <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Kontakt</a>
-            </div>
+                </div>
+            </details>
+            <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Kontakt</a>
+        </div>
+        <button class="hamburger" id="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+    <div class="mobile-nav-drawer" id="mobile-menu">
+        <nav>
+            <a href="#dual-panel">Doppelpaneel</a>
+            <a href="#universal-preview">Universelle Vorschau</a>
+            <a href="#remote-vfs">Remote-VFS</a>
+            <a href="#system-tools">Systemwerkzeuge</a>
+            <a href="#instant-search">Schnellsuche</a>
+        </nav>
+        <div class="header-actions-mobile">
+            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Im Mac App Store herunterladen</a>
+            <a href="/guide/de/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Benutzerhandbuch</a>
+            <details class="lang-dropdown">
+                <summary aria-label="Select Language">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+                    <span>Deutsch</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                </summary>
+                <div class="lang-menu" role="menu">
+                            <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
+        <a href="/zh/" class="lang-item" data-lang="zh"><span>简体中文</span></a>
+        <a href="/zh-hant/" class="lang-item" data-lang="zh-hant"><span>繁體中文</span></a>
+        <a href="/ja/" class="lang-item" data-lang="ja"><span>日本語</span></a>
+        <a href="/de/" class="lang-item active" data-lang="de"><span>Deutsch</span></a>
+        <a href="/fr/" class="lang-item" data-lang="fr"><span>Français</span></a>
+        <a href="/es/" class="lang-item" data-lang="es"><span>Español</span></a>
+        <a href="/pt/" class="lang-item" data-lang="pt"><span>Português</span></a>
+        <a href="/ko/" class="lang-item" data-lang="ko"><span>한국어</span></a>
+        <a href="/ru/" class="lang-item" data-lang="ru"><span>Русский</span></a>
+        <a href="/it/" class="lang-item" data-lang="it"><span>Italiano</span></a>
+                </div>
+            </details>
+            <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 0.5rem 0;">Kontakt</a>
         </div>
     </div>
 </header>
@@ -731,16 +786,21 @@
     
     // Mobile menu toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
-    const navMenu = document.getElementById('nav-menu');
-    if(mobileBtn) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
         mobileBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
         });
     }
 
     // ScrollSpy
     const sections = document.querySelectorAll('.theme-section');
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('.desktop-nav a');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
