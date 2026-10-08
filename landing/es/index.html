@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATBCmder — Dos paneles. Cero clics. El administrador de archivos de doble panel de alto rendimiento para macOS</title>
+    <meta name="description" content="Di adiós a las ventanas dispersas del Finder y al arrastre interminable del ratón. Combinando el clásico paradigma Commander enfocado en el teclado con la estética moderna Retina de macOS, ATBCmder pone la orquestación de archivos a alta velocidad, la vista previa universal instantánea y la sincronización remota con NAS directamente al alcance de tus manos.">
+    <link rel="canonical" href="https://cmder.aitobox.com/es/">
+    <meta property="og:title" content="ATBCmder — Dos paneles. Cero clics. El administrador de archivos de doble panel de alto rendimiento para macOS">
+    <meta property="og:description" content="Di adiós a las ventanas dispersas del Finder y al arrastre interminable del ratón. Combinando el clásico paradigma Commander enfocado en el teclado con la estética moderna Retina de macOS, ATBCmder pone la orquestación de archivos a alta velocidad, la vista previa universal instantánea y la sincronización remota con NAS directamente al alcance de tus manos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cmder.aitobox.com/es/">
+    <meta property="og:image" content="https://cmder.aitobox.com/images/screenshots/dual_panel_list_and_thumbnails.png">
+    <style>
+        :root {
+            --bg-base: #f8fafc;
+            --bg-surface: rgba(255, 255, 255, 0.85);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-blue: #0071e3;
+            --accent-blue-hover: #0077ed;
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1rem; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; text-align: center; }
+        p { font-size: 1.125rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: var(--bg-surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand { font-weight: 700; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+        .version-pill { font-size: 0.75rem; background: #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 1rem; color: #475569; }
+
+        nav { display: flex; gap: 1.5rem; }
+        nav a { text-decoration: none; color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--accent-blue); }
+
+        .btn-app-store {
+            background-color: var(--text-primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn-app-store:hover { background-color: #000; transform: scale(1.02); }
+
+        /* Language Dropdown */
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-dropdown summary {
+            list-style: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.5rem 0.85rem;
+            border-radius: 2rem;
+            border: 1px solid #cbd5e1;
+            background: white;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .lang-dropdown summary::-webkit-details-marker { display: none; }
+        .lang-dropdown summary:hover { border-color: var(--text-primary); }
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            min-width: 160px;
+            max-height: 380px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            padding: 0.5rem 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        .lang-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .lang-item:hover { background: #f1f5f9; color: var(--accent-blue); }
+        .lang-item.active { font-weight: 600; color: var(--accent-blue); background: #f0f9ff; }
+
+        /* Hero */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            text-align: center;
+        }
+
+        .hero-banner {
+            display: inline-block;
+            background: #e0f2fe;
+            color: var(--accent-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p { margin-bottom: 2rem; }
+
+        .hero-actions { display: flex; justify-content: center; gap: 1rem; margin-bottom: 4rem; }
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover { background-color: var(--accent-blue-hover); }
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-primary);
+            border: 1px solid #cbd5e1;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--text-primary); }
+
+        /* macOS Window */
+        .mac-window {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .title-bar {
+            height: 38px;
+            background: #f1f1f1;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .traffic-lights { display: flex; gap: 8px; }
+        .traffic-light { width: 12px; height: 12px; border-radius: 50%; }
+        .traffic-light.red { background: #ff5f56; }
+        .traffic-light.yellow { background: #ffbd2e; }
+        .traffic-light.green { background: #27c93f; }
+
+        /* Image Display */
+        .mac-window img {
+            display: block;
+            width: 100%;
+            height: auto;
+            cursor: zoom-in;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Hotspots */
+        .hotspot-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .badge-hotspot {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Theme Section */
+        .theme-section { padding: 6rem 0; border-top: 1px solid #e2e8f0; }
+        .theme-section:nth-child(even) { background-color: white; }
+
+        /* Tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .pill-tab {
+            background: #f1f5f9;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pill-tab:hover { background: #e2e8f0; }
+        .pill-tab.active { background: var(--text-primary); color: white; }
+
+        /* Spec Matrix */
+        .spec-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .spec-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .spec-card h3 { margin-bottom: 1rem; color: var(--text-primary); }
+        .spec-card p { font-size: 1rem; color: var(--text-secondary); margin: 0; }
+
+        /* Footer / Conversion */
+        .conversion-banner {
+            background: var(--text-primary);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .conversion-banner h2 { color: white; margin-bottom: 2rem; }
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        footer a { color: #cbd5e1; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Lightbox */
+        .lightbox-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .lightbox-modal.active { opacity: 1; pointer-events: auto; }
+        .lightbox-content { max-width: 90%; max-height: 90%; position: relative; }
+        .lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .lightbox-close {
+            position: absolute; top: -40px; right: 0;
+            background: none; border: none; color: white; font-size: 2rem; cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero-actions { flex-direction: column; padding: 0 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="brand">ATBCmder <span class="version-pill">macOS Native</span></div>
+        <nav>
+            <a href="#dual-panel">Panel Doble</a>
+            <a href="#universal-preview">Vista previa universal</a>
+            <a href="#remote-vfs">VFS Remoto</a>
+            <a href="#system-tools">Herramientas del sistema</a>
+            <a href="#instant-search">Búsqueda instantánea</a>
+        </nav>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Descargar en la Mac App Store</a>
+            <a href="/guide/es/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Guía del usuario</a>
+            <details class="lang-dropdown" id="landing-lang-switcher">
+                <summary aria-label="Select Language">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+                    <span>Español</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                </summary>
+                <div class="lang-menu" role="menu">
+                            <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
+        <a href="/zh/" class="lang-item" data-lang="zh"><span>简体中文</span></a>
+        <a href="/zh-hant/" class="lang-item" data-lang="zh-hant"><span>繁體中文</span></a>
+        <a href="/ja/" class="lang-item" data-lang="ja"><span>日本語</span></a>
+        <a href="/de/" class="lang-item" data-lang="de"><span>Deutsch</span></a>
+        <a href="/fr/" class="lang-item" data-lang="fr"><span>Français</span></a>
+        <a href="/es/" class="lang-item active" data-lang="es"><span>Español</span></a>
+        <a href="/pt/" class="lang-item" data-lang="pt"><span>Português</span></a>
+        <a href="/ko/" class="lang-item" data-lang="ko"><span>한국어</span></a>
+        <a href="/ru/" class="lang-item" data-lang="ru"><span>Русский</span></a>
+        <a href="/it/" class="lang-item" data-lang="it"><span>Italiano</span></a>
+                </div>
+            </details>
+            <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Contacto</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="hero container">
+        <div class="hero-banner">🚀 Creado exclusivamente para macOS · Binario universal: Apple Silicon (M1–M4) y Intel (x86_64) · Gestor de archivos de eficiencia geek</div>
+        <h1>Dos paneles. Cero clics.</h1>
+        <h2>Recupera el control total de tu sistema de archivos de Mac</h2>
+        <p>Di adiós a las ventanas dispersas del Finder y al interminable arrastre del ratón. Combinando el flujo de trabajo clásico de Commander con teclado completo con el diseño moderno de macOS Retina, organiza decenas de miles de archivos, lee más de 30 formatos al instante y sincroniza a través de servidores remotos, todo sin levantar las manos del teclado.</p>
+        
+        <div class="hero-actions">
+            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-primary">Descargar en la Mac App Store</a>
+            <a href="/guide/es/" class="btn-secondary">Guía del usuario</a>
+            <a href="#dual-panel" class="btn-secondary">Explora 5 flujos de trabajo principales ↓</a>
+        </div>
+
+        <div class="hotspot-container">
+            <span class="badge-hotspot">⚡ 100% Controlado por Teclado · Mantén las Manos en la Fila de Inicio</span>
+            <span class="badge-hotspot">📁 Más de 30 formatos, vista previa instantánea en menos de 100 ms</span>
+            <span class="badge-hotspot">🌐 Conexiones Directas a NAS y Servidor Remoto</span>
+        </div>
+
+        <div class="mac-window">
+            <div class="title-bar">
+                <div class="traffic-lights">
+                    <div class="traffic-light red"></div>
+                    <div class="traffic-light yellow"></div>
+                    <div class="traffic-light green"></div>
+                </div>
+            </div>
+            <img src="/images/screenshots/dual_panel_list_and_thumbnails.png" alt="Hero Showcase" class="gallery-img">
+        </div>
+    </section>
+
+    <!-- Theme 1: Dual Panel -->
+    <section id="dual-panel" class="theme-section">
+        <div class="container">
+            <h2>Columnas dobles, cero clics. El flujo puro del teclado acelera las transferencias de archivos.</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Optimizado de forma nativa para la arquitectura Apple Silicon e Intel para un rendimiento ultrafluido.</p>
+            
+            <div class="hotspot-container">
+                <span class="badge-hotspot">[Tab] Cambio instantáneo de enfoque de doble panel</span>
+                <span class="badge-hotspot">[Cmd+B] Aplanar subdirectorios anidados al instante</span>
+                <span class="badge-hotspot">[Alt+F1/F2] Selección rápida de volumen y unidad</span>
+            </div>
+
+            <div class="tabs-container" data-target="img-dual-panel">
+                <button class="pill-tab active" data-img="dual_panel_list_and_thumbnails.png">Lista y miniaturas</button>
+                <button class="pill-tab" data-img="vertical_split_tree_thumbnails.png">Árbol de directorios + Miniaturas</button>
+                <button class="pill-tab" data-img="branch_view_flat_mode.png">Vista de Rama (Modo Plano)</button>
+                <button class="pill-tab" data-img="horizontal_split_thumbnails.png">Vista de División Horizontal</button>
+                <button class="pill-tab" data-img="dual_panel_tree_views.png">Árboles Independientes Dobles</button>
+                <button class="pill-tab" data-img="horizontal_split_quick_view.png">Vista rápida horizontal</button>
+            </div>
+
+            <div class="mac-window">
+                <div class="title-bar">
+                    <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
+                </div>
+                <img id="img-dual-panel" src="/images/screenshots/dual_panel_list_and_thumbnails.png" alt="Theme 1" class="gallery-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme 2: Universal Preview -->
+    <section id="universal-preview" class="theme-section">
+        <div class="container">
+            <h2>Abandona las aplicaciones independientes pesadas. Pulsa una tecla para inspeccionar imágenes de retina, documentos y medios.</h2>
+            
+            <div class="hotspot-container">
+                <span class="badge-hotspot">[Cmd+Q / Espacio] Vista rápida con rebote de 100 ms</span>
+                <span class="badge-hotspot">[F3] Inspección Nativa en Más de 30 Formatos</span>
+                <span class="badge-hotspot">[F4] Editor incorporado con resaltado de sintaxis</span>
+            </div>
+
+            <div class="tabs-container" data-target="img-universal-preview">
+                <button class="pill-tab active" data-img="quick_view_image_preview.png">Vista Rápida</button>
+                <button class="pill-tab" data-img="pdf_document_viewer.png">Documento PDF</button>
+                <button class="pill-tab" data-img="excel_spreadsheet_viewer.png">Hoja de cálculo de Excel</button>
+                <button class="pill-tab" data-img="video_player_viewer.png">Reproducción de video</button>
+                <button class="pill-tab" data-img="audio_player.png">Reproductor de audio</button>
+                <button class="pill-tab" data-img="markdown_viewer_toc.png">Markdown con esquema</button>
+                <button class="pill-tab" data-img="epub_ebook_reader.png">Libro electrónico EPUB</button>
+                <button class="pill-tab" data-img="sqlite_database_viewer.png">Base de datos SQLite</button>
+                <button class="pill-tab" data-img="image_editor.png">Editor de anotaciones de imágenes</button>
+                <button class="pill-tab" data-img="text_file_editor.png">Editor de código y texto</button>
+                <button class="pill-tab" data-img="image_viewer.png">Visor de imágenes</button>
+                <button class="pill-tab" data-img="word_document_viewer.png">Documento de Word</button>
+                <button class="pill-tab" data-img="markdown_source_editor.png">Editor de código fuente Markdown</button>
+                <button class="pill-tab" data-img="text_file_viewer.png">Visor de texto</button>
+            </div>
+
+            <div class="mac-window">
+                <div class="title-bar">
+                    <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
+                </div>
+                <img id="img-universal-preview" src="/images/screenshots/quick_view_image_preview.png" alt="Theme 2" class="gallery-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme 3: Remote VFS -->
+    <section id="remote-vfs" class="theme-section">
+        <div class="container">
+            <h2>Discos locales, NAS y servidores en la nube unificados en un solo lugar. Tan suave como un SSD local.</h2>
+            
+            <div class="hotspot-container">
+                <span class="badge-hotspot">Autenticación segura con clave SSH / contraseña</span>
+                <span class="badge-hotspot">Auto-descubrimiento SMB de red local</span>
+                <span class="badge-hotspot">Cola de Transferencia Reanudable Multihilo</span>
+            </div>
+
+            <div class="tabs-container" data-target="img-remote-vfs">
+                <button class="pill-tab active" data-img="manage_network_connections.png">Administrador de conexiones</button>
+                <button class="pill-tab" data-img="chinese_ui_samba_remote_share.png">Compartición remota de Samba</button>
+            </div>
+
+            <div class="mac-window">
+                <div class="title-bar">
+                    <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
+                </div>
+                <img id="img-remote-vfs" src="/images/screenshots/manage_network_connections.png" alt="Theme 3" class="gallery-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme 4: System Tools -->
+    <section id="system-tools" class="theme-section">
+        <div class="container">
+            <h2>Información sobre cada gigabyte. Análisis panorámico del espacio en disco, limpieza profunda de aplicaciones y sincronización.</h2>
+            
+            <div class="hotspot-container">
+                <span class="badge-hotspot">Análisis de archivos grandes de disco completo en milisegundos</span>
+                <span class="badge-hotspot">Eliminación profunda de caché residual y configuración</span>
+                <span class="badge-hotspot">Verificación de Integridad CRC32 / MD5 a Nivel de Byte</span>
+            </div>
+
+            <div class="tabs-container" data-target="img-system-tools">
+                <button class="pill-tab active" data-img="disk_usage_analyzer.png">Analizador de espacio en disco</button>
+                <button class="pill-tab" data-img="app_uninstaller.png">Desinstalador Profundo de Aplicaciones</button>
+                <button class="pill-tab" data-img="system_cleaner.png">Limpiador de basura del sistema</button>
+                <button class="pill-tab" data-img="synchronize_directories.png">Sincronización bidireccional de directorios</button>
+                <button class="pill-tab" data-img="system_resource_monitor.png">Monitor de Hardware del Sistema</button>
+                <button class="pill-tab" data-img="preferences_settings_dialog.png">Preferencias y Configuración</button>
+            </div>
+
+            <div class="mac-window">
+                <div class="title-bar">
+                    <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
+                </div>
+                <img id="img-system-tools" src="/images/screenshots/disk_usage_analyzer.png" alt="Theme 4" class="gallery-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme 5: Instant Search -->
+    <section id="instant-search" class="theme-section">
+        <div class="container">
+            <h2>Acceso en milisegundos a millones de archivos. Llega a tu objetivo antes de que tus dedos se alejen de las teclas.</h2>
+            
+            <div class="hotspot-container">
+                <span class="badge-hotspot">[Cmd+F] Coincidencia Instantánea de Múltiples Criterios</span>
+                <span class="badge-hotspot">[Ctrl+D] Marcadores de la lista rápida del directorio</span>
+                <span class="badge-hotspot">Enviar resultados de búsqueda directamente al panel</span>
+            </div>
+
+            <div class="tabs-container" data-target="img-instant-search">
+                <button class="pill-tab active" data-img="find_files_advanced_search.png">Búsqueda Compuesta Avanzada</button>
+                <button class="pill-tab" data-img="directory_hotlist_bookmarks.png">Marcadores de directorio Lista de favoritos</button>
+                <button class="pill-tab" data-img="directory_history_dropdown.png">Desplegable del historial de navegación</button>
+                <button class="pill-tab" data-img="calculate_directory_sizes.png">Calcular tamaños de carpetas</button>
+                <button class="pill-tab" data-img="directory_history_with_menu_bar.png">Historial con barra de menú</button>
+            </div>
+
+            <div class="mac-window">
+                <div class="title-bar">
+                    <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
+                </div>
+                <img id="img-instant-search" src="/images/screenshots/find_files_advanced_search.png" alt="Theme 5" class="gallery-img">
+            </div>
+
+            <!-- Specs Matrix -->
+            <div class="spec-matrix">
+                <div class="spec-card">
+                    <h3>Soporte Nativo de Arquitectura Dual</h3>
+                    <p>Totalmente optimizado de forma nativa para Apple Silicon (M1–M4) y Intel x86_64.</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Compatibilidad del sistema</h3>
+                    <p>Compatible con macOS 12.0 (Monterey) hasta macOS 15+ (Sequoia).</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Seguridad oficial de Apple</h3>
+                    <p>Aislamiento de la Mac App Store, notarización de Apple y actualizaciones automáticas silenciosas en segundo plano.</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Esquemas de teclas rápidas duales</h3>
+                    <p>Alterna sin problemas entre el clásico Total Commander (F3–F10) y los diseños de teclado nativos de macOS (Cmd/Opt).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversion Banner -->
+    <section class="conversion-banner">
+        <div class="container">
+            <h2>¿Listo para revolucionar tu flujo de trabajo de gestión de archivos en Mac?</h2>
+            <div style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background: white; color: var(--text-primary);">Descargar en la Mac App Store</a>
+                <a href="/guide/es/" class="btn-primary" style="background: transparent; color: white; border: 1px solid white;">Guía del usuario</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 ATBCmder. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <img src="" alt="Full Resolution" class="lightbox-img" id="lightbox-img">
+    </div>
+</div>
+
+<script>
+    // Tab Switcher logic
+    document.querySelectorAll('.tabs-container').forEach(container => {
+        const targetImgId = container.getAttribute('data-target');
+        const targetImg = document.getElementById(targetImgId);
+        
+        // Preload images
+        const buttons = container.querySelectorAll('.pill-tab');
+        buttons.forEach(btn => {
+            const imgName = btn.getAttribute('data-img');
+            const preloader = new Image();
+            preloader.src = `/images/screenshots/${imgName}`;
+            
+            btn.addEventListener('click', () => {
+                // Update active class
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update image
+                targetImg.style.opacity = '0.5';
+                setTimeout(() => {
+                    targetImg.src = `/images/screenshots/${imgName}`;
+                    targetImg.alt = btn.innerText;
+                    targetImg.style.opacity = '1';
+                }, 150);
+            });
+        });
+    });
+
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Language Dropdown Preference Persistence & Outside Click
+    document.querySelectorAll('.lang-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            if (lang) {
+                try { localStorage.setItem('preferred_language', lang); } catch (e) {}
+            }
+        });
+    });
+
+    const langSwitcher = document.getElementById('landing-lang-switcher');
+    if (langSwitcher) {
+        document.addEventListener('click', function(e) {
+            if (langSwitcher.hasAttribute('open') && !langSwitcher.contains(e.target)) {
+                langSwitcher.removeAttribute('open');
+            }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && langSwitcher.hasAttribute('open')) {
+                langSwitcher.removeAttribute('open');
+            }
+        });
+    }
+
+    // ScrollSpy
+    const sections = document.querySelectorAll('.theme-section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
