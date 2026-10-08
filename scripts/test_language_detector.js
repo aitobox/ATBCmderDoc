@@ -138,6 +138,13 @@ const pathCases = [
   { path: '/ru/keyboard_shortcuts/', expected: 'ru' },
   { path: '/it/faq_howtos/', expected: 'it' },
   { path: '/subpath/en/download/', expected: 'en' },
+  { path: '/guide/en/', expected: 'en' },
+  { path: '/guide/en/power_tools/', expected: 'en' },
+  { path: '/guide/zh/getting_started/', expected: 'zh' },
+  { path: '/guide/zh-hant/', expected: 'zh-hant' },
+  { path: '/guide/ja/file_operations/', expected: 'ja' },
+  { path: '/guide/de/system_tools/', expected: 'de' },
+  { path: '/guide/', expected: null },
   { path: '/', expected: null },
   { path: '/stylesheets/extra.css', expected: null },
   { path: '/images/screenshot.png', expected: null }
@@ -158,7 +165,11 @@ const replaceCases = [
   { path: '/zh-hant/getting_started/', from: 'zh-hant', to: 'zh', expected: '/zh/getting_started/' },
   { path: '/zh/getting_started/', from: 'zh', to: 'zh-hant', expected: '/zh-hant/getting_started/' },
   { path: '/de/faq_howtos/index.html', from: 'de', to: 'it', expected: '/it/faq_howtos/index.html' },
-  { path: '/sub/pt/download/', from: 'pt', to: 'ko', expected: '/sub/ko/download/' }
+  { path: '/sub/pt/download/', from: 'pt', to: 'ko', expected: '/sub/ko/download/' },
+  { path: '/guide/en/power_tools/', from: 'en', to: 'fr', expected: '/guide/fr/power_tools/' },
+  { path: '/guide/zh-hant/getting_started/', from: 'zh-hant', to: 'ja', expected: '/guide/ja/getting_started/' },
+  { path: '/guide/en/', from: 'en', to: 'de', expected: '/guide/de/' },
+  { path: '/guide/en', from: 'en', to: 'de', expected: '/guide/de' }
 ];
 
 replaceCases.forEach(({ path, from, to, expected }) => {
