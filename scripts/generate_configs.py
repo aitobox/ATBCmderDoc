@@ -66,7 +66,7 @@ THEME_FEATURES = [
 def build_alternate_list() -> List[Dict[str, str]]:
     """Build list of all 11 alternate language links."""
     return [
-        {"name": lang["name"], "link": f"/{lang['code']}/", "lang": lang["code"]}
+        {"name": lang["name"], "link": f"/guide/{lang['code']}/", "lang": lang["code"]}
         for lang in LANGUAGES
     ]
 
@@ -81,12 +81,12 @@ def generate_config_content(lang: Dict[str, Any]) -> str:
     lines: List[str] = []
     lines.append("[project]")
     lines.append(f'site_name    = "{SITE_NAME}"')
-    lines.append(f'site_url     = "https://cmder.aitobox.com/{code}/"')
+    lines.append(f'site_url     = "https://cmder.aitobox.com/guide/{code}/"')
     lines.append(f'site_description = "{description}"')
     lines.append(f'repo_url     = "{REPO_URL}"')
     lines.append(f'repo_name    = "{REPO_NAME}"')
     lines.append(f'docs_dir     = "docs/{code}"')
-    lines.append(f'site_dir     = "site/{code}"')
+    lines.append(f'site_dir     = "site/guide/{code}"')
     lines.append("")
     lines.append("extra_javascript = [")
     for i, js in enumerate(EXTRA_JAVASCRIPT):
@@ -129,6 +129,7 @@ def generate_config_content(lang: Dict[str, Any]) -> str:
     lines.append("]")
     lines.append("")
     lines.append("[project.extra]")
+    lines.append(f'homepage      = "/{code}/"')
     lines.append(f'app_store_url = "{APP_STORE_URL}"')
     lines.append("alternate = [")
     alternates = build_alternate_list()

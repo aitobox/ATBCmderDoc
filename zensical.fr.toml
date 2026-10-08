@@ -1,11 +1,11 @@
 [project]
 site_name    = "ATBCmder"
-site_url     = "https://cmder.aitobox.com/fr/"
+site_url     = "https://cmder.aitobox.com/guide/fr/"
 site_description = "Le gestionnaire de fichiers à double panneau pour macOS"
 repo_url     = "https://github.com/aitobox/ATBCmderDoc"
 repo_name    = "ATBCmderDoc"
 docs_dir     = "docs/fr"
-site_dir     = "site/fr"
+site_dir     = "site/guide/fr"
 
 extra_javascript = [
   "javascripts/language-detector.js",
@@ -51,19 +51,20 @@ features    = [
 ]
 
 [project.extra]
+homepage      = "/fr/"
 app_store_url = "https://apps.apple.com/app/atbcmder/id6792398333"
 alternate = [
-  { name = "English", link = "/en/", lang = "en" },
-  { name = "简体中文", link = "/zh/", lang = "zh" },
-  { name = "繁體中文", link = "/zh-hant/", lang = "zh-hant" },
-  { name = "日本語", link = "/ja/", lang = "ja" },
-  { name = "Deutsch", link = "/de/", lang = "de" },
-  { name = "Français", link = "/fr/", lang = "fr" },
-  { name = "Español", link = "/es/", lang = "es" },
-  { name = "Português", link = "/pt/", lang = "pt" },
-  { name = "한국어", link = "/ko/", lang = "ko" },
-  { name = "Русский", link = "/ru/", lang = "ru" },
-  { name = "Italiano", link = "/it/", lang = "it" }
+  { name = "English", link = "/guide/en/", lang = "en" },
+  { name = "简体中文", link = "/guide/zh/", lang = "zh" },
+  { name = "繁體中文", link = "/guide/zh-hant/", lang = "zh-hant" },
+  { name = "日本語", link = "/guide/ja/", lang = "ja" },
+  { name = "Deutsch", link = "/guide/de/", lang = "de" },
+  { name = "Français", link = "/guide/fr/", lang = "fr" },
+  { name = "Español", link = "/guide/es/", lang = "es" },
+  { name = "Português", link = "/guide/pt/", lang = "pt" },
+  { name = "한국어", link = "/guide/ko/", lang = "ko" },
+  { name = "Русский", link = "/guide/ru/", lang = "ru" },
+  { name = "Italiano", link = "/guide/it/", lang = "it" }
 ]
 
 [project.markdown_extensions]
