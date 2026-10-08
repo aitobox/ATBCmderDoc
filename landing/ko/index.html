@@ -10,7 +10,7 @@
     <meta property="og:description" content="흩어진 Finder 창과 끝없는 마우스 드래그에 작별을 고하세요. 클래식한 Commander 키보드 우선 패러다임을 현대적인 macOS Retina 미학과 결합한 ATBCmder는 고속 파일 관리, 즉각적인 범용 미리보기, 원격 NAS 동기화를 바로 손끝에서 제공합니다.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cmder.aitobox.com/ko/">
-    <meta property="og:image" content="https://cmder.aitobox.com/images/screenshots/dual_panel_list_and_thumbnails.png">
+    <meta property="og:image" content="https://cmder.aitobox.com/images/screenshots/dual_panel_list_and_thumbnails.webp">
     <style>
         :root {
             --bg-base: #f8fafc;
@@ -327,9 +327,54 @@
             background: none; border: none; color: white; font-size: 2rem; cursor: pointer;
         }
 
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-base: #0f172a;
+                --bg-surface: rgba(15, 23, 42, 0.85);
+                --text-primary: #f8fafc;
+                --text-secondary: #94a3b8;
+                --glass-border: rgba(255, 255, 255, 0.1);
+            }
+            body { background-color: var(--bg-base); }
+            .mac-window { background: #1e293b; border-color: rgba(255,255,255,0.1); }
+            .title-bar { background: #334155; border-bottom-color: rgba(255,255,255,0.1); }
+            .theme-section:nth-child(even) { background-color: #1e293b; }
+            .lang-dropdown summary { background: #1e293b; border-color: #475569; }
+            .lang-menu { background: rgba(30, 41, 59, 0.96); border-color: rgba(255,255,255,0.1); }
+            .lang-item:hover { background: #334155; }
+            .btn-secondary { background: transparent; color: white; border-color: #475569; }
+            .btn-app-store { background-color: var(--text-primary); color: #0f172a; }
+            .btn-app-store:hover { background-color: #e2e8f0; }
+        }
+
+        
+        /* Mobile Navigation */
+        .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary); }
+        
         /* Responsive */
         @media (max-width: 768px) {
-            nav { display: none; }
+            .hamburger { display: block; }
+            .nav-actions-container {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-surface);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 1rem;
+                border-bottom: 1px solid var(--glass-border);
+                gap: 1rem;
+            }
+            .nav-actions-container.active { display: flex; }
+            nav { flex-direction: column; width: 100%; gap: 1rem; }
+            .nav-actions-container .btn-app-store { width: 100%; justify-content: center; }
+            .hero-actions { flex-direction: column; padding: 0 2rem; }
+        }
+
             .hero-actions { flex-direction: column; padding: 0 2rem; }
         }
     </style>
@@ -339,24 +384,26 @@
 <header>
     <div class="container header-content">
         <div class="brand">ATBCmder <span class="version-pill">macOS Native</span></div>
-        <nav>
-            <a href="#dual-panel">듀얼 패널</a>
-            <a href="#universal-preview">범용 미리보기</a>
-            <a href="#remote-vfs">원격 VFS</a>
-            <a href="#system-tools">시스템 도구</a>
-            <a href="#instant-search">즉시 검색</a>
-        </nav>
-        <div style="display: flex; gap: 0.75rem; align-items: center;">
-            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Mac App Store에서 다운로드</a>
-            <a href="/guide/ko/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">사용자 가이드</a>
-            <details class="lang-dropdown" id="landing-lang-switcher">
-                <summary aria-label="Select Language">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
-                    <span>한국어</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-                </summary>
-                <div class="lang-menu" role="menu">
-                            <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
+        <button class="hamburger" id="mobile-menu-btn" aria-label="Menu">☰</button>
+        <div class="nav-actions-container" id="nav-menu">
+            <nav>
+                <a href="#dual-panel">듀얼 패널</a>
+                <a href="#universal-preview">범용 미리보기</a>
+                <a href="#remote-vfs">원격 VFS</a>
+                <a href="#system-tools">시스템 도구</a>
+                <a href="#instant-search">즉시 검색</a>
+            </nav>
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Mac App Store에서 다운로드</a>
+                <a href="/guide/ko/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">사용자 가이드</a>
+                <details class="lang-dropdown" id="landing-lang-switcher">
+                    <summary aria-label="Select Language">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+                        <span>한국어</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                    </summary>
+                    <div class="lang-menu" role="menu">
+                                <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
         <a href="/zh/" class="lang-item" data-lang="zh"><span>简体中文</span></a>
         <a href="/zh-hant/" class="lang-item" data-lang="zh-hant"><span>繁體中文</span></a>
         <a href="/ja/" class="lang-item" data-lang="ja"><span>日本語</span></a>
@@ -367,9 +414,10 @@
         <a href="/ko/" class="lang-item active" data-lang="ko"><span>한국어</span></a>
         <a href="/ru/" class="lang-item" data-lang="ru"><span>Русский</span></a>
         <a href="/it/" class="lang-item" data-lang="it"><span>Italiano</span></a>
-                </div>
-            </details>
-            <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">문의하기</a>
+                    </div>
+                </details>
+                <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">문의하기</a>
+            </div>
         </div>
     </div>
 </header>
@@ -402,7 +450,7 @@
                     <div class="traffic-light green"></div>
                 </div>
             </div>
-            <img src="/images/screenshots/dual_panel_list_and_thumbnails.png" alt="Hero Showcase" class="gallery-img">
+            <img src="/images/screenshots/dual_panel_list_and_thumbnails.webp" alt="Hero Showcase" class="gallery-img" loading="lazy">
         </div>
     </section>
 
@@ -419,19 +467,19 @@
             </div>
 
             <div class="tabs-container" data-target="img-dual-panel">
-                <button class="pill-tab active" data-img="dual_panel_list_and_thumbnails.png">목록 및 썸네일</button>
-                <button class="pill-tab" data-img="vertical_split_tree_thumbnails.png">디렉토리 트리 + 썸네일</button>
-                <button class="pill-tab" data-img="branch_view_flat_mode.png">브랜치 보기 (플랫 모드)</button>
-                <button class="pill-tab" data-img="horizontal_split_thumbnails.png">수평 분할 보기</button>
-                <button class="pill-tab" data-img="dual_panel_tree_views.png">좌우 독립 디렉토리 트리</button>
-                <button class="pill-tab" data-img="horizontal_split_quick_view.png">수평 훑어보기</button>
+                <button class="pill-tab active" data-img="dual_panel_list_and_thumbnails.webp">목록 및 썸네일</button>
+                <button class="pill-tab" data-img="vertical_split_tree_thumbnails.webp">디렉토리 트리 + 썸네일</button>
+                <button class="pill-tab" data-img="branch_view_flat_mode.webp">브랜치 보기 (플랫 모드)</button>
+                <button class="pill-tab" data-img="horizontal_split_thumbnails.webp">수평 분할 보기</button>
+                <button class="pill-tab" data-img="dual_panel_tree_views.webp">좌우 독립 디렉토리 트리</button>
+                <button class="pill-tab" data-img="horizontal_split_quick_view.webp">수평 훑어보기</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-dual-panel" src="/images/screenshots/dual_panel_list_and_thumbnails.png" alt="Theme 1" class="gallery-img">
+                <img id="img-dual-panel" src="/images/screenshots/dual_panel_list_and_thumbnails.webp" alt="Theme 1" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -448,27 +496,27 @@
             </div>
 
             <div class="tabs-container" data-target="img-universal-preview">
-                <button class="pill-tab active" data-img="quick_view_image_preview.png">훑어보기</button>
-                <button class="pill-tab" data-img="pdf_document_viewer.png">PDF 문서</button>
-                <button class="pill-tab" data-img="excel_spreadsheet_viewer.png">엑셀 스프레드시트</button>
-                <button class="pill-tab" data-img="video_player_viewer.png">비디오 재생</button>
-                <button class="pill-tab" data-img="audio_player.png">오디오 플레이어</button>
-                <button class="pill-tab" data-img="markdown_viewer_toc.png">개요가 있는 마크다운</button>
-                <button class="pill-tab" data-img="epub_ebook_reader.png">EPUB 전자책</button>
-                <button class="pill-tab" data-img="sqlite_database_viewer.png">SQLite 데이터베이스</button>
-                <button class="pill-tab" data-img="image_editor.png">이미지 주석 편집기</button>
-                <button class="pill-tab" data-img="text_file_editor.png">코드 및 텍스트 편집기</button>
-                <button class="pill-tab" data-img="image_viewer.png">이미지 뷰어</button>
-                <button class="pill-tab" data-img="word_document_viewer.png">워드 문서</button>
-                <button class="pill-tab" data-img="markdown_source_editor.png">마크다운 소스 편집기</button>
-                <button class="pill-tab" data-img="text_file_viewer.png">텍스트 뷰어</button>
+                <button class="pill-tab active" data-img="quick_view_image_preview.webp">훑어보기</button>
+                <button class="pill-tab" data-img="pdf_document_viewer.webp">PDF 문서</button>
+                <button class="pill-tab" data-img="excel_spreadsheet_viewer.webp">엑셀 스프레드시트</button>
+                <button class="pill-tab" data-img="video_player_viewer.webp">비디오 재생</button>
+                <button class="pill-tab" data-img="audio_player.webp">오디오 플레이어</button>
+                <button class="pill-tab" data-img="markdown_viewer_toc.webp">개요가 있는 마크다운</button>
+                <button class="pill-tab" data-img="epub_ebook_reader.webp">EPUB 전자책</button>
+                <button class="pill-tab" data-img="sqlite_database_viewer.webp">SQLite 데이터베이스</button>
+                <button class="pill-tab" data-img="image_editor.webp">이미지 주석 편집기</button>
+                <button class="pill-tab" data-img="text_file_editor.webp">코드 및 텍스트 편집기</button>
+                <button class="pill-tab" data-img="image_viewer.webp">이미지 뷰어</button>
+                <button class="pill-tab" data-img="word_document_viewer.webp">워드 문서</button>
+                <button class="pill-tab" data-img="markdown_source_editor.webp">마크다운 소스 편집기</button>
+                <button class="pill-tab" data-img="text_file_viewer.webp">텍스트 뷰어</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-universal-preview" src="/images/screenshots/quick_view_image_preview.png" alt="Theme 2" class="gallery-img">
+                <img id="img-universal-preview" src="/images/screenshots/quick_view_image_preview.webp" alt="Theme 2" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -485,15 +533,15 @@
             </div>
 
             <div class="tabs-container" data-target="img-remote-vfs">
-                <button class="pill-tab active" data-img="manage_network_connections.png">연결 관리자</button>
-                <button class="pill-tab" data-img="chinese_ui_samba_remote_share.png">삼바 원격 공유</button>
+                <button class="pill-tab active" data-img="manage_network_connections.webp">연결 관리자</button>
+                <button class="pill-tab" data-img="chinese_ui_samba_remote_share.webp">삼바 원격 공유</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-remote-vfs" src="/images/screenshots/manage_network_connections.png" alt="Theme 3" class="gallery-img">
+                <img id="img-remote-vfs" src="/images/screenshots/manage_network_connections.webp" alt="Theme 3" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -510,19 +558,19 @@
             </div>
 
             <div class="tabs-container" data-target="img-system-tools">
-                <button class="pill-tab active" data-img="disk_usage_analyzer.png">디스크 공간 분석기</button>
-                <button class="pill-tab" data-img="app_uninstaller.png">딥 앱 제거기</button>
-                <button class="pill-tab" data-img="system_cleaner.png">시스템 정리 도구</button>
-                <button class="pill-tab" data-img="synchronize_directories.png">양방향 디렉토리 동기화</button>
-                <button class="pill-tab" data-img="system_resource_monitor.png">시스템 하드웨어 모니터</button>
-                <button class="pill-tab" data-img="preferences_settings_dialog.png">환경 설정</button>
+                <button class="pill-tab active" data-img="disk_usage_analyzer.webp">디스크 공간 분석기</button>
+                <button class="pill-tab" data-img="app_uninstaller.webp">딥 앱 제거기</button>
+                <button class="pill-tab" data-img="system_cleaner.webp">시스템 정리 도구</button>
+                <button class="pill-tab" data-img="synchronize_directories.webp">양방향 디렉토리 동기화</button>
+                <button class="pill-tab" data-img="system_resource_monitor.webp">시스템 하드웨어 모니터</button>
+                <button class="pill-tab" data-img="preferences_settings_dialog.webp">환경 설정</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-system-tools" src="/images/screenshots/disk_usage_analyzer.png" alt="Theme 4" class="gallery-img">
+                <img id="img-system-tools" src="/images/screenshots/disk_usage_analyzer.webp" alt="Theme 4" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -539,18 +587,18 @@
             </div>
 
             <div class="tabs-container" data-target="img-instant-search">
-                <button class="pill-tab active" data-img="find_files_advanced_search.png">고급 복합 검색</button>
-                <button class="pill-tab" data-img="directory_hotlist_bookmarks.png">디렉토리 북마크 즐겨찾기</button>
-                <button class="pill-tab" data-img="directory_history_dropdown.png">탐색 기록 드롭다운</button>
-                <button class="pill-tab" data-img="calculate_directory_sizes.png">폴더 크기 계산</button>
-                <button class="pill-tab" data-img="directory_history_with_menu_bar.png">메뉴 바와 함께하는 역사</button>
+                <button class="pill-tab active" data-img="find_files_advanced_search.webp">고급 복합 검색</button>
+                <button class="pill-tab" data-img="directory_hotlist_bookmarks.webp">디렉토리 북마크 즐겨찾기</button>
+                <button class="pill-tab" data-img="directory_history_dropdown.webp">탐색 기록 드롭다운</button>
+                <button class="pill-tab" data-img="calculate_directory_sizes.webp">폴더 크기 계산</button>
+                <button class="pill-tab" data-img="directory_history_with_menu_bar.webp">메뉴 바와 함께하는 역사</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-instant-search" src="/images/screenshots/find_files_advanced_search.png" alt="Theme 5" class="gallery-img">
+                <img id="img-instant-search" src="/images/screenshots/find_files_advanced_search.webp" alt="Theme 5" class="gallery-img" loading="lazy">
             </div>
 
             <!-- Specs Matrix -->
@@ -677,6 +725,16 @@
             if (e.key === 'Escape' && langSwitcher.hasAttribute('open')) {
                 langSwitcher.removeAttribute('open');
             }
+        });
+    }
+
+    
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    if(mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
         });
     }
 

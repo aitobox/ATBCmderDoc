@@ -10,7 +10,7 @@
     <meta property="og:description" content="Dites adieu aux fenêtres du Finder dispersées et aux déplacements interminables de la souris. Alliant le paradigme classique Commander axé sur le clavier à l'esthétique moderne Retina de macOS, ATBCmder met l'orchestration de fichiers à grande vitesse, l'aperçu universel instantané et la synchronisation distante NAS à portée de main.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cmder.aitobox.com/fr/">
-    <meta property="og:image" content="https://cmder.aitobox.com/images/screenshots/dual_panel_list_and_thumbnails.png">
+    <meta property="og:image" content="https://cmder.aitobox.com/images/screenshots/dual_panel_list_and_thumbnails.webp">
     <style>
         :root {
             --bg-base: #f8fafc;
@@ -327,9 +327,54 @@
             background: none; border: none; color: white; font-size: 2rem; cursor: pointer;
         }
 
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-base: #0f172a;
+                --bg-surface: rgba(15, 23, 42, 0.85);
+                --text-primary: #f8fafc;
+                --text-secondary: #94a3b8;
+                --glass-border: rgba(255, 255, 255, 0.1);
+            }
+            body { background-color: var(--bg-base); }
+            .mac-window { background: #1e293b; border-color: rgba(255,255,255,0.1); }
+            .title-bar { background: #334155; border-bottom-color: rgba(255,255,255,0.1); }
+            .theme-section:nth-child(even) { background-color: #1e293b; }
+            .lang-dropdown summary { background: #1e293b; border-color: #475569; }
+            .lang-menu { background: rgba(30, 41, 59, 0.96); border-color: rgba(255,255,255,0.1); }
+            .lang-item:hover { background: #334155; }
+            .btn-secondary { background: transparent; color: white; border-color: #475569; }
+            .btn-app-store { background-color: var(--text-primary); color: #0f172a; }
+            .btn-app-store:hover { background-color: #e2e8f0; }
+        }
+
+        
+        /* Mobile Navigation */
+        .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary); }
+        
         /* Responsive */
         @media (max-width: 768px) {
-            nav { display: none; }
+            .hamburger { display: block; }
+            .nav-actions-container {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-surface);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 1rem;
+                border-bottom: 1px solid var(--glass-border);
+                gap: 1rem;
+            }
+            .nav-actions-container.active { display: flex; }
+            nav { flex-direction: column; width: 100%; gap: 1rem; }
+            .nav-actions-container .btn-app-store { width: 100%; justify-content: center; }
+            .hero-actions { flex-direction: column; padding: 0 2rem; }
+        }
+
             .hero-actions { flex-direction: column; padding: 0 2rem; }
         }
     </style>
@@ -339,24 +384,26 @@
 <header>
     <div class="container header-content">
         <div class="brand">ATBCmder <span class="version-pill">macOS Native</span></div>
-        <nav>
-            <a href="#dual-panel">Double panneau</a>
-            <a href="#universal-preview">Aperçu universel</a>
-            <a href="#remote-vfs">Système de fichiers distant</a>
-            <a href="#system-tools">Outils système</a>
-            <a href="#instant-search">Recherche instantanée</a>
-        </nav>
-        <div style="display: flex; gap: 0.75rem; align-items: center;">
-            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Télécharger sur le Mac App Store</a>
-            <a href="/guide/fr/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Guide de l'utilisateur</a>
-            <details class="lang-dropdown" id="landing-lang-switcher">
-                <summary aria-label="Select Language">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
-                    <span>Français</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-                </summary>
-                <div class="lang-menu" role="menu">
-                            <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
+        <button class="hamburger" id="mobile-menu-btn" aria-label="Menu">☰</button>
+        <div class="nav-actions-container" id="nav-menu">
+            <nav>
+                <a href="#dual-panel">Double panneau</a>
+                <a href="#universal-preview">Aperçu universel</a>
+                <a href="#remote-vfs">Système de fichiers distant</a>
+                <a href="#system-tools">Outils système</a>
+                <a href="#instant-search">Recherche instantanée</a>
+            </nav>
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Télécharger sur le Mac App Store</a>
+                <a href="/guide/fr/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Guide de l'utilisateur</a>
+                <details class="lang-dropdown" id="landing-lang-switcher">
+                    <summary aria-label="Select Language">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
+                        <span>Français</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                    </summary>
+                    <div class="lang-menu" role="menu">
+                                <a href="/en/" class="lang-item" data-lang="en"><span>English</span></a>
         <a href="/zh/" class="lang-item" data-lang="zh"><span>简体中文</span></a>
         <a href="/zh-hant/" class="lang-item" data-lang="zh-hant"><span>繁體中文</span></a>
         <a href="/ja/" class="lang-item" data-lang="ja"><span>日本語</span></a>
@@ -367,9 +414,10 @@
         <a href="/ko/" class="lang-item" data-lang="ko"><span>한국어</span></a>
         <a href="/ru/" class="lang-item" data-lang="ru"><span>Русский</span></a>
         <a href="/it/" class="lang-item" data-lang="it"><span>Italiano</span></a>
-                </div>
-            </details>
-            <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Nous contacter</a>
+                    </div>
+                </details>
+                <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Nous contacter</a>
+            </div>
         </div>
     </div>
 </header>
@@ -402,7 +450,7 @@
                     <div class="traffic-light green"></div>
                 </div>
             </div>
-            <img src="/images/screenshots/dual_panel_list_and_thumbnails.png" alt="Hero Showcase" class="gallery-img">
+            <img src="/images/screenshots/dual_panel_list_and_thumbnails.webp" alt="Hero Showcase" class="gallery-img" loading="lazy">
         </div>
     </section>
 
@@ -419,19 +467,19 @@
             </div>
 
             <div class="tabs-container" data-target="img-dual-panel">
-                <button class="pill-tab active" data-img="dual_panel_list_and_thumbnails.png">Liste et miniatures</button>
-                <button class="pill-tab" data-img="vertical_split_tree_thumbnails.png">Arborescence + Vignettes</button>
-                <button class="pill-tab" data-img="branch_view_flat_mode.png">Vue de branche (Mode plat)</button>
-                <button class="pill-tab" data-img="horizontal_split_thumbnails.png">Vue en fraction horizontale</button>
-                <button class="pill-tab" data-img="dual_panel_tree_views.png">Deux arborescences indépendantes</button>
-                <button class="pill-tab" data-img="horizontal_split_quick_view.png">Vue rapide horizontale</button>
+                <button class="pill-tab active" data-img="dual_panel_list_and_thumbnails.webp">Liste et miniatures</button>
+                <button class="pill-tab" data-img="vertical_split_tree_thumbnails.webp">Arborescence + Vignettes</button>
+                <button class="pill-tab" data-img="branch_view_flat_mode.webp">Vue de branche (Mode plat)</button>
+                <button class="pill-tab" data-img="horizontal_split_thumbnails.webp">Vue en fraction horizontale</button>
+                <button class="pill-tab" data-img="dual_panel_tree_views.webp">Deux arborescences indépendantes</button>
+                <button class="pill-tab" data-img="horizontal_split_quick_view.webp">Vue rapide horizontale</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-dual-panel" src="/images/screenshots/dual_panel_list_and_thumbnails.png" alt="Theme 1" class="gallery-img">
+                <img id="img-dual-panel" src="/images/screenshots/dual_panel_list_and_thumbnails.webp" alt="Theme 1" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -448,27 +496,27 @@
             </div>
 
             <div class="tabs-container" data-target="img-universal-preview">
-                <button class="pill-tab active" data-img="quick_view_image_preview.png">Coup d'œil</button>
-                <button class="pill-tab" data-img="pdf_document_viewer.png">Document PDF</button>
-                <button class="pill-tab" data-img="excel_spreadsheet_viewer.png">Feuille de calcul Excel</button>
-                <button class="pill-tab" data-img="video_player_viewer.png">Lecture vidéo</button>
-                <button class="pill-tab" data-img="audio_player.png">Lecteur audio</button>
-                <button class="pill-tab" data-img="markdown_viewer_toc.png">Markdown avec plan</button>
-                <button class="pill-tab" data-img="epub_ebook_reader.png">Livre électronique EPUB</button>
-                <button class="pill-tab" data-img="sqlite_database_viewer.png">Base de données SQLite</button>
-                <button class="pill-tab" data-img="image_editor.png">Éditeur d'annotations d'image</button>
-                <button class="pill-tab" data-img="text_file_editor.png">Éditeur de code et de texte</button>
-                <button class="pill-tab" data-img="image_viewer.png">Visionneuse d'images</button>
-                <button class="pill-tab" data-img="word_document_viewer.png">Document Word</button>
-                <button class="pill-tab" data-img="markdown_source_editor.png">Éditeur de source Markdown</button>
-                <button class="pill-tab" data-img="text_file_viewer.png">Visionneuse de texte</button>
+                <button class="pill-tab active" data-img="quick_view_image_preview.webp">Coup d'œil</button>
+                <button class="pill-tab" data-img="pdf_document_viewer.webp">Document PDF</button>
+                <button class="pill-tab" data-img="excel_spreadsheet_viewer.webp">Feuille de calcul Excel</button>
+                <button class="pill-tab" data-img="video_player_viewer.webp">Lecture vidéo</button>
+                <button class="pill-tab" data-img="audio_player.webp">Lecteur audio</button>
+                <button class="pill-tab" data-img="markdown_viewer_toc.webp">Markdown avec plan</button>
+                <button class="pill-tab" data-img="epub_ebook_reader.webp">Livre électronique EPUB</button>
+                <button class="pill-tab" data-img="sqlite_database_viewer.webp">Base de données SQLite</button>
+                <button class="pill-tab" data-img="image_editor.webp">Éditeur d'annotations d'image</button>
+                <button class="pill-tab" data-img="text_file_editor.webp">Éditeur de code et de texte</button>
+                <button class="pill-tab" data-img="image_viewer.webp">Visionneuse d'images</button>
+                <button class="pill-tab" data-img="word_document_viewer.webp">Document Word</button>
+                <button class="pill-tab" data-img="markdown_source_editor.webp">Éditeur de source Markdown</button>
+                <button class="pill-tab" data-img="text_file_viewer.webp">Visionneuse de texte</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-universal-preview" src="/images/screenshots/quick_view_image_preview.png" alt="Theme 2" class="gallery-img">
+                <img id="img-universal-preview" src="/images/screenshots/quick_view_image_preview.webp" alt="Theme 2" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -485,15 +533,15 @@
             </div>
 
             <div class="tabs-container" data-target="img-remote-vfs">
-                <button class="pill-tab active" data-img="manage_network_connections.png">Gestionnaire de connexion</button>
-                <button class="pill-tab" data-img="chinese_ui_samba_remote_share.png">Partage Samba à distance</button>
+                <button class="pill-tab active" data-img="manage_network_connections.webp">Gestionnaire de connexion</button>
+                <button class="pill-tab" data-img="chinese_ui_samba_remote_share.webp">Partage Samba à distance</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-remote-vfs" src="/images/screenshots/manage_network_connections.png" alt="Theme 3" class="gallery-img">
+                <img id="img-remote-vfs" src="/images/screenshots/manage_network_connections.webp" alt="Theme 3" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -510,19 +558,19 @@
             </div>
 
             <div class="tabs-container" data-target="img-system-tools">
-                <button class="pill-tab active" data-img="disk_usage_analyzer.png">Analyseur d'espace disque</button>
-                <button class="pill-tab" data-img="app_uninstaller.png">Désinstallateur d'applications profond</button>
-                <button class="pill-tab" data-img="system_cleaner.png">Nettoyeur de fichiers indésirables du système</button>
-                <button class="pill-tab" data-img="synchronize_directories.png">Synchronisation bidirectionnelle des annuaires</button>
-                <button class="pill-tab" data-img="system_resource_monitor.png">Moniteur du matériel système</button>
-                <button class="pill-tab" data-img="preferences_settings_dialog.png">Préférences et Paramètres</button>
+                <button class="pill-tab active" data-img="disk_usage_analyzer.webp">Analyseur d'espace disque</button>
+                <button class="pill-tab" data-img="app_uninstaller.webp">Désinstallateur d'applications profond</button>
+                <button class="pill-tab" data-img="system_cleaner.webp">Nettoyeur de fichiers indésirables du système</button>
+                <button class="pill-tab" data-img="synchronize_directories.webp">Synchronisation bidirectionnelle des annuaires</button>
+                <button class="pill-tab" data-img="system_resource_monitor.webp">Moniteur du matériel système</button>
+                <button class="pill-tab" data-img="preferences_settings_dialog.webp">Préférences et Paramètres</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-system-tools" src="/images/screenshots/disk_usage_analyzer.png" alt="Theme 4" class="gallery-img">
+                <img id="img-system-tools" src="/images/screenshots/disk_usage_analyzer.webp" alt="Theme 4" class="gallery-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -539,18 +587,18 @@
             </div>
 
             <div class="tabs-container" data-target="img-instant-search">
-                <button class="pill-tab active" data-img="find_files_advanced_search.png">Recherche Composée Avancée</button>
-                <button class="pill-tab" data-img="directory_hotlist_bookmarks.png">Signets de répertoire Liste rapide</button>
-                <button class="pill-tab" data-img="directory_history_dropdown.png">Menu déroulant de l'historique de navigation</button>
-                <button class="pill-tab" data-img="calculate_directory_sizes.png">Calculer la taille des dossiers</button>
-                <button class="pill-tab" data-img="directory_history_with_menu_bar.png">Historique avec barre de menu</button>
+                <button class="pill-tab active" data-img="find_files_advanced_search.webp">Recherche Composée Avancée</button>
+                <button class="pill-tab" data-img="directory_hotlist_bookmarks.webp">Signets de répertoire Liste rapide</button>
+                <button class="pill-tab" data-img="directory_history_dropdown.webp">Menu déroulant de l'historique de navigation</button>
+                <button class="pill-tab" data-img="calculate_directory_sizes.webp">Calculer la taille des dossiers</button>
+                <button class="pill-tab" data-img="directory_history_with_menu_bar.webp">Historique avec barre de menu</button>
             </div>
 
             <div class="mac-window">
                 <div class="title-bar">
                     <div class="traffic-lights"><div class="traffic-light red"></div><div class="traffic-light yellow"></div><div class="traffic-light green"></div></div>
                 </div>
-                <img id="img-instant-search" src="/images/screenshots/find_files_advanced_search.png" alt="Theme 5" class="gallery-img">
+                <img id="img-instant-search" src="/images/screenshots/find_files_advanced_search.webp" alt="Theme 5" class="gallery-img" loading="lazy">
             </div>
 
             <!-- Specs Matrix -->
@@ -677,6 +725,16 @@
             if (e.key === 'Escape' && langSwitcher.hasAttribute('open')) {
                 langSwitcher.removeAttribute('open');
             }
+        });
+    }
+
+    
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    if(mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
         });
     }
 
