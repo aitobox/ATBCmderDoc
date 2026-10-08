@@ -45,6 +45,9 @@ jobs:
       - name: Check Zensical configurations
         run: python3 scripts/generate_configs.py --check
 
+      - name: Check Landing page translation parity
+        run: python3 scripts/build_landing.py --check
+
       - name: Run language detector unit tests
         run: node scripts/test_language_detector.js
 
@@ -54,6 +57,9 @@ jobs:
             echo "Building $lang documentation (zensical.$lang.toml)..."
             zensical build -f "zensical.$lang.toml"
           done
+
+      - name: Build multilingual landing pages
+        run: python3 scripts/build_landing.py
 
       - name: Copy Root Redirect and CNAME
         run: |

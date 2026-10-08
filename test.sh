@@ -201,6 +201,12 @@ for lang in "${LANGS[@]}"; do
     $ZENSICAL_CMD build -f "$CONFIG_FILE"
 done
 
+# Build multilingual landing pages
+if [ -f "scripts/build_landing.py" ] && [ -n "$PYTHON_CMD" ]; then
+    echo -e "${CYAN}-->${NC} Building multilingual landing pages..."
+    $PYTHON_CMD scripts/build_landing.py
+fi
+
 # Copy Root Redirect and CNAME
 echo -e "${CYAN}-->${NC} Setting up root redirect & CNAME metadata..."
 if [ -f root_index.html ]; then
@@ -248,14 +254,14 @@ fi
 SERVER_URL="http://localhost:${PORT}/"
 
 echo ""
-echo -e "${GREEN}======================================================${NC}"
-echo -e "  ${BOLD}ATBCmder Documentation Preview Server Running${NC}"
-echo -e "${GREEN}======================================================${NC}"
+echo -e "${GREEN}========================================================================${NC}"
+echo -e "  ${BOLD}ATBCmder Documentation & Landing Preview Server Running${NC}"
+echo -e "${GREEN}========================================================================${NC}"
 echo -e "  ${BOLD}Root URL (Locale-Aware):${NC}    ${CYAN}${SERVER_URL}${NC}"
 for lang in "${LANGS[@]}"; do
-    printf "  %-24s %b%s%b\n" "${BOLD}${lang} Documentation:${NC}" "${CYAN}" "http://localhost:${PORT}/${lang}/" "${NC}"
+    printf "  %-18s %b%s%b  (Guide: %b%s%b)\n" "${BOLD}${lang}:${NC}" "${CYAN}" "http://localhost:${PORT}/${lang}/" "${NC}" "${CYAN}" "http://localhost:${PORT}/guide/${lang}/" "${NC}"
 done
-echo -e "${GREEN}======================================================${NC}"
+echo -e "${GREEN}========================================================================${NC}"
 echo -e "  Press ${BOLD}Ctrl + C${NC} to stop the server"
 echo ""
 
