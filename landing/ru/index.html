@@ -58,36 +58,37 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
-            padding: 0.75rem 0;
+            padding: 0.65rem 0;
         }
 
         header .container {
-            max-width: 1400px;
+            max-width: 1440px;
+            padding: 0 1.25rem;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .brand {
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             white-space: nowrap;
             flex-shrink: 0;
         }
-        .version-pill { font-size: 0.75rem; background: #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 1rem; color: #475569; }
+        .version-pill { font-size: 0.72rem; background: #e2e8f0; padding: 0.15rem 0.45rem; border-radius: 1rem; color: #475569; }
 
-        nav { display: flex; gap: 1.25rem; align-items: center; }
+        nav { display: flex; gap: 0.9rem; align-items: center; }
         nav a {
             text-decoration: none;
             color: var(--text-secondary);
-            font-size: 0.875rem;
+            font-size: 0.82rem;
             font-weight: 500;
             transition: color 0.2s;
             white-space: nowrap;
@@ -96,7 +97,7 @@
 
         .header-actions {
             display: flex;
-            gap: 0.6rem;
+            gap: 0.5rem;
             align-items: center;
             white-space: nowrap;
             flex-shrink: 0;
@@ -105,14 +106,14 @@
         .btn-app-store {
             background-color: var(--text-primary);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.42rem 0.85rem;
             border-radius: 2rem;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.35rem;
             white-space: nowrap;
             flex-shrink: 0;
             transition: transform 0.2s, background-color 0.2s;
@@ -120,20 +121,21 @@
         .btn-app-store:hover { background-color: #000; transform: scale(1.02); }
 
         /* Language Dropdown */
-        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-dropdown { position: relative; display: inline-block; flex-shrink: 0; }
         .lang-dropdown summary {
             list-style: none;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
-            padding: 0.5rem 0.85rem;
+            gap: 0.25rem;
+            padding: 0.38rem 0.65rem;
             border-radius: 2rem;
             border: 1px solid #cbd5e1;
             background: white;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             color: var(--text-primary);
+            white-space: nowrap;
             transition: all 0.2s;
             user-select: none;
         }
@@ -384,7 +386,7 @@
         .mobile-nav-drawer { display: none; }
 
         /* Responsive */
-        @media (max-width: 1120px) {
+        @media (max-width: 1060px) {
             .desktop-nav { display: none; }
             .header-actions { display: none; }
             .hamburger {
@@ -445,8 +447,11 @@
             <a href="#instant-search">Мгновенный поиск</a>
         </nav>
         <div class="header-actions">
-            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Загрузить в Mac App Store</a>
-            <a href="/guide/ru/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Руководство пользователя</a>
+            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.64-.78 1.08-1.85.96-2.92-.93.04-2.06.62-2.73 1.4-.59.69-1.11 1.78-.97 2.84 1.05.08 2.1-.54 2.74-1.32z"/></svg>
+                <span>Mac App Store</span>
+            </a>
+            <a href="/guide/ru/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Руководство</a>
             <details class="lang-dropdown" id="landing-lang-switcher">
                 <summary aria-label="Select Language">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
@@ -467,7 +472,7 @@
         <a href="/it/" class="lang-item" data-lang="it"><span>Italiano</span></a>
                 </div>
             </details>
-            <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Контакты</a>
+            <a href="mailto:cmder@aitobox.com" style="color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Контакты</a>
         </div>
         <button class="hamburger" id="mobile-menu-btn" aria-label="Menu">☰</button>
     </div>
@@ -480,8 +485,8 @@
             <a href="#instant-search">Мгновенный поиск</a>
         </nav>
         <div class="header-actions-mobile">
-            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Загрузить в Mac App Store</a>
-            <a href="/guide/ru/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Руководство пользователя</a>
+            <a href="https://apps.apple.com/app/atbcmder/id6792398333" target="_blank" rel="noopener noreferrer" class="btn-app-store">Mac App Store</a>
+            <a href="/guide/ru/" class="btn-app-store" style="background-color: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Руководство</a>
             <details class="lang-dropdown">
                 <summary aria-label="Select Language">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2.1l1.1-3h4.7l1.1 3h2.1L18.5 10zm-2.62 7l1.62-4.41L19.12 17h-3.24z"/></svg>
