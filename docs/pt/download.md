@@ -35,6 +35,31 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.3.4 (13/10/2026)
+
+- Reformulação do fluxo de permissões no Sandbox e autorização unificada: Restauração e unificação da autorização da pasta pessoal do usuário (`~`) e de unidades externas (`/Volumes`) em um fluxo de trabalho simplificado de botão único «Conceder permissões»; introdução da elevação inteligente de caminhos que promove automaticamente solicitações de acesso a subpastas para a pasta pessoal ou raiz do volume salvando favoritos com escopo de segurança, eliminando completamente solicitações repetitivas no Sandbox da Mac App Store
+- Internacionalização de botões padrão de diálogo e aprofundamento do catálogo em 31 idiomas: Implementação do tradutor `_GettextQtTranslator` para interceptar e traduzir dinamicamente via gettext botões padrão do Qt (Sim, Não, OK, Cancelar, Salvar, Descartar, Aplicar, Fechar, Abrir, Redefinir) com remoção automática de aceleradores de atalho (`&`); inclusão de recarregamento dinâmico de interface (`retranslate_ui`) nas páginas de preferências (Barra de ferramentas, Teclas de atalho, Abas favoritas, Atualização automática), no Gerenciador de conexões e no Visualizador de filas; atualização e compilação dos catálogos `.po`/`.mo` em todos os 31 idiomas com novos testes automatizados
+
+### 2.3.3 (10/10/2026)
+
+- Reformulação do compactador, arquivamento separado e progresso em streaming: Adicionada a opção «Criar um arquivo compactado separado para cada item selecionado» no diálogo de arquivamento para compactação em lote individual; implementado acompanhamento de progresso em streaming para arquivos grandes (≥1 MB) nos drivers Zip, Tar e 7z; resolução de colisões segura para threads (Substituir, Ignorar, Renomear automaticamente, Cancelar), tolerância a falhas aprimorada e preservação robusta de links simbólicos com traduções sincronizadas em 31 idiomas
+- Geometria da bandeja do sistema e atalho global do macOS blindados: Restauração perfeita de posição, dimensões e estado maximizado da janela ao reativar a partir da bandeja do sistema; menus de contexto da bandeja não trazem mais a janela principal indevidamente para primeiro plano; reformulação do atalho global de exibição/ocultação no macOS normalizando teclas Option e armazenando o contexto de teclas na thread principal para eliminar asserções no macOS Sequoia; alternância dinâmica de minimizar para a bandeja nas Preferências
+- Seletor de unidades e dicas de capacidade do disco enriquecidas: Barra de seleção de unidades atualizada com rótulos de volume nativos e ícones de disco de hardware; dicas de contexto enriquecidas com ponto de montagem, tipo de sistema de arquivos, espaço livre e capacidade total
+- Integridade de compilação Nuitka e testes de fumaça automatizados no pacote: Inclusão de `--include-package=atbcmder` em todos os scripts de compilação Nuitka para eliminar erros `ModuleNotFoundError` em diálogos carregados sob demanda; introduzido modo headless `--smoke-test` integrado aos fluxos de geração de DMG, Mac App Store PKG e CI para garantir pacotes de aplicativos estáveis e sem falhas
+- Lançamento da página oficial multilíngue do produto: Lançamento do site oficial moderno de apresentação do produto com roteador inteligente de idiomas no cliente (suportando português, inglês, chinês, japonês, coreano e outros), destacando a produtividade do painel duplo e o design nativo para macOS
+
+### 2.3.2 (07/10/2026)
+
+- Otimização avançada de memória em tempo de execução PySide6 e compactação de heap no macOS: Implementação de proxy sob demanda para diálogos secundários pesados (`_make_lazy_dialog`) e exportações de módulos PEP 562 para reduzir drasticamente a memória residente; encapsulamento de chamadas Cocoa/PyObjC em `objc.autorelease_pool()` para eliminar acúmulo de memória durante a verificação de etiquetas de cores do Finder; integração da compactação nativa de heap Darwin via `malloc_zone_pressure_relief` em períodos ociosos e no fechamento de diálogos; ThumbnailManager limitado a 4 threads de trabalho com decodificação segura e cache multinível de ícones
+- Restauração do cursor piscante e foco automático no visualizador F3 e editor F4: Correção da perda de foco ao abrir o visualizador de arquivos ou o editor com foco automático no buffer de texto para interação imediata pelo teclado; recuperação do cursor piscante visível de 1px, desacoplamento das configurações de cursor entre visualizador e editor e adição do atalho F6 (`cm_ShowCaret`) para alternar a visibilidade do cursor no Visualizador universal
+- Reforço do ciclo de vida de recursos e documentação atualizada: Adicionado `WA_DeleteOnClose` ao Visualizador universal para garantir a destruição completa do componente e liberação de memória ao fechar; guias de usuário e ilustrações da documentação atualizados
+
+### 2.3.1 (06/10/2026)
+
+- Guia de permissões no Sandbox e reposicionamento inteligente de janelas: Ao solicitar acesso total ao disco (FDA) e abrir os Ajustes do Sistema, o diálogo de integração se redimensiona e se move automaticamente para a esquerda da tela, organizando-se lado a lado com os Ajustes do Sistema do macOS sem sobreposições
+- Instruções passo a passo claras e lembrete de reinício: Mensagens reformuladas com um guia intuitivo em 4 etapas (localizar ou adicionar o ATBCmder, ativar o botão, fechar e reiniciar o aplicativo) com lembretes claros de que o acesso FDA passa a valer após o reinício
+- Tradução em 31 idiomas e sincronização do glossário: Glossário de localização atualizado e catálogos de mensagens recompilados em todos os 31 idiomas suportados, garantindo mensagens acolhedoras e naturais em todo o mundo
+
 ### 2.3.0 (05/10/2026)
 
 - Etiquetas de cores nativas do macOS Finder e sincronização em tempo real: Integração profunda com as APIs macOS Foundation (`NSURLTagNamesKey`) e `NSWorkspace` para exibir etiquetas de pontos coloridos nativos do Finder nos painéis de arquivos; oferece suporte à ordenação pela ordem nativa de cores do Finder com verificação de viewport a cada 2 segundos para sincronização imediata; inclui visibilidade de coluna personalizável nas Preferências e nomes de cores totalmente localizados

@@ -35,6 +35,31 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.3.4 (2026-10-13)
+
+- Sandbox Permission Flow Overhaul & Unified Authorization Workflow: Restored and unified user Home (`~`) and `/Volumes` authorization into a streamlined single-button "Grant Permissions" onboarding workflow; introduced intelligent path promotion that automatically promotes subfolder access requests to the user home or volume root and persists security-scoped bookmarks, completely eliminating repetitive permission prompts under macOS App Store sandbox
+- Dialog Standard Buttons i18n & 31-Language Catalog Deepening: Implemented `_GettextQtTranslator` to dynamically intercept and translate Qt standard buttons (Yes, No, OK, Cancel, Save, Discard, Apply, Close, Open, Reset) via gettext with automatic shortcut accelerator stripping (`&Yes` -> `Yes`); enhanced options pages (Toolbar, Hotkeys, Favorite Tabs, Auto Refresh), Connection Manager, and Queue Viewer with full dynamic UI retranslation (`retranslate_ui`); updated and compiled `.po`/`.mo` catalogs across all 31 supported languages, backed by new automated tests
+
+### 2.3.3 (2026-10-10)
+
+- Packer Overhaul, Separate Archiving & Streaming Progress: Added "Create separate archive for each selected file/folder" in ArchiveDialog to batch-compress multiple items individually; implemented streaming progress tracking for large files (≥1MB) across Zip, Tar, and 7z drivers; introduced thread-safe collision handling (Overwrite, Skip, Auto-Rename, Cancel), enhanced batch error tolerance for damaged items, robustly preserved symlinks, and synchronized 31-language translations
+- System Tray Geometry & macOS Global Hotkey Hardening: Perfectly restored window position, dimensions, and maximized state when unhiding from the system tray; prevented tray context menus from inadvertently bringing the main window to foreground; revamped the macOS global wake/hide hotkey by normalizing Option dead-key characters via virtual keycodes and caching Darwin key contexts on the main thread to eliminate macOS Sequoia background assertions; added dynamic minimize-to-tray toggle in Preferences
+- Drive Selector & Disk Capacity Tooltip Enhancements: Upgraded the drive selector bar with native volume labels and hardware disk icons; enriched tooltip previews with mount points, filesystem types, free disk space, and total capacity statistics
+- Nuitka Build Integrity & Automated Bundle Smoke Tests: Added `--include-package=atbcmder` across all Nuitka build scripts to eliminate runtime `ModuleNotFoundError` caused by lazy-loaded UI dialogs; introduced headless `--smoke-test` verification integrated into DMG, Mac App Store PKG, and CI release workflows to guarantee rock-solid application bundles out of the box
+- Multilingual Official Landing Page Launch: Launched the official modern product showcase website with a smart client-side language router (supporting English, Chinese, Japanese, Korean, and more) highlighting dual-pane productivity and native macOS craftsmanship
+
+### 2.3.2 (2026-10-07)
+
+- PySide6 Runtime Memory Optimization & Darwin Heap Compaction: Implemented lazy proxying for heavyweight secondary dialogs (`_make_lazy_dialog`) and PEP 562 module exports to dramatically reduce resident memory; wrapped Cocoa/PyObjC calls in `objc.autorelease_pool()` to eliminate memory accumulation during Finder color tag polling; added Darwin native heap compaction via `malloc_zone_pressure_relief` on idle timers and dialog closure; bounded ThumbnailManager to 4 worker threads with thread-safe decoding and multi-tier icon caching
+- Restored Blinking Caret & Automatic Focus in F3 Viewer & F4 Editor: Fixed focus loss upon opening the file viewer or editor by automatically focusing the text buffer upon activation for immediate keyboard interaction; restored the visible 1px blinking caret, decoupled viewer and editor caret settings, enabled caret display by default, and added F6 shortcut (`cm_ShowCaret`) to toggle caret visibility in Universal Viewer
+- Resource Lifecycle Hardening & Documentation Updates: Added `WA_DeleteOnClose` to Universal Viewer to guarantee complete widget destruction and memory reclamation on close; updated user guides and illustrative documentation assets
+
+### 2.3.1 (2026-10-06)
+
+- Sandbox Permissions Onboarding & Smart Window Repositioning: When requesting Full Disk Access (FDA) and opening System Settings, the onboarding dialog now automatically resizes and moves to the left portion of the screen, perfectly arranging side-by-side with macOS System Settings without overlap
+- Clear Step-by-Step Guidance & Relaunch Reminders: Redesigned the permission prompt with an intuitive 1-2-3-4 walkthrough (locating or adding ATBCmder, toggling the switch, quitting and restarting the application) and clear reminders that FDA takes effect upon relaunch
+- 31-Language Translation & Glossary Synchronization: Updated the localization glossary and recompiled message catalogs across all 31 supported languages, ensuring natural and helpful onboarding prompts worldwide
+
 ### 2.3.0 (2026-10-05)
 
 - macOS Finder Native Color Tags & Live-Sync: Deeply integrated macOS Foundation APIs (`NSURLTagNamesKey`) and `NSWorkspace` to display native color dot tags in file panels; supports sorting by Finder native color order with 2-second viewport polling for real-time tag synchronization; includes customizable column visibility in Preferences and fully localized color labels

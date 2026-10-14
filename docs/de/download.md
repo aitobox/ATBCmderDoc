@@ -35,6 +35,31 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.3.4 (13.10.2026)
+
+- Überarbeitung der Sandbox-Berechtigungsführung & einheitlicher Autorisierungs-Workflow: Wiederherstellung und Zusammenführung der Autorisierung für das Benutzer-Homeverzeichnis (`~`) und externe Speicher (`/Volumes`) in einen intuitiven Ein-Klick-Workflow („Berechtigungen erteilen“); intelligenter Pfad-Erhöhungsmechanismus stuft Zugriffsanfragen für Unterordner automatisch auf das Stammverzeichnis hoch und speichert sicherheitsbezogene Bookmarks dauerhaft, wodurch wiederholte Berechtigungsabfragen in der macOS-Sandbox vollständig entfallen
+- Lokalisierung von Qt-Standard-Schaltflächen & Ausbau des Katalogs für 31 Sprachen: Implementierung von `_GettextQtTranslator`, um Qt-Standardschaltflächen (Ja, Nein, OK, Abbrechen, Speichern, Verwerfen, Anwenden, Schließen, Öffnen, Zurücksetzen) dynamisch über gettext zu übersetzen und Tastenkürzel-Präfixe (`&`) automatisch zu bereinigen; Erweiterung aller Einstellungsseiten (Symbolleiste, Tastenkürzel, Favoriten-Tabs, Automatische Aktualisierung) sowie des Verbindungsmanagers und der Warteschlangenanzeige um dynamische Sprachumschaltung (`retranslate_ui`); Aktualisierung und Neukompilierung der `.po`/`.mo`-Dateien für alle 31 Sprachen inklusive automatisierter Tests
+
+### 2.3.3 (10.10.2026)
+
+- Packer-Überarbeitung, separates Archivieren & Streaming-Fortschritt: Neue Option „Separates Archiv für jedes ausgewählte Element erstellen“ im Archivdialog für bequemes Stapelpacken; Streaming-Fortschrittsanzeige für große Dateien (≥1 MB) in Zip-, Tar- und 7z-Treibern; threadsichere Dateikonfliktbehandlung (Überschreiben, Überspringen, Automatisches Umbenennen, Abbrechen), Fehlertoleranz und sichere Symlink-Behandlung inklusive Synchronisierung aller 31 Sprachen
+- System-Tray-Geometrie & native globale macOS-Tastenkürzel gehärtet: Zuverlässige Wiederherstellung von Fensterposition, Größe und Maximierungsstatus beim Reaktivieren aus dem Tray; Tray-Kontextmenü stört den Hauptfensterfokus nicht mehr; Optimierung des globalen Aufruf-Tastenkürzels unter macOS mit Normalisierung von Option-Tasten und Hauptthread-Caching zur Vermeidung von macOS Sequoia-Assertionen; dynamischer Tray-Schalter in den Einstellungen
+- Laufwerksauswahl & Tooltips mit Speicherplatzanzeige aufgewertet: Anzeige nativer Volume-Bezeichnungen und System-Laufwerkssymbole direkt in der Laufwerksleiste; ausführliche Tooltip-Vorschau mit Mount-Pfad, Dateisystemtyp, freiem Speicherplatz und Gesamtkapazität
+- Nuitka-Build-Integrität & automatisierte Smoke-Tests: Ergänzung von `--include-package=atbcmder` in allen Build-Skripten beseitigt `ModuleNotFoundError` bei verzögert geladenen Dialogen; neuer Headless-Modus `--smoke-test` testet DMG-, App Store- und CI-Build-Artefakte vollautomatisch auf fehlerfreie Ausführbarkeit
+- Mehrsprachige offizielle Produkt-Landingpage veröffentlicht: Offizieller Webauftritt mit modernem Design und intelligentem Sprach-Router (Deutsch, Englisch, Chinesisch, Japanisch, Koreanisch) zur Präsentation der Zwei-Fenster-Produktivität und der nativen macOS-Ergonomie
+
+### 2.3.2 (07.10.2026)
+
+- PySide6-Laufzeitspeicheroptimierung & Darwin-Heap-Bereinigung: Einführung von Lazy-Proxying für umfangreiche Dialoge (`_make_lazy_dialog`) und PEP 562-Modulexporten zur deutlichen Reduzierung des Speicherbedarfs; Kapselung von Cocoa-Aufrufen in `objc.autorelease_pool()` zur Vermeidung schleichender Speicheranhäufung beim Finder-Tag-Polling; Integration der nativen Darwin-Speicherbereinigung (`malloc_zone_pressure_relief`) im Leerlauf und beim Schließen von Fenstern; Begrenzung des ThumbnailManagers auf 4 Threads sowie intelligentes Icon-Caching
+- Wiederherstellung des blinkenden Cursors & automatischer Fokus in F3-Betrachter und F4-Editor: Behebung von Fokusproblemen beim Öffnen des Betrachters oder Editors durch sofortige Fokussierung des Textpuffers für direkte Tastaturbedienung; Wiederherstellung des 1px blinkenden Cursors, Entkopplung der Cursor-Konfigurationen zwischen Betrachter und Editor sowie Unterstützung der Tastenkombination F6 (`cm_ShowCaret`) zum Umschalten der Cursor-Sichtbarkeit
+- Ressourcen-Lebenszyklus abgesichert & Dokumentation aktualisiert: Zuweisung von `WA_DeleteOnClose` für den Universal-Viewer zur vollständigen Freigabe von Grafikressourcen beim Schließen; Aktualisierung des Benutzerhandbuchs und der Dokumentationsgrafiken
+
+### 2.3.1 (06.10.2026)
+
+- Optimierte Sandbox-Berechtigungsführung & intelligente Fensterplatzierung: Beim Anfordern des Festplattenvollzugriffs (FDA) und Öffnen der Systemeinstellungen passt sich der Dialog automatisch an und positioniert sich am linken Bildschirmrand, sodass er nahtlos neben dem macOS-Einstellungsfenster liegt, ohne dieses zu überdecken
+- Klare Schritt-für-Schritt-Anleitung & Neustart-Hinweis: Vollständig überarbeitete Hinweistexte mit einer einfachen 1-2-3-4-Anleitung (ATBCmder finden oder hinzufügen, Schalter aktivieren, App beenden und neu starten) sowie deutlichem Hinweis auf den erforderlichen Neustart zur Übernahme der Berechtigungen
+- Vollständige Glossar-Aktualisierung & Übersetzungssynchronisierung für 31 Sprachen: Aktualisierung des Übersetzungsglossars und Neukompilierung aller 31 Sprachkataloge (`.po`/`.mo`), um weltweit eine präzise und benutzerfreundliche Berechtigungsführung zu gewährleisten
+
 ### 2.3.0 (05.10.2026)
 
 - Native macOS Finder-Farbetiketten & Live-Synchronisierung: Tiefe Integration von macOS Foundation-APIs (`NSURLTagNamesKey`) und `NSWorkspace` zur Anzeige farbiger Finder-Markierungen in Dateilisten; unterstützt Sortierung nach nativer Finder-Farbreihenfolge, 2-Sekunden-Viewport-Polling für Echtzeit-Tag-Updates, konfigurierbare Spaltensichtbarkeit in den Einstellungen und vollständige Lokalisierung der Farbnamen

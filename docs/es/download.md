@@ -35,6 +35,31 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.3.4 (2026-10-13)
+
+- Renovación del asistente de permisos de sandbox y flujo de autorización unificado: Se restauró e integró la autorización del directorio de inicio (`~`) y de las unidades externas (`/Volumes`) en un flujo de trabajo simplificado con un solo botón («Conceder permisos»); nuevo mecanismo de promoción inteligente de rutas que eleva automáticamente las solicitudes de subcarpetas a la raíz del usuario o del volumen y persiste los marcadores con ámbito de seguridad, eliminando por completo los avisos reiterados de permisos en el sandbox de macOS
+- Traducción nativa de botones de diálogo estándar y refuerzo multilingüe en 31 idiomas: Implementación del traductor `_GettextQtTranslator` para interceptar y traducir dinámicamente mediante gettext los botones estándar de Qt (Sí, No, Aceptar, Cancelar, Guardar, Descartar, Aplicar, Cerrar, Abrir, Restablecer), eliminando los aceleradores de teclado (`&`); incorporación de recarga dinámica de idioma (`retranslate_ui`) en las páginas de preferencias (barra de herramientas, atajos, pestañas favoritas, actualización automática), el administrador de conexiones y el visor de colas; actualización y compilación de los catálogos `.po`/`.mo` para los 31 idiomas con pruebas automatizadas
+
+### 2.3.3 (2026-10-10)
+
+- Renovación del compresor, archivado independiente y progreso en streaming: Opción «Crear un archivo comprimido independiente para cada elemento seleccionado» para empaquetar por lotes; seguimiento fluido del progreso en streaming para archivos grandes (≥1 MB) en Zip, Tar y 7z; resolución de colisiones segura para subprocesos (Sobrescribir, Omitir, Autorrenombrar, Cancelar), tolerancia a fallos y gestión fiable de enlaces simbólicos, con traducción en 31 idiomas
+- Restauración desde la bandeja del sistema y atajo global de macOS blindado: Restauración exacta de posición, tamaño y estado maximizado de la ventana al reactivarse desde la bandeja; el menú contextual no activa indebidamente la ventana principal; optimización del atajo global de apertura/ocultación en macOS con normalización de la tecla Option y caché en el hilo principal para erradicar aserciones en macOS Sequoia; opción dinámica de minimizar a la bandeja en Preferencias
+- Selector de unidades y ventanas de información de volumen mejoradas: Muestra etiquetas de volumen nativas e iconos de disco de hardware en la barra de unidades; cuadros emergentes detallados con punto de montaje, sistema de archivos, espacio libre y capacidad total
+- Integridad de compilación con Nuitka y pruebas de humo automatizadas: Inclusión de `--include-package=atbcmder` en todos los scripts de compilación para suprimir errores `ModuleNotFoundError` con diálogos de carga diferida; nuevo modo `--smoke-test` headless integrado en la generación de DMG, PKG de App Store e integración continua para garantizar paquetes infalibles
+- Estreno de la página web oficial multilingüe: Publicación del portal web oficial con enrutamiento inteligente de idiomas (español, inglés, chino, japonés, coreano) para mostrar la potencia del gestor de doble panel y la experiencia nativa en macOS
+
+### 2.3.2 (2026-10-07)
+
+- Optimización avanzada de memoria en tiempo de ejecución de PySide6 y compactación de memoria en macOS: Implementación de carga diferida mediante proxys (`_make_lazy_dialog`) y exportaciones PEP 562 para reducir drásticamente el consumo de memoria residente; encapsulación de llamadas a Cocoa/PyObjC en `objc.autorelease_pool()` para erradicar la fuga gradual de memoria durante el sondeo de etiquetas de Finder; integración del mecanismo nativo Darwin `malloc_zone_pressure_relief` para compactar el montón y devolver memoria al sistema en reposo o al cerrar ventanas; limitación de hilos del generador de miniaturas a 4 y optimización de caché de iconos
+- Restauración del cursor parpadeante y foco automático en el visor F3 y editor F4: Corrección de la pérdida de foco al abrir el visor y editor, situando automáticamente el foco en el búfer de texto para permitir la edición o navegación inmediata con el teclado; recuperación del cursor parpadeante de 1px visible, desacoplamiento de las opciones de cursor entre visor y editor, y atajo F6 (`cm_ShowCaret`) para alternar la visibilidad del cursor en el visor universal
+- Refuerzo del ciclo de vida de recursos y actualización de documentación: Incorporación del atributo `WA_DeleteOnClose` en el visor universal para garantizar la destrucción total del componente al cerrarse; actualización del manual de usuario y capturas ilustrativas
+
+### 2.3.1 (2026-10-06)
+
+- Optimización de la guía de permisos de sandbox y reposicionamiento inteligente de ventana: Al solicitar acceso total al disco (FDA) y abrir Ajustes del Sistema, el diálogo se redimensiona y se desplaza automáticamente hacia la izquierda de la pantalla, situándose en paralelo con la ventana de macOS sin solapamientos
+- Guía paso a paso clara y recordatorio de reinicio: Mensajes rediseñados con instrucciones numeradas del 1 al 4 (localizar o añadir ATBCmder, activar el interruptor, cerrar y reiniciar la aplicación) recordando con claridad que los permisos surten efecto tras el reinicio
+- Sincronización del glosario y catálogos de traducción en 31 idiomas: Actualización exhaustiva del glosario de términos y recompilación de los catálogos `.po` y `.mo` para los 31 idiomas admitidos, ofreciendo una experiencia de bienvenida impecable en todo el mundo
+
 ### 2.3.0 (2026-10-05)
 
 - Etiquetas de color nativas de macOS Finder y sincronización en vivo: Profunda integración con las API macOS Foundation (`NSURLTagNamesKey`) y `NSWorkspace` para mostrar etiquetas de puntos de color nativas de Finder en las listas de archivos; soporte para ordenación según la secuencia de colores de Finder, sondeo del viewport cada 2 segundos para sincronización en tiempo real, visibilidad de columna configurable en Preferencias y localización completa de los nombres de colores

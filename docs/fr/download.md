@@ -35,6 +35,31 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.3.4 (13/10/2026)
+
+- Refonte de l'intégration des autorisations sandbox et flux d'autorisation unifié : Restauration et fusion de l'autorisation du dossier personnel (`~`) et des volumes externes (`/Volumes`) au sein d'un flux ergonomique à bouton unique (« Accorder les autorisations ») ; introduction d'un mécanisme de promotion de chemin qui élève automatiquement les requêtes d'accès des sous-dossiers vers la racine personnelle ou le volume et mémorise les signets de sécurité (security-scoped bookmarks), éliminant définitivement les invites d'autorisation répétées sous le bac à sable macOS
+- Traduction native des boutons de dialogue standard et approfondissement des 31 langues : Implémentation du traducteur `_GettextQtTranslator` pour intercepter et traduire dynamiquement via gettext les boutons standard Qt (Oui, Non, OK, Annuler, Enregistrer, Ne pas enregistrer, Appliquer, Fermer, Ouvrir, Réinitialiser) tout en supprimant les accélérateurs de raccourcis (`&`) ; ajout de la réactualisation dynamique de la langue (`retranslate_ui`) dans les préférences (barre d'outils, raccourcis, onglets favoris, rafraîchissement automatique), le gestionnaire de connexions et le visualiseur de file d'attente ; mise à jour et compilation des catalogues `.po`/`.mo` pour les 31 langues avec tests automatisés
+
+### 2.3.3 (10/10/2026)
+
+- Refonte de la compression, archivage individuel et progression en continu : Ajout de l'option « Créer une archive distincte pour chaque élément sélectionné » permettant de compresser individuellement plusieurs éléments par lot ; suivi de progression en continu pour les gros fichiers (≥1 Mo) sur Zip, Tar et 7z ; gestion thread-safe des conflits de fichiers (Écraser, Ignorer, Renommer automatiquement, Annuler), tolérance aux erreurs et préservation des liens symboliques avec traduction dans les 31 langues
+- Restauration depuis la zone de notification et raccourci global macOS fiabilisé : Restauration exacte de la géométrie, de la position et de l'état maximisé de la fenêtre lors de la réactivation depuis la barre des menus/notification ; le menu contextuel du tray n'active plus indûment la fenêtre principale ; fiabilisation du raccourci global de bascule sous macOS par normalisation des touches Option et mise en cache sur le thread principal (évitant les assertions sous macOS Sequoia) ; bascule dynamique dans les Préférences
+- Sélecteur de lecteurs et infobulles détaillées des volumes : Intégration des noms de volumes natifs et des icônes de disques matériels dans la barre des lecteurs ; infobulles enrichies indiquant le point de montage, le système de fichiers, l'espace libre et la capacité totale
+- Intégrité des paquets Nuitka et tests de fumée automatisés : Ajout de `--include-package=atbcmder` dans tous les scripts de compilation pour éliminer définitivement toute erreur `ModuleNotFoundError` liée aux dialogues différés ; intégration d'un mode de validation sans tête `--smoke-test` exécuté automatiquement sur les DMG, PKG App Store et pipelines CI
+- Lancement de la page de présentation multilingue : Déploiement du site officiel de présentation du produit avec routeur linguistique intelligent (français, anglais, chinois, japonais, coréen) mettant en valeur la productivité du double panneau et l'intégration macOS
+
+### 2.3.2 (07/10/2026)
+
+- Optimisation de la mémoire d'exécution PySide6 et compactage du tas sous macOS : Mise en place du chargement différé (lazy proxying) des dialogues secondaires volumineux (`_make_lazy_dialog`) et des exports PEP 562 pour alléger l'empreinte mémoire résidente ; isolation des appels Cocoa/PyObjC dans `objc.autorelease_pool()` éliminant toute accumulation de mémoire lors de la scrutation des étiquettes Finder ; intégration du compactage natif Darwin via `malloc_zone_pressure_relief` lors des périodes d'inactivité et à la fermeture des fenêtres ; limitation du gestionnaire de vignettes à 4 threads avec cache d'icônes optimisé
+- Curseur clignotant rétabli et focus automatique dans le visualiseur F3 et l'éditeur F4 : Correction des pertes de focus à l'ouverture en positionnant immédiatement le curseur dans la zone de texte pour une frappe instantanée au clavier ; rétablissement du curseur clignotant net de 1px, séparation des paramètres de curseur entre le visualiseur et l'éditeur, et ajout du raccourci F6 (`cm_ShowCaret`) pour basculer l'affichage du curseur dans le visualiseur universel
+- Sécurisation du cycle de vie des ressources et documentation à jour : Configuration de l'attribut `WA_DeleteOnClose` sur le visualiseur universel afin de libérer intégralement les ressources graphiques à la fermeture ; mise à jour du guide d'utilisation et des illustrations
+
+### 2.3.1 (06/10/2026)
+
+- Optimisation du guidage des permissions de sandbox et repositionnement intelligent : Lors de la demande d'accès complet au disque (FDA) et de l'ouverture des Réglages Système, le dialogue d'accueil s'ajuste et se déplace automatiquement sur la gauche de l'écran, s'affichant côte à côte avec la fenêtre macOS sans aucun chevauchement
+- Guide pas-à-pas limpide et rappel de redémarrage : Refonte complète des messages d'aide avec un guide numéroté en 4 étapes (repérer ou ajouter ATBCmder, activer le bouton, fermer et relancer l'application) rappelant clairement que l'accès complet prend effet après redémarrage
+- Synchronisation du glossaire et des 31 langues : Mise à jour du glossaire de localisation et recompilation de l'ensemble des catalogues `.po` et `.mo` pour les 31 langues prises en charge, garantissant une expérience fluide et soignée à l'international
+
 ### 2.3.0 (05/10/2026)
 
 - Étiquettes de couleur natives macOS Finder et synchronisation en direct : Intégration avancée des API Foundation (`NSURLTagNamesKey`) et `NSWorkspace` pour afficher les pastilles de couleur Finder dans les panneaux de fichiers ; prend en charge le tri selon l'ordre natif de Finder, la détection en direct via scrutation toutes les 2 secondes, le masquage/affichage personnalisable dans les Préférences et la localisation complète des noms de couleurs
