@@ -85,5 +85,18 @@
   "conversion_title": "准备好升级你的 Mac 文件管理体验了吗？",
   "conversion_btn_appstore": "在 Mac App Store 下载",
   "conversion_btn_guide": "用户指南",
-  "footer_copyright": "© 2026 ATBCmder. All rights reserved."
+  "footer_copyright": "© 2026 ATBCmder. All rights reserved.",
+  "nav_pricing": "价格",
+  "theme6_title": "透明清晰，一次购买。告别反复订阅，永久拥抱极客效率。",
+  "theme6_desc": "全功能免费试用 90 天，充分体验毫无保留。单次购买即可绑定 Apple 账号永久授权，并在您的多台 Mac 设备上通用。",
+  "pricing_tier_title": "ATBCmder 专业版",
+  "pricing_tier_badge": "终身买断",
+  "pricing_price": "¥48.00",
+  "pricing_price_sub": "一次性购买 · 永久授权使用",
+  "pricing_feat_1": "免费试用 90 天 — 毫无保留体验全部 Pro 高级特性，试用期内无任何功能限制",
+  "pricing_feat_2": "绑定 Apple 账号 — 授权直接与 Apple ID 关联，依托 Mac App Store 安全托管，无需注册额外账户",
+  "pricing_feat_3": "一经购买，永久授权 — 终身享有 Pro 权益与后续功能更新，告别令人厌烦的按月循环扣费",
+  "pricing_feat_4": "支持多台设备授权 — 同一 Apple ID 下的所有 Mac 设备均可通用，并完全支持家人共享",
+  "pricing_btn_cta": "在 Mac App Store 获取专业版",
+  "pricing_guarantee_note": "经由 Apple 官方安全结算 · 即买即用 · 支持家人共享"
 }

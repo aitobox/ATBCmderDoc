@@ -85,5 +85,18 @@
   "conversion_title": "準備好升級你的 Mac 檔案管理體驗了嗎？",
   "conversion_btn_appstore": "在 Mac App Store 下載",
   "conversion_btn_guide": "使用指南",
-  "footer_copyright": "© 2026 ATBCmder. All rights reserved."
+  "footer_copyright": "© 2026 ATBCmder. All rights reserved.",
+  "nav_pricing": "價格",
+  "theme6_title": "透明清晰，一次購買。告別反覆訂閱，永久擁抱極客效率。",
+  "theme6_desc": "全功能免費試用 90 天，充分體驗毫無保留。單次購買即可綁定 Apple 帳號永久授權，並在您的多台 Mac 裝置上通用。",
+  "pricing_tier_title": "ATBCmder 專業版",
+  "pricing_tier_badge": "終身買斷",
+  "pricing_price": "NT$ 220",
+  "pricing_price_sub": "一次性購買 · 永久授權使用",
+  "pricing_feat_1": "免費試用 90 天 — 毫無保留體驗全部 Pro 高級特性，試用期內無任何功能限制",
+  "pricing_feat_2": "綁定 Apple 帳號 — 授權直接與 Apple ID 關聯，依託 Mac App Store 安全託管，無需註冊額外帳戶",
+  "pricing_feat_3": "一經購買，永久授權 — 終身享有 Pro 權益與後續功能更新，告別令人厭煩的按月循環扣費",
+  "pricing_feat_4": "支援多台裝置授權 — 同一 Apple ID 下的所有 Mac 裝置均可通用，並完全支援家人共享",
+  "pricing_btn_cta": "在 Mac App Store 獲取專業版",
+  "pricing_guarantee_note": "經由 Apple 官方安全結算 · 即買即用 · 支援家人共享"
 }

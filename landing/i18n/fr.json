@@ -85,5 +85,18 @@
   "conversion_title": "Prêt à révolutionner votre flux de gestion de fichiers sur Mac ?",
   "conversion_btn_appstore": "Télécharger sur le Mac App Store",
   "conversion_btn_guide": "Guide de l'utilisateur",
-  "footer_copyright": "© 2026 ATBCmder. All rights reserved."
+  "footer_copyright": "© 2026 ATBCmder. All rights reserved.",
+  "nav_pricing": "Tarifs",
+  "theme6_title": "Un tarif unique et transparent. Aucun abonnement, jamais.",
+  "theme6_desc": "Profitez d'un essai gratuit complet de 90 jours. Un achat unique lié à votre identifiant Apple pour une licence perpétuelle sur tous vos Mac.",
+  "pricing_tier_title": "ATBCmder Pro",
+  "pricing_tier_badge": "Licence perpétuelle",
+  "pricing_price": "7,99 €",
+  "pricing_price_sub": "Achat unique · Utilisation à vie",
+  "pricing_feat_1": "Essai gratuit complet de 90 jours — Accès illimité à toutes les fonctionnalités Pro sans engagement préalable",
+  "pricing_feat_2": "Lié à votre identifiant Apple — Gestion transparente via le Mac App Store, sans inscription sur un compte tiers",
+  "pricing_feat_3": "Achat unique, licence à vie — Aucun abonnement récurrent ; toutes les futures mises à jour incluses",
+  "pricing_feat_4": "Autorisation multi-postes — Valable sur tous vos Mac avec le même identifiant Apple et le partage familial",
+  "pricing_btn_cta": "Obtenir ATBCmder Pro sur le Mac App Store",
+  "pricing_guarantee_note": "Paiement sécurisé via Apple · Activation immédiate · Partage familial pris en charge"
 }

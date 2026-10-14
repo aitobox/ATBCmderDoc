@@ -85,5 +85,18 @@
   "conversion_title": "Macのファイル管理の作業フローを革命的に変える準備はできていますか？",
   "conversion_btn_appstore": "Mac App Storeでダウンロード",
   "conversion_btn_guide": "ユーザーガイド",
-  "footer_copyright": "© 2026 ATBCmder. All rights reserved."
+  "footer_copyright": "© 2026 ATBCmder. All rights reserved.",
+  "nav_pricing": "価格",
+  "theme6_title": "明瞭な買い切り価格。サブスクリプションは一切不要。",
+  "theme6_desc": "90日間の全機能無料トライアル。1回の購入でApple IDに紐づく永久ライセンスを獲得し、複数のMacで自由にお使いいただけます。",
+  "pricing_tier_title": "ATBCmder Pro",
+  "pricing_tier_badge": "永久ライセンス",
+  "pricing_price": "¥1,100",
+  "pricing_price_sub": "買い切り · 一度の支払いで永久利用",
+  "pricing_feat_1": "90日間の無料トライアル — すべてのPro機能を制限なく存分にお試しいただけます",
+  "pricing_feat_2": "Apple IDに直接紐付け — サードパーティ登録不要、Mac App Storeで安全にライセンスを一元管理",
+  "pricing_feat_3": "一度の購入で永久ライセンス — 月額課金なし。将来のアップデートもそのまま永久にご利用可能",
+  "pricing_feat_4": "複数台のMacを認証可能 — 同じApple IDを使用するすべてのMacおよびファミリー共有に対応",
+  "pricing_btn_cta": "Mac App Store で ATBCmder Pro を入手",
+  "pricing_guarantee_note": "Apple公式の安全な決済 · 即時アクティベーション · ファミリー共有対応"
 }

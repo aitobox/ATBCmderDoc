@@ -85,5 +85,18 @@
   "conversion_title": "Ready to revolutionize your Mac file management workflow?",
   "conversion_btn_appstore": "Download on Mac App Store",
   "conversion_btn_guide": "User Guide",
-  "footer_copyright": "© 2026 ATBCmder. All rights reserved."
+  "footer_copyright": "© 2026 ATBCmder. All rights reserved.",
+  "nav_pricing": "Pricing",
+  "theme6_title": "Transparent, One-Time Pricing. No Subscriptions, Ever.",
+  "theme6_desc": "Experience all professional features with a 90-day unrestricted free trial. One purchase grants lifetime authorization across all your Mac devices.",
+  "pricing_tier_title": "ATBCmder Pro",
+  "pricing_tier_badge": "Lifetime License",
+  "pricing_price": "$6.99",
+  "pricing_price_sub": "One-time purchase · Lifetime ownership",
+  "pricing_feat_1": "90-Day Free Trial — Full access to all Pro features with zero upfront commitment",
+  "pricing_feat_2": "Tied to Your Apple ID — Seamless license management via the Mac App Store without third-party registration",
+  "pricing_feat_3": "One-Time Purchase, Lifetime License — Buy once and own forever; all future updates included without monthly fees",
+  "pricing_feat_4": "Multi-Machine Authorization — Run on all your Mac computers under the same Apple ID and Family Sharing",
+  "pricing_btn_cta": "Get ATBCmder Pro on Mac App Store",
+  "pricing_guarantee_note": "Secure checkout through Apple · Instant activation · Family Sharing supported"
 }

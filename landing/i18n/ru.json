@@ -85,5 +85,18 @@
   "conversion_title": "Готовы революционизировать вашу работу с файлами на Mac?",
   "conversion_btn_appstore": "Загрузить в Mac App Store",
   "conversion_btn_guide": "Руководство пользователя",
-  "footer_copyright": "© 2026 ATBCmder. All rights reserved."
+  "footer_copyright": "© 2026 ATBCmder. All rights reserved.",
+  "nav_pricing": "Цены",
+  "theme6_title": "Прозрачная разовая покупка. Навсегда без подписок.",
+  "theme6_desc": "Полнофункциональный бесплатный пробный период на 90 дней. Разовая покупка привязывается к Apple ID, давая пожизненную лицензию для всех ваших Mac.",
+  "pricing_tier_title": "ATBCmder Pro",
+  "pricing_tier_badge": "Пожизненная лицензия",
+  "pricing_price": "599 ₽",
+  "pricing_price_sub": "Разовый платёж · Бессрочное использование",
+  "pricing_feat_1": "90 дней бесплатного пробного периода — Полный доступ ко всем возможностям Pro без каких-либо ограничений",
+  "pricing_feat_2": "Привязка к Apple ID — Безопасное управление лицензией через Mac App Store без сторонней регистрации",
+  "pricing_feat_3": "Разовая покупка, бессрочная лицензия — Без ежемесячных подписок; включает все будущие обновления",
+  "pricing_feat_4": "Авторизация на нескольких Mac — Работает на всех ваших компьютерах под одним Apple ID и с семейным доступом",
+  "pricing_btn_cta": "Получить ATBCmder Pro в Mac App Store",
+  "pricing_guarantee_note": "Безопасная оплата через Apple · Мгновенная активация · Поддержка семейного доступа"
 }
