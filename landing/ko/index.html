@@ -312,9 +312,14 @@
         .spec-card {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 16px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .spec-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
         }
         .spec-card h3 { margin-bottom: 1rem; color: var(--text-primary); }
         .spec-card p { font-size: 1rem; color: var(--text-secondary); margin: 0; }
@@ -499,6 +504,10 @@
             }
             .pricing-price-box {
                 border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+            .spec-card {
+                background: #1e293b;
+                border-color: rgba(255, 255, 255, 0.1);
             }
         }
 
@@ -814,26 +823,6 @@
                 </div>
                 <img id="img-instant-search" src="/images/screenshots/find_files_advanced_search.webp" alt="Theme 5" class="gallery-img" loading="lazy">
             </div>
-
-            <!-- Specs Matrix -->
-            <div class="spec-matrix">
-                <div class="spec-card">
-                    <h3>듀얼 아키텍처 네이티브 지원</h3>
-                    <p>Apple Silicon(M1–M4)과 Intel x86_64에 대해 완전히 최적화됨.</p>
-                </div>
-                <div class="spec-card">
-                    <h3>시스템 호환성</h3>
-                    <p>macOS 12.0(몬테레이)부터 macOS 15+(세쿼이아)까지 호환됩니다.</p>
-                </div>
-                <div class="spec-card">
-                    <h3>공식 애플 보안</h3>
-                    <p>Mac App Store 샌드박싱, Apple 인증, 자동 무음 백그라운드 업데이트.</p>
-                </div>
-                <div class="spec-card">
-                    <h3>듀얼 핫키 스킴</h3>
-                    <p>클래식 토탈 커맨더(F3–F10)와 macOS 기본(Cmd/Opt) 키보드 레이아웃 간을 원활하게 전환하세요.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -884,6 +873,26 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                         <span>Apple 공식 보안 결제 · 즉각 활성화 · 가족 공유 지원</span>
                     </div>
+                </div>
+            </div>
+
+            <!-- Specs Matrix -->
+            <div class="spec-matrix">
+                <div class="spec-card">
+                    <h3>듀얼 아키텍처 네이티브 지원</h3>
+                    <p>Apple Silicon(M1–M4)과 Intel x86_64에 대해 완전히 최적화됨.</p>
+                </div>
+                <div class="spec-card">
+                    <h3>시스템 호환성</h3>
+                    <p>macOS 12.0(몬테레이)부터 macOS 15+(세쿼이아)까지 호환됩니다.</p>
+                </div>
+                <div class="spec-card">
+                    <h3>공식 애플 보안</h3>
+                    <p>Mac App Store 샌드박싱, Apple 인증, 자동 무음 백그라운드 업데이트.</p>
+                </div>
+                <div class="spec-card">
+                    <h3>듀얼 핫키 스킴</h3>
+                    <p>클래식 토탈 커맨더(F3–F10)와 macOS 기본(Cmd/Opt) 키보드 레이아웃 간을 원활하게 전환하세요.</p>
                 </div>
             </div>
         </div>
