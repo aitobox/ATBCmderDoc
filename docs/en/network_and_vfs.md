@@ -78,7 +78,7 @@ Depending on the operational domain, `vfs://` URIs take one of two standard form
    vfs://webdavs://user@cloud.mycompany.com:443/remote.php/dav/files/user/
    ```
 
-   - **Scheme Specifier**: Identifies the transport driver (`sftp`, `ftp`, `ftps`, `smb`, `webdav`, `webdavs`, `gdrive`).
+   - **Scheme Specifier**: Identifies the transport driver (`sftp`, `ftp`, `ftps`, `smb`, `webdav`, `webdavs`, `gdrive`, `dropbox`).
    - **Authentication**: Encodes user credentials and target port.
    - **Remote Target**: Resolves absolute directory and file paths on the remote host.
 
@@ -274,6 +274,7 @@ ATBCmder includes a multi-protocol network client engine capable of mounting, br
 | **`webdav://`** | `80` | HTTP WebDAV | Basic, Digest Authentication | Web servers, local network storage |
 | **`webdavs://`** | `443` | HTTPS WebDAV | SSL-Encrypted Basic / Digest Auth | Nextcloud, ownCloud, commercial cloud storage |
 | **`gdrive://`** | `443` | Google Drive API | OAuth2 Token Authorization | Google Drive cloud drives and shared folders |
+| **`dropbox://`** | `443` | Dropbox API v2 | OAuth2 Token Authorization | Dropbox personal and team cloud folders |
 
 ---
 
@@ -313,6 +314,290 @@ Built on `webdavclient3`, this driver provides bidirectional file synchronizatio
 
 ---
 
+### 6.3 Google Drive Cloud Storage: Plain-English Setup Guide
+
+Managing Google Drive through a web browser often feels sluggish when uploading large files or organizing dozens of nested folders. Furthermore, the official Google Drive desktop app typically tries to sync entire folder trees to your local Mac SSD, consuming valuable storage space.
+
+ATBCmder solves this by treating **Google Drive as a live virtual drive (`gdrive://`)**. You can browse your remote Google Drive folders directly inside the dual-panel interface, preview cloud files with `F3`, and copy files between your Mac and Google Drive with `F5`—**without downloading your entire cloud drive to your computer**.
+
+![Google Drive Connection Setup and Cloud Browsing](images/network_vfs_gdrive.png)  
+*Figure 6.5: Connecting to Google Drive via Connection Manager with OAuth2 client credentials and browsing cloud files alongside local folders in the dual-panel view.*
+
+#### Why Do I Need a "Client ID" and "Client Secret"?
+To protect your privacy and security, Google does not permit third-party desktop apps to ask for your Google account password directly. Instead, Google uses **OAuth 2.0 authorization**.
+
+By creating your own free OAuth credentials in the Google Cloud Console:
+
+- **100% Private & Direct**: Your data flows directly between your Mac and Google's official servers. No third party or intermediary server ever sees your files or credentials.
+- **Dedicated Speed & Quota**: You get your own private API bandwidth without sharing rate limits with thousands of other users.
+- **Revocable Anytime**: You remain in total control. You can revoke ATBCmder's access with a single click in your Google Account security dashboard at any time.
+
+Setting this up takes **less than 3 minutes**, and you only ever have to do it once!
+
+---
+
+#### Step 1: Create Free Credentials in Google Cloud (Takes 2 Minutes)
+
+1. Open [Google Cloud Console — Credentials](https://console.cloud.google.com/apis/credentials) in your web browser and sign in with your Google account.
+2. **Select or Create a Project**:
+   - At the top of the page, click the organization / project dropdown.
+   - *(Tip for Organizations: If you have a Google Workspace or Cloud Identity organization such as `aitobox.com`, select that organization in the dropdown so the project is created under your company domain).*
+   - If you do not have a project yet, click **New Project**, name it anything you like (e.g., `ATBCmder`), and click **Create**.
+3. **Enable the Google Drive API**:
+   - In the left sidebar or top search bar, go to **Enabled APIs & services** (or click **+ ENABLE APIS AND SERVICES**).
+   - Search for **Google Drive API**, click it, and click the blue **Enable** button.
+4. **Configure the OAuth Consent Screen** *(if prompted)*:
+   - If this is your first time creating credentials, Google may prompt you to configure the consent screen:
+     - Select **External** and click **Create**.
+     - Fill in an **App name** (e.g., `ATBCmder`) and enter your email address for user support and developer contact.
+     - Under **App domain**, set the **Application home page** to your site (e.g., `https://cmder.aitobox.com`).
+     - Under **Authorized domains**, add your root domain (e.g., `aitobox.com`).
+     - Click **Save and Continue** through the remaining screens.
+5. **Create your Desktop Credentials**:
+   - Return to **APIs & Services ➔ Credentials**.
+   - Click **+ Create Credentials** at the top of the screen and choose **OAuth client ID**.
+   - In the **Application type** dropdown, select **Desktop app** (桌面应用).
+   - In the **Name** field, enter `ATBCmder Desktop` (or any friendly name).
+   - Click **Create**.
+6. **Copy Your Keys**:
+   - A dialog will appear displaying your **Client ID** (ending in `.apps.googleusercontent.com`) and your **Client Secret**.
+   - Copy both strings (or keep the browser tab open—you can also view or copy them at any time later from the Credentials page).
+
+---
+
+#### Custom Branding: Understanding "Access Granted To" (访问权限授予对象)
+
+When you view connected third-party applications in your Google Account security center ([myaccount.google.com/connections](https://myaccount.google.com/connections)), Google displays an App Details card for ATBCmder:
+
+- **App Name**: `ATBCmder`
+- **Access granted to (访问权限授予对象)**: e.g., `aitobox.com` or `oplist.org`
+- **Homepage (首页)**: `https://cmder.aitobox.com`
+
+##### Why Does Google Show a Specific Organization Name?
+The **"Access granted to" (访问权限授予对象)** line is automatically determined by Google based on the **Google Cloud Organization** (or Google Workspace account) that owns the GCP project where your OAuth Client ID was created:
+
+- If your Client ID was created in a Google Cloud project under a third-party organization (such as `oplist.org`), Google will show that organization's domain to notify the user who owns the API client.
+- If the project was created under a personal Google account, Google displays your developer contact identity.
+
+##### How to Set the Granted Organization to Your Own Domain (e.g., `aitobox.com`)
+If you want Google's account security dashboard to display your own custom company domain (such as `aitobox.com`):
+
+1. **Create the Project under your Domain Organization**:
+   - In [Google Cloud Console](https://console.cloud.google.com/), log in with an account belonging to your company domain (e.g., `admin@aitobox.com`).
+   - In the top organization dropdown, ensure your domain (e.g., `aitobox.com`) is selected before creating the project.
+2. **Configure App Domain in OAuth Consent Screen**:
+   - Go to **APIs & Services ➔ OAuth consent screen**.
+   - Set **Application home page** to your official product page (e.g., `https://cmder.aitobox.com`).
+   - Add your root domain under **Authorized domains** (e.g., `aitobox.com`).
+   - Set your **User support email** and **Developer contact email** to your domain address.
+3. **Generate a New Desktop App Client ID**:
+   - Go to **APIs & Services ➔ Credentials** and create a new **OAuth client ID** of type **Desktop app**.
+4. **Update Keys in ATBCmder**:
+   - Paste the new Client ID and Client Secret into ATBCmder's Connection Manager, then click **Authorize / Re-authorize**.
+   - Google will now display your company domain (`aitobox.com`) as the granted recipient in your account security settings!
+
+---
+
+#### Step 2: Add Google Drive in ATBCmder
+
+Now that you have your keys, connecting ATBCmder takes just a few clicks:
+
+1. In ATBCmder, open **Network ➔ Manage Connections...** from the top menu bar.
+2. Click the **`+ New`** button in the lower-left corner to start a new profile.
+3. In the **Connection Details** form on the right:
+   - **Label**: Enter a memorable name (e.g., `Google Drive` or `Work Drive`).
+   - **Protocol**: Select **`gdrive`** from the dropdown menu.
+   - **Client ID**: Paste the Client ID you copied from Google Cloud.
+   - **Client Secret**: Paste the Client Secret you copied from Google Cloud.
+   - *(Optional tip: You can also click the blue helper link `Create OAuth 2.0 credentials in Google Cloud Console` directly below the secret field to jump to Google Cloud at any time).*
+4. Click the **Authorize** (or **Re-authorize...**) button.
+   - ATBCmder will automatically open your default web browser to Google's official sign-in page.
+   - **Important Security Warning Prompt (Normal & Expected)**:  
+     Because you created a private developer client ID in your own Google Cloud project rather than downloading a commercial marketplace application, Google will display a security warning screen stating *"Google hasn't verified this app"* (Google 尚未验证此应用 / 存在安全风险).  
+     **This is completely normal and safe.** In your browser, simply expand the options (click **Advanced** / **高级**), and click **"Go to app (unsafe)" / "Continue anyway"** (仍然继续 / 转到应用) to proceed with authorization.
+   - Select your Google account and review the requested permissions (Read/Write access to Google Drive).
+   - Click **Continue / Allow**.
+   - Once approved, the browser will confirm success. Return to ATBCmder, and you will see:  
+     `✓ Authorized (your_account@gmail.com)`!
+
+> [!NOTE]
+> **Why Does Google Show a Security Risk / Unverified App Warning?**  
+> When the browser pops up Google's official authorization page, Google displays a prompt warning that the application has not been verified. This is completely standard for self-created OAuth credentials. Since you created the credentials yourself in your own Google Cloud Console and only you hold the keys, your account and files remain 100% secure and private. In the browser, expand the options (click **Advanced** / 高级) and click **"Go to app (unsafe)" / "Continue anyway"** (仍然继续) to proceed to the next authorization step.
+
+5. Click **💾 Save** to bookmark this connection, then click **🔗 Connect** (or double-click the connection in the left list).
+6. A new panel tab immediately opens pointing to:
+   ```
+   vfs://gdrive://your_account@gmail.com//
+   ```
+   All your Google Drive files and folders are now right in front of you!
+
+---
+
+#### Step 3: Working with Google Drive Like a Local Drive
+
+Once connected, Google Drive behaves just like any normal folder:
+
+- **Browse & Preview**: Double-click or press `Enter` to open folders. Select any image, PDF, code file, or document and press **`F3`** to preview it instantly in the Universal Lister without saving it locally.
+- **Upload (`F5`)**: Select files or folders in your local panel (e.g., your `Downloads` folder) and press **`F5`** to upload them straight to the current Google Drive directory.
+- **Download (`F5`)**: Highlight files in your Google Drive panel and press **`F5`** to download them into your local target folder.
+- **Drag & Drop**: Drag files and folders between the local panel and the Google Drive panel with your mouse.
+- **Instant Refresh (`F9` / `Ctrl+R`)**: If a colleague shares a new file or you make changes via your phone, press **`F9`** (or click the **Refresh** button on the toolbar) to fetch the latest cloud changes instantly.
+- **Live Cloud Storage Meter**: The status capsule in the top-right toolbar displays your Google Drive storage quota in real time (e.g., `259.7 GB free of 994.7 GB`), keeping you informed of your remaining cloud capacity at a glance.
+- **Multiple Accounts**: You can add multiple Google Drive profiles in the Connection Manager (e.g., `Personal Drive` and `Work Drive`). You can even open one account in the Left Panel and another in the Right Panel to transfer files directly between them!
+- **Zero Plaintext Credentials**: Your Client Secret and OAuth authentication tokens are stored securely in the **macOS System Keychain** (`ATBCmder_VFS`) backed by Apple's Secure Enclave. They are never written to disk in plain text.
+
+---
+
+### 6.4 Dropbox Cloud Storage: Plain-English Setup Guide
+
+Like Google Drive, accessing Dropbox directly inside ATBCmder gives you the freedom to browse, upload, and organize cloud files without needing to sync hundreds of gigabytes to your local Mac SSD.
+
+ATBCmder treats **Dropbox as a live virtual drive (`dropbox://`)**, allowing you to preview photos and documents with `F3`, stream chunked uploads and downloads with `F5`, and monitor your real-time cloud storage quota right inside the toolbar.
+
+#### Why Do I Need an "App Key" and "App Secret"?
+
+To protect your privacy and security, Dropbox does not permit third-party desktop tools to ask for or store your Dropbox account password. Instead, Dropbox uses **OAuth 2.0 authorization**.
+
+By creating your own free developer App Key and App Secret in the official Dropbox App Console:
+
+- **100% Private & Direct**: Your data flows directly between your Mac and Dropbox's official servers. No third-party proxy or intermediary server ever sees your files or credentials.
+- **Dedicated Speed & Quota**: You get your own private API bandwidth without sharing rate limits with any other users.
+- **Revocable Anytime**: You remain in total control. You can revoke ATBCmder's access with a single click in your Dropbox account security settings at any time.
+
+Setting this up takes **less than 2 minutes**, and you only ever have to do it once!
+
+---
+
+#### Step 1: Create an App in Dropbox App Console
+
+1. Open the [Dropbox App Console](https://www.dropbox.com/developers/apps) in your web browser and sign in with your Dropbox account.
+2. Click the blue **Create app** button in the top-right corner.
+3. Configure your app settings according to the screenshot below:
+
+![Create a new app on the DBX Platform](images/network_vfs_dropbox1.png)  
+*Figure 6.6: Creating a new app in Dropbox App Console with Scoped access and Full Dropbox access.*
+
+- **1. Choose an API**: Select **Scoped access**.
+- **2. Choose the type of access you need**: Select **Full Dropbox** (Access to all files and folders in your Dropbox).  
+  *(Note: If you only want ATBCmder to access a single isolated sandbox folder, you can select "App folder" instead).*
+- **3. Name your app**: Enter a unique name for your application (e.g., `ATBCmder` or `ATBCmder-YourName`).
+- Check the box **I agree to Dropbox API Terms and Conditions**.
+- Click the blue **Create app** button in the lower-right corner.
+
+---
+
+#### Step 2: Configure Redirect URI & Copy Your Keys (Settings Tab)
+
+Once your app is created, you will be taken to its dashboard. Click the **Settings** tab at the top.
+
+![Configuring OAuth2 Redirect URI and App Keys](images/network_vfs_dropbox2.png)  
+*Figure 6.7: Configuring the loopback redirect URI (http://127.0.0.1:53682/callback) and copying your App key and App secret.*
+
+1. **Set the OAuth 2 Redirect URI**:
+   - Scroll down to the **OAuth 2** section.
+   - Locate the **Redirect URIs** input field.
+   - Type or paste the following exact URL:
+     ```
+     http://127.0.0.1:53682/callback
+     ```
+
+   - Click the **Add** button next to the input box.  
+   *(Why this is needed: ATBCmder runs a secure local loopback listener on port 53682 during authorization. Registering this URI allows Dropbox to securely return authorization back to ATBCmder with one click).*
+2. **Allow Public Clients (PKCE)**:
+   - Ensure the dropdown for **Allow public clients (Implicit Grant & PKCE)** is set to **Allow** (or default).
+3. **Copy Your App Key & App Secret**:
+   - Near the top of the Settings tab, find **App key** and click to copy it.
+   - Directly below, find **App secret**, click the **Show** link, and copy the secret key.  
+   *(Keep this browser window open or save the keys temporarily; you will paste them into ATBCmder in Step 4).*
+
+---
+
+#### Step 3: Configure Required Permissions (Permissions Tab)
+
+Next, click the **Permissions** tab at the top of your app settings page.
+
+![Configuring Scopes and Permissions in Dropbox App Console](images/network_vfs_dropbox3.png)  
+*Figure 6.8: Selecting the required permissions under the Permissions tab, including files.metadata.read/write and files.content.read/write.*
+
+1. Under **Account Info**:
+   - `account_info.read`: View basic information about your Dropbox account (checked by default, allows ATBCmder to automatically detect and display your account email upon connecting).
+2. Under **Files and folders**, ensure the following checkboxes are enabled:
+   - `files.metadata.write`: View and edit information about your Dropbox files and folders.
+   - `files.content.write`: Edit content of your Dropbox files and folders (uploading and modifying files).
+   - `files.content.read`: View content of your Dropbox files and folders (downloading and viewing files).
+
+> [!NOTE]
+> **Why is `files.metadata.read` Greyed Out (不可勾选)?**  
+> In the screenshot above, you will notice that `files.metadata.read` (View information about your Dropbox files and folders) has a light grey checkmark inside its box and cannot be manually clicked or toggled.  
+> **This is completely normal and expected!**  
+> In Dropbox's permission hierarchy, write permissions (`files.metadata.write` and `files.content.write`) strictly require read access. Whenever you check `files.metadata.write` or `files.content.read/write`, Dropbox **automatically enables `files.metadata.read` for you** and locks it in the checked state so it cannot be accidentally unchecked. The permission is already active!
+
+> [!IMPORTANT]
+> **CRITICAL: You MUST Click "Submit" at the Bottom of the Page!**  
+> Dropbox does **not** automatically save changes when you tick checkboxes on the Permissions tab!  
+> **You MUST scroll all the way down to the very bottom of the Permissions page and click the blue "Submit" button.**  
+> If you close the tab or switch back to the Settings tab without clicking Submit, your permission changes will be discarded!
+
+---
+
+#### Step 4: Add Dropbox in ATBCmder & One-Click Authorization
+
+Now that your Dropbox App is properly configured, adding it to ATBCmder takes just a few clicks:
+
+1. In ATBCmder, open **Network ➔ Manage Connections...** from the top menu bar (or press `cm_ManageConnections`).
+2. Click the **`+ New`** button in the lower-left corner to create a new profile.
+3. In the **Connection Details** form on the right:
+   - **Label**: Enter a friendly name (e.g., `My Dropbox` or `Team Dropbox`).
+   - **Protocol**: Select **`dropbox`** from the dropdown menu.
+   - **App Key**: Paste the App Key you copied from the Dropbox Settings tab.
+   - **App Secret**: Paste the App Secret you copied from the Dropbox Settings tab.
+   - *(Optional tip: You can also click the helper link `Create app in Dropbox App Console` directly below the secret field to jump to the developer console at any time).*
+4. Click the **Log in with Browser...** (or **Authorize**) button.
+   - ATBCmder will automatically open your default web browser to the official Dropbox consent page.
+   - Review the requested permissions and click **Allow** (允许).
+   - Once approved, your browser will confirm the success. Return to ATBCmder, and the status indicator will update to:  
+     `✓ Authorized (your_account@email.com)`!
+5. Click **💾 Save** to bookmark the connection, then click **🔗 Connect** (or double-click the connection in the left-hand list).
+6. A new tab immediately opens in your active panel pointing to:
+   ```
+   vfs://dropbox://your_account@email.com//
+   ```
+   All your Dropbox files and folders are now right in front of you!
+
+---
+
+#### Common Issue & Troubleshooting
+
+> [!WARNING]
+> **Troubleshooting: "Your app is not permitted to access this endpoint because it does not have the required scope 'files.metadata.read'"**  
+> If you connect successfully but encounter this error when loading a folder or copying files, here is why it happens and how to fix it in 30 seconds:  
+> 
+> 1. **Why does it happen?**  
+>    - **Did you click Submit?** If you checked the permissions on Dropbox's Permissions tab but forgot to scroll to the bottom and click the blue **Submit** button, Dropbox never saved the changes.  
+>    - **Token Snapshot Behavior**: In Dropbox OAuth 2.0, an authorization token captures only the permissions that existed *at the moment authorization was granted*. If you authorized ATBCmder before enabling the permissions or before clicking Submit, your existing token in the macOS Keychain does not have the new scopes.  
+> 2. **How to fix:**  
+>    - Go to [Dropbox App Console](https://www.dropbox.com/developers/apps) ➔ **Permissions** tab, ensure the checkboxes are checked, scroll to the bottom, and click **Submit**.  
+>    - Return to ATBCmder ➔ **Network ➔ Manage Connections...**, select your Dropbox connection, and click the **Re-authorize...** button.  
+>    - Click **Allow** in your browser to issue a fresh token with all updated permissions.  
+>    - Click **Connect** again, and you're all set!
+
+---
+
+#### Step 5: Working with Dropbox Like a Local Drive
+
+Once connected, Dropbox behaves just like a local high-speed drive:
+
+- **Dual-Panel Copy (`F5`)**: Select files or directories in your local panel (e.g., your Mac's `Documents` or `Downloads`) and press **`F5`** to upload them straight to Dropbox. Or select remote files and press **`F5`** to download them.
+- **Chunked Streaming Transfers**: Transfers use non-blocking chunked streaming sessions with real-time progress indicators, gracefully handling multi-gigabyte video or archive files without exhausting system memory.
+- **Instant Preview (`F3`)**: Select any image, PDF, Markdown, or text file on Dropbox and press **`F3`** to inspect it in the Universal Lister without saving it to disk first.
+- **Folder Creation (`F7`)**: Press `F7` to create new remote directories. Recursive directory creation automatically creates any missing parent folders.
+- **Drag & Drop**: Drag files and folders between the local panel and the Dropbox panel with your mouse.
+- **Live Cloud Storage Meter**: Your remaining Dropbox space is displayed in real time in the top-right toolbar (e.g., `1.8 GB free of 2.0 GB`), keeping you informed of your remaining capacity at a glance.
+- **Instant Refresh (`F9` / `Ctrl+R`)**: Fetch remote changes made on other devices or sync storage quota with a single keystroke.
+- **Hardware-Backed Security**: OAuth refresh tokens and credentials are encrypted directly in the **macOS System Keychain** (`ATBCmder_VFS`) backed by Apple's Secure Enclave.
+
+---
+
 ## 7. Quick Connect vs. Connection Manager
 
 ATBCmder provides two flexible mechanisms for connecting to remote hosts: **Quick Connect** for fast, temporary sessions, and **Connection Manager** for persistent, categorized server bookmarks.
@@ -323,7 +608,7 @@ When you need to quickly access a server without cluttering your permanent confi
 
 1. Choose **Network ➔ Quick Connect...** (or execute command `cm_NetworkConnect`).
 2. The lightweight connection prompt appears:
-   - **Protocol**: Select `sftp`, `ftp`, `ftps`, `smb`, `webdav`, `webdavs`, or `gdrive`.
+   - **Protocol**: Select `sftp`, `ftp`, `ftps`, `smb`, `webdav`, `webdavs`, `gdrive`, or `dropbox`.
    - **Host & Port**: Enter the server address (port auto-populates default values).
    - **Username & Password**: Input connection credentials.
    - **Remote Path**: Starting remote directory (default: `/`).

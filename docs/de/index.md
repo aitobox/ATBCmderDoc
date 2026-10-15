@@ -173,7 +173,7 @@ Automatisieren Sie komplexe Herausforderungen bei der Dateiverwaltung: Batch-Meh
 
 ### 🌐 [Kapitel 6: Virtuelle Dateisysteme und Netzwerk](network_and_vfs.md)
 
-Behandeln Sie Remote-Server und komprimierte Archive wie gewöhnliche lokale Ordner mit einheitlichen `vfs://`-URIs. Navigieren Sie in den Archiven `.zip`, `.tar` und `.7z` ohne Dekomprimierung, bearbeiten Sie Dateien direkt mit automatisiertem Live-Neupacken, erstellen Sie verschlüsselte Archive (`Alt+F5`) und verwalten Sie dauerhafte Verbindungen über FTP, SFTP (SSH-Schlüssel), WebDAV und SMB/Samba-Netzwerkfreigaben.
+Behandeln Sie Remote-Server und komprimierte Archive wie gewöhnliche lokale Ordner mit einheitlichen `vfs://`-URIs. Navigieren Sie in den Archiven `.zip`, `.tar` und `.7z` ohne Dekomprimierung, bearbeiten Sie Dateien direkt mit automatisiertem Live-Neupacken, erstellen Sie verschlüsselte Archive (`Alt+F5`) und verwalten Sie dauerhafte Verbindungen über FTP, SFTP (SSH-Schlüssel), WebDAV, SMB/Samba-Netzwerkfreigaben, Google Drive und Dropbox-Cloud-Speicher.
 
 ### 🛠️ [Kapitel 7: System-Tools & Wartung](system_tools.md)
 Überwachen Sie die Systemleistung in Echtzeit über die Statuskapsel-HUD der Symbolleiste oder die vollständige Diagnosekonsole (`cm_SystemStatus`), analysieren Sie die Speicherbelegung mit interaktiven Treemaps (`cm_DiskUsageAnalyzer`), bereinigen Sie Caches, Protokolle und Entwicklungsartefakte sicher mit zweistufiger Risikoanalyse (`cm_CleanSystem`) und führen Sie eine tiefgehende Anwendungsdeinstallation einschließlich verwaister Überreste in `~/Library/` durch (`cm_UninstallApp`).

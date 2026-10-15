@@ -164,7 +164,7 @@ ATBCmder 专为在现代 macOS 上重塑纯正 Commander 体验而生，无需�
 化繁为简的专业工具箱：多重重命名工具 (`Ctrl+M`) 结合占位符与正则表达式、双栏直观文本差异比对 (`Meta+Shift+F12`)、双向文件夹镜像同步 (`Shift+F12`)、高级多条件文件搜索 (`Alt+F7`) 并“导出到列表”、Spotlight 与自然语言语义化搜索 (`/`)、文件分卷切片与合并、哈希校验（MD5、SHA-256、CRC32）、安全彻底粉碎 (`cm_Wipe`) 以及内置终端 (`Ctrl+J`)。
 
 ### 🌐 [第 6 章：虚拟文件系统与网络](network_and_vfs.md)
-通过统一的 `vfs://` URI 体系，像操作本地文件夹一样畅游远程服务器和压缩包。无需事先解压即可直接浏览 `.zip`、`.tar`、`.7z`，并在保存后自动无感重打包；创建高强度加密压缩包 (`Alt+F5`)；通过网络连接管理器长期稳定管理 FTP、SFTP（SSH 密钥认证）、WebDAV 及局域网 SMB/Samba 共享。
+通过统一的 `vfs://` URI 体系，像操作本地文件夹一样畅游远程服务器和压缩包。无需事先解压即可直接浏览 `.zip`、`.tar`、`.7z`，并在保存后自动无感重打包；创建高强度加密压缩包 (`Alt+F5`)；通过网络连接管理器长期稳定管理 FTP、SFTP（SSH 密钥认证）、WebDAV、局域网 SMB/Samba 共享，以及 Google Drive 与 Dropbox 云端存储。
 
 ### 🛠️ [第 7 章：系统工具与日常维护](system_tools.md)
 通过工具栏状态胶囊 HUD 或完整诊断控制台实时监控系统性能 (`cm_SystemStatus`)；使用直观的交互式矩形树状图深入洞察磁盘占用 (`cm_DiskUsageAnalyzer`)；依托两阶段安全风险分析安全清除应用缓存、系统日志与构建冗余 (`cm_CleanSystem`)；一键彻底卸载应用程序并扫除 `~/Library/` 下分散的各类孤儿残留 (`cm_UninstallApp`)。

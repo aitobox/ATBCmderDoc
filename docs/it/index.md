@@ -173,7 +173,7 @@ Automatizza le complesse sfide di gestione dei file: ridenominazione multipla ba
 
 ### 🌐 [Capitolo 6: File system virtuali e rete](network_and_vfs.md)
 
-Tratta i server remoti e gli archivi compressi come normali cartelle locali utilizzando URI `vfs://` unificati. Naviga all'interno degli archivi `.zip`, `.tar` e `.7z` senza decomprimerli, modifica i file sul posto con il repacking automatico in tempo reale, crea archivi crittografati (`Alt+F5`) e gestisci connessioni persistenti su FTP, SFTP (chiavi SSH), WebDAV e SMB/Samba condivisioni di rete.
+Tratta i server remoti e gli archivi compressi come normali cartelle locali utilizzando URI `vfs://` unificati. Naviga all'interno degli archivi `.zip`, `.tar` e `.7z` senza decomprimerli, modifica i file sul posto con il repacking automatico in tempo reale, crea archivi crittografati (`Alt+F5`) e gestisci connessioni persistenti su FTP, SFTP (chiavi SSH), WebDAV, SMB/Samba condivisioni di rete, Google Drive e archiviazione cloud Dropbox.
 
 ### 🛠️ [Capitolo 7: Strumenti di sistema e manutenzione](system_tools.md)
 Monitora le prestazioni del sistema in tempo reale dalla capsula di stato della barra degli strumenti o dalla console di diagnostica completa (`cm_SystemStatus`), analizza lo spazio di archiviazione con treemap interattive (`cm_DiskUsageAnalyzer`), elimina in sicurezza cache, log e artefatti di sviluppo tramite analisi del rischio a due fasi (`cm_CleanSystem`) ed esegui la disinstallazione approfondita delle applicazioni inclusa la rimozione dei residui orphelins in `~/Library/` (`cm_UninstallApp`).

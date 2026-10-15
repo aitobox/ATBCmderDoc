@@ -173,7 +173,7 @@ Automatize desafios complexos de gerenciamento de arquivos: multi-renomeação e
 
 ### 🌐 [Capítulo 6: Rede e sistemas de arquivos virtuais](network_and_vfs.md)
 
-Trate servidores remotos e arquivos compactados como pastas locais comuns usando URIs `vfs://` unificados. Navegue dentro dos arquivos `.zip`, `.tar` e `.7z` sem descompactar, edite arquivos no local com reempacotamento automático ao vivo, crie arquivos criptografados (`Alt+F5`) e gerencie conexões persistentes através de FTP, SFTP (chaves SSH), WebDAV e compartilhamentos de rede SMB/Samba.
+Trate servidores remotos e arquivos compactados como pastas locais comuns usando URIs `vfs://` unificados. Navegue dentro dos arquivos `.zip`, `.tar` e `.7z` sem descompactar, edite arquivos no local com reempacotamento automático ao vivo, crie arquivos criptografados (`Alt+F5`) e gerencie conexões persistentes através de FTP, SFTP (chaves SSH), WebDAV, compartilhamentos de rede SMB/Samba, Google Drive e armazenamento em nuvem do Dropbox.
 
 ### 🛠️ [Capítulo 7: Ferramentas do sistema e manutenção](system_tools.md)
 Monitore o desempenho do sistema em tempo real na cápsula de status da barra de ferramentas ou no console de diagnóstico completo (`cm_SystemStatus`), analise o uso de armazenamento com treemaps interativos (`cm_DiskUsageAnalyzer`), limpe com segurança caches, logs e artefatos de desenvolvimento usando análise de risco em dois estágios (`cm_CleanSystem`) e execute desinstalação profunda de aplicativos, incluindo remoção de resíduos órfãos em `~/Library/` (`cm_UninstallApp`).

@@ -107,7 +107,7 @@ Explorez les capacités d'ATBCmder à travers les principales fonctionnalités :
 ### Réseau et VFS distant
 
 ![Network VFS](images/network_vfs.png)  
-*Connectez-vous aux partages réseau FTP, SFTP, WebDAV et SMB/Samba.*
+*Connectez-vous aux partages réseau FTP, SFTP, WebDAV, SMB/Samba, Google Drive et Dropbox.*
 
 ### Archiver VFS (aucune extraction nécessaire)
 
@@ -172,7 +172,7 @@ Automatisez les défis de gestion de fichiers complexes : renommage multiple p
 
 ### 🌐 [Chapitre 6 : Systèmes de fichiers virtuels et réseau](network_and_vfs.md)
 
-Traitez les serveurs distants et les archives compressées comme des dossiers locaux ordinaires à l'aide d'URI `vfs://` unifiés. Naviguez dans les archives `.zip`, `.tar` et `.7z` sans décompression, modifiez les fichiers sur place avec le reconditionnement automatisé en direct, créez des archives cryptées (`Alt+F5`) et gérez les connexions persistantes sur les partages réseau FTP, SFTP (clés SSH), WebDAV et SMB/Samba.
+Traitez les serveurs distants et les archives compressées comme des dossiers locaux ordinaires à l'aide d'URI `vfs://` unifiés. Naviguez dans les archives `.zip`, `.tar` et `.7z` sans décompression, modifiez les fichiers sur place avec le reconditionnement automatisé en direct, créez des archives cryptées (`Alt+F5`) et gérez les connexions persistantes sur les partages réseau FTP, SFTP (clés SSH), WebDAV, SMB/Samba, Google Drive et Dropbox.
 
 ### 🛠️ [Chapitre 7: Outils système et maintenance](system_tools.md)
 Surveillez les performances du système en temps réel depuis la capsule d'état de la barre d'outils ou la console de diagnostic complète (`cm_SystemStatus`), analysez l'espace disque avec des treemaps interactives (`cm_DiskUsageAnalyzer`), nettoyez en toute sécurité les caches, journaux et artefacts de développement grâce à une analyse des risques en deux étapes (`cm_CleanSystem`), et réalisez une désinstallation approfondie des applications incluant la suppression des résidus orphelins dans `~/Library/` (`cm_UninstallApp`).

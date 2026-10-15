@@ -173,7 +173,7 @@ Automatice desafíos complejos de administración de archivos: cambio de nombre 
 
 ### 🌐 [Capítulo 6: Red y sistemas de archivos virtuales](network_and_vfs.md)
 
-Trate los servidores remotos y los archivos comprimidos como carpetas locales normales utilizando URI `vfs://` unificados. Navegue dentro de archivos `.zip`, `.tar` y `.7z` sin descomprimirlos, edite archivos en el lugar con reempaquetado en vivo automatizado, cree archivos cifrados (`Alt+F5`) y administre conexiones persistentes a través de FTP, SFTP (claves SSH), WebDAV y recursos compartidos de red SMB/Samba.
+Trate los servidores remotos y los archivos comprimidos como carpetas locales normales utilizando URI `vfs://` unificados. Navegue dentro de archivos `.zip`, `.tar` y `.7z` sin descomprimirlos, edite archivos en el lugar con reempaquetado en vivo automatizado, cree archivos cifrados (`Alt+F5`) y administre conexiones persistentes a través de FTP, SFTP (claves SSH), WebDAV, recursos compartidos de red SMB/Samba, Google Drive y almacenamiento en la nube de Dropbox.
 
 ### 🛠️ [Capítulo 7: Herramientas del sistema y mantenimiento](system_tools.md)
 Supervise el rendimiento del sistema en tiempo real desde la cápsula de estado de la barra de herramientas o la consola de diagnóstico completa (`cm_SystemStatus`), analice el uso del almacenamiento con treemaps interactivos (`cm_DiskUsageAnalyzer`), limpie cachés, registros y artefactos de desarrollo de forma segura mediante análisis de riesgo en dos etapas (`cm_CleanSystem`) y realice una desinstalación profunda de aplicaciones eliminando restos huérfanos en `~/Library/` (`cm_UninstallApp`).

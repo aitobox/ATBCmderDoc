@@ -76,7 +76,7 @@ vfs://[協議型別]://[使用者名稱]@[主機地址]:[埠號]/[遠端絕對�
    vfs://webdavs://user@cloud.mycompany.com:443/remote.php/dav/files/user/
    ```
 
-   - **協議識別符號**：指定具體的傳輸驅動（`sftp`、`ftp`、`ftps`、`smb`、`webdav`、`webdavs`、`gdrive`）。
+   - **協議識別符號**：指定具體的傳輸驅動（`sftp`、`ftp`、`ftps`、`smb`、`webdav`、`webdavs`、`gdrive`、`dropbox`）。
    - **身份驗證憑據**：編碼使用者名稱與指定埠號。
    - **遠端目標路徑**：對應遠端伺服器主機上的絕對目錄或檔案系統路徑。
 
@@ -272,6 +272,7 @@ ATBCmder 原生內建對多主流網路傳輸協議的支援，無需任何第�
 | **`webdav://`** | `80` | HTTP WebDAV 擴充套件 | Basic 基本認證、Digest 摘要認證 | 內網自建輕量網盤、本地網路媒體伺服器 |
 | **`webdavs://`** | `443` | HTTPS WebDAV 加密 | SSL 加密 Basic / Digest 認證 | Nextcloud、ownCloud、企業私有云盤 |
 | **`gdrive://`** | `443` | Google Drive API | OAuth2 官方令牌授權 | Google Drive 個人與團隊雲端硬碟 |
+| **`dropbox://`** | `443` | Dropbox API v2 | OAuth2 官方令牌授權 | Dropbox 個人與團隊雲端資料夾 |
 
 ---
 
@@ -311,6 +312,289 @@ ATBCmder 原生內建對多主流網路傳輸協議的支援，無需任何第�
 
 ---
 
+### 6.3 Google Drive 雲端儲存配置指南
+
+在網頁端管理 Google Drive 時，上傳大檔案或整理多層資料夾往往會感到繁瑣遲緩；而 Google Drive 官方桌面客戶端又通常傾向於將整個雲端資料夾全量同步到本地 Mac 固態硬碟，白白擠佔寶貴的儲存空間。
+
+ATBCmder 巧妙地將 **Google Drive 虛擬化為實時直連磁碟 (`gdrive://`)**。您可以在雙面板中直接穿透瀏覽雲端檔案、按 `F3` 全能預覽、按 `F5` 在 Mac 與雲端之間高速雙向複製——**全程無需將整個雲盤下載同步到本地**。
+
+![Google Drive Connection Setup and Cloud Browsing](images/network_vfs_gdrive.png)  
+*圖 6.5：透過連線管理器配置 OAuth2 客戶端憑據直連 Google Drive，在雙面板中與本地資料夾並行瀏覽與傳輸。*
+
+#### 為什麼需要 "Client ID" 和 "Client Secret"？
+為了捍衛您的隱私與賬戶安全，Google 嚴格禁止第三方桌面軟體索取或儲存您的 Google 賬戶明文密碼，統一強制採用 **OAuth 2.0 官方授權機制**。
+
+透過在 Google Cloud Console 中免費申請屬於您個人的 OAuth 憑據：
+
+- **100% 隱私與直連**：所有資料均在您的 Mac 與 Google 官方伺服器之間點對點傳輸，絕無任何第三方伺服器中轉或窺探您的檔案與金鑰。
+- **獨享專屬頻寬與配額**：擁有完全私有的 API 呼叫配額，不會與其他任何使用者搶佔速度。
+- **隨時可吊銷**：控制權始終在您手中，您可以隨時在 Google 賬戶安全控制檯中一鍵撤銷 ATBCmder 的訪問許可權。
+
+整個配置流程耗時**不超過 3 分鐘**，且只需一次性配置！
+
+---
+
+#### 步驟 1：在 Google Cloud 中免費建立憑據（耗時 2 分鐘）
+
+1. 在瀏覽器中開啟 [Google Cloud Console — 憑據頁面](https://console.cloud.google.com/apis/credentials)，並登入您的 Google 賬號。
+2. **選擇或新建專案**：
+   - 點選頁面頂部的組織/專案下拉選單。
+   - *(企業/組織提示：如果您擁有 Google Workspace 或 Cloud Identity 組織（如 `aitobox.com`），請在下拉選單中選擇該組織，以便將專案建立在企業域名下)。*
+   - 如果尚未建立專案，點選 **新建專案**，輸入任意專案名稱（如 `ATBCmder`），點選 **建立**。
+3. **啟用 Google Drive API**：
+   - 在左側選單欄或頂部搜尋框中進入 **已啟用的 API 和服務**（或點選 **+ 啟用 API 和服務**）。
+   - 搜尋 **Google Drive API**，點選進入後點選藍色的 **啟用** 按鈕。
+4. **配置 OAuth 同意螢幕** *(首次建立時若提示)*：
+   - 若系統提示配置同意螢幕，選擇 **外部 (External)** 並點選 **建立**。
+   - 填寫 **應用名稱**（如 `ATBCmder`），填寫用於技術支援與開發者聯絡的電子郵件地址。
+   - 在 **應用網域** 下，將 **應用首頁** 設定為您需要的域名（如 `https://cmder.aitobox.com`）。
+   - 在 **已獲授權的網域** 下，新增根域名（如 `aitobox.com`）。
+   - 一路點選 **儲存並繼續** 完成後續配置。
+5. **建立桌面端憑據**：
+   - 返回 **API 和服務 ➔ 憑據**。
+   - 點選頂部 **+ 建立憑據**，選擇 **OAuth 客戶端 ID**。
+   - 在 **應用型別** 下拉選單中選擇 **桌面應用 (Desktop app)**。
+   - 在 **名稱** 欄位中輸入 `ATBCmder Desktop`（或任意名稱）。
+   - 點選 **建立**。
+6. **複製您的專屬金鑰**：
+   - 彈窗將展示生成的 **客戶端 ID (Client ID)**（以 `.apps.googleusercontent.com` 結尾）與 **客戶端金鑰 (Client Secret)**。
+   - 點選複製兩串金鑰（或保持網頁開啟，後續亦可隨時在憑據列表中檢視）。
+
+---
+
+#### 自定義企業品牌：理解“訪問許可權授予物件” (Access Granted To)
+
+當您在 Google 賬戶安全中心 ([myaccount.google.com/connections](https://myaccount.google.com/connections)) 檢視已繫結的第三方應用時，Google 會展示 ATBCmder 的應用詳情卡片：
+
+- **應用名稱**：`ATBCmder`
+- **訪問許可權授予物件 (Access granted to)**：例如 `aitobox.com` 或 `oplist.org`
+- **首頁**：`https://cmder.aitobox.com`
+
+##### 為什麼 Google 會顯示特定的組織名稱？
+**“訪問許可權授予物件” (Access granted to)** 一行是由 Google 根據建立 OAuth 客戶端 ID 所在 GCP 專案歸屬的 **Google Cloud 組織**（或 Google Workspace 機構主域）自動決定的：
+
+- 如果客戶端 ID 是在掛靠某第三方組織（如 `oplist.org`）的 GCP 專案下建立的，Google 便會展示該組織的域名以警示使用者 API 客戶端的歸屬方。
+- 如果專案建立在個人 Google 賬戶名下，Google 則會展示您的開發者聯絡人身份。
+
+##### 如何將授予物件繫結為自有企業域名（如 `aitobox.com`）
+若您希望 Google 賬戶安全頁面中顯示您自有的公司域名（如 `aitobox.com`）：
+
+1. **在企業組織下建立專案**：
+   - 使用屬於企業域名的管理員賬號（如 `admin@aitobox.com`）登入 [Google Cloud Console](https://console.cloud.google.com/)。
+   - 在頂部組織選擇框中，確認已選定企業主域（如 `aitobox.com`），再在此組織下新建專案。
+2. **在 OAuth 同意螢幕中設定企業品牌**：
+   - 前往 **API 和服務 ➔ OAuth 同意螢幕**。
+   - 將 **應用主頁** 填寫為官方主頁（如 `https://cmder.aitobox.com`）。
+   - 在 **已獲授權網域** 中登記根域名（如 `aitobox.com`）。
+   - 將 **支援郵箱** 與 **開發者聯絡郵箱** 均設定為域名郵箱。
+3. **重新簽發桌面應用客戶端 ID**：
+   - 前往 **API 和服務 ➔ 憑據**，新建 **桌面應用** 型別的 **OAuth 客戶端 ID**。
+4. **在 ATBCmder 中更新金鑰並重新授權**：
+   - 將全新的 Client ID 與 Client Secret 貼上入 ATBCmder 連線管理器，點選 **重新授權...**。
+   - 授權成功後，Google 賬戶安全中心即會清爽地將您的企業域名 (`aitobox.com`) 顯示為授予方！
+
+---
+
+#### 步驟 2：在 ATBCmder 中錄入並一鍵授權
+
+拿到金鑰後，在 ATBCmder 中新增連線只需幾秒：
+
+1. 在 ATBCmder 頂部選單欄選擇 **網路 ➔ 連線管理器...**（或快速鍵 `cm_ManageConnections`）。
+2. 點選左下角的 **`+ 新建`** 按鈕開始建立新配置。
+3. 在右側 **連線詳細配置項** 表單中：
+   - **連線別名**：輸入直觀名稱（如 `我的 Google Drive` 或 `工作雲盤`）。
+   - **連線協議**：在下拉選單中選擇 **`gdrive`**。
+   - **客戶端 ID**：貼上在 Google Cloud 複製的 Client ID。
+   - **客戶端金鑰**：貼上在 Google Cloud 複製的 Client Secret。
+   - *(貼心提示：您亦可隨時點選輸入框下方的藍色快捷連結 `Create OAuth 2.0 credentials in Google Cloud Console` 直達 Google Cloud)*。
+4. 點選 **授權**（或 **重新授權...**）按鈕：
+   - ATBCmder 會自動調起系統預設瀏覽器開啟 Google 官方授權頁面。
+   - **核心安全提示（完全正常與預期）**：  
+     由於您使用的是自己在 GCP 開發者後臺私有簽發的 Client ID，而非從 Google 官方公開商業應用市場下載的預稽核 App，Google 會彈出警示頁面提示 *“Google 尚未驗證此應用” / “存在安全風險”*。  
+     **這完全屬於正常現象且極其安全。** 頁面中點選 **高階 (Advanced)**，選擇展開選項底部的 **“轉到應用/仍然繼續 (unsafe)”** 即可進入下一步授權。
+   - 選擇您的 Google 賬號，確認授予 Google Drive 讀寫許可權。
+   - 點選 **繼續 / 允許**。
+   - 授權完成後瀏覽器將提示成功。切回 ATBCmder，狀態將更新為：  
+     `✓ Authorized (your_account@gmail.com)`！
+
+> [!NOTE]
+> **為什麼 Google 會彈出“應用尚未驗證”的安全提示？**  
+> 瀏覽器彈出 Google 官方授權頁面時，Google 會提示此應用未經驗證。這屬於自建 OAuth 開發者憑據的業界通用標準互動。由於憑據是您自己在 Google Cloud Console 中親手建立、僅由您一人掌控，您的賬戶和檔案享有最高階別的點對點安全保障。在瀏覽器中展開 **高階 (Advanced)** 選項，點選 **“仍然繼續”** 即可順暢完成授權。
+
+5. 點選 **💾 儲存** 將該連線加入書籤，隨後點選 **🔗 立即連線**（或在左側列表中雙擊它）。
+6. 當前面板將瞬間開啟一個新標籤頁，路徑直指：
+   ```
+   vfs://gdrive://your_account@gmail.com//
+   ```
+   您的所有 Google Drive 雲端檔案與多層資料夾已盡在眼前！
+
+---
+
+#### 步驟 3：像操作本地硬碟一樣暢遊 Google Drive
+
+建立連線後，Google Drive 的互動與本地資料夾毫無二致：
+
+- **免下載極速預覽**：雙擊或回車進入資料夾。選中任意圖片、PDF、程式碼檔案或文件，按 **`F3`** 即可在全能檢視器中瞬間流式開箱預覽，無需預先儲存到本地。
+- **上傳到雲端 (`F5`)**：在本地面板中（如 Mac 的 `Downloads` 目錄）選中檔案或目錄，按下 **`F5`** 即可直傳到當前 Google Drive 遠端路徑。
+- **下載到本地 (`F5`)**：在 Google Drive 面板中選中遠端檔案，按下 **`F5`** 即可流式下載至對側本地資料夾。
+- **滑鼠拖拽自由互動**：支援直接在本地面板與 Google Drive 面板之間用滑鼠隨意拖拽檔案與資料夾。
+- **一鍵極速重新整理 (`F9` / `Ctrl+R`)**：當同事分享了新檔案或您在手機端有新改動時，按下 **`F9`**（或工具欄重新整理按鈕）即可毫秒級同步最新雲端變動。
+- **實時雲端配額監視**：頂部工具欄右側的狀態膠囊實時顯示 Google Drive 的剩餘儲存容量（例如 `259.7 GB free of 994.7 GB`），雲盤用量一目瞭然。
+- **多賬號無縫穿梭**：您可在連線管理器中新增多個 Google Drive 賬號（如 `個人雲盤` 與 `工作雲盤`），甚至可以左側面板開啟賬號 A，右側面板開啟賬號 B，直接在兩套雲盤之間對拷檔案！
+- **蘋果安全飛地硬體加密**：客戶端金鑰與 OAuth 重新整理令牌直接由 **macOS 系統鑰匙串** (`ATBCmder_VFS`) 與 Apple Secure Enclave 硬體加密保護，絕不會在磁碟上以明文留存。
+
+---
+
+### 6.4 Dropbox 雲端儲存配置指南
+
+與 Google Drive 類似，直接在 ATBCmder 中接入 Dropbox，讓您擺脫數以百計 GB 雲端檔案對 Mac 本地固態硬碟的無端侵佔，盡享輕裝上陣的極速雲端漫遊體驗。
+
+ATBCmder 將 **Dropbox 作為實時線上的虛擬磁碟 (`dropbox://`)**，支援使用 `F3` 全能預覽照片與文件、`F5` 高效能分塊流式上傳與下載，並在頂部工具欄實時呈現雲盤配額。
+
+#### 為什麼需要 "App Key" 和 "App Secret"？
+
+為了徹底保護您的資料隱私與賬號安全，Dropbox 不允許第三方桌面工具索取或儲存您的 Dropbox 登入密碼，全程採用 **OAuth 2.0 授權機制**。
+
+透過在官方 Dropbox App Console 中免費建立專屬於您的 App Key 與 App Secret：
+
+- **100% 隱私與直連**：所有網路通訊均在您的 Mac 與 Dropbox 官方伺服器之間點對點加密傳輸，絕無任何第三方伺服器代理或窺探。
+- **獨享專屬頻寬與配額**：擁有完全私有的 API 配額限制，告別公共應用的高峰擁堵與頻控限制。
+- **隨時可吊銷**：控制權完全在您手中，您可以隨時在 Dropbox 賬戶安全設定中一鍵撤銷訪問許可權。
+
+配置整個流程耗時**不足 2 分鐘**，且一次配置永久生效！
+
+---
+
+#### 步驟 1：在 Dropbox App Console 中建立應用
+
+1. 在瀏覽器中開啟 [Dropbox App Console](https://www.dropbox.com/developers/apps)，登入您的 Dropbox 賬號。
+2. 點選右上角藍色的 **Create app** 按鈕。
+3. 參考下圖所示配置您的應用引數：
+
+![Create a new app on the DBX Platform](images/network_vfs_dropbox1.png)  
+*圖 6.6：在 Dropbox 開發者中心建立全新 App，選擇 Scoped access 並開啟 Full Dropbox 全量訪問許可權。*
+
+- **1. Choose an API**：選擇 **Scoped access**。
+- **2. Choose the type of access you need**：選擇 **Full Dropbox**（允許訪問整個 Dropbox 內的所有檔案與資料夾）。  
+  *(注：若僅希望 ATBCmder 訪問獨立的沙盒資料夾，亦可按需選擇 "App folder")*。
+- **3. Name your app**：為應用起一個獨一無二的名稱（如 `ATBCmder` 或 `ATBCmder-YourName`）。
+- 勾選 **I agree to Dropbox API Terms and Conditions** 協議核取方塊。
+- 點選右下角藍色的 **Create app** 按鈕。
+
+---
+
+#### 步驟 2：配置重定向回撥 URI 並複製金鑰 (Settings 標籤頁)
+
+建立成功後系統會自動跳轉至應用詳情頁。點選頂部的 **Settings** 標籤頁。
+
+![Configuring OAuth2 Redirect URI and App Keys](images/network_vfs_dropbox2.png)  
+*圖 6.7：配置本地迴環回撥地址 (http://127.0.0.1:53682/callback) 並複製獲取 App key 與 App secret。*
+
+1. **設定 OAuth 2 重定向回撥 URI**：
+   - 向下滾動找到 **OAuth 2** 配置區域。
+   - 定位到 **Redirect URIs** 輸入框。
+   - 輸入或貼上以下準確 URL：
+     ```
+     http://127.0.0.1:53682/callback
+     ```
+
+   - 點選輸入框旁的 **Add** 按鈕新增該 URI。  
+   *(原理解析：ATBCmder 在發起授權請求時會在本地 53682 埠建立臨時安全迴環監聽服務。登記該 URI 能夠讓 Dropbox 在授權完畢後瞬間自動回撥啟用 ATBCmder，實現一鍵無感閉環)*。
+2. **允許公共客戶端 (PKCE)**：
+   - 確認 **Allow public clients (Implicit Grant & PKCE)** 選項保持為 **Allow**（或預設值）。
+3. **複製您的 App Key 與 App Secret**：
+   - 在 Settings 標籤頁上方，找到 **App key** 並點選複製。
+   - 在其正下方找到 **App secret**，點選 **Show** 連結顯示出完整金鑰並複製儲存。  
+   *(保持該瀏覽器頁面開啟或臨時儲存這兩串金鑰，稍後將在步驟 4 中貼上至 ATBCmder)*。
+
+---
+
+#### 步驟 3：配置所需授權範圍與許可權 (Permissions 標籤頁)
+
+接下來，點選應用設定頁面頂部的 **Permissions** 標籤頁。
+
+![Configuring Scopes and Permissions in Dropbox App Console](images/network_vfs_dropbox3.png)  
+*圖 6.8：在 Permissions 標籤頁勾選必要的許可權範圍，包含 files.metadata.read/write 與 files.content.read/write。*
+
+1. 在 **Account Info** 區域：
+   - `account_info.read`：檢視 Dropbox 賬戶基本資訊（預設已勾選，讓 ATBCmder 連入後可自動感知並顯示您的賬戶郵箱）。
+2. 在 **Files and folders** 區域，確保勾選以下許可權項：
+   - `files.metadata.write`：讀取並修改 Dropbox 檔案與資料夾的後設資料資訊。
+   - `files.content.write`：修改 Dropbox 檔案與資料夾的內容（支援上傳與寫入檔案）。
+   - `files.content.read`：讀取 Dropbox 檔案與資料夾的內容（支援下載與檢視檔案）。
+
+> [!NOTE]
+> **為什麼 `files.metadata.read` 是淺灰色勾選且無法點選？**  
+> 在上方的截圖中，您會發現 `files.metadata.read` 核取方塊內呈現淺灰色勾選狀態，滑鼠無法再次點選更改。  
+> **這完全屬於正常現象！**  
+> 在 Dropbox 的許可權依賴體系中，寫入許可權（`files.metadata.write` 與 `files.content.write`）強制依賴讀取許可權。只要您勾選了 `files.metadata.write` 或 `files.content.read/write`，Dropbox 會**自動為您點亮並鎖定 `files.metadata.read`**，防止誤操作取消。此時該讀取許可權已實際處於生效狀態！
+
+> [!IMPORTANT]
+> **至關重要：頁面最底部的 "Submit" 按鈕必須點選！**  
+> 在 Permissions 標籤頁勾選核取方塊後，Dropbox **不會**自動持久化儲存變更！  
+> **您必須拉動捲軸滑到 Permissions 頁面最底部，點選藍色的 "Submit" 按鈕！**  
+> 若未點選 Submit 便關閉網頁或切換回 Settings 標籤頁，方才勾選的所有許可權將被全部丟棄！
+
+---
+
+#### 步驟 4：在 ATBCmder 中新增 Dropbox 並一鍵授權
+
+配置好 Dropbox 開發者應用後，接入 ATBCmder 僅需寥寥數步：
+
+1. 在 ATBCmder 選單欄選擇 **網路 ➔ 連線管理器...**（或快速鍵 `cm_ManageConnections`）。
+2. 點選左下角的 **`+ 新建`** 按鈕開啟新配置。
+3. 在右側 **連線詳細配置項** 表單中：
+   - **連線別名**：輸入別名（如 `我的 Dropbox` 或 `團隊 Dropbox`）。
+   - **連線協議**：下拉選單選擇 **`dropbox`**。
+   - **App Key**：貼上從 Dropbox Settings 標籤頁複製的 App key。
+   - **App Secret**：貼上從 Dropbox Settings 標籤頁複製的 App secret。
+   - *(貼心提示：您亦可隨時點選輸入框下方的輔助連結 `Create app in Dropbox App Console` 直達開發者後臺)*。
+4. 點選 **瀏覽器登入...**（或 **授權**）按鈕：
+   - ATBCmder 會自動在系統預設瀏覽器中喚起 Dropbox 官方授權審批頁。
+   - 檢查請求的許可權範圍，點選 **Allow (允許)**。
+   - 批准後瀏覽器將提示成功。切回 ATBCmder，狀態指示器將更新為：  
+     `✓ Authorized (your_account@email.com)`！
+5. 點選 **💾 儲存** 將配置固化，隨後點選 **🔗 立即連線**（或在左側列表中雙擊該項）。
+6. 當前面板將立即彈出全新標籤頁並導航至：
+   ```
+   vfs://dropbox://your_account@email.com//
+   ```
+   所有 Dropbox 檔案與目錄盡收眼底！
+
+---
+
+#### 常見故障排查與急救
+
+> [!WARNING]
+> **故障排查："Your app is not permitted to access this endpoint because it does not have the required scope 'files.metadata.read'"**  
+> 若授權看似成功，但在瀏覽資料夾或複製檔案時彈出上述作用域缺失報錯，其成因與 30 秒急救方案如下：  
+> 
+> 1. **為什麼會出現此問題？**  
+>    - **是否忘記點選 Submit？** 如果在 Dropbox Permissions 頁面勾選了許可權，但忘記滑到頁面最底部點選藍色的 **Submit** 按鈕，Dropbox 從未真正儲存過許可權更新。  
+>    - **Token 許可權快照特性**：在 Dropbox OAuth 2.0 體系中，簽發的訪問令牌只捕獲*完成授權瞬間*應用所具備的許可權集合。若在配置許可權或點選 Submit 之前就已經在 ATBCmder 中完成了授權，macOS 鑰匙串中快取的舊令牌將不具備新許可權。  
+> 2. **30 秒急救修復步驟**：  
+>    - 前往 [Dropbox App Console](https://www.dropbox.com/developers/apps) ➔ 進入應用的 **Permissions** 標籤頁，確保許可權核取方塊均已打勾，**滑到最底部點選 Submit 確認儲存**。  
+>    - 返回 ATBCmder ➔ **網路 ➔ 連線管理器...**，選中該 Dropbox 連線，點選 **重新授權...** 按鈕。  
+>    - 在瀏覽器中點選 **Allow** 簽發包含全部最新許可權的新令牌。  
+>    - 再次點選 **立即連線**，問題迎刃而解！
+
+---
+
+#### 步驟 5：像操作本地硬碟一樣暢遊 Dropbox
+
+接入成功後，Dropbox 的操作體驗與高速本地磁碟高度一致：
+
+- **雙面板極速複製 (`F5`)**：在本地面板選中檔案（如 Mac 的 `Documents` 或 `Downloads`），按下 **`F5`** 直接上傳至 Dropbox；反之選中遠端檔案按下 **`F5`** 即可高速下載到本地。
+- **智慧分塊流式傳輸**：後臺採用非阻塞分塊流式傳輸會話，配合毫秒級動態進度指示，從容應對數 GB 級的大型影片或壓縮包，絕不溢位系統記憶體。
+- **免下載瞬時預覽 (`F3`)**：在 Dropbox 面板中選中任意圖片、PDF、Markdown 或文字檔案，按下 **`F3`** 即可調出全能檢視器原地檢視，無需預先落地儲存。
+- **建立遠端目錄 (`F7`)**：按下 **`F7`** 快速建立遠端新目錄，支援自動遞迴建立缺失的各級父目錄。
+- **滑鼠拖拽自由互通**：支援透過滑鼠直接在本地面板與 Dropbox 面板之間任意拖拽複製檔案與資料夾。
+- **實時雲端容量膠囊**：右上角工具欄實時呈現 Dropbox 的剩餘空間與總容量（如 `1.8 GB free of 2.0 GB`），配額狀況盡在掌握。
+- **一鍵極速重新整理 (`F9` / `Ctrl+R`)**：輕按快速鍵即刻獲取在其他裝置上的雲端變動或同步最新配額。
+- **蘋果硬體級安全加固**：OAuth 重新整理令牌與憑據全程經由 **macOS 系統鑰匙串** (`ATBCmder_VFS`) 與 Apple 晶片的 Secure Enclave 硬體加密儲存。
+
+---
+
 ## 7. 快速連線 vs 連線管理器
 
 ATBCmder 為連線遠端主機提供了兩套相輔相成的方案：針對臨時除錯的 **快速連線**，以及面向固定伺服器資產的 **連線管理器**。
@@ -321,7 +605,7 @@ ATBCmder 為連線遠端主機提供了兩套相輔相成的方案：針對臨�
 
 1. 選擇選單欄 **網路 ➔ 快速連線...**（或執行命令 `cm_NetworkConnect`）。
 2. 彈出精簡輕快的快速撥號彈窗：
-   - **協議**：選擇 `sftp`、`ftp`、`ftps`、`smb`、`webdav`、`webdavs` 或 `gdrive`。
+   - **協議**：選擇 `sftp`、`ftp`、`ftps`、`smb`、`webdav`、`webdavs`、`gdrive` 或 `dropbox`。
    - **伺服器地址與埠**：輸入主機 IP 或域名（埠隨協議自動回填預設值）。
    - **使用者名稱與密碼**：輸入遠端認證資訊。
    - **遠端起始路徑**：指定登入後的初始目錄（預設為 `/`）。
