@@ -19,7 +19,7 @@ ATBCMder에 관심을 가져주셔서 감사합니다! 우리는 귀하의 필�
 
 Mac App Store를 이용할 수 없거나 직접 다운로드를 선호하는 경우, macOS 듀얼 아키텍처(Universal / ARM64 & Intel x86_64)를 지원하는 독립형 DMG 설치 패키지를 제공합니다.
 
-- **DMG 다운로드 링크**: [ATBCmder DMG를 다운로드하려면 여기를 클릭하십시오.](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder) *(Universal: Apple Silicon & Intel x86_64)*
+- **DMG 다운로드 링크**: [ATBCmder DMG를 다운로드하려면 여기를 클릭하십시오.](https://storage.aitobox.com/@s/atbcenter/ATBCmder) *(Universal: Apple Silicon & Intel x86_64)*
 
 *참고: DMG를 통해 설치하는 경우 macOS 보안 기능을 사용하려면 처음 열 때 "시스템 설정 > 개인 정보 보호 및 보안"에서 애플리케이션을 명시적으로 허용해야 할 수도 있습니다.*
 

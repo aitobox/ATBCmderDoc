@@ -19,7 +19,7 @@ Esta é a forma recomendada de instalar o ATBCmder. **ATBCmder agora está ofici
 
 Se você não puder acessar a Mac App Store ou preferir downloads diretos, fornecemos pacotes de instalação DMG independentes criados nativamente para macOS com suporte de arquitetura dupla (Universal / ARM64 & Intel x86_64).
 
-- **Link de download do DMG**: [Clique aqui para baixar o DMG do ATBCmder](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder) *(Universal: Apple Silicon & Intel x86_64)*
+- **Link de download do DMG**: [Clique aqui para baixar o DMG do ATBCmder](https://storage.aitobox.com/@s/atbcenter/ATBCmder) *(Universal: Apple Silicon & Intel x86_64)*
 
 *Observação: ao instalar via DMG, os recursos de segurança do macOS podem exigir que você permita explicitamente o aplicativo em "Configurações do sistema > Privacidade e segurança" na primeira vez que você o abrir.*
 

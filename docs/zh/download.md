@@ -19,7 +19,7 @@
 
 若您无法访问 Mac App Store，或偏好直接使用独立分发版本，我们同时提供支持 Universal 双架构（Apple Silicon ARM64 与 Intel x86_64）原生构建的 DMG 磁盘映像安装包。
 
-- **DMG 安装包直接下载**：[点击下载最新版 ATBCmder DMG 镜像](https://storage.aitobox.com/@s/bNAshV6G/ATBCmder)（Universal 通用双架构：Apple Silicon 与 Intel x86_64）
+- **DMG 安装包直接下载**：[点击下载最新版 ATBCmder DMG 镜像](https://storage.aitobox.com/@s/atbcenter/ATBCmder)（Universal 通用双架构：Apple Silicon 与 Intel x86_64）
 
 *注意：通过 DMG 首次打开应用时，macOS 安全机制可能会提示“无法打开或未验证的应用”。只需前往 **系统设置 > 隐私与安全性**，点击“仍要打开”即可正常运行。*
 
