@@ -35,6 +35,31 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.3.8 (20.10.2026)
+
+- Überarbeitung der Dateipanel-Interaktion & visuelle Trennung: Vollständige Überarbeitung der Zeilen-Delegates mit dezenter, transluzenter Hervorhebung und abgerundeten Rändern, um Maus-Hover und tatsächliche Dateiauswahl klar voneinander abzugrenzen (Fixes #72); Beseitigung von Rechtsklick-Verzögerungen bei gleichzeitigem Erhalt bestehender Auswahlen (Fixes #60); neue Kontextmenüeinträge „Neue Datei“ (Shift+F4) und „Neuer Ordner“ (F7) mit vollständiger Übersetzung in 31 Sprachen (Fixes #61, #70); automatisches Zurücksetzen der Dateiauswahl beim Verzeichniswechsel zur Vermeidung von Fehlbedienungen (Fixes #67)
+- Terminal-Ausführung aus der Befehlszeile & nahtlose Pfadnavigation: Das Drücken der Eingabetaste bei einem externen Befehl in der Befehlszeile startet automatisch das Systemterminal (Terminal.app / iTerm2) und führt den Befehl im aktuellen Verzeichnis aus (Fixes #63); direkte Verzeichniseingaben oder `cd`-Befehle navigieren zuverlässig mit sicherer Maskierung von Leerzeichen und Sonderzeichen
+- Umfassendes Speicher-Lifecycle-Management & Ringpuffer für Systemstatistiken: Konsequente Durchsetzung von `WA_DeleteOnClose` und deterministischer Freigabe für Universal Viewer (F3), Editor (F4) und alle Modal-Dialoge verhindert Speicheranhäufung bei wiederholtem Öffnen; i18n-Benachrichtigungen nutzen nun `WeakMethod` zur Vermeidung zyklischer Referenzen, Beseitigung von Referenzzyklen in DiskTreeNode und Einführung eines QIcon-LRU-Caches; Systemstatus-Panel und AtbSysBridge nutzen 120-Elemente-Ringpuffer und Widget-Wiederverwendung für jitterfreie Telemetrieabfragen
+- Symbolleisten-Konfigurationsfix & Sandbox-Hinweisabgleich: Behebung eines Fehlers, durch den neu hinzugefügte Tasten in der mittleren Symbolleiste beim Speichern überschrieben wurden (Fixes #62); Statusleisten-Hinweise für den vollständigen Festplattenzugriff (FDA) in der Sandbox mit dem Hauptmenü synchronisiert
+
+### 2.3.7 (16.10.2026)
+
+- macOS-Laufzeitintegrität & Absicherung des Anwendungsbeendens: Behebung fehlender `os`-, `sys`- und `traceback`-Importe in Plattform- und Protokollmodulen zur Beseitigung von `NameError`-Risiken bei eigenständiger Ausführung; Bereinigung redundanter Signaltrennungen in `MainWindow.closeEvent` verhindert zuverlässig sporadische `SIGSEGV`-Abstürze beim Beenden
+- Optimierte FDA-Berechtigungsführung & defensive Ausweichlogik: Intelligentes Ausblenden der redundanten Systemeinstellungs-Schaltfläche bei nativer Drag-to-Grant-Unterstützung mit automatischer Statusaktualisierung auf „Vollständiger Festplattenzugriff erteilt ✓“; defensiver Fallback blendet die Schaltfläche wieder ein, falls das native Cocoa-Bedienfeld nicht angezeigt werden kann, und garantiert reibungslose Berechtigungserteilung
+
+### 2.3.6 (16.10.2026)
+
+- Nuitka-Compiler-Fixierung & Beseitigung von Apple Silicon (ARM64) Abstürzen: Verbindliche Festlegung auf die stabile Nuitka-Version 4.2.2 in allen CI-Workflows, wodurch eine schwere Speicherbeschädigung (`SIGSEGV / EXC_BAD_ACCESS`) durch Nuitka 4.3 unter PySide6/Shiboken behoben wurde; Ergänzung von Qt-Signal/Slot- und Compiler-Freelist-Integritätsprüfungen in `smoke_test.py`; Bereinigung aller Build-Skripte zur lückenlosen Übereinstimmung mit der CI-Umgebung
+- Vertiefte Härtung des Fenster- und System-Tray-Lebenszyklus unter macOS 15 Sequoia: Überarbeitung der Fensterwiederherstellung, Aktivierung (`activate_app`) und Dock-Icon-Umschaltung zur Vermeidung fehlerhafter `FocusWindowEvent`-Weiterleitungen und Abstürze in Headless-/Testumgebungen; sichere Bereinigung der globalen pynput-Hotkeys zur Vermeidung von Thread-Leaks und verwaisten `CGEventTap`-Hooks; Bereinigung der Zwischenablage beim Beenden verhindert Abstürze im Destruktor von `QMimeData`
+- Höhere Stabilität der Testsuite & optimierte CI-Pipelines: Beseitigung sporadischer Segmentation Faults beim Beenden von pytest-Tests für Tray und Hauptfenster; Beschleunigung der CI-Durchläufe durch automatisches Überspringen vollständiger Paketbuilds bei reinen Dokumentationsänderungen
+
+### 2.3.5 (15.10.2026)
+
+- Native Integration von Google Drive & Dropbox Cloud-VFS mit OAuth 2.0: Vollständige Unterstützung für Google Drive (`gdrive://`) und Dropbox (`dropbox://`) als native virtuelle Dateisysteme; neuer Konfigurationsbereich im Verbindungsmanager mit Unterstützung für benutzerdefinierte Client-ID / Client-Secret-Schlüssel und browserbasierte 1-Klick-OAuth-2.0-Autorisierung; optimierte Streaming-Uploads/-Downloads, Quota-Caching und verzögertes Laden von Verzeichnissen mit automatischer Profilspeicherung
+- Zentrale Schlüsselbund-Sicherheitsverwaltung & verschlüsselter Import/Export von Anmeldedaten: Bereinigung der macOS-Schlüsselbund-Namespaces zur Beseitigung störender Startabfragen und Absicherung von Anmeldedaten und Lizenzen; neue kennwortgeschützte Export- und Importfunktion für gespeicherte Zugangsdaten zur sicheren geräteübergreifenden Migration inklusive Lokalisierung in allen 31 Sprachen
+- Nuitka-Laufzeitstabilität & Verbesserungen bei Zip-Streaming-Kompression: Behebung sporadischer Abstürze in Nuitka-Standalone-Builds und Ausbau automatisierter Smoke-Tests in CI-Pipelines; Verfeinerung der Zip-Streaming-Verarbeitung im Archivsystem und Behebung unerwünschter Listenleerungen bei Cloud-Cache-Aktualisierungen
+- Behebung von Sortier-Race-Conditions & umfassende Cloud-Anleitungen: Beseitigung von Timing-Problemen bei Verzeichnis- und natürlicher Sortierung (Fixes #58); Erweiterung von Kapitel 6 des Benutzerhandbuchs um detaillierte Schritt-für-Schritt-Anleitungen für die API-Einrichtung von Google Drive und Dropbox sowie Sicherheitshinweise
+
 ### 2.3.4 (13.10.2026)
 
 - Überarbeitung der Sandbox-Berechtigungsführung & einheitlicher Autorisierungs-Workflow: Wiederherstellung und Zusammenführung der Autorisierung für das Benutzer-Homeverzeichnis (`~`) und externe Speicher (`/Volumes`) in einen intuitiven Ein-Klick-Workflow („Berechtigungen erteilen“); intelligenter Pfad-Erhöhungsmechanismus stuft Zugriffsanfragen für Unterordner automatisch auf das Stammverzeichnis hoch und speichert sicherheitsbezogene Bookmarks dauerhaft, wodurch wiederholte Berechtigungsabfragen in der macOS-Sandbox vollständig entfallen

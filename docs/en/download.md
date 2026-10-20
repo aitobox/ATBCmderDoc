@@ -35,6 +35,31 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.3.8 (2026-10-20)
+
+- File Panel Interaction Overhaul & Visual Hierarchy: Refactored row item delegates to render subtle translucent hover highlights with rounded pill borders, clearly separating mouse hover states from active file selections (Fixes #72); eliminated right-click delays and ensured right-clicking preserves current selections (Fixes #60); added "New File" (Shift+F4) and "New Folder" (F7) actions directly to the file panel context menu with full 31-language i18n support (Fixes #61, #70); automatically resets file selections upon changing directories to prevent accidental cross-folder file operations (Fixes #67)
+- Command Line Terminal Execution & Seamless Path Navigation: Pressing Enter on any external shell command in the bottom command line automatically launches the default system terminal (Terminal.app / iTerm2) and executes it in the current panel directory (Fixes #63); entering directory paths or `cd` commands navigates directly with robust escaping for spaces and special characters
+- Deep Memory Governance & System Status Ring Buffers: Enforced `WA_DeleteOnClose` and deterministic destruction across Universal Viewer (F3), Editor (F4), and all modal dialogs to eliminate memory accumulation across repeated lifecycles; migrated i18n dispatchers to `weakref.WeakMethod`, broke `DiskTreeNode` reference cycles, and introduced a QIcon LRU cache; upgraded System Status Panel and AtbSysBridge with 120-sample fixed ring buffers and in-place widget reuse to eliminate memory and stylesheet churn during high-frequency telemetry polling
+- Toolbar Configuration Fix & Sandbox Guidance Alignment: Resolved an issue where newly added buttons in the middle toolbar could be overwritten and lost upon saving settings (Fixes #62); synchronized sandbox Full Disk Access (FDA) status bar indicators with Configuration menu actions
+
+### 2.3.7 (2026-10-16)
+
+- macOS Runtime Integrity & Application Exit Hardening: Fixed missing `os`, `sys`, and `traceback` imports across platform and logging modules, completely eliminating `NameError` risks during headless/standalone startup; streamlined `MainWindow.closeEvent` by removing redundant signal disconnections to ensure smooth application teardown without `SIGSEGV` segmentation faults
+- Full Disk Access (FDA) Permission Onboarding Streamlining & Safe Fallback: Refined the onboarding dialog to automatically hide the redundant "Open Full Disk Access Settings" button when native drag-to-grant is supported, establishing a single clear entry point that updates to "Full Disk Access Granted ✓" once active; added a defensive fallback that dynamically reveals the settings button if the native Cocoa panel fails to present, ensuring uninterrupted permission granting in all environments
+
+### 2.3.6 (2026-10-16)
+
+- Nuitka Compiler Pinning & Apple Silicon (ARM64) Crash Elimination: Pinned Nuitka compiler to stable 4.2.2 across all CI workflows, preventing a critical PySide6/Shiboken compiler freelist corruption (`SIGSEGV / EXC_BAD_ACCESS`) introduced by Nuitka 4.3; integrated Qt signal/slot and compiler freelist integrity assertions into `smoke_test.py`; cleaned up build scripts to align local packaging options strictly with CI release pipelines
+- macOS 15 Sequoia Window & System Tray Lifecycle Hardening: Overhauled window restoration, activation (`activate_app`), and Dock icon toggling to prevent invalid WindowServer `FocusWindowEvent` dispatches and crashes in headless/test environments; safely shut down and isolated pynput global hotkey listener threads to prevent background thread leaks and dangling `CGEventTap` hooks; added clipboard sanitization on teardown to eliminate static `QMimeData` destructor crashes
+- Test Suite Stability & CI Pipeline Optimization: Resolved sporadic segmentation faults during pytest tray and window teardown, improving headless and offscreen test reliability; streamlined CI workflows to skip redundant package builds on documentation-only updates
+
+### 2.3.5 (2026-10-15)
+
+- Native Google Drive & Dropbox Cloud VFS Integration with OAuth 2.0: Introduced native virtual filesystem support for Google Drive (`gdrive://`) and Dropbox (`dropbox://`); added dedicated cloud storage profiles in Connection Manager with support for custom Client ID / Client Secret credentials and one-click browser-based OAuth 2.0 authorization; optimized direct stream copy fast-paths, quota TTL caching, and lazy directory listings with automatic connection profile saving
+- Consolidated Keychain Security & Encrypted Credential Import/Export: Cleaned up Keychain service namespaces to eliminate repetitive startup authorization dialogs and ensure robust credential and license persistence; introduced encrypted export and import for saved connection credentials protected by user-defined passwords for secure cross-device migration, backed by full 31-language i18n
+- Nuitka Runtime Hardening & Zip Streaming Improvements: Resolved edge-case launch crashes in standalone Nuitka builds and extended CI smoke test coverage across all packaged artifacts; refined the archive system's Zip streaming engine and fixed potential file panel wiping during cloud cache invalidation
+- Sorting Concurrency Fix & Comprehensive Cloud Setup Guide: Resolved thread race conditions in folder-first and natural-case sorting tests (Fixes #58); expanded Chapter 6 of the User Guide with step-by-step instructions for Google Drive and Dropbox API setup, OAuth consent screen branding, and security guidance
+
 ### 2.3.4 (2026-10-13)
 
 - Sandbox Permission Flow Overhaul & Unified Authorization Workflow: Restored and unified user Home (`~`) and `/Volumes` authorization into a streamlined single-button "Grant Permissions" onboarding workflow; introduced intelligent path promotion that automatically promotes subfolder access requests to the user home or volume root and persists security-scoped bookmarks, completely eliminating repetitive permission prompts under macOS App Store sandbox
