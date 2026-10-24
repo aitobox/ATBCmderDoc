@@ -35,6 +35,20 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.4.0 (2026-10-23)
+
+- File Panel Tabs Overhaul with macOS Native Card/Capsule Design: Completely redesigned path tab bars into rounded card capsules with slot backgrounds and hairline dividers, fixing uneven borders and clipping; established active/inactive focus hierarchy (vibrant blue indicator for active panel, neutral gray for inactive); introduced semantic vector icons (locked padlocks, Home, Root, Search results); standardized 28px height aligned pixel-perfectly with drive selectors (Fixes #78, #79)
+- Smart Encoding Auto-Detection in Viewer & Editor: Built a dedicated encoding detection engine (`encoding_utils`) combining BOM inspection, chardet analysis, and common codepage heuristics; completely resolved garbled text when opening GBK, GB18030, Big5, Shift-JIS, and EUC-KR files in Universal Viewer (F3) and Editor (F4)
+- Lightweight Architecture & Dramatic Package Size Reduction: Completely removed the heavy `opencv-python-headless` dependency (shaving 70MB+), reimplementing image processing and watermark removal with Pillow and Apple CoreImage; pruned unused transcoding libraries (libtesseract, libx265), significantly reducing DMG/PKG installer sizes and runtime memory footprint
+- Core Safety Audit & Broad Stability Hardening: Eliminated the risk of source file truncation when copying to identical physical files across paths or VFS layers; secured text editor symlink preservation, read-only permissions, and multibyte/Emoji replacement synchronization; hardened command-line `cd` path escaping, multi-rename conflict resolution, checksum cancellation responsiveness, 7z extraction, and image scanline alignment crashes
+
+### 2.3.9 (2026-10-22)
+
+- Default Theme Refinement & Modern UI Architecture: Introduced semantic appearance tokens and contrast rules with seamless light and dark mode adaptation; restored colorful icons, classic blue panel accents, and unified high-contrast active, marked, and translucent hover states; expanded default toolbar with native overflow while preserving custom toolbar configurations; slightly widened drive selector with green disk capacity bars and clear unknown capacity handling; hidden semantic command bar by default for a cleaner look, kept bookmark popups within panels, and unified footer shortcut badges
+- Archive Encoding Auto-Detection & ZIP Panel Copying: Completely resolved garbled non-UTF-8 archive filenames (GBK, GB18030, CP936, Shift-JIS) during compression and extraction (Fixes #74); integrated smart charset detection across ZIP browsing and extraction; added full support for copying selected entries directly from ZIP virtual panels
+- Directory Sync Dialog Constraint & Robustness: Added sensible maximum width limits to the Synchronize Directories dialog, preventing tables from infinitely expanding horizontally during large comparison tasks (Fixes #76); strengthened comparison logic and test stability across ARM64 and x86_64 runners
+- Accessibility (a11y) Upgrades & Contextual Terminal Action: Assigned accessible names to all toolbar actions and exposed full keyboard navigation; added a "System Terminal" action to file panel context menus to open terminal sessions directly in the active folder; updated all 31 language catalogs for refined theme controls and disk capacity summaries
+
 ### 2.3.8 (2026-10-20)
 
 - File Panel Interaction Overhaul & Visual Hierarchy: Refactored row item delegates to render subtle translucent hover highlights with rounded pill borders, clearly separating mouse hover states from active file selections (Fixes #72); eliminated right-click delays and ensured right-clicking preserves current selections (Fixes #60); added "New File" (Shift+F4) and "New Folder" (F7) actions directly to the file panel context menu with full 31-language i18n support (Fixes #61, #70); automatically resets file selections upon changing directories to prevent accidental cross-folder file operations (Fixes #67)
