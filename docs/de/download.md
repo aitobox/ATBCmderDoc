@@ -35,6 +35,19 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.4.2 (26.10.2026)
+
+- Überarbeitung des Systembereinigers & anwendungsbezogene Bereinigung: Neue zweistufige Gruppierung (nach Anwendung oder nach Kategorie) zur gezielten Überprüfung und Bereinigung von Caches und Protokollen pro App (Fixes #85); exakte Größenberechnung ohne unbekannte Einträge, Vorabprüfung der Scan-Berechtigungen und visuelle Statusanzeigen (Bereinigt 0 B, Fehler-Tooltips); Schnellzugriffsschaltflächen „Im Finder anzeigen“ und „Im Panel öffnen“ mit Doppelklick-Unterstützung; einheitliche Fenstergeometrie mit dem Festplattenbelegungsanalysator
+- atbsys-Privilegierungsbrücke & Dateisystemmessung abgesichert: Synchronisierung der Mole-Sicherheitsprüfungen für Bereinigungs- und Deinstallationspläne (Fixes #80); garantiert exakte Übereinstimmung mit bestätigten Plänen, schützt persönliche/geteilte Daten und speichert Plandateien in der App Store-Sandbox in beschreibbaren Verzeichnissen; korrigierte Erfassung von Hardlinks, APFS-Klonen, CPU-Messungen und Befehls-Timeouts
+- macOS-Paketierungspipeline & Multi-Architektur-Härtung: Versions- und Buildnummern über alle Module vereinheitlicht; Go- und Qt-Toolchains auf macOS 12+ Kompatibilität festgelegt; Mach-O-Slice-Verifizierung auf x86_64-Hosts durch Übergabe von `-arch all` korrigiert; codesign-Plist-Parsing gegen Füllbytes geschützt und strikter Abbruch bei Kompilierungs- oder Signierungsfehlern
+- Panel-Interaktion, Kontextmenü-Icons & Lokalisierungsfeinschliff: Behebt das unerwünschte Zurückspringen des Fokus und der Bildlaufleiste an den Listenanfang beim Löschen oder Aktualisieren von Dateien (Fixes #81, #82); sanfter Fokusübergang auf Nachbarzeilen bei Beibehaltung der Bildlaufposition; klare Vektorsymbole für alle Kontextmenü-Aktionen ergänzt (Fixes #83, #84); Statuszeile des CSV-Betrachters und Terminologie über alle 31 Sprachen hinweg verfeinert
+
+### 2.4.1 (24.10.2026)
+
+- Überarbeitung der Tabellenkopf-Interaktion & Spaltentrenner im Finder-Stil: Einführung einer dedizierten `DividerHeaderView` für Dateilistenköpfe mit dezenten, vertikal zentrierten Haarlinientrennern zwischen den Spalten für eine saubere visuelle Trennung ohne massive Rahmen; Neugestaltung des `HeaderResizeCursorController` mit einer fehlertoleranten 8px-Trefferzone und strikter Trennung von Spaltensortierung und Größenänderung, wodurch Cursorflackern und Ziehkonflikte beseitigt werden
+- Stil-Entprellung und Performance-Optimierung beim Abbrechen im Einstellungsdialog: Verfeinerung des Abbruchverhaltens in den Einstellungen, sodass ein globales Zurücksetzen des Themes nur noch dann ausgeführt wird, wenn das Theme während der Vorschau tatsächlich geändert wurde; verhindert aufwendige Neukompilierungen von Stylesheets und unnötiges Polieren aller UI-Widgets beim Schließen der Einstellungen ohne Theme-Änderungen
+- Aktualisierung hochauflösender App-Icons & Behebung der macOS-Packaging-Pipeline: Aktualisierung der offiziellen Logo-Grafiken auf hochauflösende Assets; Behebung eines Problems in macOS DMG-/PKG- und Nuitka-Build-Skripten, durch das `AppIcon.icns` bei Bereinigungsschritten versehentlich entfernt wurde; automatische Erkennung aus dem Standardpfad `.app/Contents/Resources/` gewährleistet gestochen scharfe Symbole im Dock und Finder
+
 ### 2.4.0 (23.10.2026)
 
 - Neugestaltung der Dateipanel-Tabs im nativen macOS-Kapseldesign: Vollständige Überarbeitung der Pfadleisten als abgerundete Karten-Kapseln mit Hintergrundschlitz und Hairline-Trennlinie; beseitigt ungleichmäßige Ränder und Schnittfehler; klare visuelle Hierarchie zwischen aktivem Panel (blauer Akzent) und inaktivem Panel (neutralgrau); neue Vektorsymbole für gesperrte Tabs, Home, Root und Suchergebnisse; pixelgenaue Ausrichtung an den Laufwerkswählern bei einheitlicher 28px-Höhe (Fixes #78, #79)

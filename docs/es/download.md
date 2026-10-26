@@ -35,6 +35,19 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.4.2 (2026-10-26)
+
+- Renovación del limpiador del sistema y limpieza selectiva por aplicación: Nuevos modos de agrupación (por aplicación o por categoría) para inspeccionar y eliminar cachés y registros por aplicación (Fixes #85); cálculo preciso del espacio excluyendo elementos desconocidos, comprobación previa de permisos e indicadores visuales de estado (Limpiado 0 B, mensajes de error en tooltips); botones «Mostrar en Finder» y «Abrir en el panel» con soporte para doble clic; dimensiones unificadas con el analizador de espacio en disco
+- Puente privilegiado atbsys y seguridad en métricas de almacenamiento: Sincronización de las verificaciones de seguridad de Mole para los planes de limpieza y desinstalación (Fixes #80); garantiza el cumplimiento estricto del plan confirmado, protege datos personales/compartidos y almacena planes en ubicaciones con permisos de escritura en la sandbox de la App Store; mejoras en el cálculo de enlaces físicos, clones APFS, muestreo de CPU y tiempos de espera
+- Flujo de empaquetado para macOS y validación multiarquitectura reforzados: Alineación de versiones y metadatos de compilación en todos los módulos; selección fija de cadenas de herramientas Go y Qt compatibles con macOS 12+; corrección de la verificación de cortes Mach-O en equipos x86_64 con el parámetro `-arch all`; protección contra bytes de relleno en el análisis de firmas y cancelación rigurosa del empaquetado ante fallos
+- Interacción de paneles, iconos contextuales y refinamiento de traducciones: Corrección del molesto salto del foco y del desplazamiento hacia arriba al eliminar archivos o actualizar la lista (Fixes #81, #82), desplazando suavemente el foco a la fila adyacente y conservando la posición de la barra; incorporación de iconos vectoriales claros para todas las opciones del menú contextual (Fixes #83, #84); optimización de la barra de estado del visor CSV y revisión de terminología en los 31 idiomas
+
+### 2.4.1 (2026-10-24)
+
+- Renovación de la interacción de encabezados y divisores de columna al estilo Finder: Incorporación del componente `DividerHeaderView` para los encabezados de lista de archivos, trazando sutiles divisores verticales semitransparentes centrados entre columnas para una separación limpia sin bordes pesados; rediseño de `HeaderResizeCursorController` con una zona de tolerancia de 8 px y separación nítida entre la ordenación por clic y el redimensionamiento, eliminando parpadeos del cursor y conflictos de gestos
+- Optimización de rendimiento y prevención de bloqueos al cancelar en Preferencias: Optimización de la lógica de cierre del diálogo de opciones, revirtiendo el tema global únicamente si se modificó realmente durante la vista previa; evita el recálculo masivo de hojas de estilo y el repintado innecesario de todos los controles de la interfaz al descartar la configuración sin cambios de tema
+- Actualización de iconos de alta resolución y corrección del empaquetado en macOS: Actualización de los recursos gráficos del logotipo oficial a mayor nitidez; corrección de un error en los scripts de compilación de DMG / PKG y Nuitka donde `AppIcon.icns` se eliminaba por error durante la limpieza; soporte de detección adaptativa desde `.app/Contents/Resources/` para garantizar la correcta visualización del icono en el Dock y Finder
+
 ### 2.4.0 (2026-10-23)
 
 - Renovación de pestañas en diseño de cápsulas tipo tarjeta nativo de macOS: Rediseño completo de las barras de pestañas en cápsulas redondeadas independientes con fondo acanalado y divisores finos, corrigiendo bordes irregulares y cortes; jerarquía visual definida entre panel activo (cápsula azul) e inactivo (gris neutro); incorporación de iconos vectoriales para pestañas bloqueadas, inicio, raíz y búsquedas; altura estandarizada de 28px alineada al píxel con los selectores de unidades (Fixes #78, #79)

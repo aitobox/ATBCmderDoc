@@ -35,6 +35,19 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.4.2 (2026-10-26)
+
+- System Cleaner Overhaul & Per-Application Cleanup: Added dual grouping modes (by Application or by Category) to inspect and clean caches and logs per app (Fixes #85); accurate group size calculation excluding unknown entries, pre-scan permission checks, and live status indicators (Cleaned 0 B, failure tooltips); added "Reveal in Finder" and "Open in ATBCmder" toolbar buttons with double-click support; aligned window geometry with Disk Space Analyzer
+- atbsys Privileged Bridge & Storage Accounting Hardening: Synchronized Mole safety verification for cleanup and uninstall plans (Fixes #80), ensuring execution strictly matches confirmed plans, protects personal/shared data, and honors App Store sandbox writable locations; hardened filesystem accounting for hard links, APFS clone tracking, CPU sampling, and command timeouts
+- macOS Packaging Pipeline & Multi-Architecture Hardening: Aligned version and build metadata across modules; pinned Go and Qt toolchains compatible with macOS 12+; fixed Mach-O slice verification on x86_64 hosts by passing `-arch all` to otool; safeguarded codesign plist parsing against padding bytes and enforced build abortion on packaging or signing failures
+- Panel Interaction, Context Icons & Localization Polish: Resolved the issue where deleting files or refreshing caused the file panel to jump back to the top (Fixes #81, #82), smoothly shifting focus to adjacent rows while preserving scroll positions; configured semantic vector icons for all context menu actions (Fixes #83, #84); polished CSV viewer cell status and terminology translations across all 31 supported languages
+
+### 2.4.1 (2026-10-24)
+
+- Header Interaction Overhaul & Finder-Style Column Dividers: Introduced a dedicated `DividerHeaderView` for file table headers, drawing subtle, inset vertical hairline dividers centered between columns for crisp visual separation without bulky borders; overhauled `HeaderResizeCursorController` with an 8px forgiving hit-test zone and clean gesture separation between column sorting and resizing, eliminating cursor flicker and drag-handle conflicts
+- Options Dialog Theme Anti-Jitter & Performance Optimization: Refined cancel/rejection behavior in the Options dialog so global theme rollback is only invoked if the active theme was actually modified during preview; eliminates redundant stylesheet recompilation and polish passes across all UI widgets when dismissing preferences without theme changes, removing modal close stutters
+- High-Resolution App Icons & macOS Packaging Pipeline Fix: Updated higher-resolution official logo assets; fixed an issue in macOS DMG/PKG and Nuitka build scripts where `AppIcon.icns` was inadvertently pruned during asset cleanup; expanded icon discovery to resolve directly from standard `.app/Contents/Resources/AppIcon.icns`, guaranteeing crisp icon rendering in the Dock and Finder
+
 ### 2.4.0 (2026-10-23)
 
 - File Panel Tabs Overhaul with macOS Native Card/Capsule Design: Completely redesigned path tab bars into rounded card capsules with slot backgrounds and hairline dividers, fixing uneven borders and clipping; established active/inactive focus hierarchy (vibrant blue indicator for active panel, neutral gray for inactive); introduced semantic vector icons (locked padlocks, Home, Root, Search results); standardized 28px height aligned pixel-perfectly with drive selectors (Fixes #78, #79)
