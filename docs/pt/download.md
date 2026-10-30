@@ -35,6 +35,13 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.4.3 (30/10/2026)
+
+- Ferramenta avançada para busca de alterações recentes em arquivos e pastas: Nova ferramenta de sistema integrada «Alterações Recentes» baseada em comandos nativos da bridge, oferecendo filtros de tempo flexíveis (1 hora, 24 horas, 7 dias, 30 dias) e filtros de tamanho mínimo (>1 MB, >10 MB, >100 MB, >1 GB); aproveita os metadados do macOS Spotlight para acelerar varreduras profundas; os resultados contam com filtragem instantânea, navegação por clique duplo para o Finder ou painel e envio em lote para a Lixeira
+- Renomeação automática segura em conflitos de colagem e confiabilidade em nuvem: Adiciona automaticamente um sufixo numérico incremental (ex.: `nome (1).ext`) ao colar arquivos ou pastas com nomes conflitantes, evitando sobrescritas acidentais (Fixes #92); restaurada a descoberta de dados no Google Drive em sistemas de arquivos virtuais (Fixes #87, #91); inclusão completa das dependências essenciais do Dropbox nas compilações do macOS (Fixes #90)
+- Auditoria abrangente em 31 idiomas e padronização de terminologia: Revisão minuciosa e refinamento das traduções em todos os 31 idiomas suportados, corrigindo problemas de quebra de linha com escape em arquivos PO e eliminando imprecisões de tradução automática (Fixes #88, #93); padronizada a terminologia profissional do gerenciador de arquivos e recompilados os catálogos binários `.mo`
+- Polimento da experiência nativa do macOS e refinamento visual: Botões de diálogos de confirmação padronizados de acordo com as convenções do macOS («Sim/Confirmar» antes de «Não/Cancelar»); remoção de linhas divisórias supérfluas nas abas de caminho para um design em cápsula mais limpo; corrigido o desfoque do ícone no Dock do macOS causado pela redução de resolução do Qt, melhorado o contraste dos divisores de cabeçalho e corrigida condição de corrida no encerramento da verificação de caminhos
+
 ### 2.4.2 (26/10/2026)
 
 - Reformulação da limpeza do sistema e limpeza por aplicativo: Adicionados modos duplos de agrupamento (por aplicativo ou por categoria) para inspecionar e limpar caches e logs por aplicativo (Fixes #85); cálculo preciso do tamanho dos grupos excluindo entradas desconhecidas, verificações prévias de permissão e indicadores de status em tempo real (0 B limpos, dicas de falha); adicionados botões na barra de ferramentas «Revelar no Finder» e «Abrir no ATBCmder» com suporte a clique duplo; geometria da janela alinhada com o Analisador de Espaço em Disco

@@ -35,6 +35,13 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.4.3 (30/10/2026)
+
+- Outil avancé de recherche des fichiers et dossiers récemment modifiés : Nouveau panneau système « Fichiers récents » optimisé par des commandes natives, offrant des filtres temporels (1 heure, 24 heures, 7 jours, 30 jours) et de taille minimale (>1 Mo, >10 Mo, >100 Mo, >1 Go) ; exploite les métadonnées Spotlight pour accélérer les analyses profondes ; les résultats intègrent le filtrage direct, la navigation par double-clic vers le Finder ou le panneau, et le déplacement groupé vers la corbeille
+- Renommage automatique sécurisé au collage et fiabilité du stockage cloud : Ajout automatique d'un suffixe incrémentiel (ex. `nom (1).ext`) lors de conflits de noms au collage de fichiers ou dossiers pour prévenir tout écrasement accidentel (Fixes #92) ; correction de la détection sur Google Drive (Fixes #87, #91) ; intégration des dépendances Dropbox dans les paquets d'installation macOS (Fixes #90)
+- Audit approfondi des 31 langues et standardisation des termes techniques : Révision complète des fichiers de traduction PO pour les 31 langues, éliminant les erreurs d'échappement de fin de ligne et les traductions automatiques maladroites (Fixes #88, #93) ; harmonisation de la terminologie du gestionnaire de fichiers et recompilation de tous les catalogues binaires `.mo`
+- Finitions de l'interface native macOS et clarté visuelle : Disposition des boutons de dialogue de confirmation harmonisée selon les normes macOS (« Oui/Confirmer » précédant « Non/Annuler ») ; suppression des filets superflus autour des onglets pour un rendu épuré ; netteté de l'icône du Dock macOS améliorée face au sous-échantillonnage de Qt et contraste des séparateurs de colonnes renforcé
+
 ### 2.4.2 (26/10/2026)
 
 - Refonte du nettoyeur système et nettoyage ciblé par application : Nouveaux modes de regroupement (par application ou par catégorie) pour analyser et purger les caches et journaux de chaque logiciel (Fixes #85) ; calcul d'espace précis excluant les éléments inconnus, vérification préalable des permissions et retour d'état visuel (Nettoyé 0 o, infobulles explicatives) ; boutons d'accès rapide « Afficher dans le Finder » et « Ouvrir dans le panneau » avec support du double-clic ; dimensions alignées sur l'analyseur d'espace disque

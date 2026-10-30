@@ -35,6 +35,13 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.4.3 (2026-10-30)
+
+- Advanced Recent File & Folder Changes Tool: Built a dedicated "Recent Changes" system tool powered by native bridge commands, supporting flexible time ranges (1 hour, 24 hours, 7 days, 30 days) and minimum size filters (>1MB, >10MB, >100MB, >1GB); integrates macOS Spotlight metadata to seed candidates for ultra-fast deep scans; search results support instant text filtering, double-click/contextual navigation to Finder or panel paths, and batch moving to Trash
+- Collision-Safe Paste Auto-Rename & Cloud Storage Reliability: Automatically appends incremental numeric suffixes (e.g. `name (1).ext`) when pasted files or directories collide with existing items, preventing accidental overwrites (Fixes #92); restored missing Google Drive discovery data across virtual filesystems (Fixes #87, #91); bundled essential Dropbox cloud dependencies in macOS application builds (Fixes #90)
+- Comprehensive 31-Language Audit & Terminology Standardization: Rigorously audited and polished translations across all 31 supported languages, resolving PO line-wrap escaping issues and syntax errors while eliminating machine-translation anomalies (Fixes #88, #93); standardized professional file manager terminology and refreshed compiled binary `.mo` catalogs
+- macOS Native UX Polish & Visual Refinement: Standardized confirmation dialog buttons to macOS conventions ("Yes/Confirm" preceding "No/Cancel"); cleaned up redundant hairline borders around path tabs for a refined capsule appearance; fixed macOS Dock icon fuzziness caused by Qt downsampling, improved table header column divider contrast, and resolved a path checker thread retirement race condition
+
 ### 2.4.2 (2026-10-26)
 
 - System Cleaner Overhaul & Per-Application Cleanup: Added dual grouping modes (by Application or by Category) to inspect and clean caches and logs per app (Fixes #85); accurate group size calculation excluding unknown entries, pre-scan permission checks, and live status indicators (Cleaned 0 B, failure tooltips); added "Reveal in Finder" and "Open in ATBCmder" toolbar buttons with double-click support; aligned window geometry with Disk Space Analyzer

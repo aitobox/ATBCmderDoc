@@ -35,6 +35,13 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.4.3 (2026-10-30)
+
+- Herramienta avanzada de búsqueda de archivos y carpetas modificados recientemente: Nueva herramienta del sistema «Cambios recientes» impulsada por comandos puente nativos; admite filtros de tiempo (1 hora, 24 horas, 7 días, 30 días) y de tamaño mínimo (>1 MB, >10 MB, >100 MB, >1 GB); aprovecha los metadatos de Spotlight de macOS para acelerar la búsqueda; incluye filtrado instantáneo, apertura en Finder o panel con doble clic y envío masivo a la Papelera
+- Renombrado automático seguro al pegar y mayor fiabilidad en almacenamiento en la nube: Añade automáticamente un sufijo numérico (ej. `nombre (1).ext`) ante colisiones de nombres al pegar archivos o carpetas, evitando sobreescrituras accidentales (Fixes #92); restaurada la detección de Google Drive en sistemas de archivos virtuales (Fixes #87, #91); empaquetado completo de dependencias de Dropbox en las compilaciones de macOS (Fixes #90)
+- Auditoría integral de los 31 idiomas y estandarización de terminología: Revisión minuciosa de los catálogos PO en los 31 idiomas admitidos, solucionando errores de escape en saltos de línea y corrigiendo traducciones automáticas (Fixes #88, #93); unificación de términos profesionales de gestión de archivos y recompilación de diccionarios binarios `.mo`
+- Refinamiento de la experiencia nativa en macOS y estética visual: Orden de botones en cuadros de diálogo de confirmación alineado con las directrices de macOS («Sí/Aceptar» antes de «No/Cancelar»); eliminación de líneas divisorias superfluas en las pestañas para un diseño más limpio; corrección de la borrosidad del icono en el Dock de macOS causada por el submuestreo de Qt y mayor contraste en los divisores de cabecera
+
 ### 2.4.2 (2026-10-26)
 
 - Renovación del limpiador del sistema y limpieza selectiva por aplicación: Nuevos modos de agrupación (por aplicación o por categoría) para inspeccionar y eliminar cachés y registros por aplicación (Fixes #85); cálculo preciso del espacio excluyendo elementos desconocidos, comprobación previa de permisos e indicadores visuales de estado (Limpiado 0 B, mensajes de error en tooltips); botones «Mostrar en Finder» y «Abrir en el panel» con soporte para doble clic; dimensiones unificadas con el analizador de espacio en disco

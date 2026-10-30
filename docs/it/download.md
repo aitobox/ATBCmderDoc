@@ -35,6 +35,13 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 2.4.3 (30-10-2026)
+
+- Strumento avanzato per la ricerca di file e cartelle modificati di recente: Nuovo strumento di sistema integrato «Modifiche recenti» basato su comandi bridge nativi, con filtri temporali flessibili (1 ora, 24 ore, 7 giorni, 30 giorni) e filtri per dimensione minima (>1 MB, >10 MB, >100 MB, >1 GB); sfrutta i metadati di macOS Spotlight per scansioni profonde ultraveloci; i risultati supportano filtri istantanei, navigazione con doppio clic verso il Finder o il pannello ed eliminazione di gruppo nel Cestino
+- Ridenominazione automatica sicura per i conflitti di incolla e affidabilità dell'archiviazione cloud: Aggiunta automatica di un suffisso numerico incrementale (es. `nome (1).ext`) quando i file o le cartelle incollati collidono con elementi esistenti, prevenendo sovrascritture accidentali (Fixes #92); ripristinata la scoperta dei dati mancanti di Google Drive nei file system virtuali (Fixes #87, #91); incluse le dipendenze essenziali di Dropbox nei pacchetti dell'applicazione macOS (Fixes #90)
+- Revisione completa in 31 lingue e standardizzazione della terminologia: Revisione rigorosa e perfezionamento delle traduzioni in tutte le 31 lingue supportate, risolvendo problemi di escape di fine riga nei file PO ed errori di sintassi ed eliminando imperfezioni di traduzione automatica (Fixes #88, #93); standardizzata la terminologia professionale del file manager e ricompilati i cataloghi binari `.mo`
+- Rifinitura dell'esperienza utente nativa di macOS e dettagli visivi: Pulsanti delle finestre di dialogo di conferma standardizzati secondo le convenzioni macOS («Sì/Conferma» prima di «No/Annulla»); rimosse le linee sottili superflue intorno alle schede di percorso per un aspetto a capsula più pulito; corretta la sfocatura dell'icona del Dock macOS causata dal downsampling di Qt, migliorato il contrasto dei divisori di colonna e risolta una race condition alla chiusura del thread di controllo del percorso
+
 ### 2.4.2 (26-10-2026)
 
 - Riprogettazione della pulizia di sistema e pulizia per applicazione: Aggiunta doppia modalità di raggruppamento (per applicazione o per categoria) per esaminare e cancellare cache e registri per ogni app (Fixes #85); calcolo accurato delle dimensioni del gruppo escludendo voci sconosciute, controlli preliminari dei permessi e indicatori di stato in tempo reale (Puliti 0 B, tooltip per errori); aggiunti pulsanti nella barra strumenti «Mostra nel Finder» e «Apri in ATBCmder» con supporto al doppio clic; allineata la geometria della finestra con l'Analizzatore spazio disco

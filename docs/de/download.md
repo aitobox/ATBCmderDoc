@@ -35,6 +35,13 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.4.3 (30.10.2026)
+
+- Erweitertes Suchwerkzeug für kürzlich geänderte Dateien & Ordner: Neues integriertes Systemwerkzeug „Kürzliche Änderungen“ mit nativer Bridge-Unterstützung; bietet flexible Zeitfilter (1 Stunde, 24 Stunden, 7 Tage, 30 Tage) und Mindestgrößenfilter (>1MB, >10MB, >100MB, >1GB); nutzt macOS Spotlight-Metadaten für blitzschnelle Tiefenscans; Suchergebnisse bieten Sofortfilter, Doppelklick-Navigation in Finder oder Panel und direktes Verschieben in den Papierkorb
+- Sichere automatische Umbenennung bei Einfügekonflikten & stabile Cloud-Dateisysteme: Beim Einfügen kollidierender Dateien oder Ordner wird automatisch ein nummerierter Suffix (z. B. `name (1).ext`) angehängt, um versehentliches Überschreiben auszuschließen (Fixes #92); Erkennungsfehler bei Google Drive-Dateisystemen behoben (Fixes #87, #91); Dropbox-Abhängigkeiten fest in die macOS-Paketierung integriert (Fixes #90)
+- Umfassendes Audit aller 31 Sprachen & Standardisierung von Fachbegriffen: Gründliche Überprüfung und Verfeinerung sämtlicher 31 PO-Sprachdateien, Beseitigung von Zeilenumbruch-Escape-Fehlern und holprigen Maschinenübersetzungen (Fixes #88, #93); Vereinheitlichung von Dateimanager-Fachbegriffen und Neukompilierung aller binären `.mo`-Kataloge
+- Verfeinerte native macOS-Benutzerführung & visuelle Details: Schaltflächen in Bestätigungsdialogen folgen nun einheitlich den macOS-Konventionen („Ja/Bestätigen“ vor „Nein/Abbrechen“); überflüssige Haarlinien an den Pfad-Tabs entfernt für ein aufgeräumtes Kapsel-Design; Unschärfe des macOS-Dock-Icons durch Qt-Downsampling behoben und Kontrast der Spaltentrenner verbessert
+
 ### 2.4.2 (26.10.2026)
 
 - Überarbeitung des Systembereinigers & anwendungsbezogene Bereinigung: Neue zweistufige Gruppierung (nach Anwendung oder nach Kategorie) zur gezielten Überprüfung und Bereinigung von Caches und Protokollen pro App (Fixes #85); exakte Größenberechnung ohne unbekannte Einträge, Vorabprüfung der Scan-Berechtigungen und visuelle Statusanzeigen (Bereinigt 0 B, Fehler-Tooltips); Schnellzugriffsschaltflächen „Im Finder anzeigen“ und „Im Panel öffnen“ mit Doppelklick-Unterstützung; einheitliche Fenstergeometrie mit dem Festplattenbelegungsanalysator
