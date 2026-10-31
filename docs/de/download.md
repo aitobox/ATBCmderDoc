@@ -35,6 +35,19 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.4.5 (31.10.2026)
+
+- Intelligente Passwort-Aufforderung bei Netzwerkverbindungen & Sitzungs-Zwischenspeicherung: Neuer Authentifizierungsdialog (`NetworkPasswordDialog`) mit Passwort-Einblendung und Keychain-Speicheroption; vorgeschaltete Überprüfung (`resolve_or_prompt_network_credentials`), die bei nicht gespeicherten Passwörtern für SFTP-, FTP-, SMB- und WebDAV-Verbindungen automatisch zur Passworteingabe auffordert und bei Abbruch sicher zurückkehrt; behebt den Verlust temporärer Passwörter beim Bearbeiten im Verbindungsmanager und behält Zugangsdaten im Sitzungsspeicher (`VFSSessionCache`) für die Dauer der aktuellen Anwendungssitzung bei
+- Spaltensortierung per Klick im Netzwerk-VFS-Panel & bidirektionale Pfeilsynchronisierung: Vollständige Implementierung der `sort()`-Methode in `VfsTableModel` analog zu den lokalen Dateipanel-Spalten (Name, Erweiterung, Größe, Änderungsdatum, Attribute) mit Verzeichnissen stets an oberster Stelle; Klick-Sortierung in der Kopfzeile über `DividerHeaderView` (`sectionsClickable`) aktiviert und Sortierpfeile synchron mit Menü- und Hotkey-Sortierbefehlen gehalten
+- Umfassendes Audit der Netzwerkarchitektur, Fehlerbehandlung & erweiterte Einstellungen: Beseitigung wechselseitiger Rekursionen zwischen `VFSSessionCache.disconnect` und `VFSManager.remove_from_cache` beim Trennen von Verbindungen; WebDAV-Streaming-Uploads mit expliziter `Content-Length`, sicherer Antwortbeendigung und Bereinigung unvollständiger Dateien bei Abbruch gehärtet; Prüfung von Statusrückgaben und Fehlerkontexten bei Download-, Upload-, Lösch- und Samba-Mount-Workern verstärkt; erweiterte Optionen (SSL/TLS-Prüfung, passiver Modus PASV) in allen 31 Sprachen standardisiert
+
+### 2.4.4 (31.10.2026)
+
+- Absicherung des QThread-Hintergrundthread-Lebenszyklus & Schutz vor GC-Abstürzen: Einführung eines universellen Schutzmechanismus für `QThread` basierend auf PEP 442-Wiederbelebung; verhindert tödliche `SIGABRT`-Abstürze („QThread: Destroyed while thread is still running“), wenn aktive Hintergrundthreads (Verzeichnis-Scan, Pfadprüfung, Dateitransfer) von der Garbage Collection vorzeitig freigegeben werden; Aufräumroutinen in `FileSystemModel` mit `safe_qthread_cleanup` nachhaltig gehärtet
+- Rechtefreie globale Hotkeys über Carbon & Normalisierung der Option-Taste: Umstellung der globalen macOS-Tastenkombinationen auf die native Carbon-API `RegisterEventHotKey`; ermöglicht sofortige globale Hotkey-Nutzung ohne umständliche Vergabe von Bedienungshilfen-Rechten (Accessibility) in den Systemeinstellungen; beseitigt Konflikte der Option-Taste (⌥) mit Akzent- und Tottasten unter macOS mit Echtzeiterfassung und Konflikterkennung in den Einstellungen
+- Gestochen scharfe Dock-Icons in macOS-Anwendungspaketen: Behebt unscharfe und herunterskalierte App-Icons im macOS-Dock; hochauflösende Icon-Ressourcen werden nun direkt über die native AppKit-Schnittstelle `NSApplication.setApplicationIconImage_` eingebunden und verhindern Qualitätsverluste durch Qt-Downsampling
+- Wiederherstellung der Kompatibilität mit macOS 12 (Monterey) & Abhängigkeitsoptimierung: Verfeinerung der PySide6-Versionsgrenzen zur vollständigen Wiederherstellung der Abwärtskompatibilität mit macOS 12 (Monterey), für zuverlässigen Betrieb auf modernen wie älteren Systemen
+
 ### 2.4.3 (30.10.2026)
 
 - Erweitertes Suchwerkzeug für kürzlich geänderte Dateien & Ordner: Neues integriertes Systemwerkzeug „Kürzliche Änderungen“ mit nativer Bridge-Unterstützung; bietet flexible Zeitfilter (1 Stunde, 24 Stunden, 7 Tage, 30 Tage) und Mindestgrößenfilter (>1MB, >10MB, >100MB, >1GB); nutzt macOS Spotlight-Metadaten für blitzschnelle Tiefenscans; Suchergebnisse bieten Sofortfilter, Doppelklick-Navigation in Finder oder Panel und direktes Verschieben in den Papierkorb

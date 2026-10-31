@@ -35,6 +35,19 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.4.5 (2026-10-31)
+
+- Smart Network Authentication Prompts & In-Memory Session Credential Caching: Introduced a dedicated `NetworkPasswordDialog` with password reveal/mask toggling and Keychain persistence options; implemented a pre-flight credential resolver (`resolve_or_prompt_network_credentials`) that seamlessly intercepts navigation to unremembered SFTP, FTP, SMB, and WebDAV connections to prompt for credentials with graceful cancellation rollback; fixed temporary password loss when editing unremembered connections in Connection Manager, securely retaining working credentials in `VFSSessionCache` across the current app session
+- Network VFS Table Column Sorting & Two-Way Header Indicator Synchronization: Implemented the full `sort()` method on `VfsTableModel` matching local file panel columns (Name, Extension, Size, Modified Date, Attributes) while keeping directories pinned to the top; enabled header section clicking on `DividerHeaderView` (`sectionsClickable`) and synchronized sort indicators bidirectionally with main menu and hotkey sort commands
+- Comprehensive Network VFS Audit, Robust Error Handling & Advanced Settings: Eliminated mutual recursion between `VFSSessionCache.disconnect` and `VFSManager.remove_from_cache` during re-entrant teardowns; hardened WebDAV streaming uploads with explicit `Content-Length`, safe response closure, and proactive cleanup of partial files on cancellation; fortified status checks and error contexts across VFS Download, Upload, Delete, and Samba mount workers; standardized advanced connection options (SSL/TLS verification, passive mode PASV) with updated 31-language localization catalogs
+
+### 2.4.4 (2026-10-31)
+
+- QThread Lifecycle Safety Hardening & GC Crash Prevention: Implemented universal `QThread` lifecycle safety guards using PEP 442 object resurrection, completely eliminating `SIGABRT` crashes (`QThread: Destroyed while thread is still running`) caused by running background workers (directory scanning, path checking, file transfers) being garbage-collected prematurely; enhanced teardown routines across `FileSystemModel` and loaders with robust `safe_qthread_cleanup`
+- Carbon Permission-Free Global Hotkeys & Option Key Normalization: Overhauled macOS global hotkey handling by migrating to native Carbon `RegisterEventHotKey` APIs, enabling instant global hotkey activation out of the box without requiring Accessibility privacy permissions in macOS System Settings; normalized Option key (⌥) mappings to eliminate input conflicts with system dead keys and accented characters, with live capture and conflict detection in Preferences
+- High-Resolution macOS Dock Icon in Packaged Bundles: Fixed an issue where the application icon in the macOS Dock appeared blurry due to Qt downsampling; natively injects high-resolution icon assets via AppKit `NSApplication.setApplicationIconImage_`, ensuring sharp visual fidelity
+- macOS 12 (Monterey) Compatibility Restoration & Dependency Tuning: Refined PySide6 dependency constraints to restore and ensure backward compatibility with macOS 12 (Monterey), providing out-of-the-box reliability across modern and legacy macOS releases
+
 ### 2.4.3 (2026-10-30)
 
 - Advanced Recent File & Folder Changes Tool: Built a dedicated "Recent Changes" system tool powered by native bridge commands, supporting flexible time ranges (1 hour, 24 hours, 7 days, 30 days) and minimum size filters (>1MB, >10MB, >100MB, >1GB); integrates macOS Spotlight metadata to seed candidates for ultra-fast deep scans; search results support instant text filtering, double-click/contextual navigation to Finder or panel paths, and batch moving to Trash

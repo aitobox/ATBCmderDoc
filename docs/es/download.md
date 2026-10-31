@@ -35,6 +35,19 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.4.5 (2026-10-31)
+
+- Cuadro de autenticación de red inteligente y retención de credenciales de sesión: Incorporación del cuadro de diálogo (`NetworkPasswordDialog`) con alternancia de visibilidad de contraseña y opción de guardado en el Llavero del sistema; implementación de un comprobador de credenciales (`resolve_or_prompt_network_credentials`) que solicita contraseñas al navegar a conexiones SFTP, FTP, SMB o WebDAV no recordadas y permite revertir la navegación con seguridad; corrección de la pérdida de contraseñas temporales al guardar en el gestor de conexiones, reteniéndolas en memoria (`VFSSessionCache`) durante la sesión actual
+- Ordenación por columnas al hacer clic en el panel de red VFS y sincronización bidireccional: Implementación completa del método `sort()` en `VfsTableModel`, coincidiendo con las columnas del panel local (Nombre, Extensión, Tamaño, Fecha de modificación, Atributos) y manteniendo las carpetas siempre en la parte superior; activación del clic en encabezados mediante `DividerHeaderView` (`sectionsClickable`) y sincronización en tiempo real de las flechas indicadoras con el menú principal y los atajos
+- Auditoría integral de conexiones de red, manejo de errores y ajustes avanzados: Eliminación total de la recursión mutua entre `VFSSessionCache.disconnect` y `VFSManager.remove_from_cache` al desconectar; mejora de la subida continua por WebDAV con cabecera `Content-Length` explícita, cierre seguro de respuestas y eliminación de archivos parciales ante cancelaciones; refuerzo de las comprobaciones de estado y contextos de error en las tareas de descarga, subida, eliminación y montaje de Samba; estandarización de opciones avanzadas (validación SSL/TLS, modo pasivo PASV) en los 31 idiomas admitidos
+
+### 2.4.4 (2026-10-31)
+
+- Protección del ciclo de vida de hilos QThread y prevención de caídas por GC: Implementación de un mecanismo global de seguridad para `QThread` basado en la resurrección de objetos (PEP 442), eliminando por completo los bloqueos fatales `SIGABRT` («QThread: Destroyed while thread is still running») cuando el recolector de basura (GC) destruía hilos activos prematuramente; mejora de las rutinas de cierre en `FileSystemModel` con `safe_qthread_cleanup`
+- Atajos globales sin permisos mediante Carbon y normalización de la tecla Option: Migración de los atajos globales en macOS a la API nativa de Carbon `RegisterEventHotKey`, permitiendo su activación inmediata sin necesidad de otorgar permisos de accesibilidad en los Ajustes del Sistema; resolución total de conflictos entre la tecla Option (⌥) y las teclas muertas o caracteres acentuados, con detección de conflictos en preferencias
+- Corrección de iconos en alta resolución en el Dock de macOS: Solucionado el problema por el cual el icono de la aplicación aparecía borroso en el Dock de macOS debido al submuestreo de Qt; inyección nativa de iconos de alta fidelidad mediante la interfaz AppKit `NSApplication.setApplicationIconImage_`
+- Restauración de compatibilidad con macOS 12 (Monterey) y ajuste de dependencias: Ajuste preciso en los requisitos de PySide6 para restablecer y garantizar la compatibilidad con macOS 12 (Monterey), asegurando un rendimiento estable tanto en sistemas recientes como anteriores
+
 ### 2.4.3 (2026-10-30)
 
 - Herramienta avanzada de búsqueda de archivos y carpetas modificados recientemente: Nueva herramienta del sistema «Cambios recientes» impulsada por comandos puente nativos; admite filtros de tiempo (1 hora, 24 horas, 7 días, 30 días) y de tamaño mínimo (>1 MB, >10 MB, >100 MB, >1 GB); aprovecha los metadatos de Spotlight de macOS para acelerar la búsqueda; incluye filtrado instantáneo, apertura en Finder o panel con doble clic y envío masivo a la Papelera
