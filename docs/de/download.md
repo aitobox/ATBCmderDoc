@@ -35,6 +35,13 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.4.6 (03.11.2026)
+
+- App Store-Sandbox-Anpassung für Systemstatus & Bereinigungswerkzeuge: In restriktiven Sandbox-Umgebungen wechselt das Systemstatus-Panel automatisch in einen Dual-Modus, um laufende GUI-Apps über NSWorkspace mit Original-Icons und Vordergrundstatus anzuzeigen (Fixes #102, #104); Bereinigungsprobleme bei tief verschachtelten Browser-Caches und unbekannten Größen in der Sandbox behoben, mit präziser Größenakkumulation und verlässlicher Statusanzeige (Fixes #101, #103)
+- Kanonisierung der Finder-Farbetiketten & vollständige Lokalisierung in 31 Sprachen: Neue Hilfsfunktionen (`get_canonical_tag_name` und `localize_tag_name`) zur Bereinigung interner Index-Suffixe (`\n<id>`); standardisierte Übersetzungen für alle 7 macOS-Farbetiketten (Rot, Orange, Gelb, Grün, Blau, Violett, Grau) in allen 31 Sprachen kompiliert, mit automatischer Anzeige des lokalisierten Namens im Spalten-Tooltip
+- Shift+Klick-Auswahlaufhebung im Dateipanel & verfeinerte Suchinteraktion: Unterstützung für Shift+Klick zum stapelweisen Aufheben von Dateiauswahlen hinzugefügt (Fixes #96, #99); der Suchdialog fokussiert beim Öffnen nun standardmäßig direkt das Dateimuster-Eingabefeld (Fixes #94, #98); unbeabsichtigter Suchabbruch durch doppeltes Auslösen der Eingabetaste behoben (Fixes #95, #97); Abstände zwischen Laufwerksauswahl und Tabs optimiert
+- Modernisierung der CI/CD-Test- und Release-Workflows: Migration der cloudbasierten macOS-Workflows auf GitHub Actions auf den aktuellen Standard `macos-latest`, zur Gewährleistung aktueller Toolchains bei vollständiger Beibehaltung der selbst gehosteten x86_64-Validierungsmatrix
+
 ### 2.4.5 (31.10.2026)
 
 - Intelligente Passwort-Aufforderung bei Netzwerkverbindungen & Sitzungs-Zwischenspeicherung: Neuer Authentifizierungsdialog (`NetworkPasswordDialog`) mit Passwort-Einblendung und Keychain-Speicheroption; vorgeschaltete Überprüfung (`resolve_or_prompt_network_credentials`), die bei nicht gespeicherten Passwörtern für SFTP-, FTP-, SMB- und WebDAV-Verbindungen automatisch zur Passworteingabe auffordert und bei Abbruch sicher zurückkehrt; behebt den Verlust temporärer Passwörter beim Bearbeiten im Verbindungsmanager und behält Zugangsdaten im Sitzungsspeicher (`VFSSessionCache`) für die Dauer der aktuellen Anwendungssitzung bei

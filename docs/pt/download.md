@@ -35,6 +35,13 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.4.6 (03/11/2026)
+
+- Adaptação do status do sistema e da limpeza ao Sandbox da App Store: Em ambientes restritos de sandbox, o painel de status do sistema ativa automaticamente o modo duplo para exibir aplicativos GUI em execução via NSWorkspace com ícones originais e status em primeiro plano (Fixes #102, #104); resolvidas as limitações de varredura em caches de navegadores e a contabilidade de tamanhos desconhecidos no Limpador do Sistema, acumulando com precisão os tamanhos conhecidos e reportando o status real de limpeza (Fixes #101, #103)
+- Canonicalização de etiquetas de cores do Finder e localização profunda em 31 idiomas: Introduzidas funções auxiliares de canonicalização e tradução (`get_canonical_tag_name` e `localize_tag_name`) para remover sufixos internos de índice (`\n<id>`); compiladas traduções padronizadas para todas as 7 etiquetas de cores do macOS (Vermelho, Laranja, Amarelo, Verde, Azul, Roxo, Cinza) em todos os 31 idiomas suportados, exibindo dinamicamente os nomes localizados nas dicas das colunas
+- Desseleção com Shift+Clique no painel e melhorias no diálogo de busca: Adicionado suporte a Shift+Clique para desselecionar arquivos em lote na tabela, permitindo desmarcar intervalos de forma intuitiva sem perder seleções existentes (Fixes #96, #99); foco automático no campo de padrão de arquivo ao abrir a janela de busca (Fixes #94, #98); evitado cancelamento acidental da busca pelo acionamento duplo da tecla Enter (Fixes #95, #97); espaçamento visual ajustado entre o seletor de unidades e as abas
+- Modernização dos fluxos de trabalho CI/CD de teste e lançamento: Atualizados os executores de fluxos de trabalho do GitHub Actions no macOS em nuvem para `macos-latest`, alinhando-se à infraestrutura atual de executores e dependências, mantendo estritamente a matriz de validação em executores x86_64 auto-hospedados
+
 ### 2.4.5 (31/10/2026)
 
 - Solicitações inteligentes de autenticação de rede e retenção de credenciais de sessão na memória: Introduzida uma caixa de diálogo dedicada (`NetworkPasswordDialog`) com alternância de visibilidade da senha e opção de armazenamento nas Chaves do sistema; implementado um resolvedor de credenciais prévio (`resolve_or_prompt_network_credentials`) que intercepta com fluidez a navegação para conexões SFTP, FTP, SMB e WebDAV não memorizadas para solicitar credenciais com cancelamento seguro; corrigida a perda de senhas temporárias ao editar conexões no Gerenciador de conexões, retendo com segurança as credenciais em `VFSSessionCache` durante toda a sessão atual do aplicativo

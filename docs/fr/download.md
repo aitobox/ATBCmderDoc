@@ -35,6 +35,13 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.4.6 (03/11/2026)
+
+- Prise en charge avancée du bac à sable App Store pour l'état système et le nettoyage : En environnement restreint, le panneau d'état système active automatiquement un mode alternatif via NSWorkspace pour lister les applications actives avec icônes natives et indicateurs de premier plan (Fixes #102, #104) ; correction des limitations de parcours des caches de navigateurs et des tailles inconnues dans le bac à sable avec calcul précis de l'espace libéré (Fixes #101, #103)
+- Normalisation des étiquettes de couleur Finder et localisation complète en 31 langues : Moteur de normalisation et de traduction (`get_canonical_tag_name` et `localize_tag_name`) éliminant les suffixes d'index internes (`\n<id>`) ; intégration des traductions officielles des 7 couleurs macOS (Rouge, Orange, Jaune, Vert, Bleu, Violet, Gris) dans les 31 langues et infobulles localisées dans la liste des fichiers
+- Désélection par Maj+Clic et améliorations ergonomiques de la recherche : Prise en charge de Maj+Clic pour désélectionner des plages de fichiers d'un seul geste sans perdre le reste de la sélection (Fixes #96, #99) ; focus automatique sur le champ du motif de fichier dès l'ouverture de la boîte de recherche (Fixes #94, #98) ; correction de l'interruption inopinée de la recherche lors de l'appui sur Entrée (Fixes #95, #97) ; ajustement de l'espacement des onglets
+- Modernisation des flux d'intégration et de publication CI/CD : Migration des exécuteurs GitHub Actions macOS vers `macos-latest` afin de bénéficier des dernières chaînes d'outils tout en préservant rigoureusement la matrice de validation x86_64 hébergée
+
 ### 2.4.5 (31/10/2026)
 
 - Invite d'authentification réseau intelligente et conservation des identifiants en session : Intégration d'une boîte de dialogue dédiée (`NetworkPasswordDialog`) avec bascule d'affichage du mot de passe et mémorisation dans le trousseau d'accès ; ajout d'un résolveur préalable (`resolve_or_prompt_network_credentials`) interceptant la navigation vers des connexions SFTP, FTP, SMB ou WebDAV non mémorisées avec annulation sécurisée ; conservation des mots de passe temporaires lors de l'enregistrement dans le gestionnaire de connexions et maintien sécurisé dans `VFSSessionCache` pour la session en cours

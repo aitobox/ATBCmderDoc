@@ -35,6 +35,13 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.4.6 (2026-11-03)
+
+- App Store Sandbox Dual-Mode Running Apps & Cleaner Enhancements: Implemented automatic dual-mode fallback in the System Status panel to display running GUI applications via NSWorkspace in restricted App Store sandboxes, complete with native icons and foreground indicators (Fixes #102, #104); resolved sandbox container traversal limitations for browser caches and unknown size accounting in System Cleaner, accurately accumulating known sizes and reporting cleanup results (Fixes #101, #103)
+- Finder Color Tag Canonicalization & 31-Language Deep Localization: Introduced tag canonicalization and localization helpers (`get_canonical_tag_name` and `localize_tag_name`) to cleanly strip internal index suffixes (`\n<id>`); compiled standardized localized translations for all 7 macOS color tags (Red, Orange, Yellow, Green, Blue, Purple, Gray) across all 31 supported languages, dynamically surfacing localized tag names in file panel column tooltips
+- Panel Shift+Click Deselection & Search Dialog Usability Polish: Added support for Shift+Click to batch-deselect files in the file table, enabling intuitive range unmarking without losing remaining selections (Fixes #96, #99); automatically focuses the file pattern input by default when opening the Search dialog (Fixes #94, #98); prevented accidental search cancellation caused by Enter key double-triggering (Fixes #95, #97); tightened visual spacing between the drive selector and tabs
+- CI/CD Test & Release Workflow Modernization: Upgraded cloud macOS test and release GitHub Actions workflow runners to `macos-latest`, aligning with current runner infrastructure and dependencies while strictly preserving the self-hosted x86_64 validation matrix
+
 ### 2.4.5 (2026-10-31)
 
 - Smart Network Authentication Prompts & In-Memory Session Credential Caching: Introduced a dedicated `NetworkPasswordDialog` with password reveal/mask toggling and Keychain persistence options; implemented a pre-flight credential resolver (`resolve_or_prompt_network_credentials`) that seamlessly intercepts navigation to unremembered SFTP, FTP, SMB, and WebDAV connections to prompt for credentials with graceful cancellation rollback; fixed temporary password loss when editing unremembered connections in Connection Manager, securely retaining working credentials in `VFSSessionCache` across the current app session

@@ -35,6 +35,13 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.4.6 (2026-11-03)
+
+- Adaptación profunda del estado del sistema y la limpieza a la sandbox de App Store: En entornos restringidos, el panel de estado activa automáticamente el modo dual para mostrar aplicaciones en ejecución mediante NSWorkspace con iconos y estado en primer plano (Fixes #102, #104); corrección de limitaciones de recorrido en cachés de navegadores y cálculo exacto de tamaños conocidos en la limpieza (Fixes #101, #103)
+- Normalización de etiquetas de color de Finder y localización integral en 31 idiomas: Incorporación de funciones de normalización y traducción (`get_canonical_tag_name` y `localize_tag_name`) para limpiar sufijos de índice internos (`\n<id>`); compilación de traducciones estándar para los 7 colores de macOS (Rojo, Naranja, Amarillo, Verde, Azul, Violeta, Gris) en los 31 idiomas y visualización en tooltips de columnas
+- Deselección masiva con Shift+Clic y optimización del diálogo de búsqueda: Soporte para Shift+Clic para deseleccionar rangos de archivos de forma ágil sin perder la selección previa (Fixes #96, #99); enfoque automático en el campo de nombre al abrir la búsqueda (Fixes #94, #98); corrección de cancelaciones accidentales de búsqueda al pulsar Enter (Fixes #95, #97); ajuste de espaciado en pestañas y unidades
+- Modernización de flujos de trabajo CI/CD de compilación y pruebas: Actualización de los ejecutores de GitHub Actions en la nube para macOS a la versión `macos-latest`, garantizando compatibilidad con las herramientas más recientes y preservando la matriz de validación en x86_64
+
 ### 2.4.5 (2026-10-31)
 
 - Cuadro de autenticación de red inteligente y retención de credenciales de sesión: Incorporación del cuadro de diálogo (`NetworkPasswordDialog`) con alternancia de visibilidad de contraseña y opción de guardado en el Llavero del sistema; implementación de un comprobador de credenciales (`resolve_or_prompt_network_credentials`) que solicita contraseñas al navegar a conexiones SFTP, FTP, SMB o WebDAV no recordadas y permite revertir la navegación con seguridad; corrección de la pérdida de contraseñas temporales al guardar en el gestor de conexiones, reteniéndolas en memoria (`VFSSessionCache`) durante la sesión actual
