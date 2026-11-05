@@ -167,7 +167,7 @@ ATBCmder embeds specialized layout engines for structured documents, slide decks
 When pressing `F3` on Microsoft Word (`.docx`, `.doc`), Rich Text (`.rtf`), or OpenDocument (`.odt`) files, ATBCmder engages `DocumentPanel`:
 
 ![Word Document Viewer](images/word_document_viewer.png)  
-*Built-in Word and rich text document viewer with multi-page navigation and zoom.*
+*Figure 4.2: Built-in Word and rich text document viewer with multi-page navigation and zoom.*
 
 - **Document Page Cards**: Renders structured pages on centered paper cards (`.doc-page`) with crisp typography and margins matching modern word processor layouts.
 - **Formatting Preservation**: Preserves paragraph hierarchies, bold/italic/underline styles, font color variations, unordered and numbered lists, and inline hyperlinks.
@@ -185,7 +185,7 @@ For Microsoft PowerPoint presentations (`.pptx`, `.ppt`), ATBCmder launches `Pre
 Powered natively by `PySide6.QtPdf` and `QPdfView`, ATBCmder embeds an enterprise-grade PDF reader:
 
 ![PDF Viewer](images/pdf_viewer.png)  
-*Figure 4.2: Integrated PDF Viewer featuring bookmarks outline, page thumbnail strip, in-document search, and reading themes.*
+*Figure 4.3: Integrated PDF Viewer featuring bookmarks outline, page thumbnail strip, in-document search, and reading themes.*
 
 - **Continuous Multi-Page Scrolling**: Seamlessly scroll across hundreds of pages in multi-page mode (`QPdfView.PageMode.MultiPage`), or switch to single-page and two-page book spread views.
 - **Document Sidebar**:
@@ -202,7 +202,7 @@ Powered natively by `PySide6.QtPdf` and `QPdfView`, ATBCmder embeds an enterpris
 Managing technical documentation, manuals, or digital books in EPUB format (`.epub`) is native to ATBCmder:
 
 ![EPUB eBook Reader](images/epub_ebook_reader.png)  
-*Built-in EPUB eBook reader with chapter navigation and adjustable typography.*
+*Figure 4.4: Built-in EPUB eBook reader with chapter navigation and adjustable typography.*
 
 - **Dual-Engine Architecture**: Employs a high-fidelity WebEngine renderer (`QWebEngineView` with `EpubUrlSchemeHandler` for rich CSS styling and SVG vector illustrations) with an automatic fallback to `QTextBrowser` on minimal environments.
 - **Table of Contents Sidebar**: Displays nested chapter trees (`QTreeView`), allowing one-click jumping between book chapters and appendices.
@@ -213,7 +213,7 @@ Managing technical documentation, manuals, or digital books in EPUB format (`.ep
 For README files, technical notes, and developer documentation (`.md`, `.markdown`):
 
 ![Markdown Viewer with TOC Outline](images/markdown_viewer_toc.png)  
-*Markdown reader displaying rendered content alongside interactive Outline Table of Contents.*
+*Figure 4.5: Markdown reader displaying rendered content alongside interactive Outline Table of Contents.*
 
 - **GitHub-Flavored Markdown (GFM)**: Renders headers, blockquotes, horizontal rules, task lists (`- [x]`), and multi-column tables.
 - **Code Block Syntax Styling**: Automatically formats fenced code blocks (```python, ```bash, ```json) with distinct background shading, monospaced typography, and syntax coloring.
@@ -228,7 +228,7 @@ For technical users, data analysts, and software engineers, ATBCmder provides in
 Opening large CSV files or multi-sheet Excel workbooks in heavy office suites can take 10–20 seconds. ATBCmder’s `SpreadsheetPanel` renders them instantly:
 
 ![Excel Spreadsheet and Data Preview](images/xls_viewer.png)  
-*High-performance Excel spreadsheet preview in Universal Lister with multi-sheet tabs and frozen coordinates*
+*Figure 4.6: High-performance Excel spreadsheet preview in Universal Lister with multi-sheet tabs and frozen coordinates.*
 
 - **Format Support**: Microsoft Excel (`.xlsx`, `.xls`), Comma-Separated Values (`.csv`), and Tab-Separated Values (`.tsv`).
 - **Multi-Sheet Tabs**: Workbooks with multiple sheets feature a bottom tab bar (`QTabBar`), enabling rapid switching between data sheets.
@@ -241,7 +241,7 @@ Opening large CSV files or multi-sheet Excel workbooks in heavy office suites ca
 Inspect SQLite databases (`.sqlite`, `.sqlite3`, `.db`) directly without external GUI clients:
 
 ![SQLite Database Viewer](images/sqlite_database_viewer.png)  
-*SQLite database inspector browsing table schema, row records, and indices.*
+*Figure 4.7: SQLite database inspector browsing table schema, row records, and indices.*
 
 - **Tables & Views Directory**: Left sidebar lists all database tables and views alongside their active row counts. Clicking any table loads its contents immediately.
 - **Virtualized Data View**: Uses the high-performance `VirtualSpreadsheetModel` for seamless scrolling through massive tables.
@@ -262,7 +262,7 @@ Review data science experiments, machine learning runs, and Python analysis note
 The primary text inspection engine is optimized for high-speed browsing and huge data dumps:
 
 ![Text File Viewer](images/text_file_viewer.png)  
-*High-performance plain text and source code viewer with syntax highlighting.*
+*Figure 4.8: High-performance plain text and source code viewer with syntax highlighting.*
 
 - **Chunked 64 KB Loader (`FileLoaderWorker`)**: Reads large files in 64 KB blocks with automatic newline boundary snapping, preventing thread freezing and UTF-8 multibyte character corruption.
 - **Pygments Syntax Highlighting**: Over 150 programming and configuration languages supported with dynamic Light/Dark mode adaptation.
@@ -285,7 +285,7 @@ ATBCmder includes hardware-accelerated media players, graphics viewers, and typo
 Press `F3` on any supported image format (`.png`, `.jpg`, `.webp`, `.svg`, `.gif`, `.bmp`, `.ico`, `.tiff`):
 
 ![Image Viewer](images/image_viewer_window.png)  
-*Figure 4.3: Integrated Image Viewer with interactive canvas zoom, rotation, and EXIF metadata extraction.*
+*Figure 4.9: Integrated Image Viewer with interactive canvas zoom, rotation, and EXIF metadata extraction.*
 
 - **Interactive Canvas**: Smooth mouse wheel zooming anchored to cursor position (`SmoothPixmapTransform`), 1:1 pixel inspection, Fit to Window, and hand drag panning.
 - **EXIF Telemetry Inspector**: Clicking **EXIF Info** extracts camera metadata: make, model, lens focal length, exposure time, aperture, ISO, and GPS coordinates.
@@ -295,7 +295,7 @@ Press `F3` on any supported image format (`.png`, `.jpg`, `.webp`, `.svg`, `.gif
 Play podcasts, sound effects, or music collections while you work:
 
 ![Audio Player](images/audio_player.png)  
-*Figure 4.4: Integrated Audio Player featuring ID3 tag parsing, album artwork, and drag-and-drop playlist management.*
+*Figure 4.10: Integrated Audio Player featuring ID3 tag parsing, album artwork, and drag-and-drop playlist management.*
 
 - **Supported Formats**: MP3, FLAC, WAV, AAC, M4A, OGG, and AIFF with mutagen ID3 tag and cover artwork extraction.
 - **Background Playback Mode**: Click the **Background** button in the player. The player window docks into a compact **mini-player controller** in the Right Panel's background operations bar (`bg_ops_container`):
@@ -305,13 +305,13 @@ Play podcasts, sound effects, or music collections while you work:
   - Pressing `F3` on additional audio files in the file panel automatically appends them to the running playlist!
 
 ![Music Player in Panel](images/music_player_window.png)  
-*Figure 4.5: Background mini-player embedded directly in the panel operations bar.*
+*Figure 4.11: Background mini-player embedded directly in the panel operations bar.*
 
 #### 3.3.3 Hardware-Accelerated Video Player (`MediaPanel`)
 For video files (`.mp4`, `.mkv`, `.mov`, `.avi`, `.webm`):
 
 ![Video Player](images/video_player_window.png)  
-*Figure 4.6: Hardware-accelerated Video Player with floating on-screen display (OSD) controls.*
+*Figure 4.12: Hardware-accelerated Video Player with floating on-screen display (OSD) controls.*
 
 - **Zero-Overhead Decoding**: Powered by `QtMultimedia` utilizing macOS VideoToolbox and Apple Silicon GPU acceleration.
 - **Auto-Fading OSD Controls**: Floating timeline scrubber, volume slider, and playback controls fade out during playback.
@@ -380,10 +380,10 @@ To create and edit a brand-new file from scratch in the active folder, press **`
 ```
 
 ![Code and Text File Editor](images/text_file_editor.png)  
-*Figure 4.7: Dedicated internal text editor featuring search/replace bar and line numbering.*
+*Figure 4.13: Dedicated internal text editor featuring search/replace bar and line numbering.*
 
 ![Markdown Source Editor](images/markdown_source_editor.png)  
-*Figure 4.8: Internal editor editing Markdown files with live syntax highlighting and quick tools.*
+*Figure 4.14: Internal editor editing Markdown files with live syntax highlighting and quick tools.*
 
 #### Core Code Editor Capabilities
 - **Pygments Syntax Highlighting**: Recognizes over 150 programming, scripting, and configuration formats with automatic language detection from file extensions and shebang lines.
@@ -411,7 +411,7 @@ Pressing **`Cmd+F`** (`⌘F`) or **`Cmd+Option+F`** (`⌥⌘F`) docks the Find &
 When you press **`F4`** on any graphic or screenshot, ATBCmder opens the comprehensive **Image Editor**:
 
 ![Dedicated Image Editor](images/image_editor.png)  
-*Figure 4.9: Built-in Image Editor with crop aspect ratios, canvas rotation, and transformation controls.*
+*Figure 4.15: Built-in Image Editor with crop aspect ratios, canvas rotation, and transformation controls.*
 
 #### Interactive Canvas & Transforms
 - **Checkerboard Background (`CheckerboardScene`)**: Transparent graphics are rendered over a clean gray-and-white grid, ensuring alpha borders are clearly visible.

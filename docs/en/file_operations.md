@@ -53,7 +53,7 @@ Orthodox file managers use a **Source ➔ Target** directional model. When you i
 ATBCmder features a dedicated vertical quick-action toolbar embedded directly on the central divider separating the two panels:
 
 ![Middle Toolbar](images/middle_toolbar.png)  
-*The central Middle Toolbar provides instant mouse access to View (F3), Edit (F4), Copy (F5), Move (F6), New Folder (F7), Delete (F8), and Panel Swap.*
+*Figure 3.1: The central Middle Toolbar provides instant mouse access to View (F3), Edit (F4), Copy (F5), Move (F6), New Folder (F7), Delete (F8), and Panel Swap.*
 
 ---
 
