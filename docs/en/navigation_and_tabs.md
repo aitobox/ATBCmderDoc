@@ -93,8 +93,14 @@ Keep your hands on the home row with these dedicated navigation commands:
 
 Working on complex software projects, photo libraries, or server backups often requires juggling multiple folders simultaneously. Rather than opening dozens of windows, ATBCmder incorporates independent multi-tab strips for both panels.
 
-![Folder Tabs and Splitters](images/quick_access_paths.png)  
-*Multi-tab management and quick navigation in ATBCmder*
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│ [📁 Documents ✕] [📁 Downloads ✕] [📁 Projects ✕]   +                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [/dev/disk3s3s1] /Users/brainzhang/Projects                     428.5 GB free of 994.7 GB│
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+*Figure 2.1: Native macOS tab bar (`MacNativeTabBar`) providing independent tab stacks per panel.*
 
 ### Native macOS Tab Bar Design
 
@@ -225,6 +231,9 @@ Each panel records its own chronological path history stack:
   - Displays a scrollable popup menu showing the last 20+ visited directories in the active panel.
   - Click or arrow down to any previous directory to jump directly to it, skipping repetitive Back presses.
 
+![Directory History Dropdown](images/directory_history_dropdown.png)  
+*Figure 2.2: Directory History dropdown menu (`Alt+F8` / `Ctrl+Down`) displaying recently visited folder paths.*
+
 ### Drive & Volume Switcher
 
 On macOS, all internal partitions, external USB-C / Thunderbolt drives, mounted DMGs, and network shares reside under `/Volumes`. ATBCmder provides dedicated commands to switch between these targets:
@@ -290,6 +299,10 @@ ATBCmder supports three distinct Tree View layouts via the **Show** menu:
 - **Tree View (Replace) (`cm_TreeView`)**: The active panel's file table is replaced entirely with an expandable directory tree.
 - **Tree View (Split) (`cm_TreeViewSplit`)**: The active panel is divided vertically into two sub-panes: a directory tree on the left, and the standard file listing for the selected tree folder on the right.
 - **Tree View (Both Panels) (`cm_TreeViewBoth`)**: Enables the split directory tree in both the Left and Right panels simultaneously.
+
+![Dual Panel Tree Views](images/dual_panel_tree_views.png)  
+*Figure 2.3: Dual Tree Views mode (`cm_TreeViewBoth`) providing simultaneous folder hierarchy navigation on both panels.*
+
 - **Show Files Toggle**: Right-click inside the tree view and toggle **Show Files** to choose whether files should be rendered in the tree alongside directories or hidden to display directories only.
 
 ### 5. Branch / Flat View (`Cmd+B` / `⌘B` or `Ctrl+B` / `⌃B` / `cm_FlatView`)

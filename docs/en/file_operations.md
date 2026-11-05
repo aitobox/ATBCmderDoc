@@ -497,6 +497,9 @@ Inspect and modify POSIX file attributes using the comprehensive **Properties Di
 
 By default, file managers show directory sizes as `<DIR>` or `--` because calculating recursive folder sizes across millions of files would degrade filesystem performance. ATBCmder gives you instant, on-demand calculation:
 
+![Calculate Directory Sizes](images/calculate_directory_sizes.png)  
+*Figure 3.2: Asynchronous directory space calculation replacing <DIR> with exact recursive byte footprints.*
+
 - **Single Folder Size (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: Press `Space` while resting on any folder. ATBCmder calculates the folder's total recursive bytes in the background and replaces `<DIR>` with the exact size (e.g., `14.2 GB`).
 - **All Folders in Active Panel (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**:
   - Scans every directory visible in the current panel.
