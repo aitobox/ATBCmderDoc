@@ -94,8 +94,14 @@ Gardez la main sur la ligne d'accueil avec ces commandes de navigation dédiées
 
 Travailler sur des projets logiciels complexes, des photothèques ou des sauvegardes de serveur nécessite souvent de jongler avec plusieurs dossiers simultanément. Plutôt que d'ouvrir des dizaines de fenêtres, ATBCmder intègre des bandes multi-onglets indépendantes pour les deux panneaux. 
 
-![Folder Tabs and Splitters](images/quick_access_paths.png) 
-*Gestion multi-onglets et navigation rapide dans ATBCmder*
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│ [📁 Documents ✕] [📁 Downloads ✕] [📁 Projects ✕]   +                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [/dev/disk3s3s1] /Users/brainzhang/Projects                     428.5 GB free of 994.7 GB│
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+*Figure 2.1 : Barre d'onglets macOS native (`MacNativeTabBar`) fournissant des piles d'onglets indépendantes par panneau.*
 
 ### Conception native de la barre d'onglets macOS
 
@@ -228,6 +234,9 @@ Chaque panneau enregistre sa propre pile d'historique de cheminement chronologiq
 - Affiche un menu contextuel déroulant affichant les 20+ derniers répertoires visités dans le panneau actif. 
 - Cliquez ou faites glisser la flèche vers le bas sur n'importe quel répertoire précédent pour y accéder directement, en sautant les pressions répétitives sur Retour.
 
+![Menu déroulant de l'historique](images/directory_history_dropdown.png)  
+*Figure 2.2 : Menu déroulant de l'historique des répertoires (`Alt+F8` / `Ctrl+Down`) affichant les chemins des dossiers récemment visités.*
+
 ### Sélecteur de lecteur et de volume
 
 Sur macOS, toutes les partitions internes, les lecteurs externes USB-C/Thunderbolt, les DMG montés et les partages réseau résident sous `/Volumes`. ATBCmder fournit des commandes dédiées pour basculer entre ces cibles : 
@@ -293,6 +302,10 @@ ATBCmder prend en charge trois présentations d'arborescence distinctes via le m
 - **Arborescence (Remplacer) (`cm_TreeView`)** : La table de fichiers du panneau actif est entièrement remplacée par une arborescence de répertoires extensible. 
 - **Tree View (Split) (`cm_TreeViewSplit`)** : Le panneau actif est divisé verticalement en deux sous-volets : une arborescence de répertoires à gauche et la liste de fichiers standard pour le dossier d'arborescence sélectionné à droite. 
 - **Arborescence (les deux panneaux) (`cm_TreeViewBoth`)** : Active l'arborescence de répertoires divisée dans les panneaux gauche et droit simultanément. 
+
+![Arborescence double panneau](images/dual_panel_tree_views.png)  
+*Figure 2.3 : Mode arborescence de répertoires à double panneau (`cm_TreeViewBoth`) affichant la hiérarchie des dossiers des deux côtés.*
+
 - **Afficher les fichiers** : cliquez avec le bouton droit dans l'arborescence et activez **Afficher les fichiers** pour choisir si les fichiers doivent être affichés dans l'arborescence à côté des répertoires ou masqués pour afficher uniquement les répertoires.
 
 ### 5. Branche/Vue plate (`Cmd+B` / `⌘B` ou `Ctrl+B` / `⌃B` / `cm_FlatView`)

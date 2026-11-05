@@ -143,6 +143,9 @@ Contrairement aux utilitaires existants qui nécessitent la fermeture et le red�
 
 L'efficacité du clavier est la philosophie fondamentale de la gestion de fichiers sur deux panneaux. L'**Hotkey Editor** d'ATBCmder (`page_hotkeys.py`) offre un contrôle total sur les accords de raccourci tout en appliquant une isolation stricte du contexte et une prévention des collisions. 
 
+![Page de configuration des raccourcis clavier](images/preferences_settings_dialog.png)  
+*Figure 7.2 : Page de configuration des raccourcis clavier ATBCmder montrant le filtrage de contexte, la recherche de commandes et la prévention des collisions.*
+
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                              HOTKEY CONFIGURATION PAGE                                 │
@@ -309,7 +312,7 @@ Affinez la façon dont les éléments s’ordonnent dans les vues de tableau :
 Pour les photographes, les concepteurs et les monteurs vidéo, ATBCmder fournit une **Vue en grille de vignettes** intégrée (`cm_ThumbnailsView`), remplaçant les lignes tabulaires par des aperçus visuels d'images. 
 
 ![Thumbnail Grid View](images/thumbnails_grid_view.png) 
-*Figure 7.2 : Vue miniature hautes performances affichant des aperçus d'images avec un espacement de grille personnalisé.*
+*Figure 7.3 : Vue miniature hautes performances affichant des aperçus d'images avec un espacement de grille personnalisé.*
 
 #### Dimensionnement et zoom dynamique
 
@@ -476,7 +479,7 @@ Lors du lancement d'outils externes ou de scripts de ligne de commande, ATBCmder
 ATBCmder fournit deux barres d'outils personnalisables : la **Barre d'outils principale** située sous la barre de menus et la **Barre d'outils intermédiaire** intégrée verticalement dans le séparateur séparant les deux panneaux de fichiers. 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*Figure 7.3 : La page d'options de la barre d'outils centrale configurant les boutons de séparation et les déclencheurs d'action rapide.*
+*Figure 7.4 : La page d'options de la barre d'outils centrale configurant les boutons de séparation et les déclencheurs d'action rapide.*
 
 ### 7.1 Personnalisation de l'apparence de la barre d'outils
 
@@ -531,7 +534,7 @@ Lors de la configuration des boutons personnalisés, cliquez sur le bouton d'ape
 - **Onglets favoris (`page_favorite_tabs.py`)** : enregistrez les dispositions complètes de l'espace de travail multi-onglets à deux panneaux. Restaurez vos ensembles exacts de répertoires de développement ou de retouche photo en un clic. 
 
 ![Directory Hotlist](images/quick_access_paths.png) 
-*Figure 7.4 : Gestion des signets et des chemins d'accès aux listes de véhicules recherchés du répertoire.* 
+*Figure 7.5 : Gestion des signets et des chemins d'accès aux listes de véhicules recherchés du répertoire.* 
 
 ---
 
@@ -648,7 +651,7 @@ Lors de la configuration de boutons de barre d'outils externes personnalisés ou
 ATBCmder comprend de riches info-bulles de métadonnées flottantes qui affichent les dimensions des fichiers, les données EXIF, le débit audio et le nombre de membres d'archive lorsque vous survolez les éléments. Vous pouvez activer ou désactiver les info-bulles dans **Préférences ➔ Vues de fichiers**. 
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
-*Figure 7.5 : Info-bulles de métadonnées riches affichant les propriétés détaillées du fichier au survol de la souris.* 
+*Figure 7.6 : Info-bulles de métadonnées riches affichant les propriétés détaillées du fichier au survol de la souris.* 
 
 ---
 

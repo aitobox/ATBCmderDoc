@@ -47,7 +47,7 @@
 ATBCmder에는 두 패널을 분리하는 중앙 구분선에 직접 내장된 전용 수직 빠른 작업 도구 모음이 있습니다. 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*중앙 중간 도구 모음은 보기(F3), 편집(F4), 복사(F5), 이동(F6), 새 폴더(F7), 삭제(F8) 및 패널 교체에 대한 즉각적인 마우스 액세스를 제공합니다.* 
+*그림 3.1: 중앙 도구 모음은 보기(F3), 편집(F4), 복사(F5), 이동(F6), 새 폴더(F7), 삭제(F8) 및 패널 전환에 대한 빠른 마우스 액세스를 제공합니다.*
 
 ---
 
@@ -510,6 +510,9 @@ macOS는 Darwin UNIX를 기반으로 구축되었으며 두 가지 고유한 링
 ### 7.3 점유 공간 계산 (`cm_CountDirContent` / `cm_CalculateSpace` / `Space`)
 
 기본적으로 파일 관리자는 디렉터리 크기를 `<DIR>` 또는 `--`으로 표시합니다. 수백만 개의 파일에 대한 재귀 폴더 크기를 계산하면 파일 시스템 성능이 저하되기 때문입니다. ATBCmder는 즉각적인 주문형 계산을 제공합니다. 
+
+![디렉터리 크기 계산](images/calculate_directory_sizes.png)  
+*그림 3.2: <DIR>을 정확한 재귀 바이트 크기로 대체하는 비동기 디렉터리 공간 계산.*
 
 - **단일 폴더 크기(`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: 폴더에 휴지 상태인 동안 `Space`을 누릅니다. ATBCmder는 백그라운드에서 폴더의 총 재귀 바이트를 계산하고 `<DIR>`을 정확한 크기(예: `14.2 GB`)로 바꿉니다. 
 - **활성 패널의 모든 폴더(`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 

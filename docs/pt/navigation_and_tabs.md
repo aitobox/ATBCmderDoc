@@ -94,8 +94,14 @@ Mantenha as mãos na linha inicial com estes comandos de navegação dedicados:
 
 Trabalhar em projetos de software complexos, bibliotecas de fotos ou backups de servidores geralmente exige o gerenciamento simultâneo de várias pastas. Em vez de abrir dezenas de janelas, o ATBCmder incorpora faixas independentes de múltiplas abas para ambos os painéis. 
 
-![Folder Tabs and Splitters](images/quick_access_paths.png) 
-*Gerenciamento de várias guias e navegação rápida no ATBCmder*
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│ [📁 Documents ✕] [📁 Downloads ✕] [📁 Projects ✕]   +                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [/dev/disk3s3s1] /Users/brainzhang/Projects                     428.5 GB free of 994.7 GB│
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+*Figura 2.1: Barra de abas nativa do macOS (`MacNativeTabBar`) que fornece pilhas de abas independentes por painel.*
 
 ### Design nativo da barra de guias do macOS
 
@@ -228,6 +234,9 @@ Cada painel registra sua própria pilha de histórico de caminho cronológico:
 - Exibe um menu pop-up rolável mostrando os últimos 20 diretórios visitados no painel ativo. 
 - Clique ou use a seta para baixo em qualquer diretório anterior para ir diretamente para ele, ignorando os pressionamentos repetidos de Voltar.
 
+![Menu suspenso de histórico](images/directory_history_dropdown.png)  
+*Figura 2.2: Menu suspenso do histórico de diretórios (`Alt+F8` / `Ctrl+Down`) mostrando caminhos de pastas visitados recentemente.*
+
 ### Alternador de unidade e volume
 
 No macOS, todas as partições internas, unidades USB-C/Thunderbolt externas, DMGs montados e compartilhamentos de rede residem em `/Volumes`. ATBCmder fornece comandos dedicados para alternar entre estes alvos: 
@@ -293,6 +302,10 @@ ATBCmder oferece suporte a três layouts distintos de visualização em árvore 
 - **Visualização em árvore (substituir) (`cm_TreeView`)**: A tabela de arquivos do painel ativo é substituída inteiramente por uma árvore de diretórios expansível. 
 - **Visualização em árvore (dividida) (`cm_TreeViewSplit`)**: O painel ativo é dividido verticalmente em dois subpainéis: uma árvore de diretórios à esquerda e a listagem de arquivos padrão para a pasta da árvore selecionada à direita. 
 - **Visualização em árvore (ambos os painéis) (`cm_TreeViewBoth`)**: Ativa a divisão da árvore de diretórios nos painéis Esquerdo e Direito simultaneamente. 
+
+![Visualizações em árvore de painel duplo](images/dual_panel_tree_views.png)  
+*Figura 2.3: Modo de exibição em árvore de diretório de painel duplo (`cm_TreeViewBoth`) com navegação de hierarquia simultânea em ambos os painéis.*
+
 - **Mostrar arquivos**: clique com o botão direito dentro da visualização em árvore e alterne **Mostrar arquivos** para escolher se os arquivos devem ser renderizados na árvore ao lado dos diretórios ou ocultos para exibir apenas os diretórios.
 
 ### 5. Filial/Visualização plana (`Cmd+B` / `⌘B` ou `Ctrl+B` / `⌃B` / `cm_FlatView`)

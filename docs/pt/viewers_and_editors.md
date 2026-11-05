@@ -169,6 +169,9 @@ O ATBCmder incorpora mecanismos de layout especializados para documentos estrutu
 
 Ao pressionar `F3` em arquivos Microsoft Word (`.docx`, `.doc`), Rich Text (`.rtf`) ou OpenDocument (`.odt`), ATBCmder ativa `DocumentPanel`: 
 
+![Visualizador de documentos Word](images/word_document_viewer.png)  
+*Figura 4.2: Visualizador integrado de documentos Word e Rich Text com navegação em várias páginas e zoom.*
+
 - **Cartões de páginas de documentos**: renderiza páginas estruturadas em cartões de papel centralizados (`.doc-page`) com tipografia nítida e margens correspondentes aos layouts modernos de processadores de texto. 
 - **Preservação de formatação**: preserva hierarquias de parágrafos, estilos de negrito/itálico/sublinhado, variações de cores de fonte, listas não ordenadas e numeradas e hiperlinks embutidos. 
 - **Tabela complexa e renderização de imagens incorporadas**: analisa grades complexas de tabelas de múltiplas colunas com espaçamento de células com bordas e renderiza ilustrações raster incorporadas. 
@@ -187,7 +190,7 @@ Para apresentações do Microsoft PowerPoint (`.pptx`, `.ppt`), ATBCmder inicia 
 Desenvolvido nativamente por `PySide6.QtPdf` e `QPdfView`, ATBCmder incorpora um leitor de PDF de nível empresarial: 
 
 ![PDF Viewer](images/pdf_viewer.png) 
-*Figura 4.2: Visualizador de PDF integrado com contorno de marcadores, faixa de miniaturas de página, pesquisa no documento e temas de leitura.* 
+*Figura 4.3: Visualizador de PDF integrado com contorno de marcadores, faixa de miniaturas de página, pesquisa no documento e temas de leitura.* 
 
 - **Rolagem contínua de várias páginas**: role perfeitamente por centenas de páginas no modo de várias páginas (`QPdfView.PageMode.MultiPage`) ou alterne para visualizações de livro de página única e de duas páginas. 
 - **Barra lateral do documento**: 
@@ -204,6 +207,9 @@ Desenvolvido nativamente por `PySide6.QtPdf` e `QPdfView`, ATBCmder incorpora um
 
 O gerenciamento de documentação técnica, manuais ou livros digitais em formato EPUB (`.epub`) é nativo do ATBCmder: 
 
+![Leitor de e-books EPUB](images/epub_ebook_reader.png)  
+*Figura 4.4: Leitor integrado de e-books EPUB com navegação por capítulos e tipografia ajustável.*
+
 - **Arquitetura de motor duplo**: emprega um renderizador WebEngine de alta fidelidade (`QWebEngineView` com `EpubUrlSchemeHandler` para estilo CSS rico e ilustrações vetoriais SVG) com um substituto automático para `QTextBrowser` em ambientes mínimos. 
 - **Barra lateral do índice**: Exibe árvores de capítulos aninhadas (`QTreeView`), permitindo alternar com um clique entre capítulos de livros e apêndices. 
 - **Tipografia e dimensionamento de fonte**: dimensione dinamicamente o tamanho do texto de leitura por meio do controle deslizante de fonte da barra de ferramentas inferior. 
@@ -212,6 +218,9 @@ O gerenciamento de documentação técnica, manuais ou livros digitais em format
 #### 3.1.5 Documentos de redução (`MarkdownPanel`)
 
 Para arquivos README, notas técnicas e documentação do desenvolvedor (`.md`, `.markdown`): 
+
+![Visualizador de Markdown com sumário](images/markdown_viewer_toc.png)  
+*Figura 4.5: Leitor de Markdown exibindo conteúdo renderizado ao lado de um sumário interativo.*
 
 - **Markdown com sabor do GitHub (GFM)**: renderiza cabeçalhos, citações em bloco, regras horizontais, listas de tarefas (`- [x]`) e tabelas com várias colunas. 
 - **Estilo de sintaxe de bloco de código**: formata automaticamente blocos de código protegidos (```python, ```bash, ```json) com sombreamento de fundo distinto, tipografia monoespaçada e coloração de sintaxe. 
@@ -227,7 +236,7 @@ Para usuários técnicos, analistas de dados e engenheiros de software, o ATBCmd
 A abertura de arquivos CSV grandes ou pastas de trabalho do Excel com várias planilhas em suítes de escritório pesadas pode levar de 10 a 20 segundos. O `SpreadsheetPanel` do ATBCmder os renderiza instantaneamente: 
 
 ![Excel Spreadsheet and Data Preview](images/xls_viewer.png) 
-*Visualização de planilha Excel de alto desempenho no Universal Lister com guias de várias planilhas e coordenadas congeladas* 
+*Figura 4.6: Visualização de planilha Excel de alto desempenho no Universal Lister com abas de várias planilhas e coordenadas congeladas.*
 
 - **Suporte a formatos**: Microsoft Excel (`.xlsx`, `.xls`), valores separados por vírgula (`.csv`) e valores separados por tabulação (`.tsv`). 
 - **Guias com várias planilhas**: pastas de trabalho com várias planilhas apresentam uma barra de guias inferior (`QTabBar`), permitindo a alternância rápida entre planilhas de dados. 
@@ -239,6 +248,9 @@ A abertura de arquivos CSV grandes ou pastas de trabalho do Excel com várias pl
 #### 3.2.2 Navegador de banco de dados SQLite (`SqlitePanel`)
 
 Inspecione bancos de dados SQLite (`.sqlite`, `.sqlite3`, `.db`) diretamente, sem clientes GUI externos: 
+
+![Visualizador de banco de dados SQLite](images/sqlite_database_viewer.png)  
+*Figura 4.7: Inspetor de banco de dados SQLite navegando pelo esquema de tabelas, registros de linhas e índices.*
 
 - **Diretório de tabelas e visualizações**: a barra lateral esquerda lista todas as tabelas e visualizações do banco de dados junto com suas contagens de linhas ativas. Clicar em qualquer tabela carrega seu conteúdo imediatamente. 
 - **Visualização de dados virtualizados**: usa `VirtualSpreadsheetModel` de alto desempenho para rolagem contínua por tabelas enormes. 
@@ -259,6 +271,9 @@ Revise experimentos de ciência de dados, execuções de aprendizado de máquina
 #### 3.2.4 Visualização de código e texto simples (`TextPanel`)
 
 O mecanismo principal de inspeção de texto é otimizado para navegação em alta velocidade e grandes despejos de dados: 
+
+![Visualizador de arquivos de texto e código](images/text_file_viewer.png)  
+*Figura 4.8: Visualizador de texto e código de alto desempenho com destaque de sintaxe Pygments e detecção de codificação.*
 
 - **Carregador fragmentado de 64 KB (`FileLoaderWorker`)**: Lê arquivos grandes em blocos de 64 KB com ajuste automático de limites de nova linha, evitando congelamento de threads e corrupção de caracteres multibyte UTF-8. 
 - **Destaque de sintaxe do Pygments**: Mais de 150 linguagens de programação e configuração suportadas com adaptação dinâmica do modo Claro/Escuro. 
@@ -283,7 +298,7 @@ ATBCmder inclui reprodutores de mídia acelerados por hardware, visualizadores g
 Pressione `F3` em qualquer formato de imagem suportado (`.png`, `.jpg`, `.webp`, `.svg`, `.gif`, `.bmp`, `.ico`, `.tiff`): 
 
 ![Image Viewer](images/image_viewer_window.png) 
-*Figura 4.3: Visualizador de imagens integrado com zoom de tela interativo, rotação e extração de metadados EXIF.* 
+*Figura 4.9: Visualizador de imagens integrado com zoom de tela interativo, rotação e extração de metadados EXIF.* 
 
 - **Tela Interativa**: Zoom suave da roda do mouse ancorado na posição do cursor (`SmoothPixmapTransform`), inspeção de pixel 1:1, Ajustar à janela e arrastar manualmente. 
 - **EXIF Telemetry Inspector**: clicar em **EXIF Info** extrai os metadados da câmera: marca, modelo, distância focal da lente, tempo de exposição, abertura, ISO e coordenadas GPS. 
@@ -294,7 +309,7 @@ Pressione `F3` em qualquer formato de imagem suportado (`.png`, `.jpg`, `.webp`,
 Reproduza podcasts, efeitos sonoros ou coleções de músicas enquanto trabalha: 
 
 ![Audio Player](images/audio_player.png) 
-*Figura 4.4: Reprodutor de áudio integrado com análise de tags ID3, capa de álbum e gerenciamento de lista de reprodução de arrastar e soltar.* 
+*Figura 4.10: Reprodutor de áudio integrado com análise de tags ID3, capa de álbum e gerenciamento de lista de reprodução de arrastar e soltar.* 
 
 - **Formatos suportados**: MP3, FLAC, WAV, AAC, M4A, OGG e AIFF com etiqueta mutagênica ID3 e extração de capa. 
 - **Modo de reprodução em segundo plano**: Clique no botão **Plano de fundo** no player. A janela do player se encaixa em um **controlador de miniplayer** compacto na barra de operações em segundo plano do painel direito (`bg_ops_container`): 
@@ -304,14 +319,14 @@ Reproduza podcasts, efeitos sonoros ou coleções de músicas enquanto trabalha:
 - Pressionar `F3` em arquivos de áudio adicionais no painel de arquivos os anexa automaticamente à lista de reprodução em execução! 
 
 ![Music Player in Panel](images/music_player_window.png) 
-*Figura 4.5: Miniplayer de fundo incorporado diretamente na barra de operações do painel.*
+*Figura 4.11: Miniplayer de fundo incorporado diretamente na barra de operações do painel.*
 
 #### 3.3.3 Player de vídeo acelerado por hardware (`MediaPanel`)
 
 Para arquivos de vídeo (`.mp4`, `.mkv`, `.mov`, `.avi`, `.webm`): 
 
 ![Video Player](images/video_player_window.png) 
-*Figura 4.6: Player de vídeo acelerado por hardware com controles flutuantes de exibição na tela (OSD).* 
+*Figura 4.12: Player de vídeo acelerado por hardware com controles flutuantes de exibição na tela (OSD).* 
 
 - **Decodificação Zero Overhead**: desenvolvido com `QtMultimedia` utilizando macOS VideoToolbox e aceleração de GPU Apple Silicon. 
 - **Controles OSD de esmaecimento automático**: O controle deslizante da linha do tempo flutuante, o controle deslizante de volume e os controles de reprodução desaparecem durante a reprodução. 
@@ -382,6 +397,13 @@ Para criar e editar um arquivo totalmente novo do zero na pasta ativa, pressione
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+
+![Editor de arquivos de texto e código](images/text_file_editor.png)  
+*Figura 4.13: Editor de texto interno dedicado com barra de localização/substituição e numeração de linhas.*
+
+![Editor de código-fonte Markdown](images/markdown_source_editor.png)  
+*Figura 4.14: Editor interno para edição de arquivos Markdown com destaque de sintaxe em tempo real e ferramentas rápidas.*
+
 #### Recursos principais do editor de código
 
 - **Destaque de sintaxe do Pygments**: reconhece mais de 150 formatos de programação, script e configuração com detecção automática de linguagem a partir de extensões de arquivo e linhas shebang. 
@@ -409,6 +431,9 @@ Pressionar **`Cmd+F`** (`⌘F`) ou **`Cmd+Option+F`** (`⌥⌘F`) encaixa a barr
 ### 4.2 Editor de imagens dedicado (`ImageEditorDialog`)
 
 Quando você pressiona **`F4`** em qualquer gráfico ou captura de tela, o ATBCmder abre o **Editor de imagens** abrangente:
+
+![Editor de imagens dedicado](images/image_editor.png)  
+*Figura 4.15: Editor de imagens integrado com proporções de corte, rotação de tela e controles de transformação.*
 
 #### Tela interativa e transformações
 

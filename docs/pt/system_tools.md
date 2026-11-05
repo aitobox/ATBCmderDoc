@@ -136,6 +136,9 @@ Pressionar **`⌘⇧M`** (ou **`Ctrl+Shift+M`**) abre o **Painel de status do si
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![Monitor de recursos do sistema](images/system_resource_monitor.png)  
+*Figura 7.1: Painel de diagnóstico e status do sistema em tempo real exibindo CPU, RAM, E/S de disco e principais processos.*
+
 ### 3.1 Recursos de diagnóstico e seções de métricas
 
 1. **Monitor de processador multi-core**:
@@ -182,6 +185,9 @@ O **Analisador de uso de disco** (`cm_DiskUsageAnalyzer`, atalho **`⌘⇧D`** /
 │ [ Zoom Out (..) ]  [ Reveal in Dual Panel ]  [ Move to Trash (⌘⌫) ]  [ Export CSV... ]  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Analisador de uso de disco](images/disk_usage_analyzer.png)  
+*Figura 7.2: Analisador de uso de disco verificando volumes locais com detalhamento de espaço categorizado e navegação em mapa de árvore.*
 
 ### 4.1 Arquitetura e recursos principais
 
@@ -230,6 +236,9 @@ O **Limpador do sistema** (`cm_CleanSystem`, atalho **`⌘⇧C`** / **`Ctrl+Shif
 │ [ Whitelist Editor... ]      [ Export Log ]       [ Clean Selected Items (28.4 GB) ]   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Limpador do sistema](images/system_cleaner.png)  
+*Figura 7.3: Interface de verificação segura do System Cleaner exibindo estimativas de recuperação de arquivos de cache, log e lixo temporário.*
 
 ### 5.1 A arquitetura de segurança em dois estágios
 
@@ -294,6 +303,9 @@ O **Desinstalador de aplicativos** (`cm_UninstallApp`, atalho **`⌘⇧U`** / **
 │ [ Refresh Applications ]       [ Cancel ]              [ Uninstall Application (18.5G)│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Desinstalador de aplicativos](images/app_uninstaller.png)  
+*Figura 7.4: Desinstalador de aplicativos realizando uma verificação profunda de restos em Application Support, Caches e Preferences.*
 
 ### 6.1 Locais de descoberta de resíduos
 

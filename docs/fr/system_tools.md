@@ -136,6 +136,9 @@ Une pression sur **`⌘⇧M`** (ou **`Ctrl+Shift+M`**) ouvre le panneau complet 
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![Moniteur de ressources système](images/system_resource_monitor.png)  
+*Figure 7.1 : Tableau de bord de diagnostic et d'état du système en temps réel affichant le processeur, la mémoire vive, les E/S disque et les principaux processus.*
+
 ### 3.1 Fonctions de diagnostic et sections de métriques
 
 1. **Moniteur de processeur multicœur** :
@@ -182,6 +185,9 @@ L'**analyseur d'utilisation du disque** (`cm_DiskUsageAnalyzer`, raccourci clavi
 │ [ Zoom arrière (..) ] [ Afficher dans le double panneau ] [ Corbeille (⌘⌫) ] [ CSV... ]│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Analyseur d'utilisation du disque](images/disk_usage_analyzer.png)  
+*Figure 7.2 : L'analyseur d'utilisation du disque analyse les volumes locaux avec une répartition catégorisée de l'espace et une navigation treemap.*
 
 ### 4.1 Architecture clé et fonctionnalités
 
@@ -230,6 +236,9 @@ Le **nettoyeur système** (`cm_CleanSystem`, raccourci clavier **`⌘⇧C`** / *
 │ [ Éditeur liste blanche... ]   [ Exporter le journal ]   [ Nettoyer la sélection ]     │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Nettoyeur système](images/system_cleaner.png)  
+*Figure 7.3 : Interface d'analyse sécurisée de System Cleaner affichant les estimations de récupération des fichiers de cache, de journal et de fichiers temporaires.*
 
 ### 5.1 L'architecture de sécurité en deux étapes
 
@@ -294,6 +303,9 @@ Le **désinstallateur d'applications** (`cm_UninstallApp`, raccourci clavier **`
 │ [ Actualiser les apps ]        [ Annuler ]             [ Désinstaller l'app (18.5 Go) ]│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Désinstallateur d'applications](images/app_uninstaller.png)  
+*Figure 7.4 : Le programme de désinstallation d'applications effectue une analyse approfondie des résidus dans Application Support, Caches et Preferences.*
 
 ### 6.1 Emplacements de détection des résidus
 

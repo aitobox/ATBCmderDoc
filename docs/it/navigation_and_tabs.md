@@ -94,8 +94,14 @@ Tieni le mani sulla riga home con questi comandi di navigazione dedicati:
 
 Lavorare su progetti software complessi, librerie di foto o backup di server spesso richiede di destreggiarsi tra più cartelle contemporaneamente. Invece di aprire dozzine di finestre, ATBCmder incorpora strisce multi-tab indipendenti per entrambi i pannelli. 
 
-![Folder Tabs and Splitters](images/quick_access_paths.png) 
-*Gestione multi-scheda e navigazione rapida in ATBCmder*
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│ [📁 Documents ✕] [📁 Downloads ✕] [📁 Projects ✕]   +                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [/dev/disk3s3s1] /Users/brainzhang/Projects                     428.5 GB free of 994.7 GB│
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+*Figura 2.1: Barra delle schede nativa di macOS (`MacNativeTabBar`) che fornisce stack di schede indipendenti per pannello.*
 
 ### Design nativo della barra delle schede di macOS
 
@@ -227,6 +233,9 @@ Ogni pannello registra il proprio stack cronologico del percorso cronologico:
 - Visualizza un menu popup scorrevole che mostra le ultime 20+ directory visitate nel pannello attivo. 
 - Fare clic o premere la freccia verso il basso su qualsiasi directory precedente per passare direttamente ad essa, saltando le ripetitive pressioni Indietro.
 
+![Menu a discesa cronologia directory](images/directory_history_dropdown.png)  
+*Figura 2.2: Menu a discesa della cronologia delle directory (`Alt+F8` / `Ctrl+Down`) che mostra i percorsi delle cartelle visitate di recente.*
+
 ### Selettore unità e volume
 
 Su macOS, tutte le partizioni interne, le unità USB-C/Thunderbolt esterne, i DMG montati e le condivisioni di rete risiedono in `/Volumes`. ATBCmder fornisce comandi dedicati per passare tra questi target: 
@@ -292,6 +301,10 @@ ATBCmder supporta tre distinti layout di visualizzazione ad albero tramite il me
 - **Vista ad albero (Sostituisci) (`cm_TreeView`)**: la tabella dei file del pannello attivo viene sostituita interamente con un albero di directory espandibile. 
 - **Vista ad albero (divisa) (`cm_TreeViewSplit`)**: il pannello attivo è diviso verticalmente in due sottoriquadri: un albero di directory a sinistra e l'elenco dei file standard per la cartella dell'albero selezionata a destra. 
 - **Visualizzazione ad albero (entrambi i pannelli) (`cm_TreeViewBoth`)**: abilita l'albero delle directory diviso contemporaneamente nei pannelli sinistro e destro. 
+
+![Viste ad albero a doppio pannello](images/dual_panel_tree_views.png)  
+*Figura 2.3: Modalità di visualizzazione ad albero della directory a doppio pannello (`cm_TreeViewBoth`) per esplorare contemporaneamente la gerarchia delle cartelle.*
+
 - **Mostra file attiva/disattiva**: fai clic con il pulsante destro del mouse all'interno della visualizzazione ad albero e attiva **Mostra file** per scegliere se i file devono essere visualizzati nell'albero accanto alle directory o nascosti per visualizzare solo le directory.
 
 ### 5. Vista ramo/piatta (`Cmd+B` / `⌘B` o `Ctrl+B` / `⌃B` / `cm_FlatView`)

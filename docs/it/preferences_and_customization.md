@@ -143,6 +143,9 @@ A differenza delle utilità legacy che richiedono la chiusura e il riavvio dell'
 
 L'efficienza della tastiera è la filosofia fondamentale della gestione dei file a doppio pannello. L'**Hotkey Editor** di ATBCmder (`page_hotkeys.py`) fornisce il pieno controllo sugli accordi di scelta rapida applicando al contempo un rigoroso isolamento del contesto e la prevenzione delle collisioni. 
 
+![Pagina di configurazione dei tasti di scelta rapida](images/preferences_settings_dialog.png)  
+*Figura 7.2: Pagina di configurazione dei tasti di scelta rapida di ATBCmder che mostra filtri di contesto, ricerca di comandi e prevenzione delle collisioni.*
+
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                              HOTKEY CONFIGURATION PAGE                                 │
@@ -309,7 +312,7 @@ Perfeziona il modo in cui gli elementi si ordinano all'interno delle visualizzaz
 Per fotografi, designer ed editor video, ATBCmder fornisce una **visualizzazione griglia di miniature** (`cm_ThumbnailsView`) integrata, che sostituisce le righe tabulari con anteprime visive delle immagini. 
 
 ![Thumbnail Grid View](images/thumbnails_grid_view.png) 
-*Figura 7.2: Visualizzazione miniature ad alte prestazioni con anteprime delle immagini con spaziatura della griglia personalizzata.*
+*Figura 7.3: Visualizzazione miniature ad alte prestazioni con anteprime delle immagini con spaziatura della griglia personalizzata.*
 
 #### Ridimensionamento e zoom dinamico
 
@@ -477,7 +480,7 @@ Quando si avviano strumenti esterni o script da riga di comando, ATBCmder sostit
 ATBCmder fornisce due barre degli strumenti personalizzabili: la **Barra degli strumenti principale** situata sotto la barra dei menu e la **Barra degli strumenti centrale** incorporata verticalmente nello splitter che separa i due pannelli dei file. 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*Figura 7.3: La pagina delle opzioni della barra degli strumenti centrale che configura i pulsanti di divisione e i trigger di azione rapida.*
+*Figura 7.4: La pagina delle opzioni della barra degli strumenti centrale che configura i pulsanti di divisione e i trigger di azione rapida.*
 
 ### 7.1 Personalizzazione dell'aspetto della barra degli strumenti
 
@@ -532,7 +535,7 @@ Quando configuri i pulsanti personalizzati, fai clic sul pulsante di anteprima d
 - **Schede preferite (`page_favorite_tabs.py`)**: salva i layout completi dell'area di lavoro multischeda a doppio pannello. Ripristina i tuoi esatti set di directory di sviluppo o di fotoritocco con un clic. 
 
 ![Directory Hotlist](images/quick_access_paths.png) 
-*Figura 7.4: Gestione dei segnalibri e dei percorsi delle hotlist delle directory.* 
+*Figura 7.5: Gestione dei segnalibri e dei percorsi delle hotlist delle directory.* 
 
 ---
 
@@ -649,7 +652,7 @@ Quando si configurano i pulsanti personalizzati della barra degli strumenti este
 ATBCmder include descrizioni comandi di metadati mobili che mostrano le dimensioni del file, i dati EXIF, il bitrate audio e il conteggio dei membri dell'archivio quando si passa con il mouse sugli elementi. Puoi attivare o disattivare le descrizioni comandi in **Preferenze ➔ Visualizzazioni file**. 
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
-*Figura 7.5: descrizioni comandi ricche di metadati che mostrano le proprietà dettagliate del file al passaggio del mouse.* 
+*Figura 7.6: descrizioni comandi ricche di metadati che mostrano le proprietà dettagliate del file al passaggio del mouse.* 
 
 ---
 

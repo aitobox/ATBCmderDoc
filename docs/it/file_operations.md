@@ -47,7 +47,7 @@ I file manager ortodossi utilizzano un modello direzionale **Sorgente ➔ Destin
 ATBCmder è dotato di una barra degli strumenti verticale dedicata ad azione rapida incorporata direttamente sul divisore centrale che separa i due pannelli: 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*La barra degli strumenti centrale centrale fornisce accesso immediato con il mouse a Visualizza (F3), Modifica (F4), Copia (F5), Sposta (F6), Nuova cartella (F7), Elimina (F8) e Scambia pannello.* 
+*Figura 3.1: La barra degli strumenti centrale fornisce accesso istantaneo con il mouse a Visualizza (F3), Modifica (F4), Copia (F5), Sposta (F6), Nuova cartella (F7), Elimina (F8) e scambia pannelli.*
 
 ---
 
@@ -510,6 +510,9 @@ Ispeziona e modifica gli attributi del file POSIX utilizzando la **finestra di d
 ### 7.3 Calcolo dello spazio occupato (`cm_CountDirContent` / `cm_CalculateSpace` / `Space`)
 
 Per impostazione predefinita, i file manager mostrano le dimensioni delle directory come `<DIR>` o `--` perché il calcolo ricorsivo delle dimensioni delle cartelle su milioni di file peggiorerebbe le prestazioni del file system. ATBCmder ti offre calcoli istantanei su richiesta: 
+
+![Calcola dimensioni directory](images/calculate_directory_sizes.png)  
+*Figura 3.2: Il calcolo asincrono dello spazio delle directory sostituisce <DIR> con l'esatta dimensione ricorsiva in byte.*
 
 - **Dimensione cartella singola (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: premi `Space` mentre ti trovi su una cartella qualsiasi. ATBCmder calcola i byte ricorsivi totali della cartella in background e sostituisce `<DIR>` con la dimensione esatta (ad esempio, `14.2 GB`). 
 - **Tutte le cartelle nel pannello attivo (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 

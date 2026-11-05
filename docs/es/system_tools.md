@@ -136,6 +136,9 @@ Al presionar **`⌘⇧M`** (o **`Ctrl+Shift+M`**) se abre el **panel de estado d
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![Monitor de recursos del sistema](images/system_resource_monitor.png)  
+*Figura 7.1: Panel de diagnóstico y estado del sistema en tiempo real que muestra CPU, RAM, E/S de disco y procesos principales.*
+
 ### 3.1 Funciones de diagnóstico y secciones de métricas
 
 1. **Monitor de procesador multinúcleo**:
@@ -182,6 +185,9 @@ El **Analizador de uso de disco** (`cm_DiskUsageAnalyzer`, atajo de teclado **`�
 │ [ Zoom Out (..) ]  [ Reveal in Dual Panel ]  [ Move to Trash (⌘⌫) ]  [ Export CSV... ]  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Analizador de uso de disco](images/disk_usage_analyzer.png)  
+*Figura 7.2: Analizador de uso de disco escaneando volúmenes locales con desglose de espacio categorizado y navegación por mapas de árbol.*
 
 ### 4.1 Arquitectura clave y capacidades
 
@@ -230,6 +236,9 @@ El **Limpiador del sistema** (`cm_CleanSystem`, atajo de teclado **`⌘⇧C`** /
 │ [ Whitelist Editor... ]      [ Export Log ]       [ Clean Selected Items (28.4 GB) ]   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Limpiador del sistema](images/system_cleaner.png)  
+*Figura 7.3: Interfaz de escaneo seguro de System Cleaner que muestra estimaciones de recuperación de archivos temporales, registros y cachés.*
 
 ### 5.1 La arquitectura de seguridad en dos fases
 
@@ -294,6 +303,9 @@ El **Desinstalador de aplicaciones** (`cm_UninstallApp`, atajo de teclado **`⌘
 │ [ Refresh Applications ]       [ Cancel ]              [ Uninstall Application (18.5G)│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Desinstalador de aplicaciones](images/app_uninstaller.png)  
+*Figura 7.4: Desinstalador de aplicaciones que realiza un escaneo profundo de residuos en Application Support, Caches y Preferences.*
 
 ### 6.1 Ubicaciones de detección de residuos
 

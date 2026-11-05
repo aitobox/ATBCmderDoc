@@ -143,6 +143,9 @@ Ao contrário dos utilitários legados que exigem fechar e reiniciar o aplicativ
 
 A eficiência do teclado é a filosofia central do gerenciamento de arquivos em painel duplo. O **Editor de teclas de atalho** (`page_hotkeys.py`) do ATBCmder fornece controle total sobre acordes de atalho, ao mesmo tempo em que impõe estrito isolamento de contexto e prevenção de colisões. 
 
+![Página de configuração de teclas de atalho](images/preferences_settings_dialog.png)  
+*Figura 7.2: Página de configuração de teclas de atalho do ATBCmder mostrando filtragem de contexto, pesquisa de comandos e prevenção de colisões.*
+
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                              HOTKEY CONFIGURATION PAGE                                 │
@@ -309,7 +312,7 @@ Ajuste como os itens se ordenam nas visualizações de tabela:
 Para fotógrafos, designers e editores de vídeo, o ATBCmder fornece uma **Visualização em grade de miniaturas** integrada (`cm_ThumbnailsView`), substituindo linhas tabulares por visualizações de imagens visuais. 
 
 ![Thumbnail Grid View](images/thumbnails_grid_view.png) 
-*Figura 7.2: Visualização de miniaturas de alto desempenho exibindo visualizações de imagens com espaçamento de grade personalizado.*
+*Figura 7.3: Visualização de miniaturas de alto desempenho exibindo visualizações de imagens com espaçamento de grade personalizado.*
 
 #### Dimensionamento e zoom dinâmico
 
@@ -476,7 +479,7 @@ Ao iniciar ferramentas externas ou scripts de linha de comando, o ATBCmder subst
 ATBCmder fornece duas barras de ferramentas personalizáveis: a **Barra de ferramentas principal** situada abaixo da barra de menu, e a **Barra de ferramentas intermediária** incorporada verticalmente no divisor que separa os dois painéis de arquivos. 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*Figura 7.3: A página de opções da barra de ferramentas central configurando botões divisores e gatilhos de ação rápida.*
+*Figura 7.4: A página de opções da barra de ferramentas central configurando botões divisores e gatilhos de ação rápida.*
 
 ### 7.1 Personalizando a aparência da barra de ferramentas
 
@@ -531,7 +534,7 @@ Ao configurar botões personalizados, clique no botão de visualização do íco
 - **Guias favoritas (`page_favorite_tabs.py`)**: salve layouts completos de espaço de trabalho com várias guias e painel duplo. Restaure seus conjuntos exatos de diretórios de revelação ou edição de fotos com um clique. 
 
 ![Directory Hotlist](images/quick_access_paths.png) 
-*Figura 7.4: Gerenciando marcadores e caminhos da lista de favoritos do diretório.* 
+*Figura 7.5: Gerenciando marcadores e caminhos da lista de favoritos do diretório.* 
 
 ---
 
@@ -648,7 +651,7 @@ Ao configurar botões de barra de ferramentas externos personalizados ou associa
 ATBCmder inclui dicas de ferramentas de metadados flutuantes que exibem dimensões de arquivo, dados EXIF, taxa de bits de áudio e contagens de membros de arquivo ao passar o mouse sobre os itens. Você pode ativar ou desativar as dicas de ferramentas em **Preferências ➔ Visualizações de arquivos**. 
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
-*Figura 7.5: Dicas de metadados avançados exibindo propriedades detalhadas do arquivo ao passar o mouse.* 
+*Figura 7.6: Dicas de metadados avançados exibindo propriedades detalhadas do arquivo ao passar o mouse.* 
 
 ---
 

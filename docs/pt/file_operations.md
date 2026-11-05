@@ -47,7 +47,7 @@ Os gerenciadores de arquivos ortodoxos usam um modelo direcional **Origem ➔ De
 ATBCmder apresenta uma barra de ferramentas vertical dedicada de ação rápida incorporada diretamente na divisória central que separa os dois painéis: 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*A barra de ferramentas central central fornece acesso instantâneo do mouse para Exibir (F3), Editar (F4), Copiar (F5), Mover (F6), Nova Pasta (F7), Excluir (F8) e Troca de Painel.* 
+*Figura 3.1: A barra de ferramentas central fornece acesso instantâneo do mouse para Visualizar (F3), Editar (F4), Copiar (F5), Mover (F6), Nova Pasta (F7), Excluir (F8) e alternar painéis.*
 
 ---
 
@@ -510,6 +510,9 @@ Inspecione e modifique os atributos do arquivo POSIX usando a **Diálogo de Prop
 ### 7.3 Cálculo de Espaço Ocupado (`cm_CountDirContent` / `cm_CalculateSpace` / `Space`)
 
 Por padrão, os gerenciadores de arquivos mostram tamanhos de diretório como `<DIR>` ou `--` porque calcular tamanhos de pastas recursivas em milhões de arquivos degradaria o desempenho do sistema de arquivos. ATBCmder oferece cálculo instantâneo sob demanda: 
+
+![Calcular tamanhos de diretório](images/calculate_directory_sizes.png)  
+*Figura 3.2: O cálculo assíncrono do espaço do diretório substitui <DIR> por bytes recursivos exatos.*
 
 - **Tamanho de pasta única (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: Pressione `Space` enquanto descansa em qualquer pasta. ATBCmder calcula o total de bytes recursivos da pasta em segundo plano e substitui `<DIR>` pelo tamanho exato (por exemplo, `14.2 GB`). 
 - **Todas as pastas no painel ativo (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 

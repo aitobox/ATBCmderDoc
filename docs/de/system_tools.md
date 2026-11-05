@@ -136,6 +136,9 @@ Das Drücken von **`⌘⇧M`** (oder **`Ctrl+Shift+M`**) öffnet das vollständi
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![Systemressourcen-Monitor](images/system_resource_monitor.png)  
+*Abbildung 7.1: Echtzeit-Systemstatus- und Diagnosedashboard zur Überwachung von CPU, RAM, Datenträger-I/O und aktiven Prozessen.*
+
 ### 3.1 Diagnosefunktionen & Metrikbereiche
 
 1. **Multi-Core-Prozessormonitor**:
@@ -182,6 +185,9 @@ Die **Festplattenbelegungsanalyse** (`cm_DiskUsageAnalyzer`, Tastaturkurzbefehl 
 │ [ Zoom Out (..) ]  [ Reveal in Dual Panel ]  [ Move to Trash (⌘⌫) ]  [ Export CSV... ]  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Festplattenbelegungsanalyse](images/disk_usage_analyzer.png)  
+*Abbildung 7.2: Festplattenbelegungsanalyse beim Scannen lokaler Volumes mit kategorisierter Speicheraufschlüsselung und Treemap-Navigation.*
 
 ### 4.1 Wichtigste Architekturmerkmale & Fähigkeiten
 
@@ -230,6 +236,9 @@ Der **Systemreiniger** (`cm_CleanSystem`, Tastaturkurzbefehl **`⌘⇧C`** / **`
 │ [ Whitelist Editor... ]      [ Export Log ]       [ Clean Selected Items (28.4 GB) ]   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Systemreiniger](images/system_cleaner.png)  
+*Abbildung 7.3: Sichere Scan-Oberfläche des Systemreinigers mit Schätzungen zur Bereinigung von Caches, Protokollen und temporären Dateien.*
 
 ### 5.1 Die zweistufige Sicherheitsarchitektur
 
@@ -294,6 +303,9 @@ Der **Anwendungs-Deinstallierer** (`cm_UninstallApp`, Tastaturkurzbefehl **`⌘�
 │ [ Refresh Applications ]       [ Cancel ]              [ Uninstall Application (18.5G)│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Anwendungs-Deinstallierer](images/app_uninstaller.png)  
+*Abbildung 7.4: Anwendungs-Deinstallierer führt einen Tiefenscan nach Überresten in Application Support, Caches und Preferences durch.*
 
 ### 6.1 Fundorte für Anwendungsüberreste
 

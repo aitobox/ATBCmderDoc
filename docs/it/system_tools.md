@@ -136,6 +136,9 @@ Premendo **`⌘⇧M`** (o **`Ctrl+Shift+M`**) si apre il **Pannello di stato del
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![Monitor delle risorse di sistema](images/system_resource_monitor.png)  
+*Figura 7.1: Dashboard di stato e diagnostica del sistema in tempo reale che mostra CPU, RAM, I/O su disco e processi principali.*
+
 ### 3.1 Funzionalità diagnostiche e sezioni delle metriche
 
 1. **Monitor del processore multi-core**:
@@ -182,6 +185,9 @@ L'**Analizzatore dello spazio su disco** (`cm_DiskUsageAnalyzer`, scorciatoia **
 │ [ Livello sup. (..) ] [ Mostra nel pannello ] [ Sposta nel Cestino (⌘⌫) ] [ Esporta ] │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Analizzatore dello spazio su disco](images/disk_usage_analyzer.png)  
+*Figura 7.2: Analizzatore di utilizzo del disco che esegue la scansione dei volumi locali con suddivisione dello spazio categorizzata e navigazione treemap.*
 
 ### 4.1 Architettura chiave e funzionalità
 
@@ -230,6 +236,9 @@ Lo strumento di **Pulizia del sistema** (`cm_CleanSystem`, scorciatoia **`⌘⇧
 │ [ Editor whitelist... ]      [ Esporta log ]       [ Pulisci selezionati (28,4 GB) ]   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Pulizia del sistema](images/system_cleaner.png)  
+*Figura 7.3: Interfaccia di scansione sicura di System Cleaner che mostra le stime di recupero di cache, registri e file spazzatura temporanei.*
 
 ### 5.1 Architettura di sicurezza a due fasi
 
@@ -294,6 +303,9 @@ Il **Programma di disinstallazione applicazioni** (`cm_UninstallApp`, scorciatoi
 │ [ Aggiorna elenco ]            [ Annulla ]             [ Disinstalla app (18,5 GB) ]   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Programma di disinstallazione applicazioni](images/app_uninstaller.png)  
+*Figura 7.4: Il programma di disinstallazione delle applicazioni esegue una scansione approfondita dei residui in Application Support, Caches e Preferences.*
 
 ### 6.1 Percorsi di rilevamento dei residui
 

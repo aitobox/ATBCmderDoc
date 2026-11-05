@@ -169,6 +169,9 @@ ATBCmder bettet spezielle Layout-Engines für strukturierte Dokumente, Foliensä
 
 Wenn Sie `F3` in Microsoft Word-Dateien (`.docx`, `.doc`), Rich Text-Dateien (`.rtf`) oder OpenDocument-Dateien (`.odt`) drücken, aktiviert ATBCmder `DocumentPanel`: 
 
+![Word-Dokumentbetrachter](images/word_document_viewer.png)  
+*Abbildung 4.2: Integrierter Word- und Rich-Text-Dokumentbetrachter mit mehrseitiger Navigation und Zoom.*
+
 - **Dokumentseitenkarten**: Rendert strukturierte Seiten auf zentrierten Papierkarten (`.doc-page`) mit gestochen scharfer Typografie und Rändern, die zu modernen Textverarbeitungslayouts passen. 
 - **Beibehaltung der Formatierung**: Behält Absatzhierarchien, Fett-/Kursiv-/Unterstreichungsstile, Schriftfarbvariationen, ungeordnete und nummerierte Listen sowie Inline-Hyperlinks bei. 
 - **Complex Table & Embedded Image Rendering**: Analysiert komplexe mehrspaltige Tabellenraster mit umrandeten Zellenabständen und rendert eingebettete Inline-Rasterillustrationen. 
@@ -187,7 +190,7 @@ Für Microsoft PowerPoint-Präsentationen (`.pptx`, `.ppt`) startet ATBCmder `Pr
 ATBCmder basiert nativ auf `PySide6.QtPdf` und `QPdfView` und integriert einen PDF-Reader der Enterprise-Klasse: 
 
 ![PDF Viewer](images/pdf_viewer.png) 
-*Abbildung 4.2: Integrierter PDF-Viewer mit Lesezeichengliederung, Seitenminiaturansichtsleiste, Suche im Dokument und Lesethemen.* 
+*Abbildung 4.3: Integrierter PDF-Viewer mit Lesezeichengliederung, Seitenminiaturansichtsleiste, Suche im Dokument und Lesethemen.* 
 
 - **Kontinuierliches mehrseitiges Scrollen**: Scrollen Sie nahtlos über Hunderte von Seiten im mehrseitigen Modus (`QPdfView.PageMode.MultiPage`) oder wechseln Sie zur einseitigen und zweiseitigen Buchansicht. 
 - **Dokumentseitenleiste**: 
@@ -204,6 +207,9 @@ ATBCmder basiert nativ auf `PySide6.QtPdf` und `QPdfView` und integriert einen P
 
 Die Verwaltung technischer Dokumentationen, Handbücher oder digitaler Bücher im EPUB-Format (`.epub`) ist eine native Funktion von ATBCmder: 
 
+![EPUB-E-Book-Reader](images/epub_ebook_reader.png)  
+*Abbildung 4.4: Integrierter EPUB-E-Book-Reader mit Kapitelnavigation und anpassbarer Typografie.*
+
 - **Dual-Engine-Architektur**: Verwendet einen High-Fidelity-WebEngine-Renderer (`QWebEngineView` mit `EpubUrlSchemeHandler` für reichhaltiges CSS-Design und SVG-Vektorillustrationen) mit einem automatischen Fallback auf `QTextBrowser` in minimalen Umgebungen. 
 - **Seitenleiste des Inhaltsverzeichnisses**: Zeigt verschachtelte Kapitelbäume an (`QTreeView`), sodass Sie mit einem Klick zwischen Buchkapiteln und Anhängen wechseln können. 
 - **Typografie und Schriftskalierung**: Skalieren Sie die Größe des Lesetextes dynamisch über den Schriftarten-Schieberegler in der unteren Symbolleiste. 
@@ -212,6 +218,9 @@ Die Verwaltung technischer Dokumentationen, Handbücher oder digitaler Bücher i
 #### 3.1.5 Markdown-Dokumente (`MarkdownPanel`)
 
 Für README-Dateien, technische Hinweise und Entwicklerdokumentation (`.md`, `.markdown`): 
+
+![Markdown-Viewer mit Inhaltsverzeichnis](images/markdown_viewer_toc.png)  
+*Abbildung 4.5: Markdown-Reader mit gerendertem Inhalt neben einem interaktiven Inhaltsverzeichnis.*
 
 - **GitHub-Flavored Markdown (GFM)**: Rendert Header, Blockzitate, horizontale Regeln, Aufgabenlisten (`- [x]`) und mehrspaltige Tabellen. 
 - **Codeblock-Syntax-Styling**: Formatiert automatisch abgegrenzte Codeblöcke (```python, ```bash, ```json) mit deutlicher Hintergrundschattierung, monospaced Typografie und Syntaxfarbe. 
@@ -227,7 +236,7 @@ Für technische Benutzer, Datenanalysten und Softwareentwickler bietet ATBCmder 
 Das Öffnen großer CSV-Dateien oder Excel-Arbeitsmappen mit mehreren Blättern in umfangreichen Office-Suiten kann 10–20 Sekunden dauern. `SpreadsheetPanel` von ATBCmder rendert sie sofort: 
 
 ![Excel Spreadsheet and Data Preview](images/xls_viewer.png) 
-*Hochleistungsfähige Excel-Tabellenvorschau in Universal Lister mit Registerkarten für mehrere Blätter und eingefrorenen Koordinaten* 
+*Abbildung 4.6: Hochleistungsfähige Excel-Tabellenvorschau in Universal Lister mit Mehrblatt-Registerkarten und fixierten Koordinaten.*
 
 - **Formatunterstützung**: Microsoft Excel (`.xlsx`, `.xls`), durch Kommas getrennte Werte (`.csv`) und durch Tabulatoren getrennte Werte (`.tsv`). 
 - **Registerkarten für mehrere Blätter**: Arbeitsmappen mit mehreren Blättern verfügen über eine untere Registerkartenleiste (`QTabBar`), die ein schnelles Wechseln zwischen Datenblättern ermöglicht. 
@@ -239,6 +248,9 @@ Das Öffnen großer CSV-Dateien oder Excel-Arbeitsmappen mit mehreren Blättern 
 #### 3.2.2 SQLite-Datenbankbrowser (`SqlitePanel`)
 
 Überprüfen Sie SQLite-Datenbanken (`.sqlite`, `.sqlite3`, `.db`) direkt ohne externe GUI-Clients: 
+
+![SQLite-Datenbank-Betrachter](images/sqlite_database_viewer.png)  
+*Abbildung 4.7: SQLite-Datenbank-Inspektor zum Durchsuchen von Tabellenschemata, Zeilendatensätzen und Indizes.*
 
 - **Tabellen- und Ansichtsverzeichnis**: Die linke Seitenleiste listet alle Datenbanktabellen und -ansichten zusammen mit der Anzahl ihrer aktiven Zeilen auf. Wenn Sie auf eine Tabelle klicken, wird deren Inhalt sofort geladen. 
 - **Virtualisierte Datenansicht**: Verwendet die leistungsstarke `VirtualSpreadsheetModel` für nahtloses Scrollen durch umfangreiche Tabellen. 
@@ -259,6 +271,9 @@ Das Öffnen großer CSV-Dateien oder Excel-Arbeitsmappen mit mehreren Blättern 
 #### 3.2.4 Code- und Nur-Text-Anzeige (`TextPanel`)
 
 Die primäre Textinspektions-Engine ist für schnelles Surfen und große Datenmengen optimiert: 
+
+![Text- und Codedatei-Viewer](images/text_file_viewer.png)  
+*Abbildung 4.8: Leistungsstarker Text- und Code-Viewer mit Pygments-Syntaxhervorhebung und Codierungserkennung.*
 
 - **Chunked 64 KB Loader (`FileLoaderWorker`)**: Liest große Dateien in 64-KB-Blöcken mit automatischer Zeilenumbruch-Grenze und verhindert so das Einfrieren von Threads und die Beschädigung von UTF-8-Multibyte-Zeichen. 
 - **Pygments Syntax Highlighting**: Über 150 Programmier- und Konfigurationssprachen werden mit dynamischer Anpassung des Hell-/Dunkelmodus unterstützt. 
@@ -283,7 +298,7 @@ ATBCmder umfasst hardwarebeschleunigte Mediaplayer, Grafikbetrachter und Typogra
 Drücken Sie `F3` in einem beliebigen unterstützten Bildformat (`.png`, `.jpg`, `.webp`, `.svg`, `.gif`, `.bmp`, `.ico`, `.tiff`): 
 
 ![Image Viewer](images/image_viewer_window.png) 
-*Abbildung 4.3: Integrierter Bildbetrachter mit interaktivem Canvas-Zoom, Drehung und EXIF-Metadatenextraktion.* 
+*Abbildung 4.9: Integrierter Bildbetrachter mit interaktivem Canvas-Zoom, Drehung und EXIF-Metadatenextraktion.* 
 
 - **Interaktive Leinwand**: Reibungsloses Zoomen mit dem Mausrad, das an der Cursorposition verankert ist (`SmoothPixmapTransform`), 1:1-Pixelprüfung, An Fenster anpassen und Schwenken per Handziehen. 
 - **EXIF-Telemetrie-Inspektor**: Durch Klicken auf **EXIF-Info** werden Kamerametadaten extrahiert: Marke, Modell, Objektivbrennweite, Belichtungszeit, Blende, ISO und GPS-Koordinaten. 
@@ -294,7 +309,7 @@ Drücken Sie `F3` in einem beliebigen unterstützten Bildformat (`.png`, `.jpg`,
 Spielen Sie Podcasts, Soundeffekte oder Musiksammlungen ab, während Sie arbeiten: 
 
 ![Audio Player](images/audio_player.png) 
-*Abbildung 4.4: Integrierter Audio-Player mit ID3-Tag-Parsing, Albumcover und Drag-and-Drop-Playlist-Verwaltung.* 
+*Abbildung 4.10: Integrierter Audio-Player mit ID3-Tag-Parsing, Albumcover und Drag-and-Drop-Playlist-Verwaltung.* 
 
 - **Unterstützte Formate**: MP3, FLAC, WAV, AAC, M4A, OGG und AIFF mit Mutagen-ID3-Tag und Cover-Artwork-Extraktion. 
 - **Hintergrundwiedergabemodus**: Klicken Sie im Player auf die Schaltfläche **Hintergrund**. Das Player-Fenster wird an einen kompakten **Mini-Player-Controller** in der Hintergrundbetriebsleiste des rechten Bedienfelds angedockt (`bg_ops_container`): 
@@ -304,14 +319,14 @@ Spielen Sie Podcasts, Soundeffekte oder Musiksammlungen ab, während Sie arbeite
 - Durch Drücken von `F3` auf zusätzliche Audiodateien im Dateifenster werden diese automatisch an die laufende Wiedergabeliste angehängt! 
 
 ![Music Player in Panel](images/music_player_window.png) 
-*Abbildung 4.5: Hintergrund-Miniplayer direkt in die Bedienfeld-Bedienleiste eingebettet.*
+*Abbildung 4.11: Hintergrund-Miniplayer direkt in die Bedienfeld-Bedienleiste eingebettet.*
 
 #### 3.3.3 Hardwarebeschleunigter Videoplayer (`MediaPanel`)
 
 Für Videodateien (`.mp4`, `.mkv`, `.mov`, `.avi`, `.webm`): 
 
 ![Video Player](images/video_player_window.png) 
-*Abbildung 4.6: Hardwarebeschleunigter Videoplayer mit schwebenden OSD-Steuerelementen (On-Screen Display).* 
+*Abbildung 4.12: Hardwarebeschleunigter Videoplayer mit schwebenden OSD-Steuerelementen (On-Screen Display).* 
 
 - **Zero-Overhead-Dekodierung**: Unterstützt von `QtMultimedia` unter Verwendung von macOS VideoToolbox und Apple Silicon GPU-Beschleunigung. 
 - **Auto-Fading-OSD-Steuerelemente**: Schwebender Timeline-Scrubber, Lautstärkeregler und Wiedergabesteuerungen werden während der Wiedergabe ausgeblendet. 
@@ -382,6 +397,13 @@ Um eine völlig neue Datei im aktiven Ordner zu erstellen und zu bearbeiten, dr�
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+
+![Code- und Textdateieditor](images/text_file_editor.png)  
+*Abbildung 4.13: Dedizierter interner Texteditor mit Such-/Ersetzungsleiste und Zeilennummerierung.*
+
+![Markdown-Quelleneditor](images/markdown_source_editor.png)  
+*Abbildung 4.14: Interner Editor zum Bearbeiten von Markdown-Dateien mit Live-Syntaxhervorhebung und Schnellwerkzeugen.*
+
 #### Kernfunktionen des Code-Editors
 
 - **Pygments-Syntaxhervorhebung**: Erkennt über 150 Programmier-, Skript- und Konfigurationsformate mit automatischer Spracherkennung anhand von Dateierweiterungen und Shebang-Zeilen. 
@@ -409,6 +431,9 @@ Durch Drücken von **`Cmd+F`** (`⌘F`) oder **`Cmd+Option+F`** (`⌥⌘F`) wird
 ### 4.2 Dedizierter Bildeditor (`ImageEditorDialog`)
 
 Wenn Sie in einer Grafik oder einem Screenshot auf **`F4`** drücken, öffnet ATBCmder den umfassenden **Bildeditor**:
+
+![Dedizierter Bildeditor](images/image_editor.png)  
+*Abbildung 4.15: Integrierter Bildeditor mit Zuschnittseitenverhältnissen, Leinwanddrehung und Transformationssteuerungen.*
 
 #### Interaktive Leinwand und Transformationen
 

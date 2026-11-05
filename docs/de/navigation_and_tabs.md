@@ -94,8 +94,14 @@ Mit diesen speziellen Navigationsbefehlen behalten Sie die Startreihe im Griff:
 
 Die Arbeit an komplexen Softwareprojekten, Fotobibliotheken oder Server-Backups erfordert oft das gleichzeitige Jonglieren mit mehreren Ordnern. Anstatt Dutzende von Fenstern zu öffnen, verfügt ATBCmder über unabhängige Multi-Tab-Strips für beide Panels. 
 
-![Folder Tabs and Splitters](images/quick_access_paths.png) 
-*Multi-Tab-Verwaltung und schnelle Navigation in ATBCmder*
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│ [📁 Documents ✕] [📁 Downloads ✕] [📁 Projects ✕]   +                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [/dev/disk3s3s1] /Users/brainzhang/Projects                     428.5 GB free of 994.7 GB│
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+*Abbildung 2.1: Native macOS-Registerkartenleiste (`MacNativeTabBar`), die unabhängige Registerkartenstapel pro Bereich bereitstellt.*
 
 ### Natives macOS-Tab-Bar-Design
 
@@ -232,6 +238,9 @@ Jedes Panel zeichnet seinen eigenen chronologischen Pfadverlaufsstapel auf:
 - Zeigt ein scrollbares Popup-Menü mit den zuletzt über 20 besuchten Verzeichnissen im aktiven Bereich an. 
 - Klicken Sie auf oder mit der Pfeiltaste nach unten auf ein beliebiges vorheriges Verzeichnis, um direkt dorthin zu springen und wiederholtes Drücken der Zurück-Taste zu überspringen.
 
+![Verlauf-Dropdown-Menü](images/directory_history_dropdown.png)  
+*Abbildung 2.2: Dropdown-Menü des Verzeichnisverlaufs (`Alt+F8` / `Ctrl+Down`) mit zuletzt besuchten Ordnerpfaden.*
+
 ### Laufwerks- und Lautstärkeumschalter
 
 Unter macOS befinden sich alle internen Partitionen, externen USB-C-/Thunderbolt-Laufwerke, gemounteten DMGs und Netzwerkfreigaben unter `/Volumes`. ATBCmder bietet dedizierte Befehle zum Wechseln zwischen diesen Zielen: 
@@ -297,6 +306,10 @@ ATBCmder unterstützt drei verschiedene Strukturansicht-Layouts über das Menü 
 - **Baumansicht (Ersetzen) (`cm_TreeView`)**: Die Dateitabelle des aktiven Panels wird vollständig durch einen erweiterbaren Verzeichnisbaum ersetzt. 
 - **Baumansicht (geteilt) (`cm_TreeViewSplit`)**: Das aktive Bedienfeld ist vertikal in zwei Unterbereiche unterteilt: einen Verzeichnisbaum auf der linken Seite und die Standarddateiliste für den ausgewählten Baumordner auf der rechten Seite. 
 - **Baumansicht (beide Bereiche) (`cm_TreeViewBoth`)**: Aktiviert den geteilten Verzeichnisbaum gleichzeitig im linken und rechten Bereich. 
+
+![Dual-Panel-Baumansichten](images/dual_panel_tree_views.png)  
+*Abbildung 2.3: Dual-Panel-Verzeichnisbaummodus (`cm_TreeViewBoth`) für die gleichzeitige Ordnerhierarchie in beiden Bereichen.*
+
 - **Umschalten „Dateien anzeigen“: Klicken Sie mit der rechten Maustaste in die Baumansicht und aktivieren Sie die Option „Dateien anzeigen“, um auszuwählen, ob Dateien im Baum neben Verzeichnissen gerendert oder ausgeblendet werden sollen, um nur Verzeichnisse anzuzeigen.
 
 ### 5. Zweig-/Flachansicht (`Cmd+B` / `⌘B` oder `Ctrl+B` / `⌃B` / `cm_FlatView`)

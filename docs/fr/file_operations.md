@@ -47,7 +47,7 @@ Les gestionnaires de fichiers orthodoxes utilisent un modèle directionnel **Sou
 ATBCmder dispose d'une barre d'outils verticale dédiée à action rapide intégrée directement sur le séparateur central séparant les deux panneaux : 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*La barre d'outils centrale centrale offre un accès instantané de la souris à Afficher (F3), Modifier (F4), Copier (F5), Déplacer (F6), Nouveau dossier (F7), Supprimer (F8) et Permuter le panneau.* 
+*Figure 3.1 : La barre d'outils centrale offre un accès instantané à la souris pour Afficher (F3), Modifier (F4), Copier (F5), Déplacer (F6), Nouveau dossier (F7), Supprimer (F8) et permuter les panneaux.*
 
 ---
 
@@ -510,6 +510,9 @@ Inspectez et modifiez les attributs du fichier POSIX à l'aide de la **boîte de
 ### 7.3 Calcul de l'espace occupé (`cm_CountDirContent` / `cm_CalculateSpace` / `Space`)
 
 Par défaut, les gestionnaires de fichiers affichent la taille des répertoires sous la forme `<DIR>` ou `--`, car le calcul récursif de la taille des dossiers sur des millions de fichiers dégraderait les performances du système de fichiers. ATBCmder vous offre un calcul instantané et à la demande : 
+
+![Calculer la taille des répertoires](images/calculate_directory_sizes.png)  
+*Figure 3.2 : Le calcul asynchrone de la taille du répertoire remplace <DIR> par l'empreinte exacte en octets récursifs.*
 
 - **Taille de dossier unique (`Space` / `Insert` / `cm_SelectOrDeselectFile`)** : Appuyez sur `Space` tout en vous reposant sur n'importe quel dossier. ATBCmder calcule le nombre total d'octets récursifs du dossier en arrière-plan et remplace `<DIR>` par la taille exacte (par exemple, `14.2 GB`). 
 - **Tous les dossiers du panneau actif (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)** : 

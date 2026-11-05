@@ -47,7 +47,7 @@ Orthodoxe Dateimanager verwenden ein Richtungsmodell **Quelle ➔ Ziel**. Wenn S
 ATBCmder verfügt über eine spezielle vertikale Schnellaktions-Symbolleiste, die direkt in die zentrale Trennwand eingebettet ist, die die beiden Bereiche trennt: 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*Die zentrale mittlere Symbolleiste bietet sofortigen Mauszugriff auf „Ansicht“ (F3), „Bearbeiten“ (F4), „Kopieren“ (F5), „Verschieben“ (F6), „Neuer Ordner“ (F7), „Löschen“ (F8) und „Panel tauschen“.* 
+*Abbildung 3.1: Die zentrale mittlere Symbolleiste bietet sofortigen Mauszugriff auf Anzeigen (F3), Bearbeiten (F4), Kopieren (F5), Verschieben (F6), Neuer Ordner (F7), Löschen (F8) und Panel-Tausch.*
 
 ---
 
@@ -512,6 +512,9 @@ macOS basiert auf Darwin UNIX und bietet zwei verschiedene Linktypen:
 ### 7.3 Berechnung der belegten Fläche (`cm_CountDirContent` / `cm_CalculateSpace` / `Space`)
 
 Standardmäßig zeigen Dateimanager Verzeichnisgrößen als `<DIR>` oder `--` an, da die Berechnung rekursiver Ordnergrößen über Millionen von Dateien hinweg die Leistung des Dateisystems beeinträchtigen würde. ATBCmder bietet Ihnen sofortige Berechnungen auf Abruf: 
+
+![Verzeichnisgrößen berechnen](images/calculate_directory_sizes.png)  
+*Abbildung 3.2: Asynchrone Verzeichnisgrößenberechnung ersetzt <DIR> durch genaue rekursive Byte-Angaben.*
 
 - **Größe eines einzelnen Ordners (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: Drücken Sie `Space`, während Sie sich auf einem beliebigen Ordner befinden. ATBCmder berechnet im Hintergrund die gesamten rekursiven Bytes des Ordners und ersetzt `<DIR>` durch die genaue Größe (z. B. `14.2 GB`). 
 - **Alle Ordner im aktiven Panel (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 

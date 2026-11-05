@@ -94,8 +94,14 @@ Mantén tus manos en la fila de inicio con estos comandos de navegación dedicad
 
 Trabajar en proyectos de software complejos, bibliotecas de fotografías o copias de seguridad de servidores a menudo requiere hacer malabarismos con varias carpetas simultáneamente. En lugar de abrir docenas de ventanas, ATBCmder incorpora tiras de pestañas múltiples independientes para ambos paneles. 
 
-![Folder Tabs and Splitters](images/quick_access_paths.png) 
-*Gestión de pestañas múltiples y navegación rápida en ATBCmder*
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│ [📁 Documents ✕] [📁 Downloads ✕] [📁 Projects ✕]   +                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [/dev/disk3s3s1] /Users/brainzhang/Projects                     428.5 GB free of 994.7 GB│
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+*Figura 2.1: Barra de pestañas nativa de macOS (`MacNativeTabBar`) que proporciona pilas de pestañas independientes por panel.*
 
 ### Diseño de barra de pestañas nativa de macOS
 
@@ -227,6 +233,9 @@ Cada panel registra su propia pila de historial de ruta cronológica:
 - Muestra un menú emergente desplazable que muestra los últimos 20 directorios visitados en el panel activo. 
 - Haga clic o utilice la flecha hacia abajo a cualquier directorio anterior para saltar directamente a él, omitiendo las pulsaciones repetitivas hacia Atrás.
 
+![Menú desplegable de historial](images/directory_history_dropdown.png)  
+*Figura 2.2: Menú desplegable del historial de directorios (`Alt+F8` / `Ctrl+Down`) que muestra las rutas de carpetas visitadas recientemente.*
+
 ### Conmutador de unidad y volumen
 
 En macOS, todas las particiones internas, unidades USB-C/Thunderbolt externas, DMG montados y recursos compartidos de red residen en `/Volumes`. ATBCmder proporciona comandos dedicados para cambiar entre estos objetivos: 
@@ -292,6 +301,10 @@ ATBCmder admite tres diseños distintos de vista de árbol a través del menú *
 - **Vista de árbol (Reemplazar) (`cm_TreeView`)**: la tabla de archivos del panel activo se reemplaza por completo con un árbol de directorios expandible. 
 - **Vista de árbol (dividida) (`cm_TreeViewSplit`)**: el panel activo se divide verticalmente en dos subpaneles: un árbol de directorios a la izquierda y la lista de archivos estándar para la carpeta del árbol seleccionada a la derecha. 
 - **Vista de árbol (ambos paneles) (`cm_TreeViewBoth`)**: habilita el árbol de directorios dividido en los paneles izquierdo y derecho simultáneamente. 
+
+![Vistas de árbol de doble panel](images/dual_panel_tree_views.png)  
+*Figura 2.3: Modo de vista de árbol de directorio de panel doble (`cm_TreeViewBoth`) con navegación simultánea de jerarquía en ambos paneles.*
+
 - **Mostrar archivos alternar**: haga clic con el botón derecho dentro de la vista de árbol y active **Mostrar archivos** para elegir si los archivos deben mostrarse en el árbol junto a los directorios u ocultarse para mostrar solo los directorios.
 
 ### 5. Sucursal / Vista plana (`Cmd+B` / `⌘B` o `Ctrl+B` / `⌃B` / `cm_FlatView`)

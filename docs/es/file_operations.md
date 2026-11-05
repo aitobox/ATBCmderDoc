@@ -47,7 +47,7 @@ Los administradores de archivos ortodoxos utilizan un modelo direccional **Fuent
 ATBCmder cuenta con una barra de herramientas vertical dedicada de acción rápida integrada directamente en el divisor central que separa los dos paneles: 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*La barra de herramientas central proporciona acceso instantáneo con el mouse a Ver (F3), Editar (F4), Copiar (F5), Mover (F6), Nueva carpeta (F7), Eliminar (F8) e Intercambiar panel.* 
+*Figura 3.1: La barra de herramientas central proporciona acceso instantáneo con el ratón a Ver (F3), Editar (F4), Copiar (F5), Mover (F6), Nueva carpeta (F7), Eliminar (F8) e intercambiar paneles.*
 
 ---
 
@@ -510,6 +510,9 @@ Inspeccione y modifique los atributos del archivo POSIX utilizando el completo *
 ### 7.3 Cálculo del espacio ocupado (`cm_CountDirContent` / `cm_CalculateSpace` / `Space`)
 
 De forma predeterminada, los administradores de archivos muestran tamaños de directorio como `<DIR>` o `--` porque calcular tamaños de carpetas recursivas en millones de archivos degradaría el rendimiento del sistema de archivos. ATBCmder le ofrece cálculos instantáneos bajo demanda: 
+
+![Calcular tamaños de directorio](images/calculate_directory_sizes.png)  
+*Figura 3.2: El cálculo asíncrono del espacio de directorio reemplaza <DIR> con bytes recursivos exactos.*
 
 - **Tamaño de carpeta única (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: Presione `Space` mientras descansa sobre cualquier carpeta. ATBCmder calcula el total de bytes recursivos de la carpeta en segundo plano y reemplaza `<DIR>` con el tamaño exacto (por ejemplo, `14.2 GB`). 
 - **Todas las carpetas del Panel Activo (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 

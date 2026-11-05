@@ -143,6 +143,9 @@ Im Gegensatz zu älteren Dienstprogrammen, die das Schließen und Neustarten der
 
 Tastatureffizienz ist die Kernphilosophie der Dual-Panel-Dateiverwaltung. Der **Hotkey-Editor** (`page_hotkeys.py`) von ATBCmder bietet vollständige Kontrolle über Shortcut-Akkorde und erzwingt gleichzeitig eine strikte Kontextisolierung und Kollisionsverhinderung. 
 
+![Hotkey-Konfigurationsseite](images/preferences_settings_dialog.png)  
+*Abbildung 7.2: ATBCmder Hotkey-Konfigurationsseite mit Kontextfilterung, Befehlssuche und Kollisionsvermeidung.*
+
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                              HOTKEY CONFIGURATION PAGE                                 │
@@ -311,7 +314,7 @@ Passen Sie die Reihenfolge der Elemente in den Tabellenansichten genau an:
 Für Fotografen, Designer und Videobearbeiter bietet ATBCmder eine integrierte **Thumbnail Grid View** (`cm_ThumbnailsView`), die tabellarische Zeilen durch visuelle Bildvorschauen ersetzt. 
 
 ![Thumbnail Grid View](images/thumbnails_grid_view.png) 
-*Abbildung 7.2: Hochleistungs-Miniaturansicht mit Bildvorschau mit benutzerdefiniertem Rasterabstand.*
+*Abbildung 7.3: Hochleistungs-Miniaturansicht mit Bildvorschau mit benutzerdefiniertem Rasterabstand.*
 
 #### Größenanpassung und dynamisches Zoomen
 
@@ -478,7 +481,7 @@ Beim Starten externer Tools oder Befehlszeilenskripts ersetzt ATBCmder automatis
 ATBCmder bietet zwei anpassbare Symbolleisten: die **Hauptsymbolleiste** unterhalb der Menüleiste und die **mittlere Symbolleiste**, die vertikal in den Splitter eingebettet ist und die beiden Dateibereiche trennt. 
 
 ![Middle Toolbar](images/middle_toolbar.png) 
-*Abbildung 7.3: Die Optionsseite der mittleren Symbolleiste zum Konfigurieren von Splitterschaltflächen und Schnellaktionsauslösern.*
+*Abbildung 7.4: Die Optionsseite der mittleren Symbolleiste zum Konfigurieren von Splitterschaltflächen und Schnellaktionsauslösern.*
 
 ### 7.1 Anpassen des Erscheinungsbilds der Symbolleiste
 
@@ -533,7 +536,7 @@ Klicken Sie beim Konfigurieren benutzerdefinierter Schaltflächen auf die Symbol
 - **Lieblingsregisterkarten (`page_favorite_tabs.py`)**: Speichern Sie vollständige Dual-Panel-Arbeitsbereichslayouts mit mehreren Registerkarten. Stellen Sie Ihre genauen Entwicklungs- oder Fotobearbeitungsverzeichnissätze mit einem Klick wieder her. 
 
 ![Directory Hotlist](images/quick_access_paths.png) 
-*Abbildung 7.4: Verzeichnis-Hotlist-Lesezeichen und -Pfade verwalten.* 
+*Abbildung 7.5: Verzeichnis-Hotlist-Lesezeichen und -Pfade verwalten.* 
 
 ---
 
@@ -650,7 +653,7 @@ Beim Konfigurieren benutzerdefinierter externer Symbolleistenschaltflächen oder
 ATBCmder enthält umfangreiche Tooltips für schwebende Metadaten, die Dateiabmessungen, EXIF-Daten, Audio-Bitrate und die Anzahl der Archiv-Eintrager anzeigen, wenn Sie mit der Maus über Elemente fahren. Sie können Tooltips unter **Einstellungen ➔ Dateiansichten** ein- oder ausschalten. 
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
-*Abbildung 7.5: Umfangreiche Metadaten-Tooltips, die detaillierte Dateieigenschaften anzeigen, wenn Sie mit der Maus darüber fahren.* 
+*Abbildung 7.6: Umfangreiche Metadaten-Tooltips, die detaillierte Dateieigenschaften anzeigen, wenn Sie mit der Maus darüber fahren.* 
 
 ---
 
