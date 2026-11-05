@@ -35,6 +35,13 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.5.0 (05/11/2026)
+
+- Modernização da barra de ferramentas do editor de texto com ícones e dicas de ferramentas: Reformulação completa da barra de ferramentas do editor de texto (F4), substituindo botões de texto simples por ícones vetoriais compactos e elegantes combinados com dicas contextuais descritivas (Fixes #105, #106); as dicas de ferramentas exibem com clareza o nome da ação e os atalhos de teclado (Salvar, Desfazer, Refazer, Localizar, Substituir, Alternar codificação), otimizando a compacidade do layout e a produtividade de edição
+- Visibilidade de atalhos no histórico de diretórios e no menu contextual da barra de abas: Adicionadas indicações explícitas dos atalhos de teclado `Alt+Left` e `Alt+Right` nas dicas dos botões de navegação no histórico «Voltar» e «Avançar» com localização completa em 31 idiomas; exibidos os atalhos correspondentes ao lado das ações comuns no menu contextual da barra de abas (Nova aba, Fechar aba, Fechar outras abas, Duplicar aba), reforçando fluxos de navegação prioritários pelo teclado
+- Segurança na finalização do interpretador Python e prevenção de travamentos ao encerrar: Introduzidas proteções de segurança durante o encerramento do interpretador Python (`sys.is_finalizing()`), ignorando com segurança a limpeza de threads QThread, a ressurreição de objetos e a remoção de filtros de eventos durante a finalização; eliminados completamente os travamentos ocasionais ao sair causados por `SIGABRT` ou pela destruição prematura de objetos C++ Qt subjacentes
+- Aprimoramento da enumeração de processos na limpeza privilegiada do sistema: Aperfeiçoada a lógica de varredura de processos e inspeção de pacotes de aplicativos para evitar que um único pacote ilegível ou fora do padrão comprometa a detecção global ou marque aplicativos ociosos como desconhecidos; ampliados os tempos limite de enumeração de processos e análise de arquivos plist para garantir uma limpeza resiliente em discos lentos ou sob alta carga
+
 ### 2.4.6 (03/11/2026)
 
 - Adaptação do status do sistema e da limpeza ao Sandbox da App Store: Em ambientes restritos de sandbox, o painel de status do sistema ativa automaticamente o modo duplo para exibir aplicativos GUI em execução via NSWorkspace com ícones originais e status em primeiro plano (Fixes #102, #104); resolvidas as limitações de varredura em caches de navegadores e a contabilidade de tamanhos desconhecidos no Limpador do Sistema, acumulando com precisão os tamanhos conhecidos e reportando o status real de limpeza (Fixes #101, #103)

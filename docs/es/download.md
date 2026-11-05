@@ -35,6 +35,13 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.5.0 (2026-11-05)
+
+- Modernización de la barra de herramientas del editor con iconos e información contextual: Renovación completa de la barra del editor de texto (F4), sustituyendo los botones de texto simple por iconos vectoriales refinados con tooltips explicativos (Fixes #105, #106); se muestran claramente las funciones y atajos de teclado (Guardar, Deshacer, Rehacer, Buscar, Reemplazar, Codificación), mejorando la estética y la agilidad de edición
+- Visibilidad de atajos en la navegación de historial y menú contextual de pestañas: Incorporación explícita de los atajos `Alt+Left` y `Alt+Right` en los tooltips de los botones de historial «Atrás» y «Adelante» con traducción completa en 31 idiomas; indicación de atajos de teclado junto a las acciones del menú contextual de pestañas (Nueva pestaña, Cerrar pestaña, Cerrar otras pestañas, Duplicar pestaña) para facilitar la navegación ágil
+- Protección en la finalización del intérprete Python y prevención de caídas al salir: Implementación de comprobaciones de seguridad durante el cierre del intérprete (`sys.is_finalizing()`) para evitar la limpieza de hilos QThread o desvinculación de filtros de eventos en la fase de desasignación; erradica por completo los bloqueos `SIGABRT` ocasionales al cerrar la aplicación
+- Mayor robustez en la enumeración de procesos de limpieza privilegiada: Optimización del análisis de paquetes de aplicaciones para evitar que paquetes con permisos restringidos provoquen fallos globales o marquen aplicaciones inactivas como desconocidas; ampliación de tiempos de espera en la lectura de procesos y archivos plist para garantizar una limpieza segura en almacenamientos lentos o bajo carga
+
 ### 2.4.6 (2026-11-03)
 
 - Adaptación profunda del estado del sistema y la limpieza a la sandbox de App Store: En entornos restringidos, el panel de estado activa automáticamente el modo dual para mostrar aplicaciones en ejecución mediante NSWorkspace con iconos y estado en primer plano (Fixes #102, #104); corrección de limitaciones de recorrido en cachés de navegadores y cálculo exacto de tamaños conocidos en la limpieza (Fixes #101, #103)

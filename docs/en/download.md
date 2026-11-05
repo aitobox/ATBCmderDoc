@@ -35,6 +35,13 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.5.0 (2026-11-05)
+
+- Text Editor Toolbar Modernization with Icon+Tooltip Layout: Completely overhauled the text editor (F4) toolbar, replacing plain text buttons with sleek, compact vector icons paired with descriptive tooltips (Fixes #105, #106); tooltips clearly indicate action names alongside keyboard shortcuts (Save, Undo, Redo, Find, Replace, Encoding Switch), improving layout compactness and editing productivity
+- Directory History & Tab Bar Context Menu Shortcut Visibility: Added explicit `Alt+Left` and `Alt+Right` keyboard shortcut hints to the "Back" and "Forward" history navigation button tooltips with full 31-language localization; displayed corresponding global shortcuts next to common actions in the path tab bar context menu (New Tab, Close Tab, Close Other Tabs, Duplicate Tab), reinforcing keyboard-first navigation workflows
+- Interpreter Finalization Safety & Clean Exit Crash Prevention: Introduced safety guards during Python interpreter shutdown (`sys.is_finalizing()`), safely bypassing QThread cleanup, object resurrection, and event filter removal during finalization; completely eliminated occasional exit crashes caused by `SIGABRT` or premature destruction of underlying C++ Qt objects
+- Privileged Cleanup Process Enumeration Hardening: Refined process scanning and application bundle inspection logic to prevent a single unreadable or non-standard bundle from spoiling whole-system detection or marking idle applications as unknown; increased process enumeration and plist parsing timeouts to ensure resilient cleanup on slow or heavily loaded storage
+
 ### 2.4.6 (2026-11-03)
 
 - App Store Sandbox Dual-Mode Running Apps & Cleaner Enhancements: Implemented automatic dual-mode fallback in the System Status panel to display running GUI applications via NSWorkspace in restricted App Store sandboxes, complete with native icons and foreground indicators (Fixes #102, #104); resolved sandbox container traversal limitations for browser caches and unknown size accounting in System Cleaner, accurately accumulating known sizes and reporting cleanup results (Fixes #101, #103)

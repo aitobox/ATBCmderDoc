@@ -35,6 +35,13 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 2.5.0 (05-11-2026)
+
+- Modernizzazione della barra degli strumenti dell'editor di testo con icone e tooltip: Completamente rinnovata la barra degli strumenti dell'editor di testo (F4), sostituendo i pulsanti di testo semplice con icone vettoriali compatte ed eleganti accompagnate da tooltip descrittivi (Fixes #105, #106); i tooltip mostrano chiaramente il nome dell'azione e le scorciatoie da tastiera (Salva, Annulla, Ripristina, Trova, Sostituisci, Cambio codifica), migliorando la compattezza visiva e la produttività di modifica
+- Visibilità delle scorciatoie per la cronologia delle cartelle e il menu contestuale delle schede: Aggiunti suggerimenti espliciti per le scorciatoie `Alt+Left` e `Alt+Right` nei tooltip dei pulsanti della cronologia «Indietro» e «Avanti» con localizzazione completa in 31 lingue; visualizzate le relative scorciatoie accanto alle azioni comuni nel menu contestuale della barra delle schede (Nuova scheda, Chiudi scheda, Chiudi le altre schede, Duplica scheda), rafforzando il flusso di navigazione incentrato sulla tastiera
+- Sicurezza nella finalizzazione dell'interprete Python e prevenzione dei crash all'uscita: Introdotte protezioni di sicurezza durante l'arresto dell'interprete Python (`sys.is_finalizing()`), bypassando in modo sicuro la pulizia dei thread QThread, la risurrezione degli oggetti e la rimozione dei filtri degli eventi durante la fase di chiusura; eliminati completamente i crash occasionali all'uscita causati da `SIGABRT` o dalla distruzione prematura di oggetti C++ Qt sottostanti
+- Rafforzamento dell'enumerazione dei processi nella pulizia di sistema privilegiata: Perfezionata la logica di scansione dei processi e di ispezione dei bundle delle applicazioni per evitare che un singolo bundle illeggibile o non conforme comprometta l'intero rilevamento o contrassegni le app inattive come sconosciute; aumentati i timeout di enumerazione dei processi e di analisi dei plist per garantire una pulizia affidabile anche su supporti lenti o sotto carico elevato
+
 ### 2.4.6 (03-11-2026)
 
 - Adattamento avanzato dello stato di sistema e pulizia alla sandbox di App Store: Negli ambienti sandbox con restrizioni, il pannello di stato del sistema attiva automaticamente la modalità duale per mostrare le applicazioni GUI in esecuzione tramite NSWorkspace con icone native e stato in primo piano (Fixes #102, #104); risolti i limiti di attraversamento delle cartelle della cache dei browser nella sandbox e la gestione delle dimensioni sconosciute nella pulizia di sistema, accumulando con precisione le dimensioni note e riportando lo stato effettivo di pulizia (Fixes #101, #103)

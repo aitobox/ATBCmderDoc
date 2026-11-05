@@ -35,6 +35,13 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.5.0 (05/11/2026)
+
+- Modernisation de la barre d'outils de l'éditeur de texte avec icônes et infobulles : Refonte complète de la barre d'outils de l'éditeur (F4), remplaçant les boutons texte par des icônes vectorielles élégantes accompagnées d'infobulles explicatives (Fixes #105, #106) ; les raccourcis clavier sont clairement indiqués (Enregistrer, Annuler, Rétablir, Rechercher, Remplacer, Encodage) pour une ergonomie optimale
+- Visibilité des raccourcis pour l'historique de navigation et le menu des onglets : Ajout explicite des raccourcis `Alt+Left` et `Alt+Right` dans les infobulles des boutons d'historique « Précédent » et « Suivant » avec localisation complète en 31 langues ; affichage des raccourcis clavier associés dans le menu contextuel des onglets (Nouvel onglet, Fermer l'onglet, Fermer les autres onglets, Dupliquer) pour une navigation fluide au clavier
+- Sécurisation de la fermeture de l'interpréteur Python et prévention des crashs : Mise en place d'un mécanisme de protection lors de l'arrêt de l'interpréteur (`sys.is_finalizing()`), évitant les nettoyages de QThread ou désinscriptions de filtres d'événements durant la désallocation finale ; élimine définitivement les crashs `SIGABRT` inopinés lors de la fermeture de l'application
+- Fiabilisation de la détection des processus dans le nettoyeur privilégié : Correction de l'analyse des paquets d'applications pour éviter qu'un paquet illisible n'invalide l'ensemble du scan ou ne classe des applications inactives comme inconnues ; allongement des délais d'attente pour l'énumération des processus et la lecture des fichiers plist afin d'assurer un nettoyage fiable même sous forte charge
+
 ### 2.4.6 (03/11/2026)
 
 - Prise en charge avancée du bac à sable App Store pour l'état système et le nettoyage : En environnement restreint, le panneau d'état système active automatiquement un mode alternatif via NSWorkspace pour lister les applications actives avec icônes natives et indicateurs de premier plan (Fixes #102, #104) ; correction des limitations de parcours des caches de navigateurs et des tailles inconnues dans le bac à sable avec calcul précis de l'espace libéré (Fixes #101, #103)

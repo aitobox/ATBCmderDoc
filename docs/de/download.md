@@ -35,6 +35,13 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.5.0 (05.11.2026)
+
+- Modernisierung der Texteditor-Symbolleiste mit Icons und Tooltips: Vollständige Überarbeitung der Editor-Symbolleiste (F4), bei der reine Textschaltflächen durch elegante Vektorsymbole mit aussagekräftigen Tooltips ersetzt wurden (Fixes #105, #106); Tooltips zeigen Befehlsnamen und Tastenkombinationen (Speichern, Rückgängig, Wiederholen, Suchen, Ersetzen, Kodierung) für ein aufgeräumtes Erscheinungsbild und effizientes Arbeiten
+- Anzeige von Tastenkombinationen für Verlaufsnavigation und Tab-Kontextmenü: Explizite Anzeige der Shortcuts `Alt+Left` und `Alt+Right` in den Tooltips der Vor-/Zurück-Verlaufsschaltflächen in allen 31 Sprachen; entsprechende Tastenkürzel werden nun direkt neben den Aktionen im Tab-Kontextmenü aufgeführt (Neuer Tab, Tab schließen, Andere Tabs schließen, Tab duplizieren) zur Förderung der Tastaturbedienung
+- Schutz bei der Interpreter-Beendigung & Beseitigung von Abstürzen beim Beenden: Neue Sicherheitsprüfungen während des Python-Interpreter-Shutdowns (`sys.is_finalizing()`) verhindern das Ausführen von QThread-Aufräumarbeiten und Event-Filter-Entfernungen während der Freigabephase; verhindert sporadische `SIGABRT`-Abstürze beim Beenden der Anwendung
+- Robuste Prozesserfassung bei der privilegierten Systembereinigung: Verbesserte Erkennung von App-Prozessen und Paketmetadaten verhindert, dass einzelne unlesbare Bundles die Gesamterkennung stören oder inaktive Apps fälschlicherweise als unbekannt einstufen; Timeouts für Prozesserfassung und Plist-Parsing erhöht, um zuverlässige Bereinigungen auch bei hoher Systemlast zu gewährleisten
+
 ### 2.4.6 (03.11.2026)
 
 - App Store-Sandbox-Anpassung für Systemstatus & Bereinigungswerkzeuge: In restriktiven Sandbox-Umgebungen wechselt das Systemstatus-Panel automatisch in einen Dual-Modus, um laufende GUI-Apps über NSWorkspace mit Original-Icons und Vordergrundstatus anzuzeigen (Fixes #102, #104); Bereinigungsprobleme bei tief verschachtelten Browser-Caches und unbekannten Größen in der Sandbox behoben, mit präziser Größenakkumulation und verlässlicher Statusanzeige (Fixes #101, #103)
