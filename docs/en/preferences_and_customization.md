@@ -310,7 +310,7 @@ Fine-tune how items order themselves inside the table views:
 For photographers, designers, and video editors, ATBCmder provides an integrated **Thumbnail Grid View** (`cm_ThumbnailsView`), replacing tabular rows with visual image previews.
 
 ![Thumbnail Grid View](images/thumbnails_grid_view.png)  
-*Figure 7.2: High-performance thumbnail view displaying image previews with custom grid spacing.*
+*Figure 7.3: High-performance thumbnail view displaying image previews with custom grid spacing.*
 
 #### Sizing & Dynamic Zooming
 - **Default Thumbnail Size**: Configurable from 48 px up to 512 px (default: 128 px).
@@ -469,7 +469,7 @@ When launching external tools or command-line scripts, ATBCmder automatically re
 ATBCmder provides two customizable toolbars: the **Main Toolbar** situated beneath the menu bar, and the **Middle Toolbar** embedded vertically within the splitter separating the two file panels.
 
 ![Middle Toolbar](images/middle_toolbar.png)  
-*Figure 7.3: The Middle Toolbar options page configuring splitter buttons and quick action triggers.*
+*Figure 7.4: The Middle Toolbar options page configuring splitter buttons and quick action triggers.*
 
 ### 7.1 Customizing Toolbar Appearance
 
@@ -522,7 +522,7 @@ When configuring custom buttons, click the icon preview button to open the integ
 - **Favorite Tabs (`page_favorite_tabs.py`)**: Save complete dual-panel multi-tab workspace layouts. Restore your exact development or photo editing directory sets in one click.
 
 ![Directory Hotlist](images/quick_access_paths.png)  
-*Figure 7.4: Managing directory hotlist bookmarks and paths.*
+*Figure 7.5: Managing directory hotlist bookmarks and paths.*
 
 ---
 
@@ -630,7 +630,7 @@ When configuring custom external toolbar buttons or file associations, ATBCmder 
 ATBCmder includes rich floating metadata tooltips that display file dimensions, EXIF data, audio bitrate, and archive member counts when hovering over items. You can toggle tooltips on or off in **Preferences ➔ File Views**.
 
 ![Helpful Tooltips](images/helpful_tooltips.png)  
-*Figure 7.5: Rich metadata tooltips displaying detailed file properties on mouse hover.*
+*Figure 7.6: Rich metadata tooltips displaying detailed file properties on mouse hover.*
 
 ---
 
