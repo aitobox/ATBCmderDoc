@@ -166,6 +166,9 @@ ATBCmder embeds specialized layout engines for structured documents, slide decks
 #### 3.1.1 Word & Rich Text Documents (`DocumentPanel`)
 When pressing `F3` on Microsoft Word (`.docx`, `.doc`), Rich Text (`.rtf`), or OpenDocument (`.odt`) files, ATBCmder engages `DocumentPanel`:
 
+![Word Document Viewer](images/word_document_viewer.png)  
+*Built-in Word and rich text document viewer with multi-page navigation and zoom.*
+
 - **Document Page Cards**: Renders structured pages on centered paper cards (`.doc-page`) with crisp typography and margins matching modern word processor layouts.
 - **Formatting Preservation**: Preserves paragraph hierarchies, bold/italic/underline styles, font color variations, unordered and numbered lists, and inline hyperlinks.
 - **Complex Table & Embedded Image Rendering**: Parses complex multi-column table grids with bordered cell spacing and renders embedded inline raster illustrations.
@@ -198,6 +201,9 @@ Powered natively by `PySide6.QtPdf` and `QPdfView`, ATBCmder embeds an enterpris
 #### 3.1.4 EPUB eBooks (`EpubPanel`)
 Managing technical documentation, manuals, or digital books in EPUB format (`.epub`) is native to ATBCmder:
 
+![EPUB eBook Reader](images/epub_ebook_reader.png)  
+*Built-in EPUB eBook reader with chapter navigation and adjustable typography.*
+
 - **Dual-Engine Architecture**: Employs a high-fidelity WebEngine renderer (`QWebEngineView` with `EpubUrlSchemeHandler` for rich CSS styling and SVG vector illustrations) with an automatic fallback to `QTextBrowser` on minimal environments.
 - **Table of Contents Sidebar**: Displays nested chapter trees (`QTreeView`), allowing one-click jumping between book chapters and appendices.
 - **Typography & Font Scaling**: Dynamically scale reading text size via the bottom toolbar font slider.
@@ -205,6 +211,9 @@ Managing technical documentation, manuals, or digital books in EPUB format (`.ep
 
 #### 3.1.5 Markdown Documents (`MarkdownPanel`)
 For README files, technical notes, and developer documentation (`.md`, `.markdown`):
+
+![Markdown Viewer with TOC Outline](images/markdown_viewer_toc.png)  
+*Markdown reader displaying rendered content alongside interactive Outline Table of Contents.*
 
 - **GitHub-Flavored Markdown (GFM)**: Renders headers, blockquotes, horizontal rules, task lists (`- [x]`), and multi-column tables.
 - **Code Block Syntax Styling**: Automatically formats fenced code blocks (```python, ```bash, ```json) with distinct background shading, monospaced typography, and syntax coloring.
@@ -231,6 +240,9 @@ Opening large CSV files or multi-sheet Excel workbooks in heavy office suites ca
 #### 3.2.2 SQLite Database Browser (`SqlitePanel`)
 Inspect SQLite databases (`.sqlite`, `.sqlite3`, `.db`) directly without external GUI clients:
 
+![SQLite Database Viewer](images/sqlite_database_viewer.png)  
+*SQLite database inspector browsing table schema, row records, and indices.*
+
 - **Tables & Views Directory**: Left sidebar lists all database tables and views alongside their active row counts. Clicking any table loads its contents immediately.
 - **Virtualized Data View**: Uses the high-performance `VirtualSpreadsheetModel` for seamless scrolling through massive tables.
 - **Interactive SQL Query Console**: Type custom SQL queries in the top query editor and press **`Ctrl+Return`** (or `Cmd+Return`) to execute. Results populate into the table view instantly.
@@ -248,6 +260,9 @@ Review data science experiments, machine learning runs, and Python analysis note
 
 #### 3.2.4 Code & Plain Text Viewing (`TextPanel`)
 The primary text inspection engine is optimized for high-speed browsing and huge data dumps:
+
+![Text File Viewer](images/text_file_viewer.png)  
+*High-performance plain text and source code viewer with syntax highlighting.*
 
 - **Chunked 64 KB Loader (`FileLoaderWorker`)**: Reads large files in 64 KB blocks with automatic newline boundary snapping, preventing thread freezing and UTF-8 multibyte character corruption.
 - **Pygments Syntax Highlighting**: Over 150 programming and configuration languages supported with dynamic Light/Dark mode adaptation.
@@ -364,6 +379,12 @@ To create and edit a brand-new file from scratch in the active folder, press **`
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![Code and Text File Editor](images/text_file_editor.png)  
+*Figure 4.7: Dedicated internal text editor featuring search/replace bar and line numbering.*
+
+![Markdown Source Editor](images/markdown_source_editor.png)  
+*Figure 4.8: Internal editor editing Markdown files with live syntax highlighting and quick tools.*
+
 #### Core Code Editor Capabilities
 - **Pygments Syntax Highlighting**: Recognizes over 150 programming, scripting, and configuration formats with automatic language detection from file extensions and shebang lines.
 - **Dynamic Line Number Gutter**: Left margin dynamically expands to accommodate line numbers with visual alignment.
@@ -388,6 +409,9 @@ Pressing **`Cmd+F`** (`⌘F`) or **`Cmd+Option+F`** (`⌥⌘F`) docks the Find &
 ### 4.2 Dedicated Image Editor (`ImageEditorDialog`)
 
 When you press **`F4`** on any graphic or screenshot, ATBCmder opens the comprehensive **Image Editor**:
+
+![Dedicated Image Editor](images/image_editor.png)  
+*Figure 4.9: Built-in Image Editor with crop aspect ratios, canvas rotation, and transformation controls.*
 
 #### Interactive Canvas & Transforms
 - **Checkerboard Background (`CheckerboardScene`)**: Transparent graphics are rendered over a clean gray-and-white grid, ensuring alpha borders are clearly visible.
