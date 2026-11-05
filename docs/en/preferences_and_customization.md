@@ -142,6 +142,9 @@ Unlike legacy utilities that require closing and restarting the application afte
 
 Keyboard efficiency is the core philosophy of dual-panel file management. ATBCmder's **Hotkey Editor** (`page_hotkeys.py`) provides full control over shortcut chords while enforcing strict context isolation and collision prevention.
 
+![Hotkey Configuration Page](images/preferences_settings_dialog.png)  
+*Figure 7.2: ATBCmder Hotkey Configuration page showing context filtering, command search, and collision prevention.*
+
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                              HOTKEY CONFIGURATION PAGE                                 │
