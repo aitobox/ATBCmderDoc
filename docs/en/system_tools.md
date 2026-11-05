@@ -136,6 +136,9 @@ Pressing **`⌘⇧M`** (or **`Ctrl+Shift+M`**) opens the full **System Status Pa
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![System Resource Monitor](images/system_resource_monitor.png)  
+*Figure 7.1: Real-time System Status & Diagnostics dashboard displaying CPU, RAM, disk I/O, and top processes.*
+
 ### 3.1 Diagnostic Features & Metric Sections
 
 1. **Multi-Core Processor Monitor**:
@@ -182,6 +185,9 @@ The **Disk Usage Analyzer** (`cm_DiskUsageAnalyzer`, hotkey **`⌘⇧D`** / **`C
 │ [ Zoom Out (..) ]  [ Reveal in Dual Panel ]  [ Move to Trash (⌘⌫) ]  [ Export CSV... ]  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Disk Usage Analyzer](images/disk_usage_analyzer.png)  
+*Figure 7.2: Disk Usage Analyzer scanning local volumes with categorized space breakdown and treemap navigation.*
 
 ### 4.1 Key Architecture & Capabilities
 
@@ -230,6 +236,9 @@ The **System Cleaner** (`cm_CleanSystem`, hotkey **`⌘⇧C`** / **`Ctrl+Shift+C
 │ [ Whitelist Editor... ]      [ Export Log ]       [ Clean Selected Items (28.4 GB) ]   │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![System Cleaner](images/system_cleaner.png)  
+*Figure 7.3: System Cleaner safe scanning interface showing cache, log, and temporary junk file recovery estimates.*
 
 ### 5.1 The Two-Stage Safety Architecture
 
@@ -294,6 +303,9 @@ The **Application Uninstaller** (`cm_UninstallApp`, hotkey **`⌘⇧U`** / **`Ct
 │ [ Refresh Applications ]       [ Cancel ]              [ Uninstall Application (18.5G)│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+![Application Uninstaller](images/app_uninstaller.png)  
+*Figure 7.4: Application Uninstaller performing deep remnant scanning across Application Support, Caches, and Preferences.*
 
 ### 6.1 Remnant Discovery Locations
 
