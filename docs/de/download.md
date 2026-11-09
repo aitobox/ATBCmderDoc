@@ -35,6 +35,14 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.7.0 (09.11.2026)
+
+- MacBook-Trackpad-Wischgesten für Verlaufsnavigation: Native Unterstützung horizontaler Zwei-Finger-Wischgesten auf MacBook-Trackpads für die Vor- und Zurück-Navigation im Verzeichnisverlauf mit intelligenter Entprellung und Schwellenwerterkennung für ein echtes macOS-Bediengefühl (Fixes #185, #195)
+- Tab-Sperrung nach Total Commander-Vorbild & benachbarte Tab-Erstellung: Vollständige Implementierung von Tab-Sperrmodi („Diesen Tab sperren“ und „Gesperrt, aber Verzeichniswechsel erlaubt“), visualisiert durch ein Sternchen `*` im Tab-Titel (Fixes #180, #189); neue Tabs werden nun standardmäßig direkt neben dem aktiven Tab geöffnet, was den parallelen Arbeitsablauf deutlich optimiert (Fixes #177, #191)
+- Erweiterte Pinyin-Grenzerkennung & Filtermodus „Nur passende Einträge anzeigen“: Großes Upgrade der Pinyin-Engine in der Schnellsuche zur Erkennung von Initialen und vollständigem Pinyin an beliebigen Zeichengrenzen (Fixes #182, #194); neue Option „Nur passende Dateien/Verzeichnisse anzeigen“ ermöglicht den nahtlosen Wechsel zwischen Live-Navigation und gefilterter Ansicht (Fixes #178, #192)
+- Erweiterung des Ansichtsmenüs & ergonomisches Tastenkürzel für Platzbedarf: Neue Aktionen „Alle Dateien anzeigen“ (`Cmd+F10`) und „Benutzerdefinierte Dateien / Erweiterungen anzeigen“ (`Cmd+F11`) im Menü „Ansicht“ (Fixes #181, #193); Standard-Tastenkombination für „Platzbedarf anzeigen“ auf das ergonomische und konfliktfreie `Alt+Shift+Return` aktualisiert (Fixes #179, #196)
+- App Store-Sandbox-Härtung für Cloud-Speicher und Terminalaufrufe: Verbesserte Erkennung und Security-Scoped-Bookmark-Berechtigungsabläufe für OneDrive und Cloud-Laufwerke in der macOS App Store-Sandbox (Fixes #187, #188); Shell-Befehle werden im Terminal von Sandbox-Builds zur Vermeidung unbeabsichtigter Ausführung nur noch vorab ausgefüllt (Fixes #183, #190); Beseitigung doppelter Terminalfenster und zsh-Sitzungsfehler sowie Wiederherstellung des korrekten Dock-Icons in `resource/AppIcon.icns` (Fixes #184, #186)
+
 ### 2.6.0 (08.11.2026)
 
 - Semantische Lucide-Dateitypsymbole & geteilter Singleton-Cache: Einführung eines modernen Lucide-Symbolsatzes für Code, Dokumente, Medien, Konfigurations- und Archivdateien (Fixes #166, #176); ein hocheffizienter Singleton-Cache senkt Speicher- und CPU-Last beim schnellen Scrollen und in riesigen Verzeichnissen drastisch und sorgt für eine flüssige Darstellung

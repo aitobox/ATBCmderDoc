@@ -35,6 +35,14 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.7.0 (09/11/2026)
+
+- Gestes de balayage sur trackpad MacBook pour l'historique : Prise en charge native du balayage horizontal à deux doigts sur trackpad MacBook pour naviguer d'avant en arrière dans l'historique des dossiers, avec filtrage anti-rebond et seuils précis pour une fluidité native sous macOS (Fixes #185, #195)
+- Verrouillage des onglets façon Total Commander et ouverture adjacente : Implémentation complète des modes de verrouillage « Verrouiller cet onglet » et « Verrouillé avec changement de répertoire autorisé », signalés par un astérisque `*` dans le titre (Fixes #180, #189) ; les nouveaux onglets s'ouvrent désormais directement à côté de l'onglet actif pour une navigation multi-dossiers plus intuitive (Fixes #177, #191)
+- Recherche Pinyin sur limites de caractères et mode d'affichage filtré exclusif : Évolution majeure du moteur Pinyin pour la recherche rapide, détectant les initiales et le pinyin complet à toute limite de caractère (Fixes #182, #194) ; nouvelle option « Afficher uniquement les fichiers/dossiers correspondants » pour basculer aisément entre navigation interactive et vue filtrée exclusive (Fixes #178, #192)
+- Extension du menu Affichage et raccourci ergonomique pour l'espace occupé : Ajout des actions « Afficher tous les fichiers » (`Cmd+F10`) et « Afficher les fichiers personnalisés / extensions » (`Cmd+F11`) au menu Afficher (Fixes #181, #193) ; mise à jour du raccourci par défaut pour « Afficher l'espace occupé » vers la combinaison ergonomique et sans conflit `Alt+Shift+Return` (Fixes #179, #196)
+- Sécurisation du bac à sable App Store pour les lecteurs Cloud et le terminal : Optimisation de la détection et des autorisations Security-Scoped Bookmarks pour OneDrive et les lecteurs Cloud sous sandbox App Store (Fixes #187, #188) ; pré-remplissage sécurisé des commandes dans le Terminal sans exécution automatique pour les versions sandboxées (Fixes #183, #190) ; résolution des ouvertures en double du Terminal, correction des erreurs de session zsh et restauration de l'icône du Dock `resource/AppIcon.icns` (Fixes #184, #186)
+
 ### 2.6.0 (08/11/2026)
 
 - Icônes sémantiques Lucide et cache partagé singleton : Intégration d'un ensemble complet d'icônes Lucide couvrant le code, les documents, les médias, les données, les configurations et les archives (Fixes #166, #176) ; mise en œuvre d'un cache singleton hautement performant réduisant drastiquement l'empreinte mémoire et CPU lors du défilement rapide dans les dossiers volumineux

@@ -35,6 +35,14 @@ ATBCmder es una herramienta de administración de archivos y requiere permisos e
 
 ## Notas de la versión
 
+### 2.7.0 (2026-11-09)
+
+- Gestos de deslizamiento en trackpad de MacBook para el historial: Soporte nativo de deslizamiento horizontal con dos dedos en trackpads de MacBook para navegar «Atrás» y «Adelante» en el historial de directorios, con control inteligente de rebote y umbrales para una experiencia nativa fluida en macOS (Fixes #185, #195)
+- Bloqueo de pestañas estilo Total Commander y apertura adyacente: Implementación integral de los modos «Bloquear esta pestaña» y «Bloqueada, pero se permite cambiar de directorio», identificados mediante un asterisco `*` en el título (Fixes #180, #189); las pestañas nuevas se abren ahora de forma contigua a la pestaña activa para agilizar el flujo de trabajo multitarea (Fixes #177, #191)
+- Búsqueda Pinyin por límites de caracteres y modo exclusivo de filtrado: Importante mejora del motor Pinyin en búsqueda rápida, permitiendo coincidencias de iniciales y pinyin completo en cualquier frontera de carácter (Fixes #182, #194); incorporación de la opción «Mostrar solo archivos/directorios coincidentes» para alternar con soltura entre desplazamiento de cursor y lista filtrada (Fixes #178, #192)
+- Expansión del menú Ver y atajo ergonómico para mostrar espacio ocupado: Adición de las acciones «Mostrar todos los archivos» (`Cmd+F10`) y «Mostrar archivos personalizados / extensiones» (`Cmd+F11`) en el menú Ver (Fixes #181, #193); actualización del atajo por defecto de «Calcular espacio ocupado» al ergonómico y libre de conflictos `Alt+Shift+Return` (Fixes #179, #196)
+- Mayor seguridad en sandbox de App Store para unidades Cloud y terminal: Optimización de la detección y flujo de permisos Security-Scoped Bookmarks para OneDrive y almacenamiento en la nube bajo sandbox de App Store (Fixes #187, #188); prellenado seguro de comandos en la Terminal sin auto-ejecución para evitar ejecuciones accidentales (Fixes #183, #190); erradicación de ventanas duplicadas de Terminal, corrección de errores en sesiones zsh y restauración del icono de la aplicación en el Dock con `resource/AppIcon.icns` (Fixes #184, #186)
+
 ### 2.6.0 (2026-11-08)
 
 - Iconos semánticos de tipos de archivo Lucide y caché singleton compartida: Incorporación de un nuevo y pulido sistema de iconos Lucide que abarca código fuente, documentos, multimedia, datos, configuraciones y archivos comprimidos (Fixes #166, #176); implementación de una caché singleton altamente eficiente que reduce de forma drástica el consumo de CPU y memoria durante desplazamientos rápidos y en carpetas con decenas de miles de elementos

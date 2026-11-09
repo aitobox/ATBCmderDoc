@@ -35,6 +35,14 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.7.0 (2026-11-09)
+
+- MacBook Trackpad Horizontal Swipe Gestures for History Navigation: Added native support for two-finger horizontal trackpad swipe gestures to navigate Back and Forward through directory history, featuring intelligent debounce and threshold checks for a seamless macOS-native feel (Fixes #185, #195)
+- Total Commander Tab Locking & Adjacent Tab Creation: Fully implemented classic Total Commander tab locking with "Lock this tab" and "Locked, but directory changes allowed" modes, indicating locked tabs with an asterisk `*` in the tab title (Fixes #180, #189); newly opened tabs now appear immediately adjacent to the active tab for improved multi-folder workflow efficiency (Fixes #177, #191)
+- Arbitrary Character Boundary Pinyin Match & Filter-Only Mode: Upgraded QuickSearch pinyin engine to match Chinese pinyin initials and full pinyin at any character boundary rather than prefix-only (Fixes #182, #194); introduced an optional "Only show matching files/directories" filter mode, allowing users to toggle between live cursor navigation and dedicated filtered listing (Fixes #178, #192)
+- Show Menu Expansion & Ergonomic Show Occupied Space Shortcut: Added "Show All Files" (`Cmd+F10`) and "Show Custom Files / Extensions" (`Cmd+F11`) actions to the Show menu and panel header context menu (Fixes #181, #193); updated the default shortcut for "Show Occupied Space" to the ergonomic and conflict-free `Alt+Shift+Return` (Fixes #179, #196)
+- App Store Sandbox Cloud Drives & Terminal Hardening: Refined detection and security-scoped bookmark workflows for OneDrive and other cloud drives in macOS App Store sandboxes (Fixes #187, #188); pre-filled shell commands in Terminal without auto-execution in sandboxed builds to prevent unintended commands (Fixes #183, #190); eliminated duplicate Terminal windows and zsh touch session errors; restored the packaged application Dock icon to `resource/AppIcon.icns` with robust standard fallback icons (Fixes #184, #186)
+
 ### 2.6.0 (2026-11-08)
 
 - Semantic Lucide File-Type Icons & Shared Singleton Cache: Introduced a comprehensive and refined Lucide icon system covering code, documents, media, data, configurations, and archives (Fixes #166, #176); implemented an efficient shared singleton icon cache that significantly slashes memory and CPU usage during rapid scrolling and large directory browsing, ensuring 60fps responsiveness across massive folders

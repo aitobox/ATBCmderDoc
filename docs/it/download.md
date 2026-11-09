@@ -35,6 +35,14 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 2.7.0 (09-11-2026)
+
+- Gesti di scorrimento orizzontale sul trackpad del MacBook per la navigazione nella cronologia: Aggiunto il supporto nativo per i gesti di scorrimento orizzontale a due dita sul trackpad per navigare «Indietro» e «Avanti» nella cronologia delle cartelle, con debouncing intelligente e soglie di spostamento per una perfetta sensazione nativa macOS (Fixes #185, #195)
+- Blocco delle schede in stile Total Commander e apertura adiacente delle nuove schede: Implementazione completa delle modalità di blocco schede di Total Commander («Blocca questa scheda» e «Bloccata, ma con cambio directory consentito»), contrassegnando le schede bloccate con un asterisco `*` nel titolo (Fixes #180, #189); le nuove schede si aprono ora subito accanto a quella attiva per velocizzare il lavoro su più percorsi (Fixes #177, #191)
+- Corrispondenza Pinyin sui limiti di carattere arbitrari e modalità solo filtro: Potenziato il motore Pinyin della ricerca rapida per cercare iniziali e pinyin completo su qualsiasi limite di carattere anziché solo come prefisso (Fixes #182, #194); introdotta l'opzione «Mostra solo file/cartelle corrispondenti» per alternare fluidamente tra lo spostamento del cursore in tempo reale e un elenco filtrato dedicato (Fixes #178, #192)
+- Espansione del menu Vista e scorciatoia ergonomica per lo spazio occupato: Aggiunte le azioni «Mostra tutti i file» (`Cmd+F10`) e «Mostra file / estensioni personalizzate» (`Cmd+F11`) al menu Vista e al menu contestuale dell'intestazione (Fixes #181, #193); aggiornata la scorciatoia predefinita per «Calcola spazio occupato» con la combinazione ergonomica e priva di conflitti `Alt+Shift+Return` (Fixes #179, #196)
+- Maggiore sicurezza nella sandbox di App Store per dischi cloud e terminale: Ottimizzato il rilevamento e la gestione dei permessi Security-Scoped Bookmarks per OneDrive e altri dischi cloud nella sandbox di macOS App Store (Fixes #187, #188); i comandi del Terminale nelle build sandbox vengono ora precompilati in modo sicuro senza esecuzione automatica (Fixes #183, #190); eliminate le finestre duplicate del Terminale e gli errori di sessione zsh, ripristinando l'icona nel Dock da `resource/AppIcon.icns` con fallback affidabili (Fixes #184, #186)
+
 ### 2.6.0 (08-11-2026)
 
 - Icone semantiche Lucide per i tipi di file e cache singleton condivisa: Introdotto un sistema completo e rifinito di icone Lucide che copre codice, documenti, elementi multimediali, dati, configurazioni e archivi (Fixes #166, #176); implementata un'efficiente cache singleton condivisa per le icone che riduce drasticamente l'uso di memoria e CPU durante lo scorrimento rapido e l'esplorazione di directory di grandi dimensioni, garantendo una reattività a 60 fps anche in cartelle massicce
