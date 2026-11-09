@@ -195,6 +195,7 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | `cm_ChangeDirToHome` | 瞬间直达用户个人主目录 (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | FilePanel |
 | `cm_ViewHistoryPrev` | 沿浏览历史后退至上一个访问过的路径 | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Main |
 | `cm_ViewHistoryNext` | 沿浏览历史前进至下一个访问过的路径 | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Main |
+| `cm_ViewHistoryPrev` / `Next` | MacBook 触控板双指左右轻扫后退/前进历史（可在视图中切换） | 双指横向轻扫 ← / → | — | FilePanel |
 | `cm_DirHistory` | 弹出近期访问过的历史目录交互下拉菜单 | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Main |
 | `cm_Drives` | 呼出已挂载卷宗与驱动器列表快速切换弹窗 | `⌥D` | `Alt+D` | Main |
 | `cm_LeftOpenDrives` | 为**左面板**呼出驱动器/磁盘切换菜单 | `⌥F1` | `Alt+F1` | Main |
@@ -235,6 +236,8 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | `cm_QuickSearch` | 呼出面板内快速搜索栏（直接键入字符过滤列表） | `⌥S` / `⌃S` *(或直接键盘打字)* | `Ctrl+S` / *(直接打字)* | Main |
 | `cm_SemanticFilter` | 呼出自然语言语义智能过滤栏 | `⌥F7` | `Alt+F7` | Main |
 | `cm_HorizontalFilePanels` | 切换水平上下堆叠显示双面板（默认左右并排） | `⇧⌘H` | `Ctrl+Shift+H` | Main |
+| `cm_SrcAllFiles` | 显示全部文件（清除当前扩展名掩码与过滤规则） | `⌘F10` | `Ctrl+F10` | Main |
+| `cm_SrcUserDef` | 显示自定义文件 / 按扩展名掩码过滤 (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Main |
 
 ---
 
@@ -249,6 +252,9 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | `cm_NextTab` / `cm_NextTabCtrl` | 切换至右侧下一个标签页 | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Main |
 | `cm_PrevTab` / `cm_PrevTabCtrl` | 切换至左侧上一个标签页 | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Main |
 | `cm_ShowTabsList` | 弹出当前面板已打开的全部标签页汇总菜单 | `⇧⌘L` | `Ctrl+Shift+L` | Main |
+| `cm_SetTabOptionLock` | 锁定此标签页（冻结路径，双击子目录在邻近标签页打开） | *(标签右键菜单)* | — | Main |
+| `cm_SetTabOptionLockWithSubdirs` | 锁定标签页（允许进入子目录，切换/重点击/根目录自动重置回 base path） | *(标签右键菜单)* | — | Main |
+| `cm_SetTabOptionNormal` | 解锁标签页（恢复默认自由导航行为） | *(标签右键菜单)* | — | Main |
 | `cm_CloseAllTabs` | 关闭当前面板的所有标签页（保留最后一张） | `⌥⌘W` | *(标签右键菜单: 关闭全部)* | Main |
 | `cm_CloseOtherTabs` | 关闭当前面板除活动标签之外的其他全部标签页 | `⇧⌘W` | *(标签右键菜单: 关闭其他)* | Main |
 | `cm_Duplicatetab` | 快速克隆副本当前标签页 | `⌘D` / `cm_Duplicatetab` | *(标签右键菜单: 复制标签)* | Main |
@@ -359,14 +365,22 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | 操作 / 功能 | 详细说明 | macOS 原生快捷键 | 经典 Commander 键位 | 生效上下文 |
 | :--- | :--- | :---: | :---: | :---: |
 | 保存文件 | 将已修改的内容安全写入磁盘 | `⌘S` / `F2` | `F2` | Editor |
+| 另存为 | 提示选择目标目录与新文件名保存 | `⇧⌘S` | `Ctrl+Shift+S` | Editor |
+| 重新载入文件 | 丢弃未保存修改，从磁盘重新读取源文件 | `⌘R` | `Ctrl+R` | Editor |
 | 查找内容 | 在编辑器中呼出文本搜索栏 | `⌘F` / `F7` | `F7` | Editor |
+| 替换文本 | 在文档中查找并替换文本 | `⌥⌘F` | `Ctrl+H` | Editor |
 | 查找下一个 | 跳转到下一个搜索匹配项 | `⌘G` / `F3` | `F3` | Editor |
 | 查找上一个 | 跳转到上一个搜索匹配项 | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editor |
 | 剪切 | 剪切选中文本到系统剪贴板 | `⌘X` | `Ctrl+X` | Editor |
 | 复制 | 复制选中文本到系统剪贴板 | `⌘C` | `Ctrl+C` | Editor |
 | 粘贴 | 从系统剪贴板粘贴文本内容 | `⌘V` | `Ctrl+V` | Editor |
 | 撤销 (Undo) | 撤销上一步编辑或输入操作 | `⌘Z` | `Ctrl+Z` | Editor |
-| 重做 (Redo) | 重新执行刚刚被撤销的操作 | `⇧⌘Z` | `Ctrl+Shift+Z` | Editor |
+| 重做 (Redo) | 重新执行刚刚被撤销的操作 | `⇧⌘Z` | `Ctrl+Shift+Z` / `Ctrl+Y` | Editor |
+| 自动换行 | 切换窗口边缘软自动换行显示 | `⌥W` | `Alt+W` | Editor |
+| 显示行号 | 切换左侧动态行号槽显示/隐藏 | `⌥L` | `Alt+L` | Editor |
+| 放大字号 | 增大代码编辑区显示字号 | `⌘+` | `Ctrl++` | Editor |
+| 缩小字号 | 减小代码编辑区显示字号 | `⌘-` | `Ctrl+-` | Editor |
+| 重置缩放 | 恢复默认 100% 字号缩放比例 | `⌘0` | `Ctrl+0` | Editor |
 | 全选 | 选中文档中的全部文本内容 | `⌘A` | `Ctrl+A` | Editor |
 | 关闭编辑器 | 关闭当前编辑窗口（若有未保存修改会自动提示） | `⎋` *(Esc)* / `⌘W` | `Esc` / `Alt+X` | Editor |
 
