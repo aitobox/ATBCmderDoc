@@ -39,7 +39,7 @@
 | **永久徹底刪除** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | 繞過廢紙簍，物理直接解除底層檔案連結 |
 | **行內即時重新命名** | `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | 直接在表格當前行中快速重新命名單個檔案 |
 | **檔案屬性與許可權** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | 開啟詳細屬性對話方塊，編輯 UNIX 許可權與時間戳 |
-| **計算目錄佔用大小** | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 遞迴統計當前面板所有資料夾實際容量（`Ctrl+L` / `cm_CalculateSpace` 統計累計大小） |
+| **計算目錄佔用大小** | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 遞迴統計當前面板所有資料夾實際容量（`Ctrl+L` / `cm_CalculateSpace` 統計累計大小） |
 | **後臺任務佇列** | 工具欄 `⚡` | — | `cm_OperationsPanel` | 開啟 3 佇列後臺多工傳輸監控面板 |
 
 ### 視覺地標：中間分割條快捷工具欄
@@ -402,6 +402,17 @@ ATBCmder 在支援全鍵盤操作的同時，將滑鼠與觸控板拖曳（Drag 
   - **符號連結處理 (Follow links)**：決定是將符號連結作為快捷方式複製，還是將其背後的真實物理資料提取實體化。
   - **保留修改日期與所有權**：完整保持 POSIX 許可權標誌與檔案原始建立修改時間戳。
 
+### 6.1 資料完整性與安全傳輸協議
+
+ATBCmder 專為關鍵任務級檔案管理而設計，徹底杜絕靜默資料丟失、殘留寫入不全或損壞的軟連結等隱患：
+
+- **原子暫存與替換寫入 (Atomic Staging and Replacement)**：
+  在覆蓋或儲存現有檔案時，傳輸引擎會首先在目標目錄寫入隱藏臨時暫存檔案（`.tmp.atbcmder_*`），寫入完成校驗無誤後再執行底層的 POSIX 原子替換（`os.replace`）。即便傳輸中途遭遇斷電、網路意外中斷或磁碟空間耗盡，原始目標檔案依然完好無損，絕不會留下半截損壞檔案。
+- **符號連結移動保護 (Symlink Move Protection)**：
+  移動符號連結時，會嚴格保持其相對或絕對指標目標，絕不会錯誤解引用或更改實際的底層原始資料。跨越不同檔案系統掛載點移動軟連結時，系統會乾淨地在目標端重建符號連結指標，而不是把原始資料當成實體檔案誤複製或誤刪除。
+- **解壓 Zip-Slip 與符號連結路徑穿越防護 (Archive Traversal Guard)**：
+  解包 ZIP、TAR 或 7z 等壓縮包時，ATBCmder 會對解壓路徑層次進行嚴格的邊界安全性審查，攔截任何嘗試跳出目標根目錄的路徑穿越攻擊（Zip-Slip 漏洞），並拒絕指向解壓目錄外部或試圖覆蓋現有真實目錄的惡意符號連結。
+
 ---
 
 ## 7. ⚡ 高手進階與底層技術深度剖析
@@ -488,9 +499,11 @@ macOS 建立在 UNIX 之上，原生支援兩種截然不同的連結技術：
 *圖 3.2：後台異步統計資料夾容量並將 <DIR> 實時替換為精確位元組佔用。*
 
 - **統計單個資料夾大小 (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**：把游標停在任意資料夾上按一下 **空格鍵 (`Space`)**，系統會在後臺子執行緒極速統計並將其體積替換顯示在列表中（如 `14.2 GB`）。
-- **統計面板內所有資料夾大小 (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**：
-  - 一鍵遍歷當前面板中所有的可見資料夾。
-  - 自動更新每一行目錄的具體位元組總量。
+- **統計面板內所有資料夾大小 (`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)**：
+  - 在後臺工作執行緒中非同步遍歷當前面板中所有的可見資料夾。
+  - 隨著後臺計算逐項完成，實時動態更新每一行目錄的具體位元組總量。
+  - **macOS 人體工學快速鍵適配**：預設繫結為 `Alt+Shift+Return`（`⌥⇧⏎`），MacBook 自帶鍵盤與外接 Magic Keyboard 使用者無需使用數字小鍵盤 Enter 或 `Fn` 組合鍵，雙手不離主鍵區即可極速觸發。
+  - **即時取消響應 (`Esc`)**：空間計算完全執行在後臺子執行緒中，任意時刻按下 `Esc` 鍵均可瞬間終止計算，UI 介面絕不發生卡頓或無響應。
 - **統計選中資料夾累計大小 (`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)**：
   - 彙總所選目錄的位元組總量，並在底部狀態列彙總累計的檔案總數、目錄總數與總容量佔用。
 
@@ -647,7 +660,7 @@ macOS 建立在 UNIX 之上，原生支援兩種截然不同的連結技術：
 | **連結與屬性** | 建立符號連結 | *選單: 檔案* | — | `cm_SymLink` | 在對側目標面板生成軟連結 |
 | | 建立硬連結 | *選單: 檔案* | — | `cm_HardLink` | 在對側目標面板生成硬連結 |
 | | 檔案屬性 / 許可權 | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | 開啟詳細屬性面板，八進位制編輯 chmod |
-| | 統計資料夾容量 | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 遞迴統計當前面板所有資料夾大小（累計可用 `Ctrl+L` / `cm_CalculateSpace`） |
+| | 統計資料夾容量 | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 遞迴統計當前面板所有資料夾大小（累計可用 `Ctrl+L` / `cm_CalculateSpace`） |
 | **傳輸佇列** | 後臺任務管理 | 工具欄 `⚡` | — | `cm_OperationsPanel` | 展開 3 通道後臺非同步傳輸監控視窗 |
 
 ---

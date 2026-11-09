@@ -195,6 +195,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_ChangeDirToHome` | 瞬間直達使用者個人主目錄 (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | FilePanel |
 | `cm_ViewHistoryPrev` | 沿瀏覽歷史後退至上一個訪問過的路徑 | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Main |
 | `cm_ViewHistoryNext` | 沿瀏覽歷史前進至下一個訪問過的路徑 | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Main |
+| `cm_ViewHistoryPrev` / `Next` | MacBook 觸控板雙指左右輕掃後退/前進歷史（可在檢視中切換） | 雙指橫向輕掃 ← / → | — | FilePanel |
 | `cm_DirHistory` | 彈出近期訪問過的歷史目錄互動下拉選單 | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Main |
 | `cm_Drives` | 撥出已掛載卷宗與驅動器列表快速切換彈窗 | `⌥D` | `Alt+D` | Main |
 | `cm_LeftOpenDrives` | 為**左面板**撥出驅動器/磁碟切換選單 | `⌥F1` | `Alt+F1` | Main |
@@ -235,6 +236,8 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_QuickSearch` | 撥出面板內快速搜尋欄（直接鍵入字元過濾列表） | `⌥S` / `⌃S` *(或直接鍵盤打字)* | `Ctrl+S` / *(直接打字)* | Main |
 | `cm_SemanticFilter` | 撥出自然語言語義智慧過濾欄 | `⌥F7` | `Alt+F7` | Main |
 | `cm_HorizontalFilePanels` | 切換水平上下堆疊顯示雙面板（預設左右並排） | `⇧⌘H` | `Ctrl+Shift+H` | Main |
+| `cm_SrcAllFiles` | 顯示全部檔案（清除當前副檔名遮罩與過濾規則） | `⌘F10` | `Ctrl+F10` | Main |
+| `cm_SrcUserDef` | 顯示自訂檔案 / 按副檔名遮罩過濾 (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Main |
 
 ---
 
@@ -249,6 +252,9 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_NextTab` / `cm_NextTabCtrl` | 切換至右側下一個標籤頁 | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Main |
 | `cm_PrevTab` / `cm_PrevTabCtrl` | 切換至左側上一個標籤頁 | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Main |
 | `cm_ShowTabsList` | 彈出當前面板已開啟的全部標籤頁彙總選單 | `⇧⌘L` | `Ctrl+Shift+L` | Main |
+| `cm_SetTabOptionLock` | 鎖定此分頁（凍結路徑，雙擊子目錄在鄰近分頁開啟） | *(分頁右鍵選單)* | — | Main |
+| `cm_SetTabOptionLockWithSubdirs` | 鎖定分頁（允許進入子目錄，切換/重點選/根目錄自動重置回 base path） | *(分頁右鍵選單)* | — | Main |
+| `cm_SetTabOptionNormal` | 解鎖分頁（恢復預設自由導覽行為） | *(分頁右鍵選單)* | — | Main |
 | `cm_CloseAllTabs` | 關閉當前面板的所有標籤頁（保留最後一張） | `⌥⌘W` | *(標籤右鍵選單: 關閉全部)* | Main |
 | `cm_CloseOtherTabs` | 關閉當前面板除活動標籤之外的其他全部標籤頁 | `⇧⌘W` | *(標籤右鍵選單: 關閉其他)* | Main |
 | `cm_Duplicatetab` | 快速克隆副本當前標籤頁 | `⌘D` / `cm_Duplicatetab` | *(標籤右鍵選單: 複製標籤)* | Main |
@@ -359,14 +365,22 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | 操作 / 功能 | 詳細說明 | macOS 原生快速鍵 | 經典 Commander 鍵位 | 生效上下文 |
 | :--- | :--- | :---: | :---: | :---: |
 | 儲存檔案 | 將已修改的內容安全寫入磁碟 | `⌘S` / `F2` | `F2` | Editor |
-| 查詢內容 | 在編輯器中撥出文字搜尋欄 | `⌘F` / `F7` | `F7` | Editor |
-| 查詢下一個 | 跳轉到下一個搜尋匹配項 | `⌘G` / `F3` | `F3` | Editor |
-| 查詢上一個 | 跳轉到上一個搜尋匹配項 | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editor |
+| 另存為 | 提示選擇目標目錄與新檔名儲存 | `⇧⌘S` | `Ctrl+Shift+S` | Editor |
+| 重新載入檔案 | 丟棄未儲存修改，從磁碟重新讀取原始檔 | `⌘R` | `Ctrl+R` | Editor |
+| 搜尋內容 | 在編輯器中撥出文字搜尋欄 | `⌘F` / `F7` | `F7` | Editor |
+| 替換文字 | 在文件中搜尋並替換文字 | `⌥⌘F` | `Ctrl+H` | Editor |
+| 搜尋下一個 | 跳轉到下一個搜尋匹配項 | `⌘G` / `F3` | `F3` | Editor |
+| 搜尋上一個 | 跳轉到上一個搜尋匹配項 | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editor |
 | 剪下 | 剪下選中文字到系統剪貼簿 | `⌘X` | `Ctrl+X` | Editor |
 | 複製 | 複製選中文字到系統剪貼簿 | `⌘C` | `Ctrl+C` | Editor |
 | 貼上 | 從系統剪貼簿貼上文字內容 | `⌘V` | `Ctrl+V` | Editor |
 | 撤銷 (Undo) | 撤銷上一步編輯或輸入操作 | `⌘Z` | `Ctrl+Z` | Editor |
-| 重做 (Redo) | 重新執行剛剛被撤銷的操作 | `⇧⌘Z` | `Ctrl+Shift+Z` | Editor |
+| 重做 (Redo) | 重新執行剛剛被撤銷的操作 | `⇧⌘Z` | `Ctrl+Shift+Z` / `Ctrl+Y` | Editor |
+| 自動換行 | 切換視窗邊緣軟自動換行顯示 | `⌥W` | `Alt+W` | Editor |
+| 顯示行號 | 切換左側動態行號槽顯示/隱藏 | `⌥L` | `Alt+L` | Editor |
+| 放大字號 | 增大程式碼編輯區顯示字型大小 | `⌘+` | `Ctrl++` | Editor |
+| 縮小字號 | 減小程式碼編輯區顯示字型大小 | `⌘-` | `Ctrl+-` | Editor |
+| 重置縮放 | 恢復預設 100% 字型大小縮放比例 | `⌘0` | `Ctrl+0` | Editor |
 | 全選 | 選中文件中的全部文字內容 | `⌘A` | `Ctrl+A` | Editor |
 | 關閉編輯器 | 關閉當前編輯視窗（若有未儲存修改會自動提示） | `⎋` *(Esc)* / `⌘W` | `Esc` / `Alt+X` | Editor |
 

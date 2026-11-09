@@ -595,6 +595,16 @@ ATBCmder 將 **Dropbox 作為實時線上的虛擬磁碟 (`dropbox://`)**，支�
 
 ---
 
+### 6.3 App Store 沙盒雲端儲存（OneDrive、Google Drive、iCloud）
+
+在 Mac App Store 沙盒版本的 ATBCmder 中，對第三方本地雲同步目錄（如 Microsoft OneDrive、Google Drive 桌面端、Dropbox 和 iCloud Drive）的直接檔案系統存取受到 Apple 沙盒安全機制的管理：
+
+- **安全作用域書籤 (Security-Scoped Bookmarks)**：位於 `~/Library/CloudStorage/OneDrive-*`、`~/Library/CloudStorage/GoogleDrive-*` 或 `~/Library/Mobile Documents/com~apple~CloudDocs/` 的雲同步目錄需要系統簽發的安全存取權杖。
+- **磁碟機代號選擇器與路徑無縫整合**：ATBCmder 會全自動發現本機已設定的本地雲端儲存目錄，並在磁碟驅動器選擇器（`Alt+D` / `⌥D`）、驅動器按鈕列與路徑麵包屑中直觀呈現。
+- **持久授權憑據儲存**：首次點選進入某個雲端儲存目錄時，macOS 系統會自動彈出授權確認工作表。一旦使用者選擇授權，ATBCmder 會將加密的安全作用域書籤持久化儲存在偏好設定中，在應用重啟後依然保持讀寫暢通，無需反覆彈出授權對話方塊。
+
+---
+
 ## 7. 快速連線 vs 連線管理器
 
 ATBCmder 為連線遠端主機提供了兩套相輔相成的方案：針對臨時除錯的 **快速連線**，以及面向固定伺服器資產的 **連線管理器**。
@@ -724,9 +734,8 @@ ATBCmder 內建的 `stream_copy_file` 引擎支援**跨協議直接管道流式�
 ## 10. 系統許可權與安全警示
 
 > [!WARNING]
-> **SSH 主機指紋變更警報 (Host Key Verification Mismatch)**  
-> 如果目標 SFTP 伺服器重灌了作業系統重新生成了金鑰，或者當前區域網存在中間人欺騙攻擊，ATBCmder 會檢測到遠端公鑰指紋與本地 `~/.ssh/known_hosts` 不符。  
-> 在公共 Wi-Fi 環境下遇到此類告警，切勿盲目跳過，請務必先與伺服器管理員獨立核對公鑰指紋！
+> **SSH 主機指紋嚴格核驗與防竊聽攔截**  
+> 為徹底防範中間人攻擊 (MITM) 與憑據竊聽，ATBCmder 的 SFTP 引擎在發起金鑰協商或傳輸密碼前，會嚴格核驗遠端伺服器公鑰指紋與本地 `~/.ssh/known_hosts` 記錄的一致性。若伺服器指紋與本地已知記錄不符，系統會立即阻斷連線並彈出安全告警，詳細列出指紋衝突詳情。在不受信任的公共 Wi-Fi 網路環境下遇到此類告警，切勿盲目跳過，請務必先與伺服器管理員獨立核實主機金鑰變動！
 
 > [!IMPORTANT]
 > **超大遠端檔案預覽的臨時空間注意**  
