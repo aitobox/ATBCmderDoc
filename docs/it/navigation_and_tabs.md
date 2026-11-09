@@ -42,6 +42,15 @@ In ATBCmder, ogni pannello funziona come un motore di navigazione autonomo dotat
 | **Storia indietro** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Torna alla cartella visitata in precedenza. | 
 | **Storia in avanti** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Andare avanti nella cronologia della directory. | 
 | **Elenco a discesa della cronologia** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Visualizza l'elenco a discesa della cronologia. | 
+| **Navigazione con scorrimento sul trackpad** | Scorri con due dita verso sinistra/destra | — | `cm_ViewHistoryPrev` / `Next` | Scorri la cronologia indietro/avanti sul trackpad (attiva/disattiva la visualizzazione dei file). | 
+| **Mostra tutti i file** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Cancella la maschera dei file attivi e mostra tutti i file. | 
+| **Mostra file personalizzati** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtra i file visibili per maschera glob (*.py;*.md). |
+| **Navigazione con scorrimento sul trackpad** | Scorri con due dita verso sinistra/destra | — | `cm_ViewHistoryPrev` / `Next` | Scorri la cronologia indietro/avanti sul trackpad (attiva/disattiva la visualizzazione dei file). | 
+| **Mostra tutti i file** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Cancella la maschera dei file attivi e mostra tutti i file. | 
+| **Mostra file personalizzati** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtra i file visibili per maschera glob (*.py;*.md). |
+| **Navigazione con scorrimento sul trackpad** | Scorri con due dita verso sinistra/destra | — | `cm_ViewHistoryPrev` / `Next` | Scorri la cronologia indietro/avanti sul trackpad (attiva/disattiva la visualizzazione dei file). | 
+| **Mostra tutti i file** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Cancella la maschera dei file attivi e mostra tutti i file. | 
+| **Mostra file personalizzati** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtra i file visibili per maschera glob (*.py;*.md). |
 | **Elenco unità/volumi (sinistra/destra)** | `⌥F1` / `⌥F2` (`⌥D`) | `Alt+F1` / `Alt+F2` (`Alt+D`) | `cm_LeftOpenDrives` / `cm_RightOpenDrives` (`cm_Drives`) | Aprire il menu dell'unità per il pannello sinistro o destro (`Alt+D` per il pannello attivo). | 
 | **Ricerca rapida** | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | Apri l'overlay di ricerca in tempo reale nel pannello. | 
 
@@ -236,6 +245,21 @@ Ogni pannello registra il proprio stack cronologico del percorso cronologico:
 ![Menu a discesa cronologia directory](images/directory_history_dropdown.png)  
 *Figura 2.2: Menu a discesa della cronologia delle directory (`Alt+F8` / `Ctrl+Down`) che mostra i percorsi delle cartelle visitate di recente.*
 
+### Navigazione a scorrimento orizzontale sul trackpad del MacBook 
+
+Per gli utenti di laptop MacBook e configurazioni Apple Magic Trackpad, ATBCmder riconosce nativamente i gesti di scorrimento orizzontale con due dita sulla visualizzazione dell'elenco di file attivo o inattivo: 
+
+- **Scorri verso sinistra**: torna **indietro** nella cronologia delle cartelle (`cm_ViewHistoryPrev`). 
+- **Scorri verso destra**: sposta **Avanti** nella cronologia delle cartelle (`cm_ViewHistoryNext`). 
+
+Il motore dei gesti è progettato per un'ergonomia perfetta di macOS: 
+
+- **Rimbalzo intelligente e dominanza orizzontale**: distingue i gesti intenzionali della cronologia orizzontale dallo scorrimento verticale dell'elenco, ignorando completamente la deriva dello slancio. 
+- **Messa a fuoco automatica del pannello**: scorrendo sul pannello inattivo si sposta immediatamente la tastiera e il focus operativo su quel pannello prima di eseguire il passaggio della cronologia, garantendo che venga navigato il lato desiderato. 
+- **Alternanza configurabile**: la navigazione con scorrimento può essere abilitata o disabilitata in **Preferenze** (`Cmd+,`) → **Visualizzazioni file** (`view.trackpad_swipe_navigation`, impostazione predefinita: disattivata).
+
+---
+
 ### Selettore unità e volume
 
 Su macOS, tutte le partizioni interne, le unità USB-C/Thunderbolt esterne, i DMG montati e le condivisioni di rete risiedono in `/Volumes`. ATBCmder fornisce comandi dedicati per passare tra questi target: 
@@ -355,6 +379,20 @@ La ricerca rapida ti consente di passare direttamente a qualsiasi file digitando
 - **Ricerca rapida (`Ctrl+S` / `cm_QuickSearch`)**: sposta il cursore tra le corrispondenze mantenendo tutti i file visibili. 
 - **Filtro rapido (`cm_QuickFilter`)**: nasconde temporaneamente tutti i file non corrispondenti, visualizzando solo le righe corrispondenti nella tabella. 
 - **Filtro semantico (`Option+F7` / `cm_SemanticFilter`)**: utilizza query in linguaggio naturale (ad esempio, `/larger than 10MB`, `//today modified pdf`) tramite macOS Spotlight.
+
+### Maschere file e filtri estensione (`Cmd+F10` / `Cmd+F11`) 
+
+Quando si gestiscono directory contenenti centinaia di file misti, ATBCmder fornisce comandi dedicati nel menu **Mostra** e nei menu contestuali delle intestazioni di colonna per filtrare l'elenco visibile: 
+
+- **Mostra tutti i file (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**: 
+- Cancella istantaneamente le maschere delle estensioni attive e i filtri rapidi, reimpostando la visualizzazione per visualizzare tutti i file e le directory. 
+- **Mostra file personalizzati/maschera estensione (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**: 
+- Apre un prompt precompilato con la maschera corrente o utilizzata per ultima (ad esempio, `*.py;*.md`, `*.jpg;*.png` o `test_*`). 
+- Le directory e le voci `..` principali rimangono visibili in modo da poter navigare nelle gerarchie delle cartelle mantenendo la maschera attiva. 
+- Un badge ben visibile sulla barra di stato visualizza `Mask: <pattern>` mentre il filtro è attivo. 
+- La maschera persiste durante la navigazione all'interno di quella scheda e può essere ripristinata rapidamente con `Cmd+F10`.
+
+---
 
 ### Modalità di colonna con adattamento automatico
 
@@ -497,6 +535,8 @@ Ecco tre ricette del mondo reale che mostrano come la navigazione, le schede e l
 | | Visualizzazione ad albero (entrambi i pannelli)| *Mostra Menù* | — | `cm_TreeViewBoth` | 
 | | Vista ad albero piatto (Flat Branch View) | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Modalità Pannelli Orizzontali | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
+| | Mostra tutti i file | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | 
+| | Maschera file personalizzata | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` |
 | **Ricerca e filtri** | Sovrapposizione di ricerca rapida | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
 | | Filtro semantico | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 

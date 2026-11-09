@@ -73,10 +73,10 @@ ATBCmder organizza la potenza in un layout pulito e intuitivo progettato per dar
 1. **Barra dei menu e integrazione nativa di macOS (`[1]`)**: supporto completo del menu dell'applicazione macOS, scorciatoie standard (`⌘,`, `⌘Q`, `⌘W`) e accesso completo al menu per ogni comando interno di Commander (`cm_*`). 
 2. **Barra degli strumenti principale e funzioni di avvio rapido (`[2]`)**: accesso immediato con un clic a Ricerca (`Alt+F7`), Coda di trasferimento in background (`cm_OperationsPanel`), Preferenze (`Cmd+,`) e selettori di unità. 
 3. **Barra del percorso breadcrumb interattiva (`[3]`)**: fare clic su qualsiasi segmento di directory nel percorso per passare direttamente alla gerarchia. Fare clic sulla freccia del menu a discesa del segmento per sfogliare le sottodirectory. 
-4. **Schede cartelle e aree di lavoro (`[4]`)**: apri un numero illimitato di schede in ciascun pannello (`Cmd+T`), chiudi le schede (`Cmd+W`), blocca le posizioni preferite e salva intere aree di lavoro con schede a doppio pannello (`cm_SaveFavoriteTabs`). 
-5. **Pannelli a doppio file (`[5]`)**: tabelle di file indipendenti. Il pannello attivo mostra un bordo di accento distinto e un cursore focalizzato. Cambia istantaneamente la messa a fuoco con `Tab`. 
+4. **Schede cartella e aree di lavoro (`[4]`)**: apri schede adiacenti (`Cmd+T`), chiudi schede (`Cmd+W`), blocca percorsi con le modalità di blocco Total Commander (`cm_SetTabOptionLock` con `*` badge) e salva l'intero aree di lavoro con scheda a doppio pannello (`cm_SaveFavoriteTabs`). 
+5. **Dual File Panels (`[5]`)**: tabelle di file indipendenti basate su icone vettoriali Semantic Lucide e una cache singleton condivisa. Dispone di navigazione nella cronologia del trackpad con due dita, ricerca rapida Pinyin cinese con confini arbitrari, maschere di file personalizzate (`Cmd+F11` / `Cmd+F10`) e cambio istantaneo della messa a fuoco con `Tab`. 
 6. **Barra degli strumenti centrale e divisore trascinabile (`[6]`)**: una striscia verticale ad azione rapida posizionata direttamente sul divisore del pannello. Fornisce trigger con un clic per Visualizza (`F3`), Modifica (`F4`), Copia (`F5`), Sposta (`F6`), Nuova cartella (`F7`), Elimina (`F8`), Cancella e scambia i pannelli (`cm_Exchange`). Trascina il divisore a sinistra o a destra per ridimensionare i pannelli. 
-7. **Barra di stato e misuratore di spazio di archiviazione dell'unità (`[7]`)**: mostra il conteggio dei file in tempo reale, le statistiche degli elementi selezionati, le dimensioni dei byte aggregati e un indicatore della capacità di archiviazione del volume attivo con calcolo dello spazio libero. 
+7. **Barra di stato e misuratore di spazio di archiviazione dell'unità (`[7]`)**: mostra il conteggio dei file in tempo reale, le statistiche degli elementi selezionati, le dimensioni dei byte aggregati, l'autorizzazione dell'unità cloud persistente (OneDrive, Google Drive, iCloud) e un indicatore della capacità di archiviazione del volume attivo con calcolo dello spazio libero.
 
 ---
 
@@ -155,17 +155,14 @@ Esplora la suite completa di documentazione ATBCmder:
 
 Comprendi la filosofia del doppio pannello, esplora l'anatomia dell'interfaccia, configura le autorizzazioni della sandbox dell'app macOS tramite l'assistente di onboarding (`cm_GrantFilesystemAccess`), imposta le sostituzioni della lingua di sistema in oltre 30 impostazioni locali e personalizza i temi Chiaro/Scuro.
 
-### 🧭 [Capitolo 2: Navigazione e schede cartella](navigation_and_tabs.md)
+### 🧭 [Capitolo 2: Navigazione e schede delle cartelle](navigation_and_tabs.md) 
+Muoviti facilmente tra gli alberi delle directory utilizzando breadcrumb interattivi, spostamenti tramite tastiera (`Ctrl+\`, `Backspace`), navigazione nella cronologia con due dita sul trackpad, organizzazione a più schede con apertura di schede adiacenti e blocco delle schede TC (`*`), set di aree di lavoro preferite a doppio pannello (`cm_SaveFavoriteTabs`), Hotlist di directory segnalibri (`Ctrl+D`), ricerca rapida Pinyin cinese, maschere di file personalizzate (`Cmd+F10`/`Cmd+F11`) e modalità di visualizzazione flessibili (breve, colonne intere, miniature, visualizzazione ad albero e visualizzazione a ramo piatto `Cmd+B`). 
 
-Muoviti facilmente tra gli alberi delle directory utilizzando breadcrumb interattivi, spostamenti tramite tastiera (`Ctrl+\`, `Backspace`), organizzazione a più schede (`Cmd+T`, `Cmd+W`), set di aree di lavoro preferite a doppio pannello (`cm_SaveFavoriteTabs`), Hotlist di directory segnalibri (`Ctrl+D`) e modalità di visualizzazione flessibili (breve, colonne complete, miniature, visualizzazione ad albero e visualizzazione a ramo piatto `Cmd+B`).
+### 📁 [Capitolo 3: Operazioni giornaliere sui file e coda](file_operations.md) 
+Esegui operazioni sui file veloci e affidabili: Copia (`F5`), Sposta (`F6`), Nuova cartella (`F7`), Elimina nel cestino (`F8`), ridenominazione rapida in linea (`F2`) e calcolo ergonomico dello spazio delle directory (`Alt+Shift+Return` / `⌥⇧⏎`). Selezioni principali di caratteri jolly e attributi, interoperabilità drag-and-drop, risoluzione dei conflitti di collisione, protezioni di staging atomico contro la perdita di dati, autorizzazioni ottali UNIX (`Alt+Enter`) e monitoraggio del trasferimento asincrono tramite la coda delle operazioni in background (`cm_OperationsPanel`). 
 
-### 📁 [Capitolo 3: Operazioni giornaliere sui file e coda](file_operations.md)
-
-Esegui operazioni sui file veloci e affidabili: Copia (`F5`), Sposta (`F6`), Nuova cartella (`F7`), Elimina nel cestino (`F8`) e rinomina rapida incorporata (`F2`). Selezioni principali di caratteri jolly e attributi, interoperabilità drag-and-drop, risoluzione dei conflitti di collisione, autorizzazioni ottali UNIX (`Alt+Enter`) e monitoraggio del trasferimento asincrono tramite la coda delle operazioni in background (`cm_OperationsPanel`).
-
-### 👁️ [Capitolo 4: Lister universale ed editor integrati](viewers_and_editors.md)
-
-Ispeziona i file senza avviare pesanti software di terze parti. Utilizza Quick View (`Ctrl+Q` / `Cmd+Q`) per anteprime in tempo reale sul pannello laterale e Universal Lister (`F3`) per documenti Word, fogli di calcolo, database SQLite, notebook Jupyter, EPUB, codice con evidenziazione della sintassi, ispezione dei byte esadecimali non elaborati (`2`), annotazioni di immagini e filigrana (`F4`), lettore di documenti PDF e lettori multimediali audio/video integrati con riproduzione audio in background. Modifica i file direttamente con l'editor di testo integrato (`F4`).
+### 👁️ [Capitolo 4: Lister universale ed editor integrati](viewers_and_editors.md) 
+Ispeziona i file senza avviare pesanti software di terze parti. Utilizza Quick View (`Ctrl+Q` / `Cmd+Q`) per anteprime in tempo reale sul pannello laterale e Universal Lister (`F3`) per documenti Word, fogli di calcolo, database SQLite, notebook Jupyter, EPUB, codice con evidenziazione della sintassi, ispezione dei byte esadecimali non elaborati (`2`), annotazioni di immagini e filigrana (`F4`), lettore di documenti PDF e lettori multimediali audio/video integrati con riproduzione audio in background. Modifica i file direttamente con l'editor di testo integrato (`F4`) dotato di una moderna barra degli strumenti per le azioni vettoriali e protezione del salvataggio atomico.
 
 ### ⚡ [Capitolo 5: Utensili elettrici e automazione](power_tools.md)
 

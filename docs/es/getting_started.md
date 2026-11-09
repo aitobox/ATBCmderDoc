@@ -119,20 +119,20 @@ Ubicada encima de cada panel de archivos, la barra de ruta de navegación permit
 - **Abrir en Terminal**: genera el Terminal macOS directamente dentro de esa carpeta (`open -a Terminal`). 
 - **Edición de ruta directa (`BreadcrumbLineEdit`)**: haga doble clic en el espacio vacío a la derecha de la cadena de ruta de navegación. La barra se convierte instantáneamente en un campo de texto editable donde puede pegar o escribir cualquier ruta (por ejemplo, archivos `/var/log`, `~/Library` o `vfs://`). Presione `Enter` para navegar o `Esc` para cancelar.
 
-### [4] Barra de pestañas de carpetas
+### [4] Barra de pestañas de carpetas 
+Cada panel mantiene un conjunto independiente de pestañas creado con `MacNativeTabBar`: 
 
-Cada panel mantiene un conjunto independiente de pestañas: 
+- **Creación de pestañas adyacentes**: Al abrir nuevas pestañas con `Cmd+T` (`cm_NewTab`), se inserta la nueva pestaña inmediatamente a la derecha de la pestaña activa en lugar de al final de la tira. Cierre pestañas con `Cmd+W` (`cm_CloseTab`). 
+- **Bloqueo de pestañas de Total Commander**: haga clic con el botón derecho en las pestañas para elegir **Bloquear esta pestaña** (congela el directorio base con un asterisco `*`; la navegación por la carpeta secundaria se abre en pestañas adyacentes) o **Bloqueado, pero se permiten cambios de directorio** (exploración de subcarpetas en el lugar con restablecimiento automático a la base en el switch). 
+- **Organización del espacio de trabajo**: arrastre y suelte para reordenar las pestañas, haga doble clic en el espacio vacío para duplicar, cambiar el nombre de los títulos o clonar diseños de pestañas en el panel opuesto.
 
-- Abra nuevas pestañas con `Cmd+T` (`cm_NewTab`), cierre pestañas con `Cmd+W` (`cm_CloseTab`). 
-- Arrastrar y soltar para reordenar pestañas dentro de un panel. 
-- Haga clic derecho en las pestañas para bloquear rutas, cambiar el nombre de los títulos, cerrar duplicados o duplicar pestañas en el panel opuesto.
-
-### [5] Paneles de archivos duales
-
+### [5] Paneles de archivos duales 
 Listas de archivos virtualizados de alto rendimiento capaces de representar carpetas con cientos de miles de entradas sin problemas y sin tartamudeos en la interfaz de usuario: 
 
-- Ordenación de columnas: haga clic en cualquier encabezado (Nombre, Extensión, Tamaño, Fecha, Atributos) para ordenar de forma ascendente o descendente. 
-- Múltiples modos de visualización: vista de detalles completos, vista de cuadrícula breve, vista de galería de miniaturas, vista de árbol y vista de rama plana recursiva (`Cmd+B`).
+- **Sistema de íconos Semantic Lucide**: íconos vectoriales de alto DPI adaptados a lenguajes de programación, documentos, medios y archivos, respaldados por un caché singleton compartido para desplazamiento de 60 fps. 
+- **Navegación por gestos con trackpad de MacBook**: navegación fluida con dos dedos al deslizar horizontalmente (deslizar hacia la izquierda para retroceder el historial, deslizar hacia la derecha para avanzar) con detección automática del desplazamiento del panel y preservación del desplazamiento vertical. 
+- **Búsqueda rápida y máscaras en el panel**: búsqueda instantánea carácter por carácter que admite coincidencia de Pinyin chino con límites arbitrarios, aislamiento en vivo solo con filtro y máscaras de extensión personalizadas (`Cmd+F11`/restablecer con `Cmd+F10`). 
+- **Clasificación y vistas de columnas**: haga clic en cualquier encabezado para ordenar de forma ascendente o descendente. Los múltiples modos de visualización incluyen Detalles completos, Cuadrícula breve, Galería de miniaturas, Vista de árbol y Vista de rama plana recursiva (`Cmd+B`).
 
 ### [6] Barra de herramientas central y divisor arrastrable
 

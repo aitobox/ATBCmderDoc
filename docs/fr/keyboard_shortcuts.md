@@ -196,6 +196,7 @@ Déplacez-vous sans effort entre les dossiers, les volumes locaux, les montages 
 | `cm_ChangeDirToHome` | Accédez directement au dossier de départ de l'utilisateur (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | Panneau de fichiers | 
 | `cm_ViewHistoryPrev` | Revenir dans l'historique de navigation dans le répertoire | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Principal | 
 | `cm_ViewHistoryNext` | Naviguer vers l'avant dans l'historique de navigation dans les répertoires | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Principal | 
+| `cm_ViewHistoryPrev` / `Next` | Balayage du trackpad vers l'avant/l'arrière dans l'historique du répertoire (basculer dans les vues) | Balayage à deux doigts ← / → | — | Panneau de fichiers |
 | `cm_DirHistory` | Ouvrir le menu déroulant de l'historique du répertoire interactif | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Principal | 
 | `cm_Drives` | Ouvrir le lecteur et le sélecteur de volume monté | `⌥D` | `Alt+D` | Principal | 
 | `cm_LeftOpenDrives` | Ouvrir le menu de sélection du lecteur pour le panneau de gauche | `⌥F1` | `Alt+F1` | Principal | 
@@ -236,6 +237,8 @@ Basculez en toute transparence entre les listes compactes, les colonnes de méta
 | `cm_QuickSearch` | Ouvrir la barre de recherche rapide dans le panneau (saisissez des lettres pour filtrer) | `⌥S` / `⌃S` *(ou en tapant)* | `Ctrl+S` / *(Saisie de lettres)* | Principal | 
 | `cm_SemanticFilter` | Barre de filtre intelligent sémantique ouvert en langage naturel | `⌥F7` | `Alt+F7` | Principal | 
 | `cm_HorizontalFilePanels` | Basculer la disposition horizontale à deux panneaux (empilés verticalement) | `⇧⌘H` | `Ctrl+Shift+H` | Principal |
+| `cm_SrcAllFiles` | Afficher tous les fichiers (effacer le masque d'extension actif et le filtre rapide) | `⌘F10` | `Ctrl+F10` | Principal | 
+| `cm_SrcUserDef` | Afficher les fichiers personnalisés/Filtrer par masque d'extension (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Principal |
 
 ---
 
@@ -250,6 +253,9 @@ ATBCmder permet d'ouvrir un nombre illimité d'onglets dans l'un ou l'autre pann
 | `cm_NextTab` / `cm_NextTabCtrl` | Passer à l'onglet suivant à droite | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principal | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Passer à l'onglet précédent à gauche | `⌃⇧⇥` *(Ctrl+Maj+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principal | 
 | `cm_ShowTabsList` | Afficher le menu contextuel de tous les onglets ouverts dans le panneau actif | `⇧⌘L` | `Ctrl+Shift+L` | Principal | 
+| `cm_SetTabOptionLock` | Verrouiller cet onglet (geler le chemin, ouvrir les dossiers enfants dans les onglets adjacents) | *(Menu contextuel de l'onglet)* | — | Principal | 
+| `cm_SetTabOptionLockWithSubdirs` | Onglet de verrouillage avec sous-répertoires autorisés (réinitialise le chemin de base sur le commutateur) | *(Menu contextuel de l'onglet)* | — | Principal | 
+| `cm_SetTabOptionNormal` | Onglet Déverrouiller (restaurer le comportement de navigation déverrouillé par défaut) | *(Menu contextuel de l'onglet)* | — | Principal |
 | `cm_CloseAllTabs` | Fermez tous les onglets du panneau actif sauf le dernier | `⌥⌘W` | *(Menu contextuel de l'onglet : Fermer tout)* | Principal | 
 | `cm_CloseOtherTabs` | Fermez tous les onglets autres que l'onglet actuellement actif | `⇧⌘W` | *(Menu contextuel de l'onglet : Fermer les autres)* | Principal | 
 | `cm_Duplicatetab` | Onglet du dossier actif en double | `⌘D` / `cm_Duplicatetab` | *(Menu contextuel de l'onglet : Dupliquer)* | Principal | 
@@ -360,6 +366,14 @@ Actif lors de la création ou de la modification de fichiers texte et de code so
 | Actions/Fonctionnalité | Descriptif | Raccourci macOS principal (avec glyphes ⌘/⌥/⇧/⌃) | Raccourci Commander classique (avec touches Fn) | Contexte | 
 | :--- | :--- | :---: | :---: | :---: | 
 | Enregistrer le fichier | Enregistrer le fichier modifié sur le disque | `⌘S` / `F2` | `F2` | Editeur | 
+| Enregistrer le fichier sous | Demander le répertoire cible et le nouveau nom de fichier | `⇧⌘S` | `Ctrl+Shift+S` | Editeur | 
+| Recharger le fichier | Supprimer les modifications non enregistrées et recharger à partir du disque | `⌘R` | `Ctrl+R` | Editeur | 
+| Remplacer le texte | Rechercher et remplacer du texte dans un document | `⌥⌘F` | `Ctrl+H` | Editeur | 
+| Enveloppement de mots | Activer l'habillage souple du texte au bord de la fenêtre | `⌥W` | `Alt+W` | Editeur | 
+| Numéros de ligne | Basculer la numérotation des lignes de gouttière gauche | `⌥L` | `Alt+L` | Editeur | 
+| Zoom avant | Augmenter la taille de la police | `⌘+` | `Ctrl++` | Editeur | 
+| Zoom arrière | Diminuer la taille de la police | `⌘-` | `Ctrl+-` | Editeur | 
+| Réinitialiser le zoom | Réinitialiser la taille de la police à 100 % par défaut | `⌘0` | `Ctrl+0` | Editeur |
 | Rechercher du texte | Rechercher du texte dans le document de l'éditeur | `⌘F` / `F7` | `F7` | Editeur | 
 | Rechercher suivant | Passer à la recherche suivante | `⌘G` / `F3` | `F3` | Editeur | 
 | Rechercher le précédent | Aller à la recherche précédente | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editeur | 

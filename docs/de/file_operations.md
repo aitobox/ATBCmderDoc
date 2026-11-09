@@ -39,7 +39,7 @@ Orthodoxe Dateimanager verwenden ein Richtungsmodell **Quelle ➔ Ziel**. Wenn S
 | **Endgültiges Löschen** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | Umgeht den Papierkorb und hebt die Verknüpfung von Dateien dauerhaft auf. | 
 | **Inline-Schnellumbenennung**| `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | Benennt das aktive Element direkt in der Tabellenzeile um. | 
 | **Dateieigenschaften** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Öffnet das Dialogfeld „UNIX-Berechtigungen, Zeitstempel und Metadaten“. | 
-| **Ordnerplatz berechnen**| `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Berechnet rekursive Bytes für Verzeichnisse (`Ctrl+L` / `cm_CalculateSpace` für die ausgewählte Gesamtzahl). | 
+| **Ordnerplatz berechnen**| `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Berechnet rekursive Bytes für Verzeichnisse (`Ctrl+L` / `cm_CalculateSpace` für die ausgewählte Gesamtzahl). | 
 | **Hintergrundwarteschlange** | `Toolbar ⚡` | — | `cm_OperationsPanel` | Öffnet den 3-Warteschlangen-Hintergrundübertragungsmonitor. |
 
 ### Visuelles Wahrzeichen: Die mittlere Symbolleiste
@@ -430,6 +430,21 @@ Für große automatisierte Batch-Jobs oder unbeaufsichtigte Backups können Sie 
 
 ---
 
+### 6.1 Datenintegrität und sichere Übertragungsprotokolle
+
+ATBCmder wurde für die geschäftskritische Dateiverwaltung entwickelt, bei der stiller Datenverlust, halbgeschriebene Dateien oder beschädigte Links völlig inakzeptabel sind: 
+
+- **Atom-Staging und -Ersatz**: 
+Beim Überschreiben oder Speichern vorhandener Dateien schreibt die Übertragungs-Engine stufenweise in eine temporäre Datei (`.tmp.atbcmder_*`) im Zielverzeichnis, bevor sie eine atomare POSIX-Ersetzung (`os.replace`) durchführt. Wenn ein Vorgang abgebrochen wird, das Netzwerk abbricht oder der Speicherplatz während der Übertragung erschöpft ist, bleibt die ursprüngliche Zieldatei vollständig intakt und unbeschädigt. 
+
+- **Symlink-Verschiebungsschutz**: 
+Durch das Verschieben symbolischer Links bleibt das relative oder absolute Zeigerziel erhalten, ohne dass die tatsächlichen Quelldaten dereferenziert oder geändert werden. Durch das Verschieben eines Links über Dateisystem-Mounts hinweg wird die Linkreferenz sauber neu erstellt, anstatt die Zielnutzlast zu kopieren oder zu löschen. 
+
+- **Archivextraktion und Symlink Traversal Guard**: 
+Beim Entpacken von ZIP-, TAR- oder 7z-Archiven validiert ATBCmder Pfadhierarchien streng gegen Directory-Traversal-Angriffe (Zip-Slip-Schwachstellen) und lehnt Symlinks ab, die außerhalb des Zielbaums zeigen oder versuchen, vorhandene reale Verzeichnisse zu überschreiben.
+
+---
+
 ## 7. ⚡ Profi-Tipps und tiefer Einblick: Erweiterte Dateisystemleistung
 
 Um die Dual-Panel-Verwaltung zu beherrschen, müssen Sie das zugrunde liegende UNIX-Substrat von macOS verstehen. Hier finden Sie leistungsstarke Funktionen für Entwickler, Systemadministratoren und Speicherprofis.
@@ -517,7 +532,7 @@ Standardmäßig zeigen Dateimanager Verzeichnisgrößen als `<DIR>` oder `--` an
 *Abbildung 3.2: Asynchrone Verzeichnisgrößenberechnung ersetzt <DIR> durch genaue rekursive Byte-Angaben.*
 
 - **Größe eines einzelnen Ordners (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: Drücken Sie `Space`, während Sie sich auf einem beliebigen Ordner befinden. ATBCmder berechnet im Hintergrund die gesamten rekursiven Bytes des Ordners und ersetzt `<DIR>` durch die genaue Größe (z. B. `14.2 GB`). 
-- **Alle Ordner im aktiven Panel (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
+- **Alle Ordner im aktiven Panel (`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
 - Scannt jedes im aktuellen Panel sichtbare Verzeichnis. 
 - Aktualisiert Tabellenzeilen mit präzisen Byte-Gesamtzahlen. 
 - **Kumulative ausgewählte Verzeichnisgröße (`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)**: 
@@ -684,7 +699,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 | **Links & Leerzeichen** | Symlink erstellen | *Menüdatei* | — | `cm_SymLink` | Erstellt einen symbolischen Link im Zielbereich. | 
 | | Hardlink erstellen | *Menüdatei* | — | `cm_HardLink` | Erstellt einen Hardlink im Zielbereich. | 
 | | Eigenschaften / Chmod | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Öffnet Berechtigungen, oktales CHMOD und Zeitstempel. | 
-| | Raum berechnen | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Berechnet rekursive Verzeichnisgrößen (`Ctrl+L` / `cm_CalculateSpace` für die ausgewählte Gesamtzahl). | 
+| | Raum berechnen | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Berechnet rekursive Verzeichnisgrößen (`Ctrl+L` / `cm_CalculateSpace` für die ausgewählte Gesamtzahl). | 
 | **Übertragungswarteschlange**| Hintergrundwarteschlange | `Toolbar ⚡` | — | `cm_OperationsPanel` | Öffnet den 3-Warteschlangen-Übertragungsmonitor im Hintergrund. |
 
 --- 

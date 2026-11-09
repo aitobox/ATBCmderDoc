@@ -42,6 +42,12 @@ In ATBCmder fungiert jedes Panel als autonome Browsing-Engine, die mit einer eig
 | **Geschichte zurück** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Gehen Sie zurück zum zuvor besuchten Ordner. | 
 | **Geschichte weiterleiten** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Gehen Sie im Verzeichnisverlauf vorwärts. | 
 | **Verlaufs-Dropdown-Liste** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Dropdown-Liste „Verlauf anzeigen“. | 
+| **Trackpad-Swipe-Navigation** | Mit zwei Fingern nach links/rechts wischen | — | `cm_ViewHistoryPrev` / `Next` | Wischen Sie auf dem Trackpad über den Verlauf zurück/vorwärts (in den Dateiansichten umschalten). | 
+| **Alle Dateien anzeigen** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Aktive Dateimaske löschen und alle Dateien anzeigen. | 
+| **Benutzerdefinierte Dateien anzeigen** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Sichtbare Dateien nach Glob-Maske (*.py;*.md) filtern. |
+| **Trackpad-Swipe-Navigation** | Mit zwei Fingern nach links/rechts wischen | — | `cm_ViewHistoryPrev` / `Next` | Wischen Sie auf dem Trackpad über den Verlauf zurück/vorwärts (in den Dateiansichten umschalten). | 
+| **Alle Dateien anzeigen** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Aktive Dateimaske löschen und alle Dateien anzeigen. | 
+| **Benutzerdefinierte Dateien anzeigen** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Sichtbare Dateien nach Glob-Maske (*.py;*.md) filtern. |
 | **Laufwerks-/Volume-Liste (Links/Rechts)** | `⌥F1` / `⌥F2` (`⌥D`) | `Alt+F1` / `Alt+F2` (`Alt+D`) | `cm_LeftOpenDrives` / `cm_RightOpenDrives` (`cm_Drives`) | Öffnen Sie das Laufwerksmenü für das linke oder rechte Panel (`Alt+D` für das aktive Panel). | 
 | **Schnellsuche** | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | Öffnen Sie das Overlay für die Echtzeitsuche im Bedienfeld. | 
 
@@ -241,6 +247,19 @@ Jedes Panel zeichnet seinen eigenen chronologischen Pfadverlaufsstapel auf:
 ![Verlauf-Dropdown-Menü](images/directory_history_dropdown.png)  
 *Abbildung 2.2: Dropdown-Menü des Verzeichnisverlaufs (`Alt+F8` / `Ctrl+Down`) mit zuletzt besuchten Ordnerpfaden.*
 
+### MacBook Trackpad Horizontale Wischnavigation 
+
+Für MacBook-Laptop-Benutzer und Apple Magic Trackpad-Setups erkennt ATBCmder nativ horizontale Wischgesten mit zwei Fingern über das aktive oder inaktive Dateilisten-Ansichtsfenster: 
+
+- **Nach links wischen**: Navigiert **Zurück** im Ordnerverlauf (`cm_ViewHistoryPrev`). 
+- **Nach rechts wischen**: Navigiert **Vorwärts** im Ordnerverlauf (`cm_ViewHistoryNext`). 
+
+Die Gesten-Engine wurde für eine nahtlose macOS-Ergonomie entwickelt: 
+
+- **Intelligente Entprellung und horizontale Dominanz**: Unterscheidet absichtliche horizontale Verlaufsgesten vom vertikalen Scrollen in der Liste und ignoriert dabei den Impulsdrift vollständig. 
+- **Automatischer Panel-Fokus**: Wenn Sie über das inaktive Panel wischen, werden der Tastatur- und Bedienfokus sofort auf dieses Panel verschoben, bevor der Verlaufsschritt ausgeführt wird, wodurch sichergestellt wird, dass auf der gewünschten Seite navigiert wird. 
+- **Konfigurierbares Umschalten**: Die Wischnavigation kann in **Einstellungen** (`Cmd+,`) → **Dateiansichten** (`view.trackpad_swipe_navigation`, Standard: aus) aktiviert oder deaktiviert werden.
+
 ### Laufwerks- und Lautstärkeumschalter
 
 Unter macOS befinden sich alle internen Partitionen, externen USB-C-/Thunderbolt-Laufwerke, gemounteten DMGs und Netzwerkfreigaben unter `/Volumes`. ATBCmder bietet dedizierte Befehle zum Wechseln zwischen diesen Zielen: 
@@ -361,6 +380,21 @@ Mit der Schnellsuche können Sie direkt zu jeder Datei springen, indem Sie ihren
 - **Schnellsuche (`Ctrl+S` / `cm_QuickSearch`)**: Navigiert mit dem Cursor zwischen Treffern, während alle Dateien sichtbar bleiben. 
 - **Schnellfilter (`cm_QuickFilter`)**: Versteckt vorübergehend alle nicht übereinstimmenden Dateien und zeigt nur übereinstimmende Zeilen in der Tabelle an. 
 - **Semantischer Filter (`Option+F7` / `cm_SemanticFilter`)**: Verwendet natürliche Sprachabfragen (z. B. `/larger than 10MB`, `//today modified pdf`) über macOS Spotlight.
+
+### Dateimasken und Erweiterungsfilter (`Cmd+F10` / `Cmd+F11`) 
+
+Beim Verwalten von Verzeichnissen mit Hunderten gemischter Dateien stellt ATBCmder spezielle Befehle im Menü **Anzeigen** und in den Kontextmenüs der Spaltenüberschriften bereit, um die sichtbare Liste zu filtern: 
+
+- **Alle Dateien anzeigen (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**: 
+- Löscht sofort aktive Erweiterungsmasken und Schnellfilter und setzt die Ansicht zurück, um alle Dateien und Verzeichnisse anzuzeigen. 
+- **Benutzerdefinierte Dateien/Erweiterungsmaske anzeigen (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**: 
+– Öffnet eine Eingabeaufforderung, die mit der aktuellen oder zuletzt verwendeten Maske vorab ausgefüllt ist (z. B. `*.py;*.md`, `*.jpg;*.png` oder `test_*`). 
+
+- Verzeichnisse und übergeordnete `..`-Einträge bleiben sichtbar, sodass Sie durch Ordnerhierarchien navigieren und gleichzeitig Ihre aktive Maske beibehalten können. 
+– Ein auffälliges Statusleisten-Badge zeigt `Mask: <pattern>` an, während die Filterung aktiv ist. 
+– Die Maske bleibt in der gesamten Navigation innerhalb dieser Registerkarte bestehen und kann mit `Cmd+F10` schnell zurückgesetzt werden.
+
+---
 
 ### Automatisch anpassende Spaltenmodi
 
@@ -505,6 +539,8 @@ Hier sind drei Rezepte aus der Praxis, die zeigen, wie Navigation, Tabs und Hotl
 | | Baumansicht (beide Panels)| *Menü anzeigen* | — | `cm_TreeViewBoth` | 
 | | Flache Zweigansicht | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Horizontaler Panel-Modus | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
+| | Alle Dateien anzeigen | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | 
+| | Benutzerdefinierte Dateimaske | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` |
 | **Suche & Filter** | Schnellsuche-Overlay | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
 | | Semantischer Filter | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 

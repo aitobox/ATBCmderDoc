@@ -609,6 +609,16 @@ Une fois connecté, Dropbox se comporte comme un lecteur local à haute vitesse 
 - **Actualisation instantanée (`F9` / `Ctrl+R`)** : Récupérez d'une seule touche les modifications apportées sur d'autres appareils.
 - **Protection matérielle via Secure Enclave** : Les jetons et identifiants OAuth sont chiffrés directement dans le **Trousseau d'accès macOS** (`ATBCmder_VFS`) adossé à la Secure Enclave d'Apple.
 
+### 6.3 Stockage cloud Sandbox de l'App Store (OneDrive, Google Drive, iCloud) 
+
+Dans les versions sandbox d'ATBCmder du Mac App Store, l'accès direct au système de fichiers aux répertoires de synchronisation cloud tiers (par exemple, Microsoft OneDrive, Google Drive for Desktop, Dropbox et iCloud Drive) est réglementé par l'architecture sandbox d'Apple : 
+
+- **Signets à portée de sécurité** : les répertoires cloud synchronisés résidant dans `~/Library/CloudStorage/OneDrive-*`, `~/Library/CloudStorage/GoogleDrive-*` ou `~/Library/Mobile Documents/com~apple~CloudDocs/` nécessitent des jetons d'accès à portée de sécurité. 
+- **Drive Switcher & Path Integration** : ATBCmder découvre automatiquement les répertoires cloud locaux configurés et les affiche dans Drive Switcher (`Alt+D` / `⌥D`), les barres de boutons de lecteur et le fil d'Ariane de chemin. 
+- **Autorisations persistantes** : lors de la première ouverture d'un répertoire cloud, macOS présente une feuille d'autorisation. Une fois sélectionné, ATBCmder stocke le signet cryptographique de sécurité dans les préférences de l'utilisateur, accordant un accès en lecture/écriture transparent et ininterrompu lors des redémarrages de l'application sans boîtes de dialogue d'autorisation répétées.
+
+---
+
 ## 7. Connexion rapide et gestionnaire de connexion
 
 ATBCmder fournit deux mécanismes flexibles pour se connecter à des hôtes distants : **Quick Connect** pour des sessions rapides et temporaires, et **Connection Manager** pour des signets de serveur persistants et catégorisés.

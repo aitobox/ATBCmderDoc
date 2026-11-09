@@ -119,20 +119,20 @@ Positionnée au-dessus de chaque panneau de fichiers, la barre de chemin de navi
 - **Ouvrir dans le terminal** : génère le terminal macOS directement dans ce dossier (`open -a Terminal`). 
 - **Édition directe du chemin (`BreadcrumbLineEdit`)** : double-cliquez sur l'espace vide à droite du fil d'Ariane. La barre se convertit instantanément en un champ de texte modifiable dans lequel vous pouvez coller ou saisir n'importe quel chemin (par exemple, archives `/var/log`, `~/Library` ou `vfs://`). Appuyez sur `Enter` pour naviguer ou sur `Esc` pour annuler.
 
-### [4] Barre d'onglets des dossiers
+### [4] Barre d'onglets des dossiers 
+Chaque panneau conserve un ensemble indépendant d'onglets construits avec `MacNativeTabBar` : 
 
-Chaque panneau conserve un ensemble indépendant d'onglets : 
+- **Création d'onglets adjacents** : L'ouverture de nouveaux onglets avec `Cmd+T` (`cm_NewTab`) insère le nouvel onglet immédiatement à droite de votre onglet actif plutôt qu'à la fin de la bande. Fermez les onglets avec `Cmd+W` (`cm_CloseTab`). 
+- **Verrouillage total des onglets Commander** : cliquez avec le bouton droit sur les onglets pour choisir **Verrouiller cet onglet** (gèle le répertoire de base avec un badge astérisque `*` ; la navigation dans les dossiers enfants s'ouvre dans les onglets adjacents) ou **Verrouillé, mais les modifications de répertoire sont autorisées** (navigation des sous-dossiers sur place avec réinitialisation automatique à la base lors du changement). 
+- **Organisation de l'espace de travail** : faites glisser et déposez pour réorganiser les onglets, double-cliquez sur l'espace de bande vide pour dupliquer, renommer les titres ou cloner les dispositions des onglets dans le panneau opposé.
 
-- Ouvrez de nouveaux onglets avec `Cmd+T` (`cm_NewTab`), fermez les onglets avec `Cmd+W` (`cm_CloseTab`). 
-- Glisser-déposer pour réorganiser les onglets dans un panneau. 
-- Cliquez avec le bouton droit sur les onglets pour verrouiller les chemins, renommer les titres, fermer les doublons ou dupliquer les onglets sur le panneau opposé.
-
-### [5] Panneaux à double fichier
-
+### [5] Panneaux à double fichier 
 Listes de fichiers virtualisées hautes performances capables de restituer des dossiers contenant des centaines de milliers d'entrées en douceur sans bégaiement de l'interface utilisateur : 
 
-- Tri des colonnes : cliquez sur n'importe quel en-tête (Nom, Ext, Taille, Date, Attributs) pour trier par ordre croissant ou décroissant. 
-- Plusieurs modes d'affichage : vue complète des détails, vue en grille brève, vue en galerie de vignettes, vue en arborescence et vue en branches plates récursive (`Cmd+B`).
+- **Système d'icônes sémantiques Lucide** : icônes vectorielles haute résolution adaptées aux langages de programmation, aux documents, aux médias et aux archives, soutenues par un cache singleton partagé pour un défilement à 60 ips. 
+- **Navigation gestuelle du Trackpad MacBook** : navigation fluide par balayage horizontal à deux doigts (balayage vers la gauche pour l'historique en arrière, balayage vers la droite pour l'historique vers l'avant) avec détection automatique du survol du panneau et préservation du défilement vertical. 
+- **Recherche rapide et masques dans le panneau** : recherche instantanée caractère par caractère prenant en charge la correspondance du pinyin chinois à limites arbitraires, l'isolation en direct par filtre uniquement et les masques d'extension personnalisés (`Cmd+F11` / réinitialisation avec `Cmd+F10`). 
+- **Tri des colonnes et vues** : cliquez sur n'importe quel en-tête pour trier par ordre croissant ou décroissant. Plusieurs modes d'affichage incluent les détails complets, la grille brève, la galerie de vignettes, l'arborescence et la vue de branche plate récursive (`Cmd+B`).
 
 ### [6] Barre d'outils centrale et séparateur déplaçable
 
@@ -162,7 +162,7 @@ Ancré tout en bas de la fenêtre :
 - **Statistiques de sélection** : affiche les métriques en temps réel pour le panneau actif : 
 - Nombre total d'éléments et taille totale du dossier. 
 - Nombre d'éléments sélectionnés et taille d'octet sélectionnée combinée. 
-- **Drive Storage Meter** : indicateur visuel d'utilisation du disque affichant le nom du volume actuellement monté (par exemple, `Macintosh HD`), la capacité totale, le stockage utilisé et le pourcentage d'espace libre restant. 
+- **Drive Storage Meter & Cloud Integration** : indicateur visuel d'utilisation du disque affichant le nom du volume actuellement monté (par exemple, `Macintosh HD`), la capacité totale, le stockage utilisé et le pourcentage d'espace libre restant. Les fournisseurs de stockage cloud synchronisés (OneDrive, Google Drive, iCloud) sont automatiquement identifiés avec une autorisation de signet persistante au niveau de la sécurité.
 
 ---
 

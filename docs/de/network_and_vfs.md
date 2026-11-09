@@ -609,6 +609,16 @@ Einmal verbunden, verhält sich Dropbox wie ein extrem schnelles lokales Laufwer
 - **Sofortige Aktualisierung (`F9` / `Ctrl+R`)**: Rufen Sie auf anderen Geräten vorgenommene Änderungen oder Speicherplatzänderungen mit einem einzigen Tastendruck ab.
 - **Hardware-Sicherheit über Secure Enclave**: OAuth-Tokens und Anmeldedaten werden direkt im **macOS-Systemschlüsselbund** (`ATBCmder_VFS`) mit Schutz durch Apples Secure Enclave verschlüsselt gespeichert.
 
+### 6.3 App Store Sandbox Cloud-Speicher (OneDrive, Google Drive, iCloud) 
+
+In Sandbox-Builds von ATBCmder im Mac App Store wird der direkte Dateisystemzugriff auf Cloud-Synchronisierungsverzeichnisse von Drittanbietern (z. B. Microsoft OneDrive, Google Drive für Desktop, Dropbox und iCloud Drive) durch die Sandbox-Architektur von Apple reguliert: 
+
+- **Lesezeichen mit Sicherheitsbereich**: Synchronisierte Cloud-Verzeichnisse in `~/Library/CloudStorage/OneDrive-*`, `~/Library/CloudStorage/GoogleDrive-*` oder `~/Library/Mobile Documents/com~apple~CloudDocs/` erfordern Zugriffstoken mit Sicherheitsbereich. 
+- **Drive Switcher & Path Integration**: ATBCmder erkennt automatisch konfigurierte lokale Cloud-Verzeichnisse und zeigt sie im Drive Switcher (`Alt+D` / `⌥D`), Laufwerksschaltflächenleisten und Pfad-Breadcrumbs an. 
+- **Persistente Berechtigungserteilungen**: Beim ersten Öffnen eines Cloud-Verzeichnisses zeigt macOS ein Autorisierungsblatt an. Nach der Auswahl speichert ATBCmder das kryptografische, sicherheitsbezogene Lesezeichen in den Benutzereinstellungen und gewährt so nahtlosen, ununterbrochenen Lese-/Schreibzugriff über Anwendungsneustarts hinweg ohne wiederholte Autorisierungsdialoge.
+
+---
+
 ## 7. Quick Connect vs. Verbindungsmanager
 
 ATBCmder bietet zwei flexible Mechanismen für die Verbindung zu Remote-Hosts: **Quick Connect** für schnelle, temporäre Sitzungen und **Connection Manager** für dauerhafte, kategorisierte Server-Lesezeichen.

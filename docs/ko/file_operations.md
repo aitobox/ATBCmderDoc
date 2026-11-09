@@ -39,7 +39,7 @@
 | **영구 삭제** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | 휴지통을 우회하고 파일을 영구적으로 연결 해제합니다. | 
 | **인라인 빠른 이름 바꾸기**| `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | 테이블 행 내부에서 직접 활성 항목의 이름을 바꿉니다. | 
 | **파일 속성** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | UNIX 권한, 타임스탬프 및 메타데이터 대화 상자를 엽니다. | 
-| **폴더 공간 계산**| `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 디렉터리의 재귀 바이트를 계산합니다(선택한 총계의 경우 `Ctrl+L` / `cm_CalculateSpace`). | 
+| **폴더 공간 계산**| `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | 디렉터리의 재귀 바이트를 계산합니다(선택한 총계의 경우 `Ctrl+L` / `cm_CalculateSpace`). | 
 | **백그라운드 큐** | `Toolbar ⚡` | — | `cm_OperationsPanel` | 3큐 백그라운드 전송 모니터를 엽니다. |
 
 ### 시각적 랜드마크: 중간 도구 모음
@@ -428,6 +428,21 @@ ATBCmder의 중첩된 디렉터리 위로 파일을 드래그하는 경우:
 
 ---
 
+### 6.1 데이터 무결성 및 안전한 전송 프로토콜
+
+ATBCmder는 자동 데이터 손실, 절반만 작성된 파일 또는 손상된 링크가 전혀 허용되지 않는 미션 크리티컬 파일 관리를 위해 설계되었습니다. 
+
+- **원자적 준비 및 교체**: 
+기존 파일을 덮어쓰거나 저장할 때 전송 엔진은 원자적 POSIX 대체(`os.replace`)를 수행하기 전에 대상 디렉터리의 임시 파일(`.tmp.atbcmder_*`)에 기록합니다. 작업이 취소되거나 네트워크가 중단되거나 전송 중에 디스크 공간이 소진되는 경우 원본 대상 파일은 손상되지 않고 그대로 유지됩니다. 
+
+- **Symlink 이동 보호**: 
+기호 링크를 이동하면 실제 소스 데이터를 역참조하거나 변경하지 않고도 상대 또는 절대 포인터 대상이 유지됩니다. 파일 시스템 마운트 간에 링크를 이동하면 대상 페이로드를 복사하거나 삭제하는 대신 링크 참조가 깔끔하게 다시 생성됩니다. 
+
+- **아카이브 추출 및 Symlink 순회 보호**: 
+ZIP, TAR 또는 7z 아카이브의 압축을 풀 때 ATBCmder는 디렉터리 탐색 공격(zip-slip 취약성)에 대해 경로 계층을 엄격하게 검증하고 대상 트리 외부를 가리키는 심볼릭 링크를 거부하거나 기존 실제 디렉터리를 덮어쓰려는 시도를 거부합니다.
+
+---
+
 ## 7. ⚡ 전문가 팁 및 심층 분석: 고급 파일 시스템 성능
 
 듀얼 패널 관리를 마스터한다는 것은 macOS의 기본 UNIX 기반을 이해한다는 것을 의미합니다. 다음은 개발자, 시스템 관리자 및 스토리지 전문가를 위해 설계된 강력한 기능입니다.
@@ -515,7 +530,7 @@ macOS는 Darwin UNIX를 기반으로 구축되었으며 두 가지 고유한 링
 *그림 3.2: <DIR>을 정확한 재귀 바이트 크기로 대체하는 비동기 디렉터리 공간 계산.*
 
 - **단일 폴더 크기(`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: 폴더에 휴지 상태인 동안 `Space`을 누릅니다. ATBCmder는 백그라운드에서 폴더의 총 재귀 바이트를 계산하고 `<DIR>`을 정확한 크기(예: `14.2 GB`)로 바꿉니다. 
-- **활성 패널의 모든 폴더(`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
+- **활성 패널의 모든 폴더(`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
 - 현재 패널에 표시되는 모든 디렉토리를 검사합니다. 
 - 정확한 바이트 합계로 테이블 행을 업데이트합니다. 
 - **선택한 누적 디렉터리 크기(`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)**: 
@@ -682,7 +697,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 | **링크 및 공간** | 심볼릭 링크 생성 | *메뉴 파일* | — | `cm_SymLink` | 대상 패널에 심볼릭 링크를 생성합니다. | 
 | | 하드 링크 생성 | *메뉴 파일* | — | `cm_HardLink` | 대상 패널에 하드 링크를 생성합니다. | 
 | | 속성 / Chmod | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | 권한, 8진수 chmod 및 타임스탬프를 엽니다. | 
-| | 공간 계산 | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 재귀 디렉터리 크기를 계산합니다(선택한 총계에 대해 `Ctrl+L` / `cm_CalculateSpace`). | 
+| | 공간 계산 | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | 재귀 디렉터리 크기를 계산합니다(선택한 총계에 대해 `Ctrl+L` / `cm_CalculateSpace`). | 
 | **전송 대기열**| 백그라운드 큐 | `Toolbar ⚡` | — | `cm_OperationsPanel` | 3-큐 백그라운드 전송 모니터를 엽니다. |
 
 --- 

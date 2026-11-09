@@ -51,7 +51,7 @@ La matrice de décision suivante mappe les objectifs courants de gestion de fich
 | **Accorder l'accès au système de fichiers**| Menu : Fichier / Aide | — | `cm_GrantFilesystemAccess`| Lance l’assistant d’autorisation macOS App Sandbox. | 
 | **Actualisation manuelle du panneau** | `Ctrl+R` / `⌃R` ou `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Force une relecture immédiate du répertoire à partir du disque. | 
 | **Lancer le terminal du système** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Génère le terminal macOS au chemin actuel du panneau. | 
-| **Calculer l'espace du dossier** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcule la taille d'octet récursive globale (`Space` pour un seul, `Ctrl+L` pour le total sélectionné). | 
+| **Calculer l'espace du dossier** | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcule la taille d'octet récursive globale (`Space` pour un seul, `Ctrl+L` pour le total sélectionné). | 
 | **Effacement sécurisé (Broyage définitif)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Écrasement multi-passes et suppression permanente des fichiers. | 
 
 ---
@@ -297,6 +297,57 @@ La matrice de décision suivante mappe les objectifs courants de gestion de fich
 > [!TIP] 
 > **⚡ Astuce de pro : Identification des fichiers en double identiques via des sommes de contrôle** : 
 > Si vous pensez que plusieurs fichiers volumineux sont des doublons exacts, sélectionnez-les et appuyez sur **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Choisissez **SHA-256** et cliquez sur Calculer. Les résumés de hachage correspondants confirment 100 % des doublons binaires, vous permettant de supprimer les copies superflues en toute confiance. 
+
+---
+
+### 2.6 Recette 6 : Protéger les espaces de travail avec le verrouillage total des onglets de style Commander
+
+Lors de la gestion de projets critiques, de montages de serveur ou de référentiels, une navigation accidentelle hors de votre répertoire de travail principal perturbe votre flux. ATBCmder fournit un verrouillage d'onglet compatible avec Total Commander : 
+
+1. **Verrouillage d'un onglet (`cm_SetTabOptionLock`)** : 
+- Cliquez avec le bouton droit sur n'importe quel en-tête d'onglet et sélectionnez **Verrouiller cet onglet**. 
+- Un badge astérisque `*` apparaît immédiatement dans le titre de l'onglet (par exemple, `* WebApp`). 
+- Le répertoire de base est gelé. Double-cliquer sur n'importe quel dossier ou ouvrir une archive à l'intérieur de cet onglet laisse l'onglet verrouillé intact et génère automatiquement l'emplacement cible dans un **onglet adjacent** immédiatement à droite. 
+2. **Verrouillage avec sous-répertoires autorisé (`cm_SetTabOptionLockWithSubdirs`)** : 
+- Cliquez avec le bouton droit sur l'onglet et choisissez **Verrouillé, mais les modifications de répertoire sont autorisées**. 
+- Vous pouvez parcourir librement les sous-répertoires imbriqués dans l'onglet actuel. 
+- Cependant, passer à un autre onglet, cliquer à nouveau sur l'en-tête de l'onglet ou accéder au bouton racine réinitialise automatiquement l'onglet à son chemin de base désigné. 
+3. **Déverrouillage (`cm_SetTabOptionNormal`)** : 
+- Cliquez avec le bouton droit sur l'onglet et sélectionnez **Déverrouiller l'onglet** pour revenir au comportement standard. 
+
+--- 
+
+### 2.7 Recette 7 : Filtrage des fichiers actifs par masque d'extension personnalisé (`Cmd+F11`)
+
+Lorsqu'un répertoire contient des centaines de fichiers avec des extensions variables (par exemple, code source, binaires compilés, journaux, ressources), vous devez souvent vous concentrer sur un sous-ensemble spécifique sans perdre la navigation dans les dossiers : 
+
+1. **Activer le filtre personnalisé (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)** : 
+- Appuyez sur **`Cmd+F11`** (`⌘F11`). 
+- Une boîte de dialogue apparaît pré-remplie avec le masque actif ou utilisé en dernier (par exemple, `*.py;*.md` ou `*.jpg;*.png`). 
+- Entrez les modèles globaux souhaités séparés par des points-virgules et appuyez sur `Enter`. 
+2. **Navigation filtrée en direct** : 
+- Le panneau masque immédiatement tous les fichiers qui ne correspondent pas tout en gardant les sous-répertoires et le parent `..` visibles. 
+- Un indicateur clair (`Mask: *.py;*.md`) apparaît sur la barre d'état du panneau. 
+- Vous pouvez entrer et sortir des sous-répertoires ; le masque reste actif tout au long de la navigation. 
+3. **Réinitialiser tous les fichiers (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)** : 
+- Appuyez sur **`Cmd+F10`** (`⌘F10`) à tout moment pour effacer le masque et restaurer la liste complète des fichiers. 
+
+--- 
+
+### 2.8 Recette 8 : Activation de la navigation dans l'historique du trackpad à deux doigts du MacBook
+
+Si vous travaillez sur un MacBook ou utilisez un Magic Trackpad, vous pouvez parcourir l'historique de vos dossiers à l'aide de gestes de balayage horizontal fluides à deux doigts : 
+
+1. **Activer la navigation sur le trackpad** : 
+- Appuyez sur **`Cmd+,`** (`⌘,`) pour ouvrir les **Préférences**. 
+- Accédez à la page **Vues de fichiers**. 
+- Dans la section **Navigation sur le trackpad**, cochez **Faites glisser votre doigt vers la gauche/droite avec deux doigts pour reculer/avancer dans l'historique des dossiers** (`view.trackpad_swipe_navigation`). 
+- Cliquez sur **OK**. 
+2. **Navigation gestuelle sans effort** : 
+- Déplacez votre pointeur sur l'un ou l'autre panneau (aucun clic requis). 
+- **Faites glisser vers la gauche avec deux doigts** : revient dans l'historique du répertoire (`cm_ViewHistoryPrev`). 
+- **Faites glisser vers la droite avec deux doigts** : navigue vers l'avant dans l'historique du répertoire (`cm_ViewHistoryNext`). 
+- Le filtre à dominance horizontale garantit que le défilement vertical de la liste n'est jamais interrompu accidentellement.
 
 ---
 
@@ -618,6 +669,9 @@ Appuyez sur **`Ctrl+J`** (`⌃J`) ou exécutez la commande **`cm_RunTerm`**. ATB
 #### Q6 : ATBCmder prend-il en charge les Mac Intel (x86_64) ?
 
 Oui ! Depuis la version 1.8.0, ATBCmder fournit des packages binaires universels prenant en charge nativement les Mac **Apple Silicon (M1/M2/M3/M4, architecture ARM64)** et **Intel (x86_64)** sous macOS 12.0 ou version ultérieure.
+#### Q7 : Comment fonctionne la recherche rapide en pinyin chinois ? 
+Lorsque vous parcourez des dossiers contenant des noms chinois, la saisie dans le panneau fait correspondre à la fois les consonnes initiales et les syllabes pinyin complètes commençant à n'importe quelle limite de caractère chinois. Par exemple, la saisie de `gz` correspond à `2024工作总结.docx` et `【公司】工资表.xlsx`. Si vous préférez masquer les fichiers qui ne correspondent pas lors de la saisie, ouvrez **Préférences ➔ Recherche rapide** et activez **Afficher uniquement les fichiers/répertoires correspondants (mode Filtre)** (`quick_search.filter_only`).
+
 
 ---
 

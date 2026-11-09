@@ -356,6 +356,34 @@ Mit ATBCmder können Sie benutzerdefinierte Zeitstempel-Formatierungszeichenfolg
 
 ---
 
+### 4.5 Semantic Lucide-Dateitypsymbole und gemeinsamer Singleton-Cache
+
+ATBCmder verfügt über ein modernisiertes Vektorsymbol-Subsystem mit hoher DPI (`fs_icons.py`), das für gestochen scharfe Bilder auf Retina-Displays und extreme Rendering-Geschwindigkeit entwickelt wurde: 
+
+- **Lucide Vector Icon Library**: Generische Symbole mit niedriger Auflösung werden durch über 200 maßgeschneiderte Lucide-Vektorsymbole ersetzt, die automatisch Programmiersprachen (Python, Rust, Go, TypeScript, C/C++, Swift), Dokumenten (PDF, Markdown, Office), Medien (Audio, Video, Vektoren, RAW-Fotos), Datenbanken und Archiven zugeordnet werden. 
+- **Gemeinsam genutzte Singleton-Cache-Architektur**: 
+– Anstatt doppelte `QIcon`- und `QPixmap`-Instanzen für jede sichtbare Tabellenzeile zu erstellen, bündelt ATBCmder Symbolinstanzen in einem gemeinsamen globalen Cache, der nach Dateierweiterung und MIME-Typ verschlüsselt ist. 
+
+- Hält den Speicheraufwand vernachlässigbar gering (unter 15 MB, selbst beim Rendern Tausender verschiedener Dateitypen). 
+- Eliminiert Statistikaufrufe des Haupt-Thread-Dateisystems während des Scrollens und sorgt so für eine reibungslose Scrollleistung mit 60 Bildern pro Sekunde durch Verzeichnisse mit mehr als 100.000 Dateien. 
+
+--- 
+
+### 4.6 MacBook Trackpad Horizontale Wischnavigation
+
+Für macOS-Benutzer, die auf MacBooks oder mit Magic Trackpads arbeiten, bietet ATBCmder eine native horizontale Zwei-Finger-Gestennavigation: 
+
+- **Zwei-Finger-Wischen nach links**: Geht im Verzeichnisverlauf zurück (`cm_ViewHistoryPrev` / `Cmd+[`). 
+- **Zwei-Finger-Wischen nach rechts**: Geht im Verzeichnisverlauf vorwärts (`cm_ViewHistoryNext` / `Cmd+]`). 
+- **Ergonomie und Sicherheit**: 
+- **Horizontale Dominanzprüfung**: Erkennt automatisch, ob eine Geste hauptsächlich horizontal oder vertikal ist, und verhindert so versehentliche Verlaufssprünge beim Scrollen durch Dateilisten. 
+- **Hover Panel Focus**: Durch Wischen über eines der Panels wird die Navigation automatisch zum Panel unter dem Cursor geleitet, ohne dass ein vorheriger Klick erforderlich ist. 
+- **Momentum-Filter**: Blockiert unerwünschte mehrseitige Auslöser durch die Trägheit des Trackpads. 
+- **Konfiguration**: 
+- Schalten Sie **Einstellungen** → **Dateiansichten** → **Trackpad-Navigation** ein (`view.trackpad_swipe_navigation`, Standard: aus).
+
+---
+
 ## 5. Automatische Aktualisierung des Dateisystems und Überwachung der Empfindlichkeit
 
 Bei der Zusammenarbeit an gemeinsam genutzten Codebasen, beim Herunterladen von Browser-Assets oder beim Ausführen von Kompilierungsaufgaben im Hintergrund ändern sich die Verzeichnisinhalte ständig. Die Seite **Auto Refresh** (`page_auto_refresh.py`) gleicht die Genauigkeit der Benutzeroberfläche in Echtzeit mit dem CPU- und Batterieverbrauch ab. 
@@ -654,6 +682,20 @@ ATBCmder enthält umfangreiche Tooltips für schwebende Metadaten, die Dateiabme
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
 *Abbildung 7.6: Umfangreiche Metadaten-Tooltips, die detaillierte Dateieigenschaften anzeigen, wenn Sie mit der Maus darüber fahren.* 
+
+---
+
+### Profi-Tipp 5: Leistungsstarke Pinyin-Schnellsuche und Live-Filterung 
+Unter **Einstellungen ➔ Schnellsuche** können Power-User die Buchstabensuche im Panel an ihre Sprache und Filtergewohnheiten anpassen: 
+
+- **Arbitrary-Boundary Pinyin Matching (`quick_search.pinyin_search`)**: 
+- Entspricht chinesischen Schriftzeichen nach Anfangskonsonanten oder vollständigen Pinyin-Silben, beginnend an *einer* beliebigen Zeichengrenze im Namen. 
+- *Beispiel*: Die Eingabe von `gz` entspricht `2024工作总结.docx` und `【公司】工资表.xlsx`, ohne dass eine Übereinstimmung ab dem ersten Zeichen des Dateinamens erforderlich ist. 
+– Standardmäßig mithilfe einer im Arbeitsspeicher zwischengespeicherten Nachschlagetabelle aktiviert. 
+
+- **Nur-Live-Filtermodus (`quick_search.filter_only`)**: 
+- Wenn Sie **Nur übereinstimmende Dateien/Verzeichnisse anzeigen (Filtermodus)** aktivieren, werden nicht übereinstimmende Elemente direkt während der Eingabe ausgeblendet. 
+- Im Gegensatz zur Standard-Schnellsuche (bei der lediglich der Auswahlcursor zwischen sichtbaren Dateien verschoben wird) isoliert der Filtermodus übereinstimmende Zeilen, sodass Stapelvorgänge – wie **Alle auswählen** (`Cmd+A`), **Kopieren** (`F5`), **Verschieben** (`F6`) und **Packen** (`Alt+F5`) – ausschließlich auf die übereinstimmenden Elemente angewendet werden.
 
 ---
 

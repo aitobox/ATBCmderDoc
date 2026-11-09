@@ -354,6 +354,33 @@ ATBCmder permite que você defina strings de formatação de carimbo de data/hor
 
 ---
 
+### 4.5 Ícones de tipo de arquivo Lucide semântico e cache singleton compartilhado
+
+ATBCmder apresenta um subsistema de ícones vetoriais modernizado e de alto DPI (`fs_icons.py`) projetado para visuais nítidos em telas Retina e extrema velocidade de renderização: 
+
+- **Biblioteca de ícones vetoriais Lucide**: ícones genéricos de baixa resolução são substituídos por mais de 200 símbolos vetoriais Lucide personalizados, mapeados automaticamente para linguagens de programação (Python, Rust, Go, TypeScript, C/C++, Swift), documentos (PDF, Markdown, Office), mídia (áudio, vídeo, vetores, fotos RAW), bancos de dados e arquivos. 
+- **Arquitetura de cache singleton compartilhada**: 
+- Em vez de criar instâncias duplicadas `QIcon` e `QPixmap` para cada linha visível da tabela, o ATBCmder agrupa instâncias de ícones em um cache global compartilhado codificado por extensão de arquivo e tipo MIME. 
+- Mantém a sobrecarga de memória insignificante (menos de 15 MB, mesmo ao renderizar milhares de tipos de arquivos diversos). 
+- Elimina chamadas de estatísticas do sistema de arquivos do thread principal durante a rolagem, garantindo um desempenho de rolagem suave de 60fps em diretórios contendo mais de 100.000 arquivos. 
+
+--- 
+
+### 4.6 Navegação deslizante horizontal do Trackpad do MacBook
+
+Para usuários do macOS que trabalham em MacBooks ou com Magic Trackpads, o ATBCmder fornece navegação horizontal nativa por gestos com dois dedos: 
+
+- **Deslizar com dois dedos para a esquerda**: retrocede no histórico do diretório (`cm_ViewHistoryPrev` / `Cmd+[`). 
+- **Deslizar com dois dedos para a direita**: avança no histórico do diretório (`cm_ViewHistoryNext` / `Cmd+]`). 
+- **Ergonomia e Segurança**: 
+- **Verificação de dominância horizontal**: detecta automaticamente se um gesto é principalmente horizontal ou vertical, evitando saltos acidentais no histórico ao rolar pelas listas de arquivos. 
+- **Foco no painel flutuante**: deslizar sobre qualquer painel direciona automaticamente a navegação para o painel abaixo do cursor sem exigir um clique prévio. 
+- **Filtro de Momentum**: bloqueia gatilhos falsos de várias páginas devido à inércia do trackpad. 
+- **Configuração**: 
+- Ative **Preferências** → **Visualizações de arquivos** → **Navegação no trackpad** (`view.trackpad_swipe_navigation`, padrão: desativado).
+
+---
+
 ## 5. Atualização automática do sistema de arquivos e sensibilidade de monitoramento
 
 Ao colaborar em bases de código compartilhadas, baixar recursos do navegador ou executar tarefas de compilação em segundo plano, o conteúdo do diretório muda constantemente. A página **Atualização automática** (`page_auto_refresh.py`) equilibra a precisão da IU em tempo real com o consumo de CPU e bateria. 
@@ -652,6 +679,19 @@ ATBCmder inclui dicas de ferramentas de metadados flutuantes que exibem dimensõ
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
 *Figura 7.6: Dicas de metadados avançados exibindo propriedades detalhadas do arquivo ao passar o mouse.* 
+
+---
+
+### Dica profissional 5: pesquisa rápida em Pinyin de alto desempenho e filtragem ao vivo 
+Em **Preferências ➔ Pesquisa rápida**, usuários avançados podem personalizar a pesquisa de letras no painel de acordo com seu idioma e hábitos de filtragem: 
+
+- **Correspondência Pinyin com limite arbitrário (`quick_search.pinyin_search`)**: 
+- Corresponde caracteres chineses por consoantes iniciais ou sílabas pinyin completas começando em *qualquer* limite de caractere no nome. 
+- *Exemplo*: Digitar `gz` corresponde a `2024工作总结.docx` e `【公司】工资表.xlsx` sem a necessidade de corresponder desde o primeiro caractere do nome do arquivo. 
+- Habilitado por padrão usando uma tabela de pesquisa em cache na memória. 
+- **Modo somente filtro ao vivo (`quick_search.filter_only`)**: 
+- Ativar **Mostrar apenas arquivos/diretórios correspondentes (modo de filtro)** oculta itens não correspondentes diretamente enquanto você digita. 
+- Ao contrário da Pesquisa rápida padrão (que apenas move o cursor de seleção entre os arquivos visíveis), o modo Filtro isola as linhas correspondentes para que operações em lote - como **Selecionar tudo** (`Cmd+A`), **Copiar** (`F5`), **Mover** (`F6`) e **Embalar** (`Alt+F5`) - operem estritamente no itens correspondentes.
 
 ---
 

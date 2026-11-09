@@ -51,7 +51,7 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 | **Conceder acceso al sistema de archivos**| Menú: Archivo / Ayuda | — | `cm_GrantFilesystemAccess`| Inicia el asistente de permisos de la aplicación Sandbox de macOS. | 
 | **Actualización manual del panel** | `Ctrl+R` / `⌃R` o `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Fuerza una relectura inmediata del directorio desde el disco. | 
 | **Terminal del sistema de lanzamiento** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Genera la terminal macOS en la ruta del panel actual. | 
-| **Calcular espacio en carpeta** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcula el tamaño de byte recursivo agregado (`Space` para un solo, `Ctrl+L` para el total seleccionado). | 
+| **Calcular espacio en carpeta** | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcula el tamaño de byte recursivo agregado (`Space` para un solo, `Ctrl+L` para el total seleccionado). | 
 | **Borrado seguro (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sobrescritura de múltiples pasadas y eliminación permanente de archivos. | 
 
 ---
@@ -297,6 +297,57 @@ La siguiente matriz de decisiones asigna objetivos comunes de administración de
 > [!TIP] 
 > **⚡ Consejo profesional: identificación de archivos duplicados idénticos mediante sumas de verificación**: 
 > Si sospecha que varios archivos grandes son duplicados exactos, selecciónelos y presione **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Elija **SHA-256** y haga clic en Calcular. Los resúmenes de hash coincidentes confirman duplicados binarios al 100%, lo que le permite eliminar copias superfluas con total confianza. 
+
+---
+
+### 2.6 Receta 6: Protección de espacios de trabajo con bloqueo de pestañas estilo Total Commander
+
+Al administrar proyectos críticos, montajes de servidores o repositorios, navegar accidentalmente fuera de su directorio de trabajo principal interrumpe su flujo. ATBCmder proporciona bloqueo de pestañas compatible con Total Commander: 
+
+1. **Bloqueo de una pestaña (`cm_SetTabOptionLock`)**: 
+- Haga clic con el botón derecho en el encabezado de cualquier pestaña y seleccione **Bloquear esta pestaña**. 
+- Aparece inmediatamente un asterisco `*` en el título de la pestaña (por ejemplo, `* WebApp`). 
+- El directorio base está congelado. Al hacer doble clic en cualquier carpeta o abrir un archivo dentro de esta pestaña, la pestaña bloqueada se deja intacta y genera automáticamente la ubicación de destino en una **pestaña adyacente** inmediatamente a la derecha. 
+2. **Bloqueo con subdirectorios permitidos (`cm_SetTabOptionLockWithSubdirs`)**: 
+- Haga clic derecho en la pestaña y elija **Bloqueado, pero se permiten cambios de directorio**. 
+- Puede navegar libremente en subdirectorios anidados dentro de la pestaña actual. 
+- Sin embargo, cambiar a otra pestaña, volver a hacer clic en el encabezado de la pestaña o navegar al botón raíz restablece automáticamente la pestaña a su ruta base designada. 
+3. **Desbloqueo (`cm_SetTabOptionNormal`)**: 
+- Haga clic derecho en la pestaña y seleccione **Desbloquear pestaña** para volver al comportamiento estándar. 
+
+--- 
+
+### 2.7 Receta 7: Filtrado de archivos activos por máscara de extensión personalizada (`Cmd+F11`)
+
+Cuando un directorio contiene cientos de archivos con diferentes extensiones (por ejemplo, código fuente, binarios compilados, registros, activos), a menudo es necesario centrarse en un subconjunto específico sin perder la navegación por carpetas: 
+
+1. **Activar filtro personalizado (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**: 
+- Presione **`Cmd+F11`** (`⌘F11`). 
+- Aparece un cuadro de diálogo precargado con la máscara activa o utilizada por última vez (por ejemplo, `*.py;*.md` o `*.jpg;*.png`). 
+- Ingrese los patrones globales que desee separados por punto y coma y presione `Enter`. 
+2. **Navegación filtrada en vivo**: 
+- El panel oculta inmediatamente todos los archivos que no coinciden mientras mantiene visibles los subdirectorios y el padre `..`. 
+- Aparece un indicador claro (`Mask: *.py;*.md`) en la barra de estado del panel. 
+- Puedes entrar y salir de subdirectorios; la máscara permanece activa durante la navegación. 
+3. **Restablecer todos los archivos (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**: 
+- Presione **`Cmd+F10`** (`⌘F10`) en cualquier momento para borrar la máscara y restaurar la lista completa de archivos. 
+
+--- 
+
+### 2.8 Guía 8: Habilitación de la navegación por el historial del trackpad con dos dedos del MacBook
+
+Si trabaja en una MacBook o usa un Magic Trackpad, puede navegar por el historial de carpetas usando gestos fluidos de deslizamiento horizontal con dos dedos: 
+
+1. **Habilitar navegación con trackpad**: 
+- Presione **`Cmd+,`** (`⌘,`) para abrir **Preferencias**. 
+- Vaya a la página **Vistas de archivos**. 
+- En la sección **Navegación con trackpad**, marca **Deslizar hacia la izquierda/derecha con dos dedos para retroceder/avanzar en el historial de carpetas** (`view.trackpad_swipe_navigation`). 
+- Haga clic en **Aceptar**. 
+2. **Navegación por gestos sin esfuerzo**: 
+- Mueva el puntero sobre cualquiera de los paneles (no es necesario hacer clic). 
+- **Deslizar hacia la izquierda con dos dedos**: retrocede en el historial del directorio (`cm_ViewHistoryPrev`). 
+- **Deslizar hacia la derecha con dos dedos**: navega hacia adelante en el historial del directorio (`cm_ViewHistoryNext`). 
+- El filtro de dominancia horizontal garantiza que el desplazamiento vertical de la lista nunca se interrumpa accidentalmente.
 
 ---
 
@@ -617,6 +668,9 @@ Presione **`Ctrl+J`** (`⌃J`) o ejecute el comando **`cm_RunTerm`**. ATBCmder g
 #### P6: ¿ATBCmder es compatible con Mac Intel (x86_64)?
 
 ¡Sí! A partir de la versión 1.8.0, ATBCmder proporciona paquetes binarios universales compatibles de forma nativa con computadoras Mac **Apple Silicon (M1/M2/M3/M4, arquitectura ARM64)** e **Intel (x86_64)** con macOS 12.0 o superior.
+#### P7: ¿Cómo funciona la búsqueda rápida en chino Pinyin? 
+Al explorar carpetas que contienen nombres chinos, escribir en el panel coincide tanto con las consonantes iniciales como con las sílabas pinyin completas que comienzan en cualquier límite de caracteres chinos. Por ejemplo, escribir `gz` coincide con `2024工作总结.docx` y `【公司】工资表.xlsx`. Si prefiere ocultar los archivos que no coinciden mientras escribe, abra **Preferencias ➔ Búsqueda rápida** y habilite **Mostrar solo archivos/directorios coincidentes (modo de filtro)** (`quick_search.filter_only`).
+
 
 ---
 

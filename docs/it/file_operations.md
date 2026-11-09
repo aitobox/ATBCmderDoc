@@ -39,7 +39,7 @@ I file manager ortodossi utilizzano un modello direzionale **Sorgente ➔ Destin
 | **Eliminazione definitiva** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | Ignora il cestino e scollega permanentemente i file. | 
 | **Rinomina rapida in linea**| `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | Rinomina l'elemento attivo direttamente all'interno della riga della tabella. | 
 | **Proprietà file** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Apre le autorizzazioni UNIX, i timestamp e la finestra di dialogo dei metadati. | 
-| **Calcola lo spazio della cartella**| `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calcola i byte ricorsivi per le directory (`Ctrl+L` / `cm_CalculateSpace` per il totale selezionato). | 
+| **Calcola lo spazio della cartella**| `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Calcola i byte ricorsivi per le directory (`Ctrl+L` / `cm_CalculateSpace` per il totale selezionato). | 
 | **Coda in background** | `Toolbar ⚡` | — | `cm_OperationsPanel` | Apre il monitor di trasferimento in background a 3 code. |
 
 ### Punto di riferimento visivo: la barra degli strumenti centrale
@@ -428,6 +428,21 @@ Per processi batch automatizzati di grandi dimensioni o backup non presidiati, �
 
 ---
 
+### 6.1 Integrità dei dati e protocolli di trasferimento sicuro
+
+ATBCmder è progettato per la gestione di file mission-critical in cui la perdita silenziosa di dati, file scritti a metà o collegamenti danneggiati sono completamente inaccettabili: 
+
+- **Stadiazione e sostituzione atomica**: 
+Quando si sovrascrive o si salvano file esistenti, il motore di trasferimento scrive in fasi un file temporaneo (`.tmp.atbcmder_*`) nella directory di destinazione prima di eseguire una sostituzione POSIX atomica (`os.replace`). Se un'operazione viene annullata, la rete si interrompe o lo spazio su disco si esaurisce durante il trasferimento, il file di destinazione originale rimane completamente intatto e non danneggiato. 
+
+- **Protezione dallo spostamento dei collegamenti simbolici**: 
+Lo spostamento dei collegamenti simbolici preserva la destinazione del puntatore relativo o assoluto senza dereferenziare o alterare i dati di origine reali. Lo spostamento di un collegamento tra i montaggi del file system ricrea il riferimento al collegamento in modo pulito anziché copiare o eliminare il payload di destinazione. 
+
+- **Estrazione archivio e protezione trasversale collegamento simbolico**: 
+Quando si decomprimono archivi ZIP, TAR o 7z, ATBCmder convalida rigorosamente le gerarchie di percorso contro gli attacchi di directory traversal (vulnerabilità zip-slip) e rifiuta i collegamenti simbolici che puntano all'esterno dell'albero di destinazione o che tentano di sovrascrivere le directory reali esistenti.
+
+---
+
 ## 7. ⚡ Suggerimenti degli esperti e approfondimento: potenza avanzata del file system
 
 Padroneggiare la gestione a doppio pannello significa comprendere il substrato UNIX sottostante di macOS. Ecco le funzionalità avanzate progettate per sviluppatori, amministratori di sistema e professionisti dello storage.
@@ -515,7 +530,7 @@ Per impostazione predefinita, i file manager mostrano le dimensioni delle direct
 *Figura 3.2: Il calcolo asincrono dello spazio delle directory sostituisce <DIR> con l'esatta dimensione ricorsiva in byte.*
 
 - **Dimensione cartella singola (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: premi `Space` mentre ti trovi su una cartella qualsiasi. ATBCmder calcola i byte ricorsivi totali della cartella in background e sostituisce `<DIR>` con la dimensione esatta (ad esempio, `14.2 GB`). 
-- **Tutte le cartelle nel pannello attivo (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
+- **Tutte le cartelle nel pannello attivo (`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
 - Esegue la scansione di ogni directory visibile nel pannello corrente. 
 - Aggiorna le righe della tabella con totali di byte precisi. 
 - **Dimensione cumulativa della directory selezionata (`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)**: 
@@ -682,7 +697,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 | **Link e spazio** | Crea collegamento simbolico | *Menu File* | — | `cm_SymLink` | Crea un collegamento simbolico nel pannello di destinazione. | 
 | | Crea collegamento reale | *Menu File* | — | `cm_HardLink` | Crea un collegamento reale nel pannello di destinazione. | 
 | | Proprietà / Chmod | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Apre autorizzazioni, chmod ottale e timestamp. | 
-| | Calcola lo spazio | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calcola le dimensioni della directory ricorsiva (`Ctrl+L` / `cm_CalculateSpace` per il totale selezionato). | 
+| | Calcola lo spazio | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Calcola le dimensioni della directory ricorsiva (`Ctrl+L` / `cm_CalculateSpace` per il totale selezionato). | 
 | **Coda di trasferimento**| Coda in background | `Toolbar ⚡` | — | `cm_OperationsPanel` | Apre il monitor di trasferimento in background a 3 code. |
 
 --- 

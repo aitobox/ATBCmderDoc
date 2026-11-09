@@ -119,20 +119,20 @@ Posizionata sopra ogni pannello di file, la barra del percorso breadcrumb consen
 - **Apri nel terminale**: avvia macOS Terminale direttamente all'interno della cartella (`open -a Terminale`). 
 - **Modifica diretta del percorso (`BreadcrumbLineEdit`)**: fai doppio clic sullo spazio vuoto a destra della catena breadcrumb. La barra si converte istantaneamente in un campo di testo modificabile in cui puoi incollare o digitare qualsiasi percorso (ad esempio archivi `/var/log`, `~/Library` o `vfs://`). Premi `Enter` per navigare o `Esc` per annullare.
 
-### [4] Barra delle schede delle cartelle
+### [4] Barra delle schede delle cartelle 
+Ogni pannello mantiene un set indipendente di schede create con `MacNativeTabBar`: 
 
-Ogni pannello mantiene una serie indipendente di schede: 
+- **Creazione di schede adiacenti**: l'apertura di nuove schede con `Cmd+T` (`cm_NewTab`) inserisce la nuova scheda immediatamente a destra della scheda attiva anziché alla fine della striscia. Chiudi le schede con `Cmd+W` (`cm_CloseTab`). 
+- **Blocco totale delle schede Commander**: fai clic con il pulsante destro del mouse sulle schede per scegliere **Blocca questa scheda** (congela la directory di base con un asterisco `*`; la navigazione nella cartella secondaria si apre nelle schede adiacenti) o **Bloccata, ma sono consentite modifiche alla directory** (esplorazione delle sottocartelle sul posto con ripristino automatico alla base al passaggio). 
+- **Organizzazione dello spazio di lavoro**: trascina e rilascia per riordinare le schede, fai doppio clic sullo spazio vuoto per duplicare, rinominare i titoli o clonare i layout delle schede nel pannello opposto.
 
-- Apri nuove schede con `Cmd+T` (`cm_NewTab`), chiudi le schede con `Cmd+W` (`cm_CloseTab`). 
-- Trascina e rilascia per riordinare le schede all'interno di un pannello. 
-- Fai clic con il pulsante destro del mouse sulle schede per bloccare percorsi, rinominare titoli, chiudere duplicati o duplicare schede nel pannello opposto.
+### [5] Pannelli a doppio file 
+Elenchi di file virtualizzati ad alte prestazioni in grado di eseguire il rendering di cartelle con centinaia di migliaia di voci senza intoppi dell'interfaccia utente: 
 
-### [5] Pannelli a doppio file
-
-Elenchi di file virtualizzati ad alte prestazioni in grado di eseguire il rendering di cartelle con centinaia di migliaia di voci in modo fluido senza interruzioni dell'interfaccia utente: 
-
-- Ordinamento delle colonne: fare clic su qualsiasi intestazione (Nome, Esteso, Dimensione, Data, Attributi) per ordinare in modo crescente o decrescente. 
-- Modalità di visualizzazione multiple: visualizzazione dettagli completi, visualizzazione griglia breve, visualizzazione galleria miniature, visualizzazione albero e visualizzazione ricorsiva ramo piatto (`Cmd+B`).
+- **Sistema di icone semantiche Lucide**: icone vettoriali ad alto DPI su misura per linguaggi di programmazione, documenti, media e archivi, supportate da una cache singleton condivisa per lo scorrimento a 60 fps. 
+- **Navigazione gestuale del trackpad del MacBook**: navigazione fluida con scorrimento orizzontale con due dita (scorri a sinistra per la cronologia indietro, scorri a destra per la cronologia avanti) con rilevamento automatico del passaggio del mouse sul pannello e conservazione dello scorrimento verticale. 
+- **Ricerca rapida e maschere nel pannello**: ricerca istantanea carattere per carattere che supporta la corrispondenza Pinyin cinese con confini arbitrari, isolamento live solo filtro e maschere di estensione personalizzate (`Cmd+F11` / reimposta con `Cmd+F10`). 
+- **Ordinamento e visualizzazioni delle colonne**: fai clic su qualsiasi intestazione per ordinare in modo crescente o decrescente. Molteplici modalità di visualizzazione includono Dettagli completi, Griglia breve, Galleria miniature, Visualizzazione albero e Visualizzazione ramo piatto ricorsiva (`Cmd+B`).
 
 ### [6] Barra degli strumenti centrale e divisore trascinabile
 

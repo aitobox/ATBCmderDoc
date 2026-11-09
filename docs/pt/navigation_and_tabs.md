@@ -42,6 +42,15 @@ No ATBCmder, cada painel opera como um mecanismo de navegação autônomo equipa
 | **Histórico Voltar** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Volte para a pasta visitada anteriormente. | 
 | **Histórico Avançar** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Avance no histórico do diretório. | 
 | **Lista suspensa de histórico** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Exibir lista suspensa do histórico. | 
+| **Navegação deslizante no trackpad** | Deslizar com dois dedos para a esquerda/direita | — | `cm_ViewHistoryPrev` / `Next` | Deslizar o histórico para trás/avançar no trackpad (alternar nas visualizações de arquivos). | 
+| **Mostrar todos os arquivos** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Limpe a máscara de arquivo ativa e mostre todos os arquivos. | 
+| **Mostrar arquivos personalizados** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtre arquivos visíveis por máscara glob (*.py;*.md). |
+| **Navegação deslizante no trackpad** | Deslizar com dois dedos para a esquerda/direita | — | `cm_ViewHistoryPrev` / `Next` | Deslizar o histórico para trás/avançar no trackpad (alternar nas visualizações de arquivos). | 
+| **Mostrar todos os arquivos** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Limpe a máscara de arquivo ativa e mostre todos os arquivos. | 
+| **Mostrar arquivos personalizados** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtre arquivos visíveis por máscara glob (*.py;*.md). |
+| **Navegação deslizante no trackpad** | Deslizar com dois dedos para a esquerda/direita | — | `cm_ViewHistoryPrev` / `Next` | Deslizar o histórico para trás/avançar no trackpad (alternar nas visualizações de arquivos). | 
+| **Mostrar todos os arquivos** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Limpe a máscara de arquivo ativa e mostre todos os arquivos. | 
+| **Mostrar arquivos personalizados** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtre arquivos visíveis por máscara glob (*.py;*.md). |
 | **Lista de Unidade/Volume (Esquerda/Direita)** | `⌥F1` / `⌥F2` (`⌥D`) | `Alt+F1` / `Alt+F2` (`Alt+D`) | `cm_LeftOpenDrives` / `cm_RightOpenDrives` (`cm_Drives`) | Abra o menu do drive para o painel esquerdo ou direito (`Alt+D` para o painel ativo). | 
 | **Pesquisa rápida** | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | Abra a sobreposição de pesquisa em tempo real no painel. | 
 
@@ -237,6 +246,21 @@ Cada painel registra sua própria pilha de histórico de caminho cronológico:
 ![Menu suspenso de histórico](images/directory_history_dropdown.png)  
 *Figura 2.2: Menu suspenso do histórico de diretórios (`Alt+F8` / `Ctrl+Down`) mostrando caminhos de pastas visitados recentemente.*
 
+### Navegação deslizante horizontal do trackpad do MacBook 
+
+Para usuários de laptops MacBook e configurações do Apple Magic Trackpad, o ATBCmder reconhece nativamente gestos de deslizamento horizontal de dois dedos na janela de visualização da lista de arquivos ativos ou inativos: 
+
+- **Deslizar para a esquerda**: navega **Voltar** no histórico da pasta (`cm_ViewHistoryPrev`). 
+- **Deslizar para a direita**: navega **Avançar** no histórico da pasta (`cm_ViewHistoryNext`). 
+
+O mecanismo de gestos foi projetado para proporcionar ergonomia perfeita ao macOS: 
+
+- **Debounce inteligente e dominância horizontal**: Distingue gestos intencionais de histórico horizontal da rolagem de lista vertical, ignorando completamente o desvio de impulso. 
+- **Foco automático do painel**: deslizar sobre o painel inativo muda imediatamente o teclado e o foco operacional para esse painel antes de executar a etapa do histórico, garantindo que o lado pretendido seja navegado. 
+- **Alternância configurável**: a navegação deslizante pode ser ativada ou desativada em **Preferências** (`Cmd+,`) → **Visualizações de arquivos** (`view.trackpad_swipe_navigation`, padrão: desativado).
+
+---
+
 ### Alternador de unidade e volume
 
 No macOS, todas as partições internas, unidades USB-C/Thunderbolt externas, DMGs montados e compartilhamentos de rede residem em `/Volumes`. ATBCmder fornece comandos dedicados para alternar entre estes alvos: 
@@ -356,6 +380,20 @@ A Pesquisa Rápida permite que você vá diretamente para qualquer arquivo digit
 - **Pesquisa Rápida (`Ctrl+S` / `cm_QuickSearch`)**: Navega o cursor entre as correspondências enquanto mantém todos os arquivos visíveis. 
 - **Filtro Rápido (`cm_QuickFilter`)**: Oculta temporariamente todos os arquivos não correspondentes, exibindo apenas as linhas correspondentes na tabela. 
 - **Filtro Semântico (`Option+F7` / `cm_SemanticFilter`)**: usa consultas em linguagem natural (por exemplo, `/larger than 10MB`, `//today modified pdf`) via macOS Spotlight.
+
+### Máscaras de arquivo e filtros de extensão (`Cmd+F10` / `Cmd+F11`) 
+
+Ao gerenciar diretórios contendo centenas de arquivos mistos, o ATBCmder fornece comandos dedicados no menu **Mostrar** e nos menus de contexto do cabeçalho da coluna para filtrar a lista visível: 
+
+- **Mostrar todos os arquivos (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**: 
+- Limpa instantaneamente máscaras de extensão ativas e filtros rápidos, redefinindo a visualização para exibir todos os arquivos e diretórios. 
+- **Mostrar arquivos personalizados/máscara de extensão (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**: 
+- Abre um prompt pré-preenchido com a máscara atual ou usada pela última vez (por exemplo, `*.py;*.md`, `*.jpg;*.png` ou `test_*`). 
+- Diretórios e entradas pai `..` permanecem visíveis para que você possa navegar nas hierarquias de pastas enquanto mantém sua máscara ativa. 
+- Um emblema proeminente na barra de status exibe `Mask: <pattern>` enquanto a filtragem está ativa. 
+- A máscara persiste durante a navegação nessa guia e pode ser redefinida rapidamente com `Cmd+F10`.
+
+---
 
 ### Modos de coluna de ajuste automático
 
@@ -498,6 +536,8 @@ Aqui estão três receitas do mundo real que mostram como a navegação, as guia
 | | Visualização em árvore (ambos os painéis) | *Mostrar Menu* | — | `cm_TreeViewBoth` | 
 | | Vista de filial plana | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Modo Painéis Horizontais | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
+| | Mostrar todos os arquivos | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | 
+| | Máscara de arquivo personalizada | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` |
 | **Pesquisa e filtros** | Sobreposição de pesquisa rápida | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
 | | Filtro Semântico | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 

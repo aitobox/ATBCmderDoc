@@ -379,7 +379,7 @@ Para criar e editar um arquivo totalmente novo do zero na pasta ativa, pressione
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │  Edit: /Users/brain/Projects/atbcmder/scripts/deploy.sh [*]                            │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [💾 Save] [Save As] | [↶ Undo] [↷ Redo] | [🔍 Find] [Replace] | [Wrap] [Lines] [Zoom]   │
+│  [💾] [📄] [🔄] │ [↩] [↪] │ [🔍] [📝] │ [↩ Wrap] [123 Lines] │ [🔍+] [🔍-] [1:1]       │
 ├──────┬─────────────────────────────────────────────────────────────────────────────────┤
 │ 0001 │ #!/usr/bin/env bash                                                             │
 │ 0002 │ set -euo pipefail                                                               │

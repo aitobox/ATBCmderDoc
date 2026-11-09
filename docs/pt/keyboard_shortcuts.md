@@ -196,6 +196,7 @@ Mova-se facilmente entre pastas, volumes locais, montagens de rede e histórico 
 | `cm_ChangeDirToHome` | Ir diretamente para a pasta pessoal do usuário (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | Painel de arquivos | 
 | `cm_ViewHistoryPrev` | Navegue de volta no histórico de navegação do diretório | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Principal | 
 | `cm_ViewHistoryNext` | Navegue para frente no histórico de navegação do diretório | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Principal | 
+| `cm_ViewHistoryPrev` / `Next` | Trackpad desliza para trás/avançar no histórico do diretório (alternar em Visualizações) | Deslizar com dois dedos ← / → | — | Painel de arquivos |
 | `cm_DirHistory` | Abra o menu suspenso do histórico do diretório interativo | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Principal | 
 | `cm_Drives` | Abra a unidade e pop-up do seletor de volume montado | `⌥D` | `Alt+D` | Principal | 
 | `cm_LeftOpenDrives` | Abra o menu de seleção de unidade para painel esquerdo | `⌥F1` | `Alt+F1` | Principal | 
@@ -236,6 +237,8 @@ Alterne perfeitamente entre listas compactas, colunas de metadados detalhados, g
 | `cm_QuickSearch` | Abra a barra de pesquisa rápida no painel (digite letras para filtrar) | `⌥S` / `⌃S` *(ou digitando)* | `Ctrl+S` / *(digitação de letras)* | Principal | 
 | `cm_SemanticFilter` | Abra a barra de filtro inteligente semântico de linguagem natural | `⌥F7` | `Alt+F7` | Principal | 
 | `cm_HorizontalFilePanels` | Alternar layout horizontal de painel duplo (empilhado verticalmente) | `⇧⌘H` | `Ctrl+Shift+H` | Principal |
+| `cm_SrcAllFiles` | Mostrar todos os arquivos (limpar máscara de extensão ativa e filtro rápido) | `⌘F10` | `Ctrl+F10` | Principal | 
+| `cm_SrcUserDef` | Mostrar arquivos personalizados/filtrar por máscara de extensão (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Principal |
 
 ---
 
@@ -250,6 +253,9 @@ ATBCmder permite abrir guias ilimitadas em qualquer painel, bloquear locais de t
 | `cm_NextTab` / `cm_NextTabCtrl` | Mude para a próxima guia à direita | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principal | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Mudar para a guia anterior à esquerda | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principal | 
 | `cm_ShowTabsList` | Mostrar menu pop-up de todas as abas abertas no painel ativo | `⇧⌘L` | `Ctrl+Shift+L` | Principal | 
+| `cm_SetTabOptionLock` | Bloquear esta guia (congelar caminho, abrir pastas filhas em guias adjacentes) | *(Menu de contexto da guia)* | — | Principal | 
+| `cm_SetTabOptionLockWithSubdirs` | Guia de bloqueio com subdiretórios permitidos (redefine o caminho base no switch) | *(Menu de contexto da guia)* | — | Principal | 
+| `cm_SetTabOptionNormal` | Guia Desbloquear (restaurar comportamento de navegação desbloqueado padrão) | *(Menu de contexto da guia)* | — | Principal |
 | `cm_CloseAllTabs` | Feche todas as abas do painel ativo, exceto a última | `⌥⌘W` | *(Menu de contexto da guia: Fechar tudo)* | Principal | 
 | `cm_CloseOtherTabs` | Feche todas as guias exceto a guia atualmente ativa | `⇧⌘W` | *(Menu de contexto da guia: Fechar outros)* | Principal | 
 | `cm_Duplicatetab` | Duplicar guia da pasta ativa | `⌘D` / `cm_Duplicatetab` | *(Menu de contexto da guia: Duplicar)* | Principal | 
@@ -360,6 +366,14 @@ Ativo ao criar ou modificar arquivos de texto e código-fonte.
 | Ação/Recurso | Descrição | Atalho primário do macOS (com glifos ⌘/⌥/⇧/⌃) | Atalho clássico do Commander (com teclas Fn) | Contexto | 
 | :--- | :--- | :---: | :---: | :---: | 
 | Salvar arquivo | Salvar arquivo modificado no disco | `⌘S` / `F2` | `F2` | Editor | 
+| Salvar arquivo como | Solicita o diretório de destino e o novo nome do arquivo | `⇧⌘S` | `Ctrl+Shift+S` | Editor | 
+| Recarregar arquivo | Descarte as alterações não salvas e recarregue do disco | `⌘R` | `Ctrl+R` | Editor | 
+| Substituir Texto | Encontre e substitua texto no documento | `⌥⌘F` | `Ctrl+H` | Editor | 
+| Envoltório de palavras | Alternar quebra automática de texto na borda da janela | `⌥W` | `Alt+W` | Editor | 
+| Números de linha | Alternar numeração da linha de medianiz esquerda | `⌥L` | `Alt+L` | Editor | 
+| Ampliar | Aumentar o tamanho da fonte | `⌘+` | `Ctrl++` | Editor | 
+| Diminuir zoom | Diminuir o tamanho da fonte | `⌘-` | `Ctrl+-` | Editor | 
+| Redefinir zoom | Redefinir o tamanho da fonte para o padrão 100% | `⌘0` | `Ctrl+0` | Editor |
 | Encontrar texto | Encontre texto no documento do editor | `⌘F` / `F7` | `F7` | Editor | 
 | Encontre o próximo | Ir para a próxima correspondência de pesquisa | `⌘G` / `F3` | `F3` | Editor | 
 | Encontrar anterior | Ir para a correspondência de pesquisa anterior | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editor | 

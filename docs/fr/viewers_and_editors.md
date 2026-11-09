@@ -379,7 +379,7 @@ Pour créer et modifier un tout nouveau fichier à partir de zéro dans le dossi
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │  Edit: /Users/brain/Projects/atbcmder/scripts/deploy.sh [*]                            │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [💾 Save] [Save As] | [↶ Undo] [↷ Redo] | [🔍 Find] [Replace] | [Wrap] [Lines] [Zoom]   │
+│  [💾] [📄] [🔄] │ [↩] [↪] │ [🔍] [📝] │ [↩ Wrap] [123 Lines] │ [🔍+] [🔍-] [1:1]       │
 ├──────┬─────────────────────────────────────────────────────────────────────────────────┤
 │ 0001 │ #!/usr/bin/env bash                                                             │
 │ 0002 │ set -euo pipefail                                                               │
@@ -424,7 +424,8 @@ Appuyer sur **`Cmd+F`** (`⌘F`) ou **`Cmd+Option+F`** (`⌥⌘F`) ancre la barr
 
 - **Télémétrie** : affiche la ligne, la colonne, le nombre total de lignes, l'encodage et la convention de nouvelle ligne (`LF` vs `CRLF`). 
 - **Dirty State Badge** : un indicateur `*` bien visible apparaît dans la barre de titre et la barre d'état chaque fois que des modifications non enregistrées existent. 
-- **Atomic Save Protection** : lorsque vous appuyez sur `Cmd+S`, ATBCmder écrit les données dans un fichier temporaire sur le même volume, synchronise les tampons de disque et exécute un remplacement atomique, garantissant que votre fichier d'origine ne sera jamais corrompu en cas de crash ou de coupure de courant en cours de sauvegarde. 
+- **Atomic Save Protection** : lorsque vous appuyez sur `Cmd+S`, ATBCmder écrit dans un fichier temporaire (`.tmp.atbcmder_*`) sur le même volume, synchronise les tampons de disque et exécute un remplacement atomique POSIX (`os.replace`). Cela garantit que le fichier cible n'est jamais laissé à moitié écrit ou corrompu en cas de coupure de courant, de problème de lecteur réseau ou d'épuisement du stockage en cours de sauvegarde. 
+- **Préservation du lien symbolique** : si le fichier en cours d'édition est un lien symbolique, ATBCmder écrit directement vers la destination cible résolue plutôt que de remplacer le lien symbolique par un fichier normal, gardant ainsi les structures de lien intactes dans les versions de projet et les configurations système.
 
 ---
 

@@ -355,6 +355,33 @@ ATBCmder ti consente di definire stringhe di formattazione timestamp personalizz
 
 ---
 
+### 4.5 Icone di tipo file Semantic Lucide e cache singleton condivisa
+
+ATBCmder presenta un sottosistema di icone vettoriali modernizzato e ad alto DPI (`fs_icons.py`) progettato per immagini nitide sui display Retina e velocità di rendering estrema: 
+
+- **Libreria di icone Lucide Vector**: le icone generiche a bassa risoluzione vengono sostituite con oltre 200 simboli vettoriali Lucide personalizzati, mappati automaticamente su linguaggi di programmazione (Python, Rust, Go, TypeScript, C/C++, Swift), documenti (PDF, Markdown, Office), media (audio, video, vettori, foto RAW), database e archivi. 
+- **Architettura cache singleton condivisa**: 
+- Invece di creare istanze `QIcon` e `QPixmap` duplicate per ogni riga della tabella visibile, ATBCmder raggruppa le istanze delle icone in una cache globale condivisa identificata dall'estensione del file e dal tipo MIME. 
+- Mantiene trascurabile il sovraccarico della memoria (meno di 15 MB anche durante il rendering di migliaia di tipi di file diversi). 
+- Elimina le chiamate alle statistiche del filesystem del thread principale durante lo scorrimento, garantendo prestazioni di scorrimento fluide a 60 fps attraverso directory contenenti oltre 100.000 file. 
+
+--- 
+
+### 4.6 Navigazione con scorrimento orizzontale del trackpad del MacBook
+
+Per gli utenti macOS che lavorano su MacBook o con Magic Trackpad, ATBCmder fornisce la navigazione gestuale orizzontale nativa con due dita: 
+
+- **Scorri con due dita verso sinistra**: torna indietro nella cronologia della directory (`cm_ViewHistoryPrev` / `Cmd+[`). 
+- **Scorri con due dita verso destra**: va avanti nella cronologia della directory (`cm_ViewHistoryNext` / `Cmd+]`). 
+- **Ergonomia e sicurezza**: 
+- **Controllo della dominanza orizzontale**: rileva automaticamente se un gesto è principalmente orizzontale o verticale, evitando salti accidentali nella cronologia durante lo scorrimento degli elenchi di file. 
+- **Messa a fuoco del pannello al passaggio del mouse**: lo scorrimento su uno dei pannelli indirizza automaticamente la navigazione al pannello sotto il cursore senza richiedere un clic preventivo. 
+- **Filtro Momentum**: blocca i trigger multipagina spuri dovuti all'inerzia del trackpad. 
+- **Configurazione**: 
+- Attiva **Preferenze** → **Visualizzazioni file** → **Navigazione trackpad** (`view.trackpad_swipe_navigation`, impostazione predefinita: disattivata).
+
+---
+
 ## 5. Aggiornamento automatico del file system e sensibilità del monitoraggio
 
 Quando si collabora su codebase condivise, si scaricano risorse del browser o si eseguono attività di compilazione in background, i contenuti della directory cambiano costantemente. La pagina **Aggiornamento automatico** (`page_auto_refresh.py`) bilancia la precisione dell'interfaccia utente in tempo reale con il consumo di CPU e batteria. 
@@ -653,6 +680,19 @@ ATBCmder include descrizioni comandi di metadati mobili che mostrano le dimensio
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
 *Figura 7.6: descrizioni comandi ricche di metadati che mostrano le proprietà dettagliate del file al passaggio del mouse.* 
+
+---
+
+### Suggerimento 5: ricerca rapida Pinyin ad alte prestazioni e filtro in tempo reale 
+In **Preferenze ➔ Ricerca rapida**, gli utenti esperti possono personalizzare la ricerca delle lettere nel pannello in base alla propria lingua e alle proprie abitudini di filtro: 
+
+- **Corrispondenza Pinyin di confine arbitrario (`quick_search.pinyin_search`)**: 
+- Corrisponde ai caratteri cinesi tramite consonanti iniziali o sillabe pinyin complete che iniziano da *qualsiasi* limite di carattere nel nome. 
+- *Esempio*: digitando `gz` corrisponde a `2024工作总结.docx` e `【公司】工资表.xlsx` senza bisogno di corrispondere dal primo carattere del nome file. 
+- Abilitato per impostazione predefinita utilizzando una tabella di ricerca memorizzata nella cache in memoria. 
+- **Modalità solo filtro live (`quick_search.filter_only`)**: 
+- Attivando **Mostra solo file/directory corrispondenti (modalità filtro)** si nascondono gli elementi non corrispondenti direttamente durante la digitazione. 
+- A differenza della ricerca rapida standard (che sposta semplicemente il cursore di selezione tra i file visibili), la modalità filtro isola le righe corrispondenti in modo che le operazioni batch, come **Seleziona tutto** (`Cmd+A`), **Copia** (`F5`), **Sposta** (`F6`) e **Comprimi** (`Alt+F5`), funzionino rigorosamente sugli articoli abbinati.
 
 ---
 

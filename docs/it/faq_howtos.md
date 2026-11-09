@@ -51,7 +51,7 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 | **Concedi l'accesso al filesystem**| Menu: File / Aiuto | — | `cm_GrantFilesystemAccess`| Avvia l'assistente per le autorizzazioni di macOS App Sandbox. | 
 | **Aggiornamento manuale del pannello** | `Ctrl+R` / `⌃R` o `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Forza una rilettura immediata della directory dal disco. | 
 | **Avvia terminale di sistema** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Genera macOS Terminale nel percorso corrente del pannello. | 
-| **Calcola lo spazio della cartella** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcola la dimensione in byte ricorsiva aggregata (`Space` per singolo, `Ctrl+L` per il totale selezionato). | 
+| **Calcola lo spazio della cartella** | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcola la dimensione in byte ricorsiva aggregata (`Space` per singolo, `Ctrl+L` per il totale selezionato). | 
 | **Cancellazione sicura permanente (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sovrascrittura multi-passaggio ed eliminazione permanente dei file. | 
 
 ---
@@ -297,6 +297,57 @@ La seguente matrice decisionale mappa gli obiettivi comuni di gestione dei file 
 > [!TIP] 
 > **⚡ Suggerimento professionale: identificare file duplicati identici tramite checksum**: 
 > Se sospetti che più file di grandi dimensioni siano duplicati esatti, selezionali e premi **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Scegli **SHA-256** e fai clic su Calcola. I digest di hash corrispondenti confermano i duplicati binari al 100%, consentendoti di eliminare le copie superflue in totale sicurezza. 
+
+---
+
+### 2.6 Soluzione 6: Protezione delle aree di lavoro con il blocco totale delle schede in stile Commander
+
+Quando gestisci progetti critici, montaggi di server o repository, l'allontanamento accidentale dalla directory di lavoro principale interrompe il flusso. ATBCmder fornisce il blocco delle schede compatibile con Total Commander: 
+
+1. **Blocco di una scheda (`cm_SetTabOptionLock`)**: 
+- Fai clic con il pulsante destro del mouse sull'intestazione di una scheda e seleziona **Blocca questa scheda**. 
+- Nel titolo della scheda viene immediatamente visualizzato un asterisco `*` (ad esempio, `* WebApp`). 
+- La directory di base è bloccata. Facendo doppio clic su qualsiasi cartella o aprendo un archivio all'interno di questa scheda, la scheda bloccata rimane intatta e viene visualizzata automaticamente la posizione di destinazione in una **scheda adiacente** immediatamente a destra. 
+2. **Blocco consentito con sottodirectory (`cm_SetTabOptionLockWithSubdirs`)**: 
+- Fai clic con il pulsante destro del mouse sulla scheda e seleziona **Bloccato, ma sono consentite modifiche alla directory**. 
+- Puoi navigare liberamente nelle sottodirectory nidificate all'interno della scheda corrente. 
+- Tuttavia, passando a un'altra scheda, facendo nuovamente clic sull'intestazione della scheda o accedendo al pulsante principale, si ripristina automaticamente la scheda al percorso di base designato. 
+3. **Sblocco (`cm_SetTabOptionNormal`)**: 
+- Fai clic con il pulsante destro del mouse sulla scheda e seleziona **Sblocca scheda** per tornare al comportamento standard. 
+
+--- 
+
+### 2.7 Soluzione 7: Filtraggio dei file attivi tramite maschera di estensione personalizzata (`Cmd+F11`)
+
+Quando una directory contiene centinaia di file con estensioni diverse (ad esempio codice sorgente, file binari compilati, log, risorse), spesso è necessario concentrarsi su un sottoinsieme specifico senza perdere la navigazione nella cartella: 
+
+1. **Attiva filtro personalizzato (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**: 
+- Premere **`Cmd+F11`** (`⌘F11`). 
+- Viene visualizzata una finestra di dialogo precompilata con la maschera attiva o utilizzata per ultima (ad esempio, `*.py;*.md` o `*.jpg;*.png`). 
+- Inserisci i modelli glob desiderati separati da punto e virgola e premi `Enter`. 
+2. **Navigazione filtrata in tempo reale**: 
+- Il pannello nasconde immediatamente tutti i file non corrispondenti mantenendo visibili le sottodirectory e il genitore `..`. 
+- Sulla barra di stato del pannello viene visualizzato un indicatore chiaro (`Mask: *.py;*.md`). 
+- È possibile entrare e uscire dalle sottodirectory; la maschera rimane attiva durante la navigazione. 
+3. **Ripristina tutti i file (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**: 
+- Premere **`Cmd+F10`** (`⌘F10`) in qualsiasi momento per cancellare la maschera e ripristinare l'elenco completo dei file. 
+
+--- 
+
+### 2.8 Soluzione 8: Abilitazione della navigazione nella cronologia del trackpad con due dita del MacBook
+
+Se lavori su un MacBook o utilizzi un Magic Trackpad, puoi navigare nella cronologia delle cartelle utilizzando fluidi gesti di scorrimento orizzontale con due dita: 
+
+1. **Abilita la navigazione tramite trackpad**: 
+- Premi **`Cmd+,`** (`⌘,`) per aprire **Preferenze**. 
+- Passare alla pagina **Visualizzazioni file**. 
+- Nella sezione **Navigazione del trackpad**, seleziona **Scorri verso sinistra/destra con due dita per andare avanti/indietro nella cronologia delle cartelle** (`view.trackpad_swipe_navigation`). 
+- Fare clic su **OK**. 
+2. **Navigazione gestuale semplice**: 
+- Sposta il puntatore su uno dei pannelli (non è richiesto alcun clic). 
+- **Scorri verso sinistra con due dita**: torna indietro nella cronologia della directory (`cm_ViewHistoryPrev`). 
+- **Scorri verso destra con due dita**: sposta in avanti nella cronologia della directory (`cm_ViewHistoryNext`). 
+- Il filtro di dominanza orizzontale garantisce che lo scorrimento verticale dell'elenco non venga mai interrotto accidentalmente.
 
 ---
 
@@ -617,6 +668,9 @@ Premi **`Ctrl+J`** (`⌃J`) o esegui il comando **`cm_RunTerm`**. ATBCmder gener
 #### Q6: ATBCmder supporta i Mac Intel (x86_64)?
 
 Sì! A partire dalla versione 1.8.0, ATBCmder fornisce pacchetti binari universali che supportano nativamente sia i Mac **Apple Silicon (M1/M2/M3/M4, architettura ARM64)** che **Intel (x86_64)** con macOS 12.0 o successivo.
+#### D7: Come funziona la ricerca rapida Pinyin cinese? 
+Quando si sfogliano cartelle contenenti nomi cinesi, la digitazione nel pannello corrisponde sia alle consonanti iniziali che alle sillabe pinyin complete che iniziano con qualsiasi limite di carattere cinese. Ad esempio, digitando `gz` corrisponde a `2024工作总结.docx` e `【公司】工资表.xlsx`. Se preferisci nascondere i file non corrispondenti durante la digitazione, apri **Preferenze ➔ Ricerca rapida** e attiva **Mostra solo file/directory corrispondenti (modalità filtro)** (`quick_search.filter_only`).
+
 
 ---
 

@@ -119,20 +119,21 @@ Posicionada acima de cada painel de arquivo, a barra de caminho de navegação p
 - **Abrir no Terminal**: gera o Terminal macOS diretamente dentro dessa pasta (`open -a Terminal`). 
 - **Edição direta de caminho (`BreadcrumbLineEdit`)**: Clique duas vezes no espaço vazio à direita da cadeia de navegação estrutural. A barra se converte instantaneamente em um campo de texto editável onde você pode colar ou digitar qualquer caminho (por exemplo, arquivos `/var/log`, `~/Library` ou `vfs://`). Pressione `Enter` para navegar ou `Esc` para cancelar.
 
-### [4] Barra de guias de pastas
+### [4] Barra de guias de pastas 
+Cada painel mantém um conjunto independente de guias construídas com `MacNativeTabBar`: 
 
-Cada painel mantém um conjunto independente de guias: 
+- **Criação de guias adjacentes**: abrir novas guias com `Cmd+T` (`cm_NewTab`) insere a nova guia imediatamente à direita da guia ativa, em vez de no final da faixa. Feche as guias com `Cmd+W` (`cm_CloseTab`). 
+- **Bloqueio total da guia do Commander**: clique com o botão direito nas guias para escolher **Bloquear esta guia** (congela o diretório base com um emblema de asterisco `*`; a navegação da pasta secundária abre em guias adjacentes) ou **Bloqueado, mas alterações de diretório são permitidas** (navegação de subpastas no local com redefinição automática de volta à base no switch). 
+- **Organização do espaço de trabalho**: arraste e solte para reordenar as guias, clique duas vezes no espaço vazio para duplicar, renomear títulos ou clonar layouts de guias para o painel oposto.
 
-- Abra novas abas com `Cmd+T` (`cm_NewTab`), feche abas com `Cmd+W` (`cm_CloseTab`). 
-- Arraste e solte para reordenar as guias em um painel. 
-- Clique com o botão direito nas guias para bloquear caminhos, renomear títulos, fechar duplicatas ou duplicar guias no painel oposto.
-
-### [5] Painéis de arquivos duplos
-
+### [5] Painéis de arquivos duplos 
 Listas de arquivos virtualizados de alto desempenho, capazes de renderizar pastas com centenas de milhares de entradas sem problemas na interface do usuário: 
 
-- Classificação de colunas: clique em qualquer cabeçalho (Nome, Ext, Tamanho, Data, Atributos) para classificar em ordem crescente ou decrescente. 
-- Vários modos de visualização: visualização de detalhes completos, visualização de grade resumida, visualização de galeria de miniaturas, visualização de árvore e visualização recursiva de ramificação plana (`Cmd+B`).
+**Sistema Semântico de Ícones Lucide**: Ícones vetoriais de alto DPI adaptados a linguagens de programação, documentos, mídia e arquivos, apoiados por um cache singleton compartilhado para rolagem de 60 fps. 
+**Navegação por gestos do trackpad do MacBook **: navegação fluida de deslizamento horizontal com dois dedos (deslize para a esquerda para voltar ao histórico, deslize para a direita para avançar o histórico) com detecção automática de foco no painel e preservação de rolagem vertical. 
+
+- **Pesquisa rápida e máscaras no painel**: pesquisa instantânea caractere por caractere com suporte para correspondência de Pinyin chinês com limites arbitrários, isolamento ao vivo somente com filtro e máscaras de extensão personalizadas (`Cmd+F11` / redefinida com `Cmd+F10`). 
+- **Classificação e visualizações de colunas**: clique em qualquer cabeçalho para classificar em ordem crescente ou decrescente. Vários modos de visualização incluem detalhes completos, grade resumida, galeria de miniaturas, visualização em árvore e visualização recursiva de ramificação plana (`Cmd+B`).
 
 ### [6] Barra de ferramentas central e divisor arrastável
 
@@ -347,7 +348,7 @@ Para mudar de layout:
 
 ATBCmder possui um subsistema inteligente de gerenciamento de sessões (`SessionManager`) que garante que seu ambiente de trabalho seja sempre preservado: 
 
-- **Armazenamento XML da sessão**: o estado da sessão é persistido automaticamente em `atbcmder_session.xml` dentro do seu diretório de configuração (`~/Library/Application Support/ATBCmder/`). 
+- **Medidor de armazenamento do Drive e integração com nuvem**: indicador visual de uso do disco exibindo o nome do volume atualmente montado (por exemplo, `Macintosh HD`), capacidade total, armazenamento usado e porcentagem de espaço livre restante. Provedores de armazenamento em nuvem sincronizados (OneDrive, Google Drive, iCloud) são identificados automaticamente com autorização persistente de marcadores com escopo de segurança.
 - **Memória de geometria de janela**: restaura as coordenadas exatas da janela (`x`, `y`), dimensões (`width`, `height`), estado maximizado e a proporção do divisor intermediário (`splitter_ratio`). 
 - **Restauração da guia de painel duplo**: 
 - Restaura todas as guias abertas nos painéis esquerdo e direito após a inicialização. 

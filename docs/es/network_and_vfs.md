@@ -609,6 +609,16 @@ Una vez conectado, Dropbox funciona como una unidad local de alta velocidad:
 - **Actualización instantánea (`F9` / `Ctrl+R`)**: Obtenga cambios remotos realizados en otros dispositivos con una sola tecla.
 - **Seguridad mediante Secure Enclave**: Los tokens de OAuth y las credenciales se almacenan cifrados directamente en el **Llavero del sistema macOS** (`ATBCmder_VFS`) respaldado por el hardware de Apple.
 
+### 6.3 Almacenamiento en la nube Sandbox de App Store (OneDrive, Google Drive, iCloud) 
+
+En las versiones sandbox de ATBCmder en Mac App Store, el acceso directo al sistema de archivos a directorios de sincronización en la nube de terceros (por ejemplo, Microsoft OneDrive, Google Drive para escritorio, Dropbox e iCloud Drive) está regulado por la arquitectura sandbox de Apple: 
+
+- **Marcadores con ámbito de seguridad**: los directorios de nube sincronizados que residen en `~/Library/CloudStorage/OneDrive-*`, `~/Library/CloudStorage/GoogleDrive-*` o `~/Library/Mobile Documents/com~apple~CloudDocs/` requieren tokens de acceso con ámbito de seguridad. 
+- **Drive Switcher & Path Integration**: ATBCmder descubre automáticamente directorios de nube locales configurados y los muestra en Drive Switcher (`Alt+D` / `⌥D`), barras de botones de unidad y rutas de navegación. 
+- **Concesiones de permisos persistentes**: al abrir un directorio en la nube por primera vez, macOS presenta una hoja de autorización. Una vez seleccionado, ATBCmder almacena el marcador criptográfico con alcance de seguridad en las preferencias del usuario, otorgando acceso de lectura/escritura ininterrumpido y fluido durante los reinicios de la aplicación sin diálogos de autorización repetidos.
+
+---
+
 ## 7. Conexión rápida frente a Administrador de conexiones
 
 ATBCmder proporciona dos mecanismos flexibles para conectarse a hosts remotos: **Conexión rápida** para sesiones rápidas y temporales y **Administrador de conexión** para marcadores de servidor persistentes y categorizados.

@@ -196,6 +196,7 @@ Bewegen Sie sich mühelos zwischen Ordnern, lokalen Volumes, Netzwerkbereitstell
 | `cm_ChangeDirToHome` | Direkt zum Home-Ordner des Benutzers springen (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | FilePanel | 
 | `cm_ViewHistoryPrev` | Navigieren Sie zurück in den Browserverlauf des Verzeichnisses | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Haupt | 
 | `cm_ViewHistoryNext` | Navigieren Sie vorwärts im Verzeichnis Browserverlauf | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Haupt | 
+| `cm_ViewHistoryPrev` / `Next` | Wischen Sie mit dem Trackpad im Verzeichnisverlauf vor/zurück (in den Ansichten umschalten) | Streichen mit zwei Fingern ← / → | — | FilePanel |
 | `cm_DirHistory` | Öffnen Sie das Dropdown-Menü „Interaktiver Verzeichnisverlauf“ | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Haupt | 
 | `cm_Drives` | Öffnen Sie das Popup-Fenster zur Auswahl des Laufwerks und des gemounteten Volumes | `⌥D` | `Alt+D` | Haupt | 
 | `cm_LeftOpenDrives` | Öffnen Sie das Laufwerksauswahlmenü für den linken Bereich | `⌥F1` | `Alt+F1` | Haupt | 
@@ -236,6 +237,8 @@ Wechseln Sie nahtlos zwischen kompakten Listen, detaillierten Metadatenspalten, 
 | `cm_QuickSearch` | Öffnen Sie die Schnellsuchleiste im Bedienfeld (geben Sie die zu filternden Buchstaben ein) | `⌥S` / `⌃S` *(oder Eingabe)* | `Ctrl+S` / *(Buchstabeneingabe)* | Haupt | 
 | `cm_SemanticFilter` | Öffnen Sie die semantische Smart-Filterleiste für natürliche Sprache | `⌥F7` | `Alt+F7` | Haupt | 
 | `cm_HorizontalFilePanels` | Horizontales Dual-Panel-Layout umschalten (vertikal gestapelt) | `⇧⌘H` | `Ctrl+Shift+H` | Haupt |
+| `cm_SrcAllFiles` | Alle Dateien anzeigen (aktive Erweiterungsmaske und Schnellfilter löschen) | `⌘F10` | `Ctrl+F10` | Haupt | 
+| `cm_SrcUserDef` | Benutzerdefinierte Dateien anzeigen / Nach Erweiterungsmaske filtern (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Haupt |
 
 ---
 
@@ -250,6 +253,9 @@ ATBCmder ermöglicht das Öffnen unbegrenzter Tabs in beiden Panels, das Sperren
 | `cm_NextTab` / `cm_NextTabCtrl` | Zur nächsten Registerkarte rechts wechseln | `⌃⇥` *(Strg+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Haupt | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Zur vorherigen Registerkarte auf der linken Seite wechseln | `⌃⇧⇥` *(Strg+Umschalt+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Haupt | 
 | `cm_ShowTabsList` | Popup-Menü aller geöffneten Tabs im aktiven Panel anzeigen | `⇧⌘L` | `Ctrl+Shift+L` | Haupt | 
+| `cm_SetTabOptionLock` | Diese Registerkarte sperren (Pfad einfrieren, untergeordnete Ordner in benachbarten Registerkarten öffnen) | *(Tab-Kontextmenü)* | — | Haupt | 
+| `cm_SetTabOptionLockWithSubdirs` | Tab mit zulässigen Unterverzeichnissen sperren (wird beim Umschalten auf den Basispfad zurückgesetzt) ​​| *(Tab-Kontextmenü)* | — | Haupt | 
+| `cm_SetTabOptionNormal` | Registerkarte „Entsperren“ (Standardmäßiges entsperrtes Navigationsverhalten wiederherstellen) | *(Tab-Kontextmenü)* | — | Haupt |
 | `cm_CloseAllTabs` | Alle Registerkarten im aktiven Bereich schließen, außer der letzten | `⌥⌘W` | *(Tab-Kontextmenü: Alle schließen)* | Haupt | 
 | `cm_CloseOtherTabs` | Schließen Sie alle Registerkarten außer der aktuell aktiven Registerkarte | `⇧⌘W` | *(Tab-Kontextmenü: Andere schließen)* | Haupt | 
 | `cm_Duplicatetab` | Registerkarte „Aktiven Ordner duplizieren“ | `⌘D` / `cm_Duplicatetab` | *(Tab-Kontextmenü: Duplizieren)* | Haupt | 

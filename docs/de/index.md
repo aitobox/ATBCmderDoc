@@ -73,10 +73,10 @@ ATBCmder vereint maximale Produktivität und Kontrolle in einem übersichtlichen
 1. **Menüleiste und native macOS-Integration (`[1]`)**: Vollständige Unterstützung des macOS-Anwendungsmenüs, Standardverknüpfungen (`⌘,`, `⌘Q`, `⌘W`) und vollständiger Menüzugriff auf alle internen Commander-Befehle (`cm_*`). 
 2. **Hauptsymbolleiste und Schnellstarter (`[2]`)**: Sofortiger Ein-Klick-Zugriff auf Suche (`Alt+F7`), Hintergrundübertragungswarteschlange (`cm_OperationsPanel`), Einstellungen (`Cmd+,`) und Laufwerksauswahl. 
 3. **Interaktive Breadcrumb-Pfadleiste (`[3]`)**: Klicken Sie auf ein beliebiges Verzeichnissegment im Pfad, um direkt in der Hierarchie nach oben zu springen. Klicken Sie auf den Segment-Dropdown-Pfeil, um Unterverzeichnisse zu durchsuchen. 
-4. **Ordnerregisterkarten und Arbeitsbereiche (`[4]`)**: Öffnen Sie unbegrenzt viele Registerkarten in jedem Bereich (`Cmd+T`), schließen Sie Registerkarten (`Cmd+W`), sperren Sie bevorzugte Speicherorte und speichern Sie gesamte Arbeitsbereiche mit Registerkarten mit zwei Bedienfeldern (`cm_SaveFavoriteTabs`). 
-5. **Dual File Panels (`[5]`)**: Unabhängige Dateitabellen. Das aktive Bedienfeld zeigt einen deutlichen Akzentrahmen und einen fokussierten Cursor an. Wechseln Sie den Fokus sofort mit `Tab`. 
+4. **Ordner-Registerkarten und Arbeitsbereiche (`[4]`)**: Benachbarte Registerkarten öffnen (`Cmd+T`), Registerkarten schließen (`Cmd+W`), Pfade mit Total Commander-Sperrmodi sperren (`cm_SetTabOptionLock` mit `*`-Badge) und gesamte Tab-Arbeitsbereiche mit zwei Bedienfeldern speichern (`cm_SaveFavoriteTabs`). 
+5. **Dual File Panels (`[5]`)**: Unabhängige Dateitabellen, die auf Semantic Lucide-Vektorsymbolen und einem gemeinsamen Singleton-Cache basieren. Verfügt über Verlaufsnavigation mit dem Trackpad mit zwei Fingern, schnelle chinesische Pinyin-Suche mit beliebigen Grenzen, benutzerdefinierte Dateimasken (`Cmd+F11` / `Cmd+F10`) und sofortigen Fokuswechsel mit `Tab`. 
 6. **Mittlere Symbolleiste und ziehbarer Splitter (`[6]`)**: Ein vertikaler Schnellaktionsstreifen, der direkt auf dem Panel-Trenner platziert wird. Bietet Ein-Klick-Auslöser für Anzeigen (`F3`), Bearbeiten (`F4`), Kopieren (`F5`), Verschieben (`F6`), Neuer Ordner (`F7`), Löschen (`F8`), Löschen und Austauschen von Bedienfeldern (`cm_Exchange`). Ziehen Sie den Splitter nach links oder rechts, um die Größe der Panels zu ändern. 
-7. **Statusleiste und Laufwerksspeicheranzeige (`[7]`)**: Zeigt Live-Dateianzahlen, ausgewählte Elementstatistiken, aggregierte Bytegrößen und eine Anzeige der aktiven Volume-Speicherkapazität mit Berechnung des freien Speicherplatzes an. 
+7. **Statusleiste und Laufwerksspeicheranzeige (`[7]`)**: Zeigt Live-Dateianzahlen, ausgewählte Elementstatistiken, aggregierte Bytegrößen, dauerhafte Cloud-Laufwerksautorisierung (OneDrive, Google Drive, iCloud) und eine Anzeige der aktiven Volume-Speicherkapazität mit Berechnung des freien Speicherplatzes.
 
 ---
 
@@ -155,17 +155,14 @@ Entdecken Sie die komplette ATBCmder-Dokumentationssuite:
 
 Verstehen Sie die Dual-Panel-Philosophie, erkunden Sie die Anatomie der Benutzeroberfläche, konfigurieren Sie macOS App Sandbox-Berechtigungen über den Onboarding-Assistenten (`cm_GrantFilesystemAccess`), legen Sie Überschreibungen der Systemsprache für mehr als 30 Gebietsschemas fest und passen Sie Hell/Dunkel-Designs an.
 
-### 🧭 [Kapitel 2: Navigation und Ordnerregisterkarten](navigation_and_tabs.md)
+### 🧭 [Kapitel 2: Navigation und Ordnerregisterkarten](navigation_and_tabs.md) 
+Navigieren Sie mühelos durch Verzeichnisbäume mit interaktiven Breadcrumbs, Tastatursprüngen (`Ctrl+\`, `Backspace`), Zwei-Finger-Trackpad-Verlaufsnavigation, Multi-Tab-Organisation mit angrenzender Tab-Öffnung und TC-Tab-Sperre (`*`), bevorzugten Arbeitsbereichsgruppen mit zwei Bedienfeldern (`cm_SaveFavoriteTabs`) und Verzeichnis-Hotlist-Lesezeichen (`Ctrl+D`), chinesische Pinyin-Schnellsuche, benutzerdefinierte Dateimasken (`Cmd+F10`/`Cmd+F11`) und flexible Ansichtsmodi (Kurzansicht, vollständige Spalten, Miniaturansichten, Baumansicht und flache Zweigansicht `Cmd+B`). 
 
-Navigieren Sie mühelos durch Verzeichnisbäume mit interaktiven Breadcrumbs, Tastatursprüngen (`Ctrl+\`, `Backspace`), Organisation mit mehreren Registerkarten (`Cmd+T`, `Cmd+W`), Favoriten-Arbeitsbereichssätzen mit zwei Bedienfeldern (`cm_SaveFavoriteTabs`) und Verzeichnis-Hotlist-Lesezeichen (`Ctrl+D`) und flexible Ansichtsmodi (Kurzansicht, vollständige Spalten, Miniaturansichten, Baumansicht und flache Zweigansicht `Cmd+B`).
+### 📁 [Kapitel 3: Tägliche Dateioperationen und Warteschlange](file_operations.md) 
+Führen Sie schnelle und zuverlässige Dateivorgänge aus: Kopieren (`F5`), Verschieben (`F6`), Neuer Ordner (`F7`), In den Papierkorb löschen (`F8`), schnelles Inline-Umbenennen (`F2`) und ergonomische Verzeichnisplatzberechnung (`Alt+Shift+Return`). / `⌥⇧⏎`). Master-Platzhalter- und Attributauswahl, Drag-and-Drop-Interoperabilität, Kollisionskonfliktlösung, Atomic-Staging-Schutzmaßnahmen gegen Datenverlust, UNIX-Oktalberechtigungen (`Alt+Enter`) und asynchrone Übertragungsüberwachung über die Hintergrundbetriebswarteschlange (`cm_OperationsPanel`). 
 
-### 📁 [Kapitel 3: Tägliche Dateivorgänge und Warteschlange](file_operations.md)
-
-Führen Sie schnelle und zuverlässige Dateivorgänge aus: Kopieren (`F5`), Verschieben (`F6`), Neuer Ordner (`F7`), In den Papierkorb löschen (`F8`) und schnelles Inline-Umbenennen (`F2`). Master-Platzhalter- und Attributauswahl, Drag-and-Drop-Interoperabilität, Kollisionskonfliktlösung, UNIX-Oktalberechtigungen (`Alt+Enter`) und asynchrone Übertragungsüberwachung über die Hintergrundoperationswarteschlange (`cm_OperationsPanel`).
-
-### 👁️ [Kapitel 4: Universeller Lister und integrierte Editoren](viewers_and_editors.md)
-
-Überprüfen Sie Dateien, ohne umfangreiche Software von Drittanbietern zu starten. Verwenden Sie Quick View (`Ctrl+Q` / `Cmd+Q`) für Live-Vorschauen im Seitenbereich und Universal Lister (`F3`) für Word-Dokumente, Tabellenkalkulationen, SQLite-Datenbanken, Jupyter-Notebooks, EPUBs, syntaxhervorgehobenen Code, rohe Hex-Byte-Inspektion (`2`), Bildanmerkungen und Wasserzeichen (`F4`), PDF-Dokumentenleser und integrierte Audio-/Video-Mediaplayer mit Hintergrund-Audiowiedergabe. Bearbeiten Sie Dateien direkt mit dem integrierten Texteditor (`F4`).
+### 👁️ [Kapitel 4: Universal Lister und integrierte Editoren](viewers_and_editors.md) 
+Überprüfen Sie Dateien, ohne umfangreiche Software von Drittanbietern zu starten. Verwenden Sie Quick View (`Ctrl+Q` / `Cmd+Q`) für Live-Vorschauen im Seitenbereich und Universal Lister (`F3`) für Word-Dokumente, Tabellenkalkulationen, SQLite-Datenbanken, Jupyter-Notebooks, EPUBs, syntaxhervorgehobenen Code, rohe Hex-Byte-Inspektion (`2`), Bildanmerkungen und Wasserzeichen (`F4`), PDF-Dokumentenleser und integrierte Audio-/Video-Mediaplayer mit Hintergrund-Audiowiedergabe. Bearbeiten Sie Dateien direkt mit dem integrierten Texteditor (`F4`), der über eine moderne Vektoraktions-Symbolleiste und einen atomaren Speicherschutz verfügt.
 
 ### ⚡ [Kapitel 5: Elektrowerkzeuge und Automatisierung](power_tools.md)
 

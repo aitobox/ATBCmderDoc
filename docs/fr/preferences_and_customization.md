@@ -354,6 +354,33 @@ ATBCmder vous permet de définir des chaînes de formatage d'horodatage personna
 
 ---
 
+### 4.5 Icônes de type de fichier Lucide sémantique et cache singleton partagé
+
+ATBCmder propose un sous-système d'icônes vectorielles modernisé à haute résolution (`fs_icons.py`) conçu pour des visuels nets sur les écrans Retina et une vitesse de rendu extrême : 
+
+- **Bibliothèque d'icônes vectorielles Lucide** : les icônes génériques basse résolution sont remplacées par plus de 200 symboles vectoriels Lucide personnalisés, automatiquement mappés aux langages de programmation (Python, Rust, Go, TypeScript, C/C++, Swift), aux documents (PDF, Markdown, Office), aux médias (audio, vidéo, vecteurs, photos RAW), aux bases de données et aux archives. 
+- **Architecture de cache singleton partagé** : 
+- Plutôt que de créer des instances `QIcon` et `QPixmap` en double pour chaque ligne de table visible, ATBCmder regroupe les instances d'icônes dans un cache global partagé classé par extension de fichier et type MIME. 
+- Maintient la surcharge de mémoire négligeable (moins de 15 Mo, même lors du rendu de milliers de types de fichiers divers). 
+- Élimine les appels statistiques du système de fichiers du thread principal pendant le défilement, garantissant des performances de défilement fluides à 60 ips dans des répertoires contenant plus de 100 000 fichiers. 
+
+--- 
+
+### 4.6 Navigation par balayage horizontal sur le trackpad du MacBook
+
+Pour les utilisateurs de macOS travaillant sur des MacBook ou avec des Magic Trackpads, ATBCmder propose une navigation gestuelle horizontale native à deux doigts : 
+
+- **Balayage à deux doigts vers la gauche** : revient en arrière dans l'historique du répertoire (`cm_ViewHistoryPrev` / `Cmd+[`). 
+- **Balayage à deux doigts vers la droite** : avance dans l'historique du répertoire (`cm_ViewHistoryNext` / `Cmd+]`). 
+- **Ergonomie & Sécurité** : 
+- **Vérification de la dominance horizontale** : Détecte automatiquement si un geste est principalement horizontal ou vertical, évitant ainsi les sauts accidentels dans l'historique lors du défilement des listes de fichiers. 
+- **Focus du panneau de survol** : le fait de glisser sur l'un ou l'autre panneau dirige automatiquement la navigation vers le panneau situé sous le curseur sans nécessiter de clic préalable. 
+- **Momentum Filter** : bloque les déclencheurs multipages parasites dus à l'inertie du trackpad. 
+- **Configuration** : 
+- Basculez dans **Préférences** → **Vues de fichiers** → **Navigation sur le trackpad** (`view.trackpad_swipe_navigation`, par défaut : désactivé).
+
+---
+
 ## 5. Actualisation automatique du système de fichiers et sensibilité de surveillance
 
 Lorsque vous collaborez sur des bases de code partagées, téléchargez des ressources de navigateur ou exécutez des tâches de compilation en arrière-plan, le contenu du répertoire change constamment. La page **Auto Refresh** (`page_auto_refresh.py`) équilibre la précision de l'interface utilisateur en temps réel par rapport à la consommation du processeur et de la batterie. 
@@ -652,6 +679,19 @@ ATBCmder comprend de riches info-bulles de métadonnées flottantes qui affichen
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
 *Figure 7.6 : Info-bulles de métadonnées riches affichant les propriétés détaillées du fichier au survol de la souris.* 
+
+---
+
+### Conseil de pro 5 : Recherche rapide en pinyin hautes performances et filtrage en direct 
+Sous **Préférences ➔ Recherche rapide**, les utilisateurs expérimentés peuvent adapter la recherche de lettres dans le panneau à leur langue et à leurs habitudes de filtrage : 
+
+- **Correspondance Pinyin à limites arbitraires (`quick_search.pinyin_search`)** : 
+- Correspond aux caractères chinois par des consonnes initiales ou des syllabes pinyin complètes commençant à *n'importe quelle* limite de caractère dans le nom. 
+- *Exemple* : La saisie de `gz` correspond à `2024工作总结.docx` et `【公司】工资表.xlsx` sans avoir besoin de faire correspondre le tout premier caractère du nom de fichier. 
+- Activé par défaut à l'aide d'une table de recherche mise en cache en mémoire. 
+- **Mode filtre en direct uniquement (`quick_search.filter_only`)** : 
+- L'activation de **Afficher uniquement les fichiers/répertoires correspondants (mode Filtre)** masque les éléments qui ne correspondent pas directement au fur et à mesure que vous tapez. 
+- Contrairement à la recherche rapide standard (qui déplace simplement le curseur de sélection parmi les fichiers visibles), le mode Filtre isole les lignes correspondantes afin que les opérations par lots, telles que **Sélectionner tout** (`Cmd+A`), **Copier** (`F5`), **Déplacer** (`F6`) et **Pack** (`Alt+F5`) — fonctionnent uniquement sur les éléments correspondants.
 
 ---
 

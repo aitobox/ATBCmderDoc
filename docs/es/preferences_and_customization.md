@@ -354,6 +354,33 @@ ATBCmder le permite definir cadenas de formato de marca de tiempo personalizadas
 
 ---
 
+### 4.5 Iconos de tipo de archivo de Lucide semántico y caché singleton compartida
+
+ATBCmder presenta un subsistema de íconos vectoriales modernizado y de alto DPI (`fs_icons.py`) diseñado para brindar imágenes nítidas en pantallas Retina y una velocidad de renderizado extrema: 
+
+- **Biblioteca de íconos vectoriales Lucide**: los íconos genéricos de baja resolución se reemplazan con más de 200 símbolos vectoriales Lucide personalizados, asignados automáticamente a lenguajes de programación (Python, Rust, Go, TypeScript, C/C++, Swift), documentos (PDF, Markdown, Office), medios (audio, video, vectores, fotos RAW), bases de datos y archivos. 
+- **Arquitectura de caché Singleton compartida**: 
+- En lugar de crear instancias duplicadas `QIcon` y `QPixmap` para cada fila de la tabla visible, ATBCmder agrupa instancias de íconos en un caché global compartido codificado por extensión de archivo y tipo MIME. 
+- Mantiene la sobrecarga de memoria insignificante (menos de 15 MB incluso cuando se procesan miles de tipos de archivos diversos). 
+- Elimina las llamadas a las estadísticas del sistema de archivos del subproceso principal durante el desplazamiento, lo que garantiza un rendimiento de desplazamiento fluido a 60 fps a través de directorios que contienen más de 100 000 archivos. 
+
+--- 
+
+### 4.6 Navegación por deslizamiento horizontal con trackpad del MacBook
+
+Para los usuarios de macOS que trabajan en MacBooks o con Magic Trackpads, ATBCmder proporciona navegación nativa horizontal por gestos con dos dedos: 
+
+- **Deslizar dos dedos hacia la izquierda**: retrocede en el historial del directorio (`cm_ViewHistoryPrev` / `Cmd+[`). 
+- **Deslizar dos dedos hacia la derecha**: avanza en el historial del directorio (`cm_ViewHistoryNext` / `Cmd+]`). 
+- **Ergonomía y seguridad**: 
+- **Verificación de dominio horizontal**: detecta automáticamente si un gesto es principalmente horizontal o vertical, evitando saltos accidentales en el historial al desplazarse por las listas de archivos. 
+- **Enfoque del panel flotante**: al deslizar el dedo sobre cualquiera de los paneles se dirige automáticamente la navegación al panel debajo del cursor sin necesidad de hacer clic previamente. 
+- **Filtro de impulso**: bloquea activadores falsos de varias páginas debido a la inercia del trackpad. 
+- **Configuración**: 
+- Alternar entre **Preferencias** → **Vistas de archivos** → **Navegación con trackpad** (`view.trackpad_swipe_navigation`, predeterminado: desactivado).
+
+---
+
 ## 5. Sensibilidad de monitoreo y actualización automática del sistema de archivos
 
 Al colaborar en bases de código compartidas, descargar recursos del navegador o ejecutar tareas de compilación en segundo plano, el contenido del directorio cambia constantemente. La página **Actualización automática** (`page_auto_refresh.py`) equilibra la precisión de la interfaz de usuario en tiempo real con el consumo de CPU y batería. 
@@ -652,6 +679,19 @@ ATBCmder incluye información sobre herramientas de metadatos flotantes enriquec
 
 ![Helpful Tooltips](images/helpful_tooltips.png) 
 *Figura 7.6: Información sobre herramientas de metadatos enriquecidos que muestran propiedades detalladas del archivo al pasar el mouse.* 
+
+---
+
+### Consejo profesional 5: búsqueda rápida en Pinyin de alto rendimiento y filtrado en vivo 
+En **Preferencias ➔ Búsqueda rápida**, los usuarios avanzados pueden adaptar la búsqueda de letras en el panel a su idioma y hábitos de filtrado: 
+
+- **Coincidencia Pinyin de límites arbitrarios (`quick_search.pinyin_search`)**: 
+- Coincide con caracteres chinos por consonantes iniciales o sílabas pinyin completas que comienzan en *cualquier* límite de carácter en el nombre. 
+- *Ejemplo*: Escribir `gz` coincide con `2024工作总结.docx` y `【公司】工资表.xlsx` sin necesidad de hacer coincidir desde el primer carácter del nombre del archivo. 
+- Habilitado de forma predeterminada mediante una tabla de búsqueda en caché en memoria. 
+- **Modo de solo filtro en vivo (`quick_search.filter_only`)**: 
+- Al activar **Mostrar solo archivos/directorios coincidentes (modo de filtro)** se ocultan los elementos que no coinciden directamente a medida que escribe. 
+- A diferencia de la búsqueda rápida estándar (que simplemente mueve el cursor de selección entre los archivos visibles), el modo de filtro aísla las filas coincidentes para que las operaciones por lotes, como **Seleccionar todo** (`Cmd+A`), **Copiar** (`F5`), **Mover** (`F6`) y **Empaquetar** (`Alt+F5`), operen estrictamente en los elementos coincidentes.
 
 ---
 

@@ -42,6 +42,15 @@ Dans ATBCmder, chaque panneau fonctionne comme un moteur de navigation autonome 
 | **Historique Retour** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Revenez au dossier précédemment visité. | 
 | **Histoire en avant** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Avancer dans l’historique du répertoire. | 
 | **Liste déroulante de l'historique** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Afficher la liste déroulante de l'historique. | 
+| **Navigation par balayage du trackpad** | Balayage à deux doigts vers la gauche/droite | — | `cm_ViewHistoryPrev` / `Next` | Balayage de l'historique Précédent/Avant sur le trackpad (basculer dans les vues de fichiers). | 
+| **Afficher tous les fichiers** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Effacez le masque de fichier actif et affichez tous les fichiers. | 
+| **Afficher les fichiers personnalisés** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtrez les fichiers visibles par masque global (*.py;*.md). |
+| **Navigation par balayage du trackpad** | Balayage à deux doigts vers la gauche/droite | — | `cm_ViewHistoryPrev` / `Next` | Balayage de l'historique Précédent/Avant sur le trackpad (basculer dans les vues de fichiers). | 
+| **Afficher tous les fichiers** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Effacez le masque de fichier actif et affichez tous les fichiers. | 
+| **Afficher les fichiers personnalisés** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtrez les fichiers visibles par masque global (*.py;*.md). |
+| **Navigation par balayage du trackpad** | Balayage à deux doigts vers la gauche/droite | — | `cm_ViewHistoryPrev` / `Next` | Balayage de l'historique Précédent/Avant sur le trackpad (basculer dans les vues de fichiers). | 
+| **Afficher tous les fichiers** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Effacez le masque de fichier actif et affichez tous les fichiers. | 
+| **Afficher les fichiers personnalisés** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filtrez les fichiers visibles par masque global (*.py;*.md). |
 | **Liste des lecteurs/volumes (gauche/droite)** | `⌥F1` / `⌥F2` (`⌥D`) | `Alt+F1` / `Alt+F2` (`Alt+D`) | `cm_LeftOpenDrives` / `cm_RightOpenDrives` (`cm_Drives`) | Ouvrez le menu du lecteur pour le panneau gauche ou droit (`Alt+D` pour le panneau actif). | 
 | **Recherche rapide** | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | Ouvrez la superposition de recherche en temps réel dans le panneau. | 
 
@@ -237,6 +246,21 @@ Chaque panneau enregistre sa propre pile d'historique de cheminement chronologiq
 ![Menu déroulant de l'historique](images/directory_history_dropdown.png)  
 *Figure 2.2 : Menu déroulant de l'historique des répertoires (`Alt+F8` / `Ctrl+Down`) affichant les chemins des dossiers récemment visités.*
 
+### Navigation par balayage horizontal sur le trackpad du MacBook 
+
+Pour les utilisateurs d'ordinateurs portables MacBook et les configurations Apple Magic Trackpad, ATBCmder reconnaît de manière native les gestes de balayage horizontal à deux doigts dans la fenêtre d'affichage de la liste de fichiers active ou inactive : 
+
+- **Balayage vers la gauche** : permet de naviguer **Retour** dans l'historique des dossiers (`cm_ViewHistoryPrev`). 
+- **Balayez vers la droite** : permet de naviguer **Avant** dans l'historique des dossiers (`cm_ViewHistoryNext`). 
+
+Le moteur gestuel est conçu pour une ergonomie macOS transparente : 
+
+- **Anti-rebond intelligent et domination horizontale** : distingue les gestes d'historique horizontaux intentionnels du défilement vertical de la liste, en ignorant complètement la dérive d'élan. 
+- **Mise au point automatique du panneau** : faire glisser votre doigt sur le panneau inactif déplace immédiatement le clavier et le focus opérationnel vers ce panneau avant d'exécuter l'étape de l'historique, garantissant ainsi la navigation dans le côté prévu. 
+- **Bascule configurable** : la navigation par balayage peut être activée ou désactivée dans **Préférences** (`Cmd+,`) → **Vues de fichiers** (`view.trackpad_swipe_navigation`, par défaut : désactivé).
+
+---
+
 ### Sélecteur de lecteur et de volume
 
 Sur macOS, toutes les partitions internes, les lecteurs externes USB-C/Thunderbolt, les DMG montés et les partages réseau résident sous `/Volumes`. ATBCmder fournit des commandes dédiées pour basculer entre ces cibles : 
@@ -356,6 +380,20 @@ La recherche rapide vous permet d'accéder directement à n'importe quel fichier
 - **Recherche rapide (`Ctrl+S` / `cm_QuickSearch`)** : Navigue le curseur entre les correspondances tout en gardant tous les fichiers visibles. 
 - **Filtre rapide (`cm_QuickFilter`)** : masque temporairement tous les fichiers qui ne correspondent pas, affichant uniquement les lignes correspondantes dans le tableau. 
 - **Filtre sémantique (`Option+F7` / `cm_SemanticFilter`)** : utilise des requêtes en langage naturel (par exemple, `/larger than 10MB`, `//today modified pdf`) via macOS Spotlight.
+
+### Masques de fichiers et filtres d'extension (`Cmd+F10` / `Cmd+F11`) 
+
+Lors de la gestion de répertoires contenant des centaines de fichiers mixtes, ATBCmder fournit des commandes dédiées dans le menu **Afficher** et les menus contextuels d'en-tête de colonne pour filtrer la liste visible : 
+
+- **Afficher tous les fichiers (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)** : 
+- Efface instantanément les masques d'extension actifs et les filtres rapides, réinitialisant la vue pour afficher tous les fichiers et répertoires. 
+- **Afficher les fichiers personnalisés/le masque d'extension (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)** : 
+- Ouvre une invite pré-remplie avec le masque actuel ou le dernier utilisé (par exemple, `*.py;*.md`, `*.jpg;*.png` ou `test_*`). 
+- Les répertoires et les entrées parentes `..` restent visibles afin que vous puissiez parcourir les hiérarchies de dossiers tout en conservant votre masque actif. 
+- Un badge bien visible dans la barre d'état affiche `Mask: <pattern>` lorsque le filtrage est actif. 
+- Le masque persiste tout au long de la navigation dans cet onglet et peut être rapidement réinitialisé avec `Cmd+F10`.
+
+---
 
 ### Modes de colonne d'ajustement automatique
 
@@ -498,6 +536,8 @@ Voici trois recettes concrètes montrant comment la navigation, les onglets et l
 | | Vue arborescente (les deux panneaux) | *Afficher le menu* | — | `cm_TreeViewBoth` | 
 | | Vue arborescente plate (Flat Branch View) | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` | 
 | | Mode panneaux horizontaux | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` | 
+| | Afficher tous les fichiers | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | 
+| | Masque de fichier personnalisé | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` |
 | **Recherche et filtres** | Superposition de recherche rapide | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | 
 | | Filtre sémantique | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 

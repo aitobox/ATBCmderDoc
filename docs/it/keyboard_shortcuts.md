@@ -196,6 +196,7 @@ Spostati facilmente tra cartelle, volumi locali, montaggi di rete e cronologia d
 | `cm_ChangeDirToHome` | Passa direttamente alla cartella principale dell'utente (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | Pannello file | 
 | `cm_ViewHistoryPrev` | Torna indietro nella cronologia di navigazione della directory | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Principale | 
 | `cm_ViewHistoryNext` | Andare avanti nella cronologia di navigazione della directory | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Principale | 
+| `cm_ViewHistoryPrev` / `Next` | Scorri avanti/indietro sul trackpad nella cronologia della directory (attiva/disattiva Visualizzazioni) | Scorri con due dita ← / → | — | Pannello file |
 | `cm_DirHistory` | Apri il menu a discesa della cronologia della directory interattiva | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Principale | 
 | `cm_Drives` | Apri il popup dell'unità e del selettore del volume montato | `⌥D` | `Alt+D` | Principale | 
 | `cm_LeftOpenDrives` | Aprire il menu di selezione dell'unità per il pannello sinistro | `⌥F1` | `Alt+F1` | Principale | 
@@ -236,6 +237,8 @@ Passa senza problemi tra elenchi compatti, colonne di metadati dettagliate, grig
 | `cm_QuickSearch` | Apri la barra di ricerca rapida nel pannello (digita le lettere per filtrare) | `⌥S` / `⌃S` *(o digitando)* | `Ctrl+S` / *(Digitazione lettere)* | Principale | 
 | `cm_SemanticFilter` | Aprire la barra del filtro intelligente semantico del linguaggio naturale | `⌥F7` | `Alt+F7` | Principale | 
 | `cm_HorizontalFilePanels` | Attiva/disattiva il layout orizzontale a doppio pannello (impilato verticalmente) | `⇧⌘H` | `Ctrl+Shift+H` | Principale |
+| `cm_SrcAllFiles` | Mostra tutti i file (cancella la maschera dell'estensione attiva e il filtro rapido) | `⌘F10` | `Ctrl+F10` | Principale | 
+| `cm_SrcUserDef` | Mostra file personalizzati/Filtra per maschera estensione (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Principale |
 
 ---
 
@@ -250,6 +253,9 @@ ATBCmder consente di aprire schede illimitate in entrambi i pannelli, bloccare l
 | `cm_NextTab` / `cm_NextTabCtrl` | Passa alla scheda successiva a destra | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principale | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Passa alla scheda precedente a sinistra | `⌃⇧⇥` *(Ctrl+Maiusc+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principale | 
 | `cm_ShowTabsList` | Mostra il menu a comparsa di tutte le schede aperte nel pannello attivo | `⇧⌘L` | `Ctrl+Shift+L` | Principale | 
+| `cm_SetTabOptionLock` | Blocca questa scheda (blocca il percorso, apre le cartelle secondarie nelle schede adiacenti) | *(Menu contestuale scheda)* | — | Principale | 
+| `cm_SetTabOptionLockWithSubdirs` | Blocca la scheda con le sottodirectory consentite (ripristina il percorso di base allo switch) | *(Menu contestuale scheda)* | — | Principale | 
+| `cm_SetTabOptionNormal` | Scheda Sblocca (ripristina il comportamento di navigazione sbloccato predefinito) | *(Menu contestuale scheda)* | — | Principale |
 | `cm_CloseAllTabs` | Chiudi tutte le schede nel pannello attivo tranne l'ultima | `⌥⌘W` | *(Menu contestuale scheda: Chiudi tutto)* | Principale | 
 | `cm_CloseOtherTabs` | Chiudi tutte le schede diverse da quella attualmente attiva | `⇧⌘W` | *(Menu contestuale scheda: Chiudi altri)* | Principale | 
 | `cm_Duplicatetab` | Scheda cartella attiva duplicata | `⌘D` / `cm_Duplicatetab` | *(Menu contestuale scheda: Duplica)* | Principale | 

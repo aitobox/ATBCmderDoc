@@ -121,20 +121,20 @@ Die über jedem Dateibereich positionierte Breadcrumb-Pfadleiste ermöglicht bli
 - **Im Terminal öffnen**: Öffnet das macOS-Terminal direkt in diesem Ordner (`open -a Terminal`). 
 - **Direkte Pfadbearbeitung (`BreadcrumbLineEdit`)**: Doppelklicken Sie auf die leere Stelle rechts neben der Breadcrumb-Kette. Die Leiste wird sofort in ein bearbeitbares Textfeld umgewandelt, in das Sie einen beliebigen Pfad einfügen oder eingeben können (z. B. `/var/log`, `~/Library` oder `vfs://` Archive). Drücken Sie `Enter` zum Navigieren oder `Esc` zum Abbrechen.
 
-### [4] Ordner-Registerkartenleiste
+### [4] Ordner-Tab-Leiste 
+Jedes Panel verwaltet einen unabhängigen Satz von Registerkarten, die mit `MacNativeTabBar` erstellt wurden: 
 
-Jedes Panel verfügt über einen unabhängigen Satz von Registerkarten: 
+- **Angrenzende Tab-Erstellung**: Beim Öffnen neuer Tabs mit `Cmd+T` (`cm_NewTab`) wird der neue Tab direkt rechts von Ihrem aktiven Tab eingefügt und nicht am Ende des Streifens. Schließen Sie Tabs mit `Cmd+W` (`cm_CloseTab`). 
+- **Total Commander Tab-Sperre**: Klicken Sie mit der rechten Maustaste auf Tabs, um **Diesen Tab sperren** (friert das Basisverzeichnis mit einem Sternchen `*` ein; die Navigation in untergeordneten Ordnern wird in benachbarten Tabs geöffnet) oder **Gesperrt, aber Verzeichnisänderungen sind zulässig** (direktes Durchsuchen von Unterordnern mit automatischer Zurücksetzung auf die Basis beim Umschalten) auszuwählen. 
+- **Arbeitsbereichsorganisation**: Tabs per Drag-and-Drop neu anordnen, leeren Leerraum doppelt anklicken, um Titel zu duplizieren, umzubenennen oder Tab-Layouts in das gegenüberliegende Bedienfeld zu klonen.
 
-- Öffnen Sie neue Tabs mit `Cmd+T` (`cm_NewTab`), schließen Sie Tabs mit `Cmd+W` (`cm_CloseTab`). 
-- Per Drag-and-Drop können Sie die Registerkarten innerhalb eines Panels neu anordnen. 
-- Klicken Sie mit der rechten Maustaste auf Registerkarten, um Pfade zu sperren, Titel umzubenennen, Duplikate zu schließen oder Registerkarten im gegenüberliegenden Bereich zu duplizieren.
-
-### [5] Dual-Datei-Panels
-
+### [5] Dual-File-Panels 
 Leistungsstarke virtualisierte Dateilisten, die Ordner mit Hunderttausenden Einträgen reibungslos und ohne Ruckeln der Benutzeroberfläche wiedergeben können: 
 
-- Spaltensortierung: Klicken Sie auf eine beliebige Überschrift (Name, Ext, Größe, Datum, Attribute), um aufsteigend oder absteigend zu sortieren. 
-- Mehrere Ansichtsmodi: Vollständige Detailansicht, Kurzrasteransicht, Miniaturansichtsgalerieansicht, Baumansicht und rekursive flache Zweigansicht (`Cmd+B`).
+- **Semantic Lucide Icon System**: Vektorsymbole mit hoher DPI, zugeschnitten auf Programmiersprachen, Dokumente, Medien und Archive, unterstützt durch einen gemeinsamen Singleton-Cache für Scrollen mit 60 Bildern pro Sekunde. 
+- **MacBook Trackpad-Gestennavigation**: Flüssige horizontale Wischnavigation mit zwei Fingern (nach links wischen für Verlauf zurück, nach rechts wischen für Verlauf vorwärts) mit automatischer Hover-Erkennung des Panels und Beibehaltung des vertikalen Bildlaufs. 
+- **In-Panel-Schnellsuche und Masken**: Sofortige Zeichen-für-Zeichen-Suche mit Unterstützung für chinesische Pinyin-Übereinstimmungen mit beliebigen Grenzen, Live-Isolierung nur durch Filter und benutzerdefinierte Erweiterungsmasken (`Cmd+F11` / Zurücksetzen mit `Cmd+F10`). 
+- **Spaltensortierung und -ansichten**: Klicken Sie auf eine beliebige Kopfzeile, um aufsteigend oder absteigend zu sortieren. Zu den mehreren Ansichtsmodi gehören „Vollständige Details“, „Kurzübersicht“, „Miniaturansichtsgalerie“, „Baumansicht“ und „rekursive flache Zweigansicht“ (`Cmd+B`).
 
 ### [6] Mittlere Symbolleiste und ziehbarer Splitter
 
@@ -165,7 +165,7 @@ Ganz unten im Fenster verankert:
 - Gesamtzahl der Elemente und Gesamtgröße des Ordners. 
 – Anzahl der ausgewählten Elemente und kombinierte ausgewählte Bytegröße. 
 
-- **Laufwerkspeicheranzeige**: Visuelle Anzeige der Festplattennutzung, die den Namen des aktuell bereitgestellten Volumes (z. B. `Macintosh HD`), die Gesamtkapazität, den verwendeten Speicher und den Prozentsatz des verbleibenden freien Speicherplatzes anzeigt. 
+- **Laufwerksspeicheranzeige und Cloud-Integration**: Visuelle Anzeige der Festplattennutzung, die den Namen des aktuell bereitgestellten Volumes (z. B. `Macintosh HD`), die Gesamtkapazität, den verwendeten Speicher und den Prozentsatz des verbleibenden freien Speicherplatzes anzeigt. Synchronisierte Cloud-Speicheranbieter (OneDrive, Google Drive, iCloud) werden automatisch mit einer dauerhaften, sicherheitsbezogenen Lesezeichenautorisierung identifiziert.
 
 ---
 

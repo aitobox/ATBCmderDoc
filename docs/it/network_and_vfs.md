@@ -609,6 +609,16 @@ Una volta connesso, Dropbox risponde con la rapidità di un'unità locale:
 - **Aggiornamento istantaneo (`F9` / `Ctrl+R`)**: Recupera in un istante le modifiche apportate su altri dispositivi con la semplice pressione di un tasto.
 - **Sicurezza hardware con Secure Enclave**: Credenziali e token OAuth vengono memorizzati in modo crittografato direttamente nel **Portachiavi di sistema macOS** (`ATBCmder_VFS`) protetto dal Secure Enclave di Apple.
 
+### 6.3 Archiviazione sandbox sul cloud dell'App Store (OneDrive, Google Drive, iCloud) 
+
+Nelle build sandbox di ATBCmder del Mac App Store, l'accesso diretto del filesystem alle directory di sincronizzazione cloud di terze parti (ad esempio, Microsoft OneDrive, Google Drive per desktop, Dropbox e iCloud Drive) è regolato dall'architettura sandbox di Apple: 
+
+- **Segnalibri con ambito di sicurezza**: le directory cloud sincronizzate che risiedono in `~/Library/CloudStorage/OneDrive-*`, `~/Library/CloudStorage/GoogleDrive-*` o `~/Library/Mobile Documents/com~apple~CloudDocs/` richiedono token di accesso con ambito di sicurezza. 
+- **Switcher di unità e integrazione del percorso**: ATBCmder rileva automaticamente le directory cloud locali configurate e le mostra nello Switcher di unità (`Alt+D` / `⌥D`), nelle barre dei pulsanti delle unità e nei breadcrumb del percorso. 
+- **Concessioni di autorizzazioni persistenti**: quando si apre una directory cloud per la prima volta, macOS presenta un foglio di autorizzazione. Una volta selezionato, ATBCmder memorizza il segnalibro con ambito di sicurezza crittografica nelle preferenze dell'utente, garantendo un accesso in lettura/scrittura continuo e ininterrotto durante i riavvii dell'applicazione senza ripetute finestre di dialogo di autorizzazione.
+
+---
+
 ## 7. Connessione rapida e Gestione connessione
 
 ATBCmder fornisce due meccanismi flessibili per la connessione a host remoti: **Quick Connect** per sessioni temporanee veloci e **Connection Manager** per segnalibri server persistenti e categorizzati.

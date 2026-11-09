@@ -51,7 +51,7 @@ Die folgende Entscheidungsmatrix ordnet allgemeine Dateiverwaltungsziele und tec
 | **Dateisystemzugriff gewähren**| Menü: Datei / Hilfe | — | `cm_GrantFilesystemAccess`| Startet den Berechtigungsassistenten für die macOS App Sandbox. | 
 | **Manuelle Panel-Aktualisierung** | `Ctrl+R` / `⌃R` oder `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Erzwingt ein sofortiges erneutes Lesen des Verzeichnisses von der Festplatte. | 
 | **Systemterminal starten** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Erzeugt das macOS-Terminal im aktuellen Panel-Pfad. | 
-| **Ordnerplatz berechnen** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Berechnet die aggregierte rekursive Bytegröße (`Space` für einzelne Bytes, `Ctrl+L` für ausgewählte Gesamtbytes). | 
+| **Ordnerplatz berechnen** | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Berechnet die aggregierte rekursive Bytegröße (`Space` für einzelne Bytes, `Ctrl+L` für ausgewählte Gesamtbytes). | 
 | **Sicheres Löschen (Shred)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Mehrfaches Überschreiben und dauerhaftes Löschen von Dateien. | 
 
 ---
@@ -302,6 +302,58 @@ Die folgende Entscheidungsmatrix ordnet allgemeine Dateiverwaltungsziele und tec
 > [!TIP] 
 > **⚡Profi-Tipp: Identische doppelte Dateien anhand von Prüfsummen identifizieren**: 
 > Wenn Sie vermuten, dass es sich bei mehreren großen Dateien um exakte Duplikate handelt, wählen Sie sie aus und drücken Sie **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Wählen Sie **SHA-256** und klicken Sie auf Berechnen. Passende Hash-Digests bestätigen 100 % binäre Duplikate, sodass Sie überflüssige Kopien mit absoluter Sicherheit löschen können. 
+
+---
+
+### 2.6 Rezept 6: Schutz von Arbeitsbereichen mit Tab-Sperre im Total Commander-Stil
+
+Wenn Sie kritische Projekte, Server-Mounts oder Repositorys verwalten, wird Ihr Arbeitsablauf unterbrochen, wenn Sie versehentlich Ihr primäres Arbeitsverzeichnis verlassen. ATBCmder bietet Total Commander-kompatible Tab-Sperre: 
+
+1. **Sperren eines Tabs (`cm_SetTabOptionLock`)**: 
+- Klicken Sie mit der rechten Maustaste auf eine beliebige Tab-Überschrift und wählen Sie **Diesen Tab sperren**. 
+- Im Tab-Titel erscheint sofort ein Sternchen `*` (z. B. `* WebApp`). 
+- Das Basisverzeichnis ist eingefroren. Wenn Sie auf einen beliebigen Ordner doppelklicken oder ein Archiv innerhalb dieser Registerkarte öffnen, bleibt die gesperrte Registerkarte intakt und der Zielspeicherort wird automatisch in einer **benachbarten Registerkarte** unmittelbar rechts angezeigt. 
+2. **Sperren mit zulässigen Unterverzeichnissen (`cm_SetTabOptionLockWithSubdirs`)**: 
+- Klicken Sie mit der rechten Maustaste auf die Registerkarte und wählen Sie **Gesperrt, aber Verzeichnisänderungen zulässig**. 
+- Sie können innerhalb der aktuellen Registerkarte frei in verschachtelten Unterverzeichnissen navigieren. 
+- Wenn Sie jedoch zu einer anderen Registerkarte wechseln, erneut auf die Registerkartenüberschrift klicken oder zur Stammschaltfläche navigieren, wird die Registerkarte automatisch auf ihren festgelegten Basispfad zurückgesetzt. 
+3. **Entsperren (`cm_SetTabOptionNormal`)**: 
+- Klicken Sie mit der rechten Maustaste auf die Registerkarte und wählen Sie **Registerkarte entsperren**, um zum Standardverhalten zurückzukehren. 
+
+--- 
+
+### 2.7 Rezept 7: Aktive Dateien nach benutzerdefinierter Erweiterungsmaske filtern (`Cmd+F11`)
+
+Wenn ein Verzeichnis Hunderte von Dateien mit unterschiedlichen Erweiterungen enthält (z. B. Quellcode, kompilierte Binärdateien, Protokolle, Assets), müssen Sie sich häufig auf eine bestimmte Teilmenge konzentrieren, ohne die Ordnernavigation zu verlieren: 
+
+1. **Benutzerdefinierten Filter aktivieren (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**: 
+- Drücken Sie **`Cmd+F11`** (`⌘F11`). 
+- Ein Dialog erscheint vorab mit der aktiven oder zuletzt verwendeten Maske gefüllt (z. B. `*.py;*.md` oder `*.jpg;*.png`). 
+- Geben Sie die gewünschten Glob-Muster durch Semikolons getrennt ein und drücken Sie `Enter`. 
+2. **Live-gefiltertes Surfen**: 
+– Das Bedienfeld blendet sofort alle nicht übereinstimmenden Dateien aus, während Unterverzeichnisse und übergeordnete Dateien `..` sichtbar bleiben. 
+– In der Statusleiste des Bedienfelds wird eine klare Anzeige (`Mask: *.py;*.md`) angezeigt. 
+
+- Sie können Unterverzeichnisse betreten und verlassen; Die Maske bleibt während der gesamten Navigation aktiv. 
+3. **Auf alle Dateien zurücksetzen (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**: 
+- Drücken Sie jederzeit **`Cmd+F10`** (`⌘F10`), um die Maske zu löschen und die vollständige Dateiliste wiederherzustellen. 
+
+--- 
+
+### 2.8 Rezept 8: Aktivieren der MacBook-Zwei-Finger-Trackpad-Verlaufsnavigation
+
+Wenn Sie an einem MacBook arbeiten oder ein Magic Trackpad verwenden, können Sie mit fließenden horizontalen Wischgesten mit zwei Fingern durch Ihren Ordnerverlauf navigieren: 
+
+1. **Trackpad-Navigation aktivieren**: 
+- Drücken Sie **`Cmd+,`** (`⌘,`), um **Einstellungen** zu öffnen. 
+- Navigieren Sie zur Seite **Dateiansichten**. 
+- Aktivieren Sie im Abschnitt **Trackpad-Navigation** das Kontrollkästchen **Mit zwei Fingern nach links/rechts wischen, um im Ordnerverlauf vor/zurück zu gehen** (`view.trackpad_swipe_navigation`). 
+- Klicken Sie auf **OK**. 
+2. **Mühelose Gestennavigation**: 
+- Bewegen Sie Ihren Mauszeiger über eines der Felder (kein Klick erforderlich). 
+- **Mit zwei Fingern nach links wischen**: Navigiert zurück im Verzeichnisverlauf (`cm_ViewHistoryPrev`). 
+- **Mit zwei Fingern nach rechts wischen**: Navigiert vorwärts im Verzeichnisverlauf (`cm_ViewHistoryNext`). 
+- Der horizontale Dominanzfilter stellt sicher, dass das vertikale Scrollen der Liste nie versehentlich unterbrochen wird.
 
 ---
 
@@ -624,6 +676,9 @@ Drücken Sie **`Ctrl+J`** (`⌃J`) oder führen Sie den Befehl **`cm_RunTerm`** 
 #### F6: Unterstützt ATBCmder Intel-Macs (x86_64)?
 
 Ja! Ab Version 1.8.0 bietet ATBCmder universelle Dual-Architektur-Pakete, die sowohl **Apple Silicon (M1/M2/M3/M4, ARM64-Architektur)** als auch **Intel (x86_64)** Mac-Computer unter macOS 12.0 oder neuer nativ unterstützen.
+#### Q7: How does Chinese Pinyin Quick Search work?
+ Beim Durchsuchen von Ordnern mit chinesischen Namen werden bei der Eingabe in das Bedienfeld sowohl Anfangskonsonanten als auch vollständige Pinyin-Silben gefunden, die an einer beliebigen chinesischen Zeichengrenze beginnen. For example, typing `gz` matches `2024工作总结.docx` and `【公司】工资表.xlsx`. Wenn Sie beim Tippen lieber nicht übereinstimmende Dateien ausblenden möchten, öffnen Sie **Einstellungen ➔ Schnellsuche** und aktivieren Sie **Nur übereinstimmende Dateien/Verzeichnisse anzeigen (Filtermodus)** (`quick_search.filter_only`).
+
 
 ---
 

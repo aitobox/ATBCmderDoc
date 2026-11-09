@@ -73,10 +73,10 @@ O ATBCmder organiza o poder em um layout limpo e intuitivo, projetado para forne
 1. **Integração com barra de menu e macOS nativo (`[1]`)**: suporte completo ao menu do aplicativo macOS, atalhos padrão (`⌘,`, `⌘Q`, `⌘W`) e acesso completo ao menu para todos os comandos internos do Commander (`cm_*`). 
 2. **Barra de ferramentas principal e iniciadores rápidos (`[2]`)**: acesso imediato com um clique à Pesquisa (`Alt+F7`), Fila de transferência em segundo plano (`cm_OperationsPanel`), Preferências (`Cmd+,`) e seletores de unidade. 
 3. **Barra de caminho de navegação atual (`[3]`)**: Clique em qualquer segmento de diretório no caminho para pular diretamente para cima na hierarquia. Clique na seta suspensa do segmento para navegar pelos subdiretórios. 
-4. **Guias de pastas e espaços de trabalho (`[4]`)**: abra guias ilimitadas em cada painel (`Cmd+T`), feche guias (`Cmd+W`), bloqueie locais favoritos e salve espaços de trabalho inteiros com guias de painel duplo (`cm_SaveFavoriteTabs`). 
-5. **Painéis de arquivos duplos (`[5]`)**: Tabelas de arquivos independentes. O painel ativo exibe uma borda de destaque distinta e um cursor focado. Mude o foco instantaneamente com `Tab`. 
+4. **Guias de pastas e espaços de trabalho (`[4]`)**: Abra guias adjacentes (`Cmd+T`), feche guias (`Cmd+W`), bloqueie caminhos com modos de bloqueio do Total Commander (`cm_SetTabOptionLock` com emblema `*`) e salve toda a guia de painel duplo espaços de trabalho (`cm_SaveFavoriteTabs`). 
+5. **Painéis de arquivos duplos (`[5]`)**: tabelas de arquivos independentes alimentadas por ícones vetoriais Semantic Lucide e um cache singleton compartilhado. Apresenta navegação no histórico do trackpad com dois dedos, pesquisa rápida em Pinyin chinês com limites arbitrários, máscaras de arquivo personalizadas (`Cmd+F11` / `Cmd+F10`) e troca instantânea de foco com `Tab`. 
 6. **Barra de ferramentas do meio e divisor arrastável (`[6]`)**: Uma faixa vertical de ação rápida colocada diretamente no divisor do painel. Fornece gatilhos de um clique para visualizar (`F3`), editar (`F4`), copiar (`F5`), mover (`F6`), nova pasta (`F7`), excluir (`F8`), limpar e trocar painéis (`cm_Exchange`). Arraste o divisor para a esquerda ou direita para redimensionar os painéis. 
-7. **Barra de status e medidor de armazenamento da unidade (`[7]`)**: mostra contagens de arquivos em tempo real, estatísticas de itens selecionados, tamanhos de bytes agregados e um medidor de capacidade de armazenamento de volume ativo com cálculo de espaço livre. 
+7. **Barra de status e medidor de armazenamento na unidade (`[7]`)**: mostra contagens de arquivos em tempo real, estatísticas de itens selecionados, tamanhos de bytes agregados, autorização persistente de unidade na nuvem (OneDrive, Google Drive, iCloud) e um medidor de capacidade de armazenamento de volume ativo com cálculo de espaço livre.
 
 ---
 
@@ -155,17 +155,14 @@ Explore o conjunto completo de documentação do ATBCmder:
 
 Entenda a filosofia de painel duplo, explore a anatomia da interface, configure as permissões do macOS App Sandbox por meio do assistente de integração (`cm_GrantFilesystemAccess`), defina substituições de idioma do sistema em mais de 30 localidades e personalize temas claros/escuros.
 
-### 🧭 [Capítulo 2: Guias de navegação e pastas](navigation_and_tabs.md)
+### 🧭 [Capítulo 2: Guias de navegação e pastas](navigation_and_tabs.md) 
+Mova-se facilmente pelas árvores de diretórios usando trilhas interativas, saltos de teclado (`Ctrl+\`, `Backspace`), navegação no histórico do trackpad com dois dedos, organização de várias guias com abertura de guias adjacentes e bloqueio de guias TC (`*`), conjuntos de espaços de trabalho favoritos de painel duplo (`cm_SaveFavoriteTabs`), marcadores de lista de favoritos de diretório (`Ctrl+D`), pesquisa rápida em pinyin chinês, máscaras de arquivo personalizadas (`Cmd+F10`/`Cmd+F11`) e modos de visualização flexíveis (breve, colunas completas, miniaturas, visualização em árvore e visualização de ramificação plana `Cmd+B`). 
 
-Mova-se facilmente pelas árvores de diretórios usando trilhas interativas, saltos de teclado (`Ctrl+\`, `Backspace`), organização com várias guias (`Cmd+T`, `Cmd+W`), conjuntos de espaços de trabalho favoritos de painel duplo (`cm_SaveFavoriteTabs`), marcadores da lista de favoritos do diretório (`Ctrl+D`) e modos de visualização flexíveis (resumido, colunas completas, miniaturas, visualização em árvore e visualização de ramificação plana `Cmd+B`).
+### 📁 [Capítulo 3: Operações diárias de arquivos e fila](file_operations.md) 
+Execute operações de arquivo rápidas e sólidas: copiar (`F5`), mover (`F6`), nova pasta (`F7`), excluir para a lixeira (`F8`), renomeação rápida in-line (`F2`) e cálculo ergonômico de espaço de diretório (`Alt+Shift+Return` /`⌥⇧⏎`). Seleções mestres de caracteres curinga e atributos, interoperabilidade de arrastar e soltar, resolução de conflitos de colisão, salvaguardas de preparação atômica contra perda de dados, permissões octais UNIX (`Alt+Enter`) e monitoramento de transferência assíncrona por meio da fila de operações em segundo plano (`cm_OperationsPanel`). 
 
-### 📁 [Capítulo 3: Operações diárias de arquivos e fila](file_operations.md)
-
-Execute operações de arquivo rápidas e sólidas: copiar (`F5`), mover (`F6`), nova pasta (`F7`), excluir para a lixeira (`F8`) e renomeação rápida embutida (`F2`). Seleções mestres de caracteres curinga e atributos, interoperabilidade de arrastar e soltar, resolução de conflitos de colisão, permissões octais UNIX (`Alt+Enter`) e monitoramento de transferência assíncrona por meio da fila de operações em segundo plano (`cm_OperationsPanel`).
-
-### 👁️ [Capítulo 4: Lista universal e editores integrados](viewers_and_editors.md)
-
-Inspecione arquivos sem iniciar software pesado de terceiros. Use o Quick View (`Ctrl+Q` / `Cmd+Q`) para visualizações ao vivo do painel lateral e o Universal Lister (`F3`) para documentos do Word, planilhas, bancos de dados SQLite, blocos de notas Jupyter, EPUBs, código realçado por sintaxe, inspeção de byte hexadecimal bruto (`2`), anotações de imagem e marca d'água (`F4`), leitor de documentos PDF e reprodutores de mídia de áudio/vídeo integrados com reprodução de áudio em segundo plano. Edite arquivos diretamente com o editor de texto integrado (`F4`).
+### 👁️ [Capítulo 4: Lista universal e editores integrados](viewers_and_editors.md) 
+Inspecione arquivos sem iniciar software pesado de terceiros. Use o Quick View (`Ctrl+Q` / `Cmd+Q`) para visualizações ao vivo do painel lateral e o Universal Lister (`F3`) para documentos do Word, planilhas, bancos de dados SQLite, blocos de notas Jupyter, EPUBs, código realçado por sintaxe, inspeção de bytes hexadecimais brutos (`2`), anotações de imagem e marca d'água (`F4`), leitor de documentos PDF e reprodutores de mídia de áudio/vídeo integrados com reprodução de áudio em segundo plano. Edite arquivos diretamente com o editor de texto integrado (`F4`) com uma barra de ferramentas de ação vetorial moderna e proteção para salvamento atômico.
 
 ### ⚡ [Capítulo 5: Ferramentas elétricas e automação](power_tools.md)
 

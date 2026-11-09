@@ -51,7 +51,7 @@ A matriz de decisão a seguir mapeia objetivos comuns de gerenciamento de arquiv
 | **Conceder acesso ao sistema de arquivos**| Menu: Arquivo / Ajuda | — | `cm_GrantFilesystemAccess`| Inicia o assistente de permissão do macOS App Sandbox. | 
 | **Atualização manual do painel** | `Ctrl+R` / `⌃R` ou `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Força uma releitura imediata do diretório do disco. | 
 | **Iniciar terminal do sistema** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Gera o Terminal macOS no caminho do painel atual. | 
-| **Calcular espaço na pasta** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcula o tamanho de bytes recursivos agregados (`Space` para único, `Ctrl+L` para o total selecionado). | 
+| **Calcular espaço na pasta** | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Calcula o tamanho de bytes recursivos agregados (`Space` para único, `Ctrl+L` para o total selecionado). | 
 | **Exclusão segura permanente (Wipe)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Sobregravação multipassada e exclusão permanente de arquivos. | 
 
 ---
@@ -297,6 +297,57 @@ A matriz de decisão a seguir mapeia objetivos comuns de gerenciamento de arquiv
 > [!TIP] 
 > **⚡ Dica profissional: identificação de arquivos duplicados idênticos por meio de somas de verificação**: 
 > Se você suspeitar que vários arquivos grandes são duplicatas exatas, selecione-os e pressione **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Escolha **SHA-256** e clique em Calcular. Os resumos de hash correspondentes confirmam 100% de duplicatas binárias, permitindo excluir cópias supérfluas com total confiança. 
+
+---
+
+### 2.6 Receita 6: Protegendo espaços de trabalho com bloqueio total de guias estilo Commander
+
+Ao gerenciar projetos críticos, montagens de servidor ou repositórios, navegar acidentalmente para fora do diretório de trabalho principal interrompe o fluxo. ATBCmder fornece bloqueio de guias compatível com Total Commander: 
+
+1. **Bloqueando uma guia (`cm_SetTabOptionLock`)**: 
+- Clique com o botão direito em qualquer cabeçalho de guia e selecione **Bloquear esta guia**. 
+- Um emblema de asterisco `*` aparece imediatamente no título da guia (por exemplo, `* WebApp`). 
+- O diretório base está congelado. Clicar duas vezes em qualquer pasta ou abrir um arquivo dentro desta guia deixa a guia bloqueada intacta e gera automaticamente o local de destino em uma **guia adjacente** imediatamente à direita. 
+2. **Bloqueio com subdiretórios permitido (`cm_SetTabOptionLockWithSubdirs`)**: 
+- Clique com o botão direito na guia e escolha **Bloqueado, mas alterações de diretório permitidas**. 
+- Você pode navegar livremente em subdiretórios aninhados na guia atual. 
+- No entanto, mudar para outra guia, clicar novamente no cabeçalho da guia ou navegar até o botão raiz redefine automaticamente a guia de volta ao caminho base designado. 
+3. **Desbloqueio (`cm_SetTabOptionNormal`)**: 
+- Clique com o botão direito na guia e selecione **Desbloquear guia** para retornar ao comportamento padrão. 
+
+--- 
+
+### 2.7 Receita 7: Filtrando Arquivos Ativos por Máscara de Extensão Personalizada (`Cmd+F11`)
+
+Quando um diretório contém centenas de arquivos com extensões variadas (por exemplo, código-fonte, binários compilados, logs, ativos), muitas vezes você precisa se concentrar em um subconjunto específico sem perder a navegação de pastas: 
+
+1. **Ativar filtro personalizado (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**: 
+- Pressione **`Cmd+F11`** (`⌘F11`). 
+- Uma caixa de diálogo aparece pré-preenchida com a máscara ativa ou usada pela última vez (por exemplo, `*.py;*.md` ou `*.jpg;*.png`). 
+- Insira os padrões glob desejados separados por ponto e vírgula e pressione `Enter`. 
+2. **Navegação filtrada ao vivo**: 
+- O painel oculta imediatamente todos os arquivos não correspondentes, mantendo os subdiretórios e o pai `..` visíveis. 
+- Um indicador claro (`Mask: *.py;*.md`) aparece na barra de status do painel. 
+- Você pode entrar e sair de subdiretórios; a máscara permanece ativa durante a navegação. 
+3. **Redefinir para todos os arquivos (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**: 
+- Pressione **`Cmd+F10`** (`⌘F10`) a qualquer momento para limpar a máscara e restaurar a listagem completa dos arquivos. 
+
+--- 
+
+### 2.8 Receita 8: Habilitando a navegação no histórico do trackpad com dois dedos do MacBook
+
+Se você trabalha em um MacBook ou usa um Magic Trackpad, pode navegar no histórico de pastas usando gestos fluidos de deslizar horizontalmente com dois dedos: 
+
+1. **Ative a navegação pelo trackpad**: 
+- Pressione **`Cmd+,`** (`⌘,`) para abrir **Preferências**. 
+- Navegue até a página **Visualizações de arquivos**. 
+- Na seção **Navegação no trackpad**, marque **Deslizar para a esquerda/direita com dois dedos para voltar/avançar no histórico de pastas** (`view.trackpad_swipe_navigation`). 
+- Clique em **OK**. 
+2. **Navegação por gestos sem esforço**: 
+- Mova o ponteiro sobre qualquer painel (não é necessário clicar). 
+- **Deslizar para a esquerda com dois dedos**: Navega de volta no histórico do diretório (`cm_ViewHistoryPrev`). 
+- **Deslizar para a direita com dois dedos**: navega para frente no histórico do diretório (`cm_ViewHistoryNext`). 
+- O filtro de dominância horizontal garante que a rolagem vertical da lista nunca seja interrompida acidentalmente.
 
 ---
 
@@ -617,6 +668,9 @@ Pressione **`Ctrl+J`** (`⌃J`) ou execute o comando **`cm_RunTerm`**. ATBCmder 
 #### P6: O ATBCmder oferece suporte a Macs Intel (x86_64)?
 
 Sim! A partir da versão 1.8.0, o ATBCmder fornece pacotes universais com suporte nativo para Macs **Apple Silicon (M1/M2/M3/M4, arquitetura ARM64)** e **Intel (x86_64)** no macOS 12.0 ou superior.
+#### Q7: Como funciona a Pesquisa rápida em pinyin chinês? 
+Ao navegar em pastas contendo nomes chineses, a digitação no painel corresponde às consoantes iniciais e às sílabas pinyin completas começando em qualquer limite de caractere chinês. Por exemplo, digitar `gz` corresponde a `2024工作总结.docx` e `【公司】工资表.xlsx`. Se você preferir ocultar arquivos não correspondentes durante a digitação, abra **Preferências ➔ Pesquisa rápida** e ative **Mostrar apenas arquivos/diretórios correspondentes (modo de filtro)** (`quick_search.filter_only`).
+
 
 ---
 

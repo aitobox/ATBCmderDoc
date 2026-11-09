@@ -39,7 +39,7 @@ Os gerenciadores de arquivos ortodoxos usam um modelo direcional **Origem ➔ De
 | **Exclusão permanente** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | Ignora a Lixeira e desvincula arquivos permanentemente. | 
 | **Renomeação rápida embutida**| `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | Renomeia o item ativo diretamente dentro da linha da tabela. | 
 | **Propriedades do arquivo** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Abre caixas de diálogo de permissões, carimbos de data/hora e metadados do UNIX. | 
-| **Calcular espaço na pasta**| `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calcula bytes recursivos para diretórios (`Ctrl+L` / `cm_CalculateSpace` para o total selecionado). | 
+| **Calcular espaço na pasta**| `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Calcula bytes recursivos para diretórios (`Ctrl+L` / `cm_CalculateSpace` para o total selecionado). | 
 | **Fila em segundo plano** | `Toolbar ⚡` | — | `cm_OperationsPanel` | Abre o monitor de transferência em segundo plano de 3 filas. |
 
 ### Marco visual: a barra de ferramentas do meio
@@ -428,6 +428,21 @@ Para grandes trabalhos em lote automatizados ou backups autônomos, você pode p
 
 ---
 
+### 6.1 Integridade de dados e protocolos de transferência segura
+
+ATBCmder foi projetado para gerenciamento de arquivos de missão crítica, onde perda silenciosa de dados, arquivos escritos pela metade ou links corrompidos são completamente inaceitáveis: 
+
+- **Preparação e substituição atômica**: 
+Ao substituir ou salvar arquivos existentes, o mecanismo de transferência grava em um arquivo temporário (`.tmp.atbcmder_*`) no diretório de destino antes de executar uma substituição POSIX atômica (`os.replace`). Se uma operação for cancelada, a rede cair ou o espaço em disco se esgotar no meio da transferência, o arquivo de destino original permanecerá completamente intacto e não corrompido. 
+
+- **Proteção contra movimento de link simbólico**: 
+A movimentação de links simbólicos preserva o destino do ponteiro relativo ou absoluto sem desreferenciar ou alterar os dados de origem reais. Mover um link entre montagens do sistema de arquivos recria a referência do link de forma limpa, em vez de copiar ou excluir a carga alvo. 
+
+- **Extração de arquivo e proteção transversal de link simbólico**: 
+Ao descompactar arquivos ZIP, TAR ou 7z, o ATBCmder valida estritamente as hierarquias de caminho contra ataques de passagem de diretório (vulnerabilidades zip-slip) e rejeita links simbólicos que apontam para fora da árvore de destino ou tentam substituir diretórios reais existentes.
+
+---
+
 ## 7. ⚡ Dicas profissionais e aprofundamento: poder avançado do sistema de arquivos
 
 Dominar o gerenciamento de painel duplo significa compreender o substrato UNIX subjacente do macOS. Aqui estão recursos avançados projetados para desenvolvedores, administradores de sistema e profissionais de armazenamento.
@@ -515,7 +530,7 @@ Por padrão, os gerenciadores de arquivos mostram tamanhos de diretório como `<
 *Figura 3.2: O cálculo assíncrono do espaço do diretório substitui <DIR> por bytes recursivos exatos.*
 
 - **Tamanho de pasta única (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: Pressione `Space` enquanto descansa em qualquer pasta. ATBCmder calcula o total de bytes recursivos da pasta em segundo plano e substitui `<DIR>` pelo tamanho exato (por exemplo, `14.2 GB`). 
-- **Todas as pastas no painel ativo (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
+- **Todas as pastas no painel ativo (`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)**: 
 - Verifica todos os diretórios visíveis no painel atual. 
 - Atualiza linhas da tabela com totais de bytes precisos. 
 - **Tamanho cumulativo do diretório selecionado (`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)**: 
@@ -682,7 +697,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 | **Links e Espaço** | Criar link simbólico | *Arquivo de Menu* | — | `cm_SymLink` | Cria um link simbólico no painel de destino. | 
 | | Criar link físico | *Arquivo de Menu* | — | `cm_HardLink` | Cria link físico no painel de destino. | 
 | | Propriedades / Chmod | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Abre permissões, chmod octal e carimbos de data/hora. | 
-| | Calcular Espaço | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calcula tamanhos de diretório recursivos (`Ctrl+L` / `cm_CalculateSpace` para o total selecionado). | 
+| | Calcular Espaço | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Calcula tamanhos de diretório recursivos (`Ctrl+L` / `cm_CalculateSpace` para o total selecionado). | 
 | **Fila de transferência**| Fila de fundo | `Toolbar ⚡` | — | `cm_OperationsPanel` | Abre o monitor de transferência em segundo plano de 3 filas. |
 
 --- 

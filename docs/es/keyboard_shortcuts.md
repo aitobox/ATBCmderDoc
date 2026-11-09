@@ -196,6 +196,7 @@ Muévase sin esfuerzo entre carpetas, volúmenes locales, montajes de red e hist
 | `cm_ChangeDirToHome` | Saltar directamente a la carpeta de inicio del usuario (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | Panel de archivos | 
 | `cm_ViewHistoryPrev` | Navegar hacia atrás en el historial de navegación del directorio | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Principal | 
 | `cm_ViewHistoryNext` | Navegar hacia adelante en el historial de navegación del directorio | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Principal | 
+| `cm_ViewHistoryPrev` / `Next` | Deslizamiento del trackpad hacia atrás/adelante en el historial del directorio (alternar en Vistas) | Deslizar dos dedos ← / → | — | Panel de archivos |
 | `cm_DirHistory` | Abrir el menú desplegable del historial del directorio interactivo | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Principal | 
 | `cm_Drives` | Ventana emergente de selección de volumen abierta y montada | `⌥D` | `Alt+D` | Principal | 
 | `cm_LeftOpenDrives` | Abra el menú de selección de unidad para el panel izquierdo | `⌥F1` | `Alt+F1` | Principal | 
@@ -236,6 +237,8 @@ Cambie sin problemas entre listas compactas, columnas de metadatos detalladas, c
 | `cm_QuickSearch` | Abrir la barra de búsqueda rápida en el panel (escriba letras para filtrar) | `⌥S` / `⌃S` *(o escribiendo)* | `Ctrl+S` / *(Mecanografía de letras)* | Principal | 
 | `cm_SemanticFilter` | Abrir barra de filtro inteligente semántico de lenguaje natural | `⌥F7` | `Alt+F7` | Principal | 
 | `cm_HorizontalFilePanels` | Alternar diseño de panel dual horizontal (apilado verticalmente) | `⇧⌘H` | `Ctrl+Shift+H` | Principal |
+| `cm_SrcAllFiles` | Mostrar todos los archivos (borrar máscara de extensión activa y filtro rápido) | `⌘F10` | `Ctrl+F10` | Principal | 
+| `cm_SrcUserDef` | Mostrar archivos personalizados/filtrar por máscara de extensión (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Principal |
 
 ---
 
@@ -250,6 +253,9 @@ ATBCmder permite abrir pestañas ilimitadas en cualquiera de los paneles, bloque
 | `cm_NextTab` / `cm_NextTabCtrl` | Cambiar a la siguiente pestaña a la derecha | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principal | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Cambiar a la pestaña anterior a la izquierda | `⌃⇧⇥` *(Ctrl+Mayús+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principal | 
 | `cm_ShowTabsList` | Mostrar menú emergente de todas las pestañas abiertas en el panel activo | `⇧⌘L` | `Ctrl+Shift+L` | Principal | 
+| `cm_SetTabOptionLock` | Bloquear esta pestaña (congela la ruta, abre carpetas secundarias en pestañas adyacentes) | *(Menú contextual de la pestaña)* | — | Principal | 
+| `cm_SetTabOptionLockWithSubdirs` | Bloquear pestaña con subdirectorios permitidos (se restablece a la ruta base en el conmutador) | *(Menú contextual de la pestaña)* | — | Principal | 
+| `cm_SetTabOptionNormal` | Pestaña Desbloquear (restaurar el comportamiento de navegación desbloqueado predeterminado) | *(Menú contextual de la pestaña)* | — | Principal |
 | `cm_CloseAllTabs` | Cerrar todas las pestañas del panel activo excepto la última | `⌥⌘W` | *(Menú contextual de la pestaña: Cerrar todo)* | Principal | 
 | `cm_CloseOtherTabs` | Cerrar todas las pestañas excepto la pestaña actualmente activa | `⇧⌘W` | *(Menú contextual de la pestaña: Cerrar otros)* | Principal | 
 | `cm_Duplicatetab` | Duplicar pestaña de carpeta activa | `⌘D` / `cm_Duplicatetab` | *(Menú contextual de la pestaña: Duplicar)* | Principal | 
@@ -360,6 +366,14 @@ Activo al crear o modificar archivos de texto y código fuente.
 | Acción / Característica | Descripción | Acceso directo principal de macOS (con glifos ⌘/⌥/⇧/⌃) | Atajo de Classic Commander (con teclas Fn) | Contexto | 
 | :--- | :--- | :---: | :---: | :---: | 
 | Guardar archivo | Guardar el archivo modificado en el disco | `⌘S` / `F2` | `F2` | Redactor | 
+| Guardar archivo como | Solicitar directorio de destino y nuevo nombre de archivo | `⇧⌘S` | `Ctrl+Shift+S` | Redactor | 
+| Recargar archivo | Descartar los cambios no guardados y recargar desde el disco | `⌘R` | `Ctrl+R` | Redactor | 
+| Reemplazar texto | Buscar y reemplazar texto en el documento | `⌥⌘F` | `Ctrl+H` | Redactor | 
+| Ajuste de palabras | Alternar ajuste de texto suave en el borde de la ventana | `⌥W` | `Alt+W` | Redactor | 
+| Números de línea | Alternar numeración de líneas del margen izquierdo | `⌥L` | `Alt+L` | Redactor | 
+| Acercar | Aumentar tamaño de fuente | `⌘+` | `Ctrl++` | Redactor | 
+| Alejar | Disminuir tamaño de fuente | `⌘-` | `Ctrl+-` | Redactor | 
+| Restablecer zoom | Restablecer el tamaño de fuente al valor predeterminado 100% | `⌘0` | `Ctrl+0` | Redactor |
 | Buscar texto | Buscar texto en el documento del editor | `⌘F` / `F7` | `F7` | Redactor | 
 | Buscar siguiente | Saltar a la siguiente búsqueda | `⌘G` / `F3` | `F3` | Redactor | 
 | Buscar anterior | Saltar a la búsqueda anterior | `⇧⌘G` / `⇧F3` | `Shift+F3` | Redactor | 

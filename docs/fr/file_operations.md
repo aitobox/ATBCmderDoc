@@ -39,7 +39,7 @@ Les gestionnaires de fichiers orthodoxes utilisent un modèle directionnel **Sou
 | **Suppression permanente** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | Contourne la corbeille et dissocie définitivement les fichiers. | 
 | **Renommer rapidement en ligne**| `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | Renomme l'élément actif directement à l'intérieur de la ligne du tableau. | 
 | **Propriétés du fichier** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Ouvre la boîte de dialogue des autorisations UNIX, des horodatages et des métadonnées. | 
-| **Calculer l'espace du dossier**| `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calcule les octets récursifs pour les répertoires (`Ctrl+L` / `cm_CalculateSpace` pour le total sélectionné). | 
+| **Calculer l'espace du dossier**| `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Calcule les octets récursifs pour les répertoires (`Ctrl+L` / `cm_CalculateSpace` pour le total sélectionné). | 
 | **File d'attente en arrière-plan** | `Toolbar ⚡` | — | `cm_OperationsPanel` | Ouvre le moniteur de transfert en arrière-plan à 3 files d'attente. |
 
 ### Repère visuel : la barre d'outils du milieu
@@ -428,6 +428,21 @@ Pour les tâches par lots automatisées volumineuses ou les sauvegardes sans sur
 
 ---
 
+### 6.1 Intégrité des données et protocoles de transfert sécurisés
+
+ATBCmder est conçu pour la gestion de fichiers critiques où la perte de données silencieuse, les fichiers à moitié écrits ou les liens corrompus sont totalement inacceptables : 
+
+- **Mise en scène et remplacement atomiques** : 
+Lors de l'écrasement ou de l'enregistrement de fichiers existants, le moteur de transfert écrit dans un fichier temporaire (`.tmp.atbcmder_*`) dans le répertoire cible avant d'effectuer un remplacement POSIX atomique (`os.replace`). Si une opération est annulée, si le réseau tombe ou si l'espace disque s'épuise en cours de transfert, le fichier de destination d'origine reste complètement intact et non corrompu. 
+
+- **Protection contre les déplacements par lien symbolique** : 
+Le déplacement des liens symboliques préserve la cible du pointeur relatif ou absolu sans déréférencer ni altérer les données source réelles. Le déplacement d'un lien entre les montages du système de fichiers recrée proprement la référence du lien plutôt que de copier ou de supprimer la charge utile cible. 
+
+- **Extraction d'archives et protection de traversée de lien symbolique** : 
+Lors du déballage d'archives ZIP, TAR ou 7z, ATBCmder valide strictement les hiérarchies de chemins contre les attaques par traversée de répertoires (vulnérabilités zip-slip) et rejette les liens symboliques pointant en dehors de l'arborescence de destination ou tentant d'écraser les répertoires réels existants.
+
+---
+
 ## 7. ⚡ Conseils de pro et analyse approfondie : puissance avancée du système de fichiers
 
 Maîtriser la gestion à double panneau signifie comprendre le substrat UNIX sous-jacent de macOS. Voici des fonctionnalités puissantes conçues pour les développeurs, les administrateurs système et les professionnels du stockage.
@@ -515,7 +530,7 @@ Par défaut, les gestionnaires de fichiers affichent la taille des répertoires 
 *Figure 3.2 : Le calcul asynchrone de la taille du répertoire remplace <DIR> par l'empreinte exacte en octets récursifs.*
 
 - **Taille de dossier unique (`Space` / `Insert` / `cm_SelectOrDeselectFile`)** : Appuyez sur `Space` tout en vous reposant sur n'importe quel dossier. ATBCmder calcule le nombre total d'octets récursifs du dossier en arrière-plan et remplace `<DIR>` par la taille exacte (par exemple, `14.2 GB`). 
-- **Tous les dossiers du panneau actif (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)** : 
+- **Tous les dossiers du panneau actif (`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)** : 
 - Analyse tous les répertoires visibles dans le panneau actuel. 
 - Met à jour les lignes du tableau avec des totaux d'octets précis. 
 - **Taille cumulée du répertoire sélectionné (`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)** : 
@@ -682,7 +697,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 | **Liens et espace** | Créer un lien symbolique | *Menu Fichier* | — | `cm_SymLink` | Crée un lien symbolique dans le panneau cible. | 
 | | Créer un lien physique | *Menu Fichier* | — | `cm_HardLink` | Crée un lien physique dans le panneau cible. | 
 | | Propriétés / Chmod | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Ouvre les autorisations, le chmod octal et les horodatages. | 
-| | Calculer l'espace | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calcule les tailles de répertoires récursifs (`Ctrl+L` / `cm_CalculateSpace` pour le total sélectionné). | 
+| | Calculer l'espace | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Return` | `cm_CountDirContent` | Calcule les tailles de répertoires récursifs (`Ctrl+L` / `cm_CalculateSpace` pour le total sélectionné). | 
 | **File d'attente de transfert**| File d'attente en arrière-plan | `Toolbar ⚡` | — | `cm_OperationsPanel` | Ouvre le moniteur de transfert en arrière-plan à 3 files d'attente. |
 
 --- 

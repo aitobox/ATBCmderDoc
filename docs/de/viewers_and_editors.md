@@ -379,7 +379,7 @@ Um eine völlig neue Datei im aktiven Ordner zu erstellen und zu bearbeiten, dr�
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │  Edit: /Users/brain/Projects/atbcmder/scripts/deploy.sh [*]                            │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [💾 Save] [Save As] | [↶ Undo] [↷ Redo] | [🔍 Find] [Replace] | [Wrap] [Lines] [Zoom]   │
+│  [💾] [📄] [🔄] │ [↩] [↪] │ [🔍] [📝] │ [↩ Wrap] [123 Lines] │ [🔍+] [🔍-] [1:1]       │
 ├──────┬─────────────────────────────────────────────────────────────────────────────────┤
 │ 0001 │ #!/usr/bin/env bash                                                             │
 │ 0002 │ set -euo pipefail                                                               │
@@ -424,7 +424,8 @@ Durch Drücken von **`Cmd+F`** (`⌘F`) oder **`Cmd+Option+F`** (`⌥⌘F`) wird
 
 - **Telemetrie**: Zeigt Zeile, Spalte, Gesamtzeilenzahl, Codierung und Zeilenumbruchkonvention an (`LF` vs. `CRLF`). 
 - **Dirty State Badge**: Ein auffälliger `*`-Indikator erscheint in der Titelleiste und Statusleiste, wenn nicht gespeicherte Änderungen vorhanden sind. 
-- **Atomic Save Protection**: Wenn Sie `Cmd+S` drücken, schreibt ATBCmder Daten in eine temporäre Datei auf demselben Volume, synchronisiert Festplattenpuffer und führt eine atomare Ersetzung durch, um sicherzustellen, dass Ihre Originaldatei niemals beschädigt wird, wenn es während des Speicherns zu einem Absturz oder Stromausfall kommt. 
+- **Atomic Save Protection**: Beim Drücken von `Cmd+S` schreibt ATBCmder schrittweise in eine temporäre Datei (`.tmp.atbcmder_*`) auf demselben Volume, synchronisiert Festplattenpuffer und führt einen atomaren POSIX-Ersatz aus (`os.replace`). Dies stellt sicher, dass die Zieldatei niemals halb geschrieben oder beschädigt bleibt, wenn die Stromversorgung unterbrochen wird, ein Netzwerklaufwerk ausfällt oder der Speicher während des Speicherns erschöpft ist. 
+- **Symlink-Erhaltung**: Wenn es sich bei der bearbeiteten Datei um einen symbolischen Link handelt, schreibt ATBCmder direkt in das aufgelöste Ziel, anstatt den Symlink durch eine reguläre Datei zu ersetzen, wodurch die Linkstrukturen über Projekt-Builds und Systemkonfigurationen hinweg intakt bleiben.
 
 ---
 
