@@ -598,6 +598,16 @@ Once connected, Dropbox behaves just like a local high-speed drive:
 
 ---
 
+### 6.3 App Store Sandbox Cloud Storage (OneDrive, Google Drive, iCloud)
+
+In Mac App Store sandboxed builds of ATBCmder, direct filesystem access to third-party cloud synchronization directories (e.g., Microsoft OneDrive, Google Drive for Desktop, Dropbox, and iCloud Drive) is regulated by Apple's sandbox architecture:
+
+- **Security-Scoped Bookmarks**: Synced cloud directories residing in `~/Library/CloudStorage/OneDrive-*`, `~/Library/CloudStorage/GoogleDrive-*`, or `~/Library/Mobile Documents/com~apple~CloudDocs/` require security-scoped access tokens.
+- **Drive Switcher & Path Integration**: ATBCmder automatically discovers configured local cloud directories and surfaces them in the Drive Switcher (`Alt+D` / `⌥D`), drive button bars, and path breadcrumbs.
+- **Persistent Permission Grants**: When opening a cloud directory for the first time, macOS presents an authorization sheet. Once selected, ATBCmder stores the cryptographic security-scoped bookmark in user preferences, granting seamless, uninterrupted read/write access across application restarts without repeated authorization dialogs.
+
+---
+
 ## 7. Quick Connect vs. Connection Manager
 
 ATBCmder provides two flexible mechanisms for connecting to remote hosts: **Quick Connect** for fast, temporary sessions, and **Connection Manager** for persistent, categorized server bookmarks.
@@ -727,9 +737,8 @@ Need to edit an `nginx.conf` or a Python script directly on a remote server?
 ## 10. System & Security Alerts
 
 > [!WARNING]
-> **SSH Host Key Verification Mismatch**  
-> If an SFTP server regenerates its host keys (e.g., after an OS re-installation) or if a man-in-the-middle network interception is attempted, ATBCmder detects that the server key does not match the fingerprint registered in `~/.ssh/known_hosts`.  
-> Never bypass host key warnings on untrusted public Wi-Fi networks without independently verifying the server's public key fingerprint with your system administrator.
+> **SSH Host Key & Fingerprint Verification**  
+> To protect against man-in-the-middle (MITM) attacks and credential eavesdropping, ATBCmder's SFTP engine strictly validates server fingerprints against your local `~/.ssh/known_hosts` registry before initiating cryptographic key exchange or transmitting passwords. If a server's fingerprint differs from the stored record, the connection is immediately aborted with a security warning dialog detailing the mismatch. Never bypass host key warnings on untrusted public Wi-Fi networks without independently confirming host key changes with your server administrator.
 
 > [!IMPORTANT]
 > **Temporary Cache Space for Large Remote Files**  

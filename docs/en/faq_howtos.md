@@ -51,7 +51,7 @@ The following decision matrix maps common file management objectives and technic
 | **Grant Filesystem Access**| Menu: File / Help | — | `cm_GrantFilesystemAccess`| Launches macOS App Sandbox permission assistant. |
 | **Manual Panel Refresh** | `Ctrl+R` / `⌃R` or `Cmd+R` / `⌘R` | `Ctrl+R` | `cm_Refresh` | Forces an immediate directory re-read from disk. |
 | **Launch System Terminal** | `Ctrl+J` / `⌃J` | `Ctrl+J` | `cm_RunTerm` | Spawns macOS Terminal at current panel path. |
-| **Calculate Folder Space** | `Alt+Shift+Enter` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Computes aggregate recursive byte size (`Space` for single, `Ctrl+L` for selected total). |
+| **Calculate Folder Space** | `Alt+Shift+Return` / `⌥⇧⏎` (`Space`) | `Alt+Shift+Enter` (`Space`) | `cm_CountDirContent` / `cm_CalculateSpace` | Computes aggregate recursive byte size (`Space` for single, `Ctrl+L` for selected total). |
 | **Secure Wipe (Shred)** | `Alt+Delete` / `⌥⌫` | `Alt+Delete` | `cm_Wipe` | Multi-pass overwrite and permanent file deletion. |
 
 ---
@@ -294,6 +294,57 @@ The following decision matrix maps common file management objectives and technic
 > [!TIP]
 > **⚡ Pro Tip: Identifying Identical Duplicate Files via Checksums**:
 > If you suspect multiple large files are exact duplicates, select them and press **`Ctrl+X`** (`⌃X` / `cm_CheckSumCalc`). Choose **SHA-256** and click Calculate. Matching hash digests confirm 100% binary duplicates, allowing you to delete superfluous copies with complete confidence.
+
+---
+
+### 2.6 Recipe 6: Protecting Workspaces with Total Commander-Style Tab Locking
+
+When managing critical projects, server mounts, or repositories, accidentally navigating away from your primary working directory disrupts your flow. ATBCmder provides Total Commander-compatible tab locking:
+
+1. **Locking a Tab (`cm_SetTabOptionLock`)**:
+   - Right-click any tab header and select **Lock this tab**.
+   - An asterisk `*` badge immediately appears in the tab title (e.g., `* WebApp`).
+   - The base directory is frozen. Double-clicking any folder or opening an archive inside this tab leaves the locked tab intact and automatically spawns the target location in an **adjacent tab** immediately to the right.
+2. **Locking with Subdirectories Allowed (`cm_SetTabOptionLockWithSubdirs`)**:
+   - Right-click the tab and choose **Locked, but directory changes allowed**.
+   - You can browse freely into nested subdirectories within the current tab.
+   - However, switching away to another tab, re-clicking the tab header, or navigating to the root button automatically resets the tab back to its designated base path.
+3. **Unlocking (`cm_SetTabOptionNormal`)**:
+   - Right-click the tab and select **Unlock tab** to return to standard behavior.
+
+---
+
+### 2.7 Recipe 7: Filtering Active Files by Custom Extension Mask (`Cmd+F11`)
+
+When a directory contains hundreds of files with varying extensions (e.g. source code, compiled binaries, logs, assets), you often need to focus on a specific subset without losing folder navigation:
+
+1. **Activate Custom Filter (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**:
+   - Press **`Cmd+F11`** (`⌘F11`).
+   - A dialog appears pre-filled with the active or last-used mask (e.g., `*.py;*.md` or `*.jpg;*.png`).
+   - Enter your desired glob patterns separated by semicolons and press `Enter`.
+2. **Live Filtered Browsing**:
+   - The panel immediately hides all non-matching files while keeping subdirectories and parent `..` visible.
+   - A clear indicator (`Mask: *.py;*.md`) appears on the panel status bar.
+   - You can enter and exit subdirectories; the mask remains active across navigation.
+3. **Reset to All Files (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**:
+   - Press **`Cmd+F10`** (`⌘F10`) at any time to clear the mask and restore the full file listing.
+
+---
+
+### 2.8 Recipe 8: Enabling MacBook Two-Finger Trackpad History Navigation
+
+If you work on a MacBook or use a Magic Trackpad, you can navigate your folder history using fluid two-finger horizontal swipe gestures:
+
+1. **Enable Trackpad Navigation**:
+   - Press **`Cmd+,`** (`⌘,`) to open **Preferences**.
+   - Navigate to the **File Views** page.
+   - In the **Trackpad Navigation** section, check **Swipe left/right with two fingers to go back/forward in folder history** (`view.trackpad_swipe_navigation`).
+   - Click **OK**.
+2. **Effortless Gesture Navigation**:
+   - Move your pointer over either panel (no click required).
+   - **Swipe Left with Two Fingers**: Navigates back in directory history (`cm_ViewHistoryPrev`).
+   - **Swipe Right with Two Fingers**: Navigates forward in directory history (`cm_ViewHistoryNext`).
+   - The horizontal dominance filter ensures vertical list scrolling is never accidentally interrupted.
 
 ---
 
@@ -596,6 +647,9 @@ Press **`Ctrl+J`** (`⌃J`) or execute command **`cm_RunTerm`**. ATBCmder spawns
 
 #### Q6: Does ATBCmder support Intel (x86_64) Macs?
 Yes! Starting with version 1.8.0, ATBCmder provides dual-architecture universal packages natively supporting both **Apple Silicon (M1/M2/M3/M4, ARM64)** and **Intel (x86_64)** Mac computers running macOS 12.0 or later.
+
+#### Q7: How does Chinese Pinyin Quick Search work?
+When browsing folders containing Chinese names, typing in the panel matches both initial consonants and full pinyin syllables starting at any Chinese character boundary. For example, typing `gz` matches `2024工作总结.docx` and `【公司】工资表.xlsx`. If you prefer to hide non-matching files while typing, open **Preferences ➔ Quick Search** and enable **Only show matching files/directories (Filter mode)** (`quick_search.filter_only`).
 
 ---
 

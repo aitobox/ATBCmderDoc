@@ -195,6 +195,7 @@ Effortlessly move across folders, local volumes, network mounts, and browsing hi
 | `cm_ChangeDirToHome` | Jump directly to user's home folder (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | FilePanel |
 | `cm_ViewHistoryPrev` | Navigate back in directory browsing history | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Main |
 | `cm_ViewHistoryNext` | Navigate forward in directory browsing history | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Main |
+| `cm_ViewHistoryPrev` / `Next` | Trackpad swipe back/forward in directory history (toggle in Views) | Two-finger swipe ← / → | — | FilePanel |
 | `cm_DirHistory` | Open interactive directory history dropdown menu | `⌥↓` / `⌃↓` | `Alt+Down` / `Alt+F8` | Main |
 | `cm_Drives` | Open drive and mounted volume selector popup | `⌥D` | `Alt+D` | Main |
 | `cm_LeftOpenDrives` | Open drive selection menu for Left panel | `⌥F1` | `Alt+F1` | Main |
@@ -235,6 +236,8 @@ Switch seamlessly between compact lists, detailed metadata columns, visual thumb
 | `cm_QuickSearch` | Open in-panel Quick Search bar (type letters to filter) | `⌥S` / `⌃S` *(or typing)* | `Ctrl+S` / *(Letter typing)* | Main |
 | `cm_SemanticFilter` | Open Natural Language Semantic Smart Filter bar | `⌥F7` | `Alt+F7` | Main |
 | `cm_HorizontalFilePanels` | Toggle horizontal dual-panel layout (stacked vertically) | `⇧⌘H` | `Ctrl+Shift+H` | Main |
+| `cm_SrcAllFiles` | Show All Files (clear active extension mask & quick filter) | `⌘F10` | `Ctrl+F10` | Main |
+| `cm_SrcUserDef` | Show Custom Files / Filter by Extension Mask (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Main |
 
 ---
 
@@ -249,6 +252,9 @@ ATBCmder allows opening unlimited tabs in either panel, locking favorite working
 | `cm_NextTab` / `cm_NextTabCtrl` | Switch to next tab on the right | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Main |
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Switch to previous tab on the left | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Main |
 | `cm_ShowTabsList` | Show popup menu of all open tabs in active panel | `⇧⌘L` | `Ctrl+Shift+L` | Main |
+| `cm_SetTabOptionLock` | Lock this tab (freeze path, opens child folders in adjacent tabs) | *(Tab Context Menu)* | — | Main |
+| `cm_SetTabOptionLockWithSubdirs` | Lock tab with subdirs allowed (resets back to base path on switch) | *(Tab Context Menu)* | — | Main |
+| `cm_SetTabOptionNormal` | Unlock tab (restore default unlocked navigation behavior) | *(Tab Context Menu)* | — | Main |
 | `cm_CloseAllTabs` | Close all tabs in active panel except the last one | `⌥⌘W` | *(Tab Context Menu: Close All)* | Main |
 | `cm_CloseOtherTabs` | Close all tabs other than the currently active tab | `⇧⌘W` | *(Tab Context Menu: Close Others)* | Main |
 | `cm_Duplicatetab` | Duplicate active folder tab | `⌘D` / `cm_Duplicatetab` | *(Tab Context Menu: Duplicate)* | Main |
@@ -359,14 +365,22 @@ Active when creating or modifying text and source code files.
 | Action / Feature | Description | Primary macOS Shortcut (with ⌘/⌥/⇧/⌃ glyphs) | Classic Commander Shortcut (with Fn keys) | Context |
 | :--- | :--- | :---: | :---: | :---: |
 | Save File | Save modified file to disk | `⌘S` / `F2` | `F2` | Editor |
+| Save File As | Prompt for target directory and new file name | `⇧⌘S` | `Ctrl+Shift+S` | Editor |
+| Reload File | Discard unsaved changes and reload from disk | `⌘R` | `Ctrl+R` | Editor |
 | Find Text | Find text in editor document | `⌘F` / `F7` | `F7` | Editor |
+| Replace Text | Find and replace text in document | `⌥⌘F` | `Ctrl+H` | Editor |
 | Find Next | Jump to next search match | `⌘G` / `F3` | `F3` | Editor |
 | Find Previous | Jump to previous search match | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editor |
 | Cut | Cut selected text to clipboard | `⌘X` | `Ctrl+X` | Editor |
 | Copy | Copy selected text to clipboard | `⌘C` | `Ctrl+C` | Editor |
 | Paste | Paste text from clipboard | `⌘V` | `Ctrl+V` | Editor |
 | Undo | Undo last typing action | `⌘Z` | `Ctrl+Z` | Editor |
-| Redo | Redo last undone action | `⇧⌘Z` | `Ctrl+Shift+Z` | Editor |
+| Redo | Redo last undone action | `⇧⌘Z` | `Ctrl+Shift+Z` / `Ctrl+Y` | Editor |
+| Word Wrap | Toggle soft text wrapping at window edge | `⌥W` | `Alt+W` | Editor |
+| Line Numbers | Toggle left gutter line numbering | `⌥L` | `Alt+L` | Editor |
+| Zoom In | Increase font size | `⌘+` | `Ctrl++` | Editor |
+| Zoom Out | Decrease font size | `⌘-` | `Ctrl+-` | Editor |
+| Reset Zoom | Reset font size to default 100% | `⌘0` | `Ctrl+0` | Editor |
 | Select All | Select entire document text | `⌘A` | `Ctrl+A` | Editor |
 | Close Editor | Close text editor window | `⎋` *(Esc)* / `⌘W` | `Esc` / `Alt+X` | Editor |
 

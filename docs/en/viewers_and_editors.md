@@ -359,9 +359,9 @@ To create and edit a brand-new file from scratch in the active folder, press **`
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│  Edit: /Users/brain/Projects/atbcmder/scripts/deploy.sh [*]                            │
+│  Edit: /Users/brainzhang/Projects/atbcmder/scripts/deploy.sh [*]                       │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│  [💾 Save] [Save As] | [↶ Undo] [↷ Redo] | [🔍 Find] [Replace] | [Wrap] [Lines] [Zoom]   │
+│  [💾] [📄] [🔄] │ [↩] [↪] │ [🔍] [📝] │ [↩ Wrap] [123 Lines] │ [🔍+] [🔍-] [1:1]       │
 ├──────┬─────────────────────────────────────────────────────────────────────────────────┤
 │ 0001 │ #!/usr/bin/env bash                                                             │
 │ 0002 │ set -euo pipefail                                                               │
@@ -385,6 +385,25 @@ To create and edit a brand-new file from scratch in the active folder, press **`
 ![Markdown Source Editor](images/markdown_source_editor.png)  
 *Figure 4.14: Internal editor editing Markdown files with live syntax highlighting and quick tools.*
 
+#### Modern Vector Action Toolbar
+
+The editor header features a sleek vector action toolbar with high-DPI squircle icons and dual-shortcut tooltips:
+
+| Action | Icon | macOS Shortcut | Classic Key | Tooltip & Function |
+| :--- | :--- | :--- | :--- | :--- |
+| **Save** | `💾` | `Cmd+S` / `⌘S` | `Ctrl+S` | Saves modifications atomically to disk (`.tmp` staging). |
+| **Save As** | `📄` | `Shift+Cmd+S` / `⇧⌘S` | `Ctrl+Shift+S` | Prompts for target directory and new file name. |
+| **Reload** | `🔄` | `Cmd+R` / `⌘R` | `Ctrl+R` | Discards unsaved changes and reloads file from disk. |
+| **Undo** | `↩` | `Cmd+Z` / `⌘Z` | `Ctrl+Z` | Reverts the most recent text modification. |
+| **Redo** | `↪` | `Shift+Cmd+Z` / `⇧⌘Z` | `Ctrl+Y` | Re-applies the previously undone modification. |
+| **Find** | `🔍` | `Cmd+F` / `⌘F` | `Ctrl+F` | Docks the incremental search bar at the bottom. |
+| **Replace** | `📝` | `Option+Cmd+F` / `⌥⌘F`| `Ctrl+H` | Docks the search and replace bar. |
+| **Word Wrap** | `↩ Wrap` | `Option+W` / `⌥W` | `Alt+W` | Toggles soft text wrapping at window edge. |
+| **Line Numbers**| `123 Lines`| `Option+L` / `⌥L` | `Alt+L` | Toggles left-gutter line numbering. |
+| **Zoom In** | `🔍+` | `Cmd++` / `⌘+` | `Ctrl++` | Increases editor font size. |
+| **Zoom Out** | `🔍-` | `Cmd+-` / `⌘-` | `Ctrl+-` | Decreases editor font size. |
+| **Reset Zoom** | `1:1` | `Cmd+0` / `⌘0` | `Ctrl+0` | Resets font scaling back to default 100%. |
+
 #### Core Code Editor Capabilities
 - **Pygments Syntax Highlighting**: Recognizes over 150 programming, scripting, and configuration formats with automatic language detection from file extensions and shebang lines.
 - **Dynamic Line Number Gutter**: Left margin dynamically expands to accommodate line numbers with visual alignment.
@@ -400,9 +419,10 @@ Pressing **`Cmd+F`** (`⌘F`) or **`Cmd+Option+F`** (`⌥⌘F`) docks the Find &
 - Batch actions: **Replace** (current occurrence) and **Replace All** (entire document).
 
 #### Status Bar & Atomic Save Protection
-- **Telemetry**: Displays line, column, total line count, encoding, and newline convention (`LF` vs `CRLF`).
+- **Telemetry**: Displays line, column, total line count, encoding selector (`UTF-8`, `GBK`, `ISO-8859-1`, etc.), and newline convention (`LF` vs `CRLF`).
 - **Dirty State Badge**: A prominent `*` indicator appears in the title bar and status bar whenever unsaved edits exist.
-- **Atomic Save Protection**: When pressing `Cmd+S`, ATBCmder writes data to a temporary file on the same volume, syncs disk buffers, and executes an atomic replace, ensuring your original file is never corrupted if a crash or power cut occurs mid-save.
+- **Atomic Save Protection**: When pressing `Cmd+S`, ATBCmder stages writes to a temporary file (`.tmp.atbcmder_*`) on the same volume, syncs disk buffers, and executes an atomic POSIX replace (`os.replace`). This guarantees the target file is never left half-written or corrupted if power is interrupted, a network drive hiccups, or storage exhausts mid-save.
+- **Symlink Preservation**: If the file being edited is a symbolic link, ATBCmder writes directly to the resolved target destination rather than replacing the symlink with a regular file, keeping link structures intact across project builds and system configurations.
 
 ---
 

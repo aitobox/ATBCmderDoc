@@ -45,7 +45,7 @@ Orthodox file managers use a **Source ➔ Target** directional model. When you i
 | **Permanent Delete** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | Bypasses Trash and permanently unlinks files. |
 | **Inline Quick Rename**| `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | Renames active item directly inside the table row. |
 | **File Properties** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Opens UNIX permissions, timestamps, and metadata dialog. |
-| **Calculate Folder Space**| `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calculates recursive bytes for directories (`Ctrl+L` / `cm_CalculateSpace` for selected total). |
+| **Calculate Folder Space**| `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calculates recursive bytes for directories (`Ctrl+L` / `cm_CalculateSpace` for selected total). |
 | **Background Queue** | `Toolbar ⚡` | — | `cm_OperationsPanel` | Opens the 3-queue background transfer monitor. |
 
 ### Visual Landmark: The Middle Toolbar
@@ -415,6 +415,17 @@ For large automated batch jobs or unattended backups, you can pre-configure conf
   - **Follow links**: Controls whether symlinks are copied as pointer references or dereferenced into full physical copies.
   - **Copy date/time & ownership**: Preserves POSIX creation dates, modification timestamps, and user/group ownership IDs.
 
+### 6.1 Data Integrity & Safe Transfer Protocols
+
+ATBCmder is designed for mission-critical file management where silent data loss, half-written files, or corrupted links are completely unacceptable:
+
+- **Atomic Staging and Replacement**:
+  When overwriting or saving existing files, the transfer engine stages writes to a temporary file (`.tmp.atbcmder_*`) in the target directory before performing an atomic POSIX replace (`os.replace`). If an operation is canceled, network drops, or disk space exhausts mid-transfer, the original destination file remains completely intact and uncorrupted.
+- **Symlink Move Protection**:
+  Moving symbolic links preserves the relative or absolute pointer target without dereferencing or altering the real source data. Moving a link across filesystem mounts recreates the link reference cleanly rather than copying or deleting the target payload.
+- **Archive Extraction & Symlink Traversal Guard**:
+  When unpacking ZIP, TAR, or 7z archives, ATBCmder strictly validates path hierarchies against directory traversal attacks (zip-slip vulnerabilities) and rejects symlinks pointing outside the destination tree or attempting to overwrite existing real directories.
+
 ---
 
 ## 7. ⚡ Pro Tips & Deep Dive: Advanced File System Power
@@ -501,9 +512,11 @@ By default, file managers show directory sizes as `<DIR>` or `--` because calcul
 *Figure 3.2: Asynchronous directory space calculation replacing <DIR> with exact recursive byte footprints.*
 
 - **Single Folder Size (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**: Press `Space` while resting on any folder. ATBCmder calculates the folder's total recursive bytes in the background and replaces `<DIR>` with the exact size (e.g., `14.2 GB`).
-- **All Folders in Active Panel (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**:
-  - Scans every directory visible in the current panel.
-  - Updates table rows with precise byte totals.
+- **All Folders in Active Panel (`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)**:
+  - Scans every directory visible in the current panel asynchronously.
+  - Updates table rows with precise byte totals as worker threads complete each directory.
+  - **macOS Keyboard Ergonomics**: Bound to `Alt+Shift+Return` (`⌥⇧⏎`) so macOS users can trigger it naturally on standard MacBook and Magic Keyboards without requiring a dedicated numeric keypad Enter or `Fn` combination.
+  - **Instant Cancellation (`Esc`)**: Space calculation runs in background worker threads and can be canceled immediately at any point by pressing `Esc` without freezing the user interface.
 - **Cumulative Selected Directory Size (`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)**:
   - Accumulates total recursive bytes for selected folders and summarizes file count, folder count, and storage size in the status bar.
 
@@ -662,7 +675,7 @@ Step 7: Press Toolbar ⚡ (cm_OperationsPanel) to watch both queues stream concu
 | **Links & Space** | Create Symlink | *Menu File* | — | `cm_SymLink` | Creates symbolic link in target panel. |
 | | Create Hard Link | *Menu File* | — | `cm_HardLink` | Creates hard link in target panel. |
 | | Properties / Chmod | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | Opens permissions, octal chmod, and timestamps. |
-| | Calculate Space | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calculates recursive directory sizes (`Ctrl+L` / `cm_CalculateSpace` for selected total). |
+| | Calculate Space | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | Calculates recursive directory sizes (`Ctrl+L` / `cm_CalculateSpace` for selected total). |
 | **Transfer Queue**| Background Queue | `Toolbar ⚡` | — | `cm_OperationsPanel` | Opens 3-queue background transfer monitor. |
 
 ---

@@ -119,17 +119,19 @@ Positioned above each file panel, the breadcrumb path bar allows lightning-fast 
 - **Direct Path Editing (`BreadcrumbLineEdit`)**: Double-click the empty space to the right of the breadcrumb chain. The bar instantly converts into an editable text field where you can paste or type any path (e.g. `/var/log`, `~/Library`, or `vfs://` archives). Press `Enter` to navigate or `Esc` to cancel.
 
 ### [4] Folder Tab Bar
-Each panel maintains an independent set of tabs:
+Each panel maintains an independent set of tabs built with `MacNativeTabBar`:
 
-- Open new tabs with `Cmd+T` (`cm_NewTab`), close tabs with `Cmd+W` (`cm_CloseTab`).
-- Drag-and-drop to reorder tabs within a panel.
-- Right-click tabs to lock paths, rename titles, close duplicates, or duplicate tabs to the opposite panel.
+- **Adjacent Tab Creation**: Opening new tabs with `Cmd+T` (`cm_NewTab`) inserts the new tab immediately to the right of your active tab rather than at the end of the strip. Close tabs with `Cmd+W` (`cm_CloseTab`).
+- **Total Commander Tab Locking**: Right-click tabs to choose **Lock this tab** (freezes base directory with an asterisk `*` badge; child folder navigation opens in adjacent tabs) or **Locked, but directory changes allowed** (in-place subfolder browsing with automatic reset back to base on switch).
+- **Workspace Organization**: Drag-and-drop to reorder tabs, double-click empty strip space to duplicate, rename titles, or clone tab layouts to the opposite panel.
 
 ### [5] Dual File Panels
 High-performance virtualized file lists capable of rendering folders with hundreds of thousands of entries smoothly without UI stutter:
 
-- Column sorting: Click any header (Name, Ext, Size, Date, Attributes) to sort ascending or descending.
-- Multiple view modes: Full details view, Brief grid view, Thumbnail gallery view, Tree view, and recursive Flat Branch view (`Cmd+B`).
+- **Semantic Lucide Icon System**: High-DPI vector icons tailored to programming languages, documents, media, and archives, backed by a shared singleton cache for 60fps scrolling.
+- **MacBook Trackpad Gesture Navigation**: Fluid two-finger horizontal swipe navigation (swipe left for History Back, swipe right for History Forward) with automatic panel hover detection and vertical scroll preservation.
+- **In-Panel Quick Search & Masks**: Instant character-by-character search supporting arbitrary-boundary Chinese Pinyin matching, filter-only live isolation, and custom extension masks (`Cmd+F11` / reset with `Cmd+F10`).
+- **Column Sorting & Views**: Click any header to sort ascending or descending. Multiple view modes include Full Details, Brief Grid, Thumbnail Gallery, Tree View, and recursive Flat Branch View (`Cmd+B`).
 
 ### [6] Middle Toolbar & Draggable Splitter
 Positioned directly between the left and right file panels, the Middle Toolbar is a unique ATBCmder feature combining one-click file management with an adjustable panel divider:
@@ -157,7 +159,7 @@ Anchored at the very bottom of the window:
 - **Selection Statistics**: Shows real-time metrics for the active panel:
   - Total items count and total folder size.
   - Number of selected items and combined selected byte size.
-- **Drive Storage Meter**: Visual disk usage indicator displaying the currently mounted volume name (e.g., `Macintosh HD`), total capacity, used storage, and remaining free space percentage.
+- **Drive Storage Meter & Cloud Integration**: Visual disk usage indicator displaying the currently mounted volume name (e.g., `Macintosh HD`), total capacity, used storage, and remaining free space percentage. Synced cloud storage providers (OneDrive, Google Drive, iCloud) are automatically identified with persistent security-scoped bookmark authorization.
 
 ---
 
