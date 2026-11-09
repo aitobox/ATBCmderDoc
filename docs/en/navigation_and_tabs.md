@@ -42,8 +42,11 @@ In ATBCmder, each panel operates as an autonomous browsing engine equipped with 
 | **History Back** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Go back to previously visited folder. |
 | **History Forward** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Move forward in directory history. |
 | **History Dropdown List** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Display history dropdown list. |
+| **Trackpad Swipe Navigation** | Two-finger swipe left/right | — | `cm_ViewHistoryPrev` / `Next` | Back/Forward history swipe on trackpad (toggle in File Views). |
 | **Drive / Volume List (Left / Right)** | `⌥F1` / `⌥F2` (`⌥D`) | `Alt+F1` / `Alt+F2` (`Alt+D`) | `cm_LeftOpenDrives` / `cm_RightOpenDrives` (`cm_Drives`) | Open drive menu for left or right panel (`Alt+D` for active panel). |
-| **Quick Search** | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | Open real-time search overlay in panel. |
+| **Quick Search** | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` | Open real-time search overlay in panel (pinyin & filter modes). |
+| **Show All Files** | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` | Clear active file mask and show all files. |
+| **Show Custom Files** | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` | Filter visible files by glob mask (*.py;*.md). |
 
 ---
 
@@ -107,6 +110,7 @@ Working on complex software projects, photo libraries, or server backups often r
 Built with `MacNativeTabBar`, the tab bar matches modern macOS aesthetics:
 
 - **Visual Design**: Rounded tab corners, smooth hover states, and clear active tab accent indicators.
+- **Adjacent Tab Creation**: Newly created tabs (`Cmd+T`, duplicate tab, or locked tab navigation) are inserted immediately to the right of the active tab rather than appended to the end of the strip, significantly improving multi-folder workflow speed.
 - **Hover Close Buttons**: Every tab features an integrated `✕` close button that appears upon hover or selection.
 - **Middle-Click to Close**: Click any tab with your mouse middle button / trackpad three-finger click to close it immediately.
 - **Double-Click to Add**: Double-click empty space on the tab strip to instantly spawn a new tab cloned from the active path.
@@ -115,32 +119,36 @@ Built with `MacNativeTabBar`, the tab bar matches modern macOS aesthetics:
 
 | Action | macOS Shortcut | Classic Key | Command ID | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| **New Tab** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Opens the current directory in a new tab. |
+| **New Tab** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Opens current directory in a new adjacent tab. |
 | **Close Tab** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Closes the active tab (minimum 1 tab retained). |
 | **Next Tab** | `Ctrl+Tab` / `⌃⇥` | `Ctrl+Tab` | `cm_NextTab` | Cycles focus to the next tab to the right. |
 | **Previous Tab** | `Ctrl+Shift+Tab` / `⌃⇧⇥` | `Ctrl+Shift+Tab` | `cm_PrevTab` | Cycles focus to the previous tab to the left. |
 | **Quick Tab List** | `Ctrl+Shift+L` / `⌃⇧L` | `Ctrl+Shift+L` | `cm_ShowTabsList` | Pops up a numbered menu of all open tabs. |
+| **Lock this Tab** | *Right-click tab* | — | `cm_SetTabOptionLock` | Freezes tab; opens navigation in an adjacent tab (`*`). |
+| **Lock (Allow Subdirs)** | *Right-click tab* | — | `cm_SetTabOptionLockWithSubdirs` | In-place subfolder browsing; resets to base on switch (`*`). |
+| **Unlock Tab** | *Right-click tab* | — | `cm_SetTabOptionNormal` | Restores regular unlocked tab behavior. |
 | **Rename Tab** | *Right-click tab* | — | `cm_RenameTab` | Assigns a custom friendly label to the tab. |
 | **Close Other Tabs** | *Right-click tab* | — | `cm_CloseOtherTabs` | Closes all tabs except the selected one. |
 | **Close Duplicates** | *Right-click tab* | — | `cm_CloseDuplicateTabs` | Detects and closes duplicate tabs with identical paths. |
 | **Close All Tabs** | *Menu Tabs* | — | `cm_CloseAllTabs` | Resets the panel down to a single tab. |
 | **Copy to Opposite** | *Menu Tabs* | — | `cm_CopyAllTabsToOpposite` | Copies all tabs in the active panel to the target panel. |
 
-### Tab Locking Modes
+### Tab Locking Modes (Total Commander Standard)
 
-Prevent accidental directory changes in critical folders by configuring tab lock options. Right-click any tab to choose its locking mode:
+Prevent accidental directory changes in critical project roots or backup locations by configuring tab locking. Right-click any tab header to access the locking modes:
 
-1. **Normal (Unlocked)**:
-   - Default tab behavior.
-   - Navigating through folders updates the current tab path directly.
-2. **Locked (`cmd_SetTabOptionLock`)**:
-   - The tab path is strictly frozen to its initial anchor location.
-   - A visual lock icon (`🔒` or `★`) appears on the tab title.
-   - If you double-click a subdirectory or navigate, ATBCmder automatically leaves the locked tab unchanged and opens the target folder in a **new adjacent tab**.
-3. **Locked with Subdirectories Allowed (`cmd_SetTabOptionLockWithSubdirs`)**:
-   - Allows you to browse freely into child folders and subdirectories within this tree.
-   - Restricts you from ascending higher than the locked base folder.
-   - If you switch away or reload, the tab safely resets back to its anchor root.
+1. **Unlock tab (`cm_SetTabOptionNormal`)**:
+   - Default tab behavior. Navigating through folders updates the current tab path directly.
+2. **Lock this tab (`cm_SetTabOptionLock`)**:
+   - Classic Total Commander strict tab lock.
+   - The tab path is strictly frozen to its base directory.
+   - An asterisk prefix `*` appears on the tab title (e.g., `* Projects`).
+   - If you double-click a folder or navigate, ATBCmder leaves the locked tab unchanged and automatically opens the target directory in a **new adjacent tab** (or focuses an existing matching tab).
+3. **Locked, but directory changes allowed (`cm_SetTabOptionLockWithSubdirs`)**:
+   - Allows temporary in-place browsing into child folders and subdirectories within this tab.
+   - An asterisk prefix `*` appears on the tab title (e.g., `* Source`).
+   - The tab safely and automatically resets back to its anchor base path whenever you switch away to another tab, click on the already-current tab header, trigger the root button (`\`), or restart the application.
+   - Hovering over the tab displays a tooltip indicating the anchor path (`Locked: <base_path>`).
 
 ---
 
@@ -233,6 +241,19 @@ Each panel records its own chronological path history stack:
 
 ![Directory History Dropdown](images/directory_history_dropdown.png)  
 *Figure 2.2: Directory History dropdown menu (`Alt+F8` / `Ctrl+Down`) displaying recently visited folder paths.*
+
+### MacBook Trackpad Horizontal Swipe Navigation
+
+For MacBook laptop users and Apple Magic Trackpad setups, ATBCmder natively recognizes two-finger horizontal swipe gestures across the active or inactive file list viewport:
+
+- **Swipe Left**: Navigates **Back** in folder history (`cm_ViewHistoryPrev`).
+- **Swipe Right**: Navigates **Forward** in folder history (`cm_ViewHistoryNext`).
+
+The gesture engine is engineered for seamless macOS ergonomics:
+
+- **Intelligent Debounce & Horizontal Dominance**: Distinguishes intentional horizontal history gestures from vertical list scrolling, completely ignoring momentum drift.
+- **Automatic Panel Focus**: Swiping over the inactive panel immediately shifts keyboard and operational focus to that panel before executing the history step, ensuring the intended side is navigated.
+- **Configurable Toggle**: Swipe navigation can be enabled or disabled in **Preferences** (`Cmd+,`) → **File Views** (`view.trackpad_swipe_navigation`, default: off).
 
 ### Drive & Volume Switcher
 
@@ -352,6 +373,27 @@ Quick Search allows you to leap directly to any file by typing its name without 
    - **Quick Search (`Ctrl+S` / `cm_QuickSearch`)**: Navigates the cursor between matches while keeping all files visible.
    - **Quick Filter (`cm_QuickFilter`)**: Temporarily hides all non-matching files, displaying only matching rows in the table.
    - **Semantic Filter (`Option+F7` / `cm_SemanticFilter`)**: Uses natural language queries (e.g., `/larger than 10MB`, `//today modified pdf`) via macOS Spotlight.
+5. **Arbitrary Character Boundary Pinyin Match**:
+   - When browsing directories containing Chinese filenames, Quick Search matches initials and full pinyin syllables starting at any Chinese character (not restricted to prefixes).
+   - *Example*: Typing `gz` matches `2024工作总结.docx`, `【公司】工资表.xlsx`, and `部门工资条.pdf`.
+   - Both Quick Search and Quick Filter share this high-performance cached pinyin engine.
+   - Configurable in **Preferences** → **Quick Search** (`quick_search.pinyin_search`, default: on).
+6. **Filter-Only Mode ("Only show matching files/directories")**:
+   - In **Preferences** → **Quick Search**, enable **Only show matching files/directories (Filter mode)** (`quick_search.filter_only`, default: off).
+   - In this mode, typing letters directly in the panel hides non-matching files in real time, turning Quick Search into an instant live filter.
+   - Subsequent batch commands—including **Select All** (`Cmd+A`), **Copy** (`F5`), **Move** (`F6`), and **Pack** (`Alt+F5`)—act exclusively on the filtered subset of files.
+
+### File Masks & Extension Filters (`Cmd+F10` / `Cmd+F11`)
+
+When managing dense folders containing mixed file types, ATBCmder provides dedicated commands via the **Show** menu and panel header context menu to focus on specific files:
+
+- **Show All Files (`Cmd+F10` / `⌘F10` / `cm_SrcAllFiles`)**:
+  - Instantly clears any active custom extension mask and quick filter, listing every file and folder again.
+- **Show Custom Files / Extensions (`Cmd+F11` / `⌘F11` / `cm_SrcUserDef`)**:
+  - Opens a prompt pre-filled with the active or last-used mask (e.g., `*.py;*.md`, `*.jpg;*.png`, or `test_*`).
+  - Directories and parent folder (`..`) remain visible so you can navigate across subdirectories with the mask applied.
+  - While active, a prominent indicator (`Mask: <pattern>`) appears on the panel status bar.
+  - The mask survives folder navigation within that tab and can be quickly reset with `Cmd+F10`.
 
 ### Auto-Fitting Column Modes
 
@@ -463,8 +505,11 @@ Here are three real-world recipes showcasing how navigation, tabs, and hotlists 
 | | Home Directory | `Ctrl+Shift+Home` / `⌃⇧Home` | `Alt+Home` | `cm_ChangeDirToHome` |
 | | First Entry | `Home` | `Home` | `cm_GoToFirst` |
 | | Last Entry | `End` | `End` | `cm_GoToLast` |
-| **Folder Tabs** | New Tab | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` |
+| **Folder Tabs** | New Tab (Adjacent) | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` |
 | | Close Tab | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` |
+| | Lock this Tab | *Tab Context Menu* | — | `cm_SetTabOptionLock` |
+| | Lock Tab (Allow Subdirs) | *Tab Context Menu* | — | `cm_SetTabOptionLockWithSubdirs` |
+| | Unlock Tab | *Tab Context Menu* | — | `cm_SetTabOptionNormal` |
 | | Close Duplicate Tabs | *Tab Context Menu* | — | `cm_CloseDuplicateTabs` |
 | | Close All Tabs | *Tabs Menu* | — | `cm_CloseAllTabs` |
 | | Rename Tab | *Tab Context Menu* | — | `cm_RenameTab` |
@@ -482,6 +527,7 @@ Here are three real-world recipes showcasing how navigation, tabs, and hotlists 
 | | Add Dir to Hotlist | *Hotlist Popup* | — | `cm_AddDirToHotlist` |
 | | History Backward | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` |
 | | History Forward | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` |
+| | Trackpad Swipe History | Two-finger swipe left/right | — | `cm_ViewHistoryPrev` / `Next` |
 | | History Dropdown List | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` |
 | **Drives & Volumes** | Left Panel Drives | `Alt+F1` / `⌥F1` | `Alt+F1` | `cm_LeftOpenDrives` |
 | | Right Panel Drives | `Alt+F2` / `⌥F2` | `Alt+F2` | `cm_RightOpenDrives` |
@@ -494,6 +540,8 @@ Here are three real-world recipes showcasing how navigation, tabs, and hotlists 
 | | Tree View (Both Panels)| *Show Menu* | — | `cm_TreeViewBoth` |
 | | Flat Branch View | `Cmd+B` / `⌘B` | `Ctrl+B` | `cm_FlatView` |
 | | Horizontal Panels Mode | `Ctrl+Shift+H` / `⌃⇧H` | `Ctrl+Shift+H` | `cm_HorizontalFilePanels` |
+| | Show All Files | `Cmd+F10` / `⌘F10` | `Ctrl+F10` | `cm_SrcAllFiles` |
+| | Show Custom Files | `Cmd+F11` / `⌘F11` | `Ctrl+F11` | `cm_SrcUserDef` |
 | **Search & Filters** | Quick Search Overlay | `Ctrl+S` / `⌃S` | `Ctrl+S` | `cm_QuickSearch` |
 | | Semantic Filter | `Option+F7` / `⌥F7` | `Alt+F7` | `cm_SemanticFilter` |
 
