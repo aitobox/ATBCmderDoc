@@ -39,7 +39,7 @@
 | **永久彻底删除** | `Shift+Delete` / `⇧⌦` | `Shift+F8` | `cm_Delete` | 绕过废纸篓，物理直接解除底层文件链接 |
 | **行内即时重命名** | `F2` / `Shift+F6` | `Shift+F6` | `cm_RenameOnly` | 直接在表格当前行中快速重命名单个文件 |
 | **文件属性与权限** | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | 打开详细属性对话框，编辑 UNIX 权限与时间戳 |
-| **计算目录占用大小** | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 递归统计当前面板所有文件夹实际容量（`Ctrl+L` / `cm_CalculateSpace` 统计累计大小） |
+| **计算目录占用大小** | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 递归统计当前面板所有文件夹实际容量（`Ctrl+L` / `cm_CalculateSpace` 统计累计大小） |
 | **后台任务队列** | 工具栏 `⚡` | — | `cm_OperationsPanel` | 打开 3 队列后台多任务传输监控面板 |
 
 ### 视觉地标：中间分割条快捷工具栏
@@ -402,6 +402,17 @@ ATBCmder 在支持全键盘操作的同时，将鼠标与触控板拖拽（Drag 
   - **符号链接处理 (Follow links)**：决定是将符号链接作为快捷方式拷贝，还是将其背后的真实物理数据提取实体化。
   - **保留修改日期与所有权**：完整保持 POSIX 权限标志与文件原始创建修改时间戳。
 
+### 6.1 数据完整性与安全传输协议
+
+ATBCmder 专为关键任务级文件管理而设计，彻底杜绝静默数据丢失、残留写入不全或损坏的软链接等隐患：
+
+- **原子暂存与替换写入 (Atomic Staging and Replacement)**：
+  在覆盖或保存现有文件时，传输引擎会首先在目标目录写入隐藏临时暂存文件（`.tmp.atbcmder_*`），写入完成校验无误后再执行底层的 POSIX 原子替换（`os.replace`）。即便传输中途遭遇断电、网络意外中断或磁盘空间耗尽，原始目标文件依然完好无损，绝不会留下半截损坏文件。
+- **符号链接移动保护 (Symlink Move Protection)**：
+  移动符号链接时，会严格保持其相对或绝对指针目标，绝不会错误解引用或更改实际的底层源数据。跨越不同文件系统挂载点移动软链接时，系统会干净地在目标端重建符号链接指针，而不是把源数据当成实体文件误复制或误删除。
+- **解压 Zip-Slip 与符号链接路径穿越防护 (Archive Traversal Guard)**：
+  解包 ZIP、TAR 或 7z 等压缩包时，ATBCmder 会对解压路径层次进行严格的边界安全性审查，拦截任何尝试跳出目标根目录的路径穿越攻击（Zip-Slip 漏洞），并拒绝指向解压目录外部或试图覆盖现有真实目录的恶意符号链接。
+
 ---
 
 ## 7. ⚡ 高手进阶与底层技术深度剖析
@@ -488,9 +499,11 @@ macOS 建立在 UNIX 之上，原生支持两种截然不同的链接技术：
 *图 3.2：后台异步统计文件夹容量并将 <DIR> 实时替换为精确字节占用。*
 
 - **统计单个文件夹大小 (`Space` / `Insert` / `cm_SelectOrDeselectFile`)**：把光标停在任意文件夹上按一下 **空格键 (`Space`)**，系统会在后台子线程极速统计并将其体积替换显示在列表中（如 `14.2 GB`）。
-- **统计面板内所有文件夹大小 (`Alt+Shift+Enter` / `⌥⇧⏎` / `cm_CountDirContent`)**：
-  - 一键遍历当前面板中所有的可见文件夹。
-  - 自动更新每一行目录的具体字节总量。
+- **统计面板内所有文件夹大小 (`Alt+Shift+Return` / `⌥⇧⏎` / `cm_CountDirContent`)**：
+  - 在后台工作线程中异步遍历当前面板中所有的可见文件夹。
+  - 随着后台计算逐项完成，实时动态更新每一行目录的具体字节总量。
+  - **macOS 人体工学快捷键适配**：默认绑定为 `Alt+Shift+Return`（`⌥⇧⏎`），MacBook 自带键盘与外接 Magic Keyboard 用户无需使用数字小键盘 Enter 或 `Fn` 组合键，双手不离主键区即可极速触发。
+  - **即时取消响应 (`Esc`)**：空间计算完全运行在后台子线程中，任意时刻按下 `Esc` 键均可瞬间终止计算，UI 界面绝不发生卡顿或无响应。
 - **统计选中文件夹累计大小 (`Ctrl+L` / `⌃L` / `cm_CalculateSpace`)**：
   - 汇总所选目录的字节总量，并在底部状态栏汇总累计的文件总数、目录总数与总容量占用。
 
@@ -647,7 +660,7 @@ macOS 建立在 UNIX 之上，原生支持两种截然不同的链接技术：
 | **链接与属性** | 创建符号链接 | *菜单: 文件* | — | `cm_SymLink` | 在对侧目标面板生成软链接 |
 | | 创建硬链接 | *菜单: 文件* | — | `cm_HardLink` | 在对侧目标面板生成硬链接 |
 | | 文件属性 / 权限 | `Alt+Enter` / `⌥⏎` | `Alt+Enter` | `cm_SetFileProperties` | 打开详细属性面板，八进制编辑 chmod |
-| | 统计文件夹容量 | `Alt+Shift+Enter` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 递归统计当前面板所有文件夹大小（累计可用 `Ctrl+L` / `cm_CalculateSpace`） |
+| | 统计文件夹容量 | `Alt+Shift+Return` / `⌥⇧⏎` | `Alt+Shift+Enter` | `cm_CountDirContent` | 递归统计当前面板所有文件夹大小（累计可用 `Ctrl+L` / `cm_CalculateSpace`） |
 | **传输队列** | 后台任务管理 | 工具栏 `⚡` | — | `cm_OperationsPanel` | 展开 3 通道后台异步传输监控窗口 |
 
 ---
