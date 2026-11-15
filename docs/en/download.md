@@ -35,6 +35,14 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.8.0 (2026-11-15)
+
+- Customizable File Panel Column Visibility & Ordering: Added full support in File Views preferences for toggling column visibility (Size, Modified, Attributes, Extension, etc.) and reordering columns to match personal workflows and screen sizes (Fixes #237, #246)
+- File Transfer, Deletion & Special File Safeguards: Transfer engines now strictly honor Rename responses and conflict policies (Fixes #226, #236); network VFS transfers and deletions never follow symlinks into deletes (Fixes #227, #238); stream copy and directory sync accurately report unreadable subtrees and safely handle FIFOs/special files without hanging (Fixes #200, #228, #242); made permanent directory deletion cancellable and moved Disk Analyze trash operations off the GUI thread (Fixes #202, #221); hardened macOS trash fallback against AppleScript injection and symlink-target deletion while classifying errors and skipped items clearly (Fixes #198, #199, #209, #210)
+- Worker Lifecycle, Panel Interaction & Save Integrity Fixes: Fixed un-cancellable search/size workers and crashes caused by replacing running QThreads (Fixes #231, #243); enabled in-place renaming in flat and search views while preventing background refreshes from stealing navigation focus (Fixes #230, #240); hardened save paths in the text editor and diff viewer to prevent file corruption (Fixes #232, #241); fixed direct-command options persistence and Favorite Tabs edit staging (Fixes #233, #244)
+- Lua Sandbox Hardening, FTPS Verification & Performance Tuning: Added real execution timeouts and sandbox isolation to the Lua scripting engine (Fixes #207, #225); enforced strict FTPS certificate verification and exact credential matching in VFS (Fixes #229, #239); pruned thumbnail disk caches, introduced lazy SQLite row counts and Markdown preview size caps (Fixes #204, #222), alongside SMB unmount, CSV sniffing, JPEG quality, and `textutil` timeout improvements (Fixes #234, #245)
+- Deep Code Audit, CI Lint Gate & Documentation Sync: Completed deep manual audit across core modules (Fixes #208, #235) and resolved subtle correctness edge cases (Fixes #201, #203); integrated a `ruff` lint gate into CI and cleared lint debt (Fixes #205, #223); refreshed `atbcmder.pot` translation templates, reviewed German translations (Fixes #206, #224), and synced all 2.5–2.7 user guides and shortcut references
+
 ### 2.7.0 (2026-11-09)
 
 - MacBook Trackpad Horizontal Swipe Gestures for History Navigation: Added native support for two-finger horizontal trackpad swipe gestures to navigate Back and Forward through directory history, featuring intelligent debounce and threshold checks for a seamless macOS-native feel (Fixes #185, #195)
