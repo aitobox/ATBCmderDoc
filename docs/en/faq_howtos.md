@@ -4,7 +4,7 @@ While orthodox dual-panel file managers are renowned for their raw speed and key
 
 This chapter is divided into two comprehensive sections:
 
-1. **Practical Real-World Recipes**: Five complete, end-to-end walkthroughs covering high-value file management workflows with step-by-step procedures, UI visual representations, keyboard shortcuts, and power-user tips.
+1. **Practical Real-World Recipes**: End-to-end walkthroughs covering high-value file management workflows with step-by-step procedures, UI visual representations, keyboard shortcuts, and power-user tips.
 2. **Troubleshooting Guide & FAQs**: In-depth explanations and diagnostic resolutions for common operational questions, permission errors, auto-refresh behaviors, configuration resets, Apple keyboard function keys, and cross-volume file transfer mechanics.
 
 ---
@@ -299,18 +299,20 @@ The following decision matrix maps common file management objectives and technic
 
 ### 2.6 Recipe 6: Protecting Workspaces with Total Commander-Style Tab Locking
 
-When managing critical projects, server mounts, or repositories, accidentally navigating away from your primary working directory disrupts your flow. ATBCmder provides Total Commander-compatible tab locking:
+When managing critical projects, server mounts, or repositories, accidentally navigating away from your primary working directory disrupts your flow. ATBCmder provides Total Commander-compatible tab locking with single-key toggling and visible shortcut cues:
 
-1. **Locking a Tab (`cm_SetTabOptionLock`)**:
-   - Right-click any tab header and select **Lock this tab**.
+1. **Instant Toggle (`Cmd+K` / `⌘K` / `Ctrl+K` / `cm_ToggleLockTab`)**:
+   - Press **`Cmd+K`** (`⌘K`) or choose **Tabs ➔ Lock this tab** / **Unlock tab** from the menu bar to switch the active tab immediately between normal and locked (`*`) modes.
+2. **Locking a Tab (`cm_SetTabOptionLock`)**:
+   - Right-click any tab header and select **Lock this tab** (or press **`Cmd+K`**). On macOS, the tab context menu displays right-aligned shortcuts (`⌘T`, `⌘W`, `⌘K`, `⇧⌘D`, etc.), dynamically highlighting `⌘K` on whichever lock or unlock action will execute next.
    - An asterisk `*` badge immediately appears in the tab title (e.g., `* WebApp`).
    - The base directory is frozen. Double-clicking any folder or opening an archive inside this tab leaves the locked tab intact and automatically spawns the target location in an **adjacent tab** immediately to the right.
-2. **Locking with Subdirectories Allowed (`cm_SetTabOptionLockWithSubdirs`)**:
-   - Right-click the tab and choose **Locked, but directory changes allowed**.
+3. **Locking with Subdirectories Allowed (`cm_SetTabOptionLockWithSubdirs`)**:
+   - Right-click the tab (or open the **Tabs** menu) and choose **Locked, but directory changes allowed**.
    - You can browse freely into nested subdirectories within the current tab.
    - However, switching away to another tab, re-clicking the tab header, or navigating to the root button automatically resets the tab back to its designated base path.
-3. **Unlocking (`cm_SetTabOptionNormal`)**:
-   - Right-click the tab and select **Unlock tab** to return to standard behavior.
+4. **Unlocking (`cm_SetTabOptionNormal` / `Cmd+K`)**:
+   - Press **`Cmd+K`** again, or right-click the tab and select **Unlock tab** to return to standard behavior.
 
 ---
 
@@ -345,6 +347,53 @@ If you work on a MacBook or use a Magic Trackpad, you can navigate your folder h
    - **Swipe Left with Two Fingers**: Navigates back in directory history (`cm_ViewHistoryPrev`).
    - **Swipe Right with Two Fingers**: Navigates forward in directory history (`cm_ViewHistoryNext`).
    - The horizontal dominance filter ensures vertical list scrolling is never accidentally interrupted.
+
+---
+
+### 2.9 Recipe 9: Instant Path Editing & Direct File Jumping with "Enter Full Path and Go" (`⌘⇧G`)
+
+When you copy a deep path from Terminal, Xcode, VS Code, or a message, you can jump straight into it—or directly highlight a specific file—without clicking up and down through folders:
+
+1. **Activate Inline Path Editing**:
+   - Click the pencil **Enter Full Path and Go** button (`btn_edit_path`) just left of the Parent Directory (`^`) button on either panel, double-click the empty space to the right of the breadcrumb segments, or press **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G` / `cm_EditPath`).
+   - The current path is pre-filled and highlighted so you can immediately press **`Cmd+V`** (`⌘V`) to overwrite it.
+2. **Paste Quoted Paths, Tildes, or File Paths**:
+   - Press **`Enter`**. ATBCmder automatically trims whitespace, strips matching surrounding quotes (`"..."` / `'...'`), expands `~` and environment variables (`$VAR` / `%VAR%`), and preserves `vfs://` URIs.
+   - If you pasted a path pointing directly to a **file** (e.g., `"/Users/brain/Projects/app/src/main.py"`), ATBCmder navigates to its parent directory (`src/`) and highlights `main.py` automatically.
+3. **Recover Without Re-Pasting on Typos**:
+   - If a path does not exist, the inline input stays open with a red border and a non-blocking status bar message so you can fix the typo directly and press `Enter` again.
+   - Press `Esc`, click outside, or click the pencil button again at any time to cancel and return to breadcrumb buttons.
+
+---
+
+### 2.10 Recipe 10: Staying Resident in the Background with System Tray & Global Hotkey (`⌘⌥H`)
+
+If you switch into ATBCmder dozens of times a day to grab files, preview logs, or sync folders, keeping it resident in the macOS menu bar tray gives you instant sub-second access:
+
+1. **Enable System Tray Residency**:
+   - Press **`Cmd+,`** (`⌘,`) to open **Preferences ➔ General**.
+   - Check **Minimize to system tray (Requires Restart)** (`ui.minimize_to_tray`).
+   - Optionally customize **Show/Hide Window Hotkey** (`ui.global_hotkey`, default: `Ctrl+Alt+H` / `⌘⌥H` on macOS). Hotkey edits apply immediately without restarting.
+   - Click **OK** and restart ATBCmder once to activate the tray icon.
+2. **Zero-Permission macOS Carbon Global Hotkey**:
+   - ATBCmder registers your global hotkey via macOS Carbon `RegisterEventHotKey`, so it works out of the box **without requiring Accessibility permissions** in System Settings, and Option-key (`⌥`) chords capture cleanly without accented dead-key conflicts.
+3. **Toggle From Anywhere**:
+   - Press **`Cmd+Option+H`** (`⌘⌥H`) inside any app or full-screen space to summon ATBCmder straight to the front with your exact window size and tabs, and press **`⌘⌥H`** again to tuck it back into the menu bar tray.
+
+---
+
+### 2.11 Recipe 11: Customizing File Panel Columns & Viewing macOS Finder Color Tags
+
+Tailor your file table to show only the columns you care about and inspect macOS Finder color tags right inside ATBCmder:
+
+1. **Reorder or Hide Panel Columns**:
+   - Open **Preferences ➔ File Views** (`Cmd+,`).
+   - Under **Columns**, uncheck secondary columns (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) you want to hide (`Name` always remains first).
+   - Drag the `⠿` handle beside any column to reorder columns globally across both panels, or click **Reset to Defaults** to restore standard ordering.
+2. **Enable macOS Finder Color Tags**:
+   - Scroll to **Color Tags (macOS)** on the same **File Views** page.
+   - Check **Show macOS Finder color tags in file panel** (`view.show_color_tags`) and set your preferred **Live-sync interval** (default `30.0 s`, or `0` for Disabled).
+   - Click **Apply** or **OK**. Both panels update immediately, showing crisp Finder tag dots with localized tooltips for all 7 standard Finder colors (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) and any custom user tags.
 
 ---
 

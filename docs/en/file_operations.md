@@ -92,7 +92,7 @@ To quickly clone a file within the current directory (for example, creating a ba
 ATBCmder fully integrates with macOS system clipboard shortcuts:
 
 - **`Cmd+C` (`⌘C`)**: Copies selected file paths to the clipboard (`cm_CopyToClipboard`).
-- **`Cmd+V` (`⌘V`)**: Pastes files from clipboard into the active panel (`cm_PasteFromClipboard`).
+- **`Cmd+V` (`⌘V`)**: Pastes files from clipboard into the active panel (`cm_PasteFromClipboard`). When pasted items collide with existing filenames or folders at the destination, ATBCmder safely auto-renames the pasted items with incremental numeric suffixes (e.g., `report (1).pdf`, `report (2).pdf`) to prevent accidental overwrites.
 - **`Cmd+Option+V` (`⌥⌘V`)**: Moves clipboard files into the active panel (`cm_PasteAsMove`).
 
 ---
@@ -287,7 +287,7 @@ Wildcard selection lets you target hundreds of specific files in a directory of 
   - Pressing `Insert` (or `Fn+Return` on certain Mac keyboards) marks the item and automatically steps the cursor down to the next row, enabling rapid one-finger selection passes.
 - **Mouse & Trackpad**:
   - `Cmd+Click`: Toggles selection on individual rows without altering other selections.
-  - `Shift+Click`: Extends selection from the current anchor row to the clicked row.
+  - `Shift+Click`: Extends selection from the current anchor row to the clicked row—or, when `Shift+Click`ing on an already-selected item, batch-deselects the contiguous range while keeping remaining selections outside that range intact.
 
 ### Live Selection Telemetry in the Status Bar
 

@@ -116,19 +116,20 @@ Positioned above each file panel, the breadcrumb path bar allows lightning-fast 
   - **Reveal in Finder**: Opens the directory in macOS Finder (`open -R`).
   - **Copy Path**: Copies the absolute UNIX path of the segment to your system clipboard.
   - **Open in Terminal**: Spawns macOS Terminal directly inside that folder (`open -a Terminal`).
-- **Direct Path Editing (`BreadcrumbLineEdit`)**: Double-click the empty space to the right of the breadcrumb chain. The bar instantly converts into an editable text field where you can paste or type any path (e.g. `/var/log`, `~/Library`, or `vfs://` archives). Press `Enter` to navigate or `Esc` to cancel.
+- **Enter Full Path and Go (`BreadcrumbLineEdit` / `cm_EditPath`)**: Click the pencil icon button (`btn_edit_path`) immediately to the left of the Parent Directory (`^`) button, double-click the empty space to the right of the breadcrumb chain, or press **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G`). Type or paste any path (quotes, `~`, `$VAR`, or `vfs://` URIs are normalized automatically; pasting a local file path opens its parent directory and highlights that file), and fix invalid paths effortlessly with red-border inline error retention.
 
 ### [4] Folder Tab Bar
 Each panel maintains an independent set of tabs built with `MacNativeTabBar`:
 
 - **Adjacent Tab Creation**: Opening new tabs with `Cmd+T` (`cm_NewTab`) inserts the new tab immediately to the right of your active tab rather than at the end of the strip. Close tabs with `Cmd+W` (`cm_CloseTab`).
-- **Total Commander Tab Locking**: Right-click tabs to choose **Lock this tab** (freezes base directory with an asterisk `*` badge; child folder navigation opens in adjacent tabs) or **Locked, but directory changes allowed** (in-place subfolder browsing with automatic reset back to base on switch).
+- **Total Commander Tab Locking (`Cmd+K` / `cm_ToggleLockTab`)**: Press **`Cmd+K`** (`⌘K` / `Ctrl+K`) to toggle locking instantly, or right-click tabs (where macOS context menus display right-aligned shortcuts) to choose **Lock this tab** (freezes base directory with an asterisk `*` badge; child folder navigation opens in adjacent tabs) or **Locked, but directory changes allowed** (in-place subfolder browsing with automatic reset back to base on switch).
 - **Workspace Organization**: Drag-and-drop to reorder tabs, double-click empty strip space to duplicate, rename titles, or clone tab layouts to the opposite panel.
 
 ### [5] Dual File Panels
 High-performance virtualized file lists capable of rendering folders with hundreds of thousands of entries smoothly without UI stutter:
 
 - **Semantic Lucide Icon System**: High-DPI vector icons tailored to programming languages, documents, media, and archives, backed by a shared singleton cache for 60fps scrolling.
+- **Customizable Columns & Finder Color Tags**: Configure which columns (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) are visible and drag-reorder them in **Preferences ➔ File Views**, or enable localized **Finder Color Tags** dots alongside filenames.
 - **MacBook Trackpad Gesture Navigation**: Fluid two-finger horizontal swipe navigation (swipe left for History Back, swipe right for History Forward) with automatic panel hover detection and vertical scroll preservation.
 - **In-Panel Quick Search & Masks**: Instant character-by-character search supporting arbitrary-boundary Chinese Pinyin matching, filter-only live isolation, and custom extension masks (`Cmd+F11` / reset with `Cmd+F10`).
 - **Column Sorting & Views**: Click any header to sort ascending or descending. Multiple view modes include Full Details, Brief Grid, Thumbnail Gallery, Tree View, and recursive Flat Branch View (`Cmd+B`).
@@ -343,6 +344,14 @@ ATBCmder features an intelligent session management subsystem (`SessionManager`)
   - Automatically loads the exact working directory for every tab, eliminating the friction of manually re-navigating to deep project folders.
 - **Default Position Locking**: You can also permanently lock your current window geometry and splitter ratio as the default startup configuration using **Configuration ➔ Save Position** (`cm_ConfigSavePos`).
 
+### Tip 5: Interactive Onboarding Tutorial (`cm_Tutorial`)
+
+Want a guided hands-on tour directly inside the app? Choose **Help ➔ Interactive Tutorial...** from the menu bar to start ATBCmder's 32-step spotlighted tutorial. It walks you interactively through dual-panel switching, file operations, tab locking (`Cmd+K`), inline path bar jumping (`Cmd+Shift+G`), quick search, panel view modes, and the integrated system tools suite.
+
+### Tip 6: Background System Tray Residency & Permission-Free Global Hotkey (`⌘⌥H`)
+
+For frequent daily switching, open **Preferences ➔ General** (`Cmd+,`), enable **Minimize to system tray (Requires Restart)** (`ui.minimize_to_tray`), and restart once. ATBCmder stays resident in your macOS menu bar tray with zero Dock clutter and can be summoned or hidden instantaneously from any application using the **Show/Hide Window Hotkey** (default `Cmd+Opt+H` / `⌘⌥H`) via permission-free macOS Carbon registration (no Accessibility permission prompt required).
+
 ---
 
 ## 6. Safety & System Alerts: macOS Function (Fn) Key Setup
@@ -419,6 +428,8 @@ ATBCmder provides full dual-matrix keyboard support: use native macOS shortcuts 
 | **Swap Left/Right** | `cm_Exchange` | `Ctrl+U` | `Ctrl+U` | Exchanges directory paths between left and right panels. |
 | **New Tab** | `cm_NewTab` | `Cmd+T` | `Ctrl+T` | Opens a new folder tab in the current panel. |
 | **Close Tab** | `cm_CloseTab` | `Cmd+W` | `Ctrl+W` | Closes the active tab. |
+| **Lock / Unlock Tab** | `cm_ToggleLockTab` | `Cmd+K` | `Ctrl+K` | Toggles tab locking (`*`) on the active folder tab. |
+| **Enter Full Path & Go** | `cm_EditPath` | `Cmd+Shift+G` | `Ctrl+Shift+G` | Switches path bar to inline text input and jumps directly. |
 | **Horizontal Mode** | `cm_HorizontalFilePanels` | Menu: Show ➔ Horizontal | Menu: Show ➔ Horizontal | Toggles side-by-side vs top-and-bottom stacked layout. |
 | **Save Layout** | `cm_ConfigSavePos` | Menu: Config ➔ Save Pos | Menu: Config ➔ Save Pos | Saves current window dimensions and panel proportions. |
 | **Sandbox Access** | `cm_GrantFilesystemAccess` | Menu: File ➔ Permissions | Menu: File ➔ Permissions | Launches the macOS App Sandbox onboarding assistant. |

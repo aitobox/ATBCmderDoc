@@ -12,9 +12,9 @@ In ATBCmder, each panel operates as an autonomous browsing engine equipped with 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [BREADCRUMB]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src    [✎] [^] ⭐ │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [TAB STRIP]   [★ Source (Locked)] [Assets] [Build Output] [+]                   │
+│ [TAB STRIP]   [* Source] [Assets] [Build Output] [+]                            │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  Name                         Ext       Size      Date Modified      Attr       │
 │  ▸ [..]                                           --:--              drwxr-xr-x │
@@ -35,9 +35,11 @@ In ATBCmder, each panel operates as an autonomous browsing engine equipped with 
 | **Parent Directory** | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | Move up one directory level (`..`). |
 | **Root Directory** | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | Jump directly to system root (`/`). |
 | **Home Directory** | `Ctrl+Shift+Home` / `⌃⇧Home` | `Alt+Home` | `cm_ChangeDirToHome` | Jump to user home directory (`~`). |
+| **Enter Full Path & Go** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | Switch path bar to inline text input and jump directly. |
 | **Open Item / Enter Dir** | `Enter` / `⌘↓` | `Enter` | — | Enter selected directory or open file. |
 | **New Tab** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Open active folder in a new tab. |
 | **Close Tab** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Close currently focused tab. |
+| **Lock / Unlock Tab** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | Toggle lock state (`*`) on the active folder tab. |
 | **Directory Hotlist** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | Open instant fuzzy bookmark popup. |
 | **History Back** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Go back to previously visited folder. |
 | **History Forward** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Move forward in directory history. |
@@ -75,11 +77,14 @@ Positioned directly above each file panel, the interactive breadcrumb bar repres
    - **Reveal in Finder**: Opens the directory in native macOS Finder (`open -R`).
    - **Copy Path**: Copies the absolute UNIX path of the segment to your macOS clipboard.
    - **Open in Terminal**: Spawns a Terminal window inside that exact directory.
-4. **Direct Path Text Editing (`BreadcrumbLineEdit`)**:
-   - Double-click the blank space to the right of the breadcrumb chain (or press `Shift+F2`).
-   - The breadcrumb segments instantly transform into an editable text field (`QLineEdit`).
-   - Type or paste arbitrary paths (such as `~/Library/Application Support`, `/var/log`, `/Volumes/ExternalDrive`, or `vfs://` archive locations).
-   - Press `Enter` to jump, or `Esc` to cancel and return to breadcrumb buttons.
+4. **Enter Full Path and Go (`BreadcrumbLineEdit` / `cm_EditPath`)**:
+   - Trigger inline path editing using any of three entry points:
+     - Click the pencil **Enter Full Path and Go** button (`btn_edit_path`) positioned immediately to the left of the Parent Directory (`btn_up`) button.
+     - Double-click the blank space to the right of the breadcrumb chain.
+     - Press **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G`), or choose **Commands ➔ Enter Full Path and Go** from the menu bar.
+   - The breadcrumb chain transforms into an inline text field pre-filled and pre-selected with the current path, ready to overwrite with `⌘V` immediately.
+   - **Smart Path Normalization & Direct File Jumping**: When you press `Enter`, ATBCmder trims surrounding whitespace, strips matching outer quotes (`"..."` or `'...'`), expands `~`, `$VAR`, and `%VAR%` environment variables, resolves relative local paths against the active directory, and preserves `vfs://` URIs verbatim. If the submitted path points to an existing local **file** rather than a folder, ATBCmder automatically jumps to its parent directory and highlights that file in the panel.
+   - **Inline Error Retention**: If the path does not exist or fails to load, the editor remains open with a red error border and a non-blocking status bar message so you can edit your input without re-pasting. Typing clears the red error border; pressing `Esc`, clicking outside, or clicking the pencil button again cancels and restores the breadcrumb buttons.
 
 ### Rapid Keyboard Jumps
 
@@ -124,9 +129,10 @@ Built with `MacNativeTabBar`, the tab bar matches modern macOS aesthetics:
 | **Next Tab** | `Ctrl+Tab` / `⌃⇥` | `Ctrl+Tab` | `cm_NextTab` | Cycles focus to the next tab to the right. |
 | **Previous Tab** | `Ctrl+Shift+Tab` / `⌃⇧⇥` | `Ctrl+Shift+Tab` | `cm_PrevTab` | Cycles focus to the previous tab to the left. |
 | **Quick Tab List** | `Ctrl+Shift+L` / `⌃⇧L` | `Ctrl+Shift+L` | `cm_ShowTabsList` | Pops up a numbered menu of all open tabs. |
-| **Lock this Tab** | *Right-click tab* | — | `cm_SetTabOptionLock` | Freezes tab; opens navigation in an adjacent tab (`*`). |
-| **Lock (Allow Subdirs)** | *Right-click tab* | — | `cm_SetTabOptionLockWithSubdirs` | In-place subfolder browsing; resets to base on switch (`*`). |
-| **Unlock Tab** | *Right-click tab* | — | `cm_SetTabOptionNormal` | Restores regular unlocked tab behavior. |
+| **Lock / Unlock Tab** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | Toggles active tab between unlocked and locked (`*`). |
+| **Lock this Tab** | *Tabs Menu / Tab Context Menu* | — | `cm_SetTabOptionLock` | Freezes tab; opens navigation in an adjacent tab (`*`). |
+| **Lock (Allow Subdirs)** | *Tabs Menu / Tab Context Menu* | — | `cm_SetTabOptionLockWithSubdirs` | In-place subfolder browsing; resets to base on switch (`*`). |
+| **Unlock Tab** | *Tabs Menu / Tab Context Menu* | — | `cm_SetTabOptionNormal` | Restores regular unlocked tab behavior. |
 | **Rename Tab** | *Right-click tab* | — | `cm_RenameTab` | Assigns a custom friendly label to the tab. |
 | **Close Other Tabs** | *Right-click tab* | — | `cm_CloseOtherTabs` | Closes all tabs except the selected one. |
 | **Close Duplicates** | *Right-click tab* | — | `cm_CloseDuplicateTabs` | Detects and closes duplicate tabs with identical paths. |
@@ -135,7 +141,9 @@ Built with `MacNativeTabBar`, the tab bar matches modern macOS aesthetics:
 
 ### Tab Locking Modes (Total Commander Standard)
 
-Prevent accidental directory changes in critical project roots or backup locations by configuring tab locking. Right-click any tab header to access the locking modes:
+Prevent accidental directory changes in critical project roots or backup locations by configuring tab locking. Press **`Cmd+K`** (`⌘K` / `Ctrl+K` / `cm_ToggleLockTab`) to toggle locking instantly on the active tab (`normal` ↔ `locked`, or unlocking any locked mode), use the top **Tabs** menu (**Lock this tab** / **Unlock tab** and **Locked, but directory changes allowed**), or right-click any tab header:
+
+- **Context Menu & Shortcut Visibility**: On macOS, both the top **Tabs** menu and the tab bar right-click context menu display right-aligned keyboard shortcuts (`⌘T`, `⌘W`, `⌘K`, `⇧⌘D`, etc.) synchronized with `HotkeyManager`, dynamically showing `⌘K` alongside whichever lock or unlock action will execute next.
 
 1. **Unlock tab (`cm_SetTabOptionNormal`)**:
    - Default tab behavior. Navigating through folders updates the current tab path directly.
@@ -149,6 +157,7 @@ Prevent accidental directory changes in critical project roots or backup locatio
    - An asterisk prefix `*` appears on the tab title (e.g., `* Source`).
    - The tab safely and automatically resets back to its anchor base path whenever you switch away to another tab, click on the already-current tab header, trigger the root button (`\`), or restart the application.
    - Hovering over the tab displays a tooltip indicating the anchor path (`Locked: <base_path>`).
+   - *(Note: An additional **Lock Tab (No Navigation)** preset `cm_SetTabOptionLockNoNavigation` is also available in **Preferences ➔ Hotkeys** for custom keybinding.)*
 
 ---
 
@@ -175,8 +184,8 @@ A Favorite Tab set encapsulates:
 
 ### Favorite Tabs Commands
 
-- **Save Current Tabs (`cm_SaveFavoriteTabs`)**:
-  - Accessible via Menu **Favorites** → **Save current tabs to a New Favorite Tabs**, or by right-clicking the tab strip.
+- **Save Current Tabs (`Cmd+Shift+D` / `⌘⇧D` / `Ctrl+Shift+D` / `cm_SaveFavoriteTabs`)**:
+  - Accessible via Menu **Favorites** → **Save current tabs to a New Favorite Tabs**, pressing `Cmd+Shift+D`, or right-clicking the tab strip.
   - Prompts you to name the workspace (e.g., `Rust Web Backend`, `Photo Editing 2026`, or `Server Deployment`).
   - Stores the workspace definition persistently in `fav_tab_config.xml`.
 - **Load Favorite Tabs (`cm_LoadFavoriteTabs`)**:
@@ -215,7 +224,7 @@ Pressing `Ctrl+D` summons a lightweight, floating search dialog centered right u
    - Click the **Add Current Directory** button (or press `Alt+A`) inside the popup.
    - ATBCmder automatically populates the current folder path and suggests a clean display name.
 
-### Hotlist Configuration (`Ctrl+Shift+D` / `⌃⇧D` / `cm_ConfigDirHotList`)
+### Hotlist Configuration (`Option+Cmd+D` / `⌥⌘D` / `Ctrl+Alt+D` / `cm_ConfigDirHotList`)
 
 Open **Preferences** → **Directory Hotlist** (or trigger `cm_ConfigDirHotList`) to organize your bookmarks:
 
@@ -244,14 +253,14 @@ Each panel records its own chronological path history stack:
 
 ### MacBook Trackpad Horizontal Swipe Navigation
 
-For MacBook laptop users and Apple Magic Trackpad setups, ATBCmder natively recognizes two-finger horizontal swipe gestures across the active or inactive file list viewport:
+For built-in MacBook trackpads and Apple Magic Trackpad setups across macOS hardware, ATBCmder natively recognizes two-finger horizontal swipe gestures across either the active or inactive file list viewport (equivalent to `Option+Left` / `Option+Right`):
 
 - **Swipe Left**: Navigates **Back** in folder history (`cm_ViewHistoryPrev`).
 - **Swipe Right**: Navigates **Forward** in folder history (`cm_ViewHistoryNext`).
 
 The gesture engine is engineered for seamless macOS ergonomics:
 
-- **Intelligent Debounce & Horizontal Dominance**: Distinguishes intentional horizontal history gestures from vertical list scrolling, completely ignoring momentum drift.
+- **Tuned Sensitivity & Horizontal Dominance**: Calibrated across built-in and external Apple trackpads to distinguish intentional horizontal history gestures from vertical list scrolling while ignoring momentum drift.
 - **Automatic Panel Focus**: Swiping over the inactive panel immediately shifts keyboard and operational focus to that panel before executing the history step, ensuring the intended side is navigated.
 - **Configurable Toggle**: Swipe navigation can be enabled or disabled in **Preferences** (`Cmd+,`) → **File Views** (`view.trackpad_swipe_navigation`, default: off).
 
@@ -289,6 +298,8 @@ The standard, most comprehensive view mode. It displays files in a rich tabular 
 | **Owner / Group** | UNIX user and group ownership names. | Left |
 
 - **Header Sorting**: Click any column header to toggle ascending or descending sort order. Click with `Cmd` held to perform secondary sorting.
+- **Customizable Column Visibility & Order**: Open **Preferences** (`Cmd+,`) → **File Views** → **Columns** (`view.panel_column_order`, `view.panel_column_visible`) to show or hide `Ext`, `Size`, `Modified`, `Permissions`, and `Owner` globally for both panels and drag the `⠿` handles to change their display order (`Name` always remains first).
+- **macOS Finder Color Tags Column**: Enable **Show macOS Finder color tags in file panel** (`view.show_color_tags`) in **Preferences ➔ File Views** to display anti-aliased Finder color tag dots alongside filenames, complete with localized tooltips for all 7 canonical Finder colors (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) across all 31 UI languages plus custom user tags.
 
 ### 2. Brief View (`Ctrl+F1` / `⌃F1` / `cm_BriefView`)
 
@@ -441,7 +452,7 @@ Here are three real-world recipes showcasing how navigation, tabs, and hotlists 
 1. **Configure Left Panel (Source Code)**:
    - Navigate to `~/Projects/MyApp/src`.
    - Open a second tab (`Cmd+T`) and navigate to `~/Projects/MyApp/tests`.
-   - Right-click the `src` tab and choose **Lock Tab** (`cmd_SetTabOptionLock`).
+   - Right-click the `src` tab and choose **Lock this tab** (`cm_SetTabOptionLock`), or press `Cmd+K` (`cm_ToggleLockTab`).
 2. **Configure Right Panel (Build & Logs)**:
    - Click the right panel to focus it (`Tab`).
    - Navigate to `~/Projects/MyApp/dist`.
@@ -503,13 +514,15 @@ Here are three real-world recipes showcasing how navigation, tabs, and hotlists 
 | **Directory Navigation** | Parent Directory | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` |
 | | Root Directory | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` |
 | | Home Directory | `Ctrl+Shift+Home` / `⌃⇧Home` | `Alt+Home` | `cm_ChangeDirToHome` |
+| | Enter Full Path and Go | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` |
 | | First Entry | `Home` | `Home` | `cm_GoToFirst` |
 | | Last Entry | `End` | `End` | `cm_GoToLast` |
 | **Folder Tabs** | New Tab (Adjacent) | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` |
 | | Close Tab | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` |
-| | Lock this Tab | *Tab Context Menu* | — | `cm_SetTabOptionLock` |
-| | Lock Tab (Allow Subdirs) | *Tab Context Menu* | — | `cm_SetTabOptionLockWithSubdirs` |
-| | Unlock Tab | *Tab Context Menu* | — | `cm_SetTabOptionNormal` |
+| | Lock / Unlock Active Tab | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` |
+| | Lock this Tab | *Tabs / Context Menu* | — | `cm_SetTabOptionLock` |
+| | Lock Tab (Allow Subdirs) | *Tabs / Context Menu* | — | `cm_SetTabOptionLockWithSubdirs` |
+| | Unlock Tab | *Tabs / Context Menu* | — | `cm_SetTabOptionNormal` |
 | | Close Duplicate Tabs | *Tab Context Menu* | — | `cm_CloseDuplicateTabs` |
 | | Close All Tabs | *Tabs Menu* | — | `cm_CloseAllTabs` |
 | | Rename Tab | *Tab Context Menu* | — | `cm_RenameTab` |
@@ -517,13 +530,13 @@ Here are three real-world recipes showcasing how navigation, tabs, and hotlists 
 | | Next Tab | `Ctrl+Tab` / `⌃⇥` | `Ctrl+Tab` | `cm_NextTab` |
 | | Previous Tab | `Ctrl+Shift+Tab` / `⌃⇧⇥` | `Ctrl+Shift+Tab` | `cm_PrevTab` |
 | | Show Tabs List | `Ctrl+Shift+L` / `⌃⇧L` | `Ctrl+Shift+L` | `cm_ShowTabsList` |
-| **Favorite Tabs** | Save Favorite Tabs | *Favorites Menu* | — | `cm_SaveFavoriteTabs` |
+| **Favorite Tabs** | Save Favorite Tabs | `Cmd+Shift+D` / `⌘⇧D` | `Ctrl+Shift+D` | `cm_SaveFavoriteTabs` |
 | | Load Favorite Tabs | *Favorites Menu* | — | `cm_LoadFavoriteTabs` |
 | | Resave Active Favorite | *Favorites Menu* | — | `cm_ResaveFavoriteTabs` |
 | | Reload Active Favorite | *Favorites Menu* | — | `cm_ReloadFavoriteTabs` |
 | | Configure Favorite Tabs| *Preferences* | — | `cm_ConfigFavoriteTabs` |
 | **Hotlists & History** | Directory Hotlist | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` |
-| | Configure Hotlist | `Ctrl+Shift+D` / `⌃⇧D` | `Ctrl+Shift+D` | `cm_ConfigDirHotList` |
+| | Configure Hotlist | `Option+Cmd+D` / `⌥⌘D` | `Ctrl+Alt+D` | `cm_ConfigDirHotList` |
 | | Add Dir to Hotlist | *Hotlist Popup* | — | `cm_AddDirToHotlist` |
 | | History Backward | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` |
 | | History Forward | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` |

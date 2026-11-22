@@ -46,7 +46,7 @@ ATBCmder centralizes all user settings into a unified preferences architecture c
 | **Open Preferences** | `Cmd+,` / `⌘,` | `Alt+O` / `⌥O` | `cm_Options` | Opens the main multi-page Preferences dialog. |
 | **Configure Hotkeys** | `Cmd+,` ➔ Hotkeys | — | `cm_Options` (Hotkeys) | Direct access to the keyboard shortcut binding table. |
 | **Configure File Associations**| Menu: Configuration | — | `cm_FileAssoc` | Maps file extensions to internal or external viewers/editors. |
-| **Directory Hotlist Setup** | `Ctrl+Shift+D` / `⌃⇧D` | `Ctrl+Shift+D` | `cm_ConfigDirHotList` | Edits saved folder bookmarks and active hotkeys (`Ctrl+D` to open hotlist). |
+| **Directory Hotlist Setup** | `Option+Cmd+D` / `⌥⌘D` | `Ctrl+Alt+D` | `cm_ConfigDirHotList` | Edits saved folder bookmarks and active hotkeys (`Ctrl+D` to open hotlist). |
 | **Configure Favorite Tabs** | Menu: Configuration | — | `cm_ConfigFavoriteTabs`| Manages saved dual-panel folder tab sets. |
 | **Configure Archivers** | Menu: Configuration | — | `cm_ConfigArchivers` | Configures external archiver executables and compression rules. |
 | **Export Configuration** | Menu: Configuration | — | `cm_ExportConfiguration`| Exports all configuration XML files into a portable `.zip` bundle. |
@@ -109,7 +109,7 @@ Every page in the Preferences dialog addresses a specific functional domain:
 | **General** | `page_general.py` | Hidden file visibility, Semantic Lucide vector file icons, shared singleton icon cache, deletion/overwrite confirmation dialogs, system Trash integration, copy/move buffer size (4 KB–10 MB), theme selection, global font size, minimize-to-tray toggle, and global show/hide window hotkey (`Cmd+Opt+H`). |
 | **Hotkeys** | `page_hotkeys.py` | Multi-context command search, primary and secondary shortcut chord binding, automated shortcut collision warnings, and factory default reset. |
 | **Language** | `page_language.py` | Dynamic localization selector supporting 30+ languages (English, German, French, Simplified Chinese, Japanese, Russian, Spanish, etc.) with instant live UI translation. |
-| **File Views** | `page_fileview.py` | Case-sensitive and natural numeric sorting, folder sort positioning (folders first, files first, mixed), new/updated file placement, column auto-fit modes (Fixed, Average, Max), padding factor slider, custom datetime formats, and trackpad two-finger swipe history navigation (`view.trackpad_swipe_navigation`). |
+| **File Views** | `page_fileview.py` | Customizable column visibility and drag-to-reorder (`view.panel_column_order`, `view.panel_column_visible`), case-sensitive and natural numeric sorting, folder sort positioning (folders first, files first, mixed), new/updated file placement, column auto-fit modes (Fixed, Average, Max), padding factor slider, custom datetime formats, macOS Finder color tags (`view.show_color_tags`, `view.color_tag_sync_interval_ms`), and trackpad two-finger swipe history navigation (`view.trackpad_swipe_navigation`). |
 | **Auto Refresh** | `page_auto_refresh.py` | Filesystem creation/deletion/rename monitoring, file attribute change monitoring, timer polling fallback interval, disable-when-backgrounded toggle, and directory exclusion filter list. |
 | **Operations** | `page_operations.py` | Default file collision policies (Ask, Overwrite, Skip, Overwrite Older, Auto-Rename Target), directory collision policies (Ask, Merge, Overwrite, Skip), free space pre-allocation, symlink handling, permission/timestamp preservation, and verification. |
 | **Packer** | `page_packer.py` | Default compression archive format (`zip`, `7z`, `tar.gz`, `tar.bz2`, `tar.xz`, `tar`), external executable paths for 7-Zip, GNU Tar, Gzip, Bzip2, and XZ utilities. |
@@ -229,17 +229,20 @@ If you attempt to assign a key chord that is already claimed by another command 
 
 ---
 
-### 3.5 Global Show/Hide Window Hotkey (`Cmd+Opt+H` / `Ctrl+Alt+H`)
+### 3.5 System Tray Residency & Global Show/Hide Window Hotkey (`Cmd+Opt+H` / `Ctrl+Alt+H`)
 
-For power users who prefer to keep ATBCmder running unobtrusively in the background:
+For high-frequency workflows where ATBCmder serves as your constant command center alongside editors, browsers, and terminals, you can keep ATBCmder running quietly in the background and summon or dismiss it instantaneously from anywhere:
 
-1. Open **Preferences ➔ General**.
-2. Check **Minimize to system tray**.
-3. Locate **Show/Hide Window Hotkey** (default: `Ctrl+Alt+H` / `⌘⌥H`).
-4. Click the sequence box to register any custom global hotkey chord.
-5. Click **Apply**. 
+1. Open **Preferences ➔ General** (`Cmd+,`).
+2. Check **Minimize to system tray (Requires Restart)** (`ui.minimize_to_tray`).
+3. Verify or customize **Show/Hide Window Hotkey** (`ui.global_hotkey`, default: `Ctrl+Alt+H` / `⌘⌥H` on macOS). Clicking **Reset** restores the default chord; edits to the hotkey take effect **immediately without restart**.
+4. Click **OK** or **Apply**, then restart ATBCmder once to activate the menu bar tray icon.
 
-You can now instantly summon ATBCmder to the front or dismiss it to the background from anywhere within macOS, even when working inside other full-screen applications.
+Once active:
+
+- **Background System Tray Residency**: Minimizing or hiding ATBCmder tucks the window cleanly into the macOS menu bar tray rather than cluttering your Dock or `Cmd+Tab` switcher, preserving every open tab, selection, and network connection in memory. Click the tray icon to toggle the main window or right-click it for quick actions (**Show Main Window**, **Options**, **Exit**).
+- **Instant Toggle Across Any Workspace**: Press **`Cmd+Opt+H`** (`⌘⌥H`) from any macOS application—or even inside full-screen apps—to summon ATBCmder to the foreground with its exact previous geometry and panel layout, or press it again while ATBCmder is active to hide it right back to the tray.
+- **Permission-Free Carbon Registration & Option-Key Normalization**: On macOS, global hotkeys are registered directly via native Carbon `RegisterEventHotKey` APIs, working out of the box **without requiring macOS Accessibility permissions** in System Settings. The shortcut input box (`_MacAwareKeySequenceEdit`) also normalizes macOS Option (`⌥`) virtual keys automatically so chords like `⌘⌥H` capture cleanly without triggering dead-key or accented character conflicts.
 
 ---
 
@@ -251,21 +254,28 @@ The **File Views** page (`page_fileview.py`) governs how directories are rendere
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                              FILE VIEWS CONFIGURATION                                  │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
+│  Columns (Drag to reorder; Name column always stays first):                            │
+│    ⠿ [X] Ext       ⠿ [X] Size       ⠿ [X] Modified       ⠿ [X] Permissions  ⠿ [X] Owner │
+│                                                                 [ Reset to Defaults ]  │
+├────────────────────────────────────────────────────────────────────────────────────────┤
 │  Sorting Rules:                                                                        │
 │  [X] Case-sensitive sorting             [X] Natural (numeric) sorting                  │
 │  [ ] Special sorting rules                                                             │
 │  Folder sort mode:        [ Folders first                                    ▼ ]       │
 │  New files position:      [ Sorted                                           ▼ ]       │
-│  Updated files position:  [ Top                                              ▼ ]       │
+│  Updated files position:  [ No change                                        ▼ ]       │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │  Column Widths & Auto-Fit Engine:                                                      │
 │  Column auto-fit mode:    [ Average mode                                     ▼ ]       │
 │  Average mode padding:    [ 1.20x ]  (Range: 1.00x - 5.00x)                            │
-│  Hint: In Fixed mode, drag column dividers to save exact pixel widths per side.        │
+│  Hint: When unchecked, column widths are fixed. Drag column borders in the panel.      │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │  Date/Time Formatting:                                                                 │
 │  Long datetime format:    [ %Y-%m-%d %H:%M:%S                                ]         │
 │  Sync dirs format:        [ %Y.%m.%d %H:%M:%S                                ]         │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│  Color Tags (macOS):                                                                   │
+│  [X] Show macOS Finder color tags in file panel        Live-sync interval: [ 30.0 s ]  │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │  Trackpad Navigation:                                                                  │
 │  [X] Swipe left/right with two fingers to go back/forward in folder history            │
@@ -366,16 +376,37 @@ ATBCmder features a modernized, high-DPI vector icon subsystem (`fs_icons.py`) e
 
 ### 4.6 MacBook Trackpad Horizontal Swipe Navigation
 
-For macOS users working on MacBooks or with Magic Trackpads, ATBCmder provides native horizontal two-finger gesture navigation:
+For macOS users working on built-in MacBook trackpads or Apple Magic Trackpads, ATBCmder provides native horizontal two-finger gesture navigation (equivalent to `Option+Left` / `Option+Right`):
 
 - **Two-Finger Swipe Left**: Goes backward in directory history (`cm_ViewHistoryPrev` / `Cmd+[`).
 - **Two-Finger Swipe Right**: Goes forward in directory history (`cm_ViewHistoryNext` / `Cmd+]`).
 - **Ergonomics & Safety**:
-  - **Horizontal Dominance Check**: Automatically detects whether a gesture is primarily horizontal or vertical, preventing accidental history jumps when scrolling through file lists.
+  - **Tuned Sensitivity & Horizontal Dominance Check**: Calibrated across Apple trackpad hardware to distinguish intentional horizontal swipes from vertical list scrolling without accidental triggers.
   - **Hover Panel Focus**: Swiping over either panel automatically directs navigation to the panel underneath the cursor without requiring a prior click.
   - **Momentum Filter**: Blocks spurious multi-page triggers from trackpad inertia.
 - **Configuration**:
   - Toggle in **Preferences** → **File Views** → **Trackpad Navigation** (`view.trackpad_swipe_navigation`, default: off).
+
+---
+
+### 4.7 Customizable Column Visibility & Ordering (`view.panel_column_order`, `view.panel_column_visible`)
+
+You can tailor exactly which file metadata columns appear in **Full Columns View** and arrange them in any left-to-right sequence across both panels:
+
+- **Toggle Visibility**: In **Preferences ➔ File Views ➔ Columns**, uncheck any secondary column (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) you want to hide, or re-check it to bring it back. The `Name` column always stays first and visible.
+- **Drag-to-Reorder**: Grab the `⠿` drag handle beside any column entry and drop it above or below sibling columns to set your preferred display order globally for both left and right panels.
+- **Immediate Effect & Brief View Harmony**: Click **Apply** or **OK** to update all open tabs immediately without restarting. Switching a tab into **Brief View** (`Ctrl+F1`) temporarily shows compact filenames only while preserving your custom column layout for **Full Columns View** (`Ctrl+F2`).
+- **One-Click Restore**: Click **Reset to Defaults** at any time to restore the standard order (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) with all five columns visible.
+
+---
+
+### 4.8 macOS Finder Color Tags (`view.show_color_tags`, `view.color_tag_sync_interval_ms`)
+
+ATBCmder integrates directly with macOS Finder color labels and tags so color-coded projects remain visually distinct inside your dual panels:
+
+- **Enable Tag Column**: In **Preferences ➔ File Views ➔ Color Tags (macOS)**, check **Show macOS Finder color tags in file panel** (`view.show_color_tags`, default: off) to render crisp anti-aliased colored tag dots alongside files and folders.
+- **Live-Sync Interval**: Adjust **Live-sync interval** (`view.color_tag_sync_interval_ms`, range: `0` = Disabled up to `300 s`, default: `30.0 s`) to control how frequently background tag updates refresh without stalling panel scrolling.
+- **31-Language Canonicalized Tooltips**: Standard macOS Finder color tags (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) are automatically canonicalized regardless of the macOS system locale they were created in and displayed as localized tooltips matching your active ATBCmder UI language, alongside any custom user-defined tags verbatim.
 
 ---
 
@@ -703,10 +734,10 @@ Under **Preferences ➔ Quick Search**, power users can tailor in-panel letter s
 | **Hotkeys** | Open Hotkey Editor Page | `Cmd+,` ➔ Hotkeys | — | `cm_Options` |
 | **Hotkeys** | Global Show/Hide Window Hotkey | `Ctrl+Alt+H` / `⌘⌥H` | `Ctrl+Alt+H` | *(Global System Hotkey)* |
 | **Associations** | Open File Associations Manager | Menu: Configuration | — | `cm_FileAssoc` |
-| **Bookmarks** | Directory Hotlist Manager | `Ctrl+Shift+D` / `⌃⇧D` | `Ctrl+Shift+D` | `cm_ConfigDirHotList` |
+| **Bookmarks** | Directory Hotlist Manager | `Option+Cmd+D` / `⌥⌘D` | `Ctrl+Alt+D` | `cm_ConfigDirHotList` |
 | **Bookmarks** | Add Current Directory to Hotlist | Menu: Bookmarks | — | `cm_AddDirToHotlist` |
 | **Folder Tabs** | Favorite Folder Tabs Manager | Menu: Configuration | — | `cm_ConfigFavoriteTabs` |
-| **Folder Tabs** | Save Current Tabs as Favorite Set| Menu: Tabs | — | `cm_SaveFavoriteTabs` |
+| **Folder Tabs** | Save Current Tabs as Favorite Set| `Cmd+Shift+D` / `⌘⇧D` | `Ctrl+Shift+D` | `cm_SaveFavoriteTabs` |
 | **Archivers** | Configure Archiver Binaries | Menu: Configuration | — | `cm_ConfigArchivers` |
 | **Portability** | Export Configuration to ZIP | Menu: Configuration | — | `cm_ExportConfiguration` |
 | **Portability** | Import Configuration from ZIP | Menu: Configuration | — | `cm_ImportConfiguration` |

@@ -369,7 +369,7 @@ Locating specific files across nested folder structures is a common administrati
 ### 5.1 Launching Search
 
 - Press **`Cmd+F`** (`⌘F`) in any panel, or choose **Commands ➔ Search Files...**.
-- The search dialog opens with the **Search in directory** field pre-filled with the active panel’s current path.
+- The search dialog opens with the **Search in directory** field pre-filled with the active panel’s current path and automatically focuses the **File Names Pattern** input for immediate typing, while guarding against accidental search cancellation from `Enter` key double-triggering.
 
 ---
 
@@ -632,8 +632,10 @@ Standard file deletion merely unlinks directory entries, leaving raw data blocks
 While ATBCmder excels at graphical dual-panel workflows, shell access is often required for compilation, git branches, or server management:
 
 - Press **`Ctrl+J`** (`⌃J`) or choose **Commands ➔ Run Terminal**.
-- ATBCmder immediately opens macOS **Terminal.app** (or your configured default terminal emulator) with its working directory initialized to the exact path open in the active panel.
-- No typing `cd /Users/...` or dragging folders into terminal windows required.
+- ATBCmder opens macOS **Terminal.app** (or your configured default terminal emulator) with its working directory initialized to the exact path open in the active panel—no typing `cd /Users/...` or dragging folders required.
+- **Executing Commands from the Bottom Command Bar**:
+  - In standard builds, typing an external shell command in the bottom command bar opens your terminal in the active directory with the command pre-filled cleanly at the prompt.
+  - In Mac App Store sandboxed builds, ATBCmder launches your configured terminal directly in the resolved working directory, copies the exact command text to your system clipboard, and displays a status bar prompt (*"Terminal opened and command copied. Press ⌘V, then Return to run it."*) for App Sandbox-compliant execution with one paste.
 
 ---
 

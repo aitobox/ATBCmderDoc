@@ -106,6 +106,7 @@ Depending on the operational domain, `vfs://` URIs take one of two standard form
 Because virtual paths conform to standard directory structures inside ATBCmder, you enjoy full dual-panel parity:
 
 - **Tabbed Virtual Workspaces**: Open a remote SFTP folder in Tab 1, an encrypted local ZIP archive in Tab 2, and your local `~/Downloads` folder in Tab 3.
+- **Column Sorting & Bidirectional Header Sync**: Click any column header (`Name`, `Ext`, `Size`, `Date Modified`, `Attributes`) in a remote network VFS panel (`VfsTableModel`)—or trigger sort hotkeys (`⌃F3`–`⌃F6`)—to sort remote entries while keeping directories pinned at the top, with header sort arrows synchronized bidirectionally with the **Sort** menu.
 - **Directional Copying (`F5`)**: Select files in your local active panel and press `F5` to upload them directly into the remote server or compressed archive displayed in the inactive panel.
 - **Drag-and-Drop Interoperability**: Drag items across panels between local disks, network shares, and archive hierarchies without intermediate staging.
 - **Interactive Breadcrumb Bar**: The breadcrumb path bar parses virtual URIs into clickable segments. Click any parent folder or the root server badge to jump up the tree instantly.
@@ -622,7 +623,7 @@ When you need to quickly access a server without cluttering your permanent confi
    - **Host & Port**: Enter the server address (port auto-populates default values).
    - **Username & Password**: Input connection credentials.
    - **Remote Path**: Starting remote directory (default: `/`).
-   - **Remember password**: Leave unchecked for a single-session ephemeral connection.
+   - **Remember password**: Leave unchecked for a single-session ephemeral connection (cached in memory for the active session, or prompted on demand via `NetworkPasswordDialog` when reopening an unremembered saved connection).
 3. Click **Test Connection** to verify network handshake and credentials before connecting.
 4. Click **Connect**. ATBCmder immediately opens a new tab in the active panel pointing to the remote server.
 
@@ -698,7 +699,7 @@ File manager configuration files are a prime target for credential harvesting ma
 
 1. **Cleartext XML Scrubbing**: Whenever connection profiles are serialized to disk (`atbcmder.xml`), the `ConnectionManager.save()` routine explicitly forces `d["password"] = ""` before writing. Even if an unauthorized party inspects your configuration XML, no server passwords will ever be revealed.
 2. **macOS System Keychain Encryption**: When the **Remember password** checkbox is selected, passwords are saved directly into the macOS Keychain via the system `keyring` API under the secure service identifier `ATBCmder_VFS`. Key derivation and storage are safeguarded by Apple's hardware Secure Enclave.
-3. **Ephemeral In-Memory Sessions**: If "Remember password" is unchecked, credentials are held strictly in dynamic memory (`VFSSessionCache`) during the current application lifecycle and are erased the moment ATBCmder terminates.
+3. **Ephemeral In-Memory Sessions & On-Demand Password Prompts (`NetworkPasswordDialog`)**: When **Remember password** is unchecked, credentials are held strictly in dynamic memory (`VFSSessionCache`) during the current application lifecycle and erased the moment ATBCmder terminates. Navigating to an unremembered SFTP, FTP/FTPS, SMB, or WebDAV connection automatically prompts you with `NetworkPasswordDialog` (featuring username adjustment, password reveal/mask toggle, and an optional **Remember password (stored in system keychain)** checkbox), cleanly rolling back navigation if canceled and preserving temporary session passwords across edits in Connection Manager.
 
 ---
 

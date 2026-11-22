@@ -193,6 +193,7 @@ Effortlessly move across folders, local volumes, network mounts, and browsing hi
 | `cm_ChangeDirToParent` | Navigate up to parent directory (`..`) | `⌘↑` / `⌫` *(Backspace)* | `Backspace` / `Ctrl+PgUp` | Main |
 | `cm_ChangeDirToRoot` | Jump directly to filesystem root (`/`) | `⌘\` | `Ctrl+\` | Main |
 | `cm_ChangeDirToHome` | Jump directly to user's home folder (`~`) | `⇧⌘H` | `Ctrl+Shift+Home` / `Alt+Home` | FilePanel |
+| `cm_EditPath` | Enter full path and go (switch path bar to inline text input) | `⇧⌘G` | `Ctrl+Shift+G` | Main |
 | `cm_ViewHistoryPrev` | Navigate back in directory browsing history | `⌘[` / `⌥←` | `Alt+Left` / `Ctrl+[` | Main |
 | `cm_ViewHistoryNext` | Navigate forward in directory browsing history | `⌘]` / `⌥→` | `Alt+Right` / `Ctrl+]` | Main |
 | `cm_ViewHistoryPrev` / `Next` | Trackpad swipe back/forward in directory history (toggle in Views) | Two-finger swipe ← / → | — | FilePanel |
@@ -204,7 +205,7 @@ Effortlessly move across folders, local volumes, network mounts, and browsing hi
 | `cm_TargetEqualSource` | Set inactive panel directory to match active directory | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Main |
 | `cm_SyncSlaveDir` | Lock target panel navigation to mirror source panel | `⌥S` | *(Menu: Commands ➔ Sync Navigation)* | Main |
 | `cm_DirHotList` | Open Directory Hotlist / Bookmarks menu | `⌘D` | `Ctrl+D` | Main |
-| `cm_ConfigDirHotList` | Open Directory Hotlist configuration dialog | `⇧⌘D` | `Ctrl+Shift+D` | Main |
+| `cm_ConfigDirHotList` | Open Directory Hotlist configuration dialog | `⌥⌘D` | `Ctrl+Alt+D` | Main |
 | `cm_GoToFirst` | Jump cursor to first item in active panel | `⌘↑` / `Fn+←` *(Home)* | `Home` | Main |
 | `cm_GoToLast` | Jump cursor to last item in active panel | `⌘↓` / `Fn+→` *(End)* | `End` | Main |
 | `PageUp / PageDown` | Scroll active panel up or down by one full viewport | `⇞` *(Fn+↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | FilePanel |
@@ -252,9 +253,10 @@ ATBCmder allows opening unlimited tabs in either panel, locking favorite working
 | `cm_NextTab` / `cm_NextTabCtrl` | Switch to next tab on the right | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Main |
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Switch to previous tab on the left | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Main |
 | `cm_ShowTabsList` | Show popup menu of all open tabs in active panel | `⇧⌘L` | `Ctrl+Shift+L` | Main |
-| `cm_SetTabOptionLock` | Lock this tab (freeze path, opens child folders in adjacent tabs) | *(Tab Context Menu)* | — | Main |
-| `cm_SetTabOptionLockWithSubdirs` | Lock tab with subdirs allowed (resets back to base path on switch) | *(Tab Context Menu)* | — | Main |
-| `cm_SetTabOptionNormal` | Unlock tab (restore default unlocked navigation behavior) | *(Tab Context Menu)* | — | Main |
+| `cm_ToggleLockTab` | Lock / unlock active folder tab (`*` indicator) | `⌘K` | `Ctrl+K` | Main |
+| `cm_SetTabOptionLock` | Lock this tab (freeze path, opens child folders in adjacent tabs; shows dynamic `⌘K` hint in macOS context menu) | *(Tabs / Context Menu)* | — | Main |
+| `cm_SetTabOptionLockWithSubdirs` | Lock tab with subdirs allowed (resets back to base path on switch; visible shortcuts in macOS context menu) | *(Tabs / Context Menu)* | — | Main |
+| `cm_SetTabOptionNormal` | Unlock tab (restore default unlocked navigation behavior; shows dynamic `⌘K` hint in macOS context menu) | *(Tabs / Context Menu)* | — | Main |
 | `cm_CloseAllTabs` | Close all tabs in active panel except the last one | `⌥⌘W` | *(Tab Context Menu: Close All)* | Main |
 | `cm_CloseOtherTabs` | Close all tabs other than the currently active tab | `⇧⌘W` | *(Tab Context Menu: Close Others)* | Main |
 | `cm_Duplicatetab` | Duplicate active folder tab | `⌘D` / `cm_Duplicatetab` | *(Tab Context Menu: Duplicate)* | Main |
@@ -263,6 +265,7 @@ ATBCmder allows opening unlimited tabs in either panel, locking favorite working
 | `cm_CopyTabToOtherPanel` | Clone active tab directly into opposite panel | `⌥⌘T` | *(Tab Context Menu: Copy to Other)* | Main |
 | `cm_SaveTab` / `cm_SaveTabs` | Save current tab layout to configuration | `cm_SaveTab` | *(Menu: Tabs ➔ Save Tabs)* | Main |
 | `cm_LoadTab` / `cm_LoadTabs` | Restore saved tab layout from configuration | `cm_LoadTab` | *(Menu: Tabs ➔ Load Tabs)* | Main |
+| `cm_SaveFavoriteTabs` | Save current tabs to a New Favorite Tabs | `⇧⌘D` | `Ctrl+Shift+D` | Main |
 | `cm_OptionsFavorites` | Configure Favorite Tab sets and persistent workspaces | `cm_OptionsFavorites` | *(Menu: Tabs ➔ Favorite Tabs)* | Main |
 | `cm_FullScreen` | Toggle full screen application window | `⌃⌘F` / `F11` | `F11` | Main |
 
@@ -280,7 +283,7 @@ Launch advanced automation tools, batch utilities, and embedded system tools dir
 | `cm_MultiRename` | Open Batch Multi-Rename Tool (RegEx & tokens) | `⌘M` | `Ctrl+M` | Main |
 | `cm_Split` | Split large file into uniform chunk segments | `⌥F6` | `Alt+F6` | Main |
 | `cm_Combine` | Combine split numbered segments back into original file | `⌥F7` | `Alt+F7` | Main |
-| `cm_CalculateChecksum` | Calculate cryptographic hash (MD5, SHA-1, SHA-256) | `⌃X` / `⌘K` | `Ctrl+X` | Main |
+| `cm_CalculateChecksum` | Calculate cryptographic hash (MD5, SHA-1, SHA-256) | `⌃X` | `Ctrl+X` | Main |
 | `cm_VerifyChecksum` | Verify files against checksum file (`.md5`, `.sha256`) | `cm_VerifyChecksum` | *(Menu: Files ➔ Verify Checksum)* | Main |
 | `cm_RunTerm` | Launch system Terminal at active panel directory | `⌃J` / `F9` | `Ctrl+J` / `F9` | Main |
 | `cm_FocusCmdLine` | Shift keyboard focus directly to bottom command line | `⇧F2` | `Shift+F2` | Main |
@@ -299,7 +302,8 @@ Monitor operating system performance, analyze directory storage with treemaps, s
 | Command ID | Description | Primary macOS Shortcut (with ⌘/⌥/⇧/⌃ glyphs) | Classic Commander Shortcut (with Fn keys) | Context |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | Open System Status & Diagnostics Monitor | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Main |
-| `cm_DiskUsageAnalyzer` | Open Disk Usage Analyzer (Tree + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Main |
+| `cm_DiskUsageAnalyzer` | Open Disk Usage Analyzer (Tree + Treemap) | *(Menu: Tools ➔ Disk Usage Analyzer...)* | *(Menu: Tools ➔ Disk Usage Analyzer...)* | Main |
+| `cm_RecentChanges` | Open Recent File & Folder Changes Tool | *(Menu: Tools ➔ View Recently Modified Files/Folders...)* | *(Menu: Tools ➔ View Recently Modified Files/Folders...)* | Main |
 | `cm_CleanSystem` | Open Safe Two-Stage System Cleaner | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Main |
 | `cm_UninstallApp` | Open Deep Application Uninstaller | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Main |
 
@@ -313,7 +317,9 @@ Access application preferences, configuration management, software updates, and 
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_Options` | Open Application Preferences / Settings Dialog | `⌘,` | `Ctrl+,` | Main |
 | `cm_HelpContents` / `cm_HelpIndex` | Open Interactive User Documentation & Guide | `⌘?` / `F1` | `F1` | Main |
+| `cm_Tutorial` | Launch 32-step Interactive Onboarding Tutorial | *(Menu: Help ➔ Interactive Tutorial...)* | *(Menu: Help ➔ Interactive Tutorial...)* | Main |
 | `cm_HelpKeyboard` | Open Quick Keyboard Shortcuts Reference Card | `cm_HelpKeyboard` | *(Menu: Help ➔ Keyboard)* | Main |
+| `*(Global System Hotkey)*` | Show / hide ATBCmder window from system tray (`ui.global_hotkey`) | `⌘⌥H` | `Ctrl+Alt+H` | System (Carbon) |
 | `cm_Exit` | Quit / Exit ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Main |
 | `cm_About` | Display ATBCmder version, license, and credits | `cm_About` | *(Menu: ATBCmder ➔ About)* | Main |
 | `cm_OpenConfigDirectory` | Reveal configuration folder (`atbcmder.xml`) in panel | `cm_OpenConfigDirectory` | *(Menu: Configuration ➔ Open Config)* | Main |
