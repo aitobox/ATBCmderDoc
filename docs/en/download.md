@@ -35,6 +35,12 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 2.9.0 (2026-11-22)
+
+- Interactive Tutorial Update & Path Bar Go-Button: Updated the interactive onboarding tutorial to cover v2.8+ highlights including custom column layouts, tab locking, and pinyin quick search (Fixes #250); added an "enter full path and go" button to the panel path bar for instant path editing and direct navigation (Fixes #247)
+- Tab Lock Toggle (`Cmd+K`), Context Shortcuts & Trackpad Tuning: Displayed keyboard shortcuts in macOS tab context menus and introduced `Cmd+K` to toggle tab locking effortlessly; improved MacBook trackpad horizontal swipe compatibility across hardware setups and tuned gesture sensitivity for crisp history navigation (Fixes #185)
+- Sandbox-Safe System Status, Cleaner Clarity & Terminal Handoff: Enabled sandbox-safe Top Processes monitoring in System Status and eliminated UI freezes in the Running Applications list (Fixes #249); System Cleaner now reports real sizes and exact reasons for kept items for complete transparency (Fixes #248); updated macOS App Sandbox terminal integration to use directory opening and clipboard handoff for compliant, frictionless shell workflows
+
 ### 2.8.0 (2026-11-15)
 
 - Customizable File Panel Column Visibility & Ordering: Added full support in File Views preferences for toggling column visibility (Size, Modified, Attributes, Extension, etc.) and reordering columns to match personal workflows and screen sizes (Fixes #237, #246)

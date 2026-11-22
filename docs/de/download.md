@@ -35,6 +35,12 @@ ATBCmder ist ein Dateiverwaltungstool und erfordert vom Benutzer explizite Berec
 
 ## Versionshinweise
 
+### 2.9.0 (22.11.2026)
+
+- Aktualisiertes interaktives Tutorial & „Pfad eingeben & los“-Schaltfläche: Interaktives Einführungstutorial auf v2.8+-Funktionen wie benutzerdefinierte Spaltenlayouts, Tab-Sperrung und Pinyin-Schnellsuche aktualisiert (Fixes #250); neue Schaltfläche „Vollständigen Pfad eingeben und wechseln“ in der Pfadleiste für direkte Pfadeingabe und sofortige Navigation hinzugefügt (Fixes #247)
+- `Cmd+K`-Tab-Sperrumschaltung, Menü-Tastenkürzel & Trackpad-Feinabstimmung: Tastenkürzel im macOS-Tab-Kontextmenü sichtbar gemacht und `Cmd+K` zum schnellen Umschalten der Tab-Sperre eingeführt; Kompatibilität horizontaler Trackpad-Wischgesten verbessert und Auslöseempfindlichkeit präzise abgestimmt (Fixes #185)
+- Sandbox-sicherer Systemstatus, klare Bereinigungsergebnisse & Terminal-Übergabe: Sandbox-sichere Top-Processes-Überwachung im Systemstatus aktiviert und Einfrieren der Liste laufender Anwendungen behoben (Fixes #249); Systembereinigung zeigt nun reale Größen und präzise Gründe für beibehaltene Elemente (Fixes #248); Terminalaufrufe unter macOS App Sandbox nutzen nun sicheres Verzeichnisöffnen mit Zwischenablage-Übergabe
+
 ### 2.8.0 (15.11.2026)
 
 - Anpassbare Spaltensichtbarkeit und -reihenfolge im Dateipanel: In den Einstellungen unter „Dateiansichten (File Views)“ lassen sich nun Sichtbarkeit und Reihenfolge einzelner Spalten (Größe, Geändert, Attribute, Erweiterung usw.) flexibel festlegen, um das Layout optimal an Arbeitsabläufe und Bildschirmgrößen anzupassen (Fixes #237, #246)

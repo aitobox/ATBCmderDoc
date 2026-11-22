@@ -35,6 +35,12 @@ ATBCmder est un outil de gestion de fichiers et nécessite des autorisations exp
 
 ## Notes de version
 
+### 2.9.0 (22/11/2026)
+
+- Tutoriel interactif actualisé et bouton d'accès direct au chemin : Mise à jour du tutoriel interactif pour couvrir les nouveautés v2.8+ telles que la personnalisation des colonnes, le verrouillage d'onglets et la recherche rapide Pinyin (Fixes #250) ; ajout d'un bouton « Saisir le chemin complet et ouvrir » dans la barre de chemin pour éditer et naviguer instantanément (Fixes #247)
+- Verrouillage d'onglet (`Cmd+K`), raccourcis contextuels et réglage du trackpad : Affichage des raccourcis clavier dans le menu contextuel des onglets macOS et ajout du raccourci `Cmd+K` pour verrouiller/déverrouiller un onglet ; compatibilité élargie et sensibilité affinée pour les gestes de balayage horizontal sur trackpad MacBook (Fixes #185)
+- État système compatible Sandbox, transparence du nettoyeur et relais Terminal : Activation de la surveillance sécurisée des processus principaux (Top Processes) dans l'État système et correction du gel de la liste des applications en cours (Fixes #249) ; le nettoyeur système affiche désormais les tailles réelles et les raisons exactes des éléments conservés (Fixes #248) ; l'ouverture du Terminal sous macOS App Sandbox utilise désormais l'ouverture de répertoire et le transfert via presse-papiers
+
 ### 2.8.0 (15/11/2026)
 
 - Personnalisation de la visibilité et de l'ordre des colonnes : Les préférences « Vues des fichiers (File Views) » permettent désormais d'afficher/masquer les colonnes du panneau (Taille, Modifié, Attributs, Extension, etc.) et de les réorganiser selon vos besoins et la taille de votre écran (Fixes #237, #246)

@@ -35,6 +35,12 @@ ATBCmder é uma ferramenta de gerenciamento de arquivos e requer permissões exp
 
 ## Notas de versão
 
+### 2.9.0 (22/11/2026)
+
+- Atualização do tutorial interativo e botão de navegação direta na barra de caminho: Atualizado o tutorial interativo de integração para abordar os destaques da v2.8+, incluindo layouts de coluna personalizados, bloqueio de abas e busca rápida Pinyin (Fixes #250); adicionado o botão «Inserir caminho completo e ir» na barra de caminho do painel para edição instantânea e navegação direta (Fixes #247)
+- Alternância de bloqueio de aba (`Cmd+K`), atalhos de contexto e calibração do trackpad: Exibidos atalhos de teclado nos menus de contexto de abas no macOS e introduzido o atalho `Cmd+K` para alternar o bloqueio de abas com facilidade; aprimorada a compatibilidade do deslizamento horizontal no trackpad do MacBook em diferentes configurações de hardware e ajustada a sensibilidade para navegação ágil no histórico (Fixes #185)
+- Status do sistema seguro em Sandbox, clareza na limpeza e integração com Terminal: Ativado o monitoramento seguro de Top Processes no Status do Sistema e eliminados congelamentos da interface na lista de Aplicativos em execução (Fixes #249); o Limpador do Sistema agora relata tamanhos reais e motivos exatos dos itens mantidos para total transparência (Fixes #248); integração do terminal no macOS App Sandbox atualizada para abertura de diretório e transferência via área de transferência (Clipboard Handoff) para fluxos de shell fluidos e em conformidade
+
 ### 2.8.0 (15/11/2026)
 
 - Visibilidade e ordenação personalizáveis das colunas no painel de arquivos: Adicionado suporte completo nas preferências de «Visualizações de arquivos (File Views)» para alternar a exibição das colunas (Tamanho, Modificado, Atributos, Extensão, etc.) e reordená-las conforme fluxos de trabalho pessoais e dimensões da tela (Fixes #237, #246)

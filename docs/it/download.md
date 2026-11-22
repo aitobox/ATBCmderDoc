@@ -35,6 +35,12 @@ ATBCmder è uno strumento di gestione dei file e richiede autorizzazioni esplici
 
 ## Note sulla versione
 
+### 2.9.0 (22-11-2026)
+
+- Aggiornamento del tutorial interattivo e pulsante di navigazione diretta nella barra del percorso: Aggiornato il tutorial introduttivo interattivo per includere le principali novità della v2.8+, tra cui layout personalizzato delle colonne, blocco delle schede e ricerca rapida Pinyin (Fixes #250); aggiunto un pulsante «Inserisci percorso completo e vai» nella barra del percorso del pannello per la modifica immediata e la navigazione diretta (Fixes #247)
+- Attivazione/disattivazione blocco schede (`Cmd+K`), scorciatoie contestuali e calibrazione del trackpad: Visualizzate le scorciatoie da tastiera nei menu contestuali delle schede su macOS e introdotto `Cmd+K` per attivare o disattivare rapidamente il blocco della scheda; migliorata la compatibilità dello scorrimento orizzontale sul trackpad dei MacBook su diverse configurazioni hardware e calibrata la sensibilità del gesto per una navigazione precisa nella cronologia (Fixes #185)
+- Stato del sistema compatibile con Sandbox, trasparenza nella pulizia e passaggio al Terminale: Abilitato il monitoraggio sicuro dei Top Processes nello Stato del sistema e risolti i blocchi dell'interfaccia nell'elenco delle applicazioni in esecuzione (Fixes #249); il programma di pulizia del sistema riporta ora le dimensioni reali e i motivi esatti per gli elementi conservati garantendo piena trasparenza (Fixes #248); aggiornata l'integrazione del terminale con la sandbox di macOS App Store per utilizzare l'apertura delle directory e il passaggio dei comandi tramite appunti per flussi di lavoro conformi e senza attriti
+
 ### 2.8.0 (15-11-2026)
 
 - Visibilità e ordinamento personalizzabili delle colonne nei pannelli file: Aggiunto il pieno supporto nelle preferenze «Viste file (File Views)» per attivare/disattivare la visibilità delle colonne (Dimensione, Modificato, Attributi, Estensione, ecc.) e riordinarle per adattarle ai flussi di lavoro personali e alle dimensioni dello schermo (Fixes #237, #246)
