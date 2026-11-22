@@ -104,6 +104,7 @@ vfs://[協議型別]://[使用者名稱]@[主機地址]:[埠號]/[遠端絕對�
 因為所有虛擬路徑在 ATBCmder 內部都遵循統一的抽象目錄模型，所以您能享受到完整的雙面板互動能力：
 
 - **多標籤虛擬工作區**：在左側面板標籤頁 1 開啟遠端 SFTP 伺服器，標籤頁 2 開啟本地加密 ZIP 包，標籤頁 3 開啟本地 `~/Downloads` 目錄，多源自由切換。
+- **列排序與雙向表頭同步**：在遠端網路 VFS 面板 (`VfsTableModel`) 中點選任意列頭（`名稱`、`副檔名`、`大小`、`修改時間`、`許可權`）或觸發排序快速鍵 (`⌃F3`–`⌃F6`)，即可對遠端條目快速排序，目錄始終固定置頂，且表頭排序箭頭與頂欄 **排序** 選單保持嚴格的雙向同步。
 - **定向雙向複製 (`F5`)**：在本地啟用面板中選中檔案並按下 `F5`，即可將其直接推送到對側面板展示的遠端伺服器或壓縮包內部。
 - **直接拖拽傳輸 (Drag-and-Drop)**：跨越面板邊界，在本地磁碟、網路共享以及歸檔內部層級之間直接拖拽檔案，無需中間繁瑣落地。
 - **動態互動式麵包屑導航條**：麵包屑路徑欄能夠智慧解析虛擬 URI 為可點選的層級按鈕。點選任何父級目錄或根伺服器徽標，即可瞬間折躍至對應層級。
@@ -597,10 +598,10 @@ ATBCmder 將 **Dropbox 作為實時線上的虛擬磁碟 (`dropbox://`)**，支�
 
 ### 6.3 App Store 沙盒雲端儲存（OneDrive、Google Drive、iCloud）
 
-在 Mac App Store 沙盒版本的 ATBCmder 中，對第三方本地雲同步目錄（如 Microsoft OneDrive、Google Drive 桌面端、Dropbox 和 iCloud Drive）的直接檔案系統存取受到 Apple 沙盒安全機制的管理：
+在 Mac App Store 沙盒版本的 ATBCmder 中，對第三方本地雲同步目錄（如 Microsoft OneDrive、Google Drive 桌面端、Dropbox 和 iCloud Drive）的直接檔案系統訪問受到 Apple 沙盒安全機制的管理：
 
-- **安全作用域書籤 (Security-Scoped Bookmarks)**：位於 `~/Library/CloudStorage/OneDrive-*`、`~/Library/CloudStorage/GoogleDrive-*` 或 `~/Library/Mobile Documents/com~apple~CloudDocs/` 的雲同步目錄需要系統簽發的安全存取權杖。
-- **磁碟機代號選擇器與路徑無縫整合**：ATBCmder 會全自動發現本機已設定的本地雲端儲存目錄，並在磁碟驅動器選擇器（`Alt+D` / `⌥D`）、驅動器按鈕列與路徑麵包屑中直觀呈現。
+- **安全作用域書籤 (Security-Scoped Bookmarks)**：位於 `~/Library/CloudStorage/OneDrive-*`、`~/Library/CloudStorage/GoogleDrive-*` 或 `~/Library/Mobile Documents/com~apple~CloudDocs/` 的雲同步目錄需要系統簽發的安全訪問令牌。
+- **磁碟機代號選擇器與路徑無縫整合**：ATBCmder 會全自動發現本機已配置的本地雲端儲存目錄，並在磁碟驅動器選擇器（`Alt+D` / `⌥D`）、驅動器按鈕欄與路徑麵包屑中直觀呈現。
 - **持久授權憑據儲存**：首次點選進入某個雲端儲存目錄時，macOS 系統會自動彈出授權確認工作表。一旦使用者選擇授權，ATBCmder 會將加密的安全作用域書籤持久化儲存在偏好設定中，在應用重啟後依然保持讀寫暢通，無需反覆彈出授權對話方塊。
 
 ---
@@ -619,7 +620,7 @@ ATBCmder 為連線遠端主機提供了兩套相輔相成的方案：針對臨�
    - **伺服器地址與埠**：輸入主機 IP 或域名（埠隨協議自動回填預設值）。
    - **使用者名稱與密碼**：輸入遠端認證資訊。
    - **遠端起始路徑**：指定登入後的初始目錄（預設為 `/`）。
-   - **記住密碼**：臨時連線建議保持不勾選。
+   - **記住密碼**：若不需要長期儲存，取消勾選即可建立臨時會話連線（憑據僅在當前應用會話記憶體中快取；若日後開啟未儲存密碼的連線，會自動彈出 `NetworkPasswordDialog` 提示按需輸入密碼）。
 3. 點選 **測試連線**，在正式載入前先行驗證網路握手與身份認證是否通暢。
 4. 點選 **連線**。ATBCmder 會立即在當前面板新建一個標籤頁，直連遠端伺服器。
 
@@ -695,7 +696,7 @@ ATBCmder 為連線遠端主機提供了兩套相輔相成的方案：針對臨�
 
 1. **XML 配置檔案明文脫敏**：無論在任何時候將連線配置序列化落盤到 `atbcmder.xml`，`ConnectionManager.save()` 方法均會在執行前強制執行 `d["password"] = ""` 置空。即便配置檔案被意外讀取或洩漏，也不會暴露任何伺服器密碼。
 2. **Apple 原生 Keychain 硬體加密**：若勾選了 **記住密碼**，系統會呼叫 Python `keyring` 模組直接把密碼存入 macOS 鑰匙串，服務名為 `ATBCmder_VFS`。金鑰派生與資料加解密全程受 Apple 晶片硬體 Secure Enclave 保護。
-3. **動態會話記憶體保護**：若未勾選“記住密碼”，憑據僅儲存在當前執行期的動態記憶體結構（`VFSSessionCache`）中，在退出 ATBCmder 的瞬間即被徹底抹除。
+3. **臨時記憶體會話與按需密碼彈窗 (`NetworkPasswordDialog`)**：當取消勾選“記住密碼”時，密碼憑據嚴格儲存在易失性記憶體 (`VFSSessionCache`) 中，並在 ATBCmder 退出時徹底銷燬。當導航進入未在鑰匙串儲存密碼的 SFTP、FTP/FTPS、SMB 或 WebDAV 連線時，系統會自動彈出 `NetworkPasswordDialog` 對話方塊（支援調整使用者名稱、明暗切換檢視密碼以及可選的“記住密碼（存入系統鑰匙串）”核取方塊），若取消操作則安全回退導航，且在連線管理器中微調配置後臨時密碼依然在記憶體中有效保留，無需重複鍵入。
 
 ---
 
