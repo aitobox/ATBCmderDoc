@@ -12,9 +12,9 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ [路径面包屑]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src               │
+│ [路径面包屑]  🏠 / ▸ Users ▸ username ▸ Projects ▸ ATBCmder ▸ src    [✎] [^] ⭐ │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ [标签页栏]    [★ 源码核心 (锁定)] [设计资源] [编译输出] [+]                     │
+│ [标签页栏]    [* 源码核心] [设计资源] [编译输出] [+]                             │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  名称                         类型      大小      修改时间           权限       │
 │  ▸ [..]                                           --:--              drwxr-xr-x │
@@ -35,9 +35,11 @@
 | **返回上一层目录** | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` | 跳出当前文件夹回到上层 (`..`)。 |
 | **跳转至系统根目录**| `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` | 瞬间直达系统启动盘根目录 (`/`)。 |
 | **跳转至用户主目录**| `Ctrl+Shift+Home` | `Alt+Home` | `cm_ChangeDirToHome` | 瞬间直达当前用户家目录 (`~`)。 |
+| **输入完整路径并跳转** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | 切换路径栏为行内文本输入框并直接跳转。 |
 | **进入目录 / 打开** | `Enter` / `⌘↓` | `Enter` | — | 进入选中的文件夹或打开选中的文件。 |
 | **新建标签页** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | 在当前面板以当前路径新建标签页。 |
 | **关闭标签页** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | 关闭当前面板处于激活状态的标签页。 |
+| **锁定 / 解锁标签页** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | 快速切换当前激活标签页的锁定状态 (`*`)。 |
 | **常用目录书签** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | 弹出支持即时模糊搜索的书签弹窗。 |
 | **历史后退** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | 后退至上一个访问过的文件夹。 |
 | **历史前进** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | 前进至下一个文件夹。 |
@@ -75,11 +77,15 @@ ATBCmder 提供多种符合人体工学的自由导航方式——无论您偏�
    - **在访达中显示**：在 macOS Finder 中直接揭示该文件夹 (`open -R`)。
    - **复制路径**：一键将该节点的绝对 UNIX 完整路径复制到剪贴板。
    - **在终端中打开**：以此目录作为工作路径，瞬间启动 macOS 终端。
-4. **地址栏直接键入模式 (`BreadcrumbLineEdit`)**：
-   - 双击面包屑链条右侧的空白区域（或按下 `Shift+F2`）。
-   - 面包屑条立即变为可自由输入的文本编辑框 (`QLineEdit`)。
-   - 直接粘贴或输入任意路径（例如 `~/Library/Application Support`、`/var/log`、`/Volumes/ExternalDrive` 或 `vfs://` 压缩包虚拟路径）。
-   - 按 `Enter` 回车直达，或按 `Esc` 取消并还原为面包屑按钮。
+4. **输入完整路径并跳转 (`BreadcrumbLineEdit` / `cm_EditPath`)**：
+   - 提供了三种极其顺手的高频触发方式：
+     - 点击路径面包屑栏左侧紧邻“返回上一级 (`btn_up`)”按钮的铅笔图标按钮（**输入完整路径并跳转**，`btn_edit_path`）。
+     - 双击面包屑链条右侧的空白区域。
+     - 按下快捷键 **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G`)，或从顶部菜单栏选择 **命令 ➔ 输入完整路径并跳转**。
+   - 面包屑条会瞬间切换为行内文本编辑框，且已自动预填并全选当前完整路径，按下 `⌘V` 即可直接粘贴覆盖。
+   - **智能路径规范化与文件直达定位**：按下回车 (`Enter`) 时，ATBCmder 会自动剔除首尾空格、剥离外层包裹的单双引号 (`"..."` 或 `'...'`)、展开家目录波浪号 `~` 以及 `$VAR` / `%VAR%` 环境变量、根据当前目录智能解析相对路径，并保持 `vfs://` 归档路径原样无损。
+     - 若输入的路径指向一个存在的本地**文件**，ATBCmder 会自动跳转至其父目录，并在面板文件列表中将光标精准聚焦并高亮该文件。
+     - 若路径不存在或加载失败，编辑框不会强制关闭，而是保持展开并呈现醒目的红色错误警示边框，同时在状态栏显示非阻塞错误原因，方便您就地修改错别字；只要继续键入文字即可自动清除红框警示；随时按下 `Esc`、点击面板任意区域或再次点击铅笔按钮即可取消并还原为面包屑按钮链。
 
 ### 闪电级键盘跳跃
 
@@ -121,6 +127,7 @@ ATBCmder 提供多种符合人体工学的自由导航方式——无论您偏�
 | :--- | :--- | :--- | :--- | :--- |
 | **新建标签页** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | 以当前所在目录在邻近右侧打开一个新标签页。 |
 | **关闭当前标签** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | 关闭当前标签（面板至少保留 1 个标签）。 |
+| **锁定 / 解锁标签页** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | 在普通标签与锁定标签 (`*`) 之间快速切换。 |
 | **切换至下一个标签**| `Ctrl+Tab` / `⌃⇥` | `Ctrl+Tab` | `cm_NextTab` | 焦点向右轮换至下一个标签页。 |
 | **切换至上一个标签**| `Ctrl+Shift+Tab` | `Ctrl+Shift+Tab`| `cm_PrevTab` | 焦点向左轮换至上一个标签页。 |
 | **展开标签页清单** | `Ctrl+Shift+L` | `Ctrl+Shift+L` | `cm_ShowTabsList` | 弹出当前面板全部已开标签的数字编号列表。 |
@@ -150,6 +157,9 @@ ATBCmder 提供多种符合人体工学的自由导航方式——无论您偏�
    - 当您切换至其他标签页、再次点击该标签表头、触发系统根目录按钮 (`\`) 或重启应用时，该标签会自动平稳重置回初始基准路径。
    - 鼠标悬停在标签上可查看包含基准锚点路径的提示 (`Locked: <base_path>`)。
 
+- **按键快速切换锁定 (`Cmd+K` / `⌘K` / `Ctrl+K` / `cm_ToggleLockTab`)**：在任意激活面板中按下 `Cmd+K`，即可立即在未锁定与**锁定此标签页**之间瞬时切换（或为已锁定的标签页解锁）。
+- **右键菜单动态同步快捷键**：顶部**标签页**菜单与 macOS 原生标签页右键上下文菜单均显示右对齐的快捷键提示（`⌘T`、`⌘W`、`⌘K`、`⇧⌘D` 等），与 `HotkeyManager` 实时保持同步，并在执行下一步锁定或解锁动作时动态更新 `⌘K` 提示。
+
 ---
 
 ## 4. 常用标签组 (Favorite Tabs)：双面板工作区一键复原
@@ -175,8 +185,8 @@ ATBCmder 提供多种符合人体工学的自由导航方式——无论您偏�
 
 ### 常用标签页组核心功能
 
-- **保存当前标签组合 (`cm_SaveFavoriteTabs`)**：
-  - 点击菜单栏 **收藏** → **将当前标签保存为新的常用标签组**，或右键点击标签栏空白处。
+- **保存当前标签组合 (`Cmd+Shift+D` / `⌘⇧D` / `cm_SaveFavoriteTabs`)**：
+  - 点击菜单栏 **收藏** → **将当前标签保存为新的常用标签组**（或按下 `Cmd+Shift+D` / `Ctrl+Shift+D`），或右键点击标签栏空白处。
   - 为工作区输入命名（例如：`Web 后端开发`、`2026 照片归档` 或 `服务器运维部署`）。
   - 配置将持久保存于配置目录的 `fav_tab_config.xml` 中。
 - **加载常用标签组合 (`cm_LoadFavoriteTabs`)**：
@@ -215,7 +225,7 @@ ATBCmder 提供多种符合人体工学的自由导航方式——无论您偏�
    - 在弹窗内点击 **“添加当前目录”** 按钮（或按 `Alt+A`）。
    - ATBCmder 会自动将当前路径填入，并预推一个简洁明了的默认书签名称。
 
-### 书签结构化配置 (`Ctrl+Shift+D` / `⌃⇧D` / `cm_ConfigDirHotList`)
+### 书签结构化配置 (`Option+Cmd+D` / `⌥⌘D` / `Ctrl+Alt+D` / `cm_ConfigDirHotList`)
 
 打开 **偏好设置** → **常用目录**（或执行 `cm_ConfigDirHotList`），对您的个人书签进行专业组织：
 
@@ -251,6 +261,7 @@ ATBCmder 为每一次浏览都留下了清晰的历史足迹，让您可以像�
 
 手势引擎专为流畅的 macOS 人体工学体验量身打造：
 
+- **广泛硬件适配与深度灵敏度调校**：针对 MacBook 内置触控板与 Apple 妙控板 (Magic Trackpad) 的双指左右滑动手势进行了深度灵敏度与加速度优化，完美契合 macOS 原生浏览直觉，等效于键盘 `Option+Left` / `Option+Right` (`cm_ViewHistoryPrev` / `cm_ViewHistoryNext`)。
 - **智能防抖与横向主导识别**：精准区分故意的水平历史手势与常规垂直列表滚动，彻底过滤惯性滑动飘逸，杜绝误触。
 - **自动对焦面板**：在非激活面板上方滑动时，系统会自动将键盘焦点与操作视口切换至该面板，再执行历史回退或前进，确保对正确的一侧进行导航。
 - **独立配置开关**：可在 **偏好设置** (`Cmd+,`) → **文件视图** 页面中随时开启或关闭（配置项 `view.trackpad_swipe_navigation`，默认关闭）。
@@ -289,6 +300,8 @@ ATBCmder 提供 5 种各有所长的视图模式，帮您在不同的文件管�
 | **所有者/组** | 文件归属的系统用户名与用户组。 | 靠左对齐 |
 
 - **列头点击即时排序**：点击任意列头在升序与降序之间快速切换；按住 `Cmd` 点击其他列头还可开启二级混合联合排序。
+- **自定义列显示与顺序**：打开 **偏好设置** (`Cmd+,`) → **文件视图** → **列设置** (`view.panel_column_order`, `view.panel_column_visible`)，自由勾选或隐藏双侧面板全局的 `扩展名`、`大小`、`修改时间`、`权限` 与 `所有者` 分栏，并可通过拖拽 `⠿` 手柄随心调整其显示顺序（`名称` 列始终固定在最前）。
+- **macOS 访达颜色标签分栏**：在 **偏好设置 ➔ 文件视图** 中开启 **在文件面板中显示 macOS 访达颜色标签** (`view.show_color_tags`)，即可在文件名旁直观展示抗锯齿彩色标签圆点，内置支持 7 种原生访达颜色（红、橙、黄、绿、蓝、紫、灰）在 31 门界面语言下的本地化悬停提示以及自定义标签。
 
 ### 2. 简要紧凑视图 (`Ctrl+F1` / `⌃F1` / `cm_BriefView`)
 
@@ -441,7 +454,7 @@ ATBCmder 提供 5 种各有所长的视图模式，帮您在不同的文件管�
 1. **配置左侧面板（源码仓库）**：
    - 浏览至 `~/Projects/MyApp/src`。
    - 按 `Cmd+T` 开启新标签，浏览至 `~/Projects/MyApp/tests`。
-   - 在 `src` 标签页上右键，点击 **锁定标签** (`cmd_SetTabOptionLock`)。
+   - 在 `src` 标签页上右键点击 **锁定此标签页** (`cm_SetTabOptionLock`)，或直接按下 `Cmd+K` (`cm_ToggleLockTab`)。
 2. **配置右侧面板（编译构建与日志）**：
    - 按 `Tab` 键将焦点转到右侧面板。
    - 浏览至 `~/Projects/MyApp/dist`。
@@ -503,13 +516,15 @@ ATBCmder 提供 5 种各有所长的视图模式，帮您在不同的文件管�
 | **目录快速跳转** | 返回父目录 | `Backspace` / `⌘↑` | `Ctrl+PgUp` | `cm_ChangeDirToParent` |
 | | 跳转至根目录 | `Ctrl+\` / `⌃\` | `\` | `cm_ChangeDirToRoot` |
 | | 跳转至家目录 | `Ctrl+Shift+Home` | `Alt+Home` | `cm_ChangeDirToHome` |
+| | 输入完整路径并跳转 | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` |
 | | 首行跳跃 | `Home` | `Home` | `cm_GoToFirst` |
 | | 尾行跳跃 | `End` | `End` | `cm_GoToLast` |
 | **文件夹标签页** | 新建标签页 (邻近插入) | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` |
 | | 关闭标签页 | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` |
-| | 锁定此标签页 | *标签页右键菜单* | — | `cm_SetTabOptionLock` |
-| | 锁定标签页 (允许子目录) | *标签页右键菜单* | — | `cm_SetTabOptionLockWithSubdirs` |
-| | 解锁标签页 | *标签页右键菜单* | — | `cm_SetTabOptionNormal` |
+| | 锁定 / 解锁当前标签页 | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` |
+| | 锁定此标签页 | *标签页 / 右键菜单* | — | `cm_SetTabOptionLock` |
+| | 锁定标签页 (允许子目录) | *标签页 / 右键菜单* | — | `cm_SetTabOptionLockWithSubdirs` |
+| | 解锁标签页 | *标签页 / 右键菜单* | — | `cm_SetTabOptionNormal` |
 | | 关闭重复标签 | *标签页右键菜单* | — | `cm_CloseDuplicateTabs` |
 | | 关闭所有标签 | *标签页菜单* | — | `cm_CloseAllTabs` |
 | | 重命名标签页 | *标签页右键菜单* | — | `cm_RenameTab` |
@@ -517,13 +532,13 @@ ATBCmder 提供 5 种各有所长的视图模式，帮您在不同的文件管�
 | | 切换下一个标签 | `Ctrl+Tab` / `⌃⇥` | `Ctrl+Tab` | `cm_NextTab` |
 | | 切换上一个标签 | `Ctrl+Shift+Tab` | `Ctrl+Shift+Tab` | `cm_PrevTab` |
 | | 显示所有标签清单 | `Ctrl+Shift+L` | `Ctrl+Shift+L` | `cm_ShowTabsList` |
-| **常用标签页组** | 保存常用标签组 | *收藏菜单* | — | `cm_SaveFavoriteTabs` |
+| **常用标签页组** | 保存常用标签组 | `Cmd+Shift+D` / `⌘⇧D` | `Ctrl+Shift+D` | `cm_SaveFavoriteTabs` |
 | | 加载常用标签组 | *收藏菜单* | — | `cm_LoadFavoriteTabs` |
 | | 覆盖更新当前组 | *收藏菜单* | — | `cm_ResaveFavoriteTabs` |
 | | 还原当前组初始态 | *收藏菜单* | — | `cm_ReloadFavoriteTabs` |
 | | 配置常用标签组 | *偏好设置* | — | `cm_ConfigFavoriteTabs` |
 | **书签与历史** | 常用目录书签面板 | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` |
-| | 书签高级配置管理 | `Ctrl+Shift+D` | `Ctrl+Shift+D` | `cm_ConfigDirHotList` |
+| | 书签高级配置管理 | `Option+Cmd+D` / `⌥⌘D` | `Ctrl+Alt+D` | `cm_ConfigDirHotList` |
 | | 添加当前目录入书签| *书签浮动面板* | — | `cm_AddDirToHotlist` |
 | | 历史后退 | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` |
 | | 历史前进 | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` |
