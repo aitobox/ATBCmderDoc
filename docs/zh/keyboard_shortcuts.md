@@ -204,7 +204,8 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | `cm_TargetEqualSource` | 将对侧面板同步跳转到与当前面板完全一致的目录 | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Main |
 | `cm_SyncSlaveDir` | 开启双面板协同镜像导航（同进同退） | `⌥S` | *(菜单: 命令 ➔ 联动导航)* | Main |
 | `cm_DirHotList` | 打开常用目录书签 (Hotlist) 快捷列表 | `⌘D` | `Ctrl+D` | Main |
-| `cm_ConfigDirHotList` | 打开常用目录书签的管理与编辑窗口 | `⇧⌘D` | `Ctrl+Shift+D` | Main |
+| `cm_EditPath` | 输入完整路径并跳转（切换路径面包屑栏为行内文本编辑框） | `⇧⌘G` | `Ctrl+Shift+G` | Main |
+| `cm_ConfigDirHotList` | 打开常用目录书签的管理与编辑窗口 | `⌥⌘D` | `Ctrl+Alt+D` | Main |
 | `cm_GoToFirst` | 将光标定位至面板内第一个文件条目 | `⌘↑` / `Fn+←` *(Home)* | `Home` | Main |
 | `cm_GoToLast` | 将光标定位至面板内最后一个文件条目 | `⌘↓` / `Fn+→` *(End)* | `End` | Main |
 | `PageUp / PageDown` | 向上/向下滚动整整一屏视图 | `⇞` *(Fn+↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | FilePanel |
@@ -249,12 +250,13 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_NewTab` | 在当前面板新建一个文件夹标签页 | `⌘T` | `Ctrl+T` | Main |
 | `cm_CloseTab` | 关闭当前正在浏览的标签页 | `⌘W` | `Ctrl+W` | Main |
+| `cm_ToggleLockTab` | 快速切换当前激活标签页锁定状态（星号 `*` 标识） | `⌘K` | `Ctrl+K` | Main |
 | `cm_NextTab` / `cm_NextTabCtrl` | 切换至右侧下一个标签页 | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Main |
 | `cm_PrevTab` / `cm_PrevTabCtrl` | 切换至左侧上一个标签页 | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Main |
 | `cm_ShowTabsList` | 弹出当前面板已打开的全部标签页汇总菜单 | `⇧⌘L` | `Ctrl+Shift+L` | Main |
-| `cm_SetTabOptionLock` | 锁定此标签页（冻结路径，双击子目录在邻近标签页打开） | *(标签右键菜单)* | — | Main |
-| `cm_SetTabOptionLockWithSubdirs` | 锁定标签页（允许进入子目录，切换/重点击/根目录自动重置回 base path） | *(标签右键菜单)* | — | Main |
-| `cm_SetTabOptionNormal` | 解锁标签页（恢复默认自由导航行为） | *(标签右键菜单)* | — | Main |
+| `cm_SetTabOptionLock` | 锁定此标签页（冻结路径，双击子目录在邻近标签页打开；菜单与右键同步快捷键） | *(标签页 / 右键菜单)* | — | Main |
+| `cm_SetTabOptionLockWithSubdirs` | 锁定标签页（允许进入子目录，切换/重点击/根目录自动重置回 base path；菜单与右键同步快捷键） | *(标签页 / 右键菜单)* | — | Main |
+| `cm_SetTabOptionNormal` | 解锁标签页（恢复默认自由导航行为；显示动态 `⌘K` 提示） | *(标签页 / 右键菜单)* | — | Main |
 | `cm_CloseAllTabs` | 关闭当前面板的所有标签页（保留最后一张） | `⌥⌘W` | *(标签右键菜单: 关闭全部)* | Main |
 | `cm_CloseOtherTabs` | 关闭当前面板除活动标签之外的其他全部标签页 | `⇧⌘W` | *(标签右键菜单: 关闭其他)* | Main |
 | `cm_Duplicatetab` | 快速克隆副本当前标签页 | `⌘D` / `cm_Duplicatetab` | *(标签右键菜单: 复制标签)* | Main |
@@ -263,6 +265,7 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | `cm_CopyTabToOtherPanel` | 将当前标签页直接复制克隆到对侧面板中 | `⌥⌘T` | *(标签右键菜单: 复制到对侧)* | Main |
 | `cm_SaveTab` / `cm_SaveTabs` | 将当前的双面板标签页布局保存到配置文件 | `cm_SaveTab` | *(菜单: 标签 ➔ 保存标签)* | Main |
 | `cm_LoadTab` / `cm_LoadTabs` | 从配置文件重新恢复加载已保存的标签页布局 | `cm_LoadTab` | *(菜单: 标签 ➔ 加载标签)* | Main |
+| `cm_SaveFavoriteTabs` | 将当前全部标签页保存为新的常用标签组 | `⇧⌘D` | `Ctrl+Shift+D` | Main |
 | `cm_OptionsFavorites` | 打开“常用标签组 (Favorite Tabs)”多会话管理面板 | `cm_OptionsFavorites` | *(菜单: 标签 ➔ 常用标签组)* | Main |
 | `cm_FullScreen` | 切换软件全屏模式 | `⌃⌘F` / `F11` | `F11` | Main |
 
@@ -280,7 +283,7 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | `cm_MultiRename` | 启动多重批量重命名工具（支持正则与动态占位符） | `⌘M` | `Ctrl+M` | Main |
 | `cm_Split` | 将超大文件分割为指定大小的均匀数据切片 | `⌥F6` | `Alt+F6` | Main |
 | `cm_Combine` | 将有序的切片文件合并复原为原始文件 | `⌥F7` | `Alt+F7` | Main |
-| `cm_CalculateChecksum` | 计算文件的安全校验哈希值 (MD5, SHA-1, SHA-256) | `⌃X` / `⌘K` | `Ctrl+X` | Main |
+| `cm_CalculateChecksum` | 计算文件的安全校验哈希值 (MD5, SHA-1, SHA-256) | `⌃X` | `Ctrl+X` | Main |
 | `cm_VerifyChecksum` | 读取校验文件 (`.md5`, `.sha256`) 批量核验文件完整性 | `cm_VerifyChecksum` | *(菜单: 文件 ➔ 验证校验值)* | Main |
 | `cm_RunTerm` | 在当前面板目录路径下唤起 macOS 系统终端 | `⌃J` / `F9` | `Ctrl+J` / `F9` | Main |
 | `cm_FocusCmdLine` | 将键盘焦点直接转移至底部嵌入式命令行输入框 | `⇧F2` | `Shift+F2` | Main |
@@ -299,7 +302,8 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | 命令标识 (Command ID) | 功能描述 | macOS 原生快捷键 | 经典 Commander 键位 | 生效上下文 |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | 打开系统状态与诊断监控控制台 | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Main |
-| `cm_DiskUsageAnalyzer` | 打开磁盘空间占用分析器 (树状表 + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Main |
+| `cm_DiskUsageAnalyzer` | 打开磁盘空间占用分析器 (树状表 + Treemap) | *(菜单: 工具 ➔ 磁盘空间占用分析器...)* | *(菜单: 工具 ➔ 磁盘空间占用分析器...)* | Main |
+| `cm_RecentChanges` | 打开最近修改文件与文件夹工具 | *(菜单: 工具 ➔ 查看最近修改的文件/文件夹...)* | *(菜单: 工具 ➔ 查看最近修改的文件/文件夹...)* | Main |
 | `cm_CleanSystem` | 打开两阶段安全系统清理器 | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Main |
 | `cm_UninstallApp` | 打开应用程序深度卸载器 | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Main |
 
@@ -313,7 +317,9 @@ Commander 类软件的一大精髓是闪电般的多文件批量标记。你可�
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_Options` | 打开偏好设置 / 选项配置中心 | `⌘,` | `Ctrl+,` | Main |
 | `cm_HelpContents` / `cm_HelpIndex` | 打开交互式帮助文档与用户指南手册 | `⌘?` / `F1` | `F1` | Main |
+| `cm_Tutorial` | 启动 32 步交互式新手引导教程 | *(菜单: 帮助 ➔ 交互式新手教程...)* | *(菜单: 帮助 ➔ 交互式新手教程...)* | Main |
 | `cm_HelpKeyboard` | 弹出快捷键快速速查卡片 | `cm_HelpKeyboard` | *(菜单: 帮助 ➔ 快捷键)* | Main |
+| `*(全局系统热键)*` | 全局呼出/隐藏主窗口（从系统菜单栏托盘切换） | `⌘⌥H` | `Ctrl+Alt+H` | 系统 (Carbon) |
 | `cm_Exit` | 完全退出关闭 ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Main |
 | `cm_About` | 显示关于 ATBCmder 版本与版权信息 | `cm_About` | *(菜单: ATBCmder ➔ 关于)* | Main |
 | `cm_OpenConfigDirectory` | 在面板中直接打开软件配置存储文件夹 | `cm_OpenConfigDirectory` | *(菜单: 配置 ➔ 打开配置目录)* | Main |

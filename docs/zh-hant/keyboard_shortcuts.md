@@ -204,7 +204,8 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_TargetEqualSource` | 將對側面板同步跳轉到與當前面板完全一致的目錄 | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Main |
 | `cm_SyncSlaveDir` | 開啟雙面板協同映象導航（同進同退） | `⌥S` | *(選單: 命令 ➔ 聯動導航)* | Main |
 | `cm_DirHotList` | 開啟常用目錄書籤 (Hotlist) 快捷列表 | `⌘D` | `Ctrl+D` | Main |
-| `cm_ConfigDirHotList` | 開啟常用目錄書籤的管理與編輯視窗 | `⇧⌘D` | `Ctrl+Shift+D` | Main |
+| `cm_EditPath` | 輸入完整路徑並跳轉（切換路徑麵包屑欄為行內文字編輯框） | `⇧⌘G` | `Ctrl+Shift+G` | Main |
+| `cm_ConfigDirHotList` | 開啟常用目錄書籤的管理與編輯視窗 | `⌥⌘D` | `Ctrl+Alt+D` | Main |
 | `cm_GoToFirst` | 將游標定位至面板內第一個檔案條目 | `⌘↑` / `Fn+←` *(Home)* | `Home` | Main |
 | `cm_GoToLast` | 將游標定位至面板內最後一個檔案條目 | `⌘↓` / `Fn+→` *(End)* | `End` | Main |
 | `PageUp / PageDown` | 向上/向下滾動整整一屏檢視 | `⇞` *(Fn+↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | FilePanel |
@@ -236,8 +237,8 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_QuickSearch` | 撥出面板內快速搜尋欄（直接鍵入字元過濾列表） | `⌥S` / `⌃S` *(或直接鍵盤打字)* | `Ctrl+S` / *(直接打字)* | Main |
 | `cm_SemanticFilter` | 撥出自然語言語義智慧過濾欄 | `⌥F7` | `Alt+F7` | Main |
 | `cm_HorizontalFilePanels` | 切換水平上下堆疊顯示雙面板（預設左右並排） | `⇧⌘H` | `Ctrl+Shift+H` | Main |
-| `cm_SrcAllFiles` | 顯示全部檔案（清除當前副檔名遮罩與過濾規則） | `⌘F10` | `Ctrl+F10` | Main |
-| `cm_SrcUserDef` | 顯示自訂檔案 / 按副檔名遮罩過濾 (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Main |
+| `cm_SrcAllFiles` | 顯示全部檔案（清除當前副檔名掩碼與過濾規則） | `⌘F10` | `Ctrl+F10` | Main |
+| `cm_SrcUserDef` | 顯示自定義檔案 / 按副檔名掩碼過濾 (`*.py;*.md`) | `⌘F11` | `Ctrl+F11` | Main |
 
 ---
 
@@ -249,12 +250,13 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_NewTab` | 在當前面板新建一個資料夾標籤頁 | `⌘T` | `Ctrl+T` | Main |
 | `cm_CloseTab` | 關閉當前正在瀏覽的標籤頁 | `⌘W` | `Ctrl+W` | Main |
+| `cm_ToggleLockTab` | 快速切換當前啟用標籤頁鎖定狀態（星號 `*` 標識） | `⌘K` | `Ctrl+K` | Main |
 | `cm_NextTab` / `cm_NextTabCtrl` | 切換至右側下一個標籤頁 | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Main |
 | `cm_PrevTab` / `cm_PrevTabCtrl` | 切換至左側上一個標籤頁 | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Main |
 | `cm_ShowTabsList` | 彈出當前面板已開啟的全部標籤頁彙總選單 | `⇧⌘L` | `Ctrl+Shift+L` | Main |
-| `cm_SetTabOptionLock` | 鎖定此分頁（凍結路徑，雙擊子目錄在鄰近分頁開啟） | *(分頁右鍵選單)* | — | Main |
-| `cm_SetTabOptionLockWithSubdirs` | 鎖定分頁（允許進入子目錄，切換/重點選/根目錄自動重置回 base path） | *(分頁右鍵選單)* | — | Main |
-| `cm_SetTabOptionNormal` | 解鎖分頁（恢復預設自由導覽行為） | *(分頁右鍵選單)* | — | Main |
+| `cm_SetTabOptionLock` | 鎖定此標籤頁（凍結路徑，雙擊子目錄在鄰近標籤頁開啟；選單與右鍵同步快速鍵） | *(標籤頁 / 右鍵選單)* | — | Main |
+| `cm_SetTabOptionLockWithSubdirs` | 鎖定標籤頁（允許進入子目錄，切換/重點選/根目錄自動重置回 base path；選單與右鍵同步快速鍵） | *(標籤頁 / 右鍵選單)* | — | Main |
+| `cm_SetTabOptionNormal` | 解鎖標籤頁（恢復預設自由導航行為；顯示動態 `⌘K` 提示） | *(標籤頁 / 右鍵選單)* | — | Main |
 | `cm_CloseAllTabs` | 關閉當前面板的所有標籤頁（保留最後一張） | `⌥⌘W` | *(標籤右鍵選單: 關閉全部)* | Main |
 | `cm_CloseOtherTabs` | 關閉當前面板除活動標籤之外的其他全部標籤頁 | `⇧⌘W` | *(標籤右鍵選單: 關閉其他)* | Main |
 | `cm_Duplicatetab` | 快速克隆副本當前標籤頁 | `⌘D` / `cm_Duplicatetab` | *(標籤右鍵選單: 複製標籤)* | Main |
@@ -263,6 +265,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_CopyTabToOtherPanel` | 將當前標籤頁直接複製克隆到對側面板中 | `⌥⌘T` | *(標籤右鍵選單: 複製到對側)* | Main |
 | `cm_SaveTab` / `cm_SaveTabs` | 將當前的雙面板標籤頁佈局儲存到配置檔案 | `cm_SaveTab` | *(選單: 標籤 ➔ 儲存標籤)* | Main |
 | `cm_LoadTab` / `cm_LoadTabs` | 從配置檔案重新恢復載入已儲存的標籤頁佈局 | `cm_LoadTab` | *(選單: 標籤 ➔ 載入標籤)* | Main |
+| `cm_SaveFavoriteTabs` | 將當前全部標籤頁儲存為新的常用標籤組 | `⇧⌘D` | `Ctrl+Shift+D` | Main |
 | `cm_OptionsFavorites` | 開啟“常用標籤組 (Favorite Tabs)”多會話管理面板 | `cm_OptionsFavorites` | *(選單: 標籤 ➔ 常用標籤組)* | Main |
 | `cm_FullScreen` | 切換軟體全屏模式 | `⌃⌘F` / `F11` | `F11` | Main |
 
@@ -280,7 +283,7 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | `cm_MultiRename` | 啟動多重批次重新命名工具（支援正則與動態佔位符） | `⌘M` | `Ctrl+M` | Main |
 | `cm_Split` | 將超大檔案分割為指定大小的均勻資料切片 | `⌥F6` | `Alt+F6` | Main |
 | `cm_Combine` | 將有序的切片檔案合併復原為原始檔案 | `⌥F7` | `Alt+F7` | Main |
-| `cm_CalculateChecksum` | 計算檔案的安全校驗雜湊值 (MD5, SHA-1, SHA-256) | `⌃X` / `⌘K` | `Ctrl+X` | Main |
+| `cm_CalculateChecksum` | 計算檔案的安全校驗雜湊值 (MD5, SHA-1, SHA-256) | `⌃X` | `Ctrl+X` | Main |
 | `cm_VerifyChecksum` | 讀取校驗檔案 (`.md5`, `.sha256`) 批次核驗檔案完整性 | `cm_VerifyChecksum` | *(選單: 檔案 ➔ 驗證校驗值)* | Main |
 | `cm_RunTerm` | 在當前面板目錄路徑下喚起 macOS 系統終端 | `⌃J` / `F9` | `Ctrl+J` / `F9` | Main |
 | `cm_FocusCmdLine` | 將鍵盤焦點直接轉移至底部嵌入式命令列輸入框 | `⇧F2` | `Shift+F2` | Main |
@@ -299,7 +302,8 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | 命令標識 (Command ID) | 功能描述 | macOS 原生快速鍵 | 經典 Commander 鍵位 | 生效上下文 |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | 開啟系統狀態與診斷監控控制檯 | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Main |
-| `cm_DiskUsageAnalyzer` | 開啟磁碟空間佔用分析器 (樹狀表 + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Main |
+| `cm_DiskUsageAnalyzer` | 開啟磁碟空間佔用分析器 (樹狀表 + Treemap) | *(選單: 工具 ➔ 磁碟空間佔用分析器...)* | *(選單: 工具 ➔ 磁碟空間佔用分析器...)* | Main |
+| `cm_RecentChanges` | 開啟最近修改檔案與資料夾工具 | *(選單: 工具 ➔ 檢視最近修改的檔案/資料夾...)* | *(選單: 工具 ➔ 檢視最近修改的檔案/資料夾...)* | Main |
 | `cm_CleanSystem` | 開啟兩階段安全系統清理器 | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Main |
 | `cm_UninstallApp` | 開啟應用程式深度解除安裝器 | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Main |
 
@@ -313,7 +317,9 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_Options` | 開啟偏好設定 / 選項配置中心 | `⌘,` | `Ctrl+,` | Main |
 | `cm_HelpContents` / `cm_HelpIndex` | 開啟互動式幫助文件與使用者指南手冊 | `⌘?` / `F1` | `F1` | Main |
+| `cm_Tutorial` | 啟動 32 步互動式新手引導教程 | *(選單: 幫助 ➔ 互動式新手教程...)* | *(選單: 幫助 ➔ 互動式新手教程...)* | Main |
 | `cm_HelpKeyboard` | 彈出快速鍵快速速查卡片 | `cm_HelpKeyboard` | *(選單: 幫助 ➔ 快速鍵)* | Main |
+| `*(全域性系統熱鍵)*` | 全域性撥出/隱藏主視窗（從系統選單欄托盤切換） | `⌘⌥H` | `Ctrl+Alt+H` | 系統 (Carbon) |
 | `cm_Exit` | 完全退出關閉 ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Main |
 | `cm_About` | 顯示關於 ATBCmder 版本與版權資訊 | `cm_About` | *(選單: ATBCmder ➔ 關於)* | Main |
 | `cm_OpenConfigDirectory` | 在面板中直接開啟軟體配置儲存資料夾 | `cm_OpenConfigDirectory` | *(選單: 配置 ➔ 開啟配置目錄)* | Main |
@@ -367,10 +373,10 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | 儲存檔案 | 將已修改的內容安全寫入磁碟 | `⌘S` / `F2` | `F2` | Editor |
 | 另存為 | 提示選擇目標目錄與新檔名儲存 | `⇧⌘S` | `Ctrl+Shift+S` | Editor |
 | 重新載入檔案 | 丟棄未儲存修改，從磁碟重新讀取原始檔 | `⌘R` | `Ctrl+R` | Editor |
-| 搜尋內容 | 在編輯器中撥出文字搜尋欄 | `⌘F` / `F7` | `F7` | Editor |
-| 替換文字 | 在文件中搜尋並替換文字 | `⌥⌘F` | `Ctrl+H` | Editor |
-| 搜尋下一個 | 跳轉到下一個搜尋匹配項 | `⌘G` / `F3` | `F3` | Editor |
-| 搜尋上一個 | 跳轉到上一個搜尋匹配項 | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editor |
+| 查詢內容 | 在編輯器中撥出文字搜尋欄 | `⌘F` / `F7` | `F7` | Editor |
+| 替換文字 | 在文件中查詢並替換文字 | `⌥⌘F` | `Ctrl+H` | Editor |
+| 查詢下一個 | 跳轉到下一個搜尋匹配項 | `⌘G` / `F3` | `F3` | Editor |
+| 查詢上一個 | 跳轉到上一個搜尋匹配項 | `⇧⌘G` / `⇧F3` | `Shift+F3` | Editor |
 | 剪下 | 剪下選中文字到系統剪貼簿 | `⌘X` | `Ctrl+X` | Editor |
 | 複製 | 複製選中文字到系統剪貼簿 | `⌘C` | `Ctrl+C` | Editor |
 | 貼上 | 從系統剪貼簿貼上文字內容 | `⌘V` | `Ctrl+V` | Editor |
@@ -378,9 +384,9 @@ Commander 類軟體的一大精髓是閃電般的多檔案批次標記。你可�
 | 重做 (Redo) | 重新執行剛剛被撤銷的操作 | `⇧⌘Z` | `Ctrl+Shift+Z` / `Ctrl+Y` | Editor |
 | 自動換行 | 切換視窗邊緣軟自動換行顯示 | `⌥W` | `Alt+W` | Editor |
 | 顯示行號 | 切換左側動態行號槽顯示/隱藏 | `⌥L` | `Alt+L` | Editor |
-| 放大字號 | 增大程式碼編輯區顯示字型大小 | `⌘+` | `Ctrl++` | Editor |
-| 縮小字號 | 減小程式碼編輯區顯示字型大小 | `⌘-` | `Ctrl+-` | Editor |
-| 重置縮放 | 恢復預設 100% 字型大小縮放比例 | `⌘0` | `Ctrl+0` | Editor |
+| 放大字號 | 增大程式碼編輯區顯示字號 | `⌘+` | `Ctrl++` | Editor |
+| 縮小字號 | 減小程式碼編輯區顯示字號 | `⌘-` | `Ctrl+-` | Editor |
+| 重置縮放 | 恢復預設 100% 字號縮放比例 | `⌘0` | `Ctrl+0` | Editor |
 | 全選 | 選中文件中的全部文字內容 | `⌘A` | `Ctrl+A` | Editor |
 | 關閉編輯器 | 關閉當前編輯視窗（若有未儲存修改會自動提示） | `⎋` *(Esc)* / `⌘W` | `Esc` / `Alt+X` | Editor |
 
