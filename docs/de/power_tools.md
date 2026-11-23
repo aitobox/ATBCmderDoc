@@ -738,6 +738,12 @@ Während sich ATBCmder durch grafische Dual-Panel-Workflows auszeichnet, ist fü
 
 ---
 
+> [!TIP] 
+> **Sandbox-Terminalübergabe** 
+> In Mac App Store-Sandbox-Builds, bei denen das Starten interaktiver Shells innerhalb der App-Sandbox durch Apple-Sicherheitsrichtlinien eingeschränkt ist, wird durch Drücken von `Ctrl+J` (`F9` / `cm_RunTerm`) macOS Terminal (`open -a Terminal <path>`) oder iTerm2 direkt am Active Directory-Pfad aufgerufen, wodurch vollständige interaktive Shell-Funktionen ohne Sandbox-Reibung gewährleistet werden.
+
+---
+
 ## 10. Referenztabelle für Master-Dual-Matrix-Tastaturen
 
 | Funktionsbereich | Aktionsbeschreibung | macOS-Verknüpfung | Klassische Commander-Taste | Befehls-ID | 

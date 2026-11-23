@@ -737,6 +737,12 @@ Bien qu'ATBCmder excelle dans les workflows graphiques à double panneau, l'acc�
 
 ---
 
+> [!ASTUCE] 
+> **Transfert de terminal en bac à sable** 
+> Dans les versions sandbox du Mac App Store où le lancement de shells interactifs dans le sandbox de l'application est limité par les politiques de sécurité d'Apple, appuyer sur `Ctrl+J` (`F9` / `cm_RunTerm`) appelle le terminal macOS (`open -a Terminal <path>`) ou iTerm2 directement sur le chemin du répertoire actif, garantissant ainsi des capacités de shell interactives complètes sans friction du bac à sable.
+
+---
+
 ## 10. Tableau de référence du clavier principal à double matrice
 
 | Domaine fonctionnel | Description de l'action | Raccourci macOS | Touche Commander classique | ID de commande | 

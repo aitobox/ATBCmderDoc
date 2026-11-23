@@ -205,7 +205,8 @@ Total Commander 및 Norton Commander의 20년 머슬 메모리를 보유하고 �
 | `cm_TargetEqualSource` | 활성 디렉토리와 일치하도록 비활성 패널 디렉토리 설정 | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | 메인 | 
 | `cm_SyncSlaveDir` | 소스 패널을 미러링하기 위해 대상 패널 탐색 잠금 | `⌥S` | *(메뉴: 명령 ➔ 동기화 탐색)* | 메인 | 
 | `cm_DirHotList` | 디렉토리 핫리스트/북마크 메뉴 열기 | `⌘D` | `Ctrl+D` | 메인 | 
-| `cm_ConfigDirHotList` | 디렉토리 핫리스트 구성 대화상자 열기 | `⇧⌘D` | `Ctrl+Shift+D` | 메인 | 
+| `cm_EditPath` | 전체 경로 입력 및 이동(탐색경로 막대를 인라인 텍스트 입력으로 전환) | `⇧⌘G` | `Ctrl+Shift+G` | 메인 |
+| `cm_ConfigDirHotList` | 디렉토리 핫리스트 구성 대화상자 열기 | `⌥⌘D` | `Ctrl+Shift+D` | 메인 | 
 | `cm_GoToFirst` | 활성 패널의 첫 번째 항목으로 커서 이동 | `⌘↑` / `Fn+←` *(집)* | `Home` | 메인 | 
 | `cm_GoToLast` | 활성 패널의 마지막 항목으로 커서 이동 | `⌘↓` / `Fn+→` *(끝)* | `End` | 메인 | 
 | `PageUp / PageDown` | 전체 뷰포트 하나만큼 활성 패널을 위 또는 아래로 스크롤 | `⇞` *(Fn+↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | 파일패널 |
@@ -250,6 +251,7 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_NewTab` | 활성 패널에서 새 폴더 탭 열기 | `⌘T` | `Ctrl+T` | 메인 | 
 | `cm_CloseTab` | 현재 활성 폴더 탭 닫기 | `⌘W` | `Ctrl+W` | 메인 | 
+| `cm_ToggleLockTab` | 인스턴트 토글 탭 잠금 상태(`*` 배지) | `⌘K` | `Ctrl+K` | 메인 |
 | `cm_NextTab` / `cm_NextTabCtrl` | 오른쪽의 다음 탭으로 전환 | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | 메인 | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | 왼쪽의 이전 탭으로 전환 | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | 메인 | 
 | `cm_ShowTabsList` | 활성 패널에 열려 있는 모든 탭의 팝업 메뉴 표시 | `⇧⌘L` | `Ctrl+Shift+L` | 메인 | 
@@ -264,6 +266,7 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 | `cm_CopyTabToOtherPanel` | 활성 탭을 반대 패널에 직접 복제 | `⌥⌘T` | *(탭 상황에 맞는 메뉴: 다른 항목으로 복사)* | 메인 | 
 | `cm_SaveTab` / `cm_SaveTabs` | 현재 탭 레이아웃을 구성에 저장 | `cm_SaveTab` | *(메뉴: 탭 ➔ 탭 저장)* | 메인 | 
 | `cm_LoadTab` / `cm_LoadTabs` | 구성에서 저장된 탭 레이아웃 복원 | `cm_LoadTab` | *(메뉴: 탭 ➔ 탭 로드)* | 메인 | 
+| `cm_SaveFavoriteTabs` | 두 패널에 걸쳐 열려 있는 모든 탭을 새로운 즐겨찾기 탭 세트로 저장 | `⇧⌘D` | `Ctrl+Shift+D` | 메인 |
 | `cm_OptionsFavorites` | 즐겨찾는 탭 집합 및 영구 작업 영역 구성 | `cm_OptionsFavorites` | *(메뉴: 탭 ➔ 즐겨찾는 탭)* | 메인 | 
 | `cm_FullScreen` | 전체 화면 응용 프로그램 창 전환 | `⌃⌘F` / `F11` | `F11` | 메인 |
 
@@ -300,7 +303,8 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 | 명령 ID | 설명 | 기본 macOS 단축키 (⌘/⌥/⇧/⌃ 기호 포함) | 클래식 커맨더 단축키 (Fn 키 포함) | 컨텍스트 |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | 시스템 상태 및 진단 모니터 열기 | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | 메인 |
-| `cm_DiskUsageAnalyzer` | 디스크 사용량 분석기 열기 (트리 + 트리맵) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | 메인 |
+| `cm_DiskUsageAnalyzer` | 디스크 사용량 분석기 열기 (트리 + 트리맵) | *(Menu: Tools ➔ Disk Usage Analyzer...)* | `Ctrl+Shift+D` | 메인 |
+| `cm_RecentChanges` | 최근 파일 및 폴더 변경 도구 열기 | *(메뉴: 도구 ➔ 최근 변경사항...)* | *(메뉴: 도구 ➔ 최근 변경사항...)* | 메인 |
 | `cm_CleanSystem` | 2단계 안전 시스템 클리너 열기 | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | 메인 |
 | `cm_UninstallApp` | 심층 애플리케이션 제거기 열기 | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | 메인 |
 
@@ -314,6 +318,8 @@ ATBCmder를 사용하면 두 패널 모두에서 탭을 무제한으로 열고, 
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_Options` | 응용 프로그램 기본 설정/설정 대화 상자 열기 | `⌘,` | `Ctrl+,` | 메인 | 
 | `cm_HelpContents` / `cm_HelpIndex` | 대화형 사용자 문서 및 가이드 열기 | `⌘?` / `F1` | `F1` | 메인 | 
+| `cm_Tutorial` | 32단계 대화형 온보딩 튜토리얼 출시 | *(메뉴: 도움말 ➔ 대화형 튜토리얼...)* | *(메뉴: 도움말 ➔ 대화형 튜토리얼...)* | 메인 | 
+| `*(Global Hotkey)*` | 메인 창 호출/숨기기(메뉴 바 시스템 트레이에서 전환) | `⌘⌥H` | `Ctrl+Alt+H` | 시스템(카본) |
 | `cm_HelpKeyboard` | 빠른 키보드 단축키 참조 카드 열기 | `cm_HelpKeyboard` | *(메뉴: 도움말 ➔ 키보드)* | 메인 | 
 | `cm_Exit` | ATBCMder 종료 / 종료 | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | 메인 | 
 | `cm_About` | ATBCMder 버전, 라이센스 및 크레딧 표시 | `cm_About` | *(메뉴: ATBCmder ➔ 정보)* | 메인 | 

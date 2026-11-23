@@ -81,6 +81,7 @@ Pour copier des fichiers ou des répertoires :
 Pour cloner rapidement un fichier dans le répertoire actuel (par exemple, créer une sauvegarde avant de modifier `nginx.conf`) : 
 
 - Mettez l'élément en surbrillance et appuyez sur `Shift+F5` (ou `⇧F5`). 
+- **Maj+Clic sur Désélection de plage** : maintenez `Shift` et cliquez sur une plage déjà sélectionnée pour inverser ou désélectionner proprement des étendues spécifiques sans perdre votre état de sélection multi-fichiers plus large.
 - ATBCmder vous demande un chemin de destination dans le *même* répertoire, vous permettant de saisir un nouveau nom (par exemple, `nginx.conf.bak`).
 
 #### Presse-papiers macOS standard (`Cmd+C` ➔ `Cmd+V`)
@@ -89,6 +90,7 @@ ATBCmder s'intègre entièrement aux raccourcis du presse-papiers du système ma
 
 - **`Cmd+C` (`⌘C`)** : Copie les chemins de fichiers sélectionnés dans le presse-papiers (`cm_CopyToClipboard`). 
 - **`Cmd+V` (`⌘V`)** : Colle les fichiers du presse-papiers dans le panneau actif (`cm_PasteFromClipboard`). 
+- **Renommage automatique du collage anti-collision** : lors du collage d'éléments dans un répertoire contenant déjà des noms de fichiers identiques, ATBCmder ajoute automatiquement un compteur incrémentiel (`file (1).ext`, `file (2).ext`) plutôt que de déclencher des écrasements destructeurs, correspondant à l'ergonomie de collage du Finder macOS.
 - **`Cmd+Option+V` (`⌥⌘V`)** : Déplace les fichiers du presse-papiers dans le panneau actif (`cm_PasteAsMove`). 
 
 ---

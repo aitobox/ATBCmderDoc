@@ -232,6 +232,9 @@ Se você tentar atribuir um acorde de tonalidade que já foi reivindicado por ou
 ---
 
 ### 3.5 Tecla de atalho global para mostrar/ocultar janela (`Cmd+Opt+H` / `Ctrl+Alt+H`)
+- **Residência na bandeja do sistema (`ui.minimize_to_tray`)**: Marque **Minimizar para a bandeja do sistema (requer reinicialização)** em **Geral** para colocar o ATBCmder na barra de menu sem confusão no Dock. 
+- **Tecla de atalho global Zero-Permission Carbon (`Cmd+Opt+H` / `Ctrl+Alt+H`)**: registrada via macOS Carbon nativo `RegisterEventHotKey`, fornecendo alternância global instantânea sem exigir permissões de acessibilidade nas configurações do sistema.
+
 
 Para usuários avançados que preferem manter o ATBCmder funcionando discretamente em segundo plano: 
 
@@ -378,6 +381,26 @@ Para usuários do macOS que trabalham em MacBooks ou com Magic Trackpads, o ATBC
 - **Filtro de Momentum**: bloqueia gatilhos falsos de várias páginas devido à inércia do trackpad. 
 - **Configuração**: 
 - Ative **Preferências** → **Visualizações de arquivos** → **Navegação no trackpad** (`view.trackpad_swipe_navigation`, padrão: desativado).
+
+---
+
+### 4.7 Visibilidade e ordenação de colunas personalizáveis (`view.panel_column_order`, `view.panel_column_visible`)
+
+Em **Preferências ➔ Visualizações de arquivos**, você pode personalizar exatamente quais colunas da tabela aparecem em ambos os painéis de arquivos: 
+
+- **Alterna visibilidade da coluna**: marque ou desmarque colunas secundárias (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) de acordo com as necessidades do seu fluxo de trabalho. A coluna primária `Name` é sempre fixada permanentemente como a primeira coluna. 
+- **Reordenação de colunas de arrastar e soltar**: Pegue a alça de arrastar `⠿` ao lado de qualquer nome de coluna na lista para reordenar as colunas globalmente. As alterações são sincronizadas instantaneamente em ambos os painéis. 
+- **Redefinir para padrões**: Clique em **Redefinir para padrões** a qualquer momento para restaurar a ordem padrão das colunas do Commander. 
+
+--- 
+
+### 4.8 Marcas de cores do macOS Finder (`view.show_color_tags`, `view.color_tag_sync_interval_ms`)
+
+ATBCmder lê e exibe tags de atributos estendidos nativos do macOS Finder (`com.apple.metadata:_kMDItemUserTags`): 
+
+- **Ativar tags de cores**: marque **Mostrar tags de cores do macOS Finder no painel de arquivos** (`view.show_color_tags`). 
+- **Pontos coloridos visuais**: arquivos e pastas com tags Finder atribuídas exibem pontos circulares coloridos nítidos imediatamente à esquerda de seus ícones de arquivo, suportando todas as 7 cores padrão do macOS (vermelho, laranja, amarelo, verde, azul, roxo, cinza) e rótulos de tags personalizados. 
+- **Intervalo de sincronização ao vivo**: Configure o intervalo de pesquisa em segundo plano em segundos (`view.color_tag_sync_interval_ms`, padrão `30.0 s`; definido como `0` para desativar a pesquisa em segundo plano e atualizar na navegação do painel).
 
 ---
 

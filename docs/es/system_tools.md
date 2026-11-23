@@ -158,6 +158,18 @@ Al presionar **`⌘⇧M`** (o **`Ctrl+Shift+M`**) se abre el **panel de estado d
 
 ---
 
+### 3.2 Modo Sandbox de Mac App Store (`Top Processes` + `Running Applications`)
+
+En las compilaciones de espacio aislado de Mac App Store, ATBCmder adapta la telemetría de su sistema para operar estrictamente dentro de los límites de privacidad de Apple sin comprometer el diagnóstico: 
+
+- **Inspección de procesos de usuario actual**: en lugar de intentar llamadas globales al kernel de Mach que requieren permisos de root, ATBCmder consulta las estructuras de procesos del kernel de Darwin (`sysctl KERN_PROC_UID`) y `proc_pidinfo` para medir el porcentaje de CPU, la memoria residente (RSS), la memoria virtual y el recuento de subprocesos de proceso para su cuenta de usuario. 
+- **Arquitectura de doble pestaña**: 
+- **Procesos principales**: muestra clasificaciones de estado, memoria y CPU por proceso en tiempo real ordenadas dinámicamente con intervalos de actualización configurables (predeterminado: 2,0 s). 
+- **Aplicaciones en ejecución**: identifica específicamente las aplicaciones GUI que se ejecutan en el espacio del usuario con íconos de base Retina almacenados en caché, filtrando limpiamente el ruido de los demonios del sistema en segundo plano, los agentes de lanzamiento y los servicios XPC auxiliares. 
+- **Acciones del menú contextual seguras para Sandbox**: haga clic derecho en cualquier entrada de proceso para ejecutar acciones específicas: **Salir del proceso** (`SIGTERM`), **Forzar salida** (`SIGKILL`), **Traer ventana al frente**, **Mostrar en Finder** (`open -R`) o **Inspeccionar en Monitor de actividad**.
+
+---
+
 ## 4. Analizador de uso de disco (`cm_DiskUsageAnalyzer` / `⌘⇧D`)
 
 Cuando una unidad de estado sólido (SSD) empieza a quedarse sin espacio libre, averiguar dónde se esconden los gigabytes de datos puede resultar una tarea dolorosamente lenta. Las listas de archivos estándar de Finder no calculan automáticamente el tamaño de las carpetas, y la inspección manual requiere descender laboriosamente a través de niveles jerárquicos anidados.
@@ -209,7 +221,35 @@ El **Analizador de uso de disco** (`cm_DiskUsageAnalyzer`, atajo de teclado **`�
 
 ---
 
-## 5. Limpiador del sistema (`cm_CleanSystem` / `⌘⇧C`)
+## 5. Cambios recientes en archivos y carpetas (`cm_RecentChanges`)
+
+Al rastrear dónde aterrizaron los activos recién descargados, encontrar archivos de código modificados en múltiples proyectos o verificar el resultado de los scripts de compilación en segundo plano, la herramienta **Cambios recientes** escanea su sistema de archivos según la marca de tiempo de la última modificación: 
+
+- **Activadores de inicio**: elija **Herramientas ➔ Cambios recientes...** en la barra de menú o invoque `cm_RecentChanges` desde la paleta de comandos. 
+
+--- 
+
+### 5.1 Alcance, ajustes preestablecidos de tiempo y filtrado de tamaño
+
+La barra de filtros proporciona controles específicos para limitar directorios grandes en segundos: 
+
+- **Ruta de búsqueda**: El valor predeterminado es el directorio del panel activo, o ingrese cualquier ruta (`/var/log`, `~/Library` o montajes de unidades externas). 
+- **Filtrado de tipo de elemento**: alterna entre **Archivos y carpetas**, **Solo archivos** o **Solo carpetas**. 
+- **Preajustes de tiempo**: seleccione ventanas de retrospectiva rápida (**Última 1 hora**, **Últimas 24 horas**, **Últimos 7 días**, **Últimos 30 días**) o especifique un rango de calendario personalizado. 
+- **Umbral de tamaño mínimo**: excluya los toques triviales de archivos (como archivos de bloqueo o `.DS_Store`) filtrando elementos mayores que `0 B`, `1 KB`, `1 MB`, `10 MB` o un umbral personalizado. 
+
+--- 
+
+### 5.2 Descubrimiento rápido y acciones instantáneas
+
+Los resultados se completan de forma asincrónica con indicadores de progreso en tiempo real: 
+
+- **Pre-selección de Spotlight**: en volúmenes APFS/HFS+ locales, ATBCmder consulta el índice de macOS Spotlight (`mdfind`) para obtener retornos de menos de un segundo antes de recurrir al recorrido del directorio POSIX para recursos compartidos de red y directorios no indexados. 
+- **Acciones contextuales**: haga doble clic en cualquier resultado o presione `Enter` para abrir el archivo; presione `Cmd+Enter` para ubicarlo y resaltarlo en el panel activo, o arrastre los resultados directamente a aplicaciones externas.
+
+---
+
+## 6. Limpiador del sistema (`cm_CleanSystem` / `⌘⇧C`)
 
 A lo largo de meses de uso diario, macOS acumula gigabytes de datos temporales: cachés obsoletas de aplicaciones, artefactos de compilación de Xcode, descargas de gestores de paquetes, registros de diagnóstico huérfanos y cachés del navegador web. Aunque algunas cachés aceleran los flujos de trabajo, los elementos obsoletos desperdician un valioso espacio en unidades SSD de alta velocidad.
 
@@ -240,7 +280,7 @@ El **Limpiador del sistema** (`cm_CleanSystem`, atajo de teclado **`⌘⇧C`** /
 ![Limpiador del sistema](images/system_cleaner.png)  
 *Figura 7.3: Interfaz de escaneo seguro de System Cleaner que muestra estimaciones de recuperación de archivos temporales, registros y cachés.*
 
-### 5.1 La arquitectura de seguridad en dos fases
+### 6.1 La arquitectura de seguridad en dos fases
 
 A diferencia de los limpiadores imprudentes de "un solo clic" que eliminan archivos silenciosamente en segundo plano, ATBCmder aplica un estricto **protocolo de seguridad en dos fases**:
 
@@ -253,7 +293,16 @@ A diferencia de los limpiadores imprudentes de "un solo clic" que eliminan archi
    - Al hacer clic en **"Limpiar elementos seleccionados"**, la eliminación solo se ejecuta sobre los destinos seleccionados explícitamente.
    - Cada evento de eliminación se registra en un archivo de registro de auditoría atómico en `~/Library/Preferences/atbcmder/operations.log`.
 
-### 5.2 Seis dominios principales de limpieza
+### 6.2 Modos de agrupación, tamaños mantenidos y transparencia de retención
+
+Para brindar a los usuarios avanzados total confianza antes de eliminar datos, ATBCmder estructura los resultados con controles de riesgo granulares y métricas de retención: 
+
+- **Agrupación por aplicación y por dominio**: alterne entre vistas centradas en categorías (cachés, registros, papelera) y agrupación centrada en aplicaciones (Xcode, Docker, Node.js, navegadores) para inspeccionar el espacio exacto por herramienta. 
+- **Tamaños conservados y 10 motivos de retención**: cuando las reglas de seguridad impiden eliminar un elemento (como archivos de socket activos, bases de datos abiertas, cachés bloqueadas o directorios incluidos en la lista blanca), ATBCmder muestra el tamaño exacto de bytes conservados junto con explicaciones localizadas (por ejemplo, *En uso por proceso activo*, *Regla de protección del sistema*, *Período de gracia modificado recientemente*).
+
+---
+
+### 6.3 Seis dominios principales de limpieza
 
 | Categoría | Ubicación típica | Nivel de riesgo | Descripción |
 | :--- | :--- | :---: | :--- |
@@ -264,7 +313,7 @@ A diferencia de los limpiadores imprudentes de "un solo clic" que eliminan archi
 | **Cachés de gestores de paquetes** | Homebrew, CocoaPods, NPM, Yarn | **Advertencia** | Archivos tarball descargados, archivos de fórmulas y directorios de caché de paquetes. |
 | **Papelera** | `~/.Trash`, `.Trashes` | **Peligro** | Elementos trasladados previamente a la Papelera de macOS que aún no se han vaciado de forma permanente. |
 
-### 5.3 Niveles de riesgo y lista blanca de seguridad
+### 6.4 Niveles de riesgo y lista blanca de seguridad
 
 - 🟢 **Seguro (Verde)**: Cachés temporales y metadatos descartados que se pueden eliminar sin pérdida de configuración ni interrupción del flujo de trabajo.
 - 🟡 **Advertencia (Naranja)**: Artefactos de desarrollo o cachés de gestores de paquetes. Eliminarlos es seguro, pero la compilación posterior del proyecto o la descarga de paquetes tardará más mientras se vuelven a obtener los archivos.
@@ -275,7 +324,7 @@ A diferencia de los limpiadores imprudentes de "un solo clic" que eliminan archi
 
 ---
 
-## 6. Desinstalador de aplicaciones (`cm_UninstallApp` / `⌘⇧U`)
+## 7. Desinstalador de aplicaciones (`cm_UninstallApp` / `⌘⇧U`)
 
 En macOS, arrastrar una aplicación desde `/Applications` a la Papelera solo elimina el paquete `.app` en sí. Las aplicaciones modernas con frecuencia dispersan cientos de archivos auxiliares por su disco: archivos plist de preferencias, bases de datos en Application Support, agentes de inicio en segundo plano, contenedores aislados (sandboxes) y elementos multimedia en caché. Con el tiempo, estos residuos huérfanos consumen gigabytes de almacenamiento y pueden dejar procesos innecesarios ejecutándose en segundo plano al iniciar sesión.
 
@@ -307,7 +356,7 @@ El **Desinstalador de aplicaciones** (`cm_UninstallApp`, atajo de teclado **`⌘
 ![Desinstalador de aplicaciones](images/app_uninstaller.png)  
 *Figura 7.4: Desinstalador de aplicaciones que realiza un escaneo profundo de residuos en Application Support, Caches y Preferences.*
 
-### 6.1 Ubicaciones de detección de residuos
+### 7.1 Ubicaciones de detección de residuos
 
 Al buscar componentes de aplicaciones, ATBCmder examina las siguientes ubicaciones estándar de los subsistemas de macOS mediante la coincidencia exacta del identificador de paquete (bundle identifier):
 
@@ -320,7 +369,7 @@ Al buscar componentes de aplicaciones, ATBCmder examina las siguientes ubicacion
 7. **Contenedores aislados (Sandbox)**: `~/Library/Containers/<BundleID>/` y `~/Library/Group Containers/`.
 8. **Registros de aplicaciones**: `~/Library/Logs/<Nombre>/`.
 
-### 6.2 Modos operativos duales
+### 7.2 Modos operativos duales
 
 - **Desinstalación completa (predeterminado)**:
   - Diseñado para eliminar una aplicación instalada presente actualmente en su Mac.
@@ -329,7 +378,7 @@ Al buscar componentes de aplicaciones, ATBCmder examina las siguientes ubicacion
   - Diseñado para realizar limpieza tras aplicaciones que fueron eliminadas manualmente con anterioridad mediante Finder o herramientas de terceros.
   - Examina `~/Library/` en busca de carpetas de soporte huérfanas cuyo paquete `.app` principal ya no esté presente en el sistema.
 
-### 6.3 Integridad del sistema de Apple y barreras de seguridad
+### 7.3 Integridad del sistema de Apple y barreras de seguridad
 
 Para evitar la desestabilización accidental del sistema:
 
@@ -339,7 +388,7 @@ Para evitar la desestabilización accidental del sistema:
 
 ---
 
-## 7. Avisos sobre el sistema y mantenimiento
+## 8. Avisos sobre el sistema y mantenimiento
 
 > [!NOTE]
 > **Consumo mínimo de recursos del sistema**  
@@ -363,7 +412,7 @@ Para evitar la desestabilización accidental del sistema:
 
 ---
 
-## 8. Tabla de referencia maestra de herramientas del sistema de matriz dual
+## 9. Tabla de referencia maestra de herramientas del sistema de matriz dual
 
 | Categoría | Descripción de la acción | Atajo de macOS | Tecla Commander clásica | ID de comando |
 | :--- | :--- | :--- | :--- | :--- |

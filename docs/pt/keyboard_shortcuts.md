@@ -205,7 +205,8 @@ Mova-se facilmente entre pastas, volumes locais, montagens de rede e histórico 
 | `cm_TargetEqualSource` | Defina o diretório do painel inativo para corresponder ao diretório ativo | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Principal | 
 | `cm_SyncSlaveDir` | Bloquear a navegação do painel de destino para espelhar o painel de origem | `⌥S` | *(Menu: Comandos ➔ Navegação Sincronizada)* | Principal | 
 | `cm_DirHotList` | Abra o menu Hotlist / Favoritos do diretório | `⌘D` | `Ctrl+D` | Principal | 
-| `cm_ConfigDirHotList` | Abra a caixa de diálogo de configuração da Hotlist do Diretório | `⇧⌘D` | `Ctrl+Shift+D` | Principal | 
+| `cm_EditPath` | Insira o caminho completo e vá (altere a barra de navegação para entrada de texto embutida) | `⇧⌘G` | `Ctrl+Shift+G` | Principal |
+| `cm_ConfigDirHotList` | Abra a caixa de diálogo de configuração da Hotlist do Diretório | `⌥⌘D` | `Ctrl+Shift+D` | Principal | 
 | `cm_GoToFirst` | Pule o cursor para o primeiro item no painel ativo | `⌘↑` / `Fn+←` *(Página inicial)* | `Home` | Principal | 
 | `cm_GoToLast` | Salta o cursor para o último item do painel ativo | `⌘↓` / `Fn+→` *(Fim)* | `End` | Principal | 
 | `PageUp / PageDown` | Role o painel ativo para cima ou para baixo em uma janela de visualização completa | `⇞` *(Fn+↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | Painel de arquivos |
@@ -250,6 +251,7 @@ ATBCmder permite abrir guias ilimitadas em qualquer painel, bloquear locais de t
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_NewTab` | Abra uma nova guia de pasta no painel ativo | `⌘T` | `Ctrl+T` | Principal | 
 | `cm_CloseTab` | Fechar guia da pasta atualmente ativa | `⌘W` | `Ctrl+W` | Principal | 
+| `cm_ToggleLockTab` | Estado de bloqueio de guia de alternância instantânea (crachá `*`) | `⌘K` | `Ctrl+K` | Principal |
 | `cm_NextTab` / `cm_NextTabCtrl` | Mude para a próxima guia à direita | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principal | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Mudar para a guia anterior à esquerda | `⌃⇧⇥` *(Ctrl+Shift+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principal | 
 | `cm_ShowTabsList` | Mostrar menu pop-up de todas as abas abertas no painel ativo | `⇧⌘L` | `Ctrl+Shift+L` | Principal | 
@@ -264,6 +266,7 @@ ATBCmder permite abrir guias ilimitadas em qualquer painel, bloquear locais de t
 | `cm_CopyTabToOtherPanel` | Clone a guia ativa diretamente no painel oposto | `⌥⌘T` | *(Menu de contexto da guia: Copiar para outro)* | Principal | 
 | `cm_SaveTab` / `cm_SaveTabs` | Salvar o layout da guia atual na configuração | `cm_SaveTab` | *(Menu: Guias ➔ Salvar guias)* | Principal | 
 | `cm_LoadTab` / `cm_LoadTabs` | Restaurar layout de guia salvo da configuração | `cm_LoadTab` | *(Menu: Abas ➔ Carregar Abas)* | Principal | 
+| `cm_SaveFavoriteTabs` | Salve todas as guias abertas em ambos os painéis como um novo conjunto de guias favoritas | `⇧⌘D` | `Ctrl+Shift+D` | Principal |
 | `cm_OptionsFavorites` | Configurar conjuntos de guias favoritas e áreas de trabalho persistentes | `cm_OptionsFavorites` | *(Menu: Abas ➔ Abas Favoritas)* | Principal | 
 | `cm_FullScreen` | Alternar janela do aplicativo em tela cheia | `⌃⌘F` / `F11` | `F11` | Principal |
 
@@ -300,7 +303,8 @@ Monitore o desempenho do sistema operacional, analise o armazenamento de diretó
 | ID do comando | Descrição | Atalho principal do macOS (com glifos ⌘/⌥/⇧/⌃) | Atalho clássico do Commander (com teclas Fn) | Contexto |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | Abrir monitor de status e diagnóstico do sistema | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principal |
-| `cm_DiskUsageAnalyzer` | Abrir analisador de uso do disco (Árvore + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principal |
+| `cm_DiskUsageAnalyzer` | Abrir analisador de uso do disco (Árvore + Treemap) | *(Menu: Tools ➔ Disk Usage Analyzer...)* | `Ctrl+Shift+D` | Principal |
+| `cm_RecentChanges` | Abra a ferramenta Mudanças recentes em arquivos e pastas | *(Menu: Ferramentas ➔ Mudanças Recentes...)* | *(Menu: Ferramentas ➔ Mudanças Recentes...)* | Principal |
 | `cm_CleanSystem` | Abrir limpador de sistema seguro em duas etapas | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principal |
 | `cm_UninstallApp` | Abrir desinstalador profundo de aplicativos | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principal |
 
@@ -314,6 +318,8 @@ Acesse preferências de aplicativos, gerenciamento de configuração, atualizaç
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_Options` | Abra a caixa de diálogo Preferências/Configurações do aplicativo | `⌘,` | `Ctrl+,` | Principal | 
 | `cm_HelpContents` / `cm_HelpIndex` | Documentação e guia do usuário interativo aberto | `⌘?` / `F1` | `F1` | Principal | 
+| `cm_Tutorial` | Lançar tutorial de integração interativo de 32 etapas | *(Menu: Ajuda ➔ Tutorial interativo...)* | *(Menu: Ajuda ➔ Tutorial interativo...)* | Principal | 
+| `*(Global Hotkey)*` | Chamar/ocultar janela principal (alternar na barra de menus da bandeja do sistema) | `⌘⌥H` | `Ctrl+Alt+H` | Sistema (Carbono) |
 | `cm_HelpKeyboard` | Abra o cartão de referência de atalhos de teclado rápidos | `cm_HelpKeyboard` | *(Menu: Ajuda ➔ Teclado)* | Principal | 
 | `cm_Exit` | Sair/Sair do ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Principal | 
 | `cm_About` | Exibir versão, licença e créditos do ATBCmder | `cm_About` | *(Menu: ATBCmder ➔ Sobre)* | Principal | 

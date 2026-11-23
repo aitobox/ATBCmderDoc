@@ -39,6 +39,8 @@ En ATBCmder, cada panel funciona como un motor de navegación autónomo equipado
 | **Nueva pestaña** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Abra la carpeta activa en una nueva pestaña. | 
 | **Cerrar pestaña** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Cierra la pestaña actualmente enfocada. | 
 | **Lista destacada del directorio** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | Abra la ventana emergente instantánea de marcadores difusos. | 
+| **Ingrese la ruta completa y listo** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | Cambie la barra de ruta a entrada de texto en línea y salte directamente. | 
+| **Bloquear/Desbloquear pestaña** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | Estado de bloqueo de pestaña de alternancia instantánea (insignia `*`). |
 | **Historia atrás** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Regrese a la carpeta visitada anteriormente. | 
 | **Historia hacia adelante** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Avanzar en el historial del directorio. | 
 | **Lista desplegable de historial** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Mostrar lista desplegable del historial. | 

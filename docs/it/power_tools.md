@@ -737,6 +737,12 @@ Sebbene ATBCmder eccelle nei flussi di lavoro grafici a doppio pannello, l'acces
 
 ---
 
+> [!CONSIGLIO] 
+> **Trasferimento terminale in modalità sandbox** 
+> Nelle build sandbox del Mac App Store in cui l'avvio di shell interattive all'interno della sandbox dell'app è limitato dalle policy di sicurezza Apple, premendo `Ctrl+J` (`F9` / `cm_RunTerm`) si richiama macOS Terminale (`open -a Terminale <path>`) o iTerm2 direttamente nel percorso della directory attiva, garantendo funzionalità complete della shell interattiva con zero attrito nella sandbox.
+
+---
+
 ## 10. Tabella di riferimento della tastiera master a doppia matrice
 
 | Area Funzionale | Azione Descrizione | Scorciatoia macOS | Tasto Commander classico | ID comando | 

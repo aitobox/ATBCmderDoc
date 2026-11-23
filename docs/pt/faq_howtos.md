@@ -351,6 +351,53 @@ Se você trabalha em um MacBook ou usa um Magic Trackpad, pode navegar no histó
 
 ---
 
+### 2.9 Receita 9: Edição instantânea de caminho e salto direto de arquivo com "Enter Full Path and Go" (`⌘⇧G`)
+
+Ao copiar um caminho profundo do Terminal, Xcode, VS Code ou uma mensagem, você pode ir direto para ele – ou destacar diretamente um arquivo específico – sem clicar para cima e para baixo nas pastas: 
+
+1. **Ative a edição de caminho embutido**: 
+- Clique no botão de lápis **Inserir caminho completo e ir** (`btn_edit_path`) logo à esquerda do botão Diretório pai (`^`) em qualquer painel, clique duas vezes no espaço vazio à direita dos segmentos de localização atual ou pressione **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G` / `cm_EditPath`). 
+- O caminho atual é pré-preenchido e destacado para que você possa pressionar imediatamente **`Cmd+V`** (`⌘V`) para substituí-lo. 
+2. **Colar caminhos, tils ou caminhos de arquivo entre aspas**: 
+- Pressione **`Enter`**. ATBCmder corta automaticamente os espaços em branco, remove aspas circundantes correspondentes (`"..."` / `'...'`), expande `~` e variáveis ​​de ambiente (`$VAR` / `%VAR%`) e preserva URIs `vfs://`. 
+- Se você colou um caminho apontando diretamente para um **arquivo** (por exemplo, `"/Users/brain/Projects/app/src/main.py"`), o ATBCmder navega para seu diretório pai (`src/`) e destaca `main.py` automaticamente. 
+3. **Recuperar sem colar novamente em erros de digitação**: 
+- Se não existir um caminho, a entrada inline permanece aberta com uma borda vermelha e uma mensagem de barra de status sem bloqueio para que você possa corrigir o erro de digitação diretamente e pressionar `Enter` novamente. 
+- Pressione `Esc`, clique fora ou clique no botão de lápis novamente a qualquer momento para cancelar e retornar aos botões de localização atual. 
+
+--- 
+
+### 2.10 Receita 10: Permanecendo residente em segundo plano com a bandeja do sistema e tecla de atalho global (`⌘⌥H`)
+
+Se você alternar para o ATBCmder dezenas de vezes por dia para obter arquivos, visualizar registros ou sincronizar pastas, mantê-lo residente na bandeja da barra de menus do macOS oferece acesso instantâneo em menos de um segundo: 
+
+1. **Ativar residência na bandeja do sistema**: 
+- Pressione **`Cmd+,`** (`⌘,`) para abrir **Preferências ➔ Geral**. 
+- Marque **Minimizar para a bandeja do sistema (requer reinicialização)** (`ui.minimize_to_tray`). 
+- Opcionalmente, personalize **tecla de atalho Mostrar/Ocultar janela** (`ui.global_hotkey`, padrão: `Ctrl+Alt+H` / `⌘⌥H` no macOS). As edições das teclas de atalho são aplicadas imediatamente, sem reinicialização. 
+- Clique em **OK** e reinicie o ATBCmder uma vez para ativar o ícone da bandeja. 
+2. **Tecla de atalho global macOS Carbon com permissão zero**: 
+- ATBCmder registra sua tecla de atalho global via macOS Carbon `RegisterEventHotKey`, então funciona imediatamente **sem exigir permissões de acessibilidade** nas configurações do sistema e acordes de tecla de opção (`⌥`) são capturados de forma limpa, sem conflitos acentuados de teclas mortas. 
+3. **Alternar de qualquer lugar**: 
+- Pressione **`Cmd+Option+H`** (`⌘⌥H`) dentro de qualquer aplicativo ou espaço de tela inteira para chamar o ATBCmder diretamente para a frente com o tamanho exato da janela e guias e pressione **`⌘⌥H`** novamente para colocá-lo de volta na bandeja da barra de menu. 
+
+--- 
+
+### 2.11 Receita 11: Personalizando colunas do painel de arquivos e visualizando tags de cores do macOS Finder
+
+Personalize sua tabela de arquivos para mostrar apenas as colunas de seu interesse e inspecione as tags coloridas do macOS Finder diretamente no ATBCmder: 
+
+1. **Reordenar ou ocultar colunas do painel**: 
+- Abra **Preferências ➔ Visualizações de arquivos** (`Cmd+,`). 
+- Em **Colunas**, desmarque as colunas secundárias (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) que você deseja ocultar (`Name` sempre permanece primeiro). 
+- Arraste a alça `⠿` ao lado de qualquer coluna para reordenar as colunas globalmente em ambos os painéis ou clique em **Redefinir para padrões** para restaurar a ordem padrão. 
+2. **Ative as tags coloridas do macOS Finder**: 
+- Role até **Tags de cores (macOS)** na mesma página **Visualizações de arquivos**. 
+- Marque **Mostrar tags de cores do macOS Finder no painel de arquivos** (`view.show_color_tags`) e defina seu **Intervalo de sincronização ao vivo** preferido (padrão `30.0 s` ou `0` para Desativado). 
+- Clique em **Aplicar** ou **OK**. Ambos os painéis são atualizados imediatamente, mostrando pontos nítidos da tag do Finder com dicas de ferramentas localizadas para todas as 7 cores padrão do Finder (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) e quaisquer tags de usuário personalizadas.
+
+---
+
 ## 3. Guia de solução de problemas e perguntas frequentes (FAQs)
 
 ### 3.1 "Operação não permitida"/erros de permissão negada do macOS

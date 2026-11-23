@@ -357,6 +357,16 @@ ATBCmder dispose d'un sous-système de gestion de session intelligent (`SessionM
 
 ---
 
+### Astuce 5 : Tutoriel d'intégration interactif (`cm_Tutorial`) 
+
+Vous souhaitez une visite guidée pratique directement dans l’application ? Choisissez **Aide ➔ Tutoriel interactif...** dans la barre de menu pour démarrer le didacticiel en 32 étapes d'ATBCmder. Il vous guide de manière interactive à travers la commutation sur deux panneaux, les opérations sur les fichiers, le verrouillage des onglets (`Cmd+K`), le saut de barre de chemin en ligne (`Cmd+Shift+G`), la recherche rapide, les modes d'affichage du panneau et la suite d'outils système intégrés. 
+
+### Astuce 6 : résidence en arrière-plan de la barre d'état système et raccourci clavier global sans autorisation (`⌘⌥H`) 
+
+Pour une commutation quotidienne fréquente, ouvrez **Préférences ➔ Général** (`Cmd+,`), activez **Réduire dans la barre d'état système (nécessite un redémarrage)** (`ui.minimize_to_tray`) et redémarrez une fois. ATBCmder reste résident dans la barre de menus de votre macOS sans encombrement dans le Dock et peut être appelé ou masqué instantanément à partir de n'importe quelle application à l'aide du **Afficher/Masquer la touche de raccourci de la fenêtre** (par défaut `Cmd+Opt+H` / `⌘⌥H`) via l'enregistrement macOS Carbon sans autorisation (aucune invite d'autorisation d'accessibilité requise).
+
+---
+
 ## 6. Alertes de sécurité et système : configuration de la touche de fonction macOS (Fn)
 
 Si vous avez utilisé Total Commander, Double Commander ou Norton Commander sur un clavier de PC, vos doigts sont entraînés à utiliser les touches de fonction de la rangée supérieure (`F3` View, `F4` Edit, `F5` Copy, `F6` Move, `F7` MkDir, `F8` Supprimer). 
@@ -434,6 +444,8 @@ ATBCmder offre une prise en charge complète du clavier à double matrice : uti
 | **Échanger gauche/droite** | `cm_Exchange` | `Ctrl+U` | `Ctrl+U` | Échange les chemins de répertoire entre les panneaux gauche et droit. | 
 | **Nouvel onglet** | `cm_NewTab` | `Cmd+T` | `Ctrl+T` | Ouvre un nouvel onglet de dossier dans le panneau actuel. | 
 | **Fermer l'onglet** | `cm_CloseTab` | `Cmd+W` | `Ctrl+W` | Ferme l'onglet actif. | 
+| **Onglet Verrouiller/Déverrouiller** | `cm_ToggleLockTab` | `Cmd+K` | `Ctrl+K` | Active/désactive le verrouillage des onglets (`*`) sur l'onglet du dossier actif. | 
+| **Entrez le chemin complet et c'est parti** | `cm_EditPath` | `Cmd+Shift+G` | `Ctrl+Shift+G` | Bascule la barre de chemin vers la saisie de texte en ligne et saute directement. |
 | **Mode horizontal** | `cm_HorizontalFilePanels` | Menu : Afficher ➔ Horizontal | Menu : Afficher ➔ Horizontal | Bascule entre la disposition empilée côte à côte et la disposition empilée haut et bas. | 
 | **Enregistrer la mise en page** | `cm_ConfigSavePos` | Menu : Config ➔ Enregistrer Pos | Menu : Config ➔ Enregistrer Pos | Enregistre les dimensions actuelles de la fenêtre et les proportions des panneaux. | 
 | **Accès au bac à sable** | `cm_GrantFilesystemAccess` | Menu : Fichier ➔ Autorisations | Menu : Fichier ➔ Autorisations | Lance l’assistant d’intégration macOS App Sandbox. | 

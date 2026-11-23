@@ -81,6 +81,7 @@ Para copiar archivos o directorios:
 Para clonar rápidamente un archivo dentro del directorio actual (por ejemplo, crear una copia de seguridad antes de editar `nginx.conf`): 
 
 - Resalte el elemento y presione `Shift+F5` (o `⇧F5`). 
+- **Mayús+clic en Deseleccionar rango**: Mantenga presionado `Shift` y haga clic en un rango ya seleccionado para invertir o anular la selección de tramos específicos sin perder el estado de selección más amplio de varios archivos.
 - ATBCmder solicita una ruta de destino en el *mismo* directorio, lo que le permite ingresar un nuevo nombre (por ejemplo, `nginx.conf.bak`).
 
 #### Portapapeles estándar de macOS (`Cmd+C` ➔ `Cmd+V`)
@@ -89,6 +90,7 @@ ATBCmder se integra completamente con los atajos del portapapeles del sistema ma
 
 - **`Cmd+C` (`⌘C`)**: Copia las rutas de archivos seleccionadas al portapapeles (`cm_CopyToClipboard`). 
 - **`Cmd+V` (`⌘V`)**: Pega archivos del portapapeles en el panel activo (`cm_PasteFromClipboard`). 
+- **Cambio de nombre automático de pegado seguro contra colisiones**: al pegar elementos en un directorio que ya contiene nombres de archivos idénticos, ATBCmder agrega automáticamente un contador incremental (`file (1).ext`, `file (2).ext`) en lugar de activar sobrescrituras destructivas, lo que coincide con la ergonomía de pegado de macOS Finder.
 - **`Cmd+Option+V` (`⌥⌘V`)**: Mueve los archivos del portapapeles al panel activo (`cm_PasteAsMove`). 
 
 ---

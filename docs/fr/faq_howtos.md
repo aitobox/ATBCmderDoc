@@ -351,6 +351,53 @@ Si vous travaillez sur un MacBook ou utilisez un Magic Trackpad, vous pouvez par
 
 ---
 
+### 2.9 Recette 9 : Édition instantanée du chemin et saut direct de fichier avec "Entrer le chemin complet et c'est parti" (`⌘⇧G`)
+
+Lorsque vous copiez un chemin profond depuis Terminal, Xcode, VS Code ou un message, vous pouvez y accéder directement (ou mettre directement en surbrillance un fichier spécifique) sans cliquer de haut en bas dans les dossiers : 
+
+1. **Activez l'édition de chemin en ligne** : 
+- Cliquez sur le bouton en forme de crayon **Entrer le chemin complet et Go** (`btn_edit_path`) juste à gauche du bouton du répertoire parent (`^`) sur l'un ou l'autre des panneaux, double-cliquez sur l'espace vide à droite des segments de fil d'Ariane ou appuyez sur **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G` / `cm_EditPath`). 
+- Le chemin actuel est pré-rempli et mis en surbrillance afin que vous puissiez immédiatement appuyer sur **`Cmd+V`** (`⌘V`) pour l'écraser. 
+2. **Coller les chemins cités, les tildes ou les chemins de fichiers** : 
+- Appuyez sur **`Enter`**. ATBCmder coupe automatiquement les espaces, supprime les guillemets environnants (`"..."` / `'...'`), développe `~` et les variables d'environnement (`$VAR` / `%VAR%`) et préserve les URI `vfs://`. 
+- Si vous avez collé un chemin pointant directement vers un **fichier** (par exemple, `"/Users/brain/Projects/app/src/main.py"`), ATBCmder accède à son répertoire parent (`src/`) et met automatiquement en surbrillance `main.py`. 
+3. **Récupérer sans recoller les fautes de frappe** : 
+- Si aucun chemin n'existe, l'entrée en ligne reste ouverte avec une bordure rouge et un message non bloquant dans la barre d'état afin que vous puissiez corriger directement la faute de frappe et appuyer à nouveau sur `Enter`. 
+- Appuyez sur `Esc`, cliquez à l'extérieur ou cliquez à nouveau sur le bouton en forme de crayon à tout moment pour annuler et revenir aux boutons de fil d'Ariane. 
+
+--- 
+
+### 2.10 Recette 10 : Rester résident en arrière-plan avec la barre d'état système et le raccourci clavier global (`⌘⌥H`)
+
+Si vous passez à ATBCmder des dizaines de fois par jour pour récupérer des fichiers, prévisualiser les journaux ou synchroniser des dossiers, le garder dans la barre de menus de macOS vous donne un accès instantané en moins d'une seconde : 
+
+1. **Activer la résidence dans la barre d'état système** : 
+- Appuyez sur **`Cmd+,`** (`⌘,`) pour ouvrir **Préférences ➔ Général**. 
+- Cochez **Réduire dans la barre d'état système (nécessite un redémarrage)** (`ui.minimize_to_tray`). 
+- Personnalisez éventuellement **Afficher/Masquer le raccourci clavier de la fenêtre** (`ui.global_hotkey`, par défaut : `Ctrl+Alt+H` / `⌘⌥H` sur macOS). Les modifications par raccourci clavier s'appliquent immédiatement sans redémarrage. 
+- Cliquez sur **OK** et redémarrez ATBCmder une fois pour activer l'icône de la barre d'état. 
+2. **Touche de raccourci globale macOS Carbon sans autorisation** : 
+- ATBCmder enregistre votre raccourci clavier global via macOS Carbon `RegisterEventHotKey`, il fonctionne donc immédiatement ** sans nécessiter d'autorisations d'accessibilité ** dans les paramètres système, et les accords de touche Option (`⌥`) capturent proprement sans conflits de touches mortes accentuées. 
+3. **Basculer depuis n'importe où** : 
+- Appuyez sur **`Cmd+Option+H`** (`⌘⌥H`) dans n'importe quelle application ou espace plein écran pour appeler ATBCmder directement au premier plan avec la taille exacte de votre fenêtre et vos onglets, puis appuyez à nouveau sur **`⌘⌥H`** pour le remettre dans la barre de menus. 
+
+--- 
+
+### 2.11 Recette 11 : Personnalisation des colonnes du panneau de fichiers et affichage des balises de couleur du Finder macOS
+
+Adaptez votre table de fichiers pour afficher uniquement les colonnes qui vous intéressent et inspectez les balises de couleur du Finder macOS directement dans ATBCmder : 
+
+1. **Réorganiser ou masquer les colonnes du panneau** : 
+- Ouvrez **Préférences ➔ Vues de fichiers** (`Cmd+,`). 
+- Sous **Colonnes**, décochez les colonnes secondaires (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) que vous souhaitez masquer (`Name` reste toujours en premier). 
+- Faites glisser la poignée `⠿` à côté de n'importe quelle colonne pour réorganiser globalement les colonnes dans les deux panneaux, ou cliquez sur **Réinitialiser les valeurs par défaut** pour restaurer l'ordre standard. 
+2. **Activez les balises de couleur du Finder macOS** : 
+- Faites défiler jusqu'à **Balises de couleur (macOS)** sur la même page **Vues de fichiers**. 
+- Cochez **Afficher les balises de couleur du Finder macOS dans le panneau de fichiers** (`view.show_color_tags`) et définissez votre **Intervalle de synchronisation en direct** préféré (`30.0 s` par défaut ou `0` pour Désactivé). 
+- Cliquez sur **Appliquer** ou **OK**. Les deux panneaux se mettent à jour immédiatement, affichant des points de balise du Finder nets avec des info-bulles localisées pour les 7 couleurs standard du Finder (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) et toutes les balises utilisateur personnalisées.
+
+---
+
 ## 3. Guide de dépannage et questions fréquemment posées (FAQ)
 
 ### 3.1 Erreurs « Opération non autorisée » / Autorisation macOS refusée

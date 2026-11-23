@@ -205,7 +205,8 @@ Déplacez-vous sans effort entre les dossiers, les volumes locaux, les montages 
 | `cm_TargetEqualSource` | Définir le répertoire du panneau inactif pour qu'il corresponde au répertoire actif | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Principal | 
 | `cm_SyncSlaveDir` | Verrouiller la navigation du panneau cible pour refléter le panneau source | `⌥S` | *(Menu : Commandes ➔ Synchroniser la navigation)* | Principal | 
 | `cm_DirHotList` | Menu Liste de favoris / Favoris Open Directory | `⌘D` | `Ctrl+D` | Principal | 
-| `cm_ConfigDirHotList` | Boîte de dialogue de configuration de la liste de véhicules recherchés Open Directory | `⇧⌘D` | `Ctrl+Shift+D` | Principal | 
+| `cm_EditPath` | Entrez le chemin complet et c'est parti (passez le fil d'Ariane à la saisie de texte en ligne) | `⇧⌘G` | `Ctrl+Shift+G` | Principal |
+| `cm_ConfigDirHotList` | Boîte de dialogue de configuration de la liste de véhicules recherchés Open Directory | `⌥⌘D` | `Ctrl+Shift+D` | Principal | 
 | `cm_GoToFirst` | Passer le curseur au premier élément du panneau actif | `⌘↑` / `Fn+←` *(Accueil)* | `Home` | Principal | 
 | `cm_GoToLast` | Passer le curseur au dernier élément du panneau actif | `⌘↓` / `Fn+→` *(Fin)* | `End` | Principal | 
 | `PageUp / PageDown` | Faites défiler le panneau actif vers le haut ou vers le bas d'une fenêtre complète | `⇞` *(Fn+↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | Panneau de fichiers |
@@ -250,6 +251,7 @@ ATBCmder permet d'ouvrir un nombre illimité d'onglets dans l'un ou l'autre pann
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_NewTab` | Ouvrir un nouvel onglet de dossier dans le panneau actif | `⌘T` | `Ctrl+T` | Principal | 
 | `cm_CloseTab` | Fermer l'onglet du dossier actuellement actif | `⌘W` | `Ctrl+W` | Principal | 
+| `cm_ToggleLockTab` | État de verrouillage instantané de la languette à bascule (badge `*`) | `⌘K` | `Ctrl+K` | Principal |
 | `cm_NextTab` / `cm_NextTabCtrl` | Passer à l'onglet suivant à droite | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principal | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Passer à l'onglet précédent à gauche | `⌃⇧⇥` *(Ctrl+Maj+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principal | 
 | `cm_ShowTabsList` | Afficher le menu contextuel de tous les onglets ouverts dans le panneau actif | `⇧⌘L` | `Ctrl+Shift+L` | Principal | 
@@ -264,6 +266,7 @@ ATBCmder permet d'ouvrir un nombre illimité d'onglets dans l'un ou l'autre pann
 | `cm_CopyTabToOtherPanel` | Cloner l'onglet actif directement dans le panneau opposé | `⌥⌘T` | *(Menu contextuel de l'onglet : Copier vers un autre)* | Principal | 
 | `cm_SaveTab` / `cm_SaveTabs` | Enregistrer la disposition actuelle des onglets dans la configuration | `cm_SaveTab` | *(Menu : Onglets ➔ Enregistrer les onglets)* | Principal | 
 | `cm_LoadTab` / `cm_LoadTabs` | Restaurer la disposition des onglets enregistrée à partir de la configuration | `cm_LoadTab` | *(Menu : Onglets ➔ Charger les onglets)* | Principal | 
+| `cm_SaveFavoriteTabs` | Enregistrez tous les onglets ouverts dans les deux panneaux en tant que nouvel ensemble d'onglets favoris | `⇧⌘D` | `Ctrl+Shift+D` | Principal |
 | `cm_OptionsFavorites` | Configurer les ensembles d'onglets favoris et les espaces de travail persistants | `cm_OptionsFavorites` | *(Menu : Onglets ➔ Onglets Favoris)* | Principal | 
 | `cm_FullScreen` | Basculer la fenêtre de l'application en plein écran | `⌃⌘F` / `F11` | `F11` | Principal |
 
@@ -300,7 +303,8 @@ Surveillez les performances du système d'exploitation, analysez le stockage des
 | ID de commande | Description | Raccourci macOS principal (glyphes ⌘/⌥/⇧/⌃) | Raccourci Commander classique (touches Fn) | Contexte |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | Ouvrir le moniteur d'état et de diagnostic du système | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principal |
-| `cm_DiskUsageAnalyzer` | Ouvrir l'analyseur d'espace disque (Arborescence + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principal |
+| `cm_DiskUsageAnalyzer` | Ouvrir l'analyseur d'espace disque (Arborescence + Treemap) | *(Menu: Tools ➔ Disk Usage Analyzer...)* | `Ctrl+Shift+D` | Principal |
+| `cm_RecentChanges` | Ouvrir l'outil Modifications récentes de fichiers et de dossiers | *(Menu : Outils ➔ Modifications récentes...)* | *(Menu : Outils ➔ Modifications récentes...)* | Principal |
 | `cm_CleanSystem` | Ouvrir le nettoyeur système sécurisé en deux étapes | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principal |
 | `cm_UninstallApp` | Ouvrir le désinstallateur approfondi d'applications | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principal |
 
@@ -314,6 +318,8 @@ Accédez aux préférences des applications, à la gestion de la configuration, 
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_Options` | Ouvrir la boîte de dialogue Préférences/Paramètres de l'application | `⌘,` | `Ctrl+,` | Principal | 
 | `cm_HelpContents` / `cm_HelpIndex` | Documentation et guide utilisateur interactifs ouverts | `⌘?` / `F1` | `F1` | Principal | 
+| `cm_Tutorial` | Lancer un didacticiel d'intégration interactif en 32 étapes | *(Menu : Aide ➔ Tutoriel interactif...)* | *(Menu : Aide ➔ Tutoriel interactif...)* | Principal | 
+| `*(Global Hotkey)*` | Invoquer/masquer la fenêtre principale (basculer depuis la barre d'état système de la barre de menus) | `⌘⌥H` | `Ctrl+Alt+H` | Système (Carbone) |
 | `cm_HelpKeyboard` | Ouvrir la carte de référence des raccourcis clavier rapides | `cm_HelpKeyboard` | *(Menu : Aide ➔ Clavier)* | Principal | 
 | `cm_Exit` | Quitter / Quitter ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Principal | 
 | `cm_About` | Afficher la version, la licence et les crédits d'ATBCmder | `cm_About` | *(Menu : ATBCmder ➔ À propos)* | Principal | 

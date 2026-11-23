@@ -351,6 +351,53 @@ Si trabaja en una MacBook o usa un Magic Trackpad, puede navegar por el historia
 
 ---
 
+### 2.9 Receta 9: Edición instantánea de rutas y salto directo de archivos con "Ingrese la ruta completa y listo" (`⌘⇧G`)
+
+Cuando copia una ruta profunda desde Terminal, Xcode, VS Code o un mensaje, puede saltar directamente a ella (o resaltar directamente un archivo específico) sin hacer clic hacia arriba y hacia abajo en las carpetas: 
+
+1. **Activar edición de ruta en línea**: 
+- Haga clic en el botón de lápiz **Ingresar ruta completa e ir** (`btn_edit_path`) justo a la izquierda del botón Directorio principal (`^`) en cualquiera de los paneles, haga doble clic en el espacio vacío a la derecha de los segmentos de ruta de navegación o presione **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G` / `cm_EditPath`). 
+- La ruta actual está precompletada y resaltada para que pueda presionar inmediatamente **`Cmd+V`** (`⌘V`) para sobrescribirla. 
+2. **Pegue rutas entre comillas, tildes o rutas de archivos**: 
+- Presione **`Enter`**. ATBCmder recorta automáticamente los espacios en blanco, elimina las comillas circundantes coincidentes (`"..."` / `'...'`), expande `~` y las variables de entorno (`$VAR` / `%VAR%`) y conserva los URI `vfs://`. 
+- Si pegaste una ruta que apunta directamente a un **archivo** (por ejemplo, `"/Users/brain/Projects/app/src/main.py"`), ATBCmder navega a su directorio principal (`src/`) y resalta `main.py` automáticamente. 
+3. **Recuperar sin volver a pegar errores tipográficos**: 
+- Si no existe una ruta, la entrada en línea permanece abierta con un borde rojo y un mensaje en la barra de estado sin bloqueo para que pueda corregir el error tipográfico directamente y presionar `Enter` nuevamente. 
+- Presione `Esc`, haga clic afuera o haga clic en el botón del lápiz nuevamente en cualquier momento para cancelar y volver a los botones de ruta de navegación. 
+
+--- 
+
+### 2.10 Receta 10: Permanecer residente en segundo plano con la bandeja del sistema y la tecla de acceso rápido global (`⌘⌥H`)
+
+Si ingresa a ATBCmder docenas de veces al día para capturar archivos, obtener una vista previa de registros o sincronizar carpetas, mantenerlo residente en la bandeja de la barra de menú de macOS le brinda acceso instantáneo en menos de un segundo: 
+
+1. **Habilitar residencia en la bandeja del sistema**: 
+- Presione **`Cmd+,`** (`⌘,`) para abrir **Preferencias ➔ General**. 
+- Marque **Minimizar en la bandeja del sistema (requiere reinicio)** (`ui.minimize_to_tray`). 
+- Opcionalmente, personalice **Mostrar/Ocultar tecla de acceso rápido de ventana** (`ui.global_hotkey`, predeterminado: `Ctrl+Alt+H` / `⌘⌥H` en macOS). Las ediciones de teclas de acceso rápido se aplican inmediatamente sin reiniciar. 
+- Haga clic en **Aceptar** y reinicie ATBCmder una vez para activar el icono de la bandeja. 
+2. **Tecla de acceso directo global macOS Carbon de permiso cero**: 
+- ATBCmder registra su tecla de acceso rápido global a través de macOS Carbon `RegisterEventHotKey`, por lo que funciona de inmediato **sin requerir permisos de Accesibilidad** en Configuración del sistema, y los acordes de la tecla Opción (`⌥`) se capturan limpiamente sin conflictos de teclas muertas acentuadas. 
+3. **Alternar desde cualquier lugar**: 
+- Presione **`Cmd+Option+H`** (`⌘⌥H`) dentro de cualquier aplicación o espacio de pantalla completa para llamar a ATBCmder directamente al frente con el tamaño exacto de la ventana y las pestañas, y presione **`⌘⌥H`** nuevamente para volver a colocarlo en la bandeja de la barra de menú. 
+
+--- 
+
+### 2.11 Receta 11: Personalización de las columnas del panel de archivos y visualización de etiquetas de color del Finder de macOS
+
+Adapte su tabla de archivos para mostrar solo las columnas que le interesan e inspeccione las etiquetas de color del Finder de macOS directamente dentro de ATBCmder: 
+
+1. **Reordenar u ocultar columnas del panel**: 
+- Abra **Preferencias ➔ Vistas de archivos** (`Cmd+,`). 
+- En **Columnas**, desmarque las columnas secundarias (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) que desea ocultar (`Name` siempre permanece primero). 
+- Arrastre el controlador `⠿` al lado de cualquier columna para reordenar las columnas globalmente en ambos paneles, o haga clic en **Restablecer valores predeterminados** para restaurar el orden estándar. 
+2. **Habilite las etiquetas de color del Finder de macOS**: 
+- Desplácese hasta **Etiquetas de color (macOS)** en la misma página **Vistas de archivos**. 
+- Marque **Mostrar etiquetas de color de macOS Finder en el panel de archivos** (`view.show_color_tags`) y establezca su **intervalo de sincronización en vivo** preferido (predeterminado `30.0 s` o `0` para Desactivado). 
+- Haga clic en **Aplicar** o **Aceptar**. Ambos paneles se actualizan inmediatamente, mostrando puntos nítidos de etiquetas del Finder con información sobre herramientas localizada para los 7 colores estándar del Finder (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) y cualquier etiqueta de usuario personalizada.
+
+---
+
 ## 3. Guía de solución de problemas y preguntas frecuentes (FAQ)
 
 ### 3.1 Errores de "Operación no permitida"/Permiso denegado de macOS

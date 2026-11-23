@@ -351,6 +351,53 @@ Se lavori su un MacBook o utilizzi un Magic Trackpad, puoi navigare nella cronol
 
 ---
 
+### 2.9 Soluzione 9: Modifica istantanea del percorso e salto diretto dei file con "Inserisci percorso completo e vai" (`⌘⇧G`)
+
+Quando copi un percorso profondo da Terminalee, Xcode, VS Code o un messaggio, puoi passare direttamente ad esso o evidenziare direttamente un file specifico senza fare clic su e giù nelle cartelle: 
+
+1. **Attiva la modifica del percorso in linea**: 
+- Fai clic sul pulsante a matita **Inserisci percorso completo e vai** (`btn_edit_path`) appena a sinistra del pulsante Directory principale (`^`) su entrambi i pannelli, fai doppio clic sullo spazio vuoto a destra dei segmenti breadcrumb o premi **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G` / `cm_EditPath`). 
+- Il percorso corrente è precompilato ed evidenziato in modo da poter premere immediatamente **`Cmd+V`** (`⌘V`) per sovrascriverlo. 
+2. **Incolla percorsi tra virgolette, tilde o percorsi di file**: 
+- Premere **`Enter`**. ATBCmder taglia automaticamente gli spazi bianchi, elimina le virgolette corrispondenti alle virgolette circostanti (`"..."` / `'...'`), espande `~` e le variabili di ambiente (`$VAR` / `%VAR%`) e preserva `vfs://` URI. 
+- Se hai incollato un percorso che punta direttamente a un **file** (ad esempio, `"/Users/brain/Projects/app/src/main.py"`), ATBCmder passa alla sua directory principale (`src/`) ed evidenzia `main.py` automaticamente. 
+3. **Recupera senza incollare nuovamente in caso di errori di battitura**: 
+- Se un percorso non esiste, l'input in linea rimane aperto con un bordo rosso e un messaggio sulla barra di stato non bloccante in modo da poter correggere direttamente l'errore di battitura e premere nuovamente `Enter`. 
+- Premi `Esc`, fai clic all'esterno o fai nuovamente clic sul pulsante della matita in qualsiasi momento per annullare e tornare ai pulsanti breadcrumb. 
+
+--- 
+
+### 2.10 Soluzione 10: Restare residente in background con la barra delle applicazioni e il tasto di scelta rapida globale (`⌘⌥H`)
+
+Se passi ad ATBCmder decine di volte al giorno per acquisire file, visualizzare in anteprima i registri o sincronizzare cartelle, mantenerlo residente nella barra dei menu di macOS ti offre un accesso istantaneo in meno di un secondo: 
+
+1. **Abilita la residenza nella barra delle applicazioni**: 
+- Premi **`Cmd+,`** (`⌘,`) per aprire **Preferenze ➔ Generali**. 
+- Seleziona **Riduci a icona nella barra delle applicazioni (richiede il riavvio)** (`ui.minimize_to_tray`). 
+- Facoltativamente, personalizza **Mostra/Nascondi tasto di scelta rapida finestra** (`ui.global_hotkey`, predefinito: `Ctrl+Alt+H` / `⌘⌥H` su macOS). Le modifiche dei tasti di scelta rapida si applicano immediatamente senza riavviare. 
+- Fare clic su **OK** e riavviare ATBCmder una volta per attivare l'icona nella barra delle applicazioni. 
+2. **Tasto di scelta rapida globale macOS Carbon senza autorizzazione**: 
+- ATBCmder registra il tuo tasto di scelta rapida globale tramite macOS Carbon `RegisterEventHotKey`, quindi funziona immediatamente **senza richiedere autorizzazioni di accessibilità** in Impostazioni di sistema e gli accordi del tasto Opzione (`⌥`) vengono catturati in modo pulito senza conflitti di tasti morti accentati. 
+3. **Attiva/disattiva da qualsiasi luogo**: 
+- Premi **`Cmd+Option+H`** (`⌘⌥H`) all'interno di qualsiasi app o spazio a schermo intero per richiamare ATBCmder direttamente in primo piano con le dimensioni esatte della finestra e le schede, quindi premi nuovamente **`⌘⌥H`** per riporlo nella barra dei menu. 
+
+--- 
+
+### 2.11 Soluzione 11: Personalizzazione delle colonne del pannello File e visualizzazione dei tag colore del Finder di macOS
+
+Personalizza la tua tabella di file per mostrare solo le colonne che ti interessano e controlla i tag colore del Finder di macOS direttamente all'interno di ATBCmder: 
+
+1. **Riordina o nascondi le colonne del pannello**: 
+- Apri **Preferenze ➔ Visualizzazioni file** (`Cmd+,`). 
+- In **Colonne**, deseleziona le colonne secondarie (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) che desideri nascondere (`Name` rimane sempre la prima). 
+- Trascina la maniglia `⠿` accanto a qualsiasi colonna per riordinare le colonne globalmente in entrambi i pannelli oppure fai clic su **Ripristina impostazioni predefinite** per ripristinare l'ordinamento standard. 
+2. **Abilita i tag colore del Finder di macOS**: 
+- Scorri fino a **Tag colore (macOS)** nella stessa pagina **Visualizzazioni file**. 
+- Seleziona **Mostra tag colore del Finder di macOS nel pannello file** (`view.show_color_tags`) e imposta il tuo **intervallo di sincronizzazione live** preferito (predefinito `30.0 s` o `0` per Disabilitato). 
+- Fai clic su **Applica** o **OK**. Entrambi i pannelli si aggiornano immediatamente, mostrando punti nitidi dei tag del Finder con descrizioni comandi localizzate per tutti i 7 colori standard del Finder (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) ed eventuali tag utente personalizzati.
+
+---
+
 ## 3. Guida alla risoluzione dei problemi e domande frequenti (FAQ)
 
 ### 3.1 Errori "Operazione non consentita"/Autorizzazione negata su macOS

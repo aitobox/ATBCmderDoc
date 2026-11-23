@@ -737,6 +737,12 @@ Si bien ATBCmder se destaca en los flujos de trabajo gráficos de doble panel, a
 
 ---
 
+> [!CONSEJO] 
+> **Transferencia de terminal en zona protegida** 
+> En las compilaciones de espacio aislado de Mac App Store donde el lanzamiento de shells interactivos dentro del entorno de pruebas de la aplicación está restringido por las políticas de seguridad de Apple, al presionar `Ctrl+J` (`F9` / `cm_RunTerm`) se invoca macOS Terminal (`open -a Terminal <path>`) o iTerm2 directamente en la ruta del directorio activo, lo que garantiza capacidades completas de shell interactivo sin fricción en el espacio aislado.
+
+---
+
 ## 10. Tabla de referencia del teclado maestro de matriz dual
 
 | Área Funcional | Descripción de la acción | Atajo de teclado en macOS | Tecla Commander clásica | ID de comando | 

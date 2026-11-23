@@ -39,6 +39,8 @@ Dans ATBCmder, chaque panneau fonctionne comme un moteur de navigation autonome 
 | **Nouvel onglet** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Ouvrez le dossier actif dans un nouvel onglet. | 
 | **Fermer l'onglet** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Fermez l'onglet actuellement ciblé. | 
 | **Liste chaude de l'annuaire** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | Ouvrez une fenêtre contextuelle de signet floue instantanée. | 
+| **Entrez le chemin complet et c'est parti** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | Basculez la barre de chemin vers la saisie de texte en ligne et sautez directement. | 
+| **Onglet Verrouiller/Déverrouiller** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | État de verrouillage instantané de l'onglet (badge `*`). |
 | **Historique Retour** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Revenez au dossier précédemment visité. | 
 | **Histoire en avant** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Avancer dans l’historique du répertoire. | 
 | **Liste déroulante de l'historique** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Afficher la liste déroulante de l'historique. | 

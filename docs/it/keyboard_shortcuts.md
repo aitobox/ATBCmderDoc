@@ -205,7 +205,8 @@ Spostati facilmente tra cartelle, volumi locali, montaggi di rete e cronologia d
 | `cm_TargetEqualSource` | Imposta la directory del pannello inattivo in modo che corrisponda alla directory attiva | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Principale | 
 | `cm_SyncSlaveDir` | Blocca la navigazione del pannello di destinazione per eseguire il mirroring del pannello di origine | `⌥S` | *(Menu: Comandi ➔ Sincronizza Navigazione)* | Principale | 
 | `cm_DirHotList` | Apri il menu Hotlist/Segnalibri della directory | `⌘D` | `Ctrl+D` | Principale | 
-| `cm_ConfigDirHotList` | Apri la finestra di dialogo di configurazione della hotlist della directory | `⇧⌘D` | `Ctrl+Shift+D` | Principale | 
+| `cm_EditPath` | Inserisci il percorso completo e vai (cambia la barra breadcrumb per l'immissione di testo in linea) | `⇧⌘G` | `Ctrl+Shift+G` | Principale |
+| `cm_ConfigDirHotList` | Apri la finestra di dialogo di configurazione della hotlist della directory | `⌥⌘D` | `Ctrl+Shift+D` | Principale | 
 | `cm_GoToFirst` | Passa il cursore al primo elemento nel pannello attivo | `⌘↑` / `Fn+←` *(Casa)* | `Home` | Principale | 
 | `cm_GoToLast` | Passa il cursore all'ultimo elemento nel pannello attivo | `⌘↓` / `Fn+→` *(Fine)* | `End` | Principale | 
 | `PageUp / PageDown` | Scorrere il pannello attivo verso l'alto o verso il basso di una finestra intera | `⇞` *(Fn+↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | Pannello file |
@@ -250,6 +251,7 @@ ATBCmder consente di aprire schede illimitate in entrambi i pannelli, bloccare l
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_NewTab` | Apri la nuova scheda della cartella nel pannello attivo | `⌘T` | `Ctrl+T` | Principale | 
 | `cm_CloseTab` | Chiudi la scheda della cartella attualmente attiva | `⌘W` | `Ctrl+W` | Principale | 
+| `cm_ToggleLockTab` | Attivazione/disattivazione istantanea dello stato di blocco della scheda (badge`*`) | `⌘K` | `Ctrl+K` | Principale |
 | `cm_NextTab` / `cm_NextTabCtrl` | Passa alla scheda successiva a destra | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principale | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Passa alla scheda precedente a sinistra | `⌃⇧⇥` *(Ctrl+Maiusc+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principale | 
 | `cm_ShowTabsList` | Mostra il menu a comparsa di tutte le schede aperte nel pannello attivo | `⇧⌘L` | `Ctrl+Shift+L` | Principale | 
@@ -264,6 +266,7 @@ ATBCmder consente di aprire schede illimitate in entrambi i pannelli, bloccare l
 | `cm_CopyTabToOtherPanel` | Clona la scheda attiva direttamente nel pannello opposto | `⌥⌘T` | *(Menu contestuale scheda: Copia in altro)* | Principale | 
 | `cm_SaveTab` / `cm_SaveTabs` | Salva il layout della scheda corrente nella configurazione | `cm_SaveTab` | *(Menu: Schede ➔ Salva Schede)* | Principale | 
 | `cm_LoadTab` / `cm_LoadTabs` | Ripristina il layout della scheda salvato dalla configurazione | `cm_LoadTab` | *(Menu: Schede ➔ Carica schede)* | Principale | 
+| `cm_SaveFavoriteTabs` | Salva tutte le schede aperte su entrambi i pannelli come un nuovo set di schede preferite | `⇧⌘D` | `Ctrl+Shift+D` | Principale |
 | `cm_OptionsFavorites` | Configura set di schede preferite e aree di lavoro persistenti | `cm_OptionsFavorites` | *(Menu: Schede ➔ Schede preferite)* | Principale | 
 | `cm_FullScreen` | Attiva/disattiva la finestra dell'applicazione a schermo intero | `⌃⌘F` / `F11` | `F11` | Principale |
 
@@ -300,7 +303,8 @@ Monitora le prestazioni del sistema operativo, analizza lo spazio di archiviazio
 | ID comando | Descrizione | Scorciatoia principale macOS (con glifi ⌘/⌥/⇧/⌃) | Scorciatoia classica Commander (con tasti Fn) | Contesto |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | Apri monitor di stato e diagnostica del sistema | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principale |
-| `cm_DiskUsageAnalyzer` | Apri analizzatore di utilizzo del disco (Albero + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principale |
+| `cm_DiskUsageAnalyzer` | Apri analizzatore di utilizzo del disco (Albero + Treemap) | *(Menu: Tools ➔ Disk Usage Analyzer...)* | `Ctrl+Shift+D` | Principale |
+| `cm_RecentChanges` | Apri lo strumento Modifiche recenti a file e cartelle | *(Menu: Strumenti ➔ Modifiche recenti...)* | *(Menu: Strumenti ➔ Modifiche recenti...)* | Principale |
 | `cm_CleanSystem` | Apri pulitore di sistema sicuro a due fasi | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principale |
 | `cm_UninstallApp` | Apri programma di disinstallazione approfondita | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principale |
 
@@ -314,6 +318,8 @@ Accedi alle preferenze dell'applicazione, alla gestione della configurazione, ag
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_Options` | Apri Preferenze applicazione/Finestra di dialogo Impostazioni | `⌘,` | `Ctrl+,` | Principale | 
 | `cm_HelpContents` / `cm_HelpIndex` | Apri documentazione e guida interattive per l'utente | `⌘?` / `F1` | `F1` | Principale | 
+| `cm_Tutorial` | Avvia il tutorial interattivo sull'onboarding in 32 passaggi | *(Menu: Aiuto ➔ Tutorial interattivo...)* | *(Menu: Aiuto ➔ Tutorial interattivo...)* | Principale | 
+| `*(Global Hotkey)*` | Evoca/nascondi la finestra principale (attiva/disattiva dalla barra dei menu nella barra delle applicazioni) | `⌘⌥H` | `Ctrl+Alt+H` | Sistema (Carbonio) |
 | `cm_HelpKeyboard` | Apri la scheda di riferimento delle scorciatoie da tastiera rapide | `cm_HelpKeyboard` | *(Menu: Aiuto ➔ Tastiera)* | Principale | 
 | `cm_Exit` | Esci/Esci da ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Principale | 
 | `cm_About` | Visualizza versione, licenza e crediti di ATBCmder | `cm_About` | *(Menu: ATBCmder ➔ Informazioni)* | Principale | 

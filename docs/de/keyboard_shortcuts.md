@@ -205,7 +205,8 @@ Bewegen Sie sich mühelos zwischen Ordnern, lokalen Volumes, Netzwerkbereitstell
 | `cm_TargetEqualSource` | Stellen Sie das inaktive Panel-Verzeichnis so ein, dass es mit dem aktiven Verzeichnis übereinstimmt | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Haupt | 
 | `cm_SyncSlaveDir` | Zielpanel-Navigation sperren, um Quellpanel zu spiegeln | `⌥S` | *(Menü: Befehle ➔ Navigation synchronisieren)* | Haupt | 
 | `cm_DirHotList` | Öffnen Sie das Verzeichnis-Hotlist-/Lesezeichen-Menü | `⌘D` | `Ctrl+D` | Haupt | 
-| `cm_ConfigDirHotList` | Konfigurationsdialog für die Open Directory-Hotlist | `⇧⌘D` | `Ctrl+Shift+D` | Haupt | 
+| `cm_EditPath` | Geben Sie den vollständigen Pfad ein und gehen Sie los (Breadcrumb-Leiste auf Inline-Texteingabe umstellen) | `⇧⌘G` | `Ctrl+Shift+G` | Haupt |
+| `cm_ConfigDirHotList` | Konfigurationsdialog für die Open Directory-Hotlist | `⌥⌘D` | `Ctrl+Shift+D` | Haupt | 
 | `cm_GoToFirst` | Cursor zum ersten Element im aktiven Bereich springen | `⌘↑` / `Fn+←` *(Home)* | `Home` | Haupt | 
 | `cm_GoToLast` | Cursor zum letzten Element im aktiven Bereich springen | `⌘↓` / `Fn+→` *(Ende)* | `End` | Haupt | 
 | `PageUp / PageDown` | Aktives Panel um ein ganzes Ansichtsfenster nach oben oder unten scrollen | `⇞` *(Fn+↓)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | FilePanel |
@@ -250,6 +251,7 @@ ATBCmder ermöglicht das Öffnen unbegrenzter Tabs in beiden Panels, das Sperren
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_NewTab` | Öffnen Sie die Registerkarte „Neuer Ordner“ im aktiven Bereich | `⌘T` | `Ctrl+T` | Haupt | 
 | `cm_CloseTab` | Schließen Sie die Registerkarte „Aktuell aktiver Ordner“ | `⌘W` | `Ctrl+W` | Haupt | 
+| `cm_ToggleLockTab` | Tab-Sperrstatus sofort umschalten (`*` Abzeichen) | `⌘K` | `Ctrl+K` | Haupt |
 | `cm_NextTab` / `cm_NextTabCtrl` | Zur nächsten Registerkarte rechts wechseln | `⌃⇥` *(Strg+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Haupt | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Zur vorherigen Registerkarte auf der linken Seite wechseln | `⌃⇧⇥` *(Strg+Umschalt+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Haupt | 
 | `cm_ShowTabsList` | Popup-Menü aller geöffneten Tabs im aktiven Panel anzeigen | `⇧⌘L` | `Ctrl+Shift+L` | Haupt | 
@@ -264,6 +266,7 @@ ATBCmder ermöglicht das Öffnen unbegrenzter Tabs in beiden Panels, das Sperren
 | `cm_CopyTabToOtherPanel` | Aktive Registerkarte direkt in gegenüberliegendes Bedienfeld klonen | `⌥⌘T` | *(Tab-Kontextmenü: In andere kopieren)* | Haupt | 
 | `cm_SaveTab` / `cm_SaveTabs` | Aktuelles Tab-Layout in der Konfiguration speichern | `cm_SaveTab` | *(Menü: Tabs ➔ Tabs speichern)* | Haupt | 
 | `cm_LoadTab` / `cm_LoadTabs` | Gespeichertes Tab-Layout aus Konfiguration wiederherstellen | `cm_LoadTab` | *(Menü: Tabs ➔ Tabs laden)* | Haupt | 
+| `cm_SaveFavoriteTabs` | Speichern Sie alle geöffneten Tabs in beiden Panels als neuen Favoriten-Tab-Satz | `⇧⌘D` | `Ctrl+Shift+D` | Haupt |
 | `cm_OptionsFavorites` | Konfigurieren Sie Favoriten-Tab-Sets und persistente Arbeitsbereiche | `cm_OptionsFavorites` | *(Menü: Tabs ➔ Favoriten-Tabs)* | Haupt | 
 | `cm_FullScreen` | Vollbild-Anwendungsfenster umschalten | `⌃⌘F` / `F11` | `F11` | Haupt |
 
@@ -300,7 +303,8 @@ Starten Sie erweiterte Automatisierungstools, Batch-Dienstprogramme und eingebet
 | Befehls-ID | Beschreibung | Primärer macOS-Kurzbefehl (mit ⌘/⌥/⇧/⌃) | Klassischer Commander-Kurzbefehl (mit Fn-Tasten) | Kontext |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | Systemstatus- & Diagnosemonitor öffnen | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Hauptfenster |
-| `cm_DiskUsageAnalyzer` | Festplattenbelegungsanalyse öffnen (Baum + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Hauptfenster |
+| `cm_DiskUsageAnalyzer` | Festplattenbelegungsanalyse öffnen (Baum + Treemap) | *(Menu: Tools ➔ Disk Usage Analyzer...)* | `Ctrl+Shift+D` | Hauptfenster |
+| `cm_RecentChanges` | Öffnen Sie das Tool „Letzte Datei- und Ordneränderungen“ | *(Menü: Extras ➔ Letzte Änderungen...)* | *(Menü: Extras ➔ Letzte Änderungen...)* | Haupt |
 | `cm_CleanSystem` | Sicheren zweistufigen Systemreiniger öffnen | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Hauptfenster |
 | `cm_UninstallApp` | Tiefgehenden Anwendungs-Deinstallierer öffnen | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Hauptfenster |
 
@@ -314,6 +318,8 @@ Greifen Sie auf Anwendungseinstellungen, Konfigurationsverwaltung, Software-Upda
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_Options` | Öffnen Sie das Dialogfeld „Anwendungseinstellungen/Einstellungen“ | `⌘,` | `Ctrl+,` | Haupt | 
 | `cm_HelpContents` / `cm_HelpIndex` | Öffnen Sie die interaktive Benutzerdokumentation und den Leitfaden | `⌘?` / `F1` | `F1` | Haupt | 
+| `cm_Tutorial` | 32-stufiges interaktives Onboarding-Tutorial starten | *(Menü: Hilfe ➔ Interaktives Tutorial...)* | *(Menü: Hilfe ➔ Interaktives Tutorial...)* | Haupt | 
+| `*(Global Hotkey)*` | Hauptfenster aufrufen/ausblenden (in der Menüleiste in der Taskleiste umschalten) | `⌘⌥H` | `Ctrl+Alt+H` | System (Kohlenstoff) |
 | `cm_HelpKeyboard` | Öffnen Sie die Referenzkarte für schnelle Tastaturkürzel | `cm_HelpKeyboard` | *(Menü: Hilfe ➔ Tastatur)* | Haupt | 
 | `cm_Exit` | Beenden / Beenden Sie ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Haupt | 
 | `cm_About` | ATBCmder-Version, Lizenz und Credits anzeigen | `cm_About` | *(Menü: ATBCmder ➔ Über)* | Haupt | 

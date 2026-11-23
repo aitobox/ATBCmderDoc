@@ -39,6 +39,8 @@ No ATBCmder, cada painel opera como um mecanismo de navegação autônomo equipa
 | **Nova guia** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Abra a pasta ativa em uma nova guia. | 
 | **Fechar guia** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Feche a guia atualmente em foco. | 
 | **Lista de favoritos do diretório** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | Abra o pop-up instantâneo de favoritos difusos. | 
+| **Insira o caminho completo e vá** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | Mude a barra de caminho para entrada de texto embutida e pule diretamente. | 
+| **Guia Bloquear/Desbloquear** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | Estado de bloqueio de guia de alternância instantânea (crachá `*`). |
 | **Histórico Voltar** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Volte para a pasta visitada anteriormente. | 
 | **Histórico Avançar** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Avance no histórico do diretório. | 
 | **Lista suspensa de histórico** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Exibir lista suspensa do histórico. | 

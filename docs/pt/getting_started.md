@@ -358,6 +358,16 @@ ATBCmder possui um subsistema inteligente de gerenciamento de sessões (`Session
 
 ---
 
+### Dica 5: Tutorial de Onboarding Interativo (`cm_Tutorial`) 
+
+Quer um tour prático guiado diretamente dentro do aplicativo? Escolha **Ajuda ➔ Tutorial interativo...** na barra de menu para iniciar o tutorial destacado de 32 etapas do ATBCmder. Ele orienta você de forma interativa na alternância de painel duplo, operações de arquivo, bloqueio de guias (`Cmd+K`), salto de barra de caminho em linha (`Cmd+Shift+G`), pesquisa rápida, modos de visualização de painel e conjunto de ferramentas de sistema integrado. 
+
+### Dica 6: Residência na bandeja do sistema em segundo plano e tecla de atalho global sem permissão (`⌘⌥H`) 
+
+Para trocas diárias frequentes, abra **Preferências ➔ Geral** (`Cmd+,`), ative **Minimizar para a bandeja do sistema (requer reinicialização)** (`ui.minimize_to_tray`) e reinicie uma vez. O ATBCmder permanece residente na bandeja da barra de menus do macOS sem confusão no Dock e pode ser invocado ou oculto instantaneamente de qualquer aplicativo usando a tecla de atalho **Mostrar/Ocultar janela** (padrão `Cmd+Opt+H` / `⌘⌥H`) por meio do registro macOS Carbon sem permissão (não é necessário solicitar permissão de acessibilidade).
+
+---
+
 ## 6. Alertas de segurança e do sistema: configuração da tecla de função macOS (Fn)
 
 Se você usou Total Commander, Double Commander ou Norton Commander em um teclado de PC, seus dedos são treinados para usar as teclas de função da linha superior (`F3` Exibir, `F4` Editar, `F5` Copiar, `F6` Mover, `F7` MkDir, `F8` Excluir). 
@@ -435,6 +445,8 @@ ATBCmder fornece suporte completo para teclado de matriz dupla: use atalhos nati
 | **Trocar Esquerda/Direita** | `cm_Exchange` | `Ctrl+U` | `Ctrl+U` | Troca caminhos de diretório entre os painéis esquerdo e direito. | 
 | **Nova guia** | `cm_NewTab` | `Cmd+T` | `Ctrl+T` | Abre uma nova guia de pasta no painel atual. | 
 | **Fechar guia** | `cm_CloseTab` | `Cmd+W` | `Ctrl+W` | Fecha a guia ativa. | 
+| **Guia Bloquear/Desbloquear** | `cm_ToggleLockTab` | `Cmd+K` | `Ctrl+K` | Alterna o bloqueio da guia (`*`) na guia da pasta ativa. | 
+| **Insira o caminho completo e vá** | `cm_EditPath` | `Cmd+Shift+G` | `Ctrl+Shift+G` | Muda a barra de caminho para entrada de texto embutida e salta diretamente. |
 | **Modo Horizontal** | `cm_HorizontalFilePanels` | Menu: Mostrar ➔ Horizontal | Menu: Mostrar ➔ Horizontal | Alterna o layout empilhado lado a lado e empilhado superior e inferior. | 
 | **Salvar layout** | `cm_ConfigSavePos` | Menu: Configuração ➔ Salvar Pos | Menu: Configuração ➔ Salvar Pos | Salva as dimensões atuais da janela e as proporções do painel. | 
 | **Acesso à área restrita** | `cm_GrantFilesystemAccess` | Menu: Arquivo ➔ Permissões | Menu: Arquivo ➔ Permissões | Inicia o assistente de integração do macOS App Sandbox. | 

@@ -158,6 +158,18 @@ Das Drücken von **`⌘⇧M`** (oder **`Ctrl+Shift+M`**) öffnet das vollständi
 
 ---
 
+### 3.2 Mac App Store Sandbox-Modus (`Top Processes` + `Running Applications`)
+
+In Sandbox-Builds für den Mac App Store passt ATBCmder seine Systemtelemetrie an, um strikt innerhalb der Datenschutzgrenzen von Apple zu arbeiten, ohne die Diagnose zu beeinträchtigen: 
+
+- **Prozessinspektion des aktuellen Benutzers**: Anstatt globale Mach-Kernel-Aufrufe durchzuführen, die Root-Berechtigungen erfordern, fragt ATBCmder die Darwin-Kernel-Prozessstrukturen (`sysctl KERN_PROC_UID`) und `proc_pidinfo` ab, um den CPU-Prozentsatz, den residenten Speicher (RSS), den virtuellen Speicher und die Anzahl der Prozessthreads für Ihr Benutzerkonto zu messen. 
+- **Dual-Tab-Architektur**: 
+- **Top-Prozesse**: Zeigt CPU-, Speicher- und Zustandsrankings pro Prozess in Echtzeit an, dynamisch sortiert mit konfigurierbaren Aktualisierungsintervallen (Standard: 2,0 s). 
+- **Laufende Anwendungen**: Identifiziert speziell GUI-Anwendungen, die im Benutzerbereich mit zwischengespeicherten Retina-Dock-Symbolen ausgeführt werden, und filtert Rauschen von Hintergrundsystem-Daemons, Launchd-Agenten und XPC-Hilfsdiensten sauber heraus. 
+- **Sandbox-sichere Kontextmenüaktionen**: Klicken Sie mit der rechten Maustaste auf einen Prozesseintrag, um gezielte Aktionen auszuführen: **Prozess beenden** (`SIGTERM`), **Beenden erzwingen** (`SIGKILL`), **Fenster nach vorne bringen**, **Im Finder anzeigen** (`open -R`) oder **Im Aktivitätsmonitor prüfen**.
+
+---
+
 ## 4. Festplattenbelegungsanalyse (`cm_DiskUsageAnalyzer` / `⌘⇧D`)
 
 Wenn der freie Speicherplatz auf einem Solid-State-Laufwerk knapp wird, kann das Aufspüren versteckter Gigabytes mühsam und zeitaufwendig sein. Standard-Dateilisten im Finder berechnen Ordnergrößen nicht automatisch, und eine manuelle Inspektion erfordert mühsames Navigieren durch verschachtelte Hierarchien.
@@ -209,7 +221,35 @@ Die **Festplattenbelegungsanalyse** (`cm_DiskUsageAnalyzer`, Tastaturkurzbefehl 
 
 ---
 
-## 5. Systemreiniger (`cm_CleanSystem` / `⌘⇧C`)
+## 5. Letzte Datei- und Ordneränderungen (`cm_RecentChanges`)
+
+Wenn Sie herausfinden, wo neu heruntergeladene Assets gelandet sind, geänderte Codedateien in mehreren Projekten finden oder die Ausgabe von Hintergrund-Build-Skripten überprüfen, scannt das Tool **Letzte Änderungen** Ihr Dateisystem anhand des Zeitstempels der letzten Änderung: 
+
+- **Startauslöser**: Wählen Sie **Extras ➔ Letzte Änderungen...** aus der Menüleiste oder rufen Sie `cm_RecentChanges` aus der Befehlspalette auf. 
+
+--- 
+
+### 5.1 Umfang, Zeitvoreinstellungen und Größenfilterung
+
+Die Filterleiste bietet gezielte Steuerelemente, um große Verzeichnisse in Sekundenschnelle einzugrenzen: 
+
+- **Suchpfad**: Standardmäßig das aktive Panel-Verzeichnis oder geben Sie einen beliebigen Pfad ein (`/var/log`, `~/Library` oder externe Laufwerksmounts). 
+- **Elementtypfilterung**: Wechseln Sie zwischen **Dateien und Ordner**, **Nur Dateien** oder **Nur Ordner**. 
+- **Zeitvoreinstellungen**: Wählen Sie schnelle Lookback-Fenster aus (**Letzte 1 Stunde**, **Letzte 24 Stunden**, **Letzte 7 Tage**, **Letzte 30 Tage**) oder geben Sie einen benutzerdefinierten Kalenderbereich an. 
+- **Mindestgrößenschwellenwert**: Schließen Sie triviale Dateiberührungen (z. B. Sperrdateien oder `.DS_Store`) aus, indem Sie nach Elementen filtern, die größer als `0 B`, `1 KB`, `1 MB`, `10 MB` oder ein benutzerdefinierter Schwellenwert sind. 
+
+--- 
+
+### 5.2 Schnelle Erkennung und sofortige Aktionen
+
+Die Ergebnisse werden asynchron mit Echtzeit-Fortschrittsindikatoren gefüllt: 
+
+- **Spotlight Pre-Seeding**: Auf lokalen APFS/HFS+-Volumes fragt ATBCmder den macOS Spotlight-Index (`mdfind`) nach Rückgaben im Subsekundenbereich ab, bevor er für Netzwerkfreigaben und nicht indizierte Verzeichnisse auf die POSIX-Verzeichnisdurchquerung zurückgreift. 
+- **Kontextaktionen**: Doppelklicken Sie auf ein beliebiges Ergebnis oder drücken Sie `Enter`, um die Datei zu öffnen; Drücken Sie `Cmd+Enter`, um es im aktiven Bereich zu finden und hervorzuheben, oder ziehen Sie die Ergebnisse direkt in externe Apps.
+
+---
+
+## 6. Systemreiniger (`cm_CleanSystem` / `⌘⇧C`)
 
 Über Monate der täglichen Nutzung hinweg sammeln sich unter macOS Gigabytes an temporären Daten an: veraltete Anwendungs-Caches, Xcode-Build-Artefakte, Downloads von Paketmanagern, verwaiste Diagnoseprotokolle und Browser-Caches. Während einige Caches Arbeitsabläufe beschleunigen, verschwenden veraltete Elemente wertvollen Hochgeschwindigkeits-SSD-Speicherplatz.
 
@@ -240,7 +280,7 @@ Der **Systemreiniger** (`cm_CleanSystem`, Tastaturkurzbefehl **`⌘⇧C`** / **`
 ![Systemreiniger](images/system_cleaner.png)  
 *Abbildung 7.3: Sichere Scan-Oberfläche des Systemreinigers mit Schätzungen zur Bereinigung von Caches, Protokollen und temporären Dateien.*
 
-### 5.1 Die zweistufige Sicherheitsarchitektur
+### 6.1 Die zweistufige Sicherheitsarchitektur
 
 Im Gegensatz zu leichtfertigen „Ein-Klick-Reinigern“, die Dateien stillschweigend im Hintergrund löschen, erzwingt ATBCmder ein striktes **zweistufiges Sicherheitsprotokoll**:
 
@@ -253,7 +293,16 @@ Im Gegensatz zu leichtfertigen „Ein-Klick-Reinigern“, die Dateien stillschwe
    - Ein Klick auf **„Ausgewählte Elemente bereinigen“** führt den Löschvorgang ausschließlich für die explizit markierten Ziele aus.
    - Jeder Löschvorgang wird in einem atomaren Revisionsprotokoll unter `~/Library/Preferences/atbcmder/operations.log` dokumentiert.
 
-### 5.2 Sechs zentrale Bereinigungsbereiche
+### 6.2 Gruppierungsmodi, beibehaltene Größen und Aufbewahrungstransparenz
+
+Um Power-Usern volle Sicherheit zu geben, bevor sie Daten löschen, strukturiert ATBCmder die Ergebnisse mit granularen Risikokontrollen und Aufbewahrungsmetriken: 
+
+- **Gruppierung pro Anwendung und pro Domäne**: Wechseln Sie zwischen kategoriezentrierten Ansichten (Caches, Protokolle, Papierkorb) und anwendungszentrierter Gruppierung (Xcode, Docker, Node.js, Browser), um den genauen Platzbedarf pro Tool zu überprüfen. 
+- **Behaltene Größen und 10 Aufbewahrungsgründe**: Wenn Sicherheitsregeln das Löschen eines Elements verhindern (z. B. aktive Socket-Dateien, offene Datenbanken, gesperrte Caches oder Verzeichnisse auf der Whitelist), zeigt ATBCmder die genaue beibehaltene Bytegröße zusammen mit lokalisierten Erklärungen an (z. B. *Vom aktiven Prozess verwendet*, *Systemschutzregel*, *Kürzlich geänderte Kulanzfrist*).
+
+---
+
+### 6.3 Sechs zentrale Bereinigungsbereiche
 
 | Kategorie | Typischer Speicherort | Risikostufe | Beschreibung |
 | :--- | :--- | :---: | :--- |
@@ -264,7 +313,7 @@ Im Gegensatz zu leichtfertigen „Ein-Klick-Reinigern“, die Dateien stillschwe
 | **Paketmanager-Caches** | Homebrew, CocoaPods, NPM, Yarn | **Warnung** | Heruntergeladene Tarballs, Formel-Archive und Cache-Verzeichnisse für Abhängigkeiten. |
 | **Papierkorb** | `~/.Trash`, `.Trashes` | **Gefahr** | Zuvor in den macOS-Papierkorb verschobene Elemente, die noch nicht dauerhaft gelöscht wurden. |
 
-### 5.3 Risikostufen & Sicherheits-Whitelist
+### 6.4 Risikostufen & Sicherheits-Whitelist
 
 - 🟢 **Sicher (Grün / Safe)**: Temporäre Caches und verworfene Metadaten, die ohne Konfigurationsverlust oder Arbeitsablaufunterbrechung entfernt werden können.
 - 🟡 **Warnung (Orange / Warning)**: Entwickler-Artefakte oder Paket-Caches. Das Löschen ist sicher, jedoch verlängern sich nachfolgende Projektkompilierungen oder Paket-Downloads, da Elemente neu geladen werden müssen.
@@ -275,7 +324,7 @@ Im Gegensatz zu leichtfertigen „Ein-Klick-Reinigern“, die Dateien stillschwe
 
 ---
 
-## 6. Anwendungs-Deinstallierer (`cm_UninstallApp` / `⌘⇧U`)
+## 7. Anwendungs-Deinstallierer (`cm_UninstallApp` / `⌘⇧U`)
 
 Unter macOS entfernt das Ziehen einer Anwendung aus dem Ordner `/Applications` in den Papierkorb lediglich das `.app`-Bundle selbst. Moderne Programme verteilen häufig Hunderte Hilfsdateien über Ihr gesamtes Laufwerk: Voreinstellungs-Plists, Application-Support-Datenbanken, Hintergrund-Launch-Agents, Sandbox-Container und zwischengespeicherte Medien. Im Laufe der Zeit verbrauchen diese verwaisten Überreste Gigabytes an Speicherplatz und können unnötige Hintergrundprozesse beim Anmelden hinterlassen.
 
@@ -307,7 +356,7 @@ Der **Anwendungs-Deinstallierer** (`cm_UninstallApp`, Tastaturkurzbefehl **`⌘�
 ![Anwendungs-Deinstallierer](images/app_uninstaller.png)  
 *Abbildung 7.4: Anwendungs-Deinstallierer führt einen Tiefenscan nach Überresten in Application Support, Caches und Preferences durch.*
 
-### 6.1 Fundorte für Anwendungsüberreste
+### 7.1 Fundorte für Anwendungsüberreste
 
 Beim Scannen nach Anwendungskomponenten durchsucht ATBCmder die folgenden Standard-Subsysteme von macOS unter Verwendung eines exakten Abgleichs der Bundle-ID (Bundle Identifier):
 
@@ -320,7 +369,7 @@ Beim Scannen nach Anwendungskomponenten durchsucht ATBCmder die folgenden Standa
 7. **Sandbox-Container**: `~/Library/Containers/<BundleID>/` und `~/Library/Group Containers/`.
 8. **Anwendungsprotokolle (Logs)**: `~/Library/Logs/<Name>/`.
 
-### 6.2 Zwei Betriebsmodi
+### 7.2 Zwei Betriebsmodi
 
 - **Vollständige Deinstallation (Standard / Complete Uninstall)**:
   - Vorgesehen zum Entfernen einer derzeit auf Ihrem Mac installierten Anwendung.
@@ -329,7 +378,7 @@ Beim Scannen nach Anwendungskomponenten durchsucht ATBCmder die folgenden Standa
   - Dient dem Bereinigen verwaister Dateien von Anwendungen, die zuvor manuell über den Finder oder Hilfsprogramme von Drittanbietern gelöscht wurden.
   - Durchsucht `~/Library/` nach verwaisten Support-Ordnern, deren übergeordnetes `.app`-Bundle auf dem System nicht mehr existiert.
 
-### 6.3 Apple-Systemintegrität & Sicherheitsleitplanken
+### 7.3 Apple-Systemintegrität & Sicherheitsleitplanken
 
 Um eine versehentliche Destabilisierung des Systems zu verhindern:
 
@@ -339,7 +388,7 @@ Um eine versehentliche Destabilisierung des Systems zu verhindern:
 
 ---
 
-## 7. System- & Wartungshinweise
+## 8. System- & Wartungshinweise
 
 > [!NOTE]
 > **Minimaler Systemressourcen-Overhead**  
@@ -363,7 +412,7 @@ Um eine versehentliche Destabilisierung des Systems zu verhindern:
 
 ---
 
-## 8. Master-Dual-Matrix-Referenztabelle für System-Tools
+## 9. Master-Dual-Matrix-Referenztabelle für System-Tools
 
 | Kategorie | Aktionsbeschreibung | macOS-Kurzbefehl | Klassische Commander-Taste | Befehls-ID |
 | :--- | :--- | :--- | :--- | :--- |

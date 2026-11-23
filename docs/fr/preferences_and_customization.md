@@ -232,6 +232,9 @@ Si vous tentez d'attribuer un accord clé déjà réclamé par une autre command
 ---
 
 ### 3.5 Raccourci global Afficher/Masquer la fenêtre (`Cmd+Opt+H` / `Ctrl+Alt+H`)
+- **Résidence de la barre d'état système (`ui.minimize_to_tray`)** : cochez **Réduire dans la barre d'état système (nécessite un redémarrage)** sous **Général** pour insérer ATBCmder dans la barre de menus sans encombrer le Dock. 
+- **Zero-Permission Carbon Global Hotkey (`Cmd+Opt+H` / `Ctrl+Alt+H`)** : Enregistré via macOS Carbon natif `RegisterEventHotKey`, offrant une bascule globale instantanée sans nécessiter d'autorisations d'accessibilité dans les paramètres système.
+
 
 Pour les utilisateurs expérimentés qui préfèrent laisser ATBCmder fonctionner discrètement en arrière-plan : 
 
@@ -378,6 +381,26 @@ Pour les utilisateurs de macOS travaillant sur des MacBook ou avec des Magic Tra
 - **Momentum Filter** : bloque les déclencheurs multipages parasites dus à l'inertie du trackpad. 
 - **Configuration** : 
 - Basculez dans **Préférences** → **Vues de fichiers** → **Navigation sur le trackpad** (`view.trackpad_swipe_navigation`, par défaut : désactivé).
+
+---
+
+### 4.7 Visibilité et classement des colonnes personnalisables (`view.panel_column_order`, `view.panel_column_visible`)
+
+Sous **Préférences ➔ Vues de fichiers**, vous pouvez personnaliser exactement les colonnes du tableau qui apparaissent dans les deux panneaux de fichiers : 
+
+- **Bascules de visibilité des colonnes** : cochez ou décochez les colonnes secondaires (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`) en fonction de vos besoins de flux de travail. La colonne principale `Name` est toujours épinglée de manière permanente en tant que première colonne. 
+- **Réorganisation des colonnes par glisser-déposer** : saisissez la poignée de déplacement `⠿` à côté de n'importe quel nom de colonne dans la liste pour réorganiser les colonnes globalement. Les modifications se synchronisent instantanément sur les deux panneaux. 
+- **Réinitialiser les paramètres par défaut** : cliquez sur **Réinitialiser les paramètres par défaut** à tout moment pour restaurer l'ordre standard des colonnes du Commander. 
+
+--- 
+
+### 4.8 Balises de couleur du Finder macOS (`view.show_color_tags`, `view.color_tag_sync_interval_ms`)
+
+ATBCmder lit et affiche les balises d'attributs étendus natives du Finder macOS (`com.apple.metadata:_kMDItemUserTags`) : 
+
+- **Activer les balises de couleur** : cochez **Afficher les balises de couleur du Finder macOS dans le panneau de fichiers** (`view.show_color_tags`). 
+- **Points de couleur visuels** : les fichiers et dossiers auxquels sont attribuées des balises Finder affichent des points circulaires aux couleurs nettes immédiatement à gauche de leurs icônes de fichier, prenant en charge les 7 couleurs standard de macOS (rouge, orange, jaune, vert, bleu, violet, gris) et les étiquettes de balises personnalisées. 
+- **Intervalle de synchronisation en direct** : configurez l'intervalle d'interrogation en arrière-plan en secondes (`view.color_tag_sync_interval_ms`, par défaut `30.0 s` ; défini sur `0` pour désactiver l'interrogation en arrière-plan et l'actualisation lors de la navigation dans le panneau).
 
 ---
 

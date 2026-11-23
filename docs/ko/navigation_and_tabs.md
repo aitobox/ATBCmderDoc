@@ -39,6 +39,8 @@ ATBCmder에서 각 패널은 자체 탐색경로 체인, 독립 탭 스트립, �
 | **새 탭** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | 새 탭에서 활성 폴더를 엽니다. | 
 | **탭 닫기** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | 현재 포커스가 있는 탭을 닫습니다. | 
 | **디렉터리 핫리스트** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | 즉각적인 퍼지 북마크 팝업을 엽니다. | 
+| **전체 경로를 입력하고 이동** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | 경로 표시줄을 인라인 텍스트 입력으로 전환하고 직접 점프합니다. | 
+| **탭 잠금/잠금 해제** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | 인스턴트 토글 탭 잠금 상태(`*` 배지). |
 | **역사뒤로** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | 이전에 방문한 폴더로 돌아갑니다. | 
 | **역사는 앞으로** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | 디렉터리 기록에서 앞으로 이동합니다. | 
 | **기록 드롭다운 목록** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | 기록 드롭다운 목록을 표시합니다. | 

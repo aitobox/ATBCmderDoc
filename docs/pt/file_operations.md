@@ -81,6 +81,7 @@ Para copiar arquivos ou diretórios:
 Para clonar rapidamente um arquivo no diretório atual (por exemplo, criando um backup antes de editar `nginx.conf`): 
 
 - Destaque o item e pressione `Shift+F5` (ou `⇧F5`). 
+- **Desmarcação de intervalo Shift+Clique**: Segure `Shift` e clique em um intervalo já selecionado para inverter ou desmarcar intervalos específicos sem perder seu estado mais amplo de seleção de vários arquivos.
 - ATBCmder solicita um caminho de destino no *mesmo* diretório, permitindo que você insira um novo nome (por exemplo, `nginx.conf.bak`).
 
 #### Área de transferência padrão do macOS (`Cmd+C` ➔ `Cmd+V`)
@@ -89,6 +90,7 @@ ATBCmder integra-se totalmente aos atalhos da área de transferência do sistema
 
 - **`Cmd+C` (`⌘C`)**: Copia os caminhos dos arquivos selecionados para a área de transferência (`cm_CopyToClipboard`). 
 - **`Cmd+V` (`⌘V`)**: Cola arquivos da área de transferência no painel ativo (`cm_PasteFromClipboard`). 
+- **Renomeação automática de pasta com segurança contra colisões**: ao colar itens em um diretório que já contém nomes de arquivos idênticos, o ATBCmder anexa automaticamente um contador de incremento (`file (1).ext`, `file (2).ext`) em vez de acionar substituições destrutivas, correspondendo à ergonomia de colagem do macOS Finder.
 - **`Cmd+Option+V` (`⌥⌘V`)**: Move os arquivos da área de transferência para o painel ativo (`cm_PasteAsMove`). 
 
 ---

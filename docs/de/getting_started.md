@@ -360,6 +360,16 @@ ATBCmder verfügt über ein intelligentes Sitzungsverwaltungssubsystem (`Session
 
 ---
 
+### Tipp 5: Interaktives Onboarding-Tutorial (`cm_Tutorial`) 
+
+Möchten Sie eine geführte, praktische Tour direkt in der App? Wählen Sie **Hilfe ➔ Interaktives Tutorial...** aus der Menüleiste, um das 32-stufige Spotlight-Tutorial von ATBCmder zu starten. Es führt Sie interaktiv durch das Umschalten zwischen zwei Bedienfeldern, Dateivorgänge, Tab-Sperre (`Cmd+K`), Inline-Pfadleistenspringen (`Cmd+Shift+G`), Schnellsuche, Bedienfeldansichtsmodi und die integrierte Systemtools-Suite. 
+
+### Tipp 6: Residency in der Hintergrund-Taskleiste und erlaubnisfreier globaler Hotkey (`⌘⌥H`) 
+
+Für häufiges tägliches Wechseln öffnen Sie **Einstellungen ➔ Allgemein** (`Cmd+,`), aktivieren Sie **In Taskleiste minimieren (Neustart erforderlich)** (`ui.minimize_to_tray`) und starten Sie einmal neu. ATBCmder bleibt in Ihrer macOS-Menüleiste ohne Dock-Unordnung und kann mit dem **Hotkey „Fenster anzeigen/ausblenden“** (Standard `Cmd+Opt+H` / `⌘⌥H`) über die erlaubnisfreie macOS Carbon-Registrierung (keine Eingabeaufforderung zur Barrierefreiheit erforderlich) sofort aus jeder Anwendung aufgerufen oder ausgeblendet werden.
+
+---
+
 ## 6. Sicherheits- und Systemwarnungen: Einrichtung der macOS-Funktionstaste (Fn).
 
 Wenn Sie Total Commander, Double Commander oder Norton Commander auf einer PC-Tastatur verwendet haben, sind Ihre Finger darauf trainiert, die Funktionstasten der obersten Reihe zu verwenden (`F3` Ansicht, `F4` Bearbeiten, `F5` Kopieren, `F6` Verschieben, `F7` MkDir, `F8` Löschen). 
@@ -437,6 +447,8 @@ ATBCmder bietet vollständige Dual-Matrix-Tastaturunterstützung: Verwenden Sie 
 | **Links/Rechts tauschen** | `cm_Exchange` | `Ctrl+U` | `Ctrl+U` | Tauscht Verzeichnispfade zwischen linkem und rechtem Bereich aus. | 
 | **Neuer Tab** | `cm_NewTab` | `Cmd+T` | `Ctrl+T` | Öffnet eine neue Ordnerregisterkarte im aktuellen Bereich. | 
 | **Tab schließen** | `cm_CloseTab` | `Cmd+W` | `Ctrl+W` | Schließt die aktive Registerkarte. | 
+| **Registerkarte sperren/entsperren** | `cm_ToggleLockTab` | `Cmd+K` | `Ctrl+K` | Schaltet die Tab-Sperre (`*`) auf der aktiven Ordner-Registerkarte um. | 
+| **Vollständigen Pfad eingeben und loslegen** | `cm_EditPath` | `Cmd+Shift+G` | `Ctrl+Shift+G` | Schaltet die Pfadleiste auf Inline-Texteingabe um und springt direkt. |
 | **Horizontaler Modus** | `cm_HorizontalFilePanels` | Menü: Anzeigen ➔ Horizontal | Menü: Anzeigen ➔ Horizontal | Schaltet zwischen dem nebeneinanderliegenden und dem oben und unten gestapelten Layout um. | 
 | **Layout speichern** | `cm_ConfigSavePos` | Menü: Konfig ➔ Pos. speichern | Menü: Konfig ➔ Pos. speichern | Speichert die aktuellen Fensterabmessungen und Panelproportionen. | 
 | **Sandbox-Zugriff** | `cm_GrantFilesystemAccess` | Menü: Datei ➔ Berechtigungen | Menü: Datei ➔ Berechtigungen | Startet den Onboarding-Assistenten für die macOS App Sandbox. | 

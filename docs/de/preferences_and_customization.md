@@ -232,6 +232,9 @@ Wenn Sie versuchen, einen Schlüsselakkord zuzuweisen, der bereits von einem and
 ---
 
 ### 3.5 Globaler Hotkey zum Ein-/Ausblenden von Fenstern (`Cmd+Opt+H` / `Ctrl+Alt+H`)
+- **System-Tray-Residency (`ui.minimize_to_tray`)**: Aktivieren Sie **In Taskleiste minimieren (Neustart erforderlich)** unter **Allgemein**, um ATBCmder ohne Dock-Unordnung in der Menüleiste zu platzieren. 
+- **Zero-Permission Carbon Global Hotkey (`Cmd+Opt+H` / `Ctrl+Alt+H`)**: Registriert über natives macOS Carbon `RegisterEventHotKey` und ermöglicht sofortiges globales Umschalten, ohne dass Eingabehilfen in den Systemeinstellungen erforderlich sind.
+
 
 Für Power-User, die ATBCmder lieber unauffällig im Hintergrund laufen lassen möchten: 
 
@@ -381,6 +384,26 @@ Für macOS-Benutzer, die auf MacBooks oder mit Magic Trackpads arbeiten, bietet 
 - **Momentum-Filter**: Blockiert unerwünschte mehrseitige Auslöser durch die Trägheit des Trackpads. 
 - **Konfiguration**: 
 - Schalten Sie **Einstellungen** → **Dateiansichten** → **Trackpad-Navigation** ein (`view.trackpad_swipe_navigation`, Standard: aus).
+
+---
+
+### 4.7 Anpassbare Spaltensichtbarkeit und -reihenfolge (`view.panel_column_order`, `view.panel_column_visible`)
+
+Unter **Einstellungen ➔ Dateiansichten** können Sie genau anpassen, welche Tabellenspalten in beiden Dateifenstern angezeigt werden: 
+
+- **Spaltensichtbarkeit umschalten**: Aktivieren oder deaktivieren Sie sekundäre Spalten (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`), entsprechend Ihren Workflow-Anforderungen. Die primäre Spalte `Name` ist immer dauerhaft als erste Spalte angeheftet. 
+- **Spaltenneuordnung per Drag-and-Drop**: Klicken Sie auf den Ziehpunkt `⠿` neben einem beliebigen Spaltennamen in der Liste, um die Spalten global neu anzuordnen. Änderungen werden sofort in beiden Panels synchronisiert. 
+- **Auf Standardwerte zurücksetzen**: Klicken Sie jederzeit auf **Auf Standardwerte zurücksetzen**, um die Standardreihenfolge der Commander-Spalten wiederherzustellen. 
+
+--- 
+
+### 4.8 macOS Finder-Farbtags (`view.show_color_tags`, `view.color_tag_sync_interval_ms`)
+
+ATBCmder liest und zeigt native erweiterte Attribut-Tags des macOS Finder an (`com.apple.metadata:_kMDItemUserTags`): 
+
+- **Farbtags aktivieren**: Aktivieren Sie **MacOS Finder-Farbtags im Dateifenster anzeigen** (`view.show_color_tags`). 
+- **Visuelle Farbpunkte**: Dateien und Ordner mit zugewiesenen Finder-Tags werden direkt links von ihren Dateisymbolen mit klaren farbigen kreisförmigen Punkten angezeigt, die alle 7 macOS-Standardfarben (Rot, Orange, Gelb, Grün, Blau, Lila, Grau) und benutzerdefinierte Tag-Beschriftungen unterstützen. 
+- **Live-Synchronisierungsintervall**: Konfigurieren Sie das Hintergrundabfrageintervall in Sekunden (`view.color_tag_sync_interval_ms`, Standard `30.0 s`; auf `0` eingestellt, um Hintergrundabfragen und Aktualisierungen in der Panel-Navigation zu deaktivieren).
 
 ---
 

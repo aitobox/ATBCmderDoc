@@ -39,6 +39,8 @@ In ATBCmder fungiert jedes Panel als autonome Browsing-Engine, die mit einer eig
 | **Neuer Tab** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Aktiven Ordner in einem neuen Tab öffnen. | 
 | **Tab schließen** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Schließen Sie die aktuell fokussierte Registerkarte. | 
 | **Verzeichnis-Hotlist** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | Öffnen Sie das Instant-Fuzzy-Lesezeichen-Popup. | 
+| **Vollständigen Pfad eingeben und loslegen** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | Pfadleiste auf Inline-Texteingabe umstellen und direkt springen. | 
+| **Registerkarte sperren/entsperren** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | Tab-Sperrstatus sofort umschalten (Badge `*`). |
 | **Geschichte zurück** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Gehen Sie zurück zum zuvor besuchten Ordner. | 
 | **Geschichte weiterleiten** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Gehen Sie im Verzeichnisverlauf vorwärts. | 
 | **Verlaufs-Dropdown-Liste** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Dropdown-Liste „Verlauf anzeigen“. | 

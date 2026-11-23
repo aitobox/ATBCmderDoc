@@ -357,6 +357,16 @@ ATBCmder dispone di un sottosistema di gestione delle sessioni intelligente (`Se
 
 ---
 
+### Suggerimento 5: Tutorial interattivo sull'onboarding (`cm_Tutorial`) 
+
+Vuoi un tour pratico guidato direttamente all'interno dell'app? Scegli **Aiuto ➔ Tutorial interattivo...** dalla barra dei menu per avviare il tutorial in evidenza in 32 passaggi di ATBCmder. Ti guida in modo interattivo attraverso il cambio di doppio pannello, le operazioni sui file, il blocco delle schede (`Cmd+K`), il salto della barra del percorso in linea (`Cmd+Shift+G`), la ricerca rapida, le modalità di visualizzazione del pannello e la suite di strumenti di sistema integrati. 
+
+### Suggerimento 6: Residenza in background nell'area di notifica e tasto di scelta rapida globale senza autorizzazione (`⌘⌥H`) 
+
+Per cambi giornalieri frequenti, apri **Preferenze ➔ Generale** (`Cmd+,`), attiva **Riduci a icona nella barra delle applicazioni (richiede il riavvio)** (`ui.minimize_to_tray`) e riavvia una volta. ATBCmder rimane residente nella barra dei menu di macOS senza alcun ingombro nel Dock e può essere richiamato o nascosto istantaneamente da qualsiasi applicazione utilizzando il **Mostra/Nascondi tasto di scelta rapida finestra** (predefinito `Cmd+Opt+H` / `⌘⌥H`) tramite la registrazione macOS Carbon senza autorizzazione (non è richiesta alcuna richiesta di autorizzazione di accessibilità).
+
+---
+
 ## 6. Avvisi di sicurezza e sistema: impostazione del tasto funzione macOS (Fn).
 
 Se hai utilizzato Total Commander, Double Commander o Norton Commander sulla tastiera di un PC, le tue dita sono addestrate a utilizzare i tasti funzione della riga superiore (`F3` Visualizza, `F4` Modifica, `F5` Copia, `F6` Sposta, `F7` MkDir, `F8` Elimina). 
@@ -434,6 +444,8 @@ ATBCmder fornisce il supporto completo per la tastiera a doppia matrice: utilizz
 | **Scambia sinistra/destra** | `cm_Exchange` | `Ctrl+U` | `Ctrl+U` | Scambia i percorsi delle directory tra i pannelli sinistro e destro. | 
 | **Nuova scheda** | `cm_NewTab` | `Cmd+T` | `Ctrl+T` | Apre una nuova scheda di cartella nel pannello corrente. | 
 | **Chiudi scheda** | `cm_CloseTab` | `Cmd+W` | `Ctrl+W` | Chiude la scheda attiva. | 
+| **Blocca/Sblocca scheda** | `cm_ToggleLockTab` | `Cmd+K` | `Ctrl+K` | Attiva/disattiva il blocco delle schede (`*`) sulla scheda della cartella attiva. | 
+| **Inserisci il percorso completo e vai** | `cm_EditPath` | `Cmd+Shift+G` | `Ctrl+Shift+G` | Passa dalla barra del percorso all'immissione di testo in linea e salta direttamente. |
 | **Modalità orizzontale** | `cm_HorizontalFilePanels` | Menu: Mostra ➔ Orizzontale | Menu: Mostra ➔ Orizzontale | Alterna il layout affiancato o impilato in alto e in basso. | 
 | **Salva layout** | `cm_ConfigSavePos` | Menu: Configurazione ➔ Salva Pos | Menu: Configurazione ➔ Salva Pos | Salva le dimensioni correnti della finestra e le proporzioni del pannello. | 
 | **Accesso alla sandbox** | `cm_GrantFilesystemAccess` | Menu: File ➔ Autorizzazioni | Menu: File ➔ Autorizzazioni | Avvia l'assistente di onboarding Sandbox dell'app macOS. | 

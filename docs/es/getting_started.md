@@ -357,6 +357,16 @@ ATBCmder cuenta con un subsistema de gestión de sesiones inteligente (`SessionM
 
 ---
 
+### Consejo 5: Tutorial interactivo de incorporación (`cm_Tutorial`) 
+
+¿Quieres una visita práctica guiada directamente dentro de la aplicación? Elija **Ayuda ➔ Tutorial interactivo...** en la barra de menú para iniciar el tutorial destacado de 32 pasos de ATBCmder. Le guía de forma interactiva a través del cambio de panel dual, operaciones de archivos, bloqueo de pestañas (`Cmd+K`), salto de barra de ruta en línea (`Cmd+Shift+G`), búsqueda rápida, modos de vista de panel y el conjunto de herramientas integradas del sistema. 
+
+### Consejo 6: Residencia de la bandeja del sistema en segundo plano y tecla de acceso rápido global sin permiso (`⌘⌥H`) 
+
+Para cambios diarios frecuentes, abra **Preferencias ➔ General** (`Cmd+,`), habilite **Minimizar en la bandeja del sistema (requiere reinicio)** (`ui.minimize_to_tray`) y reinicie una vez. ATBCmder permanece residente en la bandeja de la barra de menú de macOS sin desorden en el Dock y se puede invocar u ocultar instantáneamente desde cualquier aplicación usando la **Tecla de acceso rápido Mostrar/Ocultar ventana** (predeterminada `Cmd+Opt+H` / `⌘⌥H`) a través del registro macOS Carbon sin permiso (no se requiere permiso de accesibilidad).
+
+---
+
 ## 6. Alertas de seguridad y sistema: configuración de la tecla de función (Fn) de macOS
 
 Si ha utilizado Total Commander, Double Commander o Norton Commander en el teclado de una PC, sus dedos están entrenados para usar las teclas de función de la fila superior (`F3` Ver, `F4` Editar, `F5` Copiar, `F6` Mover, `F7` MkDir, `F8` Eliminar). 
@@ -434,6 +444,8 @@ ATBCmder proporciona compatibilidad total con el teclado de matriz dual: use ata
 | **Intercambiar izquierda/derecha** | `cm_Exchange` | `Ctrl+U` | `Ctrl+U` | Intercambia rutas de directorio entre los paneles izquierdo y derecho. | 
 | **Nueva pestaña** | `cm_NewTab` | `Cmd+T` | `Ctrl+T` | Abre una nueva pestaña de carpeta en el panel actual. | 
 | **Cerrar pestaña** | `cm_CloseTab` | `Cmd+W` | `Ctrl+W` | Cierra la pestaña activa. | 
+| **Bloquear/Desbloquear pestaña** | `cm_ToggleLockTab` | `Cmd+K` | `Ctrl+K` | Alterna el bloqueo de pestañas (`*`) en la pestaña de la carpeta activa. | 
+| **Ingrese la ruta completa y listo** | `cm_EditPath` | `Cmd+Shift+G` | `Ctrl+Shift+G` | Cambia la barra de ruta a la entrada de texto en línea y salta directamente. |
 | **Modo horizontal** | `cm_HorizontalFilePanels` | Menú: Mostrar ➔ Horizontal | Menú: Mostrar ➔ Horizontal | Alterna el diseño apilado de lado a lado versus el de arriba y abajo. | 
 | **Guardar diseño** | `cm_ConfigSavePos` | Menú: Configuración ➔ Guardar Pos | Menú: Configuración ➔ Guardar Pos | Guarda las dimensiones actuales de la ventana y las proporciones del panel. | 
 | **Acceso a la zona de pruebas** | `cm_GrantFilesystemAccess` | Menú: Archivo ➔ Permisos | Menú: Archivo ➔ Permisos | Inicia el asistente de incorporación de macOS App Sandbox. | 

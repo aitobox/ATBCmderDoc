@@ -738,6 +738,12 @@ Embora o ATBCmder seja excelente em fluxos de trabalho gráficos de painel duplo
 
 ---
 
+> [!TIP] 
+> **Transferência de terminal em sandbox** 
+> Em compilações em sandbox da Mac App Store, onde o lançamento de shells interativos dentro da sandbox do aplicativo é restrito pelas políticas de segurança da Apple, pressionar `Ctrl+J` (`F9` / `cm_RunTerm`) invoca o macOS Terminal (`open -a Terminal <path>`) ou iTerm2 diretamente no caminho do diretório ativo, garantindo recursos de shell interativos completos com zero atrito de sandbox.
+
+---
+
 ## 10. Tabela de referência do teclado mestre de matriz dupla
 
 | Área Funcional | Descrição da ação | Atalho do macOS | Tecla Commander Clássica | ID do comando | 

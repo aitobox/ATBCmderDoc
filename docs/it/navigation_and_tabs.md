@@ -39,6 +39,8 @@ In ATBCmder, ogni pannello funziona come un motore di navigazione autonomo dotat
 | **Nuova scheda** | `Cmd+T` / `⌘T` | `Ctrl+T` | `cm_NewTab` | Apri la cartella attiva in una nuova scheda. | 
 | **Chiudi scheda** | `Cmd+W` / `⌘W` | `Ctrl+W` | `cm_CloseTab` | Chiudi la scheda attualmente attiva. | 
 | **Hotlist delle directory** | `Ctrl+D` / `⌃D` | `Ctrl+D` | `cm_DirHotList` | Apri il popup dei segnalibri fuzzy istantanei. | 
+| **Inserisci il percorso completo e vai** | `Cmd+Shift+G` / `⌘⇧G` | `Ctrl+Shift+G` | `cm_EditPath` | Passa dalla barra del percorso all'immissione di testo in linea e salta direttamente. | 
+| **Blocca/Sblocca scheda** | `Cmd+K` / `⌘K` | `Ctrl+K` | `cm_ToggleLockTab` | Attiva/disattiva istantaneamente lo stato di blocco della scheda (badge`*`). |
 | **Storia indietro** | `Cmd+[` / `⌘[` | `Alt+Left` | `cm_ViewHistoryPrev` | Torna alla cartella visitata in precedenza. | 
 | **Storia in avanti** | `Cmd+]` / `⌘]` | `Alt+Right` | `cm_ViewHistoryNext` | Andare avanti nella cronologia della directory. | 
 | **Elenco a discesa della cronologia** | `Alt+F8` / `⌥F8` | `Ctrl+Down` | `cm_DirHistory` | Visualizza l'elenco a discesa della cronologia. | 

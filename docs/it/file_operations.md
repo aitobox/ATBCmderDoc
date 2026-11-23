@@ -81,6 +81,7 @@ Per copiare file o directory:
 Per clonar rapidamente un file nella directory corrente (ad esempio, creando un backup prima di modificare `nginx.conf`): 
 
 - Evidenzia l'elemento e premi `Shift+F5` (o `⇧F5`). 
+- **Maiusc+clic su Deselezione intervallo**: tieni premuto `Shift` e fai clic su un intervallo già selezionato per invertire o deselezionare in modo pulito intervalli specifici senza perdere lo stato di selezione multi-file più ampio.
 - ATBCmder richiede un percorso di destinazione nella *stessa* directory, consentendoti di inserire un nuovo nome (ad esempio, `nginx.conf.bak`).
 
 #### Appunti standard di macOS (`Cmd+C` ➔ `Cmd+V`)
@@ -89,6 +90,7 @@ ATBCmder si integra completamente con le scorciatoie degli appunti del sistema m
 
 - **`Cmd+C` (`⌘C`)**: copia i percorsi dei file selezionati negli appunti (`cm_CopyToClipboard`). 
 - **`Cmd+V` (`⌘V`)**: incolla i file dagli appunti nel pannello attivo (`cm_PasteFromClipboard`). 
+- **Rinominazione automatica incolla anti-collisione**: quando si incollano elementi in una directory che contiene già nomi di file identici, ATBCmder aggiunge automaticamente un contatore incrementale (`file (1).ext`, `file (2).ext`) anziché attivare sovrascritture distruttive, abbinando l'ergonomia dell'incollamento del Finder di macOS.
 - **`Cmd+Option+V` (`⌥⌘V`)**: sposta i file degli appunti nel pannello attivo (`cm_PasteAsMove`). 
 
 ---

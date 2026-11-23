@@ -81,6 +81,7 @@ So kopieren Sie Dateien oder Verzeichnisse:
 So klonen Sie schnell eine Datei im aktuellen Verzeichnis (z. B. Erstellen einer Sicherung vor der Bearbeitung von `nginx.conf`): 
 
 - Markieren Sie das Element und drücken Sie `Shift+F5` (oder `⇧F5`). 
+- **Umschalt+Klick Bereichsauswahl**: Halten Sie `Shift` gedrückt und klicken Sie auf einen bereits ausgewählten Bereich, um bestimmte Bereiche sauber umzukehren oder die Auswahl aufzuheben, ohne Ihren umfassenderen Auswahlstatus für mehrere Dateien zu verlieren.
 – ATBCmder fordert Sie mit einem Zielpfad im *gleichen* Verzeichnis auf, sodass Sie einen neuen Namen eingeben können (z. B. `nginx.conf.bak`).
 
 #### Standard-MacOS-Zwischenablage (`Cmd+C` ➔ `Cmd+V`)
@@ -89,6 +90,7 @@ ATBCmder lässt sich vollständig in die Zwischenablage-Verknüpfungen des macOS
 
 - **`Cmd+C` (`⌘C`)**: Kopiert ausgewählte Dateipfade in die Zwischenablage (`cm_CopyToClipboard`). 
 - **`Cmd+V` (`⌘V`)**: Fügt Dateien aus der Zwischenablage in das aktive Bedienfeld ein (`cm_PasteFromClipboard`). 
+- **Kollisionssicheres automatisches Umbenennen beim Einfügen**: Beim Einfügen von Elementen in ein Verzeichnis, das bereits identische Dateinamen enthält, hängt ATBCmder automatisch einen inkrementierenden Zähler (`file (1).ext`, `file (2).ext`) an, anstatt destruktive Überschreibungen auszulösen, was der Einfügeergonomie von macOS Finder entspricht.
 - **`Cmd+Option+V` (`⌥⌘V`)**: Verschiebt Zwischenablagedateien in das aktive Bedienfeld (`cm_PasteAsMove`). 
 
 ---

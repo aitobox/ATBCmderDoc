@@ -205,7 +205,8 @@ Muévase sin esfuerzo entre carpetas, volúmenes locales, montajes de red e hist
 | `cm_TargetEqualSource` | Establecer el directorio del panel inactivo para que coincida con el directorio activo | `⌥Z` / `⌃←` / `⌃→` | `Alt+Z` / `Ctrl+Left` / `Ctrl+Right` | Principal | 
 | `cm_SyncSlaveDir` | Bloquear la navegación del panel de destino para reflejar el panel de origen | `⌥S` | *(Menú: Comandos ➔ Sincronizar navegación)* | Principal | 
 | `cm_DirHotList` | Abrir lista activa del directorio/menú Marcadores | `⌘D` | `Ctrl+D` | Principal | 
-| `cm_ConfigDirHotList` | Abrir el cuadro de diálogo de configuración de la lista activa del directorio | `⇧⌘D` | `Ctrl+Shift+D` | Principal | 
+| `cm_EditPath` | Ingrese la ruta completa y listo (cambie la barra de ruta de navegación a la entrada de texto en línea) | `⇧⌘G` | `Ctrl+Shift+G` | Principal |
+| `cm_ConfigDirHotList` | Abrir el cuadro de diálogo de configuración de la lista activa del directorio | `⌥⌘D` | `Ctrl+Shift+D` | Principal | 
 | `cm_GoToFirst` | Saltar el cursor al primer elemento del panel activo | `⌘↑` / `Fn+←` *(Casa)* | `Home` | Principal | 
 | `cm_GoToLast` | Saltar el cursor al último elemento del panel activo | `⌘↓` / `Fn+→` *(Fin)* | `End` | Principal | 
 | `PageUp / PageDown` | Desplazar el panel activo hacia arriba o hacia abajo una ventana gráfica completa | `⇞` *(Fn+ ↑)* / `⇟` *(Fn+↓)* | `PageUp` / `PageDown` | Panel de archivos |
@@ -250,6 +251,7 @@ ATBCmder permite abrir pestañas ilimitadas en cualquiera de los paneles, bloque
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_NewTab` | Abrir nueva pestaña de carpeta en el panel activo | `⌘T` | `Ctrl+T` | Principal | 
 | `cm_CloseTab` | Cerrar la pestaña de la carpeta actualmente activa | `⌘W` | `Ctrl+W` | Principal | 
+| `cm_ToggleLockTab` | Estado de bloqueo de pestaña de alternancia instantánea (insignia `*`) | `⌘K` | `Ctrl+K` | Principal |
 | `cm_NextTab` / `cm_NextTabCtrl` | Cambiar a la siguiente pestaña a la derecha | `⌃⇥` *(Ctrl+Tab)* / `⌘⇧]` | `Ctrl+Tab` | Principal | 
 | `cm_PrevTab` / `cm_PrevTabCtrl` | Cambiar a la pestaña anterior a la izquierda | `⌃⇧⇥` *(Ctrl+Mayús+Tab)* / `⌘⇧[` | `Ctrl+Shift+Tab` | Principal | 
 | `cm_ShowTabsList` | Mostrar menú emergente de todas las pestañas abiertas en el panel activo | `⇧⌘L` | `Ctrl+Shift+L` | Principal | 
@@ -264,6 +266,7 @@ ATBCmder permite abrir pestañas ilimitadas en cualquiera de los paneles, bloque
 | `cm_CopyTabToOtherPanel` | Clonar pestaña activa directamente en el panel opuesto | `⌥⌘T` | *(Menú contextual de la pestaña: Copiar a otro)* | Principal | 
 | `cm_SaveTab` / `cm_SaveTabs` | Guardar el diseño de la pestaña actual en la configuración | `cm_SaveTab` | *(Menú: Pestañas ➔ Guardar pestañas)* | Principal | 
 | `cm_LoadTab` / `cm_LoadTabs` | Restaurar el diseño de pestañas guardado desde la configuración | `cm_LoadTab` | *(Menú: Pestañas ➔ Cargar pestañas)* | Principal | 
+| `cm_SaveFavoriteTabs` | Guarde todas las pestañas abiertas en ambos paneles como un nuevo conjunto de pestañas favoritas | `⇧⌘D` | `Ctrl+Shift+D` | Principal |
 | `cm_OptionsFavorites` | Configurar conjuntos de pestañas favoritas y espacios de trabajo persistentes | `cm_OptionsFavorites` | *(Menú: Pestañas ➔ Pestañas favoritas)* | Principal | 
 | `cm_FullScreen` | Alternar ventana de aplicación de pantalla completa | `⌃⌘F` / `F11` | `F11` | Principal |
 
@@ -300,7 +303,8 @@ Supervise el rendimiento del sistema operativo, analice el almacenamiento de dir
 | ID de comando | Descripción | Atajo principal de macOS (con glifos ⌘/⌥/⇧/⌃) | Atajo clásico de Commander (con teclas Fn) | Contexto |
 | :--- | :--- | :---: | :---: | :---: |
 | `cm_SystemStatus` | Abrir monitor de estado y diagnóstico del sistema | `⌘⇧M` *(Cmd+Shift+M)* | `Ctrl+Shift+M` | Principal |
-| `cm_DiskUsageAnalyzer` | Abrir analizador de uso de disco (Árbol + Treemap) | `⌘⇧D` *(Cmd+Shift+D)* | `Ctrl+Shift+D` | Principal |
+| `cm_DiskUsageAnalyzer` | Abrir analizador de uso de disco (Árbol + Treemap) | *(Menu: Tools ➔ Disk Usage Analyzer...)* | `Ctrl+Shift+D` | Principal |
+| `cm_RecentChanges` | Abra la herramienta Cambios recientes de archivos y carpetas | *(Menú: Herramientas ➔ Cambios Recientes...)* | *(Menú: Herramientas ➔ Cambios Recientes...)* | Principal |
 | `cm_CleanSystem` | Abrir limpiador de sistema seguro en dos etapas | `⌘⇧C` *(Cmd+Shift+C)* | `Ctrl+Shift+C` | Principal |
 | `cm_UninstallApp` | Abrir desinstalador profundo de aplicaciones | `⌘⇧U` *(Cmd+Shift+U)* | `Ctrl+Shift+U` | Principal |
 
@@ -314,6 +318,8 @@ Acceda a las preferencias de la aplicación, gestión de configuración, actuali
 | :--- | :--- | :---: | :---: | :---: | 
 | `cm_Options` | Abra el cuadro de diálogo Preferencias/Configuración de la aplicación | `⌘,` | `Ctrl+,` | Principal | 
 | `cm_HelpContents` / `cm_HelpIndex` | Abrir guía y documentación interactiva para el usuario | `⌘?` / `F1` | `F1` | Principal | 
+| `cm_Tutorial` | Inicie el tutorial de incorporación interactivo de 32 pasos | *(Menú: Ayuda ➔ Tutorial Interactivo...)* | *(Menú: Ayuda ➔ Tutorial Interactivo...)* | Principal | 
+| `*(Global Hotkey)*` | Invocar/ocultar ventana principal (alternar desde la barra de menú de la bandeja del sistema) | `⌘⌥H` | `Ctrl+Alt+H` | Sistema (Carbono) |
 | `cm_HelpKeyboard` | Abrir tarjeta de referencia de atajos de teclado rápidos | `cm_HelpKeyboard` | *(Menú: Ayuda ➔ Teclado)* | Principal | 
 | `cm_Exit` | Salir/Salir de ATBCmder | `⌘Q` | `F10` / `Alt+F4` / `Alt+X` | Principal | 
 | `cm_About` | Mostrar versión, licencia y créditos de ATBCmder | `cm_About` | *(Menú: ATBCmder ➔ Acerca de)* | Principal | 

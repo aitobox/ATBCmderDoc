@@ -357,6 +357,54 @@ Wenn Sie an einem MacBook arbeiten oder ein Magic Trackpad verwenden, können Si
 
 ---
 
+### 2.9 Rezept 9: Sofortige Pfadbearbeitung und direktes Springen von Dateien mit „Enter Full Path and Go“ (`⌘⇧G`)
+
+Wenn Sie einen tiefen Pfad aus Terminal, Xcode, VS Code oder einer Nachricht kopieren, können Sie direkt dorthin springen – oder eine bestimmte Datei direkt markieren –, ohne durch Ordner nach oben und unten klicken zu müssen: 
+
+1. **Inline-Pfadbearbeitung aktivieren**: 
+- Klicken Sie auf die Stiftschaltfläche **Vollständigen Pfad eingeben und los** (`btn_edit_path`) direkt links neben der Schaltfläche „Übergeordnetes Verzeichnis“ (`^`) in einem der Bedienfelder, doppelklicken Sie auf die leere Stelle rechts neben den Breadcrumb-Segmenten oder drücken Sie **`Cmd+Shift+G`** (`⌘⇧G` / `Ctrl+Shift+G` / `cm_EditPath`). 
+- Der aktuelle Pfad ist vorab ausgefüllt und hervorgehoben, sodass Sie sofort **`Cmd+V`** (`⌘V`) drücken können, um ihn zu überschreiben. 
+2. **Anführungszeichen, Tilden oder Dateipfade einfügen**: 
+- Drücken Sie **`Enter`**. ATBCmder entfernt automatisch Leerzeichen, entfernt passende umgebende Anführungszeichen (`"..."` / `'...'`), erweitert `~` und Umgebungsvariablen (`$VAR` / `%VAR%`) und behält `vfs://` URIs bei. 
+- Wenn Sie einen Pfad eingefügt haben, der direkt auf eine **Datei** verweist (z. B. `"/Users/brain/Projects/app/src/main.py"`), navigiert ATBCmder zum übergeordneten Verzeichnis (`src/`) und hebt `main.py` automatisch hervor. 
+3. **Wiederherstellen ohne erneutes Einfügen bei Tippfehlern**: 
+– Wenn kein Pfad vorhanden ist, bleibt die Inline-Eingabe mit einem roten Rand und einer nicht blockierenden Statusleistenmeldung geöffnet, sodass Sie den Tippfehler direkt korrigieren und erneut `Enter` drücken können. 
+
+- Drücken Sie `Esc`, klicken Sie außerhalb oder klicken Sie jederzeit erneut auf die Stiftschaltfläche, um den Vorgang abzubrechen und zu den Breadcrumb-Schaltflächen zurückzukehren. 
+
+--- 
+
+### 2.10 Rezept 10: Resident im Hintergrund bleiben mit der Taskleiste und dem globalen Hotkey (`⌘⌥H`)
+
+Wenn Sie Dutzende Male am Tag zu ATBCmder wechseln, um Dateien abzurufen, Protokolle in der Vorschau anzuzeigen oder Ordner zu synchronisieren, erhalten Sie durch die Speicherung in der macOS-Menüleiste sofortigen Zugriff in weniger als einer Sekunde: 
+
+1. **System-Tray-Residency aktivieren**: 
+- Drücken Sie **`Cmd+,`** (`⌘,`), um **Einstellungen ➔ Allgemein** zu öffnen. 
+- Aktivieren Sie **In der Taskleiste minimieren (Neustart erforderlich)** (`ui.minimize_to_tray`). 
+- Passen Sie optional **Fenster-Hotkey anzeigen/ausblenden** an (`ui.global_hotkey`, Standard: `Ctrl+Alt+H` / `⌘⌥H` unter macOS). Hotkey-Änderungen werden sofort angewendet, ohne dass ein Neustart erforderlich ist. 
+- Klicken Sie auf **OK** und starten Sie ATBCmder einmal neu, um das Taskleistensymbol zu aktivieren. 
+2. **Zero-Permission macOS Carbon Global Hotkey**: 
+- ATBCmder registriert Ihren globalen Hotkey über macOS Carbon `RegisterEventHotKey`, so dass er sofort funktioniert, **ohne dass Zugriffsberechtigungen** in den Systemeinstellungen erforderlich sind, und Akkorde mit der Wahltaste (`⌥`) werden sauber und ohne akzentuierte Dead-Key-Konflikte erfasst. 
+3. **Von überall aus umschalten**: 
+- Drücken Sie **`Cmd+Option+H`** (`⌘⌥H`) in einer beliebigen App oder einem Vollbildbereich, um ATBCmder direkt in den Vordergrund mit Ihrer genauen Fenstergröße und Ihren Registerkarten zu rufen, und drücken Sie erneut **`⌘⌥H`**, um es wieder in die Menüleiste zu verschieben. 
+
+--- 
+
+### 2.11 Rezept 11: Spalten im Dateibereich anpassen und macOS Finder-Farbtags anzeigen
+
+Passen Sie Ihre Dateitabelle so an, dass nur die Spalten angezeigt werden, die Sie interessieren, und überprüfen Sie die Farbtags von macOS Finder direkt in ATBCmder: 
+
+1. **Panel-Spalten neu anordnen oder ausblenden**: 
+- Öffnen Sie **Einstellungen ➔ Dateiansichten** (`Cmd+,`). 
+- Deaktivieren Sie unter **Spalten** die Option für sekundäre Spalten (`Ext`, `Size`, `Modified`, `Permissions`, `Owner`), die Sie ausblenden möchten (`Name` bleibt immer an erster Stelle). 
+- Ziehen Sie den Ziehpunkt `⠿` neben einer beliebigen Spalte, um die Spalten global in beiden Bereichen neu anzuordnen, oder klicken Sie auf **Auf Standardwerte zurücksetzen**, um die Standardreihenfolge wiederherzustellen. 
+2. **MacOS Finder-Farbtags aktivieren**: 
+- Scrollen Sie auf derselben Seite **Dateiansichten** zu **Farbtags (macOS)**. 
+- Aktivieren Sie **Farbtags für macOS Finder im Dateifenster anzeigen** (`view.show_color_tags`) und legen Sie Ihr bevorzugtes **Live-Synchronisierungsintervall** fest (Standard `30.0 s` oder `0` für Deaktiviert). 
+- Klicken Sie auf **Übernehmen** oder **OK**. Beide Panels werden sofort aktualisiert und zeigen gestochen scharfe Finder-Tag-Punkte mit lokalisierten Tooltips für alle 7 Standard-Finder-Farben (`Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Gray`) und alle benutzerdefinierten Benutzer-Tags.
+
+---
+
 ## 3. Leitfaden zur Fehlerbehebung und häufig gestellte Fragen (FAQs)
 
 ### 3.1 Fehler „Vorgang nicht zulässig“ / macOS-Berechtigung verweigert
