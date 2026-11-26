@@ -35,6 +35,14 @@ ATBCmder is a file management tool and requires explicit disk management permiss
 
 ## Release Notes
 
+### 3.0.0 (2026-11-26)
+
+- Responsive Toolbar Overflow & UI Polish: Built a reusable responsive toolbar overflow controller and dropdown menu across MainWindow, FilePanel headers, and viewer toolbars so actions collapse gracefully on narrow windows (Fixes #274-#276, #278-#280); added a column header context menu to configure columns directly (Fixes #269, #283), floating arrow overlays for trackpad swipe history navigation (Fixes #267, #282), and `Cmd+Left/Right` to open focused directories or archives in the opposite panel (Fixes #261, #270); refined `QToolButton` popup styling, cloud connection form alignment, and quick-filter clearing on directory changes/refreshes (Fixes #254, #256, #268, #271)
+- Transfer Queue Engine & "Add To Queue" (`F2`) Redesign: Hardened the `TransferQueue` engine for reliable execution, instant cancellation, accurate progress tracking, and task history (Fixes #258, #263); redesigned the Background Operations dialog with stable selection, per-task actions, and live progress bars (Fixes #259, #264); completed the `F2` Add-to-Queue workflow with a main-window queue indicator, error alerts, and clean shutdown safety (Fixes #260, #266)
+- Comprehensive P0/P1/P2 Codebase Audit (Batches 1–10): Completed a 10-batch security, stability, and correctness audit across file operations, VFS protocols, universal viewers, editors, system tools, themes, and dialogs—including shell-safe association quoting, LLM XML redaction, top-level junction and FIFO special-file guards, `py7zr >= 1.0` support in `SevenZipFileSystem`, breaking `QProcess` signal cycles in `AtbSysBridge`, and eliminating Qt disconnect warnings
+- Command System Cleanup & 31-Locale i18n Parity: Filtered unimplemented stub commands from UI editors, unified stub feedback, wired command aliases (Fixes #265, #281), and hid unimplemented options in Directory Hotlist preferences (Fixes #255, #284); synced `atbcmder.pot` and completed translations, placeholder fixes, and `.mo` compilation across all 31 supported locales
+- 13-Domain Test Suite Architecture, Extended Ruff Gate & Docs Sync: Reorganized tests into 13 domain packages (`tests/core`, `tests/vfs`, `tests/viewer`, etc.) for better isolation and maintainability (Refs #253, #262); enabled an extended `ruff` CI lint gate and synced 2.4–2.9 user guides, shortcut tables, and release documentation
+
 ### 2.9.0 (2026-11-22)
 
 - Interactive Tutorial Update & Path Bar Go-Button: Updated the interactive onboarding tutorial to cover v2.8+ highlights including custom column layouts, tab locking, and pinyin quick search (Fixes #250); added an "enter full path and go" button to the panel path bar for instant path editing and direct navigation (Fixes #247)
